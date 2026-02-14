@@ -74,10 +74,71 @@ const packages = [
     },
 ];
 
+// ... (imports)
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Modal } from "@/components/ui/modal";
+import { TerminalInput } from "@/components/ui/terminal-input";
+
+// ... (packages array)
+
+const formSchema = z.object({
+    name: z.string().min(2, "Name_Required"),
+    email: z.string().email("Invalid_Email"),
+    description: z.string().min(10, "Description_Required"),
+});
+
+type FormData = z.infer<typeof formSchema>;
+
 export function PricingSection() {
+    const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string } | null>(null);
+    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<FormData>({
+        resolver: zodResolver(formSchema),
+    });
+
+    const onSubmit = async (data: FormData) => {
+        if (!selectedPlan) return;
+        setStatus("submitting");
+        try {
+            const res = await fetch("/api/pricing-inquiry", {
+                method: "POST",
+                body: JSON.stringify({
+                    ...data,
+                    planName: selectedPlan.name,
+                    planPrice: selectedPlan.price,
+                }),
+            });
+
+            if (res.ok) {
+                setStatus("success");
+                reset();
+                // Close modal after 2 seconds on success
+                setTimeout(() => {
+                    setSelectedPlan(null);
+                    setStatus("idle");
+                }, 2000);
+            } else {
+                setStatus("error");
+            }
+        } catch (e) {
+            setStatus("error");
+        }
+    };
+
     return (
         <section className="py-24 bg-background relative overflow-hidden" id="pricing">
+            {/* ... (existing JSX for section header) */}
             <div className="max-w-7xl mx-auto px-4 md:px-12">
+                {/* ... (header content) */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -101,10 +162,11 @@ export function PricingSection() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             className={`relative p-8 rounded-3xl border ${pkg.popular
-                                    ? "border-cobalt bg-white/5"
-                                    : "border-white/10 bg-white/[0.02]"
+                                ? "border-cobalt bg-white/5"
+                                : "border-white/10 bg-white/[0.02]"
                                 } flex flex-col`}
                         >
+                            {/* ... (existing card content) */}
                             {pkg.popular && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cobalt text-white px-4 py-1 rounded-full text-sm font-medium uppercase tracking-wider">
                                     Most Popular
@@ -148,9 +210,10 @@ export function PricingSection() {
                             </div>
 
                             <MagneticButton
+                                onClick={() => setSelectedPlan({ name: pkg.name, price: pkg.price })}
                                 className={`w-full py-4 rounded-full font-medium transition-colors ${pkg.popular
-                                        ? "bg-cobalt text-white hover:bg-cobalt/90"
-                                        : "bg-white/10 text-white hover:bg-white/20"
+                                    ? "bg-cobalt text-white hover:bg-cobalt/90"
+                                    : "bg-white/10 text-white hover:bg-white/20"
                                     }`}
                             >
                                 Get Started
@@ -158,13 +221,61 @@ export function PricingSection() {
                         </motion.div>
                     ))}
                 </div>
-
+                {/* ... (footer text) */}
                 <div className="mt-12 text-center">
                     <p className="text-white/40 text-sm">
                         Prices in USD. Final quote provided after initial consultation.
                     </p>
                 </div>
             </div>
+
+            <Modal
+                isOpen={!!selectedPlan}
+                onClose={() => {
+                    setSelectedPlan(null);
+                    setStatus("idle");
+                    reset();
+                }}
+                title={`Get Started: ${selectedPlan?.name}`}
+            >
+                {status === "success" ? (
+                    <div className="text-center py-8">
+                        <div className="text-acid-green text-xl font-mono mb-4">✓ Request_Sent</div>
+                        <p className="text-white/60">Check your email for confirmation.</p>
+                    </div>
+                ) : (
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                        <div className="space-y-1">
+                            <TerminalInput
+                                label="NAME"
+                                {...register("name")}
+                                placeholder="Your Name"
+                            />
+                            {errors.name && <span className="text-red-500 text-xs font-mono">{errors.name.message}</span>}
+                        </div>
+                        <div className="space-y-1">
+                            <TerminalInput
+                                label="EMAIL"
+                                {...register("email")}
+                                placeholder="you@company.com"
+                            />
+                            {errors.email && <span className="text-red-500 text-xs font-mono">{errors.email.message}</span>}
+                        </div>
+                        <div className="space-y-1">
+                            <TerminalInput
+                                label="PROJECT_DETAILS"
+                                {...register("description")}
+                                placeholder="Tell us about your goals..."
+                            />
+                            {errors.description && <span className="text-red-500 text-xs font-mono">{errors.description.message}</span>}
+                        </div>
+
+                        <MagneticButton className="w-full mt-4">
+                            {status === "submitting" ? "Processing..." : "Submit_Request"}
+                        </MagneticButton>
+                    </form>
+                )}
+            </Modal>
         </section>
     );
 }

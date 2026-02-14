@@ -13,7 +13,7 @@ const schema = z.object({
     name: z.string().min(2, "Name_Required"),
     email: z.string().email("Invalid_Email_Format"),
     timeline: z.enum(["1-3 Months", "3-6 Months", "ASAP"]),
-    budget: z.enum(["$5k-$10k", "$10k-$25k", "$25k+"]),
+    attachment: z.any().optional(), // FileList comes from input type="file"
     details: z.string().min(10, "Project_Details_Required"),
 });
 
@@ -34,9 +34,23 @@ export function ContactSection() {
     const onSubmit = async (data: FormData) => {
         setStatus("submitting");
         try {
+            let attachmentData = null;
+            if (data.attachment && data.attachment.length > 0) {
+                const file = data.attachment[0];
+                const reader = new FileReader();
+                attachmentData = await new Promise((resolve) => {
+                    reader.onload = (e) => resolve({
+                        name: file.name,
+                        type: file.type,
+                        content: (e.target?.result as string).split(',')[1] // Get base64 content
+                    });
+                    reader.readAsDataURL(file);
+                });
+            }
+
             const res = await fetch("/api/contact", {
                 method: "POST",
-                body: JSON.stringify(data),
+                body: JSON.stringify({ ...data, attachment: attachmentData }),
             });
 
             if (res.ok) {
@@ -138,15 +152,12 @@ export function ContactSection() {
                                             </div>
 
                                             <div className="flex flex-col gap-2 font-mono">
-                                                <label className="text-xs uppercase text-white/40 tracking-widest pl-1">{'>'} BUDGET_ALLOCATION</label>
-                                                <select
-                                                    {...register("budget")}
-                                                    className="bg-surface-200 border-l-2 border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-cobalt focus:bg-surface-300 transition-all appearance-none rounded-none"
-                                                >
-                                                    <option value="$5k-$10k">$5k - $10k</option>
-                                                    <option value="$10k-$25k">$10k - $25k</option>
-                                                    <option value="$25k+">$25k+</option>
-                                                </select>
+                                                <label className="text-xs uppercase text-white/40 tracking-widest pl-1">{'>'} ATTACH_FILE</label>
+                                                <input
+                                                    type="file"
+                                                    {...register("attachment")}
+                                                    className="bg-surface-200 border-l-2 border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cobalt focus:bg-surface-300 transition-all rounded-none file:mr-4 file:py-1 file:px-2 file:rounded-none file:border-0 file:text-xs file:font-mono file:bg-cobalt/20 file:text-cobalt hover:file:bg-cobalt/30"
+                                                />
                                             </div>
                                         </div>
 
