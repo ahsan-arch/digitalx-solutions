@@ -3,6 +3,8 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
+import Link from "next/link";
+
 export const BentoCard = ({
     title,
     content,
@@ -10,6 +12,7 @@ export const BentoCard = ({
     colSpan = 1,
     className,
     delay = 0,
+    href,
 }: {
     title: string;
     content: string;
@@ -17,20 +20,10 @@ export const BentoCard = ({
     colSpan?: number;
     className?: string;
     delay?: number;
+    href?: string;
 }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay }}
-            viewport={{ once: true }}
-            className={cn(
-                "group relative flex flex-col justify-between p-6 md:p-8 bg-surface-100 border border-white/5 hover:border-cobalt/50 transition-colors duration-500 overflow-hidden",
-                colSpan === 2 ? "md:col-span-2" : "md:col-span-1",
-                colSpan === 3 ? "md:col-span-3" : "",
-                className
-            )}
-        >
+    const CardContent = (
+        <div className="relative h-full flex flex-col justify-between">
             {/* Hover Gradient Blob */}
             <div className="absolute -inset-24 bg-cobalt/20 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
@@ -48,6 +41,30 @@ export const BentoCard = ({
                     <span className="font-mono text-xs text-cobalt tracking-widest uppercase">Result</span>
                     <span className="font-display text-xl md:text-2xl text-white">{metrics}</span>
                 </div>
+            )}
+        </div>
+    );
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay }}
+            viewport={{ once: true }}
+            className={cn(
+                "group relative p-6 md:p-8 bg-surface-100 border border-white/5 transition-all duration-500 overflow-hidden",
+                href ? "cursor-pointer hover:border-cobalt/50 hover:bg-surface-200" : "hover:border-white/10",
+                colSpan === 2 ? "md:col-span-2" : "md:col-span-1",
+                colSpan === 3 ? "md:col-span-3" : "",
+                className
+            )}
+        >
+            {href ? (
+                <Link href={href} className="block h-full">
+                    {CardContent}
+                </Link>
+            ) : (
+                CardContent
             )}
         </motion.div>
     );

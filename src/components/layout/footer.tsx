@@ -35,9 +35,19 @@ export function Footer() {
               </p>
               <ul className="space-y-3">
                 <li>
-                  <a href="#services" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Services
-                  </a>
+                  <Link href="/services" className="text-sm text-white/50 hover:text-white transition-colors">
+                    All Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/meta-ads" className="text-sm text-white/50 hover:text-white transition-colors">
+                    Meta Ads
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/web-dev" className="text-sm text-white/50 hover:text-white transition-colors">
+                    Web Development
+                  </Link>
                 </li>
                 <li>
                   <a href="#work" className="text-sm text-white/50 hover:text-white transition-colors">

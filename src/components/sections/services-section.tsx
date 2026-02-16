@@ -32,6 +32,7 @@ export function ServicesSection() {
               metrics={service.metrics}
               colSpan={service.colSpan}
               delay={index * 0.1}
+              href={service.href}
             />
           ))}
         </div>

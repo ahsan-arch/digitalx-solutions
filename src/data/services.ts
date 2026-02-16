@@ -5,6 +5,7 @@ export type ServiceItem = {
   metrics: string;
   tags: string[];
   colSpan: number; // 1, 2, or 3 for Bento Grid
+  href?: string;
 };
 
 export const services: ServiceItem[] = [
@@ -15,6 +16,7 @@ export const services: ServiceItem[] = [
     metrics: "Avg. 4.2x ROAS",
     tags: ["CAPI Setup", "Retargeting Matrix", "Creative Testing"],
     colSpan: 2,
+    href: "/services/meta-ads",
   },
   {
     id: "web-dev",
@@ -23,6 +25,7 @@ export const services: ServiceItem[] = [
     metrics: "98+ Lighthouse",
     tags: ["Next.js 16", "Headless CMS", "WebGL"],
     colSpan: 1,
+    href: "/services/web-dev",
   },
   {
     id: "automation",
