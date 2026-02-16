@@ -10,7 +10,7 @@ export const siteConfig = {
 // The Anti-AI Copy — Punchy, outcome-focused, no buzzwords.
 export const seoCopy = {
     home: {
-        title: "DigitalX Solutions. High-Performance Web Dev & Meta Ads. We Scale ROAS.",
+        title: "DigitalX Solutions | High-Performance Web Dev & Meta Ads",
         description: "Stop settling for generic performance. We build Next.js sites that load in <200ms and engineer server-side Meta ad campaigns. No buzzwords. Just revenue.",
     },
     webDev: {

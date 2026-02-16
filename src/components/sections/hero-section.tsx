@@ -28,14 +28,15 @@ export function HeroSection() {
 
         {/* Massive Headline */}
         <div className="overflow-hidden">
-          <motion.h1
+          <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="font-display font-bold text-[clamp(3rem,12vw,12rem)] leading-[0.85] tracking-tighter text-white uppercase"
+            role="presentation"
           >
             We Build
-          </motion.h1>
+          </motion.div>
         </div>
         <div className="overflow-hidden">
           <motion.div

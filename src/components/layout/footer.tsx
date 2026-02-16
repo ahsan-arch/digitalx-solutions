@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { company } from "@/data/site-content";
+import { siteConfig } from "@/lib/seo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -76,6 +77,34 @@ export function Footer() {
                     </a>
                   </li>
                 ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
+                Share
+              </p>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(company.description)}&url=${encodeURIComponent(siteConfig.domain)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-white/50 hover:text-white transition-colors"
+                  >
+                    X (Twitter)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(siteConfig.domain)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-white/50 hover:text-white transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
