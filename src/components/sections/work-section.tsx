@@ -48,9 +48,15 @@ export function WorkSection() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {study.stack.map(tech => (
-                        <span key={tech} className="text-xs text-white/30 bg-white/5 px-2 py-1">
-                          {tech}
-                        </span>
+                        <a
+                          key={tech.name}
+                          href={tech.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-white/30 bg-white/5 px-2 py-1 hover:text-white hover:bg-cobalt transition-colors"
+                        >
+                          {tech.name}
+                        </a>
                       ))}
                     </div>
                   </div>

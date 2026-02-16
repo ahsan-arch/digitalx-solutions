@@ -4,7 +4,7 @@ export type CaseStudy = {
   industry: string;
   challenge: string;
   solution: string;
-  stack: string[]; // Tech used
+  stack: { name: string; url: string }[]; // Tech used with external links
   numbers: {
     label: string;
     value: string;
@@ -18,7 +18,11 @@ export const caseStudies: CaseStudy[] = [
     industry: "E-Commerce",
     challenge: "CPA exploded to $65 after iOS14. Creative fatigue was high.",
     solution: "Implemented server-side tracking (CAPI) and a 'vs' creative strategy comparing generic gyms to Apex home gear.",
-    stack: ["Shopify Plus", "Meta Ads Manager", "TripleWhale"],
+    stack: [
+      { name: "Shopify Plus", url: "https://www.shopify.com/plus" },
+      { name: "Meta Ads Manager", url: "https://www.facebook.com/business/tools/ads-manager" },
+      { name: "TripleWhale", url: "https://triplewhale.com/" },
+    ],
     numbers: [
       { label: "ROAS", value: "5.1x" },
       { label: "CPA", value: "$22" },
@@ -31,7 +35,11 @@ export const caseStudies: CaseStudy[] = [
     industry: "Web3 / SaaS",
     challenge: "Slow landing page caused 80% bounce rate. Brand looked generic.",
     solution: "Rebuilt on Next.js. WebGL hero section. Brutalist typography to signal technical dominance.",
-    stack: ["Next.js", "Three.js", "Vercel"],
+    stack: [
+      { name: "Next.js", url: "https://nextjs.org/" },
+      { name: "Three.js", url: "https://threejs.org/" },
+      { name: "Vercel", url: "https://vercel.com/" },
+    ],
     numbers: [
       { label: "Load Time", value: "0.4s" },
       { label: "Conversion", value: "+210%" },
