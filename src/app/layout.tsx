@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Oswald, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { generateOrganizationSchema, seoCopy, siteConfig } from "@/lib/seo";
+import { generateOrganizationSchema, generateWebSiteSchema, seoCopy, siteConfig } from "@/lib/seo";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -29,10 +29,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/en-US",
-      "en-AU": "/en-AU",
-    },
   },
   openGraph: {
     type: "website",
@@ -75,7 +71,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = generateOrganizationSchema();
+  const orgSchema = generateOrganizationSchema();
+  const webSiteSchema = generateWebSiteSchema();
 
   return (
     <html lang="en" className="dark">
@@ -83,7 +80,11 @@ export default function RootLayout({
         {/* Semantic Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
       <body className={`${oswald.variable} ${inter.variable} antialiased font-sans bg-background text-foreground`}>

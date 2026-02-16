@@ -13,6 +13,10 @@ export const seoCopy = {
         title: "DigitalX Solutions | High-Performance Web Dev & Meta Ads",
         description: "We build sub-second Next.js sites and engineer server-side Meta ad campaigns. No buzzwords. Just revenue.",
     },
+    services: {
+        title: "Our Services | Web Dev, Meta Ads & Revenue Ops",
+        description: "End-to-end digital infrastructure: sub-second websites, server-side ad tracking, and CRM automation. Everything engineered to convert.",
+    },
     webDev: {
         title: "Next.js Development for Revenue. Sub-second Load Times.",
         description: "If your site loads in >2s, you're losing money. We build headless, high-conversion web apps using Next.js 16. Google Core Web Vitals score: 100.",
@@ -25,11 +29,55 @@ export const seoCopy = {
         title: "Revenue Operations & CRM Integration. Kill Manual Data Entry.",
         description: "Sync leads from ad click to signed contract automatically. We integrate HubSpot, Salesforce, and custom Python scripts to attribute every dollar.",
     },
+    work: {
+        title: "Our Work | Case Studies & Results",
+        description: "Real numbers. Validated stacks. No fluff. See how we scale revenue for brands with high-performance web systems and Meta ad engineering.",
+    },
     contact: {
         title: "Start a Project. DigitalX Solutions.",
         description: "Serious inquiries only. If you're ready to invest in infrastructure that actually converts, fill out the terminal. $15k minimum engagement.",
     },
 };
+
+/**
+ * Generate full page metadata with OG, Twitter, and canonical for any route.
+ */
+export function generatePageMetadata(
+    route: string,
+    copy: { title: string; description: string }
+): Metadata {
+    const url = `${siteConfig.domain}${route}`;
+    return {
+        title: copy.title,
+        description: copy.description,
+        alternates: {
+            canonical: route || "/",
+        },
+        openGraph: {
+            type: "website",
+            locale: "en_US",
+            url,
+            title: copy.title,
+            description: copy.description,
+            siteName: "DigitalX Solutions",
+            images: [
+                {
+                    url: "/api/og",
+                    width: 1200,
+                    height: 630,
+                    alt: `DigitalX Solutions - ${copy.title}`,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: copy.title,
+            description: copy.description,
+            images: ["/api/og"],
+            creator: siteConfig.social.twitter,
+        },
+    };
+}
 
 // JSON-LD Generators
 export function generateOrganizationSchema() {
@@ -83,8 +131,6 @@ export function generateOrganizationSchema() {
                     "https://en.wikipedia.org/wiki/Social_media_marketing",
                     "https://en.wikipedia.org/wiki/Pay-per-click",
                 ],
-                // Fixed: OfferCatalog should be "hasOfferCatalog" property of Service, or separate.
-                // Keeping valid structure: Service -> hasOfferCatalog
                 hasOfferCatalog: {
                     "@type": "OfferCatalog",
                     name: "Meta Ads Services",
@@ -121,5 +167,41 @@ export function generateOrganizationSchema() {
                 description: seoCopy.webDev.description,
             },
         ],
+    };
+}
+
+export function generateWebSiteSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${siteConfig.domain}/#website`,
+        name: "DigitalX Solutions",
+        url: siteConfig.domain,
+        publisher: {
+            "@id": `${siteConfig.domain}/#organization`,
+        },
+        potentialAction: {
+            "@type": "SearchAction",
+            target: {
+                "@type": "EntryPoint",
+                urlTemplate: `${siteConfig.domain}/?q={search_term_string}`,
+            },
+            "query-input": "required name=search_term_string",
+        },
+    };
+}
+
+export function generateBreadcrumbSchema(
+    items: { name: string; url: string }[]
+) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items.map((item, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.name,
+            item: item.url,
+        })),
     };
 }

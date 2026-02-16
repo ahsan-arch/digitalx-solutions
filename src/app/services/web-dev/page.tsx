@@ -1,12 +1,8 @@
-import { Metadata } from "next";
-import { seoCopy } from "@/lib/seo";
+import { generatePageMetadata, seoCopy } from "@/lib/seo";
 import { ServicesSection } from "@/components/sections/services-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
-export const metadata: Metadata = {
-    title: seoCopy.webDev.title,
-    description: seoCopy.webDev.description,
-};
+export const metadata = generatePageMetadata("/services/web-dev", seoCopy.webDev);
 
 export default function WebDevPage() {
     return (

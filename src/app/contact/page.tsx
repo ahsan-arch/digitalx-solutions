@@ -1,11 +1,7 @@
-import { Metadata } from "next";
-import { seoCopy } from "@/lib/seo";
+import { generatePageMetadata, seoCopy } from "@/lib/seo";
 import { ContactSection } from "@/components/sections/contact-section";
 
-export const metadata: Metadata = {
-    title: seoCopy.contact.title,
-    description: seoCopy.contact.description,
-};
+export const metadata = generatePageMetadata("/contact", seoCopy.contact);
 
 export default function ContactPage() {
     return (
