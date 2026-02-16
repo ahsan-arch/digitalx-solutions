@@ -112,7 +112,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/20 font-mono">
+          <p className="text-sm text-white/20 font-mono">
             © {currentYear} {company.name}. All rights reserved.
           </p>
         </div>

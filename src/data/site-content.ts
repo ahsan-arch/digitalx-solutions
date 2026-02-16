@@ -107,5 +107,7 @@ export const company = {
     twitter: "https://twitter.com/digitalx_solutions",
     linkedin: "https://linkedin.com/company/digitalx-solutions",
     instagram: "https://instagram.com/digitalx_solutions",
+    youtube: "https://youtube.com/@digitalx_solutions",
+    facebook: "https://facebook.com/digitalx_solutions",
   },
 };

@@ -11,7 +11,7 @@ export const siteConfig = {
 export const seoCopy = {
     home: {
         title: "DigitalX Solutions | High-Performance Web Dev & Meta Ads",
-        description: "Stop settling for generic performance. We build Next.js sites that load in <200ms and engineer server-side Meta ad campaigns. No buzzwords. Just revenue.",
+        description: "We build sub-second Next.js sites and engineer server-side Meta ad campaigns. No buzzwords. Just revenue.",
     },
     webDev: {
         title: "Next.js Development for Revenue. Sub-second Load Times.",
@@ -53,10 +53,13 @@ export function generateOrganizationSchema() {
                     postalCode: "2170",
                     addressCountry: "AU",
                 },
+                telephone: "+61 400 000 000", // Replace with actual business number
                 sameAs: [
                     "https://twitter.com/digitalx_solutions",
                     "https://linkedin.com/company/digitalx-solutions",
                     "https://instagram.com/digitalx_solutions",
+                    "https://youtube.com/@digitalx_solutions",
+                    "https://facebook.com/digitalx_solutions",
                 ],
                 areaServed: {
                     "@type": "GeoCircle",
@@ -80,6 +83,8 @@ export function generateOrganizationSchema() {
                     "https://en.wikipedia.org/wiki/Social_media_marketing",
                     "https://en.wikipedia.org/wiki/Pay-per-click",
                 ],
+                // Fixed: OfferCatalog should be "hasOfferCatalog" property of Service, or separate.
+                // Keeping valid structure: Service -> hasOfferCatalog
                 hasOfferCatalog: {
                     "@type": "OfferCatalog",
                     name: "Meta Ads Services",
