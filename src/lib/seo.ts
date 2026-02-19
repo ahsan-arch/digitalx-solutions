@@ -99,9 +99,13 @@ export function generateOrganizationSchema() {
                 priceRange: "$$$",
                 address: {
                     "@type": "PostalAddress",
-                    addressCountry: "US",
+                    streetAddress: "16 Boldrewood Ave",
+                    addressLocality: "Casula",
+                    addressRegion: "NSW",
+                    postalCode: "2170",
+                    addressCountry: "AU",
                 },
-                telephone: "+1 302 000 0000", // Placeholder US Number
+                telephone: "+61 400 000 000", // Replace with actual business number
                 sameAs: [
                     "https://twitter.com/digitalx_solutions",
                     "https://linkedin.com/company/digitalx-solutions",
@@ -109,10 +113,16 @@ export function generateOrganizationSchema() {
                     "https://youtube.com/@digitalx_solutions",
                     "https://facebook.com/digitalx_solutions",
                 ],
-                areaServed: {
-                    "@type": "Country",
-                    name: "United States",
-                },
+                areaServed: [
+                    {
+                        "@type": "Country",
+                        name: "United States",
+                    },
+                    {
+                        "@type": "Country",
+                        name: "Australia",
+                    },
+                ],
             },
             {
                 "@type": "Service",
