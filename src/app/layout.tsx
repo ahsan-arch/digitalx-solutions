@@ -75,7 +75,7 @@ export default function RootLayout({
   const webSiteSchema = generateWebSiteSchema();
 
   return (
-    <html lang="en-US" className="dark">
+    <html lang="en" className="dark">
       <head>
         {/* Semantic Structured Data */}
         <script
