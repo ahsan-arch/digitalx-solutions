@@ -19,7 +19,7 @@ export const ConversationalAISection = () => {
                         </span>
                     </h2>
                     <p className="text-white/60 text-lg mb-8 max-w-md">
-                        Stop losing leads to "I'll call you back." Our AI agents qualify, nurture, and book appointments 24/7 via WhatsApp and Voice.
+                        Stop losing leads to &quot;I&apos;ll call you back.&quot; Our AI agents qualify, nurture, and book appointments 24/7 via WhatsApp and Voice.
                     </p>
                     <ul className="space-y-4 font-mono text-sm text-white/80">
                         <li className="flex items-center gap-3">
@@ -84,7 +84,7 @@ export const ConversationalAISection = () => {
                                     Hey! I noticed you were looking at our growth plans. Do you have any questions?
                                 </div>
                                 <div className="bg-cobalt/20 self-end p-3 rounded-tl-lg rounded-bl-lg rounded-br-lg max-w-[85%] border border-cobalt/20 text-white">
-                                    Yes, I'm interested in the enterprise tier.
+                                    Yes, I&apos;m interested in the enterprise tier.
                                 </div>
                                 <div className="bg-surface-200 self-start p-3 rounded-tr-lg rounded-br-lg rounded-bl-lg max-w-[85%] border border-white/5 text-white/80">
                                     Great choice. I can schedule a demo for you right now. How does Tuesday at 2 PM sound?
