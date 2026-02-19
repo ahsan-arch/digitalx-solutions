@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/services",
         "/services/meta-ads",
         "/services/web-dev",
+        "/services/conversational-ai",
         "/contact",
     ];
 

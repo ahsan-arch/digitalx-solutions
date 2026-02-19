@@ -37,6 +37,10 @@ export const seoCopy = {
         title: "Start a Project. DigitalX Solutions.",
         description: "Serious inquiries only. If you're ready to invest in infrastructure that actually converts, fill out the terminal. $15k minimum engagement.",
     },
+    conversationalAI: {
+        title: "Conversational AI. WhatsApp & Voice Agents.",
+        description: "Ads generate traffic; AI agents instantly qualify and book leads 24/7. Drastically improve conversion rates with 24/7 autonomous booking.",
+    },
 };
 
 /**
@@ -95,13 +99,9 @@ export function generateOrganizationSchema() {
                 priceRange: "$$$",
                 address: {
                     "@type": "PostalAddress",
-                    streetAddress: "16 Boldrewood Ave",
-                    addressLocality: "Casula",
-                    addressRegion: "NSW",
-                    postalCode: "2170",
-                    addressCountry: "AU",
+                    addressCountry: "US",
                 },
-                telephone: "+61 400 000 000", // Replace with actual business number
+                telephone: "+1 302 000 0000", // Placeholder US Number
                 sameAs: [
                     "https://twitter.com/digitalx_solutions",
                     "https://linkedin.com/company/digitalx-solutions",
@@ -110,13 +110,8 @@ export function generateOrganizationSchema() {
                     "https://facebook.com/digitalx_solutions",
                 ],
                 areaServed: {
-                    "@type": "GeoCircle",
-                    geoMidpoint: {
-                        "@type": "GeoCoordinates",
-                        latitude: -33.955,
-                        longitude: 150.880,
-                    },
-                    geoRadius: "10000",
+                    "@type": "Country",
+                    name: "United States",
                 },
             },
             {
