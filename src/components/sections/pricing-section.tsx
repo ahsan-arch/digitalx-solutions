@@ -15,7 +15,7 @@ const growthPackages = [
             { name: "Mobile responsive + SEO-ready architecture", included: true },
             { name: "Basic Meta Pixel + Server-side CAPI setup", included: true },
             { name: "Google Analytics 4 + event tracking", included: true },
-            { name: "Deployment (Vercel/Netlify)", included: true },
+            { name: "Deployment (Vercel, Netlify)", included: true },
             { name: "Advanced on-page SEO + Schema markup", included: false },
             { name: "Full Meta CAPI events + Retargeting matrix", included: false },
             { name: "Creative testing structure + Ad account setup", included: false },
@@ -38,7 +38,7 @@ const growthPackages = [
             { name: "Mobile responsive + SEO-ready architecture", included: true },
             { name: "Basic Meta Pixel + Server-side CAPI setup", included: true },
             { name: "Google Analytics 4 + event tracking", included: true },
-            { name: "Deployment (Vercel/Netlify)", included: true },
+            { name: "Deployment (Vercel, Netlify)", included: true },
             { name: "Advanced on-page SEO + Schema markup", included: true },
             { name: "Full Meta CAPI events + Retargeting matrix", included: true },
             { name: "Creative testing structure + Ad account setup", included: true },
@@ -60,7 +60,7 @@ const growthPackages = [
             { name: "Mobile responsive + SEO-ready architecture", included: true },
             { name: "Basic Meta Pixel + Server-side CAPI setup", included: true },
             { name: "Google Analytics 4 + event tracking", included: true },
-            { name: "Deployment (Vercel/Netlify)", included: true },
+            { name: "Deployment (Vercel, Netlify)", included: true },
             { name: "Advanced on-page SEO + Schema markup", included: true },
             { name: "Full Meta CAPI events + Retargeting matrix", included: true },
             { name: "Creative testing structure + Ad account setup", included: true },
@@ -101,7 +101,7 @@ const automationPackages = [
             { name: "Advanced lead routing workflows", included: true },
             { name: "GoHighLevel & CRM pipeline sync", included: true },
             { name: "Custom API Integrations", included: true },
-            { name: "Financial tool sync (QBO/Xero)", included: true },
+            { name: "Financial tool sync (QuickBooks, Xero)", included: true },
             { name: "Standard Retainer (Req.)", value: "$2.5k–$5k/mo", included: true },
             { name: "Monitoring & Uptime alerts", included: true },
             { name: "Custom AI Agents", included: false },
@@ -120,7 +120,7 @@ const automationPackages = [
             { name: "Self-Hosted Privacy setup", included: true },
             { name: "Advanced Retainer (Req.)", value: "$10k+/mo", included: true },
             { name: "Proactive Revenue Optimization", included: true },
-            { name: "Custom Python/Node services", included: true },
+            { name: "Custom Python and Node services", included: true },
             { name: "24/7 Priority Support", included: true },
         ],
     },
@@ -233,7 +233,7 @@ export function PricingSection() {
                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                 />
                             )}
-                            RevOps & Automation
+                            Bespoke Automation Systems
                         </button>
                     </div>
                 </motion.div>
