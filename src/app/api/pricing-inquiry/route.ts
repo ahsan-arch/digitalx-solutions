@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { z } from "zod";
 
+export const runtime = "nodejs"; // Force Node.js runtime for nodemailer compatibility
+export const dynamic = "force-dynamic";
+
 const pricingSchema = z.object({
     name: z.string().min(2, "Name is required"),
     email: z.string().email("Invalid email"),
