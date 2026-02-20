@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
-const packages = [
+const growthPackages = [
     {
         name: "Basic",
         price: "$270",
@@ -74,6 +74,58 @@ const packages = [
     },
 ];
 
+const automationPackages = [
+    {
+        name: "Simple Automation",
+        price: "$1,500+",
+        description: "Basic routing & CRM sync",
+        features: [
+            { name: "One-time Build Fee", included: true },
+            { name: "Basic lead routing workflows", included: true },
+            { name: "GoHighLevel pipeline sync", included: true },
+            { name: "n8n Cloud Execution", included: true },
+            { name: "Standard Retainer (Optional)", value: "$2.5k/mo", included: false },
+            { name: "Custom API Integrations", included: false },
+            { name: "Financial tool sync", included: false },
+            { name: "Custom AI Agents", included: false },
+            { name: "Self-Hosted Privacy", included: false },
+        ],
+    },
+    {
+        name: "Intermediate RevOps",
+        popular: true,
+        price: "$5,000+",
+        description: "Multi-tool data normalization",
+        features: [
+            { name: "One-time Build Fee", included: true },
+            { name: "Advanced lead routing workflows", included: true },
+            { name: "GoHighLevel & CRM pipeline sync", included: true },
+            { name: "Custom API Integrations", included: true },
+            { name: "Financial tool sync (QBO/Xero)", included: true },
+            { name: "Standard Retainer (Req.)", value: "$2.5k–$5k/mo", included: true },
+            { name: "Monitoring & Uptime alerts", included: true },
+            { name: "Custom AI Agents", included: false },
+            { name: "Deep database syncing", included: false },
+        ],
+    },
+    {
+        name: "Enterprise Architecture",
+        price: "$25k+",
+        description: "Full-scale revenue orchestration",
+        features: [
+            { name: "One-time Build Fee", included: true },
+            { name: "Replaces high-cost SaaS (Gong, Clari)", included: true },
+            { name: "Custom AI Agents & Voice bots", included: true },
+            { name: "Deep database syncing & normalization", included: true },
+            { name: "Self-Hosted Privacy setup", included: true },
+            { name: "Advanced Retainer (Req.)", value: "$10k+/mo", included: true },
+            { name: "Proactive Revenue Optimization", included: true },
+            { name: "Custom Python/Node services", included: true },
+            { name: "24/7 Priority Support", included: true },
+        ],
+    },
+];
+
 // ... (imports)
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -93,8 +145,11 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export function PricingSection() {
+    const [activeTab, setActiveTab] = useState<"growth" | "automation">("growth");
     const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string } | null>(null);
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+    const packages = activeTab === "growth" ? growthPackages : automationPackages;
 
     const {
         register,
@@ -148,9 +203,39 @@ export function PricingSection() {
                     <h2 className="font-display text-4xl md:text-5xl text-white uppercase mb-6">
                         Transparent <span className="text-cobalt">Pricing</span>
                     </h2>
-                    <p className="text-white/50 max-w-2xl mx-auto text-lg">
+                    <p className="text-white/50 max-w-2xl mx-auto text-lg mb-8">
                         Invest in a system, not just a service. All packages include our signature performance architecture.
                     </p>
+
+                    {/* Toggle Switch */}
+                    <div className="flex bg-white/5 p-1 rounded-full w-fit mx-auto backdrop-blur-sm border border-white/10 relative z-20">
+                        <button
+                            onClick={() => setActiveTab("growth")}
+                            className={`relative px-6 py-2 rounded-full text-sm font-medium transition-colors ${activeTab === "growth" ? "text-white" : "text-white/50 hover:text-white/80"}`}
+                        >
+                            {activeTab === "growth" && (
+                                <motion.div
+                                    layoutId="pricingTab"
+                                    className="absolute inset-0 bg-cobalt rounded-full -z-10"
+                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                />
+                            )}
+                            Web & Growth
+                        </button>
+                        <button
+                            onClick={() => setActiveTab("automation")}
+                            className={`relative px-6 py-2 rounded-full text-sm font-medium transition-colors ${activeTab === "automation" ? "text-white" : "text-white/50 hover:text-white/80"}`}
+                        >
+                            {activeTab === "automation" && (
+                                <motion.div
+                                    layoutId="pricingTab"
+                                    className="absolute inset-0 bg-cobalt rounded-full -z-10"
+                                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                />
+                            )}
+                            RevOps & Automation
+                        </button>
+                    </div>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -222,10 +307,11 @@ export function PricingSection() {
                     ))}
                 </div>
                 {/* ... (footer text) */}
-                <div className="mt-12 text-center">
-                    <p className="text-white/40 text-sm">
-                        Prices in USD. Final quote provided after initial consultation.
-                    </p>
+                <div className="mt-12 text-center text-white/40 text-sm space-y-2">
+                    <p>Prices in USD. Final quote provided after initial consultation.</p>
+                    {activeTab === "automation" && (
+                        <p>Automation build fees are one-time. Retainers cover monitoring, API uptime, and workflow adjustments.</p>
+                    )}
                 </div>
             </div>
 
