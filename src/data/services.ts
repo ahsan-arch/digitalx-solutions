@@ -10,13 +10,13 @@ export type ServiceItem = {
 
 export const services: ServiceItem[] = [
   {
-    id: "meta-ads",
-    title: "Meta Ads Engineering",
-    description: "We don't 'boost posts'. We engineer full-funnel acquisition systems. Server-side CAPI tailored to bypass iOS14+ signal loss.",
-    metrics: "Avg. 4.2x ROAS",
-    tags: ["CAPI Setup", "Retargeting Matrix", "Creative Testing"],
+    id: "automation",
+    title: "Advanced Revenue Operations",
+    description: "Beyond Zapier. Custom n8n and GoHighLevel architectures that handle complex, multi-step workflows basic agencies can't touch.",
+    metrics: "Automated Scale",
+    tags: ["n8n", "GoHighLevel", "Custom Architectures"],
     colSpan: 2,
-    href: "/services/meta-ads",
+    href: "/services/revenue-operations",
   },
   {
     id: "web-dev",
@@ -28,13 +28,13 @@ export const services: ServiceItem[] = [
     href: "/services/web-dev",
   },
   {
-    id: "automation",
-    title: "Advanced Revenue Operations",
-    description: "Beyond Zapier. Custom n8n and GoHighLevel architectures that handle complex, multi-step workflows basic agencies can't touch.",
-    metrics: "Automated Scale",
-    tags: ["n8n", "GoHighLevel", "Custom Architectures"],
+    id: "meta-ads",
+    title: "Meta Ads Engineering",
+    description: "We don't 'boost posts'. We engineer full-funnel acquisition systems. Server-side CAPI tailored to bypass iOS14+ signal loss.",
+    metrics: "Avg. 4.2x ROAS",
+    tags: ["CAPI Setup", "Retargeting Matrix", "Creative Testing"],
     colSpan: 1,
-    href: "/services/revenue-operations",
+    href: "/services/meta-ads",
   },
   {
     id: "conversational-ai",
