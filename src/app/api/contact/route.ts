@@ -79,9 +79,27 @@ export async function POST(req: Request) {
       ];
     }
 
-    // Send the email
+    // Send the email to admin
     await transporter.sendMail(mailOptions);
     console.log("Email sent successfully to digitalxsolutions8@gmail.com");
+
+    // Send thank-you email to the customer
+    await transporter.sendMail({
+      from: `"Digital X Solutions" <${process.env.EMAIL_USER}>`,
+      to: email,
+      subject: `We've received your request, ${name}!`,
+      html: `
+        <div style="font-family: sans-serif; color: #333;">
+          <h2>Thank you for reaching out, ${name}!</h2>
+          <p>We have received your project request and our team is already reviewing the details.</p>
+          <p>We will get back to you within <strong>24 hours</strong> to discuss the next steps.</p>
+          <br/>
+          <p>Best regards,</p>
+          <p><strong>The Digital X Solutions Team</strong></p>
+        </div>
+      `,
+    });
+    console.log("Thank-you email sent to", email);
 
     return NextResponse.json({ success: true, message: "Message sent successfully." });
   } catch (error) {
