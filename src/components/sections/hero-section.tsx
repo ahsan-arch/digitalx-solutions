@@ -59,8 +59,8 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-white/60 max-w-xl text-lg md:text-xl font-sans leading-relaxed"
           >
-            Stop settling for generic templates. We engineer high-performance <span className="text-white">Web Development</span> and <span className="text-white">Meta Ads</span> campaigns
-            that capture attention and force conversion.
+            Stop trading hours for outcomes. We engineer <span className="text-white">intelligent automation systems</span> and <span className="text-white">high-performance digital ecosystems</span>
+            that scale your operations while you focus on growth.
           </motion.p>
 
           <motion.div
