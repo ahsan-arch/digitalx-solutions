@@ -2,7 +2,13 @@ import type { Metadata, Viewport } from "next";
 import { Oswald, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { generateOrganizationSchema, generateWebSiteSchema, seoCopy, siteConfig } from "@/lib/seo";
+import {
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+  seoCopy,
+  seoKeywords,
+  siteConfig,
+} from "@/lib/seo";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -26,9 +32,15 @@ export const metadata: Metadata = {
     template: `%s | DigitalX Solutions`,
   },
   description: seoCopy.home.description,
+  keywords: seoKeywords,
   metadataBase: new URL(siteConfig.domain),
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": siteConfig.domain,
+      "en-AU": siteConfig.domain,
+      "x-default": siteConfig.domain,
+    },
   },
   openGraph: {
     type: "website",
@@ -42,7 +54,7 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "DigitalX Solutions - High Performance Systems",
+        alt: "DigitalX Solutions — Web Development & Meta Ads Agency USA & Australia",
       },
     ],
   },
@@ -63,6 +75,12 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  other: {
+    "geo.region": "AU-NSW",
+    "geo.placename": "Casula",
+    "geo.position": "-33.9519;150.9054",
+    "ICBM": "-33.9519, 150.9054",
   },
 };
 
@@ -86,6 +104,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
+
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${oswald.variable} ${inter.variable} antialiased font-sans bg-background text-foreground`}>
         {/* Grain overlay — pure CSS, no external deps */}

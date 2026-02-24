@@ -2,20 +2,54 @@ import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const routes = [
-        "",
-        "/work",
-        "/services",
-        "/services/meta-ads",
-        "/services/web-dev",
-        "/services/conversational-ai",
-        "/contact",
+    return [
+        {
+            url: siteConfig.domain,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 1.0,
+        },
+        {
+            url: `${siteConfig.domain}/services`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.9,
+        },
+        {
+            url: `${siteConfig.domain}/services/revenue-operations`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteConfig.domain}/services/web-dev`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteConfig.domain}/services/meta-ads`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteConfig.domain}/services/conversational-ai`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteConfig.domain}/work`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
+            url: `${siteConfig.domain}/contact`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
     ];
-
-    return routes.map((route) => ({
-        url: `${siteConfig.domain}${route}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: route === "" ? 1 : 0.8,
-    }));
 }

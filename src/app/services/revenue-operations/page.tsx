@@ -1,14 +1,33 @@
 import { ContactSection } from "@/components/sections/contact-section";
-import { generatePageMetadata, seoCopy } from "@/lib/seo";
+import { generatePageMetadata, generateBreadcrumbSchema, generateServicePageSchema, seoCopy, siteConfig } from "@/lib/seo";
 
-// Reusing the meta data from seo copy, we can add a specific copy for RevOps later if needed
-// For now, falling back to revenueOps copy
 export const metadata = generatePageMetadata("/services/revenue-operations", seoCopy.revenueOps);
 
 export default function RevenueOperationsPage() {
+    const serviceSchema = generateServicePageSchema({
+        name: "Revenue Operations & CRM Automation",
+        description: seoCopy.revenueOps.description,
+        url: `${siteConfig.domain}/services/revenue-operations`,
+    });
+
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: "Home", url: siteConfig.domain },
+        { name: "Services", url: `${siteConfig.domain}/services` },
+        { name: "Revenue Operations", url: `${siteConfig.domain}/services/revenue-operations` },
+    ]);
+
     return (
         <main className="min-h-screen bg-background pt-24">
-            {/* Simple Hero for now, can be expanded to a full section component later */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+
+            {/* Hero Section */}
             <section className="py-24 relative overflow-hidden flex flex-col items-center border-b border-white/5">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cobalt/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -17,7 +36,7 @@ export default function RevenueOperationsPage() {
                         Advanced <span className="text-cobalt">Revenue</span> Operations
                     </h1>
                     <p className="text-white/60 text-xl max-w-2xl mx-auto mb-12">
-                        Beyond Zapier. Custom n8n and GoHighLevel architectures that handle complex, multi-step workflows basic agencies can&apos;t touch.
+                        Beyond Zapier. Custom n8n and GoHighLevel architectures that handle complex, multi-step workflows basic agencies can&apos;t touch. Serving businesses in the USA and Australia.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left font-mono text-sm text-white/80">
