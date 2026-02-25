@@ -17,19 +17,26 @@ export default function Icon() {
             // ImageResponse JSX element
             <div
                 style={{
-                    fontSize: 24,
-                    background: 'black',
+                    background: '#050505',
                     width: '100%',
                     height: '100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'white',
-                    borderRadius: 8, // slight rounded corners
-                    border: '1px solid #333',
                 }}
             >
-                D
+                <svg
+                    width="24"
+                    height="18"
+                    viewBox="0 0 400 300"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M50 50 H90 C145.228 50 190 94.7715 190 150 C190 205.228 145.228 250 90 250 H50 V50 Z" stroke="white" strokeWidth="45" />
+                    <path d="M180 50 L320 250" stroke="white" strokeWidth="45" />
+                    <path d="M320 50 L180 250" stroke="white" strokeWidth="45" />
+                </svg>
             </div>
         ),
         // ImageResponse options
