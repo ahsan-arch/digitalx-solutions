@@ -23,20 +23,26 @@ export default function Icon() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'white',
+                    color: '#e5e7eb',
                 }}
             >
-                <svg
-                    width="24"
-                    height="18"
-                    viewBox="0 0 400 300"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div
+                    style={{
+                        width: '70%',
+                        height: '70%',
+                        border: '2px solid #e5e7eb',
+                        borderRadius: '4px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 14,
+                        fontFamily: 'sans-serif',
+                        fontWeight: 600,
+                        paddingBottom: '2px'
+                    }}
                 >
-                    <path d="M50 50 H90 C145.228 50 190 94.7715 190 150 C190 205.228 145.228 250 90 250 H50 V50 Z" stroke="white" strokeWidth="45" />
-                    <path d="M180 50 L320 250" stroke="white" strokeWidth="45" />
-                    <path d="M320 50 L180 250" stroke="white" strokeWidth="45" />
-                </svg>
+                    D
+                </div>
             </div>
         ),
         // ImageResponse options
