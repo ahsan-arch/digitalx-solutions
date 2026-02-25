@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Oswald, Inter } from "next/font/google";
 import Script from "next/script";
+import { VapiProvider } from "@/components/ui/vapi-provider";
 import "./globals.css";
 import {
   generateOrganizationSchema,
@@ -77,10 +78,8 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "geo.region": "AU-NSW",
-    "geo.placename": "Casula",
-    "geo.position": "-33.9519;150.9054",
-    "ICBM": "-33.9519, 150.9054",
+    "geo.region": ["US", "AU"],
+    "geo.placename": ["New York", "Sydney", "Casula"],
   },
 };
 
@@ -118,6 +117,9 @@ export default function RootLayout({
         />
 
         {children}
+
+        {/* Vapi Voice AI Assistant — floating button */}
+        <VapiProvider />
 
         {/* Analytics - Lazy Loaded to protect Core Web Vitals */}
         {/* 

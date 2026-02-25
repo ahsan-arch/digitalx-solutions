@@ -46,6 +46,16 @@ const PricingSection = dynamic(
   { ssr: true }
 );
 
+
+
+const ConversationalAISection = dynamic(
+  () =>
+    import("@/components/sections/conversational-ai-section").then(
+      (mod) => mod.ConversationalAISection
+    ),
+  { ssr: true }
+);
+
 export default function HomePage() {
   const faqSchema = generateFAQSchema(faqs);
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -67,6 +77,7 @@ export default function HomePage() {
       <FloatingDock />
       <main id="main">
         <HeroSection />
+        <ConversationalAISection />
         <ServicesSection />
         <PricingSection />
         <MetaAdsSection />

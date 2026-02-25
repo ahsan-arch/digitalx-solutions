@@ -46,9 +46,9 @@ export const seoCopy = {
             "Ready to invest in digital infrastructure that converts? Contact DigitalX Solutions. Minimum $15k engagement. Serving USA & Australia.",
     },
     conversationalAI: {
-        title: "Conversational AI Agents | WhatsApp & Voice Bots",
+        title: "AI Voice Receptionists & Booking Agents — USA & AU",
         description:
-            "AI agents that qualify and book leads 24/7 via WhatsApp & voice. Instant response, autonomous booking. Serving USA & Australia.",
+            "Deploy 24/7 AI voice receptionists for dental clinics, salons, and medical practices. Custom AI agents that answer calls and book slots. Serving USA & Australia.",
     },
 };
 
@@ -65,6 +65,11 @@ export const seoKeywords = [
     "GoHighLevel automation",
     "n8n workflow automation",
     "conversational AI agents",
+    "AI voice receptionist",
+    "AI booking agent USA",
+    "AI voice agent Australia",
+    "Vapi AI development agency",
+    "AI call center automation",
     "WhatsApp business bot",
     "digital marketing agency Sydney",
     "digital marketing agency New York",
@@ -126,6 +131,10 @@ export function generatePageMetadata(
             description: copy.description,
             images: [`/api/og?${ogParams.toString()}`],
             creator: siteConfig.social.twitter,
+        },
+        other: {
+            "geo.region": "US, AU",
+            "geo.placename": "New York, Sydney",
         },
     };
 }
