@@ -11,9 +11,9 @@ export const siteConfig = {
 // Every title ≤60 chars, every description ≤155 chars, includes US/AU signals
 export const seoCopy = {
     home: {
-        title: "DigitalX Solutions | Web Dev & Meta Ads Agency — USA & Australia",
+        title: "DigitalX Solutions | Web Dev & Automation Agency — USA & Australia",
         description:
-            "High-performance Next.js websites & Meta ad systems engineered for revenue. Serving businesses across the United States and Australia. Results, not buzzwords.",
+            "High-performance Next.js websites & intelligent automation systems engineered for revenue. Serving businesses across the United States and Australia. Results, not buzzwords.",
     },
     services: {
         title: "Digital Marketing Services | Web Dev, Ads & Automation",
@@ -378,5 +378,36 @@ export function generateServicePageSchema(service: {
                 })),
             },
         }),
+    };
+}
+
+export function generateArticleSchema(article: {
+    headline: string;
+    description: string;
+    image: string;
+    datePublished: string;
+    dateModified: string;
+    authorName: string;
+    url: string;
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": article.url,
+        },
+        headline: article.headline,
+        description: article.description,
+        image: article.image,
+        datePublished: article.datePublished,
+        dateModified: article.dateModified,
+        author: {
+            "@type": "Person",
+            name: article.authorName,
+        },
+        publisher: {
+            "@id": `${siteConfig.domain}/#organization`,
+        },
     };
 }

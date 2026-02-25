@@ -51,5 +51,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "monthly",
             priority: 0.7,
         },
+        {
+            url: `${siteConfig.domain}/locations/usa`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.9,
+        },
+        {
+            url: `${siteConfig.domain}/locations/australia`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.9,
+        },
+        {
+            url: `${siteConfig.domain}/insights`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteConfig.domain}/insights/server-side-tracking-meta-ads`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        }
     ];
 }

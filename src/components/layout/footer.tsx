@@ -117,6 +117,24 @@ export function Footer() {
                 </li>
               </ul>
             </div>
+
+            <div>
+              <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
+                Locations
+              </p>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/locations/usa" className="text-sm text-white/50 hover:text-white transition-colors">
+                    USA
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/locations/australia" className="text-sm text-white/50 hover:text-white transition-colors">
+                    Australia
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
