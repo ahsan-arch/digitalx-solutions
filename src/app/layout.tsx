@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "DigitalX Solutions — Web Development & Meta Ads Agency USA & Australia",
+        alt: "DigitalX Solutions — Web Development & Automation Agency USA & Australia",
       },
     ],
   },
