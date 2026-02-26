@@ -8,10 +8,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "remotion:studio": "npx remotion studio",
+    "remotion:render": "npx remotion render PromoVideo out/promo.mp4"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@remotion/cli": "^4.0.429",
+    "@remotion/media": "^4.0.429",
+    "@remotion/transitions": "^4.0.429",
     "@types/nodemailer": "^7.0.9",
     "@vapi-ai/web": "^2.5.2",
     "@vercel/og": "^0.8.6",
@@ -23,6 +28,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.71.1",
+    "remotion": "^4.0.429",
     "tailwind-merge": "^2.6.0",
     "zod": "^3.25.76"
   },

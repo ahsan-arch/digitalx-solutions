@@ -25,7 +25,7 @@ export const services: ServiceItem[] = [
     metrics: "98+ Lighthouse",
     tags: ["Next.js 16", "Headless CMS", "WebGL"],
     colSpan: 1,
-    href: "/services/web-dev",
+    href: "/services/nextjs-development",
   },
   {
     id: "meta-ads",
@@ -34,7 +34,7 @@ export const services: ServiceItem[] = [
     metrics: "Avg. 4.2x ROAS",
     tags: ["CAPI Setup", "Retargeting Matrix", "Creative Testing"],
     colSpan: 1,
-    href: "/services/meta-ads",
+    href: "/services/meta-ads-engineering",
   },
   {
     id: "conversational-ai",
@@ -43,7 +43,7 @@ export const services: ServiceItem[] = [
     metrics: "24/7 Booking",
     tags: ["WhatsApp Bots", "Voice Agents", "Instant Qualify"],
     colSpan: 2,
-    href: "/services/conversational-ai",
+    href: "/services/ai-voice-receptionists",
   },
   {
     id: "creative",
