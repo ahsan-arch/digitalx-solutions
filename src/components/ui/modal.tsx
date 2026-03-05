@@ -24,6 +24,15 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
         };
     }, [isOpen]);
 
+    // Close on Escape key
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === "Escape" && isOpen) onClose();
+        };
+        window.addEventListener("keydown", handleEscape);
+        return () => window.removeEventListener("keydown", handleEscape);
+    }, [isOpen, onClose]);
+
     if (!isOpen) return null;
 
     return createPortal(
@@ -34,13 +43,20 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                        className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
                     >
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            initial={{ opacity: 0, scale: 0.92, y: 30 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            exit={{ opacity: 0, scale: 0.92, y: 30 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 350,
+                                damping: 30,
+                                mass: 0.8,
+                            }}
                             onClick={(e) => e.stopPropagation()}
                             className="bg-surface-100 border border-white/10 w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl relative"
                         >
@@ -48,9 +64,9 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                                 <h3 className="text-xl font-display text-white">{title}</h3>
                                 <button
                                     onClick={onClose}
-                                    className="text-white/40 hover:text-white transition-colors"
+                                    className="text-white/40 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
                                 >
-                                    <X size={24} />
+                                    <X size={20} />
                                 </button>
                             </div>
                             <div className="p-6">{children}</div>

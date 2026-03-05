@@ -1,6 +1,7 @@
 import { generatePageMetadata, generateBreadcrumbSchema, generateServicePageSchema, seoCopy, siteConfig } from "@/lib/seo";
 import { ConversationalAISection } from "@/components/sections/conversational-ai-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { SubPageLayout } from "@/components/layout";
 
 export const metadata = generatePageMetadata("/services/conversational-ai", seoCopy.conversationalAI);
 
@@ -18,7 +19,7 @@ export default function ConversationalAIPage() {
     ]);
 
     return (
-        <main className="pt-20">
+        <SubPageLayout>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -29,6 +30,6 @@ export default function ConversationalAIPage() {
             />
             <ConversationalAISection />
             <ContactSection />
-        </main>
+        </SubPageLayout>
     );
 }

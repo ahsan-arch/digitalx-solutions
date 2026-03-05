@@ -1,6 +1,7 @@
 import { generatePageMetadata, generateBreadcrumbSchema, generateServicePageSchema, seoCopy, siteConfig } from "@/lib/seo";
 import { ServicesSection } from "@/components/sections/services-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { SubPageLayout } from "@/components/layout";
 
 export const metadata = generatePageMetadata("/services/web-dev", seoCopy.webDev);
 
@@ -21,7 +22,7 @@ export default function WebDevPage() {
     ]);
 
     return (
-        <main className="pt-20">
+        <SubPageLayout>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -30,9 +31,8 @@ export default function WebDevPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
-            {/* We reuse the services section but this page is targeted for Web Dev SEO */}
             <ServicesSection />
             <ContactSection />
-        </main>
+        </SubPageLayout>
     );
 }

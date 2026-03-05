@@ -2,6 +2,7 @@ import { generatePageMetadata, generateBreadcrumbSchema, seoCopy, siteConfig } f
 import { ServicesSection } from "@/components/sections/services-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { SubPageLayout } from "@/components/layout";
 
 export const metadata = generatePageMetadata("/services", seoCopy.services);
 
@@ -12,7 +13,7 @@ export default function ServicesPage() {
     ]);
 
     return (
-        <main className="pt-20">
+        <SubPageLayout>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -20,6 +21,6 @@ export default function ServicesPage() {
             <ServicesSection />
             <PricingSection />
             <ContactSection />
-        </main>
+        </SubPageLayout>
     );
 }

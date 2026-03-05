@@ -36,7 +36,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "They cut our CPL by 70% in the first two months. Not with some magic trick — with better tracking, better creative, and better landing pages. The basics, done right.",
+      "They cut our CPL by 70% in the first two months. Not with some magic trick but with better tracking, better creative, and better landing pages. The basics, done right.",
     author: "James Whitfield",
     role: "Head of Growth",
     company: "Carve Finance",
@@ -55,17 +55,17 @@ export const faqs: FAQ[] = [
   {
     question: "What's your minimum engagement?",
     answer:
-      "For web projects, we start at $15k. For ongoing ads management and marketing, $3,500/mo with a 3-month minimum. We're not the cheapest option — we're the one that works.",
+      "For web projects, we start at $15k. For ongoing ads management and marketing, $3,500/mo with a 3 month minimum. We're not the cheapest option, we're the one that works.",
   },
   {
     question: "Do you work with startups?",
     answer:
-      "Yes, if the budget is there. We've worked with pre-seed to Series B. We care about the problem you're solving and whether we can move the needle, not your funding round.",
+      "Yes, if the budget is there. We've worked with pre seed to Series B. We care about the problem you're solving and whether we can move the needle, not your funding round.",
   },
   {
     question: "How fast can you ship a website?",
     answer:
-      "A marketing site typically takes 4–6 weeks from kickoff to launch. Complex web apps are 8–14 weeks. We don't rush to ship garbage, but we don't drag projects out either.",
+      "A marketing site typically takes 4 to 6 weeks from kickoff to launch. Complex web apps are 8 to 14 weeks. We don't rush to ship garbage, but we don't drag projects out either.",
   },
   {
     question: "What if we already have a dev team?",
@@ -75,7 +75,7 @@ export const faqs: FAQ[] = [
   {
     question: "Do you do design?",
     answer:
-      "We do strategic design — not art direction for the sake of it. Every design decision has a conversion rationale. If you want award-show aesthetics with no business logic, we're not the fit.",
+      "We do strategic design, not art direction for the sake of it. Every design decision has a conversion rationale. If you want award show aesthetics with no business logic, we're not the fit.",
   },
   {
     question: "What's your reporting like?",
@@ -100,9 +100,9 @@ export const company = {
   name: "DigitalX Solutions",
   tagline: "We build what performs.",
   description:
-    "Performance-obsessed digital agency. We build fast sites, run profitable ads, and grow brands that care about numbers — not just aesthetics.",
+    "Performance obsessed digital agency. We build fast sites, run profitable ads, and grow brands that care about numbers, not just aesthetics.",
   email: "digitalxsolutions8@gmail.com",
-  location: "Remote-first · Australia",
+  location: "Remote first · Australia",
   socials: {
     twitter: "https://twitter.com/digitalx_solutions",
     linkedin: "https://linkedin.com/company/digitalx-solutions",

@@ -27,12 +27,12 @@
 
   /* Selection color */
   ::selection {
-    @apply bg-cobalt/30 text-foreground;
+    @apply bg-neon/30 text-foreground;
   }
 
   /* Scrollbar styling (Chromium) */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -41,6 +41,7 @@
 
   ::-webkit-scrollbar-thumb {
     @apply bg-surface-300 rounded-full;
+    transition: background-color 0.2s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -49,7 +50,29 @@
 
   /* Focus ring */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-cobalt;
+    @apply outline-2 outline-offset-2 outline-neon;
+  }
+
+  /* ── GPU Acceleration Hints ── */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* ── Reduced Motion Accessibility ── */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -59,7 +82,7 @@
   /* Text gradient helper */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, theme("colors.cobalt.DEFAULT"), theme("colors.cobalt.vivid"));
+    background-image: linear-gradient(135deg, theme("colors.neon.DEFAULT"), theme("colors.neon.vivid"));
   }
 
   /* Hide scrollbar but keep functionality */
@@ -70,5 +93,24 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* ── Custom Easing Curves ── */
+  .ease-out-expo {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ease-out-quart {
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .ease-in-out-cubic {
+    transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  /* ── Smooth Section Separator ── */
+  .section-fade-top {
+    mask-image: linear-gradient(to bottom, transparent, black 80px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 80px);
   }
 }

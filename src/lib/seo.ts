@@ -11,7 +11,7 @@ export const siteConfig = {
 // Every title ≤60 chars, every description ≤155 chars, includes US/AU signals
 export const seoCopy = {
     home: {
-        title: "DigitalX Solutions | High-Performance Web & Automation Agency",
+        title: "DigitalX Solutions | High Performance Web & Automation Agency",
         description:
             "Bespoke Next.js development, Meta ads engineering, and custom n8n/GoHighLevel automation. Premium digital infrastructure for brands in the USA & Australia.",
     },
@@ -21,14 +21,14 @@ export const seoCopy = {
             "End-to-end digital infrastructure: sub-second websites, server-side CAPI tracking, bespoke revenue operations & AI voice agents. Serving USA & Australia.",
     },
     webDev: {
-        title: "High-Performance Web Development Agency | Next.js Experts",
+        title: "High Performance Web Development Agency | Next.js Experts",
         description:
             "Sub-second Next.js websites engineered for conversion. 100 Lighthouse scores, headless CMS, SEO-baked architecture. Serving the US & Australia.",
     },
     metaAds: {
-        title: "Meta Ads Engineering Agency | Server-Side CAPI Experts",
+        title: "Meta Ads Engineering Agency | Server Side CAPI Experts",
         description:
-            "Stop iOS14 signal loss. Full-funnel Meta ad systems engineered with server-side CAPI tracking. Avg 4.2x ROAS for clients in USA & Australia.",
+            "Stop iOS14 signal loss. Full-funnel Meta ad systems engineered with server side CAPI tracking. Avg 4.2x ROAS for clients in USA & Australia.",
     },
     revenueOps: {
         title: "Bespoke Revenue Operations & Custom n8n Automation",
@@ -41,12 +41,12 @@ export const seoCopy = {
             "Real numbers, validated stacks. See how we scale revenue with high-performance web systems and Meta CAPI engineering in Sydney, NYC, & beyond.",
     },
     contact: {
-        title: "Start a Project | DigitalX Solutions — Get in Touch",
+        title: "Start a Project | DigitalX Solutions | Get in Touch",
         description:
-            "Invest in engineered solutions that convert. Contact our high-performance web development and automation agency. Serving USA & Australia.",
+            "Invest in engineered solutions that convert. Contact our high performance web development and automation agency. Serving USA & Australia.",
     },
     conversationalAI: {
-        title: "AI Voice Receptionists & Custom Booking Agents — USA & AU",
+        title: "AI Voice Receptionists & Custom Booking Agents | USA & AU",
         description:
             "Deploy 24/7 AI voice receptionists for dental clinics, salons, and medical practices. Custom conversational AI agents. Serving USA & Australia.",
     },
@@ -55,10 +55,10 @@ export const seoCopy = {
 // ── Primary target keywords for metadata ──
 export const seoKeywords = [
     // High-Intent "Money" Keywords
-    "high-performance web development agency",
+    "high performance web development agency",
     "Next.js development agency",
     "Meta ads engineering agency",
-    "server-side CAPI Meta ads expert",
+    "server side CAPI Meta ads expert",
     "custom n8n automation agency",
     "GoHighLevel custom architecture",
     "bespoke revenue operations agency",
@@ -79,7 +79,7 @@ export const seoKeywords = [
     // Local & Regional SEO Keywords
     "digital agency Sydney",
     "Meta ads agency NSW",
-    "high-performance web developer Sydney",
+    "high performance web developer Sydney",
     "AI automation agency Australia",
     "B2B digital growth agency NYC",
     "B2B digital growth agency London",
@@ -231,9 +231,9 @@ export function generateOrganizationSchema() {
                 ],
                 knowsAbout: [
                     "Next.js Development Agency",
-                    "High-Performance Web Development",
+                    "High Performance Web Development",
                     "Meta Ads Engineering",
-                    "Server-Side CAPI Tracking",
+                    "Server Side CAPI Tracking",
                     "Custom n8n Automation",
                     "Bespoke Revenue Operations",
                     "GoHighLevel Architectures",
@@ -287,7 +287,7 @@ export function generateOrganizationSchema() {
             {
                 "@type": "Service",
                 "@id": `${siteConfig.domain}/#service-web-dev`,
-                serviceType: "High-Performance Web Development",
+                serviceType: "High Performance Web Development",
                 provider: {
                     "@id": `${siteConfig.domain}/#organization`,
                 },

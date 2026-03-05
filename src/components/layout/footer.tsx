@@ -23,12 +23,12 @@ export function Footer() {
             <address className="not-italic text-sm text-white/30 mt-4 font-mono leading-relaxed">
               <p>DigitalX Solutions HQ</p>
               <p>16 Boldrewood Ave</p>
-              <p>Casula, NSW, Australia - 2170</p>
+              <p>Casula, NSW, Australia 2170</p>
             </address>
           </div>
 
           {/* Quick Links + Contact */}
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
                 Navigate
@@ -40,12 +40,12 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/meta-ads" className="text-sm text-white/50 hover:text-white transition-colors">
+                  <Link href="/services/meta-ads-engineering" className="text-sm text-white/50 hover:text-white transition-colors">
                     Meta Ads
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/web-dev" className="text-sm text-white/50 hover:text-white transition-colors">
+                  <Link href="/services/nextjs-development" className="text-sm text-white/50 hover:text-white transition-colors">
                     Web Development
                   </Link>
                 </li>

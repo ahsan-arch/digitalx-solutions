@@ -1,15 +1,8 @@
 "use client";
 
-import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
-import { useRef } from "react";
-import { cn } from "@/lib/utils"; // Assuming a utils file exists or I should create one, but usually it's standard. I'll check/create utils if needed later, but standard create-next-app usually has it. I'll assume standard Shadcn-like utils or create inline if simple.
-// Actually standard create-next-app doesn't always have lib/utils. I'll check if lib/utils exists. 
-// For safety, I'll inline the class merger or assume it exists. 
-// Wait, Step 17 showed `src` but I didn't verify `src/lib`. 
-// I'll stick to `clsx` and `tailwind-merge` directly if I'm not sure, or verify.
-// Given the prompt "Review", I'll just safe-bet create it or use inline.
-// I'll use standard imports and if it fails I'll fix.
-
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export const MagneticButton = ({
     children,
@@ -21,6 +14,11 @@ export const MagneticButton = ({
     onClick?: () => void;
 }) => {
     const ref = useRef<HTMLButtonElement>(null);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        setIsTouchDevice(!window.matchMedia("(hover: hover)").matches);
+    }, []);
 
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -29,6 +27,7 @@ export const MagneticButton = ({
     const mouseY = useSpring(y, { stiffness: 150, damping: 15, mass: 0.1 });
 
     function handleMouseMove({ clientX, clientY }: React.MouseEvent) {
+        if (isTouchDevice) return;
         const { left, top, width, height } = ref.current!.getBoundingClientRect();
         const center = { x: left + width / 2, y: top + height / 2 };
         const distance = { x: clientX - center.x, y: clientY - center.y };
@@ -48,10 +47,12 @@ export const MagneticButton = ({
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}
-            style={{ x: mouseX, y: mouseY }}
+            style={isTouchDevice ? undefined : { x: mouseX, y: mouseY }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
             className={cn(
-                "relative uppercase tracking-wider font-bold text-xs md:text-sm px-8 py-4 bg-cobalt text-white rounded-none border border-transparent transition-colors hover:bg-cobalt-vivid hover:border-white/20",
-                "before:absolute before:inset-0 before:z-[-1] before:bg-cobalt-vivid before:scale-0 before:transition-transform before:duration-300 hover:before:scale-105",
+                "relative font-medium text-sm md:text-base px-6 py-3 bg-neon text-background rounded-stitch border border-transparent transition-colors hover:bg-neon-vivid",
+                "before:absolute before:inset-0 before:z-[-1] before:bg-neon-vivid before:scale-0 before:transition-transform before:duration-300 before:rounded-stitch hover:before:scale-105",
                 className
             )}
         >

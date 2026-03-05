@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Oswald, Inter } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import Script from "next/script";
 import { VapiProvider } from "@/components/ui/vapi-provider";
 import "./globals.css";
@@ -11,9 +11,9 @@ import {
   siteConfig,
 } from "@/lib/seo";
 
-const oswald = Oswald({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-oswald",
+  variable: "--font-space-grotesk",
 });
 
 const inter = Inter({
@@ -107,7 +107,7 @@ export default function RootLayout({
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${oswald.variable} ${inter.variable} antialiased font-sans bg-background text-foreground`}>
+      <body className={`${spaceGrotesk.variable} ${inter.variable} antialiased font-sans bg-background text-foreground`}>
         {/* Grain overlay — pure CSS, no external deps */}
         <div
           className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] mix-blend-overlay"
@@ -137,6 +137,6 @@ export default function RootLayout({
         </Script>
         */}
       </body>
-    </html>
+    </html >
   );
 }

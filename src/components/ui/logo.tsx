@@ -50,11 +50,11 @@ export function DigitalXLogo({ className = "w-auto h-8" }: { className?: string 
             xmlns="http://www.w3.org/2000/svg"
         >
             {/* D shape */}
-            <path d="M50 50 H90 C145.228 50 190 94.7715 190 150 C190 205.228 145.228 250 90 250 H50 V50 Z" stroke="white" strokeWidth="35" />
+            <path d="M50 50 H90 C145.228 50 190 94.7715 190 150 C190 205.228 145.228 250 90 250 H50 V50 Z" stroke="currentColor" strokeWidth="35" />
 
             {/* X shape */}
-            <path d="M180 50 L320 250" stroke="white" strokeWidth="35" />
-            <path d="M320 50 L180 250" stroke="white" strokeWidth="35" />
+            <path d="M180 50 L320 250" stroke="currentColor" strokeWidth="35" />
+            <path d="M320 50 L180 250" stroke="currentColor" strokeWidth="35" />
         </svg>
     );
 }

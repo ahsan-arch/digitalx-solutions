@@ -1,5 +1,6 @@
 import { generatePageMetadata, generateBreadcrumbSchema, seoCopy, siteConfig } from "@/lib/seo";
 import { ContactSection } from "@/components/sections/contact-section";
+import { SubPageLayout } from "@/components/layout";
 
 export const metadata = generatePageMetadata("/contact", seoCopy.contact);
 
@@ -10,12 +11,12 @@ export default function ContactPage() {
     ]);
 
     return (
-        <main className="pt-20">
+        <SubPageLayout>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <ContactSection />
-        </main>
+        </SubPageLayout>
     );
 }

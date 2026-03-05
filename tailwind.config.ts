@@ -2,12 +2,12 @@ import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
 /**
- * Velocity Digital — Design Tokens (Refined)
+ * Digital X Solution — Design Tokens (Stitch Redesign)
  *
- * AESTHETIC: Swiss Style / Brutalism
- * - Typography: Oswald (headings), Inter (technical/body)
- * - Colors: High contrast, dark mode default.
- * - Interaction: 3D tilts, magnetic pulls.
+ * AESTHETIC: High-Tech Dark Mode / Electric Neon
+ * - Typography: Space Grotesk (headings), Inter (body)
+ * - Colors: Abyssal dark mode + Electric Neon Green (#0df26c)
+ * - Interaction: 3D tilts, magnetic pulls, neon glow effects.
  */
 
 const config: Config = {
@@ -20,22 +20,28 @@ const config: Config = {
   theme: {
     fontFamily: {
       sans: ['var(--font-inter)', "sans-serif"],
-      display: ['var(--font-oswald)', "sans-serif"],
+      display: ['var(--font-space-grotesk)', "sans-serif"],
       mono: ['"jetbrains mono"', "monospace"],
     },
     extend: {
       colors: {
-        background: "#050505", // Deeper than charcoal
-        foreground: "#ededed", // Off-white
-        
-        // Swiss/Brutalist Palette
+        background: "#050505", // Abyssal Obsidian
+        foreground: "#ededed", // Crisp Off-White
+
+        // Stitch Design Palette
         cobalt: {
-          DEFAULT: "#2d5bff",
-          vivid: "#0033ff",
+          DEFAULT: "#0df26c",
+          vivid: "#0ac957",
         },
         acid: {
-          green: "#ccff00",
-          purple: "#b026ff",
+          green: "#0df26c",
+          purple: "#0df26c",
+        },
+        neon: {
+          DEFAULT: "#0df26c",
+          vivid: "#0ac957",
+          dim: "#09a34a",
+          glow: "rgba(13, 242, 108, 0.3)",
         },
         surface: {
           100: "#121212",
@@ -44,12 +50,18 @@ const config: Config = {
         },
         border: "rgba(255, 255, 255, 0.1)",
       },
+      borderRadius: {
+        'stitch': '8px',
+      },
       backgroundImage: {
-        'noise': "url('/noise.png')", // We will implement a CSS-based noise fallback
+        'noise': "url('/noise.png')",
       },
       animation: {
         'marquee': 'marquee 25s linear infinite',
         'blink': 'blink 1s step-end infinite',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+        'scale-in': 'scaleIn 0.5s ease-out forwards',
+        'slide-up-dock': 'slideUpDock 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
       keyframes: {
         marquee: {
@@ -60,6 +72,18 @@ const config: Config = {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
         },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        slideUpDock: {
+          '0%': { opacity: '0', transform: 'translateX(-50%) translateY(100%)' },
+          '100%': { opacity: '1', transform: 'translateX(-50%) translateY(0)' },
+        },
       },
       // 3D Transform Utilities
       transformOrigin: {
@@ -69,7 +93,7 @@ const config: Config = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-     plugin(function ({ addUtilities }) {
+    plugin(function ({ addUtilities }) {
       addUtilities({
         ".preserve-3d": {
           "transform-style": "preserve-3d",

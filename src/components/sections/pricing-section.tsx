@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
@@ -13,7 +13,7 @@ const growthPackages = [
             { name: "Fully functional Next.js Website", included: true },
             { name: "< 200ms loading & 98+ Lighthouse score", included: true },
             { name: "Mobile responsive + SEO-ready architecture", included: true },
-            { name: "Basic Meta Pixel + Server-side CAPI setup", included: true },
+            { name: "Basic Meta Pixel + Server side CAPI setup", included: true },
             { name: "Google Analytics 4 + event tracking", included: true },
             { name: "Deployment (Vercel, Netlify)", included: true },
             { name: "Advanced on-page SEO + Schema markup", included: false },
@@ -21,9 +21,9 @@ const growthPackages = [
             { name: "Creative testing structure + Ad account setup", included: false },
             { name: "Headless CMS integration", included: false },
             { name: "Performance creative", value: "No", included: false },
-            { name: "Full-funnel Meta ads engineering", included: false },
+            { name: "Full funnel Meta ads engineering", included: false },
             { name: "Revenue Ops: CRM + Automation", included: false },
-            { name: "Post-launch support", included: false },
+            { name: "Post launch support", included: false },
             { name: "Revisions", value: "2", included: true },
         ],
     },
@@ -36,7 +36,7 @@ const growthPackages = [
             { name: "Fully functional Next.js Website", included: true },
             { name: "< 200ms loading & 98+ Lighthouse score", included: true },
             { name: "Mobile responsive + SEO-ready architecture", included: true },
-            { name: "Basic Meta Pixel + Server-side CAPI setup", included: true },
+            { name: "Basic Meta Pixel + Server side CAPI setup", included: true },
             { name: "Google Analytics 4 + event tracking", included: true },
             { name: "Deployment (Vercel, Netlify)", included: true },
             { name: "Advanced on-page SEO + Schema markup", included: true },
@@ -44,10 +44,10 @@ const growthPackages = [
             { name: "Creative testing structure + Ad account setup", included: true },
             { name: "Headless CMS integration", included: true },
             { name: "Performance creative", value: "5 ideas", included: true },
-            { name: "Full-funnel Meta ads engineering", included: false },
+            { name: "Full funnel Meta ads engineering", included: false },
             { name: "Revenue Ops: CRM + Automation", included: false },
-            { name: "Post-launch support", included: false },
-            { name: "Revisions", value: "3–4", included: true },
+            { name: "Post launch support", included: false },
+            { name: "Revisions", value: "3 to 4", included: true },
         ],
     },
     {
@@ -58,17 +58,17 @@ const growthPackages = [
             { name: "Fully functional Next.js Website", included: true },
             { name: "< 200ms loading & 98+ Lighthouse score", included: true },
             { name: "Mobile responsive + SEO-ready architecture", included: true },
-            { name: "Basic Meta Pixel + Server-side CAPI setup", included: true },
+            { name: "Basic Meta Pixel + Server side CAPI setup", included: true },
             { name: "Google Analytics 4 + event tracking", included: true },
             { name: "Deployment (Vercel, Netlify)", included: true },
             { name: "Advanced on-page SEO + Schema markup", included: true },
             { name: "Full Meta CAPI events + Retargeting matrix", included: true },
             { name: "Creative testing structure + Ad account setup", included: true },
             { name: "Headless CMS integration", included: true },
-            { name: "Performance creative", value: "8–10 concepts", included: true },
-            { name: "Full-funnel Meta ads engineering", included: true },
+            { name: "Performance creative", value: "8 to 10 concepts", included: true },
+            { name: "Full funnel Meta ads engineering", included: true },
             { name: "Revenue Ops: CRM + Automation", included: true },
-            { name: "Post-launch support", value: "1 month", included: true },
+            { name: "Post launch support", value: "1 month", included: true },
             { name: "Revisions", value: "Unlimited", included: true },
         ],
     },
@@ -88,7 +88,7 @@ const automationPackages = [
             { name: "Custom API Integrations", included: false },
             { name: "Financial tool sync", included: false },
             { name: "Custom AI Agents", included: false },
-            { name: "Self-Hosted Privacy", included: false },
+            { name: "Self Hosted Privacy", included: false },
         ],
     },
     {
@@ -102,7 +102,7 @@ const automationPackages = [
             { name: "GoHighLevel & CRM pipeline sync", included: true },
             { name: "Custom API Integrations", included: true },
             { name: "Financial tool sync (QuickBooks, Xero)", included: true },
-            { name: "Standard Retainer (Req.)", value: "$2.5k–$5k/mo", included: true },
+            { name: "Standard Retainer (Req.)", value: "$2.5k to $5k/mo", included: true },
             { name: "Monitoring & Uptime alerts", included: true },
             { name: "Custom AI Agents", included: false },
             { name: "Deep database syncing", included: false },
@@ -114,7 +114,7 @@ const automationPackages = [
         description: "Full-scale revenue orchestration",
         features: [
             { name: "One-time Build Fee", included: true },
-            { name: "Replaces high-cost SaaS (Gong, Clari)", included: true },
+            { name: "Replaces high cost SaaS (Gong, Clari)", included: true },
             { name: "Custom AI Agents & Voice bots", included: true },
             { name: "Deep database syncing & normalization", included: true },
             { name: "Self-Hosted Privacy setup", included: true },
@@ -238,73 +238,75 @@ export function PricingSection() {
                     </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {packages.map((pkg, index) => (
-                        <motion.div
-                            key={pkg.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`relative p-8 rounded-3xl border ${pkg.popular
-                                ? "border-cobalt bg-white/5"
-                                : "border-white/10 bg-white/[0.02]"
-                                } flex flex-col`}
-                        >
-                            {/* ... (existing card content) */}
-                            {pkg.popular && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cobalt text-white px-4 py-1 rounded-full text-sm font-medium uppercase tracking-wider">
-                                    Most Popular
-                                </div>
-                            )}
-
-                            <div className="mb-8">
-                                <h3 className="text-xl font-display uppercase tracking-wider text-white mb-2">
-                                    {pkg.name}
-                                </h3>
-                                <div className="flex items-baseline gap-1 mb-4">
-                                    <span className="text-4xl md:text-5xl font-bold text-white">
-                                        {pkg.price}
-                                    </span>
-                                    <span className="text-white/40 text-sm">USD</span>
-                                </div>
-                                <p className="text-white/60 text-sm h-10">{pkg.description}</p>
-                            </div>
-
-                            <div className="flex-grow space-y-4 mb-8">
-                                {pkg.features.map((feature, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        {feature.included ? (
-                                            <Check className="w-5 h-5 text-cobalt shrink-0 mt-0.5" />
-                                        ) : (
-                                            <X className="w-5 h-5 text-white/20 shrink-0 mt-0.5" />
-                                        )}
-                                        <span
-                                            className={`text-sm ${feature.included ? "text-white/80" : "text-white/30"
-                                                }`}
-                                        >
-                                            {feature.name}
-                                            {feature.value && (
-                                                <span className="text-white ml-1 font-medium">
-                                                    ({feature.value})
-                                                </span>
-                                            )}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <MagneticButton
-                                onClick={() => setSelectedPlan({ name: pkg.name, price: pkg.price })}
-                                className={`w-full py-4 rounded-full font-medium transition-colors ${pkg.popular
-                                    ? "bg-cobalt text-white hover:bg-cobalt/90"
-                                    : "bg-white/10 text-white hover:bg-white/20"
-                                    }`}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    <AnimatePresence mode="popLayout">
+                        {packages.map((pkg, index) => (
+                            <motion.div
+                                key={`${activeTab}-${pkg.name}`}
+                                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                                transition={{ delay: index * 0.1, duration: 0.4, ease: "easeOut" }}
+                                className={`relative p-8 rounded-3xl border ${pkg.popular
+                                    ? "border-cobalt bg-white/5 shadow-[0_0_30px_rgba(13,242,108,0.1)]"
+                                    : "border-white/10 bg-white/[0.02]"
+                                    } flex flex-col`}
                             >
-                                Get Started
-                            </MagneticButton>
-                        </motion.div>
-                    ))}
+                                {/* ... (existing card content) */}
+                                {pkg.popular && (
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cobalt text-white px-4 py-1 rounded-full text-sm font-medium uppercase tracking-wider whitespace-nowrap">
+                                        Most Popular
+                                    </div>
+                                )}
+
+                                <div className="mb-8">
+                                    <h3 className="text-xl font-display uppercase tracking-wider text-white mb-2">
+                                        {pkg.name}
+                                    </h3>
+                                    <div className="flex items-baseline gap-1 mb-4">
+                                        <span className="text-4xl md:text-5xl font-bold text-white">
+                                            {pkg.price}
+                                        </span>
+                                        <span className="text-white/40 text-sm">USD</span>
+                                    </div>
+                                    <p className="text-white/60 text-sm h-auto min-h-[2.5rem]">{pkg.description}</p>
+                                </div>
+
+                                <div className="flex-grow space-y-4 mb-8">
+                                    {pkg.features.map((feature, i) => (
+                                        <div key={i} className="flex items-start gap-3">
+                                            {feature.included ? (
+                                                <Check className="w-5 h-5 text-cobalt shrink-0 mt-0.5" />
+                                            ) : (
+                                                <X className="w-5 h-5 text-white/20 shrink-0 mt-0.5" />
+                                            )}
+                                            <span
+                                                className={`text-sm leading-snug ${feature.included ? "text-white/80" : "text-white/30"
+                                                    }`}
+                                            >
+                                                {feature.name}
+                                                {feature.value && (
+                                                    <span className="text-white ml-1 font-medium block sm:inline">
+                                                        ({feature.value})
+                                                    </span>
+                                                )}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <MagneticButton
+                                    onClick={() => setSelectedPlan({ name: pkg.name, price: pkg.price })}
+                                    className={`w-full py-4 rounded-full font-medium transition-all duration-300 ${pkg.popular
+                                        ? "bg-cobalt text-background hover:bg-cobalt-vivid"
+                                        : "bg-white/10 text-white hover:bg-white/20"
+                                        }`}
+                                >
+                                    Get Started
+                                </MagneticButton>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
                 </div>
                 {/* ... (footer text) */}
                 <div className="mt-12 text-center text-white/40 text-sm space-y-2">

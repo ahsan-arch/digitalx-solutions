@@ -27,7 +27,7 @@ const useCases = [
         icon: "🦷",
         title: "Dental Clinics",
         description:
-            "Automate appointment scheduling, insurance verification, and patient follow-ups — 24/7.",
+            "Automate appointment scheduling, insurance verification, and patient follow ups 24/7.",
         glow: "from-cobalt to-cobalt-vivid",
     },
     {
@@ -124,7 +124,7 @@ function VoiceDemoCard({
                 <div className="flex items-center gap-2 mb-4">
                     <div className="w-2 h-2 rounded-full bg-acid-green shadow-[0_0_8px_theme(colors.acid.green)]" />
                     <span className="font-mono text-xs text-white/40 uppercase tracking-wider">
-                        {demo.industry} — Voice Agent
+                        {demo.industry} | Voice Agent
                     </span>
                 </div>
 
@@ -223,7 +223,7 @@ export function ConversationalAISection() {
                     </h2>
 
                     <p className="text-white/50 max-w-3xl text-lg md:text-xl leading-relaxed">
-                        Custom-engineered AI voice agents that sound completely human.
+                        Custom engineered AI voice agents that sound completely human.
                         Perfect for Dentist Clinics, Hair Salons, Gyms, and Medical
                         Practices. They answer calls, qualify leads, and book slots directly
                         into your calendar without human intervention.
@@ -318,7 +318,7 @@ export function ConversationalAISection() {
                         Get Your AI Receptionist
                     </MagneticButton>
                     <p className="font-mono text-xs text-white/25">
-                        Custom-built. Live in 48 hours. Cancel anytime.
+                        Custom built. Live in 48 hours. Cancel anytime.
                     </p>
                 </motion.div>
             </div>

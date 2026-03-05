@@ -1,5 +1,6 @@
-import { ContactSection } from "@/components/sections/contact-section";
 import { generatePageMetadata, generateBreadcrumbSchema, generateServicePageSchema, seoCopy, siteConfig } from "@/lib/seo";
+import { ContactSection } from "@/components/sections/contact-section";
+import { SubPageLayout } from "@/components/layout";
 
 export const metadata = generatePageMetadata("/services/revenue-operations", seoCopy.revenueOps);
 
@@ -17,7 +18,7 @@ export default function RevenueOperationsPage() {
     ]);
 
     return (
-        <main className="min-h-screen bg-background pt-24">
+        <SubPageLayout>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -41,7 +42,7 @@ export default function RevenueOperationsPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left font-mono text-sm text-white/80">
                         <div className="bg-surface-100 border border-white/5 p-6 rounded-xl">
-                            <div className="text-acid-green mb-2">01 // n8n Workflows</div>
+                            <div className="text-neon mb-2">01 // n8n Workflows</div>
                             Complex self-hosted automation handling data normalization.
                         </div>
                         <div className="bg-surface-100 border border-white/5 p-6 rounded-xl">
@@ -57,6 +58,6 @@ export default function RevenueOperationsPage() {
             </section>
 
             <ContactSection />
-        </main>
+        </SubPageLayout>
     );
 }

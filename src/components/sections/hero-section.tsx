@@ -3,74 +3,123 @@
 import { motion } from "framer-motion";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { DigitalXLogo } from "@/components/ui/logo";
+import { WaveMesh } from "@/components/ui/wave-mesh";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex flex-col justify-center px-4 md:px-12 bg-background">
+    <section className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center px-4 md:px-12 lg:px-24 pt-8 pb-20 bg-[#050505]">
       {/* Background Ambience */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cobalt/20 blur-[120px] rounded-full pointer-events-none opacity-50 mix-blend-screen" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-acid-purple/10 blur-[120px] rounded-full pointer-events-none opacity-30 mix-blend-screen" />
+      <div className="absolute top-0 right-1/4 w-[800px] h-[800px] bg-neon/5 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-center gap-4 mb-8"
-        >
-          <DigitalXLogo className="h-8 w-auto text-white" />
-          <div className="h-[1px] w-12 bg-cobalt" />
-          <span className="font-mono text-cobalt tracking-widest text-sm uppercase">
-            Est. 2024 — DigitalX Solutions
-          </span>
-        </motion.div>
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col h-full">
 
-        {/* Massive Headline */}
-        <div className="overflow-hidden">
-          <motion.div
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="font-display font-bold text-[clamp(3rem,12vw,12rem)] leading-[0.85] tracking-tighter text-white uppercase"
-            role="presentation"
-          >
-            We Build
-          </motion.div>
-        </div>
-        <div className="overflow-hidden">
-          <motion.div
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="flex items-baseline gap-4"
-          >
-            <h1 className="font-display font-bold text-[clamp(3rem,12vw,12rem)] leading-[0.85] tracking-tighter text-white uppercase">
-              What <span className="text-transparent bg-clip-text bg-gradient-to-r from-cobalt to-cobalt-vivid">Performs</span>
-            </h1>
-          </motion.div>
-        </div>
+        {/* Top Navigation Row */}
+        <nav className="w-full flex items-center justify-between mb-24">
+          <Link href="/" className="flex items-center gap-3 group">
+            <DigitalXLogo className="h-8 w-auto text-neon" />
+            <span className="font-display font-bold text-xl tracking-tight text-white">DigitalX Solutions</span>
+          </Link>
 
-        {/* Description & CTA */}
-        <div className="mt-12 flex flex-col md:flex-row gap-12 items-start md:items-end justify-between">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-white/60 max-w-xl text-lg md:text-xl font-sans leading-relaxed"
-          >
-            Stop trading hours for outcomes. We engineer intelligent automation systems and high performance digital ecosystems that scale your operations while you focus on growth.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
+          <div className="hidden md:flex items-center gap-10">
+            <Link href="#expertise" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Expertise</Link>
+            <Link href="#pricing" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Pricing</Link>
+            <Link href="#case-studies" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Case Studies</Link>
             <MagneticButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
               Start Project
             </MagneticButton>
+          </div>
+        </nav>
+
+        {/* Two Column Hero Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 xl:gap-16 items-center w-full">
+
+          {/* Left Column: Content */}
+          <div className="lg:col-span-7 flex flex-col items-start">
+
+            {/* Pill Indicator */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon/20 bg-neon/5 mb-8"
+            >
+              <div className="w-2 h-2 rounded-full bg-neon animate-pulse" />
+              <span className="font-bold text-neon tracking-widest text-xs uppercase">
+                Performance Digital Agency
+              </span>
+            </motion.div>
+
+            {/* Massive Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-display font-bold text-[clamp(3.5rem,6vw,7rem)] leading-[1.05] tracking-tight text-white mb-6 w-full"
+            >
+              We Build <br />
+              <span className="text-neon">What Performs</span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-white/60 max-w-lg text-lg md:text-xl font-sans leading-relaxed mb-10 w-full"
+            >
+              Stop trading hours for outcomes. We engineer intelligent automation systems and high performance digital ecosystems that scale your operations while you focus on growth.
+            </motion.p>
+
+            {/* CTA Buttons Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-wrap items-center gap-6"
+            >
+              <MagneticButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                Start Project
+              </MagneticButton>
+              <button
+                onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+                className="group flex items-center gap-3 px-6 py-3 rounded-stitch border border-white/10 hover:border-white/30 text-white font-medium transition-all"
+              >
+                View Our Framework
+                <span className="text-neon transition-transform group-hover:translate-x-1">→</span>
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Visual Mesh Glass Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 w-full relative aspect-[4/3] rounded-2xl border border-white/5 bg-gradient-to-b from-[#111] to-[#050505] overflow-hidden flex flex-col justify-end p-8"
+          >
+            {/* The Animated 3D Wave Mesh */}
+            <WaveMesh />
+
+            {/* Inner "Monthly Efficiency" Card overlay */}
+            <div className="relative z-10 w-full rounded-xl border border-white/10 bg-black/60 backdrop-blur-xl p-6 shadow-2xl">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-white/70 text-sm font-medium">Monthly Efficiency</span>
+                <span className="text-neon font-bold text-sm">+245%</span>
+              </div>
+              {/* Progress Bar Track */}
+              <div className="w-full h-2 rounded-full border border-white/5 bg-white/5 overflow-hidden">
+                {/* Progress Bar Fill */}
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "80%" }}
+                  transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
+                  className="h-full bg-neon rounded-full shadow-[0_0_10px_theme(colors.neon.DEFAULT)]"
+                />
+              </div>
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>
