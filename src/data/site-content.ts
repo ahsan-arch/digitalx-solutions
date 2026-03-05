@@ -98,9 +98,9 @@ export const navigation = {
 /* ── Company Info ── */
 export const company = {
   name: "DigitalX Solutions",
-  tagline: "We build what performs.",
+  tagline: "We build what performs. n8n & GoHighLevel Experts.",
   description:
-    "Performance obsessed digital agency. We build fast sites, run profitable ads, and grow brands that care about numbers, not just aesthetics.",
+    "Top-tier Automation Agency in Australia & the USA. We build flawless GoHighLevel systems, advanced n8n workflows, scalable web apps, and profitable ads for velocity-driven brands.",
   email: "info@digitalx-solutions.com",
   location: "Remote first · Australia",
   socials: {

@@ -11,9 +11,8 @@ export const siteConfig = {
 // Every title ≤60 chars, every description ≤155 chars, includes US/AU signals
 export const seoCopy = {
     home: {
-        title: "DigitalX Solutions | High Performance Web & Automation Agency",
-        description:
-            "Bespoke Next.js development, Meta ads engineering, and custom n8n/GoHighLevel automation. Premium digital infrastructure for brands in the USA & Australia.",
+        title: "DigitalX Solutions | n8n & GoHighLevel Automation Agency",
+        description: "Leading AI automation & web development agency in Australia and the USA. We specialize in custom n8n workflows, GoHighLevel systems, and highly profitable Meta Ads.",
     },
     services: {
         title: "Digital Marketing & Engineering Services | USA & AU",
@@ -54,26 +53,6 @@ export const seoCopy = {
 
 // ── Primary target keywords for metadata ──
 export const seoKeywords = [
-    // High-Intent "Money" Keywords
-    "high performance web development agency",
-    "Next.js development agency",
-    "Meta ads engineering agency",
-    "server side CAPI Meta ads expert",
-    "custom n8n automation agency",
-    "GoHighLevel custom architecture",
-    "bespoke revenue operations agency",
-    // Conversational AI & Automation Keywords
-    "AI voice receptionist for dental clinics",
-    "AI booking agent for salons and gyms",
-    "conversational AI agency",
-    "24/7 AI voice booking system",
-    "WhatsApp AI automation agency",
-    "custom AI agent development for local business",
-    // Problem-Solving / Long-Tail Keywords
-    "fix Meta ads iOS14 signal loss",
-    "improve website load time to under 200ms",
-    "Next.js headless CMS for e-commerce",
-    "Zapier alternatives for complex automation",
     "stop Meta ads creative fatigue",
     "how to setup Facebook Conversion API CAPI",
     // Local & Regional SEO Keywords

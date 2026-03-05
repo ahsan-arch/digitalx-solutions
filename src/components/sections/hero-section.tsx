@@ -55,10 +55,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display font-bold text-[clamp(3.5rem,6vw,7rem)] leading-[1.05] tracking-tight text-white mb-6 w-full"
+              className="font-display font-bold text-[clamp(2.5rem,5vw,6rem)] leading-[1.05] tracking-tight text-white mb-6 w-full"
             >
-              We Build <br />
-              <span className="text-neon">What Performs</span>
+              Flawless <span className="text-neon">Automation</span> <br />
+              & High-Performance Web
             </motion.h1>
 
             {/* Description */}
@@ -68,7 +68,7 @@ export function HeroSection() {
               transition={{ duration: 1, delay: 0.3 }}
               className="text-white/60 max-w-lg text-lg md:text-xl font-sans leading-relaxed mb-10 w-full"
             >
-              Stop trading hours for outcomes. We engineer intelligent automation systems and high performance digital ecosystems that scale your operations while you focus on growth.
+              Top-tier agency serving the US and Australia. Stop trading hours for outcomes. We engineer elite <strong>n8n workflows</strong>, <strong>GoHighLevel systems</strong>, and custom web applications that scale your operations while you focus on maximum revenue growth.
             </motion.p>
 
             {/* CTA Buttons Row */}
