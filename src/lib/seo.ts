@@ -164,7 +164,7 @@ export function generateOrganizationSchema() {
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 url: siteConfig.domain,
-                email: "digitalxsolutions8@gmail.com",
+                email: "info@digitalx-solutions.com",
                 logo: `${siteConfig.domain}/logo.png`,
                 image: `${siteConfig.domain}/api/og`,
                 priceRange: "$$$",

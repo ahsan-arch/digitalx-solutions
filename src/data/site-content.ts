@@ -101,7 +101,7 @@ export const company = {
   tagline: "We build what performs.",
   description:
     "Performance obsessed digital agency. We build fast sites, run profitable ads, and grow brands that care about numbers, not just aesthetics.",
-  email: "digitalxsolutions8@gmail.com",
+  email: "info@digitalx-solutions.com",
   location: "Remote first · Australia",
   socials: {
     twitter: "https://twitter.com/digitalx_solutions",

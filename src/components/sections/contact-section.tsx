@@ -87,8 +87,8 @@ export function ContactSection() {
                             {/* Distinct Email Display for user clarity */}
                             <div className="mb-8 p-4 bg-white/5 border border-white/10 rounded-lg">
                                 <p className="text-white/40 text-xs uppercase tracking-widest font-mono mb-2">Direct Communications Line</p>
-                                <a href="mailto:digitalxsolutions8@gmail.com" className="text-cobalt hover:text-white transition-colors font-mono text-lg break-all">
-                                    digitalxsolutions8@gmail.com
+                                <a href="mailto:info@digitalx-solutions.com" className="text-cobalt hover:text-white transition-colors font-mono text-lg break-all">
+                                    info@digitalx-solutions.com
                                 </a>
                             </div>
 

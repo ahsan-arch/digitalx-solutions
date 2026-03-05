@@ -10,6 +10,7 @@ import {
   seoKeywords,
   siteConfig,
 } from "@/lib/seo";
+import { LenisProvider } from "@/components/lenis-provider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -116,7 +117,9 @@ export default function RootLayout({
           }}
         />
 
-        {children}
+        <LenisProvider>
+          {children}
+        </LenisProvider>
 
         {/* Vapi Voice AI Assistant — floating button */}
         <VapiProvider />

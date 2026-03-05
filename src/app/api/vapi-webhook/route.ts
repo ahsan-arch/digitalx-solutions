@@ -35,7 +35,7 @@ export async function POST(req: Request) {
 
                 await transporter.sendMail({
                     from: `"Vapi AI Voice Agent" <${process.env.EMAIL_USER}>`,
-                    to: "digitalxsolutions8@gmail.com", // Fallback, could be an env var
+                    to: "info@digitalx-solutions.com", // Fallback, could be an env var
                     subject: `📞 New AI Voice Call Completed`,
                     html: `
             <h2>New AI Voice Lead / Call Completed</h2>
