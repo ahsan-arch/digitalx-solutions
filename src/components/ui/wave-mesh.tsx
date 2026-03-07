@@ -24,7 +24,25 @@ export function WaveMesh() {
         let animationFrameId: number;
         let time = 0;
 
+        let isVisible = true;
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                if (!isVisible) {
+                    isVisible = true;
+                    render(); // Resume animation
+                }
+            } else {
+                isVisible = false;
+                cancelAnimationFrame(animationFrameId); // Pause animation
+            }
+        }, { threshold: 0 });
+
+        observer.observe(canvas);
+
         const render = () => {
+            if (!isVisible) return; // Prevent render loop if hidden
+
             const width = rect.width;
             const height = rect.height;
 
@@ -141,6 +159,7 @@ export function WaveMesh() {
         window.addEventListener('resize', handleResize);
 
         return () => {
+            observer.disconnect();
             cancelAnimationFrame(animationFrameId);
             window.removeEventListener('resize', handleResize);
         };
