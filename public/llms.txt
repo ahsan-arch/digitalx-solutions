@@ -1,0 +1,47 @@
+# DigitalX Solutions
+
+> AI Automation & Web Development Agency — Australia & USA
+
+## About
+DigitalX Solutions is a premium AI automation and web development agency serving businesses in Australia and the United States. We specialize in building custom n8n workflows, GoHighLevel (GHL) systems, conversational AI agents, high-performance Next.js websites, and Meta Ads engineering with server-side CAPI tracking.
+
+## Core Services
+- **n8n Workflow Automation**: Custom n8n workflow development for complex multi-step business process automation. We build what Zapier and Make.com cannot handle.
+- **GoHighLevel (GHL) Systems**: Full GoHighLevel architecture design, CRM setup, pipeline automation, and custom integrations for agencies and local businesses.
+- **Conversational AI & Voice Agents**: 24/7 AI voice receptionists and WhatsApp chatbots for dental clinics, salons, gyms, medical practices, and service businesses. Built with Vapi, Twilio, and custom NLP pipelines.
+- **High-Performance Web Development**: Sub-200ms Next.js websites with SEO-baked architecture, headless CMS integration, and 98+ Lighthouse scores.
+- **Meta Ads Engineering**: Full-funnel Meta (Facebook/Instagram) ad systems with server-side CAPI tracking to bypass iOS14+ signal loss. Average 4.2x ROAS.
+- **Performance Creative**: UGC and motion graphics optimized for 3-second hook rates and direct response conversion.
+
+## Key Facts
+- Based in: Sydney, Australia (serving USA & Australia remotely)
+- Contact: info@digitalx-solutions.com
+- Website: https://digitalx-solutions.com
+- Founded: 2022
+- Projects shipped: 47+
+- Revenue generated for clients: $18M+
+- Average ROAS: 4.6x across Meta Ads accounts
+- Tech stack: n8n, GoHighLevel, Next.js, Node.js, Vapi, Twilio, Meta CAPI
+
+## Target Industries
+- Dental clinics and medical practices
+- Hair salons and beauty studios
+- Gyms and fitness centers
+- Real estate agencies
+- E-commerce brands
+- SaaS startups (pre-seed to Series B)
+- Digital marketing agencies needing white-label automation
+
+## Pricing
+- Web development projects: Starting at $15,000
+- Ongoing ads management and marketing: $3,500/month (3-month minimum)
+- Custom automation projects: Quoted per scope
+
+## Links
+- Homepage: https://digitalx-solutions.com
+- Services: https://digitalx-solutions.com/services
+- Revenue Operations: https://digitalx-solutions.com/services/revenue-operations
+- Web Development: https://digitalx-solutions.com/services/web-dev
+- Meta Ads: https://digitalx-solutions.com/services/meta-ads
+- AI Voice Agents: https://digitalx-solutions.com/services/conversational-ai
+- Contact: https://digitalx-solutions.com/contact

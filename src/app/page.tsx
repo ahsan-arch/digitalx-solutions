@@ -76,13 +76,15 @@ export default function HomePage() {
 
       <FloatingDock />
       <main id="main">
-        <HeroSection />
-        <ConversationalAISection />
-        <ServicesSection />
-        <PricingSection />
-        <MetaAdsSection />
-        <WorkSection />
-        <ContactSection />
+        <article itemScope itemType="https://schema.org/WebPage">
+          <HeroSection />
+          <ConversationalAISection />
+          <ServicesSection />
+          <PricingSection />
+          <MetaAdsSection />
+          <WorkSection />
+          <ContactSection />
+        </article>
       </main>
       <Footer />
     </>

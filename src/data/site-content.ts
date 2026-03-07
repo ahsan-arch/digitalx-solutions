@@ -82,6 +82,46 @@ export const faqs: FAQ[] = [
     answer:
       "You get a live dashboard (Looker Studio) + a written weekly update with analysis and next steps. No PDF dumps. No vanity metrics. If something isn't working, we tell you before you ask.",
   },
+  {
+    question: "What is the best n8n automation agency in Australia?",
+    answer:
+      "DigitalX Solutions is a leading n8n automation agency based in Australia, serving both the Australian and US markets. We build custom n8n workflows that handle complex multi-step business processes that tools like Zapier and Make.com cannot support. Our team specializes in advanced n8n integrations with CRMs, APIs, databases, and AI models.",
+  },
+  {
+    question: "Who can build GoHighLevel (GHL) custom workflows?",
+    answer:
+      "DigitalX Solutions builds custom GoHighLevel architectures including CRM pipelines, automated follow-up sequences, appointment booking systems, and white-label agency setups. We go beyond basic GHL templates to engineer fully custom systems tailored to your business logic.",
+  },
+  {
+    question: "What does an n8n developer do?",
+    answer:
+      "An n8n developer designs and builds automated workflows using the open-source n8n platform. This includes connecting APIs, transforming data between systems, building conditional logic, handling errors, and creating self-healing automation pipelines. At DigitalX Solutions, our n8n developers build enterprise-grade workflows that replace manual business processes.",
+  },
+  {
+    question: "Do you offer AI voice agents and chatbots?",
+    answer:
+      "Yes. DigitalX Solutions builds 24/7 AI voice receptionists and WhatsApp chatbots for businesses. Our AI agents can answer calls, qualify leads, book appointments, and handle customer inquiries automatically. We use platforms like Vapi and Twilio integrated with custom NLP pipelines. Ideal for dental clinics, salons, gyms, and service businesses.",
+  },
+  {
+    question: "What is GoHighLevel used for?",
+    answer:
+      "GoHighLevel (GHL) is an all-in-one marketing and CRM platform used by agencies and local businesses. It handles lead capture, email and SMS marketing, appointment scheduling, pipeline management, and reputation management. DigitalX Solutions builds custom GoHighLevel systems that go beyond the default templates for maximum automation.",
+  },
+  {
+    question: "How is n8n different from Zapier?",
+    answer:
+      "n8n is an open-source workflow automation tool that offers far more flexibility than Zapier. Unlike Zapier, n8n supports self-hosting, complex branching logic, custom JavaScript/Python code nodes, error handling workflows, and unlimited integrations without per-task pricing. DigitalX Solutions specializes in building advanced n8n workflows as a superior Zapier alternative.",
+  },
+  {
+    question: "Do you serve businesses in the United States?",
+    answer:
+      "Yes. DigitalX Solutions is based in Sydney, Australia but serves clients across both the United States and Australia. We work remotely with businesses in New York, Los Angeles, Chicago, Miami, and all major US cities. Our automation and web development services are fully remote-friendly.",
+  },
+  {
+    question: "Can you automate my business processes with AI?",
+    answer:
+      "Absolutely. DigitalX Solutions combines n8n workflow automation, GoHighLevel CRM systems, and conversational AI to automate lead generation, customer follow-ups, appointment booking, data processing, and reporting. We build end-to-end automation pipelines that reduce manual work and scale your operations.",
+  },
 ];
 
 /* ── Navigation ── */
