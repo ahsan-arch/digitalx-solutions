@@ -62,6 +62,11 @@
     will-change: opacity;
   }
 
+  /* ── Layout containment for sections (no content-visibility — conflicts with IntersectionObserver) ── */
+  section {
+    contain: layout style;
+  }
+
   /* ── Reduced Motion Accessibility ── */
   @media (prefers-reduced-motion: reduce) {
 

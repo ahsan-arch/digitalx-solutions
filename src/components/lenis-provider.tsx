@@ -4,7 +4,16 @@ import { ReactLenis } from "lenis/react";
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
     return (
-        <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+        <ReactLenis
+            root
+            options={{
+                lerp: 0.12,
+                duration: 1.0,
+                smoothWheel: true,
+                wheelMultiplier: 1,
+                touchMultiplier: 1.5,
+            }}
+        >
             {children}
         </ReactLenis>
     );

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 
 export const ThreeDCard = ({
@@ -13,6 +13,7 @@ export const ThreeDCard = ({
 }) => {
     const ref = useRef<HTMLDivElement>(null);
     const [isTouchDevice, setIsTouchDevice] = useState(false);
+    const lastMoveRef = useRef(0);
 
     useEffect(() => {
         setIsTouchDevice(!window.matchMedia("(hover: hover)").matches);
@@ -21,29 +22,32 @@ export const ThreeDCard = ({
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
-    const mouseX = useSpring(x, { stiffness: 150, damping: 20 });
-    const mouseY = useSpring(y, { stiffness: 150, damping: 20 });
+    const mouseX = useSpring(x, { stiffness: 200, damping: 25 });
+    const mouseY = useSpring(y, { stiffness: 200, damping: 25 });
 
-    const rotateX = useTransform(mouseY, [-0.5, 0.5], ["10deg", "-10deg"]);
-    const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-10deg", "10deg"]);
+    const rotateX = useTransform(mouseY, [-0.5, 0.5], ["8deg", "-8deg"]);
+    const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-8deg", "8deg"]);
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (isTouchDevice) return;
-        const rect = ref.current?.getBoundingClientRect();
-        if (rect) {
-            const width = rect.width;
-            const height = rect.height;
-            const mouseXFromCenter = e.clientX - rect.left - width / 2;
-            const mouseYFromCenter = e.clientY - rect.top - height / 2;
-            x.set(mouseXFromCenter / width);
-            y.set(mouseYFromCenter / height);
-        }
-    };
+    const handleMouseMove = useCallback(
+        (e: React.MouseEvent<HTMLDivElement>) => {
+            if (isTouchDevice) return;
+            // Throttle to ~30fps — 3D tilt doesn't need 60fps
+            const now = performance.now();
+            if (now - lastMoveRef.current < 32) return;
+            lastMoveRef.current = now;
 
-    const handleMouseLeave = () => {
+            const rect = ref.current?.getBoundingClientRect();
+            if (!rect) return;
+            x.set((e.clientX - rect.left - rect.width / 2) / rect.width);
+            y.set((e.clientY - rect.top - rect.height / 2) / rect.height);
+        },
+        [isTouchDevice, x, y]
+    );
+
+    const handleMouseLeave = useCallback(() => {
         x.set(0);
         y.set(0);
-    };
+    }, [x, y]);
 
     return (
         <motion.div
@@ -60,14 +64,10 @@ export const ThreeDCard = ({
                     }
             }
             className={cn(
-                "relative transition-all duration-200 ease-linear will-change-transform",
+                "relative will-change-transform",
                 className
             )}
         >
-            <div
-                style={{ transform: "translateZ(50px)" }}
-                className="absolute -inset-4 rounded-xl bg-cobalt/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-            />
             {children}
         </motion.div>
     );

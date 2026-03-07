@@ -55,12 +55,11 @@ const useCases = [
 
 /* ── Animated Waveform Bar ── */
 function WaveBar({ index, isPlaying }: { index: number; isPlaying: boolean }) {
-    // Deterministic pseudo-random based on index to avoid hydration mismatch
     const seed = ((index * 7 + 3) % 13) / 13;
     const seed2 = ((index * 11 + 5) % 17) / 17;
     return (
         <motion.div
-            className="w-1 rounded-full bg-gradient-to-t from-cobalt to-cobalt-vivid"
+            className="w-1 rounded-full bg-gradient-to-t from-cobalt to-cobalt-vivid will-change-[height]"
             animate={
                 isPlaying
                     ? {
@@ -71,13 +70,13 @@ function WaveBar({ index, isPlaying }: { index: number; isPlaying: boolean }) {
             transition={
                 isPlaying
                     ? {
-                        duration: 0.6 + seed * 0.4,
+                        duration: 0.8 + seed * 0.4,
                         repeat: Infinity,
                         repeatType: "mirror" as const,
-                        delay: index * 0.05,
-                        ease: "easeInOut",
+                        delay: index * 0.04,
+                        ease: "linear",
                     }
-                    : { duration: 0.3 }
+                    : { duration: 0.2 }
             }
         />
     );
@@ -116,7 +115,7 @@ function VoiceDemoCard({
             <div className="relative bg-surface-100 border border-white/10 rounded-xl p-6 overflow-hidden hover:border-cobalt/30 transition-colors duration-500">
                 {/* Ambient glow */}
                 <div
-                    className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[80px] pointer-events-none transition-opacity duration-700 ${isPlaying ? "opacity-40" : "opacity-0 group-hover:opacity-20"
+                    className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[40px] pointer-events-none transition-opacity duration-500 ${isPlaying ? "opacity-30" : "opacity-0 group-hover:opacity-15"
                         } bg-cobalt`}
                 />
 
@@ -163,7 +162,7 @@ function VoiceDemoCard({
 
                     {/* Waveform */}
                     <div className="flex-1 flex items-center justify-center gap-[3px] h-10">
-                        {Array.from({ length: 32 }).map((_, i) => (
+                        {Array.from({ length: 24 }).map((_, i) => (
                             <WaveBar key={i} index={i} isPlaying={isPlaying} />
                         ))}
                     </div>
@@ -193,16 +192,16 @@ export function ConversationalAISection() {
             className="py-32 bg-background relative overflow-hidden"
         >
             {/* Background Ambience */}
-            <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-cobalt/8 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-acid-purple/6 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-cobalt/8 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-acid-purple/6 blur-[80px] rounded-full pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
                 {/* ── Header ── */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
+                    transition={{ duration: 0.5 }}
                     className="mb-20"
                 >
                     {/* Eyebrow */}
@@ -259,20 +258,28 @@ export function ConversationalAISection() {
                     <h3 className="font-mono text-xs text-white/30 uppercase tracking-widest mb-8">
                         {"// industries we serve"}
                     </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {useCases.map((uc, i) => (
+                    <motion.div
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-50px" }}
+                        variants={{
+                            hidden: {},
+                            visible: { transition: { staggerChildren: 0.08 } },
+                        }}
+                    >
+                        {useCases.map((uc) => (
                             <motion.div
                                 key={uc.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.1 * i }}
-                                className="group relative bg-surface-100 border border-white/[0.06] rounded-xl p-6 hover:border-white/15 transition-all duration-500 overflow-hidden"
+                                variants={{
+                                    hidden: { opacity: 0, y: 16 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+                                }}
+                                className="group relative bg-surface-100 border border-white/[0.06] rounded-xl p-6 hover:border-white/15 transition-colors duration-300 overflow-hidden"
                             >
-                                {/* Hover glow */}
+                                {/* Hover glow — simple gradient overlay */}
                                 <div
-                                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${uc.glow} blur-[60px] pointer-events-none`}
-                                    style={{ opacity: 0.06 }}
+                                    className={`absolute inset-0 opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500 bg-gradient-to-br ${uc.glow} pointer-events-none`}
                                 />
 
                                 {/* Icon */}
@@ -297,7 +304,7 @@ export function ConversationalAISection() {
                                 </div>
                             </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </motion.div>
 
                 {/* ── CTA ── */}

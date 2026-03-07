@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { Home, Briefcase, Zap, Mail } from "lucide-react";
 
 export const FloatingDock = () => {
@@ -19,17 +19,34 @@ export const FloatingDock = () => {
         { icon: Mail, label: "Contact", href: "#contact" },
     ];
 
+    // Throttled mouse handler — fire at most every 16ms (~60fps)
+    const lastMoveRef = useRef(0);
+    const handleMouseMove = useCallback(
+        (e: React.MouseEvent) => {
+            if (isTouchDevice) return;
+            const now = performance.now();
+            if (now - lastMoveRef.current < 16) return;
+            lastMoveRef.current = now;
+            mouseX.set(e.pageX);
+        },
+        [isTouchDevice, mouseX]
+    );
+
+    const handleMouseLeave = useCallback(() => {
+        mouseX.set(Infinity);
+    }, [mouseX]);
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+            className="fixed bottom-6 left-0 right-0 z-50 flex justify-center pointer-events-none"
         >
             <motion.div
-                onMouseMove={isTouchDevice ? undefined : (e) => mouseX.set(e.pageX)}
-                onMouseLeave={isTouchDevice ? undefined : () => mouseX.set(Infinity)}
-                className="flex h-14 md:h-16 gap-3 md:gap-4 items-end rounded-2xl bg-surface-200/50 backdrop-blur-md border border-white/10 px-3 md:px-4 pb-2 md:pb-3 shadow-2xl shadow-black/30"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                className="flex h-14 md:h-16 gap-3 md:gap-4 items-end rounded-2xl bg-surface-200/50 backdrop-blur-md border border-white/10 px-3 md:px-4 pb-2 md:pb-3 shadow-2xl shadow-black/30 pointer-events-auto will-change-transform"
             >
                 {links.map((link) => (
                     <DockIcon
@@ -64,7 +81,7 @@ function DockIcon({
     });
 
     const widthSync = useTransform(distance, [-150, 0, 150], [36, 64, 36]);
-    const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
+    const width = useSpring(widthSync, { stiffness: 200, damping: 15 });
 
     return (
         <motion.a
@@ -72,7 +89,7 @@ function DockIcon({
             href={href}
             style={isTouchDevice ? undefined : { width }}
             whileTap={{ scale: 0.9 }}
-            className="aspect-square w-9 md:w-10 rounded-full bg-surface-300 flex items-center justify-center hover:bg-cobalt transition-colors duration-200"
+            className="aspect-square w-9 md:w-10 rounded-full bg-surface-300 flex items-center justify-center hover:bg-cobalt transition-colors duration-200 will-change-transform"
         >
             <Icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
         </motion.a>

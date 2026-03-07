@@ -95,8 +95,8 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 w-full relative aspect-[4/3] rounded-2xl border border-white/5 bg-gradient-to-b from-[#111] to-[#050505] overflow-hidden flex flex-col justify-end p-8"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 w-full relative aspect-[4/3] rounded-2xl border border-white/5 bg-gradient-to-b from-[#111] to-[#050505] overflow-hidden flex flex-col justify-end p-8 will-change-transform"
           >
             {/* The Animated 3D Wave Mesh */}
             <WaveMesh />

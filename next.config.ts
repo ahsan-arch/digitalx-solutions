@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
             key: "Content-Type",
             value: "application/xml",
           },
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=86400, stale-while-revalidate=43200",
+          },
         ],
       },
       {
@@ -28,6 +32,48 @@ const nextConfig: NextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // CDN caching for all pages — tells checkers + Vercel edge to cache
+        source: "/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=3600, stale-while-revalidate=600",
+          },
+          {
+            key: "CDN-Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=600",
+          },
+          {
+            key: "Vercel-CDN-Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=600",
+          },
+          {
+            key: "Vary",
+            value: "Accept-Encoding",
+          },
+        ],
+      },
+      {
+        // Cache fonts aggressively
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache images
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400",
           },
         ],
       },

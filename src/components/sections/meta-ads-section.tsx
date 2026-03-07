@@ -12,10 +12,10 @@ export const MetaAdsSection = () => {
             <div className="max-w-7xl mx-auto px-4 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Copy */}
                 <motion.div
-                    initial={{ opacity: 0, x: -30 }}
+                    initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     className="relative z-10 order-2 lg:order-1"
                 >
                     <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white uppercase mb-6 leading-tight">
@@ -46,16 +46,16 @@ export const MetaAdsSection = () => {
 
                 {/* 3D Dashboard Visualization */}
                 <motion.div
-                    initial={{ opacity: 0, x: 30 }}
+                    initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
                     className="relative z-10 order-1 lg:order-2 perspective-1000 group w-full max-w-lg mx-auto lg:max-w-none"
                 >
                     <motion.div
-                        initial={{ transform: "rotateX(20deg) rotateY(-20deg) rotateZ(5deg)" }}
-                        whileHover={{ transform: "rotateX(10deg) rotateY(-10deg) rotateZ(0deg)" }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        initial={{ transform: "rotateX(15deg) rotateY(-15deg) rotateZ(3deg)" }}
+                        whileHover={{ transform: "rotateX(5deg) rotateY(-5deg) rotateZ(0deg)" }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
                         className="w-full aspect-[4/3] bg-surface-100 border border-white/10 rounded-xl p-4 md:p-6 shadow-2xl relative preserve-3d will-change-transform"
                     >
                         {/* Floating Elements (Responsive positioned) */}
