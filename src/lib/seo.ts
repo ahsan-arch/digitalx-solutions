@@ -53,21 +53,46 @@ export const seoCopy = {
 
 // ── Primary target keywords for metadata ──
 export const seoKeywords = [
-    "stop Meta ads creative fatigue",
-    "how to setup Facebook Conversion API CAPI",
-    // Local & Regional SEO Keywords
-    "digital agency Sydney",
-    "Meta ads agency NSW",
-    "high performance web developer Sydney",
+    // n8n Automation (low competition, high relevance)
+    "n8n automation agency",
+    "n8n developer for hire",
+    "custom n8n workflows",
+    "n8n vs Zapier",
+    "hire n8n developer",
+    "n8n integration specialist",
+    // GoHighLevel (growing market)
+    "GoHighLevel automation agency",
+    "GoHighLevel expert",
+    "GoHighLevel custom workflows",
+    "hire GoHighLevel expert",
+    "GoHighLevel CRM setup agency",
+    // AI Voice Agents & Conversational AI (hot, rapidly growing)
+    "AI voice receptionist",
+    "AI receptionist for dental clinic",
+    "AI phone answering service",
+    "AI appointment booking agent",
+    "AI receptionist for salon",
+    "AI answering service for medical practice",
+    "WhatsApp chatbot for business",
+    // Meta Ads / Facebook CAPI
+    "Meta ads agency Australia",
+    "Facebook Conversion API setup",
+    "server side tracking Meta ads",
+    "Meta ads ROAS optimization",
+    "Facebook ads agency Sydney",
+    // Next.js & Web Development
+    "Next.js development agency",
+    "high performance website development",
+    "headless CMS development agency",
+    "web development agency Sydney",
+    "React Next.js agency",
+    // Geo-targeted
     "AI automation agency Australia",
-    "B2B digital growth agency NYC",
-    "B2B digital growth agency London",
-    // Technical & Niche Keywords
-    "WebGL landing page development",
-    "brutalist web design agency",
-    "TripleWhale Meta ads agency",
-    "Shopify Plus CAPI integration",
-    "SEO-baked Next.js architecture",
+    "AI automation agency USA",
+    "digital agency Sydney",
+    "marketing automation agency",
+    "automation agency Sydney",
+    // Brand
     "DigitalX Solutions",
 ];
 
