@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Play, Pause, Volume2 } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import Link from "next/link";
 
 /* ── Audio Demo Data ── */
 const demos = [
@@ -315,15 +316,11 @@ export function ConversationalAISection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
                 >
-                    <MagneticButton
-                        onClick={() =>
-                            document
-                                .getElementById("contact")
-                                ?.scrollIntoView({ behavior: "smooth" })
-                        }
-                    >
-                        Get Your AI Receptionist
-                    </MagneticButton>
+                    <Link href="/services/ai-voice-receptionists">
+                        <MagneticButton>
+                            Get Your AI Receptionist
+                        </MagneticButton>
+                    </Link>
                     <p className="font-mono text-xs text-white/25">
                         Custom built. Live in 48 hours. Cancel anytime.
                     </p>

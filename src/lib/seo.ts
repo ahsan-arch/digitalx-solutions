@@ -12,7 +12,7 @@ export const siteConfig = {
 export const seoCopy = {
     home: {
         title: "DigitalX Solutions | n8n & GoHighLevel Automation Agency",
-        description: "Leading AI automation & web development agency in Australia and the USA. We specialize in custom n8n workflows, GoHighLevel systems, and highly profitable Meta Ads.",
+        description: "AI automation & web development agency in Australia & USA. Custom n8n workflows, GoHighLevel systems, and high-ROAS Meta Ads.",
     },
     services: {
         title: "Digital Marketing & Engineering Services | USA & AU",

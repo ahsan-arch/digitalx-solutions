@@ -22,9 +22,9 @@ export function HeroSection() {
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
-            <Link href="#expertise" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Expertise</Link>
-            <Link href="#pricing" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Pricing</Link>
-            <Link href="#case-studies" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Case Studies</Link>
+            <Link href="/services" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Services</Link>
+            <Link href="/work" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Work</Link>
+            <Link href="/insights" className="text-white/80 hover:text-white font-medium text-sm transition-colors">Insights</Link>
             <MagneticButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
               Start Project
             </MagneticButton>

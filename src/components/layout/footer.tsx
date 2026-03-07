@@ -50,14 +50,29 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a href="#work" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Work
-                  </a>
+                  <Link href="/services/revenue-operations" className="text-sm text-white/50 hover:text-white transition-colors">
+                    Revenue Operations
+                  </Link>
                 </li>
                 <li>
-                  <a href="#contact" className="text-sm text-cobalt hover:text-white transition-colors">
+                  <Link href="/services/ai-voice-receptionists" className="text-sm text-white/50 hover:text-white transition-colors">
+                    AI Voice Agents
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/web-dev" className="text-sm text-white/50 hover:text-white transition-colors">
+                    Web Design
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/work" className="text-sm text-white/50 hover:text-white transition-colors">
+                    Work
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-sm text-cobalt hover:text-white transition-colors">
                     Start a Project
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -120,9 +135,14 @@ export function Footer() {
 
             <div>
               <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
-                Locations
+                Resources
               </p>
               <ul className="space-y-3">
+                <li>
+                  <Link href="/insights" className="text-sm text-white/50 hover:text-white transition-colors">
+                    Insights
+                  </Link>
+                </li>
                 <li>
                   <Link href="/locations/usa" className="text-sm text-white/50 hover:text-white transition-colors">
                     USA
