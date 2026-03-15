@@ -42,6 +42,12 @@ export const MetaAdsSection = () => {
                             Creative Testing Matrix
                         </li>
                     </ul>
+                    <div className="mt-8 p-4 border border-white/10 rounded-lg bg-surface-200 inline-block">
+                        <p className="text-neon font-mono text-xs mb-2">FEATURED CASE STUDY</p>
+                        <a href="/work" className="text-white hover:text-cobalt transition-colors font-display text-lg flex items-center gap-2">
+                            E-commerce Brand achieves 4.2x ROAS &rarr;
+                        </a>
+                    </div>
                 </motion.div>
 
                 {/* 3D Dashboard Visualization */}

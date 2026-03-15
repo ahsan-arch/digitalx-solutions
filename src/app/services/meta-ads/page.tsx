@@ -1,6 +1,7 @@
 import { generatePageMetadata, generateBreadcrumbSchema, generateServicePageSchema, seoCopy, siteConfig } from "@/lib/seo";
 import { MetaAdsSection } from "@/components/sections/meta-ads-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { RelatedServices } from "@/components/sections/related-services";
 import { SubPageLayout } from "@/components/layout";
 
 export const metadata = generatePageMetadata("/services/meta-ads", seoCopy.metaAds);
@@ -32,6 +33,7 @@ export default function MetaAdsPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <MetaAdsSection />
+            <RelatedServices currentSlug="meta-ads" />
             <ContactSection />
         </SubPageLayout>
     );

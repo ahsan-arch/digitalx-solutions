@@ -42,6 +42,19 @@ DigitalX Solutions is a premium AI automation and web development agency serving
 - Services: https://digitalx-solutions.com/services
 - Revenue Operations: https://digitalx-solutions.com/services/revenue-operations
 - Web Development: https://digitalx-solutions.com/services/web-dev
+- Next.js Development: https://digitalx-solutions.com/services/nextjs-development
 - Meta Ads: https://digitalx-solutions.com/services/meta-ads
+- Meta Ads Engineering: https://digitalx-solutions.com/services/meta-ads-engineering
 - AI Voice Agents: https://digitalx-solutions.com/services/conversational-ai
+- AI Voice Receptionists: https://digitalx-solutions.com/services/ai-voice-receptionists
+- Case Studies: https://digitalx-solutions.com/work
+- Engineering Insights: https://digitalx-solutions.com/insights
+- About Us: https://digitalx-solutions.com/about
 - Contact: https://digitalx-solutions.com/contact
+
+## Blog Articles
+- [n8n vs Zapier in 2026: Complete Comparison](https://digitalx-solutions.com/insights/n8n-vs-zapier): Detailed comparison of n8n and Zapier for business automation — pricing, features, scalability, and which tool fits your needs.
+- [AI Voice Receptionists: Complete Guide](https://digitalx-solutions.com/insights/ai-voice-receptionists-guide): How AI voice receptionists automate phone answering and appointment booking for dental clinics, salons, and medical practices.
+- [Why Meta CAPI is Mandatory for Scale](https://digitalx-solutions.com/insights/server-side-tracking-meta-ads): Why relying solely on the Meta Pixel destroys ROI and how the Conversions API ensures accurate attribution.
+
+

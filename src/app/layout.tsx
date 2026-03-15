@@ -25,6 +25,8 @@ export const viewport: Viewport = {
   themeColor: "#050505",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -77,9 +79,20 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "DigitalX",
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
   other: {
     "geo.region": ["US", "AU"],
     "geo.placename": ["New York", "Sydney", "Casula"],
+    "mobile-web-app-capable": "yes",
   },
 };
 
@@ -106,6 +119,11 @@ export default function RootLayout({
 
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
+
+        {/* Mobile-specific meta — ensures Add to Home Screen works on iOS & Android */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="DigitalX" />
       </head>
       <body className={`${spaceGrotesk.variable} ${inter.variable} antialiased font-sans bg-background text-foreground`}>
         {/* Grain overlay — lightweight CSS-only noise */}

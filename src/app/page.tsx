@@ -1,8 +1,7 @@
 import { FloatingDock } from "@/components/navigation/floating-dock";
 import { Footer } from "@/components/layout";
 import { HeroSection } from "@/components/sections/hero-section";
-import { generateFAQSchema, generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
-import { faqs } from "@/data/site-content";
+import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
 import dynamic from "next/dynamic";
 
 /* ── Lazy-load below-fold sections to cut initial JS payload ── */
@@ -57,18 +56,13 @@ const ConversationalAISection = dynamic(
 );
 
 export default function HomePage() {
-  const faqSchema = generateFAQSchema(faqs);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
   ]);
 
   return (
     <>
-      {/* FAQ Rich Snippet — high-value for Google SERPs */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {/* Breadcrumb Rich Snippet */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -76,15 +70,13 @@ export default function HomePage() {
 
       <FloatingDock />
       <main id="main">
-        <article itemScope itemType="https://schema.org/WebPage">
-          <HeroSection />
-          <ConversationalAISection />
-          <ServicesSection />
-          <PricingSection />
-          <MetaAdsSection />
-          <WorkSection />
-          <ContactSection />
-        </article>
+        <HeroSection />
+        <ConversationalAISection />
+        <ServicesSection />
+        <PricingSection />
+        <MetaAdsSection />
+        <WorkSection />
+        <ContactSection />
       </main>
       <Footer />
     </>

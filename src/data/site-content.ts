@@ -130,7 +130,7 @@ export const navigation = {
     { label: "Work", href: "/work" },
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
-    { label: "Blog", href: "/blog" },
+    { label: "Insights", href: "/insights" },
   ],
   cta: { label: "Start a Project", href: "/contact" },
 };
@@ -138,11 +138,11 @@ export const navigation = {
 /* ── Company Info ── */
 export const company = {
   name: "DigitalX Solutions",
-  tagline: "We build what performs. n8n & GoHighLevel Experts.",
+  tagline: "Top B2B RevOps & Custom Web Development Agency.",
   description:
-    "Top-tier Automation Agency in Australia & the USA. We build flawless GoHighLevel systems, advanced n8n workflows, scalable web apps, and profitable ads for velocity-driven brands.",
+    "Leading Automation and Web Development Agency in Australia & the USA. We build flawless GoHighLevel systems, robust n8n workflows, scalable Next.js web apps, and high-ROAS Meta Ads for velocity-driven brands.",
   email: "info@digitalx-solutions.com",
-  location: "Remote first · Australia",
+  location: "Sydney, Australia · Serving the USA",
   socials: {
     twitter: "https://twitter.com/digitalx_solutions",
     linkedin: "https://linkedin.com/company/digitalx-solutions",

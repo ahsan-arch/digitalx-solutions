@@ -10,11 +10,27 @@ export default function ContactPage() {
         { name: "Contact", url: `${siteConfig.domain}/contact` },
     ]);
 
+    const contactPageSchema = {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": `${siteConfig.domain}/contact`,
+        name: "Contact DigitalX Solutions",
+        description: seoCopy.contact.description,
+        url: `${siteConfig.domain}/contact`,
+        mainEntity: {
+            "@id": `${siteConfig.domain}/#organization`,
+        },
+    };
+
     return (
         <SubPageLayout>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
             />
             <ContactSection />
         </SubPageLayout>

@@ -11,12 +11,26 @@ export const metadata: Metadata = generatePageMetadata("/insights", {
 
 const articles = [
     {
+        slug: "n8n-vs-zapier",
+        title: "n8n vs Zapier in 2026: Complete Comparison for Business Automation",
+        description: "A detailed comparison of n8n and Zapier for business automation. Pricing, features, scalability, and which tool is right for your workflow needs.",
+        date: "2025-11-20",
+        readTime: "10 min read",
+    },
+    {
+        slug: "ai-voice-receptionists-guide",
+        title: "AI Voice Receptionists for Dental Clinics, Salons & Medical Practices: Complete Guide",
+        description: "How AI voice receptionists automate phone answering, appointment booking, and lead qualification for healthcare and service businesses.",
+        date: "2025-09-05",
+        readTime: "8 min read",
+    },
+    {
         slug: "server-side-tracking-meta-ads",
         title: "Why Meta Server-Side Tracking (CAPI) is Mandatory for Scale",
         description: "Learn why relying solely on the Meta Pixel destroys ROI, and how implementing the Conversions API ensures accurate attribution in a post-iOS14 world.",
         date: "2024-03-15",
         readTime: "6 min read",
-    }
+    },
 ];
 
 export default function InsightsPage() {

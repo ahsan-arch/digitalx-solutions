@@ -40,6 +40,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${siteConfig.domain}/services/ai-voice-receptionists`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteConfig.domain}/services/nextjs-development`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${siteConfig.domain}/services/meta-ads-engineering`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
             url: `${siteConfig.domain}/work`,
             lastModified: new Date(),
             changeFrequency: "monthly",
@@ -74,6 +92,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: "monthly",
             priority: 0.7,
-        }
+        },
+        {
+            url: `${siteConfig.domain}/insights/n8n-vs-zapier`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
+            url: `${siteConfig.domain}/insights/ai-voice-receptionists-guide`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
+            url: `${siteConfig.domain}/about`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
     ];
 }

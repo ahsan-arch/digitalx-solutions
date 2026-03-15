@@ -1,27 +1,80 @@
 {
-    "name": "DigitalX Solutions",
+    "name": "DigitalX Solutions — AI Automation & Web Agency",
     "short_name": "DigitalX",
-    "description": "High-performance web development & custom automation agency serving the United States and Australia.",
+    "description": "Premium AI automation and web development agency serving businesses in the United States and Australia. Custom n8n workflows, GoHighLevel systems, AI voice agents, and Next.js websites.",
     "start_url": "/",
+    "scope": "/",
+    "id": "/",
     "display": "standalone",
+    "display_override": [
+        "window-controls-overlay",
+        "standalone",
+        "minimal-ui"
+    ],
     "background_color": "#050505",
     "theme_color": "#050505",
     "orientation": "portrait-primary",
     "categories": [
         "business",
-        "productivity"
+        "productivity",
+        "utilities"
     ],
     "lang": "en",
-    "icons": [
+    "dir": "ltr",
+    "prefer_related_applications": false,
+    "shortcuts": [
         {
-            "src": "/icon.png",
-            "sizes": "192x192",
-            "type": "image/png"
+            "name": "Contact Us",
+            "short_name": "Contact",
+            "description": "Start a project with DigitalX Solutions",
+            "url": "/contact",
+            "icons": [
+                {
+                    "src": "/apple-icon",
+                    "sizes": "180x180",
+                    "type": "image/png"
+                }
+            ]
         },
         {
-            "src": "/icon.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "name": "Our Services",
+            "short_name": "Services",
+            "description": "AI automation, web development, and Meta Ads",
+            "url": "/services",
+            "icons": [
+                {
+                    "src": "/apple-icon",
+                    "sizes": "180x180",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Engineering Insights",
+            "short_name": "Insights",
+            "description": "Technical articles and guides",
+            "url": "/insights",
+            "icons": [
+                {
+                    "src": "/apple-icon",
+                    "sizes": "180x180",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
+    "icons": [
+        {
+            "src": "/apple-icon",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/apple-icon",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ]
 }

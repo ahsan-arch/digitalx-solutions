@@ -39,6 +39,10 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: "Bytespider",
                 allow: "/",
             },
+            {
+                userAgent: "OAI-SearchBot",
+                allow: "/",
+            },
         ],
         sitemap: `${siteConfig.domain}/sitemap.xml`,
     };

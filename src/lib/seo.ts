@@ -11,90 +11,98 @@ export const siteConfig = {
 // Every title ≤60 chars, every description ≤155 chars, includes US/AU signals
 export const seoCopy = {
     home: {
-        title: "DigitalX Solutions | n8n & GoHighLevel Automation Agency",
-        description: "AI automation & web development agency in Australia & USA. Custom n8n workflows, GoHighLevel systems, and high-ROAS Meta Ads.",
+        title: "#1 Automation & Website Development Agency | USA & Australia",
+        description: "DigitalX Solutions: custom business automation, AI workflows & high-performance website development. n8n, GoHighLevel & Next.js experts serving USA & AU.",
     },
     services: {
-        title: "Digital Marketing & Engineering Services | USA & AU",
+        title: "Automation & Website Services | AI, n8n, Meta Ads Agency",
         description:
-            "End-to-end digital infrastructure: sub-second websites, server-side CAPI tracking, bespoke revenue operations & AI voice agents. Serving USA & Australia.",
+            "Full-stack automation and website services: custom n8n workflows, AI voice agents, Next.js websites & Meta Ads CAPI tracking. USA & Australia.",
     },
     webDev: {
-        title: "High Performance Web Development Agency | Next.js Experts",
+        title: "Web Development Agency USA & Australia | Next.js Experts",
         description:
-            "Sub-second Next.js websites engineered for conversion. 100 Lighthouse scores, headless CMS, SEO-baked architecture. Serving the US & Australia.",
+            "Custom web development & design with sub-200ms loads. SEO-baked Next.js architecture, 98+ Lighthouse scores. Top website agency in Sydney & USA.",
     },
     metaAds: {
-        title: "Meta Ads Engineering Agency | Server Side CAPI Experts",
+        title: "Meta Ads Agency | Server-Side Tracking & CAPI | USA & AU",
         description:
-            "Stop iOS14 signal loss. Full-funnel Meta ad systems engineered with server side CAPI tracking. Avg 4.2x ROAS for clients in USA & Australia.",
+            "Stop iOS14 signal loss. Full-funnel Meta Ads with Facebook Conversion API & server-side tagging. High-ROAS ad automation for US & Australian clients.",
     },
     revenueOps: {
-        title: "Bespoke Revenue Operations & Custom n8n Automation",
+        title: "Business Automation Agency | n8n & GoHighLevel Workflows",
         description:
-            "Automate workflows with custom n8n & GoHighLevel architectures. Zapier alternatives for complex automation. Serving USA & Australia.",
+            "Custom workflow automation with n8n & GoHighLevel CRM. We automate sales pipelines, lead routing & data sync for businesses in the USA & Australia.",
     },
     work: {
-        title: "Case Studies | DigitalX Solutions Engineering Portfolio",
+        title: "Automation & Website Case Studies | Real Client Results",
         description:
-            "Real numbers, validated stacks. See how we scale revenue with high-performance web systems and Meta CAPI engineering in Sydney, NYC, & beyond.",
+            "See how our automation and website development agency scales revenue. Real numbers: 3.2x ROAS, $2.4M revenue automated, 98+ Lighthouse scores.",
     },
     contact: {
-        title: "Start a Project | DigitalX Solutions | Get in Touch",
+        title: "Hire an Automation & Website Agency | Start Your Project",
         description:
-            "Invest in engineered solutions that convert. Contact our high performance web development and automation agency. Serving USA & Australia.",
+            "Contact DigitalX Solutions — the automation and website development agency serving USA & Australia. Get a free consultation for your project.",
     },
     conversationalAI: {
-        title: "AI Voice Receptionists & Custom Booking Agents | USA & AU",
+        title: "AI Voice Receptionists & Automation for Service Businesses",
         description:
-            "Deploy 24/7 AI voice receptionists for dental clinics, salons, and medical practices. Custom conversational AI agents. Serving USA & Australia.",
+            "Deploy 24/7 AI voice agents that answer phones, book appointments & qualify leads. Custom automation for dental clinics, salons & medical practices.",
     },
 };
 
 // ── Primary target keywords for metadata ──
+// Ordered by search intent: highest-volume terms first
 export const seoKeywords = [
-    // n8n Automation (low competition, high relevance)
-    "n8n automation agency",
-    "n8n developer for hire",
-    "custom n8n workflows",
-    "n8n vs Zapier",
-    "hire n8n developer",
-    "n8n integration specialist",
-    // GoHighLevel (growing market)
-    "GoHighLevel automation agency",
-    "GoHighLevel expert",
-    "GoHighLevel custom workflows",
-    "hire GoHighLevel expert",
-    "GoHighLevel CRM setup agency",
-    // AI Voice Agents & Conversational AI (hot, rapidly growing)
-    "AI voice receptionist",
-    "AI receptionist for dental clinic",
-    "AI phone answering service",
-    "AI appointment booking agent",
-    "AI receptionist for salon",
-    "AI answering service for medical practice",
-    "WhatsApp chatbot for business",
-    // Meta Ads / Facebook CAPI
-    "Meta ads agency Australia",
-    "Facebook Conversion API setup",
-    "server side tracking Meta ads",
-    "Meta ads ROAS optimization",
-    "Facebook ads agency Sydney",
-    // Next.js & Web Development
+    // ★ Top-priority: "automation" and "website" terms the user MUST rank for
+    "automation agency",
+    "business automation agency",
+    "workflow automation agency",
+    "automation agency USA",
+    "automation agency Australia",
+    "website development agency",
+    "website design agency",
+    "custom website development",
+    "website agency USA",
+    "website agency Australia",
+
+    // Web Development (Next.js & Headless CMS)
     "Next.js development agency",
-    "high performance website development",
-    "headless CMS development agency",
-    "web development agency Sydney",
-    "React Next.js agency",
-    // Geo-targeted
-    "AI automation agency Australia",
-    "AI automation agency USA",
-    "digital agency Sydney",
+    "custom website design and development",
+    "website development Sydney",
+    "web development agency USA",
+    "SEO website development",
+    "headless CMS development",
+
+    // Automation & Workflows (n8n & GoHighLevel)
+    "n8n automation agency",
+    "custom n8n workflows",
+    "GoHighLevel automation expert",
+    "business process automation",
+    "custom workflow automation",
     "marketing automation agency",
-    "automation agency Sydney",
-    // Brand
+    "sales automation agency",
+    "CRM automation agency",
+
+    // Meta Ads & Tracking
+    "Meta Ads agency Australia",
+    "server-side tracking agency",
+    "Facebook Conversion API setup",
+    "Meta Ads ROAS optimization",
+
+    // AI & Voice Agents
+    "AI voice receptionist",
+    "AI appointment booking agent",
+    "AI automation agency",
+    "conversational AI agency",
+
+    // Brand + Local
     "DigitalX Solutions",
+    "digital agency Sydney",
+    "automation company Australia",
+    "website company USA",
 ];
+
 
 /**
  * Generate hreflang alternates for US + AU targeting.
@@ -192,6 +200,32 @@ export function generateOrganizationSchema() {
                     "https://instagram.com/digitalx_solutions",
                     "https://youtube.com/@digitalx_solutions",
                     "https://facebook.com/digitalx_solutions",
+                ],
+                foundingDate: "2022",
+                numberOfEmployees: {
+                    "@type": "QuantitativeValue",
+                    value: "10",
+                },
+                contactPoint: {
+                    "@type": "ContactPoint",
+                    contactType: "customer service",
+                    email: "info@digitalx-solutions.com",
+                    telephone: "+61 400 000 000",
+                    availableLanguage: ["English"],
+                },
+                openingHoursSpecification: [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        dayOfWeek: [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                        ],
+                        opens: "09:00",
+                        closes: "18:00",
+                    },
                 ],
                 areaServed: [
                     {
@@ -301,6 +335,10 @@ export function generateOrganizationSchema() {
                     { "@type": "Country", name: "Australia" },
                 ],
                 category: "Next.js Development Agency",
+                sameAs: [
+                    "https://en.wikipedia.org/wiki/Web_development",
+                    "https://en.wikipedia.org/wiki/Next.js",
+                ],
             },
             {
                 "@type": "Service",
@@ -315,6 +353,10 @@ export function generateOrganizationSchema() {
                     { "@type": "Country", name: "Australia" },
                 ],
                 category: "GoHighLevel Custom Architecture",
+                sameAs: [
+                    "https://en.wikipedia.org/wiki/Revenue_operations",
+                    "https://en.wikipedia.org/wiki/Business_process_automation",
+                ],
             },
             {
                 "@type": ["Service", "SoftwareApplication"],
@@ -347,6 +389,14 @@ export function generateWebSiteSchema() {
             "@id": `${siteConfig.domain}/#organization`,
         },
         inLanguage: ["en-US", "en-AU"],
+        potentialAction: {
+            "@type": "SearchAction",
+            target: {
+                "@type": "EntryPoint",
+                urlTemplate: `${siteConfig.domain}/?q={search_term_string}`,
+            },
+            "query-input": "required name=search_term_string",
+        },
     };
 }
 

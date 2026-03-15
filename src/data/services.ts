@@ -20,8 +20,8 @@ export const services: ServiceItem[] = [
   },
   {
     id: "web-dev",
-    title: "High-Performance Web",
-    description: "Next.js sites that load in <200ms. SEO-baked architecture. If it's not instant, it's broken.",
+    title: "High-Performance Web Development",
+    description: "Next.js web development with sub-200ms load times. SEO-baked architecture. If it's not instant, it's broken.",
     metrics: "98+ Lighthouse",
     tags: ["Next.js 16", "Headless CMS", "WebGL"],
     colSpan: 1,

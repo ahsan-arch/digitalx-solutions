@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { generatePageMetadata, generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
 import { FloatingDock } from "@/components/navigation/floating-dock";
 import { Footer } from "@/components/layout";
+import { ServiceAreaMap } from "@/components/ui/service-area-map";
 import dynamic from "next/dynamic";
 
 const ServicesSection = dynamic(() => import("@/components/sections/services-section").then((mod) => mod.ServicesSection));
@@ -32,23 +33,30 @@ export default function AustraliaLocationPage() {
                     {/* Background Ambience */}
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cobalt/20 blur-[120px] rounded-full pointer-events-none opacity-50 mix-blend-screen" />
 
-                    <div className="relative z-10 max-w-7xl mx-auto w-full">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-[1px] w-12 bg-cobalt" />
-                            <span className="font-mono text-cobalt tracking-widest text-sm uppercase">
-                                Serving Australia (Sydney / Melbourne / Brisbane)
-                            </span>
+                    <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="h-[1px] w-12 bg-cobalt" />
+                                <span className="font-mono text-cobalt tracking-widest text-sm uppercase">
+                                    Serving Australia (Sydney / Melbourne / Brisbane)
+                                </span>
+                            </div>
+
+                            <h1 className="font-display font-bold text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-tighter text-white uppercase mb-8">
+                                Digital Infrastructure <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cobalt to-cobalt-vivid">Agency Australia</span>
+                            </h1>
+
+                            <p className="text-white/60 max-w-2xl text-lg md:text-xl font-sans leading-relaxed">
+                                Partnering with forward-thinking Australian businesses to build sub-second Next.js websites,
+                                robust GoHighLevel automations, and conversion-engineered Meta Ads systems.
+                            </p>
                         </div>
 
-                        <h1 className="font-display font-bold text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-tighter text-white uppercase mb-8">
-                            Digital Infrastructure <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cobalt to-cobalt-vivid">Agency Australia</span>
-                        </h1>
-
-                        <p className="text-white/60 max-w-2xl text-lg md:text-xl font-sans leading-relaxed">
-                            Partnering with forward-thinking Australian businesses to build sub-second Next.js websites,
-                            robust GoHighLevel automations, and conversion-engineered Meta Ads systems.
-                        </p>
+                        <div className="relative h-[400px] lg:h-[600px] w-full mt-12 lg:mt-0">
+                            <div className="text-white/30 text-xs mb-2 uppercase tracking-widest text-center">Service Area Map</div>
+                            <ServiceAreaMap />
+                        </div>
                     </div>
                 </section>
 

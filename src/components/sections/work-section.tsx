@@ -16,10 +16,10 @@ export function WorkSection() {
         >
           <div>
             <h2 className="font-display text-4xl md:text-6xl text-white uppercase mb-6">
-              Proven <span className="text-cobalt">Scale</span>
+              Work <span className="text-cobalt">Highlights</span>
             </h2>
             <p className="text-white/50 max-w-xl text-lg">
-              Real numbers. Validated stacks. No fluff.
+              Case studies and proven scale. Real numbers. Validated stacks. No fluff.
             </p>
           </div>
         </motion.div>

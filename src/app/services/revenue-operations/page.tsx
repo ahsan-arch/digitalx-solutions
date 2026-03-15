@@ -1,5 +1,6 @@
 import { generatePageMetadata, generateBreadcrumbSchema, generateServicePageSchema, seoCopy, siteConfig } from "@/lib/seo";
 import { ContactSection } from "@/components/sections/contact-section";
+import { RelatedServices } from "@/components/sections/related-services";
 import { SubPageLayout } from "@/components/layout";
 
 export const metadata = generatePageMetadata("/services/revenue-operations", seoCopy.revenueOps);
@@ -57,6 +58,7 @@ export default function RevenueOperationsPage() {
                 </div>
             </section>
 
+            <RelatedServices currentSlug="revenue-operations" />
             <ContactSection />
         </SubPageLayout>
     );
