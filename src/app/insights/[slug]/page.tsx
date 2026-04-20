@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import { generateBreadcrumbSchema, siteConfig, seoKeywords } from "@/lib/seo";
-import { FloatingDock } from "@/components/navigation/floating-dock";
-import { Footer } from "@/components/layout";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -322,70 +320,69 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
-            <FloatingDock />
-            <main id="main" className="bg-background pt-32 pb-24">
-                <article className="max-w-3xl mx-auto px-4 sm:px-6">
-                    <Link href="/insights" className="inline-flex items-center text-sm font-mono text-cobalt hover:text-white transition-colors mb-12">
+            <main id="main" className="pb-24 pt-12">
+                <article className="mx-auto w-full max-w-3xl px-4 md:px-8">
+                    <Link href="/insights" className="mb-10 inline-flex items-center text-sm font-mono text-brand hover:text-brand-deep transition-colors">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
                     </Link>
 
                     <header className="mb-12">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight mb-6">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight mb-6">
                             {article.title}
                         </h1>
-                        <div className="flex flex-wrap items-center gap-4 text-sm font-mono text-white/40 border-b border-white/10 pb-8">
+                        <div className="flex flex-wrap items-center gap-4 text-sm font-mono text-foreground/55 border-b border-border pb-8">
                             <time dateTime={article.date}>{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
-                            <span className="w-1 h-1 rounded-full bg-white/20" />
+                            <span className="w-1 h-1 rounded-full bg-foreground/20" />
                             <span>{article.readTime}</span>
-                            <span className="w-1 h-1 rounded-full bg-white/20" />
+                            <span className="w-1 h-1 rounded-full bg-foreground/20" />
                             <span>By {author.name}</span>
                         </div>
                     </header>
 
                     {/* Author Bio — E-E-A-T signal */}
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-surface-100/30 border border-white/5 mb-12">
-                        <div className="w-12 h-12 rounded-full bg-cobalt/20 flex items-center justify-center text-cobalt font-display font-bold text-lg flex-shrink-0">
+                    <div className="mb-12 flex items-start gap-4 rounded-xl border border-border bg-surface-50 p-4">
+                        <div className="h-12 w-12 shrink-0 rounded-full bg-brand/20 flex items-center justify-center text-brand font-display font-bold text-lg">
                             {author.name.charAt(0)}
                         </div>
                         <div>
-                            <div className="text-white font-display font-bold text-sm">{author.name}</div>
-                            <div className="text-cobalt font-mono text-xs mb-1">{author.role}</div>
-                            <p className="text-white/50 text-xs leading-relaxed">{author.bio}</p>
+                            <div className="text-foreground font-display font-bold text-sm">{author.name}</div>
+                            <div className="text-brand font-mono text-xs mb-1">{author.role}</div>
+                            <p className="text-foreground/65 text-xs leading-relaxed">{author.bio}</p>
                         </div>
                     </div>
 
                     <div
-                        className="prose prose-invert prose-cobalt max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-cobalt hover:prose-a:text-cobalt-vivid prose-p:text-white/70 prose-p:leading-relaxed prose-li:text-white/70"
+                        className="prose prose-slate max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand-deep prose-p:text-foreground/80 prose-p:leading-relaxed prose-li:text-foreground/80"
                         dangerouslySetInnerHTML={{
                             __html: article.content
-                                .replace(/^## (.*$)/gim, '<h2 class="text-3xl mt-12 mb-6 text-white">$1</h2>')
-                                .replace(/^### (.*$)/gim, '<h3 class="text-2xl mt-8 mb-4 text-white">$1</h3>')
-                                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
-                                .replace(/\*(.*?)\*/g, '<em class="text-white/90">$1</em>')
-                                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-cobalt hover:text-cobalt-vivid underline">$1</a>')
+                                .replace(/^## (.*$)/gim, '<h2 class="text-3xl mt-12 mb-6 text-foreground">$1</h2>')
+                                .replace(/^### (.*$)/gim, '<h3 class="text-2xl mt-8 mb-4 text-foreground">$1</h3>')
+                                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>')
+                                .replace(/\*(.*?)\*/g, '<em class="text-foreground/90">$1</em>')
+                                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-brand hover:text-brand-deep underline">$1</a>')
                                 .replace(/^\|(.+)\|$/gim, (match) => {
                                     const cells = match.split('|').filter(c => c.trim());
-                                    const row = cells.map(c => `<td class="px-4 py-3 border border-white/10 text-white/70 text-sm">${c.trim()}</td>`).join('');
+                                    const row = cells.map(c => `<td class="px-4 py-3 border border-border text-foreground/75 text-sm">${c.trim()}</td>`).join('');
                                     return `<tr>${row}</tr>`;
                                 })
                                 .replace(/^- (.*$)/gim, '<li class="mb-2">$1</li>')
                                 .replace(/((?:<li.*?>.*?<\/li>\n?)+)/g, '<ul class="list-disc pl-6 mb-8">$1</ul>')
                                 .replace(/^1\. (.*$)/gim, '<li class="mb-2">$1</li>')
                                 .replace(/\n\n/g, '<p class="mb-6"></p>')
-                                .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded-md bg-white/10 text-cobalt font-mono text-sm">$1</code>')
+                                .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded-md bg-surface-100 text-brand font-mono text-sm">$1</code>')
                         }}
                     />
 
                     {/* Related Services — Internal linking */}
                     {article.relatedServices.length > 0 && (
-                        <div className="mt-16 pt-8 border-t border-white/10">
-                            <h3 className="text-lg font-display font-bold text-white mb-4">Related Services</h3>
+                        <div className="mt-16 pt-8 border-t border-border">
+                            <h3 className="text-lg font-display font-bold text-foreground mb-4">Related Services</h3>
                             <div className="flex flex-wrap gap-3">
                                 {article.relatedServices.map((s) => (
                                     <Link
                                         key={s.href}
                                         href={s.href}
-                                        className="px-4 py-2 rounded-lg border border-cobalt/30 bg-cobalt/5 text-cobalt font-mono text-sm hover:bg-cobalt/15 transition-colors"
+                                        className="px-4 py-2 rounded-lg border border-brand/35 bg-brand/10 text-brand font-mono text-sm hover:bg-brand/20 transition-colors"
                                     >
                                         {s.label} →
                                     </Link>
@@ -396,8 +393,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
                     {/* Related Articles — Internal linking */}
                     {article.relatedSlugs.length > 0 && (
-                        <div className="mt-12 pt-8 border-t border-white/10">
-                            <h3 className="text-lg font-display font-bold text-white mb-4">Related Articles</h3>
+                        <div className="mt-12 pt-8 border-t border-border">
+                            <h3 className="text-lg font-display font-bold text-foreground mb-4">Related Articles</h3>
                             <div className="space-y-4">
                                 {article.relatedSlugs.map((slug) => {
                                     const related = articlesData[slug];
@@ -406,10 +403,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                                         <Link
                                             key={slug}
                                             href={`/insights/${slug}`}
-                                            className="block p-4 rounded-lg border border-white/5 bg-surface-100/20 hover:bg-surface-100/40 transition-colors"
+                                            className="block p-4 rounded-lg border border-border bg-surface-50 hover:border-brand/45 transition-colors"
                                         >
-                                            <div className="text-white font-display font-bold mb-1">{related.title}</div>
-                                            <div className="text-white/50 text-sm">{related.description}</div>
+                                            <div className="text-foreground font-display font-bold mb-1">{related.title}</div>
+                                            <div className="text-foreground/65 text-sm">{related.description}</div>
                                         </Link>
                                     );
                                 })}
@@ -418,12 +415,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     )}
 
                     {/* Updated date — E-E-A-T freshness signal */}
-                    <div className="mt-12 pt-8 border-t border-white/10 text-sm font-mono text-white/30">
+                    <div className="mt-12 pt-8 border-t border-border text-sm font-mono text-foreground/45">
                         Last updated: {new Date(article.dateModified).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                     </div>
                 </article>
             </main>
-            <Footer />
         </>
     );
 }

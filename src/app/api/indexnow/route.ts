@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 /**
- * IndexNow API endpoint — pings Bing, Yandex, and Naver to re-crawl URLs instantly.
+ * IndexNow API endpoint - pings Bing, Yandex, and Naver to re-crawl URLs instantly.
  * Usage: POST /api/indexnow with body { urls: ["/", "/services", ...] }
  * Or GET /api/indexnow to submit all key pages automatically.
  */
@@ -11,14 +11,14 @@ const SITE = "https://digitalx-solutions.com";
 
 const ALL_URLS = [
     "/",
-    "/services",
-    "/services/web-dev",
-    "/services/meta-ads",
-    "/services/revenue-operations",
-    "/services/conversational-ai",
-    "/services/ai-voice-receptionists",
-    "/services/nextjs-development",
-    "/services/meta-ads-engineering",
+    "/solutions",
+    "/solutions/web-development",
+    "/solutions/ai-automation",
+    "/solutions/performance-marketing",
+    "/industries",
+    "/industries/home-services",
+    "/industries/healthcare",
+    "/industries/professional-services",
     "/about",
     "/work",
     "/contact",
@@ -51,7 +51,7 @@ export async function GET() {
             urlsSubmitted: urlList.length,
             message: result.status === 200 || result.status === 202
                 ? "URLs submitted successfully to IndexNow (Bing, Yandex, Naver)"
-                : "Submission may have failed — check status code",
+                : "Submission may have failed - check status code",
         });
     } catch (error) {
         return NextResponse.json(

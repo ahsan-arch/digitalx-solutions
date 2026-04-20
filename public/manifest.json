@@ -1,7 +1,7 @@
 {
-    "name": "DigitalX Solutions — AI Automation & Web Agency",
+    "name": "DigitalX Solutions - Revenue Systems Partner",
     "short_name": "DigitalX",
-    "description": "Premium AI automation and web development agency serving businesses in the United States and Australia. Custom n8n workflows, GoHighLevel systems, AI voice agents, and Next.js websites.",
+    "description": "Integrated web development, AI automation, and performance marketing systems for businesses in the United States and Australia.",
     "start_url": "/",
     "scope": "/",
     "id": "/",
@@ -11,8 +11,8 @@
         "standalone",
         "minimal-ui"
     ],
-    "background_color": "#050505",
-    "theme_color": "#050505",
+    "background_color": "#f7f2e8",
+    "theme_color": "#f7f2e8",
     "orientation": "portrait-primary",
     "categories": [
         "business",
@@ -24,9 +24,9 @@
     "prefer_related_applications": false,
     "shortcuts": [
         {
-            "name": "Contact Us",
+            "name": "Book Strategy Call",
             "short_name": "Contact",
-            "description": "Start a project with DigitalX Solutions",
+            "description": "Start a strategy conversation with DigitalX Solutions",
             "url": "/contact",
             "icons": [
                 {
@@ -37,10 +37,10 @@
             ]
         },
         {
-            "name": "Our Services",
-            "short_name": "Services",
-            "description": "AI automation, web development, and Meta Ads",
-            "url": "/services",
+            "name": "Solutions",
+            "short_name": "Solutions",
+            "description": "Explore web, automation, and performance solutions",
+            "url": "/solutions",
             "icons": [
                 {
                     "src": "/apple-icon",
@@ -50,10 +50,10 @@
             ]
         },
         {
-            "name": "Engineering Insights",
-            "short_name": "Insights",
-            "description": "Technical articles and guides",
-            "url": "/insights",
+            "name": "Industries",
+            "short_name": "Industries",
+            "description": "Industry-specific growth playbooks",
+            "url": "/industries",
             "icons": [
                 {
                     "src": "/apple-icon",

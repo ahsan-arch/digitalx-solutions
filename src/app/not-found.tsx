@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
     return (
-        <main className="min-h-screen flex items-center justify-center bg-background text-foreground">
-            <div className="text-center space-y-6 px-6">
-                <h1 className="text-7xl font-bold font-heading tracking-tighter text-white/90">
+        <main className="min-h-[70vh] flex items-center justify-center px-4 py-16">
+            <div className="w-full max-w-xl rounded-3xl border border-border bg-surface-50 p-10 text-center">
+                <h1 className="text-7xl font-display font-bold tracking-tight text-foreground">
                     404
                 </h1>
-                <p className="text-lg text-white/50 max-w-md mx-auto">
+                <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-foreground/68">
                     This page doesn&apos;t exist. It might have been moved or deleted.
                 </p>
                 <Link
                     href="/"
-                    className="inline-block px-6 py-3 rounded-full bg-white/10 text-white/80 hover:bg-white/20 transition-colors duration-300 text-sm tracking-wide"
+                    className="mt-7 inline-flex rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
                 >
-                    ← Back to Home
+                    Back to Home
                 </Link>
             </div>
         </main>

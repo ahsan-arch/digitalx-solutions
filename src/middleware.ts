@@ -1,13 +1,19 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
+const LEGACY_PATH_REDIRECTS: Record<string, string> = {
+    '/services': '/solutions',
+    '/services/web-dev': '/solutions/web-development',
+    '/services/nextjs-development': '/solutions/web-development',
+    '/services/revenue-operations': '/solutions/ai-automation',
+    '/services/conversational-ai': '/solutions/ai-automation',
+    '/services/ai-voice-receptionists': '/solutions/ai-automation',
+    '/services/meta-ads': '/solutions/performance-marketing',
+    '/services/meta-ads-engineering': '/solutions/performance-marketing',
+};
+
 export function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
-
-    // Skip for localhost during development to avoid confusion
-    if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
-        return NextResponse.next();
-    }
 
     // Redirect www to non-www
     if (url.hostname.startsWith('www.')) {
@@ -15,15 +21,24 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(url, 301);
     }
 
-    // Trailing slash normalization — remove trailing slashes (except root)
-    if (url.pathname !== '/' && url.pathname.endsWith('/')) {
-        url.pathname = url.pathname.replace(/\/+$/, '');
+    const normalizedPath = url.pathname !== '/' ? url.pathname.replace(/\/+$/, '') : '/';
+
+    // Legacy IA redirects for SEO-safe migration to Solutions x Industries.
+    const redirectTarget = LEGACY_PATH_REDIRECTS[normalizedPath];
+    if (redirectTarget) {
+        url.pathname = redirectTarget;
+        return NextResponse.redirect(url, 301);
+    }
+
+    // Trailing slash normalization - remove trailing slashes (except root).
+    if (normalizedPath !== url.pathname) {
+        url.pathname = normalizedPath;
         return NextResponse.redirect(url, 301);
     }
 
     const response = NextResponse.next();
 
-    // ── Security Headers ──
+    // Security headers
     response.headers.set('X-Content-Type-Options', 'nosniff');
     response.headers.set('X-Frame-Options', 'DENY');
     response.headers.set('X-XSS-Protection', '1; mode=block');

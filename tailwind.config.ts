@@ -1,15 +1,6 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
-/**
- * Digital X Solution — Design Tokens (Stitch Redesign)
- *
- * AESTHETIC: High-Tech Dark Mode / Electric Neon
- * - Typography: Space Grotesk (headings), Inter (body)
- * - Colors: Abyssal dark mode + Electric Neon Green (#0df26c)
- * - Interaction: 3D tilts, magnetic pulls, neon glow effects.
- */
-
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -20,74 +11,76 @@ const config: Config = {
   theme: {
     fontFamily: {
       sans: ['var(--font-inter)', "sans-serif"],
-      display: ['var(--font-space-grotesk)', "sans-serif"],
-      mono: ['"jetbrains mono"', "monospace"],
+      display: ['var(--font-fraunces)', "serif"],
+      mono: ['var(--font-jetbrains-mono)', "monospace"],
     },
     extend: {
       colors: {
-        background: "#050505", // Abyssal Obsidian
-        foreground: "#ededed", // Crisp Off-White
+        background: "rgb(var(--background) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        border: "rgb(var(--border) / <alpha-value>)",
 
-        // Stitch Design Palette
+        brand: {
+          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
+          deep: "rgb(var(--brand-deep) / <alpha-value>)",
+          soft: "rgb(var(--brand-soft) / <alpha-value>)",
+        },
+
+        surface: {
+          50: "rgb(var(--surface-50) / <alpha-value>)",
+          100: "rgb(var(--surface-100) / <alpha-value>)",
+          200: "rgb(var(--surface-200) / <alpha-value>)",
+          300: "rgb(var(--surface-200) / <alpha-value>)",
+        },
+
+        // Legacy aliases kept to avoid breaking older components during migration.
         cobalt: {
-          DEFAULT: "#0df26c",
-          vivid: "#0ac957",
+          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
+          vivid: "rgb(var(--brand-deep) / <alpha-value>)",
         },
         acid: {
-          green: "#0df26c",
-          purple: "#0df26c",
+          green: "rgb(var(--brand) / <alpha-value>)",
+          purple: "rgb(var(--brand) / <alpha-value>)",
         },
         neon: {
-          DEFAULT: "#0df26c",
-          vivid: "#0ac957",
-          dim: "#09a34a",
-          glow: "rgba(13, 242, 108, 0.3)",
+          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
+          vivid: "rgb(var(--brand-deep) / <alpha-value>)",
+          dim: "rgb(var(--brand-soft) / <alpha-value>)",
+          glow: "rgb(var(--brand) / 0.24)",
         },
-        surface: {
-          100: "#121212",
-          200: "#1e1e1e",
-          300: "#2a2a2a",
-        },
-        border: "rgba(255, 255, 255, 0.1)",
       },
       borderRadius: {
-        'stitch': '8px',
-      },
-      backgroundImage: {
-        'noise': "url('/noise.png')",
+        stitch: "10px",
       },
       animation: {
-        'marquee': 'marquee 25s linear infinite',
-        'blink': 'blink 1s step-end infinite',
-        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'scale-in': 'scaleIn 0.5s ease-out forwards',
-        'slide-up-dock': 'slideUpDock 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        marquee: "marquee 25s linear infinite",
+        blink: "blink 1s step-end infinite",
+        "fade-in-up": "fadeInUp 0.7s ease-out forwards",
+        "scale-in": "scaleIn 0.55s ease-out forwards",
+        "float-slow": "floatSlow 5s ease-in-out infinite",
       },
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
         blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
         },
         fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
+          "0%": { opacity: "0", transform: "scale(0.97)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
         },
-        slideUpDock: {
-          '0%': { opacity: '0', transform: 'translateX(-50%) translateY(100%)' },
-          '100%': { opacity: '1', transform: 'translateX(-50%) translateY(0)' },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-8px)" },
         },
-      },
-      // 3D Transform Utilities
-      transformOrigin: {
-        'center-center': 'center center',
       },
     },
   },
