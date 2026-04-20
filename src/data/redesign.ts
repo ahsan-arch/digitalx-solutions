@@ -358,36 +358,84 @@ export const processSteps = [
 ];
 
 export type ResultCard = {
+  slug: string;
   client: string;
   industry: string;
+  industrySlug: IndustrySlug;
   challenge: string;
   impact: string;
   services: string[];
+  solutionsUsed: SolutionSlug[];
+  narrative: string[];
+  metrics: { label: string; value: string }[];
 };
 
 export const results: ResultCard[] = [
   {
+    slug: "riverstone-dental-group",
     client: "Riverstone Dental Group",
     industry: "Healthcare & Wellness",
+    industrySlug: "healthcare-wellness",
     challenge: "Missed inbound calls and front-desk overload.",
     impact: "24/7 call coverage with automated booking — 32% more appointments.",
     services: ["AI Voice Agents", "CRM Integration"],
+    solutionsUsed: ["ai-voice-agents", "crm-integration"],
+    narrative: [
+      "Riverstone's two-receptionist front desk was answering 65% of inbound calls. The other 35% — typically after 5pm and on weekends — never got a callback, and patients booked at the next clinic.",
+      "We deployed an AI voice agent trained on their service menu, hours, and intake script. It now handles overflow and after-hours, books directly into their PMS, and texts a confirmation within 30 seconds.",
+      "Within 60 days, booked appointments increased 32% with zero new front-desk hires.",
+    ],
+    metrics: [
+      { label: "Booked appointments", value: "+32%" },
+      { label: "After-hours capture", value: "94%" },
+      { label: "Avg. response time", value: "< 30s" },
+    ],
   },
   {
+    slug: "harbor-plumbing",
     client: "Harbor Plumbing Co.",
     industry: "Home Services",
+    industrySlug: "home-services",
     challenge: "Losing after-hours emergency calls to competitors.",
     impact: "Recovered $180k/yr in booked jobs via missed-call text-back + AI voice.",
     services: ["Missed Call Text-Back", "AI Voice Agents"],
+    solutionsUsed: ["missed-call-text-back", "ai-voice-agents"],
+    narrative: [
+      "Harbor's owner answered the phone himself between jobs. He estimated 30–40 missed calls a week, mostly nights and weekends — and emergency plumbing is the most lucrative slice.",
+      "We layered missed-call text-back over an AI voice agent that triages emergencies and books non-urgent jobs. Calls his cell only for true after-hours emergencies.",
+      "First quarter recovered $48k of previously-lost calls. Annualised: $180k+ in booked work without adding headcount.",
+    ],
+    metrics: [
+      { label: "Annual recovered revenue", value: "$180k+" },
+      { label: "Missed-call response", value: "< 60s" },
+      { label: "Owner phone interruptions", value: "−72%" },
+    ],
   },
   {
+    slug: "atlas-consulting",
     client: "Atlas Consulting Group",
     industry: "Professional Services",
+    industrySlug: "professional-services",
     challenge: "Billable hours lost to unqualified discovery calls.",
     impact: "Qualification chatbot cut time-wasters by 60%; close rate up 2.1×.",
     services: ["Chatbots", "Automated Lead Nurturing"],
+    solutionsUsed: ["chatbots", "automated-lead-nurturing"],
+    narrative: [
+      "Atlas partners were spending 12+ hours a week on discovery calls — mostly with leads outside their billable-rate range or scope.",
+      "We built a qualification chatbot that asks five intake questions and only books partner calendars when the prospect clears all five. Below-threshold inquiries route to an automated nurture for re-evaluation in 90 days.",
+      "Time-wasters dropped 60% within a month. Partner-call close rate rose from 18% to 38%.",
+    ],
+    metrics: [
+      { label: "Time-waster calls", value: "−60%" },
+      { label: "Close rate", value: "18% → 38%" },
+      { label: "Partner hours reclaimed", value: "8/wk" },
+    ],
   },
 ];
+
+export function getResultBySlug(slug: string): ResultCard | undefined {
+  return results.find((r) => r.slug === slug);
+}
 
 export const testimonials = [
   {

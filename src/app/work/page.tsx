@@ -34,9 +34,13 @@ export default function WorkPage() {
 
             <section className="container-shell mt-10 grid gap-5 md:grid-cols-3">
                 {results.map((result) => (
-                    <article key={result.client} className="rounded-2xl border border-border bg-surface-50 p-6">
+                    <Link
+                        key={result.slug}
+                        href={`/work/${result.slug}`}
+                        className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40"
+                    >
                         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">{result.industry}</p>
-                        <h2 className="mt-2 text-2xl font-semibold text-foreground">{result.client}</h2>
+                        <h2 className="mt-2 text-2xl font-semibold text-foreground group-hover:text-brand">{result.client}</h2>
                         <p className="mt-4 text-sm leading-relaxed text-foreground/70">
                             <span className="font-medium text-foreground">Challenge: </span>
                             {result.challenge}
@@ -55,7 +59,7 @@ export default function WorkPage() {
                                 </span>
                             ))}
                         </div>
-                    </article>
+                    </Link>
                 ))}
             </section>
 
