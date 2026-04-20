@@ -1,37 +1,44 @@
 import { NextResponse } from "next/server";
-
-/**
- * IndexNow API endpoint - pings Bing, Yandex, and Naver to re-crawl URLs instantly.
- * Usage: POST /api/indexnow with body { urls: ["/", "/services", ...] }
- * Or GET /api/indexnow to submit all key pages automatically.
- */
+import { articlesData } from "@/data/insights-articles";
+import { industries, solutions } from "@/data/redesign";
 
 const INDEX_NOW_KEY = "3c12d5a79b40fe68";
 const SITE = "https://digitalx-solutions.com";
 
-const ALL_URLS = [
+const STATIC_PATHS = [
     "/",
     "/solutions",
-    "/solutions/web-development",
-    "/solutions/ai-automation",
-    "/solutions/performance-marketing",
     "/industries",
-    "/industries/home-services",
-    "/industries/healthcare",
-    "/industries/professional-services",
-    "/about",
+    "/services/web-design-and-development",
+    "/services/meta-ads",
     "/work",
+    "/pricing",
+    "/process",
+    "/about",
     "/contact",
     "/insights",
-    "/insights/n8n-vs-zapier",
-    "/insights/ai-voice-receptionists-guide",
-    "/insights/server-side-tracking-meta-ads",
-    "/locations/usa",
-    "/locations/australia",
+    "/usa",
+    "/au",
+    "/legal/privacy",
+    "/legal/terms",
+    "/legal/cookies",
 ];
 
 export async function GET() {
-    const urlList = ALL_URLS.map((path) => `${SITE}${path}`);
+    if (process.env.VERCEL_ENV !== "production") {
+        return NextResponse.json(
+            { skipped: true, reason: "IndexNow only runs in production." },
+            { status: 200 }
+        );
+    }
+
+    const dynamicPaths = [
+        ...solutions.map((s) => `/solutions/${s.slug}`),
+        ...industries.map((i) => `/industries/${i.slug}`),
+        ...Object.keys(articlesData).map((slug) => `/insights/${slug}`),
+    ];
+
+    const urlList = [...STATIC_PATHS, ...dynamicPaths].map((path) => `${SITE}${path}`);
 
     try {
         const result = await fetch("https://api.indexnow.org/indexnow", {
@@ -49,9 +56,10 @@ export async function GET() {
             status: result.status,
             statusText: result.statusText,
             urlsSubmitted: urlList.length,
-            message: result.status === 200 || result.status === 202
-                ? "URLs submitted successfully to IndexNow (Bing, Yandex, Naver)"
-                : "Submission may have failed - check status code",
+            message:
+                result.status === 200 || result.status === 202
+                    ? "URLs submitted successfully to IndexNow (Bing, Yandex, Naver)"
+                    : "Submission may have failed - check status code",
         });
     } catch (error) {
         return NextResponse.json(

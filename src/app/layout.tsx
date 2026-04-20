@@ -74,17 +74,20 @@ export const metadata: Metadata = {
     images: ["/api/og"],
     creator: siteConfig.social.twitter,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots:
+    process.env.VERCEL_ENV === "preview"
+      ? { index: false, follow: false, nocache: true }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

@@ -1,21 +1,9 @@
-import { z } from "zod";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { contactSchema } from "@/lib/schemas/contact";
 
-export const runtime = "nodejs"; // Force Node.js runtime for nodemailer compatibility
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email"),
-  timeline: z.enum(["1-3 Months", "3-6 Months", "ASAP"]),
-  details: z.string().min(10, "Tell us more about the project"),
-  attachment: z.object({
-    name: z.string(),
-    type: z.string(),
-    content: z.string(), // Base64 content
-  }).nullable().optional(),
-});
 
 export async function POST(req: Request) {
   try {
