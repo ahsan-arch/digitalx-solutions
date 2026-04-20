@@ -1,115 +1,50 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/seo";
+import { articlesData } from "@/data/insights-articles";
+import { solutions, industries } from "@/data/redesign";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        {
-            url: siteConfig.domain,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 1.0,
-        },
-        {
-            url: `${siteConfig.domain}/solutions`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.9,
-        },
-        {
-            url: `${siteConfig.domain}/solutions/web-development`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${siteConfig.domain}/solutions/ai-automation`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${siteConfig.domain}/solutions/performance-marketing`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${siteConfig.domain}/industries`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.9,
-        },
-        {
-            url: `${siteConfig.domain}/industries/home-services`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${siteConfig.domain}/industries/healthcare`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${siteConfig.domain}/industries/professional-services`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${siteConfig.domain}/work`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-        {
-            url: `${siteConfig.domain}/contact`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-        {
-            url: `${siteConfig.domain}/locations/usa`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.9,
-        },
-        {
-            url: `${siteConfig.domain}/locations/australia`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.9,
-        },
-        {
-            url: `${siteConfig.domain}/insights`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.8,
-        },
-        {
-            url: `${siteConfig.domain}/insights/server-side-tracking-meta-ads`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-        {
-            url: `${siteConfig.domain}/insights/n8n-vs-zapier`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-        {
-            url: `${siteConfig.domain}/insights/ai-voice-receptionists-guide`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-        {
-            url: `${siteConfig.domain}/about`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-    ];
+    const now = new Date();
+
+    const staticEntries: MetadataRoute.Sitemap = [
+        { url: siteConfig.domain, changeFrequency: "weekly", priority: 1.0 },
+        { url: `${siteConfig.domain}/solutions`, changeFrequency: "monthly", priority: 0.9 },
+        { url: `${siteConfig.domain}/industries`, changeFrequency: "weekly", priority: 0.9 },
+        { url: `${siteConfig.domain}/services/web-design-and-development`, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${siteConfig.domain}/services/meta-ads`, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${siteConfig.domain}/work`, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${siteConfig.domain}/pricing`, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${siteConfig.domain}/process`, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${siteConfig.domain}/about`, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${siteConfig.domain}/contact`, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${siteConfig.domain}/insights`, changeFrequency: "weekly", priority: 0.8 },
+        { url: `${siteConfig.domain}/usa`, changeFrequency: "weekly", priority: 0.9 },
+        { url: `${siteConfig.domain}/au`, changeFrequency: "weekly", priority: 0.9 },
+        { url: `${siteConfig.domain}/legal/privacy`, changeFrequency: "yearly", priority: 0.3 },
+        { url: `${siteConfig.domain}/legal/terms`, changeFrequency: "yearly", priority: 0.3 },
+        { url: `${siteConfig.domain}/legal/cookies`, changeFrequency: "yearly", priority: 0.3 },
+    ].map((entry) => ({ ...entry, lastModified: now }));
+
+    const solutionEntries: MetadataRoute.Sitemap = solutions.map((s) => ({
+        url: `${siteConfig.domain}/solutions/${s.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.85,
+    }));
+
+    const industryEntries: MetadataRoute.Sitemap = industries.map((i) => ({
+        url: `${siteConfig.domain}/industries/${i.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.85,
+    }));
+
+    const articleEntries: MetadataRoute.Sitemap = Object.entries(articlesData).map(([slug, article]) => ({
+        url: `${siteConfig.domain}/insights/${slug}`,
+        lastModified: new Date(article.dateModified || article.date),
+        changeFrequency: "monthly",
+        priority: 0.7,
+    }));
+
+    return [...staticEntries, ...solutionEntries, ...industryEntries, ...articleEntries];
 }
