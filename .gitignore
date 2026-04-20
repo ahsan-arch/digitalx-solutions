@@ -37,3 +37,7 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# agent tooling
+.agent/
+testsprite_tests/
