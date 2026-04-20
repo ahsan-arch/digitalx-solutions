@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   darkMode: ["class"],
@@ -105,21 +104,6 @@ const config: Config = {
           200: "rgb(var(--surface-200) / <alpha-value>)",
           300: "rgb(var(--surface-200) / <alpha-value>)",
         },
-
-        cobalt: {
-          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
-          vivid: "rgb(var(--brand-deep) / <alpha-value>)",
-        },
-        acid: {
-          green: "rgb(var(--brand) / <alpha-value>)",
-          purple: "rgb(var(--brand) / <alpha-value>)",
-        },
-        neon: {
-          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
-          vivid: "rgb(var(--brand-deep) / <alpha-value>)",
-          dim: "rgb(var(--brand-soft) / <alpha-value>)",
-          glow: "rgb(var(--brand) / 0.24)",
-        },
       },
       borderRadius: {
         xs: "6px",
@@ -184,25 +168,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    plugin(function ({ addUtilities }) {
-      addUtilities({
-        ".preserve-3d": {
-          "transform-style": "preserve-3d",
-        },
-        ".perspective-1000": {
-          perspective: "1000px",
-        },
-        ".backface-hidden": {
-          "backface-visibility": "hidden",
-        },
-        ".rotate-y-180": {
-          transform: "rotateY(180deg)",
-        },
-      });
-    }),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 export default config;
