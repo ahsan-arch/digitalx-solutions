@@ -7,22 +7,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();
 
     const staticEntries: MetadataRoute.Sitemap = [
-        { url: siteConfig.domain, changeFrequency: "weekly", priority: 1.0 },
-        { url: `${siteConfig.domain}/solutions`, changeFrequency: "monthly", priority: 0.9 },
-        { url: `${siteConfig.domain}/industries`, changeFrequency: "weekly", priority: 0.9 },
-        { url: `${siteConfig.domain}/services/web-design-and-development`, changeFrequency: "monthly", priority: 0.7 },
-        { url: `${siteConfig.domain}/services/meta-ads`, changeFrequency: "monthly", priority: 0.7 },
-        { url: `${siteConfig.domain}/work`, changeFrequency: "monthly", priority: 0.8 },
-        { url: `${siteConfig.domain}/pricing`, changeFrequency: "monthly", priority: 0.8 },
-        { url: `${siteConfig.domain}/process`, changeFrequency: "monthly", priority: 0.7 },
-        { url: `${siteConfig.domain}/about`, changeFrequency: "monthly", priority: 0.7 },
-        { url: `${siteConfig.domain}/contact`, changeFrequency: "monthly", priority: 0.7 },
-        { url: `${siteConfig.domain}/insights`, changeFrequency: "weekly", priority: 0.8 },
-        { url: `${siteConfig.domain}/usa`, changeFrequency: "weekly", priority: 0.9 },
-        { url: `${siteConfig.domain}/au`, changeFrequency: "weekly", priority: 0.9 },
-        { url: `${siteConfig.domain}/legal/privacy`, changeFrequency: "yearly", priority: 0.3 },
-        { url: `${siteConfig.domain}/legal/terms`, changeFrequency: "yearly", priority: 0.3 },
-        { url: `${siteConfig.domain}/legal/cookies`, changeFrequency: "yearly", priority: 0.3 },
+        { url: siteConfig.domain, changeFrequency: "weekly" as const, priority: 1.0 },
+        { url: `${siteConfig.domain}/solutions`, changeFrequency: "monthly" as const, priority: 0.9 },
+        { url: `${siteConfig.domain}/industries`, changeFrequency: "weekly" as const, priority: 0.9 },
+        { url: `${siteConfig.domain}/services/web-design-and-development`, changeFrequency: "monthly" as const, priority: 0.7 },
+        { url: `${siteConfig.domain}/services/meta-ads`, changeFrequency: "monthly" as const, priority: 0.7 },
+        { url: `${siteConfig.domain}/work`, changeFrequency: "monthly" as const, priority: 0.8 },
+        { url: `${siteConfig.domain}/pricing`, changeFrequency: "monthly" as const, priority: 0.8 },
+        { url: `${siteConfig.domain}/process`, changeFrequency: "monthly" as const, priority: 0.7 },
+        { url: `${siteConfig.domain}/about`, changeFrequency: "monthly" as const, priority: 0.7 },
+        { url: `${siteConfig.domain}/contact`, changeFrequency: "monthly" as const, priority: 0.7 },
+        { url: `${siteConfig.domain}/insights`, changeFrequency: "weekly" as const, priority: 0.8 },
+        { url: `${siteConfig.domain}/usa`, changeFrequency: "weekly" as const, priority: 0.9 },
+        { url: `${siteConfig.domain}/au`, changeFrequency: "weekly" as const, priority: 0.9 },
+        { url: `${siteConfig.domain}/legal/privacy`, changeFrequency: "yearly" as const, priority: 0.3 },
+        { url: `${siteConfig.domain}/legal/terms`, changeFrequency: "yearly" as const, priority: 0.3 },
+        { url: `${siteConfig.domain}/legal/cookies`, changeFrequency: "yearly" as const, priority: 0.3 },
     ].map((entry) => ({ ...entry, lastModified: now }));
 
     const solutionEntries: MetadataRoute.Sitemap = solutions.map((s) => ({
