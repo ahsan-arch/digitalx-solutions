@@ -45,7 +45,7 @@ export const solutions: Solution[] = [
     name: "AI Voice Agents",
     tagline: "24/7 answering + qualification + booking",
     summary:
-      "Human-sounding AI receptionists answer every call, qualify the caller, and book the job — day, night, weekends, and holidays.",
+      "Human-sounding AI receptionists answer every call, qualify the caller, and book the job, day, night, weekends, and holidays.",
     outcomes: [
       "Zero missed calls and after-hours revenue leaks",
       "Consistent qualification every time, not when staff are free",
@@ -68,11 +68,11 @@ export const solutions: Solution[] = [
     name: "Missed Call Text-Back",
     tagline: "Under a minute to every missed caller",
     summary:
-      "Every call you can't pick up triggers an instant SMS — so the lead is engaged before they dial your competitor.",
+      "Every call you can't pick up triggers an instant SMS, so the lead is engaged before they dial your competitor.",
     outcomes: [
-      "Recover 30–50% of otherwise-lost callers",
+      "Recover 30 to 50% of otherwise-lost callers",
       "Start the conversation before the next business opens",
-      "Zero ops overhead — runs silently in the background",
+      "Zero ops overhead, runs silently in the background",
     ],
     capabilities: [
       "Instant SMS trigger on every missed call",
@@ -82,7 +82,7 @@ export const solutions: Solution[] = [
       "Reporting on recovery rate + revenue attribution",
     ],
     bestFor:
-      "Any business where a missed call equals a lost customer — home services, clinics, salons, law firms.",
+      "Any business where a missed call equals a lost customer, home services, clinics, salons, law firms.",
     legacyPaths: [],
     group: "capture",
   },
@@ -95,7 +95,7 @@ export const solutions: Solution[] = [
     outcomes: [
       "Recover no-shows and ghosters with automated follow-ups",
       "Shorten quote-to-close by staying top-of-mind",
-      "Free your team from chasing — focus them on converting",
+      "Free your team from chasing, focus them on converting",
     ],
     capabilities: [
       "Industry-specific nurture templates",
@@ -105,7 +105,7 @@ export const solutions: Solution[] = [
       "Seamless handoff to human reps on intent signals",
     ],
     bestFor:
-      "Services with consideration cycles — med spas, legal, mortgage, fitness memberships, home improvement estimates.",
+      "Services with consideration cycles, med spas, legal, mortgage, fitness memberships, home improvement estimates.",
     legacyPaths: [],
     group: "nurture",
   },
@@ -114,7 +114,7 @@ export const solutions: Solution[] = [
     name: "Chatbots (Web + WhatsApp + SMS)",
     tagline: "AI that qualifies, books, and answers 24/7",
     summary:
-      "Deploy AI chat on your website, WhatsApp, and SMS. Trained on your services, pricing, and FAQs — so it actually converts.",
+      "Deploy AI chat on your website, WhatsApp, and SMS. Trained on your services, pricing, and FAQs, so it actually converts.",
     outcomes: [
       "Capture inquiries when your team is asleep",
       "Deflect price-shoppers while qualifying serious buyers",
@@ -128,18 +128,18 @@ export const solutions: Solution[] = [
       "Analytics on top questions, conversions, and drop-off",
     ],
     bestFor:
-      "Any business with a website doing more than $10k/mo in leads — especially multi-location and after-hours heavy.",
+      "Any business with a website doing more than $10k/mo in leads, especially multi-location and after-hours heavy.",
     legacyPaths: ["/services/conversational-ai"],
     group: "nurture",
   },
   {
     slug: "crm-integration",
     name: "CRM Integration",
-    tagline: "GoHighLevel, n8n, and your existing stack — wired together",
+    tagline: "GoHighLevel, n8n, and your existing stack, wired together",
     summary:
       "We connect your phone, chat, forms, ads, and calendar into one CRM so every lead is tracked, scored, and routed automatically.",
     outcomes: [
-      "One pipeline — no more spreadsheets, sticky notes, or lost leads",
+      "One pipeline, no more spreadsheets, sticky notes, or lost leads",
       "Automatic lead scoring and routing to the right closer",
       "Real-time visibility into what's working across every channel",
     ],
@@ -160,7 +160,7 @@ export const solutions: Solution[] = [
     name: "Analytics & Reporting Dashboards",
     tagline: "Live pipeline + ROI dashboards for owners",
     summary:
-      "See bookings, revenue, ad spend, and pipeline health in one dashboard — not seven tabs you forget to check.",
+      "See bookings, revenue, ad spend, and pipeline health in one dashboard, not seven tabs you forget to check.",
     outcomes: [
       "Know your true cost-per-booked-job this week, not next quarter",
       "Spot channel drop-offs before they blow up your month",
@@ -211,13 +211,13 @@ export const industries: Industry[] = [
       "For trades who answer calls from job sites, we deploy AI voice agents, missed-call text-back, and booking automation so every quote request turns into a scheduled visit.",
     niches: ["Plumbers", "Roofers", "HVAC", "Electricians", "Landscapers", "Pest control", "Painters"],
     painPoints: [
-      "Missing calls while on tools — and losing the job",
+      "Missing calls while on tools, and losing the job",
       "Quote follow-ups slipping through the cracks",
       "Ad spend that can't be traced to booked revenue",
     ],
     playbook: [
       "AI voice agent answers every call, qualifies the job, books the visit",
-      "Missed-call text-back recovers 30–50% of lost callers",
+      "Missed-call text-back recovers 30 to 50% of lost callers",
       "Automated quote follow-ups with SMS + email sequences",
       "GHL pipeline with job-type tagging for Meta retargeting",
     ],
@@ -237,7 +237,7 @@ export const industries: Industry[] = [
     niches: ["Med spas", "Dental practices", "Chiropractors", "Therapists", "Physiotherapists", "Naturopaths"],
     painPoints: [
       "High inbound volume but only two front-desk seats",
-      "No-shows costing $300–800 per empty chair",
+      "No-shows costing $300 to 800 per empty chair",
       "Staff copying leads between software manually",
     ],
     playbook: [
@@ -281,7 +281,7 @@ export const industries: Industry[] = [
   {
     slug: "fitness-personal-care",
     name: "Fitness & Personal Care",
-    headline: "Fill the schedule — and keep it full.",
+    headline: "Fill the schedule, and keep it full.",
     summary:
       "For gyms, studios, salons, and barbershops, we automate trial signups, rebooking, and win-back so retention stops depending on memory.",
     niches: ["Gyms", "Yoga / pilates studios", "Salons", "Barbershops", "Personal trainers", "Nail bars"],
@@ -318,7 +318,7 @@ export const industries: Industry[] = [
     playbook: [
       "Instant AI response to every portal + ad lead",
       "Qualification flow that separates serious buyers from tire-kickers",
-      "Drip nurture for long-horizon buyers (6–18 months out)",
+      "Drip nurture for long-horizon buyers (6 to 18 months out)",
       "Post-close referral + review automation",
     ],
     relatedSolutionSlugs: [
@@ -338,7 +338,7 @@ export const processSteps = [
   {
     title: "Discover",
     description:
-      "We map your current call flow, lead sources, and manual handoffs — and show you the exact leaks costing you revenue.",
+      "We map your current call flow, lead sources, and manual handoffs, and show you the exact leaks costing you revenue.",
   },
   {
     title: "Build",
@@ -377,11 +377,11 @@ export const results: ResultCard[] = [
     industry: "Healthcare & Wellness",
     industrySlug: "healthcare-wellness",
     challenge: "Missed inbound calls and front-desk overload.",
-    impact: "24/7 call coverage with automated booking — 32% more appointments.",
+    impact: "24/7 call coverage with automated booking, 32% more appointments.",
     services: ["AI Voice Agents", "CRM Integration"],
     solutionsUsed: ["ai-voice-agents", "crm-integration"],
     narrative: [
-      "Riverstone's two-receptionist front desk was answering 65% of inbound calls. The other 35% — typically after 5pm and on weekends — never got a callback, and patients booked at the next clinic.",
+      "Riverstone's two-receptionist front desk was answering 65% of inbound calls. The other 35%, typically after 5pm and on weekends, never got a callback, and patients booked at the next clinic.",
       "We deployed an AI voice agent trained on their service menu, hours, and intake script. It now handles overflow and after-hours, books directly into their PMS, and texts a confirmation within 30 seconds.",
       "Within 60 days, booked appointments increased 32% with zero new front-desk hires.",
     ],
@@ -401,7 +401,7 @@ export const results: ResultCard[] = [
     services: ["Missed Call Text-Back", "AI Voice Agents"],
     solutionsUsed: ["missed-call-text-back", "ai-voice-agents"],
     narrative: [
-      "Harbor's owner answered the phone himself between jobs. He estimated 30–40 missed calls a week, mostly nights and weekends — and emergency plumbing is the most lucrative slice.",
+      "Harbor's owner answered the phone himself between jobs. He estimated 30 to 40 missed calls a week, mostly nights and weekends, and emergency plumbing is the most lucrative slice.",
       "We layered missed-call text-back over an AI voice agent that triages emergencies and books non-urgent jobs. Calls his cell only for true after-hours emergencies.",
       "First quarter recovered $48k of previously-lost calls. Annualised: $180k+ in booked work without adding headcount.",
     ],
@@ -421,7 +421,7 @@ export const results: ResultCard[] = [
     services: ["Chatbots", "Automated Lead Nurturing"],
     solutionsUsed: ["chatbots", "automated-lead-nurturing"],
     narrative: [
-      "Atlas partners were spending 12+ hours a week on discovery calls — mostly with leads outside their billable-rate range or scope.",
+      "Atlas partners were spending 12+ hours a week on discovery calls, mostly with leads outside their billable-rate range or scope.",
       "We built a qualification chatbot that asks five intake questions and only books partner calendars when the prospect clears all five. Below-threshold inquiries route to an automated nurture for re-evaluation in 90 days.",
       "Time-wasters dropped 60% within a month. Partner-call close rate rose from 18% to 38%.",
     ],
@@ -440,7 +440,7 @@ export function getResultBySlug(slug: string): ResultCard | undefined {
 export const testimonials = [
   {
     quote:
-      "Before DigitalX, I was answering the phone on roofs and still losing jobs. Now every call gets answered — even at 10 pm.",
+      "Before DigitalX, I was answering the phone on roofs and still losing jobs. Now every call gets answered, even at 10 pm.",
     author: "Mike Harbison",
     role: "Owner, Harbor Plumbing",
   },
@@ -461,7 +461,7 @@ export const testimonials = [
 export const aboutPrinciples = [
   {
     title: "Owner-operators first",
-    body: "We build for plumbers, dentists, and studio owners — not CMOs with 12-person teams. Every workflow survives a busy Friday.",
+    body: "We build for plumbers, dentists, and studio owners, not CMOs with 12-person teams. Every workflow survives a busy Friday.",
   },
   {
     title: "Outcomes over tech",
@@ -469,14 +469,14 @@ export const aboutPrinciples = [
   },
   {
     title: "Systems, not one-offs",
-    body: "Every engagement is designed as an operating system — measurable, maintainable, and improvable without us.",
+    body: "Every engagement is designed as an operating system, measurable, maintainable, and improvable without us.",
   },
 ];
 
 export const companyProfile = {
   name: "DigitalX Solutions",
   email: "info@digitalx-solutions.com",
-  location: "Casula, NSW — serving USA + Australia",
+  location: "Casula, NSW, serving USA + Australia",
   tagline: "Stop losing revenue to missed calls and slow follow-ups.",
 };
 

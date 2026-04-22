@@ -6,14 +6,14 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata: Metadata = generatePageMetadata("/au", {
   title: "Automation & AI for Australian Service Businesses | DigitalX",
   description:
-    "DigitalX Solutions deploys AI voice agents, missed-call recovery, and CRM automation for Australian local service businesses — Sydney, Melbourne, Brisbane, Perth.",
+    "DigitalX Solutions deploys AI voice agents, missed-call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
 });
 
 const auLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${siteConfig.domain}/au#localbusiness`,
-  name: "DigitalX Solutions — Australia",
+  name: "DigitalX Solutions, Australia",
   url: `${siteConfig.domain}/au`,
   email: "info@digitalx-solutions.com",
   address: {
@@ -53,10 +53,10 @@ export default function AuPage() {
         <div className="rounded-lg border border-line-subtle bg-surface-raised p-6 md:p-8">
           <h2 className="font-display text-display-sm text-ink-primary">Why Australian operators pick us</h2>
           <ul className="mt-5 space-y-3 text-body text-ink-secondary">
-            <li>• AU-localised AI voice agents — accent-tuned, ABN-aware, GST-conscious.</li>
+            <li>• AU-localised AI voice agents, accent-tuned, ABN-aware, GST-conscious.</li>
             <li>• AEDT / AWST / ACDT scheduling baked into every booking flow.</li>
             <li>• Privacy Act &amp; APP-aligned data handling for healthcare and legal verticals.</li>
-            <li>• Onshore engineering — fast iteration without offshore time gaps.</li>
+            <li>• Onshore engineering, fast iteration without offshore time gaps.</li>
             <li>• Local payment integrations (Stripe AU, GoCardless, Ezidebit).</li>
           </ul>
         </div>

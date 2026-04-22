@@ -29,7 +29,7 @@ export default function PrivacyPage() {
             <li>Contact form submissions (name, email, phone, project details, optional file attachments).</li>
             <li>Pricing inquiry details (company, plan of interest, comments).</li>
             <li>Server logs (IP, user agent, requested URL) retained 30 days for security and abuse prevention.</li>
-            <li>Cookies and analytics — see our Cookie Policy for details.</li>
+            <li>Cookies and analytics, see our Cookie Policy for details.</li>
           </ul>
 
           <h2>How we use it</h2>

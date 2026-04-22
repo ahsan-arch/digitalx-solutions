@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       from: `"${name}" <${process.env.EMAIL_USER}>`, // Send AS the app email, but with user's name
       replyTo: email, // Reply to the user's email
       to: "info@digitalx-solutions.com",
-      subject: `New Lead: ${name} - Digital X Solutions`,
+      subject: `New Lead: ${name}, Digital X Solutions`,
       text: `
         New Lead Submission
         -------------------

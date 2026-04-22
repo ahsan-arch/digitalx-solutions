@@ -72,7 +72,7 @@ export default function PricingPage() {
           Predictable monthly pricing. No agency retainers stacked on retainers.
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          Pick the package that fits your stage. Every tier ships with the systems and reporting we use ourselves —
+          Pick the package that fits your stage. Every tier ships with the systems and reporting we use ourselves ,
           no upsell games, no &ldquo;ask for a quote&rdquo; on the basics.
         </p>
       </section>

@@ -13,7 +13,7 @@ const usaLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${siteConfig.domain}/usa#localbusiness`,
-  name: "DigitalX Solutions — USA",
+  name: "DigitalX Solutions, USA",
   url: `${siteConfig.domain}/usa`,
   email: "info@digitalx-solutions.com",
   areaServed: { "@type": "Country", name: "United States" },
@@ -38,7 +38,7 @@ export default function UsaPage() {
           AI-powered automation for US local service businesses.
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          From Brooklyn brownstones to Austin med spas — we deploy AI voice, missed-call text-back, and CRM
+          From Brooklyn brownstones to Austin med spas, we deploy AI voice, missed-call text-back, and CRM
           automation so you stop losing local revenue to missed calls and slow follow-ups.
         </p>
       </section>

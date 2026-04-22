@@ -59,7 +59,7 @@ export async function GET() {
             message:
                 result.status === 200 || result.status === 202
                     ? "URLs submitted successfully to IndexNow (Bing, Yandex, Naver)"
-                    : "Submission may have failed - check status code",
+                    : "Submission may have failed, check status code",
         });
     } catch (error) {
         return NextResponse.json(

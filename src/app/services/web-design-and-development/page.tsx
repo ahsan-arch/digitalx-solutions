@@ -31,7 +31,7 @@ const positioning = [
   {
     title: "Plugs into your automation stack from day one",
     body:
-      "Forms, calendar embeds, and lead routing connect directly to GoHighLevel, n8n, or your existing CRM — never an isolated WordPress island.",
+      "Forms, calendar embeds, and lead routing connect directly to GoHighLevel, n8n, or your existing CRM, never an isolated WordPress island.",
   },
 ];
 

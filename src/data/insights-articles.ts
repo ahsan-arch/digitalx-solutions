@@ -75,7 +75,7 @@ At DigitalX Solutions, we've implemented CAPI across dozens of client accounts. 
 - **CPA Reduction:** Average 25% decrease in cost per acquisition within 30 days.
 - **ROAS Improvement:** Average 1.8x improvement in return on ad spend.
 
-These aren't theoretical — these are results from real clients running $10K-$100K/month in Meta ad spend across e-commerce, lead generation, and local service verticals.
+These aren't theoretical, these are results from real clients running $10K to $100K/month in Meta ad spend across e-commerce, lead generation, and local service verticals.
 
 ## Implementing Server-Side Tracking
 
@@ -122,7 +122,7 @@ Zapier is the most popular no-code automation platform, connecting over 6,000 ap
 ## Feature Comparison
 
 ### Integration Count
-- **Zapier:** 6,000+ pre-built integrations — the largest library of any automation tool.
+- **Zapier:** 6,000+ pre-built integrations, the largest library of any automation tool.
 - **n8n:** 400+ built-in integrations, plus a universal HTTP Request node that can connect to any API. In practice, n8n can integrate with anything that has an API.
 
 ### Workflow Complexity
@@ -130,7 +130,7 @@ Zapier is the most popular no-code automation platform, connecting over 6,000 ap
 - **n8n:** Supports complex branching, loops, merge operations, sub-workflows, error handling, and conditional logic natively. You can build workflows that Zapier simply cannot handle.
 
 ### Pricing (2026)
-- **Zapier:** Free tier (100 tasks/month), Starter ($29.99/month for 750 tasks), Professional ($73.50/month for 2,000 tasks). Costs scale linearly with usage — a client running 50,000 tasks/month would pay $600+/month.
+- **Zapier:** Free tier (100 tasks/month), Starter ($29.99/month for 750 tasks), Professional ($73.50/month for 2,000 tasks). Costs scale linearly with usage, a client running 50,000 tasks/month would pay $600+/month.
 - **n8n:** Free (self-hosted, unlimited tasks), Cloud starts at $24/month. A self-hosted n8n instance running 50,000 tasks/month costs roughly $20-50/month in infrastructure.
 
 ### Custom Code
@@ -163,7 +163,7 @@ n8n is the better choice when:
 
 For most businesses spending more than $100/month on Zapier, migrating to n8n saves money and unlocks capabilities that Zapier cannot match. We've migrated dozens of clients from Zapier to n8n and the results are consistent: lower costs, more reliable workflows, and the ability to build automations that were previously impossible.
 
-**Need help choosing or migrating?** [Talk to our automation team](/contact) — we'll assess your current stack and recommend the right path forward.
+**Need help choosing or migrating?** [Talk to our automation team](/contact), we'll assess your current stack and recommend the right path forward.
         `
     },
 
@@ -182,7 +182,7 @@ For most businesses spending more than $100/month on Zapier, migrating to n8n sa
         content: `
 ## What is an AI Voice Receptionist?
 
-An AI voice receptionist is an automated phone system powered by conversational AI that can answer calls, understand natural language, qualify leads, book appointments, and transfer calls to the right person — all without human intervention. Unlike traditional IVR systems ("press 1 for sales"), AI voice agents have natural conversations that feel human.
+An AI voice receptionist is an automated phone system powered by conversational AI that can answer calls, understand natural language, qualify leads, book appointments, and transfer calls to the right person, all without human intervention. Unlike traditional IVR systems ("press 1 for sales"), AI voice agents have natural conversations that feel human.
 
 At DigitalX Solutions, we build custom AI voice receptionists using platforms like Vapi, Twilio, and custom NLP pipelines integrated with GoHighLevel CRM and Google Calendar.
 
@@ -200,10 +200,10 @@ Dental practices miss an average of 35% of incoming calls during busy periods. E
 Stylists can't answer phones while with clients. An AI receptionist handles booking, rescheduling, and cancellations automatically, syncing with your booking software in real-time.
 
 ### Medical Practices
-After-hours calls, appointment reminders, prescription refill requests, and patient intake — all handled by AI. HIPAA-compliant implementations ensure patient data security.
+After-hours calls, appointment reminders, prescription refill requests, and patient intake, all handled by AI. HIPAA-compliant implementations ensure patient data security.
 
 ### Gyms & Fitness Centers
-Membership inquiries, class bookings, and tour scheduling — automated 24/7. Our AI agents can qualify leads ("What are your fitness goals?") before transferring to sales.
+Membership inquiries, class bookings, and tour scheduling, automated 24/7. Our AI agents can qualify leads ("What are your fitness goals?") before transferring to sales.
 
 ## How It Works: Technical Architecture
 
@@ -236,11 +236,11 @@ Membership inquiries, class bookings, and tour scheduling — automated 24/7. Ou
 
 Implementing an AI voice receptionist with DigitalX Solutions follows a straightforward process:
 
-1. **Discovery call** — We understand your business, call patterns, and booking workflow.
-2. **AI agent design** — We build your custom AI agent with your brand voice, services, and business rules.
-3. **Integration** — We connect the AI agent to your CRM, calendar, and phone system.
-4. **Testing** — 1 week of supervised testing with real calls.
-5. **Go live** — Full deployment with ongoing monitoring and optimisation.
+1. **Discovery call**, We understand your business, call patterns, and booking workflow.
+2. **AI agent design**, We build your custom AI agent with your brand voice, services, and business rules.
+3. **Integration**, We connect the AI agent to your CRM, calendar, and phone system.
+4. **Testing**, 1 week of supervised testing with real calls.
+5. **Go live**, Full deployment with ongoing monitoring and optimisation.
 
 **Ready to stop missing calls?** [Contact us](/contact) to schedule a demo of our AI voice receptionist system.
         `

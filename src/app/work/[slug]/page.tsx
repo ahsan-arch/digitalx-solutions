@@ -40,7 +40,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<PageP
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": url,
-    headline: `${result.client} — ${result.industry}`,
+    headline: `${result.client}, ${result.industry}`,
     description: result.impact,
     about: result.industry,
     author: { "@id": `${siteConfig.domain}/#organization` },

@@ -6,18 +6,18 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata: Metadata = generatePageMetadata("/process", {
   title: "Our Process | DigitalX Solutions Engagement Model",
   description:
-    "From discovery to ongoing iteration — see how we deploy AI voice, CRM automation, and growth dashboards inside 4&ndash;6 weeks.",
+    "From discovery to ongoing iteration, see how we deploy AI voice, CRM automation, and growth dashboards inside 4 to 6 weeks.",
 });
 
 const detail = [
   {
-    week: "Weeks 1–2",
+    week: "Weeks 1 to 2",
     title: "Discover & map",
     body:
       "We sit on a few of your calls, audit your current intake, and document every leak between phone, calendar, ads, and CRM.",
   },
   {
-    week: "Weeks 2–4",
+    week: "Weeks 2 to 4",
     title: "Build & integrate",
     body:
       "We deploy the GoHighLevel snapshot, tune AI voice prompts to your services, and wire SMS, email, and dashboards into your workflow.",
@@ -49,7 +49,7 @@ export default function ProcessPage() {
       <section className="container-shell">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Process</p>
         <h1 className="mt-3 max-w-4xl font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-          A 4&ndash;6 week launch, then a system that compounds.
+          A 4 to 6 week launch, then a system that compounds.
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
           We do not disappear after launch and we do not drown you in onboarding decks. Every phase has a deliverable
