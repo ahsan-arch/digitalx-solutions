@@ -49,9 +49,23 @@ export default function ContactPage() {
             </section>
 
             <section className="container-shell mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-                <ContactIntakeForm />
+                <div className="flex flex-col gap-8">
+                    <div className="rounded-3xl border border-border bg-white overflow-hidden shadow-sm" style={{ minHeight: '650px' }}>
+                        <iframe 
+                            src="https://calendar.app.google/3uYnBF2GrdyswwV59" 
+                            style={{ border: 0, width: '100%', height: '100%', minHeight: '650px' }} 
+                            frameBorder="0"
+                            title="Book a Strategy Call"
+                        ></iframe>
+                    </div>
 
-                <aside className="rounded-3xl border border-border bg-white p-6 md:p-8">
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-6">Or send us a message</h2>
+                        <ContactIntakeForm />
+                    </div>
+                </div>
+
+                <aside className="rounded-3xl border border-border bg-white p-6 md:p-8 h-fit">
                     <h2 className="text-xl font-semibold text-foreground">What to expect</h2>
                     <ul className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/72">
                         <li>- Response within one business day</li>
