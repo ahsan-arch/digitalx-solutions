@@ -32,43 +32,35 @@ export default function WorkPage() {
                 </p>
             </section>
 
-            <section className="container-shell mt-10">
-                <div className="flex flex-col items-center justify-center rounded-3xl border border-border border-dashed bg-surface-50 py-24 text-center">
-                    <h2 className="font-display text-2xl text-foreground md:text-3xl">Adding these soon</h2>
-                    <p className="mt-2 text-sm text-foreground/60 md:text-base">We are currently compiling our latest case studies and impact reports. Check back shortly.</p>
-                </div>
-                {/* 
-                <div className="grid gap-5 md:grid-cols-3 hidden">
-                    {results.map((result) => (
-                        <Link
-                            key={result.slug}
-                            href={`/work/${result.slug}`}
-                            className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40"
-                        >
-                            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">{result.industry}</p>
-                            <h2 className="mt-2 text-2xl font-semibold text-foreground group-hover:text-brand">{result.client}</h2>
-                            <p className="mt-4 text-sm leading-relaxed text-foreground/70">
-                                <span className="font-medium text-foreground">Challenge: </span>
-                                {result.challenge}
-                            </p>
-                            <p className="mt-3 text-sm leading-relaxed text-brand">
-                                <span className="font-semibold">Impact: </span>
-                                {result.impact}
-                            </p>
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {result.services.map((service) => (
-                                    <span
-                                        key={service}
-                                        className="rounded-full border border-border bg-white px-3 py-1 text-xs font-medium text-foreground/75"
-                                    >
-                                        {service}
-                                    </span>
-                                ))}
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-                */}
+            <section className="container-shell mt-10 grid gap-5 md:grid-cols-3">
+                {results.map((result) => (
+                    <Link
+                        key={result.slug}
+                        href={`/work/${result.slug}`}
+                        className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40"
+                    >
+                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">{result.industry}</p>
+                        <h2 className="mt-2 text-2xl font-semibold text-foreground group-hover:text-brand">{result.client}</h2>
+                        <p className="mt-4 text-sm leading-relaxed text-foreground/70">
+                            <span className="font-medium text-foreground">Challenge: </span>
+                            {result.challenge}
+                        </p>
+                        <p className="mt-3 text-sm leading-relaxed text-brand">
+                            <span className="font-semibold">Impact: </span>
+                            {result.impact}
+                        </p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                            {result.services.map((service) => (
+                                <span
+                                    key={service}
+                                    className="rounded-full border border-border bg-white px-3 py-1 text-xs font-medium text-foreground/75"
+                                >
+                                    {service}
+                                </span>
+                            ))}
+                        </div>
+                    </Link>
+                ))}
             </section>
 
             <section className="container-shell mt-12">
