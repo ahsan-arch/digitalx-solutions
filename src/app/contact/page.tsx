@@ -1,4 +1,6 @@
 import { ContactIntakeForm } from "@/components/forms/contact-intake-form";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
+import { companyProfile } from "@/data/redesign";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata = generatePageMetadata("/contact", {
@@ -82,6 +84,26 @@ export default function ContactPage() {
                         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Email</p>
                         <a href="mailto:info@digitalx-solutions.com" className="mt-2 inline-block text-sm font-medium text-brand">
                             info@digitalx-solutions.com
+                        </a>
+                    </div>
+
+                    <div className="mt-4 rounded-2xl border border-border bg-surface-50 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Phone & WhatsApp</p>
+                        <a
+                            href={`tel:${companyProfile.phoneE164}`}
+                            className="mt-2 inline-block text-sm font-medium text-brand"
+                        >
+                            {companyProfile.phone}
+                        </a>
+                        <a
+                            href={companyProfile.whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Message us on WhatsApp"
+                            className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
+                        >
+                            <WhatsAppIcon className="h-4 w-4" />
+                            Message on WhatsApp
                         </a>
                     </div>
                 </aside>

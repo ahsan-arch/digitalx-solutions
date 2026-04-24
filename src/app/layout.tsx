@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Roboto, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -12,9 +12,10 @@ import {
   siteConfig,
 } from "@/lib/seo";
 
-const fraunces = Fraunces({
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-roboto",
 });
 
 const inter = Inter({
@@ -130,7 +131,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="DigitalX" />
       </head>
       <body
-        className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground`}
+        className={`${roboto.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground`}
       >
         <SiteHeader />
         <div className="relative min-h-screen pt-20">

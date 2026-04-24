@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { companyProfile, footerColumns } from "@/data/redesign";
 
 export function Footer() {
@@ -20,6 +21,24 @@ export function Footer() {
             >
               {companyProfile.email}
             </a>
+            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+              <a
+                href={`tel:${companyProfile.phoneE164}`}
+                className="font-medium text-brand transition-colors hover:text-brand-deep"
+              >
+                {companyProfile.phone}
+              </a>
+              <a
+                href={companyProfile.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Message us on WhatsApp"
+                className="inline-flex items-center gap-1.5 font-medium text-brand transition-colors hover:text-brand-deep"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                WhatsApp
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">

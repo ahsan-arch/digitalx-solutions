@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { getSolutionBySlug, industries, solutions } from "@/data/redesign";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import { getSolutionBySlug, solutions } from "@/data/redesign";
+import { industries } from "@/data/industries";
+import {
+  generateBreadcrumbSchema,
+  generatePageMetadata,
+  generateServicePageSchema,
+  siteConfig,
+} from "@/lib/seo";
 
 type PageParams = { slug: string };
 
@@ -41,9 +47,16 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
     { name: solution.name, url: `${siteConfig.domain}/solutions/${solution.slug}` },
   ]);
 
+  const serviceSchema = generateServicePageSchema({
+    name: solution.name,
+    description: solution.summary,
+    url: `${siteConfig.domain}/solutions/${solution.slug}`,
+  });
+
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <section className="container-shell">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Solution</p>

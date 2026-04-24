@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/seo";
 import { articlesData } from "@/data/insights-articles";
-import { solutions, industries } from "@/data/redesign";
+import { developmentProjects, solutions } from "@/data/redesign";
+import { industries } from "@/data/industries";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const now = new Date();
@@ -39,6 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.85,
     }));
 
+    const developmentEntries: MetadataRoute.Sitemap = developmentProjects.map((p) => ({
+        url: `${siteConfig.domain}/development/${p.slug}`,
+        lastModified: now,
+        changeFrequency: "yearly",
+        priority: 0.7,
+    }));
+
     const articleEntries: MetadataRoute.Sitemap = Object.entries(articlesData).map(([slug, article]) => ({
         url: `${siteConfig.domain}/insights/${slug}`,
         lastModified: new Date(article.dateModified || article.date),
@@ -46,5 +54,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    return [...staticEntries, ...solutionEntries, ...industryEntries, ...articleEntries];
+    return [
+        ...staticEntries,
+        ...solutionEntries,
+        ...industryEntries,
+        ...developmentEntries,
+        ...articleEntries,
+    ];
 }

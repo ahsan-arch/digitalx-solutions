@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     fontFamily: {
       sans: ['var(--font-inter)', "sans-serif"],
-      display: ['var(--font-fraunces)', "serif"],
+      display: ['var(--font-roboto)', "sans-serif"],
       mono: ['var(--font-jetbrains-mono)', "monospace"],
     },
     fontSize: {

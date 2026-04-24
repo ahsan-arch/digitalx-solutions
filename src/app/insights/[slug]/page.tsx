@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { generateBreadcrumbSchema, siteConfig, seoKeywords } from "@/lib/seo";
+import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -16,19 +16,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!article) return { title: 'Not Found' };
 
     const author = authors[article.authorKey];
-
-    return {
+    const base = generatePageMetadata(`/insights/${resolvedParams.slug}`, {
         title: `${article.title} | DigitalX Insights`,
         description: article.description,
-        keywords: seoKeywords,
+    });
+
+    return {
+        ...base,
         openGraph: {
+            ...base.openGraph,
             type: "article",
-            title: article.title,
-            description: article.description,
             publishedTime: article.date,
             modifiedTime: article.dateModified,
             authors: [author.name],
-        }
+        },
     };
 }
 

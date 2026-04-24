@@ -3,11 +3,11 @@ import { ArrowRight } from "lucide-react";
 import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
 import {
   heroMetrics,
-  industries,
   processSteps,
   results,
   solutions,
   testimonials,
+  developmentProjects,
 } from "@/data/redesign";
 
 export default function HomePage() {
@@ -95,23 +95,45 @@ export default function HomePage() {
                 </span>
               </Link>
             ))}
+            <Link
+              href="/solutions"
+              className="group flex flex-col justify-center rounded-2xl border border-dashed border-brand/50 bg-white p-6 transition hover:border-brand hover:bg-surface-50"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">All capability stacks</p>
+              <h3 className="mt-2 font-display text-2xl text-foreground">See all solutions</h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/68">
+                Explore every solution we deploy, from AI voice agents to GoHighLevel builds and custom n8n automations.
+              </p>
+              <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                View solutions
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </span>
+            </Link>
           </div>
         </section>
 
-        <section className="container-shell mt-16">
-          <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industries</p>
-            <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Playbooks tuned to your operating reality</h2>
+        <section id="development" className="container-shell mt-16 scroll-mt-24">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Development</p>
+              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Featured Projects</h2>
+            </div>
           </div>
+
           <div className="grid gap-5 md:grid-cols-3">
-            {industries.map((industry) => (
+            {developmentProjects.map((project) => (
               <Link
-                key={industry.slug}
-                href={`/industries/${industry.slug}`}
-                className="rounded-2xl border border-border bg-white p-6 transition hover:border-brand/45"
+                key={project.slug}
+                href={`/development/${project.slug}`}
+                className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
               >
-                <h3 className="font-display text-2xl text-foreground">{industry.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/68">{industry.summary}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">{project.name}</p>
+                <h3 className="mt-2 font-display text-2xl text-foreground">{project.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/68">{project.overview}</p>
+                <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                  View full details
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
               </Link>
             ))}
           </div>

@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { getIndustryBySlug, getSolutionBySlug, industries } from "@/data/redesign";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import { getIndustryBySlug, industries } from "@/data/industries";
+import { getSolutionBySlug } from "@/data/redesign";
+import { getDemoScript } from "@/data/voice-demos";
+import { VoiceAgentDemo } from "@/components/ui/voice-agent-demo";
+import {
+  generateBreadcrumbSchema,
+  generatePageMetadata,
+  generateServicePageSchema,
+  siteConfig,
+} from "@/lib/seo";
 
 type PageParams = { slug: string };
 
@@ -37,15 +45,24 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
     .map((solutionSlug) => getSolutionBySlug(solutionSlug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
+  const demoScript = getDemoScript(slug);
+
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
     { name: "Industries", url: `${siteConfig.domain}/industries` },
     { name: industry.name, url: `${siteConfig.domain}/industries/${industry.slug}` },
   ]);
 
+  const serviceSchema = generateServicePageSchema({
+    name: `${industry.name} Growth Playbook`,
+    description: industry.summary,
+    url: `${siteConfig.domain}/industries/${industry.slug}`,
+  });
+
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <section className="container-shell">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industry Playbook</p>
@@ -87,6 +104,21 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           </Link>
         </aside>
       </section>
+
+      {demoScript && (
+        <section className="container-shell mt-12">
+          <div className="mb-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Live Demo</p>
+            <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Hear how our AI voice agent handles {industry.name.toLowerCase()} calls</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground/68">
+              This interactive demo shows a real conversation flow — how our AI answers, qualifies, and books appointments for your industry.
+            </p>
+          </div>
+          <div className="max-w-xl">
+            <VoiceAgentDemo script={demoScript} />
+          </div>
+        </section>
+      )}
 
       <section className="container-shell mt-12">
         <div className="rounded-3xl border border-border bg-white p-6 md:p-8">

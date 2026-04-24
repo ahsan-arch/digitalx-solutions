@@ -193,12 +193,9 @@ export function generateOrganizationSchema() {
                     latitude: -33.9519,
                     longitude: 150.9054,
                 },
-                telephone: "+61 400 000 000",
+                telephone: "+61 451 413 786",
                 sameAs: [
-                    "https://twitter.com/digitalx_solutions",
-                    "https://linkedin.com/company/digitalx-solutions",
                     "https://instagram.com/digitalx_solutions",
-                    "https://youtube.com/@digitalx_solutions",
                     "https://facebook.com/digitalx_solutions",
                 ],
                 foundingDate: "2022",
@@ -210,7 +207,7 @@ export function generateOrganizationSchema() {
                     "@type": "ContactPoint",
                     contactType: "customer service",
                     email: "info@digitalx-solutions.com",
-                    telephone: "+61 400 000 000",
+                    telephone: "+61 451 413 786",
                     availableLanguage: ["English"],
                 },
                 openingHoursSpecification: [

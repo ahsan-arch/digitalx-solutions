@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { articlesData } from "@/data/insights-articles";
-import { industries, solutions } from "@/data/redesign";
+import { solutions } from "@/data/redesign";
+import { industries } from "@/data/industries";
 
 const INDEX_NOW_KEY = "3c12d5a79b40fe68";
 const SITE = "https://digitalx-solutions.com";
