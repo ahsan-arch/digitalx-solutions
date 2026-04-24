@@ -16,7 +16,7 @@ export const primaryNavigation: NavItem[] = [
 export const heroMetrics = [
   { value: "24/7", label: "AI call coverage" },
   { value: "< 60s", label: "Missed-call text-back" },
-  { value: "5Ã—", label: "Lift in booked jobs" },
+  { value: "5x", label: "Lift in booked jobs" },
   { value: "Zero", label: "Missed leads at 2 am" },
 ];
 
@@ -615,7 +615,7 @@ export const results: ResultCard[] = [
     metrics: [
       { label: "Annual recovered revenue", value: "$180k+" },
       { label: "Missed-call response", value: "< 60s" },
-      { label: "Owner phone interruptions", value: "âˆ’72%" },
+      { label: "Owner phone interruptions", value: "-72%" },
     ],
   },
   {
@@ -624,7 +624,7 @@ export const results: ResultCard[] = [
     industry: "Accounting Firms",
     industrySlug: "accounting-firms",
     challenge: "Billable hours lost to unqualified discovery calls.",
-    impact: "Qualification chatbot cut time-wasters by 60%; close rate up 2.1Ã—.",
+    impact: "Qualification chatbot cut time-wasters by 60%; close rate up 2.1x.",
     services: ["Chatbots", "Automated Lead Nurturing"],
     solutionsUsed: ["chatbots", "automated-lead-nurturing"],
     narrative: [
@@ -633,8 +633,8 @@ export const results: ResultCard[] = [
       "Time-wasters dropped 60% within a month. Partner-call close rate rose from 18% to 38%.",
     ],
     metrics: [
-      { label: "Time-waster calls", value: "âˆ’60%" },
-      { label: "Close rate", value: "18% â†’ 38%" },
+      { label: "Time-waster calls", value: "-60%" },
+      { label: "Close rate", value: "18% -> 38%" },
       { label: "Partner hours reclaimed", value: "8/wk" },
     ],
   },
