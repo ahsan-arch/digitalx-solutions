@@ -161,23 +161,24 @@ export default function HomePage() {
               See all case studies
             </Link>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {results.map((result) => (
-              <article key={result.client} className="rounded-2xl border border-border bg-surface-50 p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">{result.industry}</p>
-                <h3 className="mt-2 text-xl font-semibold text-foreground">{result.client}</h3>
-                <p className="mt-3 text-sm text-foreground/68">{result.challenge}</p>
-                <p className="mt-4 text-sm font-medium text-brand">{result.impact}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+            
+            <div className="flex flex-col items-center justify-center rounded-3xl border border-border border-dashed bg-surface-50 py-20 text-center">
+              <h3 className="font-display text-2xl text-foreground">Adding these soon</h3>
+              <p className="mt-2 text-sm text-foreground/60">We are currently compiling our latest case studies.</p>
+            </div>
 
-        <section className="container-shell mt-16">
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <blockquote key={testimonial.author} className="rounded-2xl border border-border bg-white p-6">
-                <p className="text-sm leading-relaxed text-foreground/72">&quot;{testimonial.quote}&quot;</p>
+            {/*
+            <div className="grid gap-5 md:grid-cols-3 hidden">
+              {results.map((result) => (
+                <article key={result.client} className="rounded-2xl border border-border bg-surface-50 p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">{result.industry}</p>
+                  <h3 className="mt-2 text-xl font-semibold text-foreground">{result.client}</h3>
+                  <p className="mt-3 text-sm text-foreground/68">{result.challenge}</p>
+                  <p className="mt-4 text-sm font-medium text-brand">{result.impact}</p>
+                </article>
+              ))}
+            </div>
+            */}
                 <footer className="mt-4 text-sm font-medium text-foreground">{testimonial.author}</footer>
                 <p className="text-xs text-foreground/60">{testimonial.role}</p>
               </blockquote>
