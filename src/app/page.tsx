@@ -4,9 +4,7 @@ import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
 import {
   heroMetrics,
   processSteps,
-  results,
   solutions,
-  testimonials,
   developmentProjects,
 } from "@/data/redesign";
 
@@ -162,15 +160,9 @@ export default function HomePage() {
             </Link>
           </div>
             
-            <div className="flex flex-col items-center justify-center rounded-3xl border border-border border-dashed bg-surface-50 py-20 text-center">
-              <h3 className="font-display text-2xl text-foreground">Adding these soon</h3>
-              <p className="mt-2 text-sm text-foreground/60">We are currently compiling our latest case studies.</p>
-            </div>
-            
-                <footer className="mt-4 text-sm font-medium text-foreground">{testimonial.author}</footer>
-                <p className="text-xs text-foreground/60">{testimonial.role}</p>
-              </blockquote>
-            ))}
+          <div className="flex flex-col items-center justify-center rounded-3xl border border-border border-dashed bg-surface-50 py-20 text-center">
+            <h3 className="font-display text-2xl text-foreground">Adding these soon</h3>
+            <p className="mt-2 text-sm text-foreground/60">We are currently compiling our latest case studies.</p>
           </div>
         </section>
 
