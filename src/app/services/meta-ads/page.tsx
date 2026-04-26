@@ -5,12 +5,12 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata: Metadata = generatePageMetadata("/services/meta-ads", {
   title: "Meta Ads Engineering | CAPI + Server-Side Tracking",
   description:
-    "Meta Ads management with server-side tracking, Conversions API, and full attribution into your CRM. For service businesses spending $5k+/mo.",
+    "Meta Ads management with server side tracking, Conversions API, and full attribution into your CRM. For service businesses spending $5k+/mo.",
 });
 
 const pillars = [
   {
-    title: "Server-side tracking by default",
+    title: "Server side tracking by default",
     body:
       "Every account ships with the Conversions API and a server-tag setup. You measure what actually converts, not what iOS 14 lets you see.",
   },
@@ -49,7 +49,7 @@ export default function MetaAdsPage() {
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
           Most agencies still rely on the browser pixel. We engineer the full attribution loop &mdash; CAPI,
-          server-side tagging, deduplication &mdash; so Meta can actually find your customers.
+          server side tagging, deduplication &mdash; so Meta can actually find your customers.
         </p>
       </section>
 

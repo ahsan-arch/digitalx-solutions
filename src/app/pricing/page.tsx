@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata: Metadata = generatePageMetadata("/pricing", {
   title: "Pricing | DigitalX Solutions Automation Packages",
   description:
-    "Transparent monthly pricing for AI voice agents, missed-call text-back, CRM automation, and growth dashboards for local service businesses.",
+    "Transparent monthly pricing for AI voice agents, Missed call text back, CRM automation, and growth dashboards for local service businesses.",
 });
 
 const tiers = [
@@ -16,7 +16,7 @@ const tiers = [
     summary: "For solo operators ready to stop missing calls.",
     includes: [
       "AI voice agent (single number)",
-      "Missed-call text-back",
+      "Missed call text back",
       "GoHighLevel CRM setup",
       "Booking calendar integration",
       "Monthly performance review",
@@ -27,11 +27,11 @@ const tiers = [
   {
     name: "Operate",
     price: "$2,800/mo",
-    summary: "For multi-location teams scaling lead capture and follow-up.",
+    summary: "For multi location teams scaling lead capture and follow up.",
     includes: [
       "Everything in Launch",
       "Web + WhatsApp + SMS chatbot",
-      "Multi-step nurture sequences",
+      "Multi step nurture sequences",
       "Pipeline + lead scoring",
       "Live ROI dashboard",
       "Bi-weekly optimisation calls",
@@ -42,11 +42,11 @@ const tiers = [
   {
     name: "Scale",
     price: "Custom",
-    summary: "For growth teams running paid ads and multi-channel automation.",
+    summary: "For growth teams running paid ads and multi channel automation.",
     includes: [
       "Everything in Operate",
       "Meta + Google Ads ops",
-      "Server-side tracking + CAPI",
+      "Server side tracking + CAPI",
       "Custom n8n workflows",
       "Dedicated growth engineer",
       "Quarterly business review",

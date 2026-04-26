@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const siteConfig = {
-    domain: "https://digitalx-solutions.com",
+    domain: "https://digitalxsolutions.com",
     social: {
         twitter: "@digitalx_solutions",
     },
@@ -17,7 +17,7 @@ export const seoCopy = {
     services: {
         title: "Automation & Website Services | AI, n8n, Meta Ads Agency",
         description:
-            "Full-stack automation and website services: custom n8n workflows, AI voice agents, Next.js websites & Meta Ads CAPI tracking. USA & Australia.",
+            "Full stack automation and website services: custom n8n workflows, AI voice agents, Next.js websites & Meta Ads CAPI tracking. USA & Australia.",
     },
     webDev: {
         title: "Web Development Agency USA & Australia | Next.js Experts",
@@ -27,7 +27,7 @@ export const seoCopy = {
     metaAds: {
         title: "Meta Ads Agency | Server-Side Tracking & CAPI | USA & AU",
         description:
-            "Stop iOS14 signal loss. Full-funnel Meta Ads with Facebook Conversion API & server-side tagging. High-ROAS ad automation for US & Australian clients.",
+            "Stop iOS14 signal loss. Full funnel Meta Ads with Facebook Conversion API & server side tagging. High-ROAS ad automation for US & Australian clients.",
     },
     revenueOps: {
         title: "Business Automation Agency | n8n & GoHighLevel Workflows",
@@ -52,9 +52,9 @@ export const seoCopy = {
 };
 
 // ── Primary target keywords for metadata ──
-// Ordered by search intent: highest-volume terms first
+// Ordered by search intent: highest volume terms first
 export const seoKeywords = [
-    // ★ Top-priority: "automation" and "website" terms the user MUST rank for
+    // ★ Top priority: "automation" and "website" terms the user MUST rank for
     "automation agency",
     "business automation agency",
     "workflow automation agency",
@@ -86,7 +86,7 @@ export const seoKeywords = [
 
     // Meta Ads & Tracking
     "Meta Ads agency Australia",
-    "server-side tracking agency",
+    "server side tracking agency",
     "Facebook Conversion API setup",
     "Meta Ads ROAS optimization",
 
@@ -176,7 +176,7 @@ export function generateOrganizationSchema() {
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 url: siteConfig.domain,
-                email: "info@digitalx-solutions.com",
+                email: "info@digitalxsolutions.com",
                 logo: `${siteConfig.domain}/logo.png`,
                 image: `${siteConfig.domain}/api/og`,
                 priceRange: "$$$",
@@ -206,7 +206,7 @@ export function generateOrganizationSchema() {
                 contactPoint: {
                     "@type": "ContactPoint",
                     contactType: "customer service",
-                    email: "info@digitalx-solutions.com",
+                    email: "info@digitalxsolutions.com",
                     telephone: "+61 451 413 786",
                     availableLanguage: ["English"],
                 },
@@ -265,16 +265,16 @@ export function generateOrganizationSchema() {
                     },
                 ],
                 knowsAbout: [
-                    "n8n Workflow Automation, Building custom open-source automation pipelines as a Zapier alternative",
+                    "n8n Workflow Automation, Building custom open source automation pipelines as a Zapier alternative",
                     "GoHighLevel (GHL), Custom CRM, pipeline, and marketing automation architecture for agencies",
                     "Next.js Development Agency, Sub-200ms high-performance websites with SEO-baked architecture",
-                    "Meta Ads Engineering, Server-side CAPI tracking to bypass iOS14+ signal loss",
+                    "Meta Ads Engineering, Server side CAPI tracking to bypass iOS14+ signal loss",
                     "Conversational AI, 24/7 AI voice receptionists and WhatsApp chatbots for local businesses",
                     "AI Voice Receptionists, Automated phone answering for dental clinics, salons, and gyms",
-                    "Revenue Operations (RevOps), End-to-end automation of lead capture, nurture, and conversion",
+                    "Revenue Operations (RevOps), End to-end automation of lead capture, nurture, and conversion",
                     "Business Process Automation, Replacing manual workflows with intelligent n8n pipelines",
                     "White-Label Automation for Agencies, Building automation systems agencies can resell",
-                    "Digital Marketing Sydney and USA, Full-service digital growth for Australian and American businesses",
+                    "Digital Marketing Sydney and USA, Full service digital growth for Australian and American businesses",
                 ],
             },
             {
@@ -291,7 +291,7 @@ export function generateOrganizationSchema() {
                 ],
                 sameAs: [
                     "https://en.wikipedia.org/wiki/Social_media_marketing",
-                    "https://en.wikipedia.org/wiki/Pay-per-click",
+                    "https://en.wikipedia.org/wiki/Pay per-click",
                 ],
                 hasOfferCatalog: {
                     "@type": "OfferCatalog",

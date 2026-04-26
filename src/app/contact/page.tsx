@@ -82,8 +82,8 @@ export default function ContactPage() {
 
                     <div className="mt-4 rounded-2xl border border-border bg-surface-50 p-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Email</p>
-                        <a href="mailto:info@digitalx-solutions.com" className="mt-2 inline-block text-sm font-medium text-brand">
-                            info@digitalx-solutions.com
+                        <a href="mailto:info@digitalxsolutions.com" className="mt-2 inline-block text-sm font-medium text-brand">
+                            info@digitalxsolutions.com
                         </a>
                     </div>
 

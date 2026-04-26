@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     const mailOptions: any = {
       from: `"${name}" <${process.env.EMAIL_USER}>`, // Send AS the app email, but with user's name
       replyTo: email, // Reply to the user's email
-      to: "info@digitalx-solutions.com",
+      to: "info@digitalxsolutions.com",
       subject: `New Lead: ${name}, Digital X Solutions`,
       text: `
         New Lead Submission
@@ -69,9 +69,9 @@ export async function POST(req: Request) {
 
     // Send the email to admin
     await transporter.sendMail(mailOptions);
-    console.log("Email sent successfully to info@digitalx-solutions.com");
+    console.log("Email sent successfully to info@digitalxsolutions.com");
 
-    // Send thank-you email to the customer
+    // Send thank you email to the customer
     await transporter.sendMail({
       from: `"Digital X Solutions" <${process.env.EMAIL_USER}>`,
       to: email,
@@ -87,7 +87,7 @@ export async function POST(req: Request) {
         </div>
       `,
     });
-    console.log("Thank-you email sent to", email);
+    console.log("Thank you email sent to", email);
 
     return NextResponse.json({ success: true, message: "Message sent successfully." });
   } catch (error) {

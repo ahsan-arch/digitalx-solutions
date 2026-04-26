@@ -5,7 +5,7 @@ import { results } from "@/data/redesign";
 export const metadata = generatePageMetadata("/work", {
     title: "Results | DigitalX Solutions Case Studies",
     description:
-        "Review selected DigitalX Solutions outcomes across home services, healthcare, professional services, and e-commerce teams.",
+        "Review selected DigitalX Solutions outcomes across home services, healthcare, professional services, and e commerce teams.",
 });
 
 export default function WorkPage() {

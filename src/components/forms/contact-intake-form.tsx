@@ -69,18 +69,18 @@ export function ContactIntakeForm() {
       setAttachment(null);
     } catch {
       setSubmitState("error");
-      setMessage("Something went wrong. Please email info@digitalx-solutions.com directly.");
+      setMessage("Something went wrong. Please email info@digitalxsolutions.com directly.");
     }
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-border bg-surface-50 p-6 md:p-8">
       <div>
-        <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-foreground/75">
+        <label htmlFor="contact name" className="mb-2 block text-sm font-medium text-foreground/75">
           Name
         </label>
         <input
-          id="contact-name"
+          id="contact name"
           name="name"
           required
           value={name}

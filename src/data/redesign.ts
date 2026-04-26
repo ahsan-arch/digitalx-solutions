@@ -15,7 +15,7 @@ export const primaryNavigation: NavItem[] = [
 
 export const heroMetrics = [
   { value: "24/7", label: "AI call coverage" },
-  { value: "< 60s", label: "Missed-call text-back" },
+  { value: "< 60s", label: "Missed call text back" },
   { value: "5x", label: "Lift in booked jobs" },
   { value: "Zero", label: "Missed leads at 2 am" },
 ];
@@ -46,24 +46,24 @@ export const solutions: Solution[] = [
   {
     slug: "gohighlevel-implementation",
     name: "GoHighLevel Implementation",
-    tagline: "Full GHL build-out + snapshots + automations",
+    tagline: "Full GHL build out + snapshots + automations",
     summary:
-      "We stand up GoHighLevel end-to-end, pipelines, snapshots, workflows, calendars, and SMS, so every lead, job, and follow-up runs on one system instead of five tabs.",
+      "We stand up GoHighLevel end to end, pipelines, snapshots, workflows, calendars, and SMS, so every lead, job, and follow up runs on one system instead of five tabs.",
     outcomes: [
       "One source of truth for leads, calls, SMS, bookings, and deals",
-      "Industry-tuned snapshots live in days, not months",
-      "Automated follow-ups and stage movement, no manual pipeline hygiene",
+      "Industry tuned snapshots live in days, not months",
+      "Automated follow ups and stage movement, no manual pipeline hygiene",
     ],
     capabilities: [
       "Industry master snapshots (home services, med spas, dental, legal, fitness)",
       "Pipelines + opportunity stages with win/loss automation",
-      "Two-way SMS, missed-call text-back, and AI voice integration",
-      "Calendar + booking widgets with round-robin routing",
+      "Two way SMS, Missed call text back, and AI voice integration",
+      "Calendar + booking widgets with round robin routing",
       "Workflow automations (lead scoring, tagging, sequence triggers)",
-      "Sub-account setup, white-label, and team SOPs for handover",
+      "Sub account setup, white label, and team SOPs for handover",
     ],
     bestFor:
-      "Owner-operators and agencies standardising on GoHighLevel who want a production-grade build, not a template dump.",
+      "Owner operators and agencies standardising on GoHighLevel who want a production grade build, not a template dump.",
     legacyPaths: ["/services/revenue-operations"],
     group: "operate",
   },
@@ -72,40 +72,40 @@ export const solutions: Solution[] = [
     name: "AI Voice Agents",
     tagline: "24/7 answering + qualification + booking",
     summary:
-      "Human-sounding AI receptionists answer every call, qualify the caller, and book the job, day, night, weekends, and holidays.",
+      "Human sounding AI receptionists answer every call, qualify the caller, and book the job, day, night, weekends, and holidays.",
     outcomes: [
-      "Zero missed calls and after-hours revenue leaks",
+      "Zero missed calls and after hours revenue leaks",
       "Consistent qualification every time, not when staff are free",
       "Bookings dropped directly into your calendar and CRM",
     ],
     capabilities: [
-      "Industry-tuned voice prompts (plumbers, med spas, gyms, etc.)",
+      "Industry tuned voice prompts (plumbers, med spas, gyms, etc.)",
       "Live call forwarding with intent detection",
-      "Multi-language support (English, Spanish, Arabic)",
+      "Multi language support (English, Spanish, Arabic)",
       "Calendar + CRM integration (GHL, Google Calendar, HubSpot)",
       "Call transcripts + sentiment reports",
     ],
     bestFor:
-      "Owner-operators who answer phones themselves, lose calls during jobs, or burn hours on unqualified tire-kickers.",
+      "Owner operators who answer phones themselves, lose calls during jobs, or burn hours on unqualified tire kickers.",
     legacyPaths: ["/services/ai-voice-receptionists"],
     group: "capture",
   },
   {
     slug: "missed-call-text-back",
-    name: "Missed Call Text-Back",
+    name: "Missed Call text back",
     tagline: "Under a minute to every missed caller",
     summary:
       "Every call you can't pick up triggers an instant SMS, so the lead is engaged before they dial your competitor.",
     outcomes: [
-      "Recover 30 to 50% of otherwise-lost callers",
+      "Recover 30 to 50% of otherwise lost callers",
       "Start the conversation before the next business opens",
       "Zero ops overhead, runs silently in the background",
     ],
     capabilities: [
       "Instant SMS trigger on every missed call",
-      "Two-way SMS with AI-assisted replies",
+      "Two way SMS with AI-assisted replies",
       "Escalation rules (handoff to team, booking link, voicemail)",
-      "Business-hours logic + holiday handling",
+      "Business hours logic + holiday handling",
       "Reporting on recovery rate + revenue attribution",
     ],
     bestFor:
@@ -116,19 +116,19 @@ export const solutions: Solution[] = [
   {
     slug: "automated-lead-nurturing",
     name: "Automated Lead Nurturing",
-    tagline: "Multi-step email + SMS sequences that close",
+    tagline: "Multi step email + SMS sequences that close",
     summary:
-      "Every new inquiry gets a tailored, multi-touch follow-up sequence so leads don't go cold while you run your business.",
+      "Every new inquiry gets a tailored, multi touch follow up sequence so leads don't go cold while you run your business.",
     outcomes: [
-      "Recover no-shows and ghosters with automated follow-ups",
-      "Shorten quote-to-close by staying top-of-mind",
+      "Recover no shows and ghosters with automated follow ups",
+      "Shorten quote to close by staying top of mind",
       "Free your team from chasing, focus them on converting",
     ],
     capabilities: [
-      "Industry-specific nurture templates",
+      "Industry specific nurture templates",
       "Email + SMS + WhatsApp sequencing",
-      "Behavior-triggered branching (opens, replies, bookings)",
-      "A/B testing and win-rate reporting",
+      "Behavior triggered branching (opens, replies, bookings)",
+      "A/B testing and win rate reporting",
       "Seamless handoff to human reps on intent signals",
     ],
     bestFor:
@@ -144,18 +144,18 @@ export const solutions: Solution[] = [
       "Deploy AI chat on your website, WhatsApp, and SMS. Trained on your services, pricing, and FAQs, so it actually converts.",
     outcomes: [
       "Capture inquiries when your team is asleep",
-      "Deflect price-shoppers while qualifying serious buyers",
+      "Deflect price shoppers while qualifying serious buyers",
       "Lower support load by answering the top 20 FAQs instantly",
     ],
     capabilities: [
-      "Custom-trained on your services + policies",
+      "Custom trained on your services + policies",
       "Web widget + WhatsApp Business API + SMS",
-      "Booking-link handoff on intent",
+      "Booking link handoff on intent",
       "Human takeover with full conversation context",
-      "Analytics on top questions, conversions, and drop-off",
+      "Analytics on top questions, conversions, and drop off",
     ],
     bestFor:
-      "Any business with a website doing more than $10k/mo in leads, especially multi-location and after-hours heavy.",
+      "Any business with a website doing more than $10k/mo in leads, especially multi location and after hours heavy.",
     legacyPaths: ["/services/conversational-ai"],
     group: "nurture",
   },
@@ -164,17 +164,17 @@ export const solutions: Solution[] = [
     name: "n8n Workflow Automation",
     tagline: "Custom automations that replace your manual ops",
     summary:
-      "Bespoke n8n workflows that wire your CRM, ads, forms, calendars, and AI into automated pipelines, self-hosted or cloud, with 90%+ cost savings vs Zapier at scale.",
+      "Bespoke n8n workflows that wire your CRM, ads, forms, calendars, and AI into automated pipelines, self hosted or cloud, with 90%+ cost savings vs Zapier at scale.",
     outcomes: [
       "Kill the $600/mo Zapier bill and run 10x more workflows",
       "Automate the 3 to 8 hours per week every team loses to copy/paste",
       "Monitoring + error alerts so automations don't silently break",
     ],
     capabilities: [
-      "Self-hosted or cloud n8n instance setup + hardening",
+      "Self hosted or cloud n8n instance setup + hardening",
       "CRM sync (GHL, HubSpot, Pipedrive) with Meta/Google Ads + forms",
       "AI-powered lead scoring, routing, and enrichment workflows",
-      "Zapier-to-n8n migrations with parallel-run validation",
+      "Zapier-to-n8n migrations with parallel run validation",
       "Webhook + API integrations for custom tools",
       "Error workflows, Slack alerts, and execution logs",
     ],
@@ -192,17 +192,17 @@ export const solutions: Solution[] = [
     outcomes: [
       "One pipeline, no more spreadsheets, sticky notes, or lost leads",
       "Automatic lead scoring and routing to the right closer",
-      "Real-time visibility into what's working across every channel",
+      "Real time visibility into what's working across every channel",
     ],
     capabilities: [
       "GoHighLevel master snapshots per industry",
       "n8n + Zapier backends for edge cases",
       "Data sync across Meta Ads, Google Ads, email, SMS, calls",
       "Custom pipelines + tag logic per service line",
-      "Team training + SOPs for long-term adoption",
+      "Team training + SOPs for long term adoption",
     ],
     bestFor:
-      "Owner-operators outgrowing spreadsheets and agencies stitched from 6 separate tools.",
+      "Owner operators outgrowing spreadsheets and agencies stitched from 6 separate tools.",
     legacyPaths: ["/services/revenue-operations"],
     group: "operate",
   },
@@ -213,8 +213,8 @@ export const solutions: Solution[] = [
     summary:
       "See bookings, revenue, ad spend, and pipeline health in one dashboard, not seven tabs you forget to check.",
     outcomes: [
-      "Know your true cost-per-booked-job this week, not next quarter",
-      "Spot channel drop-offs before they blow up your month",
+      "Know your true cost per booked job this week, not next quarter",
+      "Spot channel drop offs before they blow up your month",
       "Defensible numbers for every marketing decision",
     ],
     capabilities: [
@@ -265,17 +265,17 @@ export const industries: Industry[] = [
     name: "Plumbing Companies",
     headline: "Stop losing jobs to the first plumber who picks up.",
     summary:
-      "Deploy AI voice agents, missed-call text-back, and booking automation so every quote request turns into a scheduled visit.",
+      "Deploy AI voice agents, Missed call text back, and booking automation so every quote request turns into a scheduled visit.",
     niches: ["Residential Plumbing", "Commercial Plumbing", "Emergency Services"],
     painPoints: [
       "Missing calls while on tools, losing the job to whoever answers next",
-      "Quote follow-ups slipping through the cracks",
+      "Quote follow ups slipping through the cracks",
       "Ad spend that can't be traced to booked revenue",
     ],
     playbook: [
       "AI voice agent answers every call, qualifies, books the visit",
-      "Missed-call text-back recovers 30 to 50% of lost callers",
-      "Automated quote follow-ups via SMS + email",
+      "Missed call text back recovers 30 to 50% of lost callers",
+      "Automated quote follow ups via SMS + email",
       "GHL pipeline with job-type tagging for Meta retargeting",
     ],
     relatedSolutionSlugs: [
@@ -300,8 +300,8 @@ export const industries: Industry[] = [
     playbook: [
       "AI voice + chat intake with emergency priority routing",
       "Automated appointment confirmations + reminders",
-      "After-hours booking with technician dispatch logic",
-      "Review asks post-visit to compound local SEO",
+      "After hours booking with technician dispatch logic",
+      "Review asks post visit to compound local SEO",
     ],
     relatedSolutionSlugs: [
       "ai-voice-agents",
@@ -315,18 +315,18 @@ export const industries: Industry[] = [
     name: "HVAC Companies",
     headline: "Capture every AC blowout and furnace failure instantly.",
     summary:
-      "During peak seasons, speed to lead is everything. We add front-end qualification and nurture so your trucks get to the highest-value jobs first.",
+      "During peak seasons, speed to lead is everything. We add front end qualification and nurture so your trucks get to the highest value jobs first.",
     niches: ["AC Repair", "Heating Specialists", "Commercial HVAC"],
     painPoints: [
       "Scaling support during peak season surges",
-      "Losing after-hours emergency calls to competitors",
+      "Losing after hours emergency calls to competitors",
       "Routing emergencies to whichever tech answers first, not the right one",
     ],
     playbook: [
       "AI chatbot qualifies emergencies vs. routine",
       "Lead scoring + routing to available trucks",
-      "After-hours automated booking with emergency escalation",
-      "Seasonal nurture for tune-ups and maintenance plans",
+      "After hours automated booking with emergency escalation",
+      "Seasonal nurture for tune ups and maintenance plans",
     ],
     relatedSolutionSlugs: [
       "chatbots",
@@ -343,15 +343,15 @@ export const industries: Industry[] = [
       "Storm damage and urgent repairs hit in bursts. Capture, qualify, and schedule inspections instantly so your crew is the one on the roof, not the competitor down the street.",
     niches: ["Residential Roofing", "Commercial Roofing", "Storm Damage & Insurance Claims"],
     painPoints: [
-      "Storm-driven lead surges overwhelming the front desk",
-      "Insurance-claim leads slipping through the cracks before contact",
+      "Storm driven lead surges overwhelming the front desk",
+      "Insurance claim leads slipping through the cracks before contact",
       "Long gap between inspection, quote, and signed contract",
     ],
     playbook: [
       "AI voice agent handles inspection booking 24/7",
-      "Missed-call text-back during storm surges",
-      "Automated quote follow-up tailored to insurance vs. cash jobs",
-      "Post-install review and referral asks wired to GHL",
+      "Missed call text back during storm surges",
+      "Automated quote follow up tailored to insurance vs. cash jobs",
+      "Post install review and referral asks wired to GHL",
     ],
     relatedSolutionSlugs: [
       "ai-voice-agents",
@@ -363,20 +363,20 @@ export const industries: Industry[] = [
   {
     slug: "home-remodeling-companies",
     name: "Home Remodeling Companies",
-    headline: "Nurture high-ticket leads without the manual chase.",
+    headline: "Nurture high ticket leads without the manual chase.",
     summary:
-      "Remodeling has a long consideration cycle. We automate multi-touch nurture and follow-ups so your pipeline stays warm for months.",
+      "Remodeling has a long consideration cycle. We automate multi touch nurture and follow ups so your pipeline stays warm for months.",
     niches: ["Kitchen Remodels", "Bathroom Renovations", "Full Home Makeovers"],
     painPoints: [
       "3 to 6 month sales cycles with leads going cold",
-      "No system for staying top-of-mind between the quote and the deposit",
-      "Review and referral asks never getting sent post-project",
+      "No system for staying top of mind between the quote and the deposit",
+      "Review and referral asks never getting sent post project",
     ],
     playbook: [
-      "Multi-touch nurture tailored to 3-6 month decision cycles",
+      "Multi touch nurture tailored to 3-6 month decision cycles",
       "Automated before/after portfolio drips",
-      "Post-project review asks wired to your CRM",
-      "Dashboards to track quote-to-close velocity",
+      "Post project review asks wired to your CRM",
+      "Dashboards to track quote to close velocity",
     ],
     relatedSolutionSlugs: [
       "automated-lead-nurturing",
@@ -400,8 +400,8 @@ export const industries: Industry[] = [
     playbook: [
       "AI voice agent for 24/7 compassionate intake",
       "Automated tour scheduling with reminder sequences",
-      "Lead scoring for high-intent families",
-      "CRM pipeline tracking from first call to move-in",
+      "Lead scoring for high intent families",
+      "CRM pipeline tracking from first call to move in",
     ],
     relatedSolutionSlugs: [
       "ai-voice-agents",
@@ -418,15 +418,15 @@ export const industries: Industry[] = [
       "Automate patient intake, scheduling, waitlists, and reminders while staying inside your compliance boundaries to keep chairs full.",
     niches: ["Sports Therapy", "Rehabilitation", "Chiropractic Care"],
     painPoints: [
-      "No-shows costing $150+ per empty slot",
-      "Front-desk overload during peak hours",
+      "No shows costing $150+ per empty slot",
+      "Front desk overload during peak hours",
       "Manual waitlist management when cancellations hit",
     ],
     playbook: [
-      "AI voice intake with compliance-aware handling",
+      "AI voice intake with compliance aware handling",
       "Automated reminders via SMS + email",
-      "No-show recovery workflows that refill cancellations",
-      "Missed-call text-back for after-hours inquiries",
+      "No show recovery workflows that refill cancellations",
+      "Missed call text back for after hours inquiries",
     ],
     relatedSolutionSlugs: [
       "ai-voice-agents",
@@ -438,20 +438,20 @@ export const industries: Industry[] = [
   {
     slug: "dental-clinics",
     name: "Dental Clinics",
-    headline: "Automate patient recall and reduce no-shows.",
+    headline: "Automate patient recall and reduce no shows.",
     summary:
-      "Ensure every hygiene appointment is filled and every high-ticket implant consultation is nurtured through automated multi-channel sequences.",
+      "Ensure every hygiene appointment is filled and every high ticket implant consultation is nurtured through automated multi channel sequences.",
     niches: ["General Dentistry", "Orthodontics", "Cosmetic Dentistry"],
     painPoints: [
-      "Empty chairs from last-minute cancellations",
+      "Empty chairs from last minute cancellations",
       "Patients overdue for hygiene and never getting recalled",
       "Front desk tied up on calls instead of chairside support",
     ],
     playbook: [
       "Automated recall sequences by treatment type",
-      "Missed-call text-back during peak hours",
+      "Missed call text back during peak hours",
       "Waitlist activation on cancellation",
-      "Multi-touch nurture for implants and cosmetic consults",
+      "Multi touch nurture for implants and cosmetic consults",
     ],
     relatedSolutionSlugs: [
       "automated-lead-nurturing",
@@ -470,13 +470,13 @@ export const industries: Industry[] = [
     painPoints: [
       "Leads going cold in the 20-minute gap between alerts",
       "80% of portal leads are unqualified and waste agent time",
-      "No post-close referral or review system",
+      "No post close referral or review system",
     ],
     playbook: [
       "Instant AI response to every portal + ad lead",
-      "Qualification flow for serious buyers vs. tire-kickers",
-      "Drip nurture for long-horizon buyers (6 to 18 months out)",
-      "Post-close referral + review automation",
+      "Qualification flow for serious buyers vs. tire kickers",
+      "Drip nurture for long horizon buyers (6 to 18 months out)",
+      "Post close referral + review automation",
     ],
     relatedSolutionSlugs: [
       "chatbots",
@@ -501,7 +501,7 @@ export const industries: Industry[] = [
       "AI chatbot for intake and qualification criteria",
       "Automated document request sequences with reminders",
       "Lead routing based on service need (tax, advisory, bookkeeping)",
-      "Year-round nurture for advisory cross-sell",
+      "Year round nurture for advisory cross sell",
     ],
     relatedSolutionSlugs: [
       "chatbots",
@@ -515,17 +515,17 @@ export const industries: Industry[] = [
     name: "Veterinary Clinics",
     headline: "Better support for pet owners, 24/7.",
     summary:
-      "Handle emergency triage, routine appointment booking, and vaccination reminders automatically without expanding your front-desk headcount.",
+      "Handle emergency triage, routine appointment booking, and vaccination reminders automatically without expanding your front desk headcount.",
     niches: ["General Veterinary", "Emergency Animal Hospitals", "Specialty Pet Care"],
     painPoints: [
-      "High call volume with limited front-desk staff",
+      "High call volume with limited front desk staff",
       "Sorting emergency vs. routine calls on the fly",
       "Missed annual checkups and vaccination recalls",
     ],
     playbook: [
       "AI voice agent for triage routing",
       "Automated vaccination and checkup reminders",
-      "Missed-call text-back for routine inquiries",
+      "Missed call text back for routine inquiries",
       "Waitlist activation for cancellations",
     ],
     relatedSolutionSlugs: [
@@ -550,7 +550,7 @@ export const processSteps = [
   {
     title: "Build",
     description:
-      "We deploy your industry-tuned GHL snapshot, wire up AI voice + chat, and integrate with your existing CRM and calendar.",
+      "We deploy your industry tuned GHL snapshot, wire up AI voice + chat, and integrate with your existing CRM and calendar.",
   },
   {
     title: "Launch",
@@ -583,18 +583,18 @@ export const results: ResultCard[] = [
     client: "Riverstone Dental Group",
     industry: "Dental Clinics",
     industrySlug: "dental-clinics",
-    challenge: "Missed inbound calls and front-desk overload.",
+    challenge: "Missed inbound calls and front desk overload.",
     impact: "24/7 call coverage with automated booking, 32% more appointments.",
     services: ["AI Voice Agents", "CRM Integration"],
     solutionsUsed: ["ai-voice-agents", "crm-integration"],
     narrative: [
-      "Riverstone's two-receptionist front desk was answering 65% of inbound calls. The other 35%, typically after 5pm and on weekends, never got a callback, and patients booked at the next clinic.",
-      "We deployed an AI voice agent trained on their service menu, hours, and intake script. It now handles overflow and after-hours, books directly into their PMS, and texts a confirmation within 30 seconds.",
-      "Within 60 days, booked appointments increased 32% with zero new front-desk hires.",
+      "Riverstone's two receptionist front desk was answering 65% of inbound calls. The other 35%, typically after 5pm and on weekends, never got a callback, and patients booked at the next clinic.",
+      "We deployed an AI voice agent trained on their service menu, hours, and intake script. It now handles overflow and after hours, books directly into their PMS, and texts a confirmation within 30 seconds.",
+      "Within 60 days, booked appointments increased 32% with zero new front desk hires.",
     ],
     metrics: [
       { label: "Booked appointments", value: "+32%" },
-      { label: "After-hours capture", value: "94%" },
+      { label: "After hours capture", value: "94%" },
       { label: "Avg. response time", value: "< 30s" },
     ],
   },
@@ -603,18 +603,18 @@ export const results: ResultCard[] = [
     client: "Harbor Plumbing Co.",
     industry: "Plumbing Companies",
     industrySlug: "plumbing-companies",
-    challenge: "Losing after-hours emergency calls to competitors.",
-    impact: "Recovered $180k/yr in booked jobs via missed-call text-back + AI voice.",
-    services: ["Missed Call Text-Back", "AI Voice Agents"],
+    challenge: "Losing after hours emergency calls to competitors.",
+    impact: "Recovered $180k/yr in booked jobs via Missed call text back + AI voice.",
+    services: ["Missed Call text back", "AI Voice Agents"],
     solutionsUsed: ["missed-call-text-back", "ai-voice-agents"],
     narrative: [
       "Harbor's owner answered the phone himself between jobs. He estimated 30 to 40 missed calls a week, mostly nights and weekends, and emergency plumbing is the most lucrative slice.",
-      "We layered missed-call text-back over an AI voice agent that triages emergencies and books non-urgent jobs. Calls his cell only for true after-hours emergencies.",
-      "First quarter recovered $48k of previously-lost calls. Annualised: $180k+ in booked work without adding headcount.",
+      "We layered Missed call text back over an AI voice agent that triages emergencies and books non urgent jobs. Calls his cell only for true after hours emergencies.",
+      "First quarter recovered $48k of previously lost calls. Annualised: $180k+ in booked work without adding headcount.",
     ],
     metrics: [
       { label: "Annual recovered revenue", value: "$180k+" },
-      { label: "Missed-call response", value: "< 60s" },
+      { label: "Missed call response", value: "< 60s" },
       { label: "Owner phone interruptions", value: "-72%" },
     ],
   },
@@ -624,16 +624,16 @@ export const results: ResultCard[] = [
     industry: "Accounting Firms",
     industrySlug: "accounting-firms",
     challenge: "Billable hours lost to unqualified discovery calls.",
-    impact: "Qualification chatbot cut time-wasters by 60%; close rate up 2.1x.",
+    impact: "Qualification chatbot cut time wasters by 60%; close rate up 2.1x.",
     services: ["Chatbots", "Automated Lead Nurturing"],
     solutionsUsed: ["chatbots", "automated-lead-nurturing"],
     narrative: [
-      "Atlas partners were spending 12+ hours a week on discovery calls, mostly with leads outside their billable-rate range or scope.",
-      "We built a qualification chatbot that asks five intake questions and only books partner calendars when the prospect clears all five. Below-threshold inquiries route to an automated nurture for re-evaluation in 90 days.",
-      "Time-wasters dropped 60% within a month. Partner-call close rate rose from 18% to 38%.",
+      "Atlas partners were spending 12+ hours a week on discovery calls, mostly with leads outside their billable rate range or scope.",
+      "We built a qualification chatbot that asks five intake questions and only books partner calendars when the prospect clears all five. Below threshold inquiries route to an automated nurture for re evaluation in 90 days.",
+      "Time wasters dropped 60% within a month. Partner call close rate rose from 18% to 38%.",
     ],
     metrics: [
-      { label: "Time-waster calls", value: "-60%" },
+      { label: "Time waster calls", value: "-60%" },
       { label: "Close rate", value: "18% -> 38%" },
       { label: "Partner hours reclaimed", value: "8/wk" },
     ],
@@ -686,24 +686,24 @@ export const testimonials = [
 
 export const aboutPrinciples = [
   {
-    title: "Owner-operators first",
+    title: "Owner operators first",
     body: "We build for plumbers, dentists, and studio owners, not CMOs with 12-person teams. Every workflow survives a busy Friday.",
   },
   {
     title: "Outcomes over tech",
-    body: "Clients don't buy AI. They buy booked jobs, filled chairs, and recovered no-shows. The tech is invisible.",
+    body: "Clients don't buy AI. They buy booked jobs, filled chairs, and recovered no shows. The tech is invisible.",
   },
   {
-    title: "Systems, not one-offs",
+    title: "Systems, not one offs",
     body: "Every engagement is designed as an operating system, measurable, maintainable, and improvable without us.",
   },
 ];
 
 export const companyProfile = {
   name: "DigitalX Solutions",
-  email: "info@digitalx-solutions.com",
+  email: "info@digitalxsolutions.com",
   location: "16 Boldrewood Ave, Casula, NSW 2170, Australia | Serving USA + Australia",
-  tagline: "Stop losing revenue to missed calls and slow follow-ups.",
+  tagline: "Stop losing revenue to missed calls and slow follow ups.",
   phone: "+61 451 413 786",
   phoneE164: "+61451413786",
   whatsappUrl: "https://wa.me/61451413786",

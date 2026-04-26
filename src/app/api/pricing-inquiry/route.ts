@@ -32,7 +32,7 @@ export async function POST(req: Request) {
         await transporter.sendMail({
             from: `"${name}" <${process.env.EMAIL_USER}>`,
             replyTo: email,
-            to: "info@digitalx-solutions.com",
+            to: "info@digitalxsolutions.com",
             subject: `New Pricing Inquiry: ${planName} Plan`,
             html: `
         <h2>New Pricing Inquiry</h2>

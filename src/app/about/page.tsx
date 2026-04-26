@@ -17,7 +17,7 @@ const milestones = [
     { year: "2022", event: "DigitalX Solutions launched in Sydney, Australia" },
     {
         year: "2023",
-        event: "Expanded delivery to the United States and scaled cross-region operations",
+        event: "Expanded delivery to the United States and scaled cross region operations",
     },
     {
         year: "2024",
@@ -75,7 +75,7 @@ export default function AboutPage() {
                     </p>
                     <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
                         Our work spans the USA and Australia, with delivery designed to fit real team constraints and
-                        evolving go-to-market priorities.
+                        evolving go to market priorities.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-3">
                         <Link

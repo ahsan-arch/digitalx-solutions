@@ -13,7 +13,7 @@ const capabilities = [
   "Headless CMS or hand-built content layers",
   "Sub-200ms server response, 95+ Lighthouse",
   "Booking + intake forms wired to your CRM",
-  "Server-side analytics and ad attribution",
+  "Server side analytics and ad attribution",
   "Hosting on Vercel or Cloudflare with edge caching",
 ];
 
@@ -26,7 +26,7 @@ const positioning = [
   {
     title: "Engineered for the platforms your customers use",
     body:
-      "We test on real devices and slow networks, not just our own desks. Mobile carriers in regional Australia and tier-3 US markets are first-class targets.",
+      "We test on real devices and slow networks, not just our own desks. Mobile carriers in regional Australia and tier-3 US markets are first class targets.",
   },
   {
     title: "Plugs into your automation stack from day one",
@@ -55,7 +55,7 @@ export default function WebDesignDevelopmentPage() {
           Web design &amp; development for local service businesses.
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          We are an automation-first agency. When clients also need a new site &mdash; one engineered to feed leads
+          We are an automation first agency. When clients also need a new site &mdash; one engineered to feed leads
           straight into the automation stack &mdash; we build it ourselves on Next.js.
         </p>
       </section>

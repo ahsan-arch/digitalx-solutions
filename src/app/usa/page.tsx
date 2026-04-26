@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata: Metadata = generatePageMetadata("/usa", {
   title: "Automation & AI for US Service Businesses | DigitalX",
   description:
-    "DigitalX Solutions delivers AI voice agents, missed-call recovery, and CRM automation for US local service businesses across all 50 states.",
+    "DigitalX Solutions delivers AI voice agents, Missed call recovery, and CRM automation for US local service businesses across all 50 states.",
 });
 
 const usaLocalBusiness = {
@@ -15,10 +15,10 @@ const usaLocalBusiness = {
   "@id": `${siteConfig.domain}/usa#localbusiness`,
   name: "DigitalX Solutions, USA",
   url: `${siteConfig.domain}/usa`,
-  email: "info@digitalx-solutions.com",
+  email: "info@digitalxsolutions.com",
   areaServed: { "@type": "Country", name: "United States" },
   description:
-    "AI voice agents, missed-call text-back, CRM automation, and growth dashboards for US local service businesses.",
+    "AI voice agents, Missed call text back, CRM automation, and growth dashboards for US local service businesses.",
 };
 
 export default function UsaPage() {
@@ -38,8 +38,8 @@ export default function UsaPage() {
           AI-powered automation for US local service businesses.
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          From Brooklyn brownstones to Austin med spas, we deploy AI voice, missed-call text-back, and CRM
-          automation so you stop losing local revenue to missed calls and slow follow-ups.
+          From Brooklyn brownstones to Austin med spas, we deploy AI voice, Missed call text back, and CRM
+          automation so you stop losing local revenue to missed calls and slow follow ups.
         </p>
       </section>
 
@@ -48,10 +48,10 @@ export default function UsaPage() {
           <h2 className="font-display text-display-sm text-ink-primary">Why US operators pick us</h2>
           <ul className="mt-5 space-y-3 text-body text-ink-secondary">
             <li>• English &amp; Spanish AI voice agents tuned to US market vocabulary.</li>
-            <li>• Bilingual missed-call text-back templates for major service verticals.</li>
-            <li>• Server-side tracking + CAPI built for iOS 14 ad attribution.</li>
+            <li>• Bilingual Missed call text back templates for major service verticals.</li>
+            <li>• Server side tracking + CAPI built for iOS 14 ad attribution.</li>
             <li>• GoHighLevel + HubSpot snapshots for plumbers, med spas, lawyers, and gyms.</li>
-            <li>• Time-zone-aware nurture flows across PT, MT, CT, ET.</li>
+            <li>• Time zone-aware nurture flows across PT, MT, CT, ET.</li>
           </ul>
         </div>
         <ServiceAreaMap />

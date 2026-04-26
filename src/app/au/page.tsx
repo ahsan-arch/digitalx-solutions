@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata: Metadata = generatePageMetadata("/au", {
   title: "Automation & AI for Australian Service Businesses | DigitalX",
   description:
-    "DigitalX Solutions deploys AI voice agents, missed-call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
+    "DigitalX Solutions deploys AI voice agents, Missed call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
 });
 
 const auLocalBusiness = {
@@ -15,7 +15,7 @@ const auLocalBusiness = {
   "@id": `${siteConfig.domain}/au#localbusiness`,
   name: "DigitalX Solutions, Australia",
   url: `${siteConfig.domain}/au`,
-  email: "info@digitalx-solutions.com",
+  email: "info@digitalxsolutions.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Casula",
@@ -24,7 +24,7 @@ const auLocalBusiness = {
   },
   areaServed: { "@type": "Country", name: "Australia" },
   description:
-    "AI voice agents, missed-call text-back, CRM automation, and growth dashboards for Australian local service businesses.",
+    "AI voice agents, Missed call text back, CRM automation, and growth dashboards for Australian local service businesses.",
 };
 
 export default function AuPage() {
@@ -44,7 +44,7 @@ export default function AuPage() {
           AI automation for Australian service businesses.
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. AI voice, missed-call recovery,
+          Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. AI voice, Missed call recovery,
           and CRM systems tuned for Australian customers and Australian Privacy Principles.
         </p>
       </section>

@@ -28,7 +28,7 @@ export default function HomePage() {
               className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand/20 blur-3xl"
             />
 
-            <p className="mb-4 inline-flex rounded-full border border-border bg-white px-4 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-foreground/70">
+            <p className="mb-4 inline-flex rounded-full border border-border bg-white px-4 py-1.5 text-sm font-medium text-foreground/70">
               DigitalX Solutions
             </p>
             <h1 className="max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">

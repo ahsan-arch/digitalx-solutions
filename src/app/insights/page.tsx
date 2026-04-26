@@ -4,7 +4,7 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 
 export const metadata: Metadata = generatePageMetadata("/insights", {
     title: "Digital Marketing & Performance Engineering Insights | DigitalX Solutions",
-    description: "Advanced insights on deep-tech digital marketing, Next.js web development, server-side tracking, and CRM automation strategies.",
+    description: "Advanced insights on deep-tech digital marketing, Next.js web development, server side tracking, and CRM automation strategies.",
 });
 
 const articles = [

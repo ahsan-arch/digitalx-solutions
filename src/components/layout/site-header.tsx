@@ -22,7 +22,7 @@ export function SiteHeader() {
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-100 text-brand">
             DX
           </span>
-          <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-foreground/90 sm:block">
+          <span className="hidden text-lg font-semibold text-foreground/90 sm:block">
             {companyProfile.name}
           </span>
         </Link>
