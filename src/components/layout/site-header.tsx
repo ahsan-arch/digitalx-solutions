@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { companyProfile, primaryNavigation } from "@/data/redesign";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -45,7 +46,17 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex md:items-center md:gap-4">
+          <a
+            href={companyProfile.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Message us on WhatsApp"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground/65 hover:text-brand transition-colors"
+          >
+            <WhatsAppIcon className="h-4 w-4 shrink-0" />
+            <span className="hidden lg:inline-block">{companyProfile.phone}</span>
+          </a>
           <Link
             href="/contact"
             className="inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-deep"
