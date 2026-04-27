@@ -32,35 +32,54 @@ export default function WorkPage() {
                 </p>
             </section>
 
-            <section className="container-shell mt-10 grid gap-5 md:grid-cols-2">
-                {results.map((result) => (
-                    <Link
-                        key={result.slug}
-                        href={`/work/${result.slug}`}
-                        className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-sm"
-                    >
-                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">{result.industry}</p>
-                        <h2 className="mt-2 text-2xl font-semibold text-foreground group-hover:text-brand">{result.client}</h2>
-                        <p className="mt-4 text-sm leading-relaxed text-foreground/70">
-                            <span className="font-medium text-foreground">Challenge: </span>
-                            {result.challenge}
-                        </p>
-                        <p className="mt-3 text-sm leading-relaxed text-brand">
-                            <span className="font-semibold">Impact: </span>
-                            {result.impact}
-                        </p>
-                        <div className="mt-4 flex flex-wrap gap-2">
-                            {result.services.map((service) => (
-                                <span
-                                    key={service}
-                                    className="rounded-full border border-border bg-white px-3 py-1 text-xs font-medium text-foreground/75"
-                                >
-                                    {service}
-                                </span>
-                            ))}
-                        </div>
-                    </Link>
-                ))}
+            <section className="container-shell mt-10">
+                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    {results.map((result) => (
+                        <Link
+                            key={result.slug}
+                            href={`/work/${result.slug}`}
+                            className="group flex flex-col rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+                        >
+                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">{result.industry}</p>
+                            <h2 className="mt-2 font-display text-2xl text-foreground group-hover:text-brand">{result.client}</h2>
+                            <p className="mt-4 text-sm leading-relaxed text-foreground/70">
+                                <span className="font-medium text-foreground">Challenge: </span>
+                                {result.challenge}
+                            </p>
+                            <p className="mt-3 text-sm leading-relaxed text-brand">
+                                <span className="font-semibold">Impact: </span>
+                                {result.impact}
+                            </p>
+
+                            <div className="mt-4 flex flex-wrap gap-2">
+                                {result.services.map((service) => (
+                                    <span
+                                        key={service}
+                                        className="rounded-full border border-border bg-surface-100 px-3 py-1 text-[11px] font-medium text-foreground/75"
+                                    >
+                                        {service}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="mt-5 flex flex-wrap gap-2">
+                                {result.metrics.map((metric) => (
+                                    <div
+                                        key={metric.label}
+                                        className="flex flex-col items-start justify-center rounded-lg border border-border bg-white px-3 py-2 text-xs"
+                                    >
+                                        <span className="font-semibold text-foreground/60">{metric.label}</span>
+                                        <span className="mt-0.5 font-bold text-foreground">{metric.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <span className="mt-auto pt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                                Read full case study {"->"}
+                            </span>
+                        </Link>
+                    ))}
+                </div>
             </section>
 
             <section className="container-shell mt-12">
@@ -81,3 +100,4 @@ export default function WorkPage() {
         </main>
     );
 }
+

@@ -6,6 +6,7 @@ import {
   processSteps,
   solutions,
   developmentProjects,
+  results,
 } from "@/data/redesign";
 
 export default function HomePage() {
@@ -159,10 +160,33 @@ export default function HomePage() {
               See all case studies
             </Link>
           </div>
-            
-          <div className="flex flex-col items-center justify-center rounded-3xl border border-border border-dashed bg-surface-50 py-20 text-center">
-            <h3 className="font-display text-2xl text-foreground">Adding these soon</h3>
-            <p className="mt-2 text-sm text-foreground/60">We are currently compiling our latest case studies.</p>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {results.slice(0, 3).map((result) => (
+              <Link
+                key={result.slug}
+                href={`/work/${result.slug}`}
+                className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">{result.industry}</p>
+                <h3 className="mt-2 font-display text-2xl text-foreground">{result.client}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/68">{result.impact}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {result.metrics.slice(0, 2).map((metric) => (
+                    <span
+                      key={metric.label}
+                      className="rounded-full border border-border bg-white px-3 py-1 text-xs font-semibold text-foreground/70"
+                    >
+                      {metric.label}: {metric.value}
+                    </span>
+                  ))}
+                </div>
+                <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                  Read case study
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
 
