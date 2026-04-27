@@ -27,7 +27,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<PageP
   const result = getResultBySlug(slug);
   if (!result) notFound();
 
-  const industry = getIndustryBySlug(result.industrySlug);
+  const industry = result.industrySlug ? getIndustryBySlug(result.industrySlug) : undefined;
   const url = `${siteConfig.domain}/work/${result.slug}`;
 
   const breadcrumbSchema = generateBreadcrumbSchema([
