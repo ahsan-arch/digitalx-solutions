@@ -16,7 +16,7 @@ export function Logo({ className = "w-12 h-12" }: { className?: string }) {
                     d="M 20 20 L 20 80 L 50 80 C 70 80 80 60 80 50 C 80 40 70 20 50 20 Z M 35 35 L 50 35 C 60 35 65 45 65 50 C 65 55 60 65 50 65 L 35 65 Z"
                     fill="currentColor"
                 />
-                {/* X Path - Interlocking style */}
+                {/* X Path, Interlocking style */}
                 <path
                     d="M 60 20 L 75 20 L 55 50 L 75 80 L 60 80 L 45 50 L 60 20 Z"
                     fill="currentColor"

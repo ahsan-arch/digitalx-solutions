@@ -17,20 +17,20 @@ export default function Icon() {
             // ImageResponse JSX element
             <div
                 style={{
-                    background: '#050505',
+                    background: '#f7f2e8',
                     width: '100%',
                     height: '100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#e5e7eb',
+                    color: '#8f5632',
                 }}
             >
                 <div
                     style={{
                         width: '70%',
                         height: '70%',
-                        border: '8px solid #e5e7eb',
+                        border: '8px solid #8f5632',
                         borderRadius: '16px',
                         display: 'flex',
                         alignItems: 'center',

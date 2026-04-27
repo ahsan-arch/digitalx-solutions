@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
-import Script from "next/script";
+import { Roboto, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components/layout";
+import { SiteHeader } from "@/components/layout/site-header";
+import { MobileBookCall } from "@/components/navigation/mobile-book-call";
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
@@ -9,11 +11,11 @@ import {
   seoKeywords,
   siteConfig,
 } from "@/lib/seo";
-import { LenisProvider } from "@/components/lenis-provider";
 
-const spaceGrotesk = Space_Grotesk({
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-roboto",
 });
 
 const inter = Inter({
@@ -21,8 +23,13 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
+
 export const viewport: Viewport = {
-  themeColor: "#050505",
+  themeColor: "#f7f2e8",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -57,7 +64,7 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "DigitalX Solutions — Web Development & Automation Agency USA & Australia",
+        alt: "DigitalX Solutions | Web Development & Automation Agency USA & Australia",
       },
     ],
   },
@@ -68,20 +75,23 @@ export const metadata: Metadata = {
     images: ["/api/og"],
     creator: siteConfig.social.twitter,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots:
+    process.env.VERCEL_ENV === "preview"
+      ? { index: false, follow: false, nocache: true }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
   appleWebApp: {
     capable: true,
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
     title: "DigitalX",
   },
   formatDetection: {
@@ -105,9 +115,8 @@ export default function RootLayout({
   const webSiteSchema = generateWebSiteSchema();
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
-        {/* Semantic Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
@@ -116,48 +125,21 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
-
-        {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
-
-        {/* Mobile-specific meta — ensures Add to Home Screen works on iOS & Android */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="DigitalX" />
       </head>
-      <body className={`${spaceGrotesk.variable} ${inter.variable} antialiased font-sans bg-background text-foreground`}>
-        {/* Grain overlay — lightweight CSS-only noise */}
-        <div
-          className="fixed inset-0 pointer-events-none opacity-[0.025] z-[9999]"
-          aria-hidden="true"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-            backgroundRepeat: "repeat",
-            backgroundSize: "200px 200px",
-            willChange: "auto",
-          }}
-        />
-
-        <LenisProvider>
+      <body
+        className={`${roboto.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground`}
+      >
+        <SiteHeader />
+        <div className="relative min-h-screen pt-20">
           {children}
-        </LenisProvider>
-
-        {/* Analytics - Lazy Loaded to protect Core Web Vitals */}
-        {/* 
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
-        */}
+        </div>
+        <Footer />
+        <MobileBookCall />
       </body>
-    </html >
+    </html>
   );
 }

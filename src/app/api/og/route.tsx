@@ -5,8 +5,8 @@ export const runtime = "edge";
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
-    const title = searchParams.get("title") || "We Build What Performs";
-    const subtitle = searchParams.get("subtitle") || "High-Performance Web Dev & Automation Agency — USA & Australia";
+    const title = searchParams.get("title") || "Revenue Systems That Perform";
+    const subtitle = searchParams.get("subtitle") || "Web Development, AI Automation, and Performance Marketing";
 
     return new ImageResponse(
         (
@@ -18,10 +18,9 @@ export async function GET(request: Request) {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "#050505",
-                    backgroundImage: "radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.1) 2%, transparent 0%), radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.1) 2%, transparent 0%)",
-                    backgroundSize: "100px 100px",
-                    color: "white",
+                    backgroundColor: "#f7f2e8",
+                    backgroundImage: "radial-gradient(circle at 20% 10%, rgba(143, 86, 50, 0.18), transparent 35%), radial-gradient(circle at 80% 18%, rgba(191, 133, 90, 0.2), transparent 35%)",
+                    color: "#202126",
                     padding: "40px 60px",
                 }}
             >
@@ -34,7 +33,7 @@ export async function GET(request: Request) {
                         marginBottom: "20px",
                     }}
                 >
-                    <div style={{ width: "60px", height: "4px", backgroundColor: "#2d5bff", marginRight: "20px" }} />
+                    <div style={{ width: "60px", height: "4px", backgroundColor: "#8f5632", marginRight: "20px" }} />
                     <div
                         style={{
                             fontSize: 36,
@@ -46,7 +45,7 @@ export async function GET(request: Request) {
                     >
                         DigitalX Solutions
                     </div>
-                    <div style={{ width: "60px", height: "4px", backgroundColor: "#2d5bff", marginLeft: "20px" }} />
+                    <div style={{ width: "60px", height: "4px", backgroundColor: "#8f5632", marginLeft: "20px" }} />
                 </div>
 
                 {/* Dynamic title */}
@@ -72,7 +71,7 @@ export async function GET(request: Request) {
                         fontSize: 20,
                         fontWeight: 400,
                         fontFamily: 'monospace',
-                        color: "rgba(255, 255, 255, 0.6)",
+                        color: "rgba(32, 33, 38, 0.65)",
                         letterSpacing: "0.05em",
                         textAlign: "center",
                         marginTop: "20px",
@@ -87,26 +86,26 @@ export async function GET(request: Request) {
                     <div style={{
                         fontSize: 14,
                         fontFamily: 'monospace',
-                        color: "#2d5bff",
-                        border: "1px solid rgba(45, 91, 255, 0.3)",
+                        color: "#8f5632",
+                        border: "1px solid rgba(143, 86, 50, 0.35)",
                         padding: "6px 16px",
                         borderRadius: "999px",
                     }}>
-                        🇺🇸 United States
+                        United States
                     </div>
                     <div style={{
                         fontSize: 14,
                         fontFamily: 'monospace',
-                        color: "#2d5bff",
-                        border: "1px solid rgba(45, 91, 255, 0.3)",
+                        color: "#8f5632",
+                        border: "1px solid rgba(143, 86, 50, 0.35)",
                         padding: "6px 16px",
                         borderRadius: "999px",
                     }}>
-                        🇦🇺 Australia
+                        Australia
                     </div>
                 </div>
 
-                <div style={{ position: 'absolute', bottom: 40, fontSize: 16, color: '#2d5bff', fontFamily: 'monospace' }}>
+                <div style={{ position: 'absolute', bottom: 40, fontSize: 16, color: '#8f5632', fontFamily: 'monospace' }}>
                     {siteConfig.domain.replace('https://', '')}
                 </div>
             </div>

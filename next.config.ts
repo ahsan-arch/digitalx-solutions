@@ -10,6 +10,24 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["framer-motion", "lucide-react"],
   },
   serverExternalPackages: ["nodemailer"],
+  async redirects() {
+    return [
+      // Consolidated secondary services
+      { source: "/services/web-dev", destination: "/services/web-design-and-development", permanent: true },
+      { source: "/services/nextjs-development", destination: "/services/web-design-and-development", permanent: true },
+      { source: "/services/meta-ads-engineering", destination: "/services/meta-ads", permanent: true },
+      // Old service pages → matching Solution pages
+      { source: "/services/ai-voice-receptionists", destination: "/solutions/ai-voice-agents", permanent: true },
+      { source: "/services/conversational-ai", destination: "/solutions/chatbots", permanent: true },
+      { source: "/services/revenue-operations", destination: "/solutions/crm-integration", permanent: true },
+      // Services index → Solutions hub
+      { source: "/services", destination: "/solutions", permanent: true },
+      // Locations promoted to top level
+      { source: "/locations/usa", destination: "/usa", permanent: true },
+      { source: "/locations/australia", destination: "/au", permanent: true },
+      { source: "/locations", destination: "/", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

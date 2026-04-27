@@ -1,4 +1,3 @@
-export { MagneticButton } from "./magnetic-button";
-export { BentoCard } from "./bento-card";
-export { ThreeDCard } from "./3d-card";
-export { TerminalInput } from "./terminal-input";
+export { Logo, DigitalXLogo } from "./logo";
+export { Modal } from "./modal";
+export { ServiceAreaMap } from "./service-area-map";

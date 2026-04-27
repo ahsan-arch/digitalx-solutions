@@ -1,169 +1,73 @@
 import Link from "next/link";
-import { company } from "@/data/site-content";
-import { siteConfig } from "@/lib/seo";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
+import { companyProfile, footerColumns } from "@/data/redesign";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 py-16 bg-background">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid gap-12 md:grid-cols-3">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <Link
-              href="/"
-              className="font-display text-2xl text-white tracking-tight uppercase"
-            >
-              {company.name}
+    <footer className="border-t border-border/70 bg-surface-50 py-16">
+      <div className="container-shell">
+        <div className="grid gap-10 lg:grid-cols-[1.6fr_2fr]">
+          <div>
+            <Link href="/" className="text-2xl font-semibold tracking-tight text-foreground">
+              {companyProfile.name}
             </Link>
-            <p className="text-sm text-white/50 mt-3 max-w-sm">
-              {company.description}
-            </p>
-            <address className="not-italic text-sm text-white/30 mt-4 font-mono leading-relaxed">
-              <p>DigitalX Solutions HQ</p>
-              <p>16 Boldrewood Ave</p>
-              <p>Casula, NSW, Australia 2170</p>
-            </address>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/70">{companyProfile.tagline}</p>
+            <p className="mt-4 text-sm text-foreground/60">{companyProfile.location}</p>
+            <a
+              href={`mailto:${companyProfile.email}`}
+              className="mt-2 inline-block text-sm font-medium text-brand transition-colors hover:text-brand-deep"
+            >
+              {companyProfile.email}
+            </a>
+            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+              <a
+                href={`tel:${companyProfile.phoneE164}`}
+                className="font-medium text-brand transition-colors hover:text-brand-deep"
+              >
+                {companyProfile.phone}
+              </a>
+              <a
+                href={companyProfile.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Message us on WhatsApp"
+                className="inline-flex items-center gap-1.5 font-medium text-brand transition-colors hover:text-brand-deep"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                WhatsApp
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links + Contact */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
-                Navigate
-              </p>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/services" className="text-sm text-white/50 hover:text-white transition-colors">
-                    All Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/meta-ads-engineering" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Meta Ads
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/nextjs-development" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/revenue-operations" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Revenue Operations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/ai-voice-receptionists" className="text-sm text-white/50 hover:text-white transition-colors">
-                    AI Voice Agents
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/web-dev" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Web Design
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/work" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Work
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-sm text-cobalt hover:text-white transition-colors">
-                    Start a Project
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
-                Connect
-              </p>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href={`mailto:${company.email}`}
-                    className="text-sm text-white/50 hover:text-white transition-colors"
-                  >
-                    Email
-                  </a>
-                </li>
-                {Object.entries(company.socials).map(([name, url]) => (
-                  <li key={name}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-white/50 hover:text-white transition-colors capitalize"
-                    >
-                      {name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
-                Share
-              </p>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(company.description)}&url=${encodeURIComponent(siteConfig.domain)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-white/50 hover:text-white transition-colors"
-                  >
-                    X (Twitter)
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(siteConfig.domain)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-white/50 hover:text-white transition-colors"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="text-xs uppercase text-white/30 tracking-widest mb-4 font-mono">
-                Resources
-              </p>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/insights" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Insights
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/locations/usa" className="text-sm text-white/50 hover:text-white transition-colors">
-                    USA
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/locations/australia" className="text-sm text-white/50 hover:text-white transition-colors">
-                    Australia
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+            {footerColumns.map((column) => (
+              <div key={column.title}>
+                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">
+                  {column.title}
+                </h3>
+                <ul className="space-y-3">
+                  {column.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-sm text-foreground/70 transition-colors hover:text-foreground">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/20 font-mono">
-            © {currentYear} {company.name}. All rights reserved.
+        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-sm text-foreground/55 md:flex-row md:items-center md:justify-between">
+          <p>
+            (c) {currentYear} {companyProfile.name}. All rights reserved.
           </p>
+          <p>Built for measurable growth in the USA and Australia.</p>
         </div>
+        <div className="mt-3 h-px w-full bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
       </div>
     </footer>
   );

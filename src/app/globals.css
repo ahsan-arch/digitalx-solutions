@@ -2,10 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Google Fonts (handled in layout.tsx) ── */
-
-/* ── Base Reset ── */
 @layer base {
+  :root {
+    /* Surfaces */
+    --surface-page: 251 248 242;
+    --surface-raised: 255 255 255;
+    --surface-sunken: 243 239 230;
+    --surface-inverse: 27 26 23;
+
+    /* Ink */
+    --ink-primary: 27 26 23;
+    --ink-secondary: 74 70 65;
+    --ink-tertiary: 122 116 108;
+    --ink-on-inverse: 251 248 242;
+
+    /* Accents */
+    --accent-primary: 217 99 42;
+    --accent-primary-hover: 194 85 30;
+    --accent-primary-soft: 251 228 213;
+    --accent-secondary: 46 110 94;
+    --accent-secondary-soft: 216 231 223;
+
+    /* Semantic */
+    --success: 46 110 94;
+    --success-soft: 216 231 223;
+    --warning: 184 137 21;
+    --warning-soft: 245 230 189;
+    --error: 180 70 60;
+    --error-soft: 244 216 212;
+    --info: 61 110 156;
+    --info-soft: 210 226 240;
+
+    /* Lines */
+    --border-subtle: 235 228 214;
+    --border-strong: 214 205 184;
+    --divider: 238 232 218;
+
+    /* Shadows — warm, never pure black */
+    --shadow-xs: 0 1px 2px rgba(60, 40, 20, 0.04);
+    --shadow-sm: 0 2px 6px rgba(60, 40, 20, 0.06);
+    --shadow-md: 0 8px 20px rgba(60, 40, 20, 0.08);
+    --shadow-lg: 0 20px 40px rgba(60, 40, 20, 0.10);
+    --shadow-focus: 0 0 0 3px rgba(217, 99, 42, 0.28);
+
+    /* Motion durations (ms) */
+    --motion-120: 120ms;
+    --motion-200: 200ms;
+    --motion-320: 320ms;
+    --motion-480: 480ms;
+    --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    /* Legacy aliases — retained while deprecated components/pages still reference them. */
+    --background: var(--surface-page);
+    --foreground: var(--ink-primary);
+    --muted: var(--ink-tertiary);
+    --border: var(--border-subtle);
+    --brand: var(--accent-primary);
+    --brand-deep: var(--accent-primary-hover);
+    --brand-soft: var(--accent-primary-soft);
+    --surface-50: var(--surface-raised);
+    --surface-100: var(--surface-page);
+    --surface-200: var(--surface-sunken);
+  }
 
   *,
   *::before,
@@ -14,62 +72,57 @@
   }
 
   html {
+    background-color: rgb(var(--surface-page));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-surface-page text-ink-primary font-sans;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
-  /* Selection color */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   ::selection {
-    @apply bg-neon/30 text-foreground;
+    background-color: rgb(var(--accent-primary) / 0.22);
+    color: rgb(var(--ink-primary));
   }
 
-  /* Scrollbar styling (Chromium) */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-background;
+    background: rgb(var(--surface-sunken));
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-surface-300 rounded-full;
+    @apply rounded-full;
+    background: rgb(var(--border-strong));
     transition: background-color 0.2s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-surface-200;
+    background: rgb(var(--accent-primary) / 0.55);
   }
 
-  /* Focus ring */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-neon;
+    outline: none;
+    box-shadow: var(--shadow-focus);
+    border-radius: 4px;
   }
 
-  /* ── GPU Acceleration Hints ── */
-  .will-change-transform {
-    will-change: transform;
-  }
-
-  .will-change-opacity {
-    will-change: opacity;
-  }
-
-  /* ── Layout containment for sections (no content-visibility — conflicts with IntersectionObserver) ── */
   section {
     contain: layout style;
   }
 
-  /* ── Reduced Motion Accessibility ── */
   @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -81,16 +134,30 @@
   }
 }
 
-/* ── Utility Classes ── */
-@layer utilities {
-
-  /* Text gradient helper */
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, theme("colors.neon.DEFAULT"), theme("colors.neon.vivid"));
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-[1200px] px-4 md:px-8;
   }
 
-  /* Hide scrollbar but keep functionality */
+  .container-wide {
+    @apply mx-auto w-full max-w-[1360px] px-4 md:px-8;
+  }
+
+  .container-prose {
+    @apply mx-auto w-full max-w-[820px] px-4 md:px-6;
+  }
+
+  .container-reading {
+    @apply mx-auto w-full max-w-[680px] px-4;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, rgb(var(--accent-primary)), rgb(var(--accent-primary-hover)));
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -100,22 +167,12 @@
     scrollbar-width: none;
   }
 
-  /* ── Custom Easing Curves ── */
-  .ease-out-expo {
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  .ease-standard {
+    transition-timing-function: var(--ease-standard);
   }
+}
 
-  .ease-out-quart {
-    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  .ease-in-out-cubic {
-    transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
-  }
-
-  /* ── Smooth Section Separator ── */
-  .section-fade-top {
-    mask-image: linear-gradient(to bottom, transparent, black 80px);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 80px);
-  }
+@keyframes soundbar {
+  0% { height: 4px; }
+  100% { height: 16px; }
 }
