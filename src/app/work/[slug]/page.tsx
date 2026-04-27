@@ -80,6 +80,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<PageP
           ))}
         </section>
 
+        {result.solutionsUsed.length > 0 && (
         <section className="mt-12">
           <h2 className="font-display text-display-sm text-ink-primary">Solutions deployed</h2>
           <div className="mt-5 flex flex-wrap gap-3">
@@ -98,6 +99,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<PageP
             })}
           </div>
         </section>
+        )}
 
         {industry && (
           <section className="mt-12 rounded-lg border border-line-subtle bg-surface-sunken p-6">

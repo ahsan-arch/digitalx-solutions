@@ -1,4 +1,4 @@
-﻿export type NavItem = {
+export type NavItem = {
   label: string;
   href: string;
 };
@@ -568,7 +568,7 @@ export type ResultCard = {
   slug: string;
   client: string;
   industry: string;
-  industrySlug: IndustrySlug;
+  industrySlug?: IndustrySlug;
   challenge: string;
   impact: string;
   services: string[];
@@ -636,6 +636,25 @@ export const results: ResultCard[] = [
       { label: "Time-waster calls", value: "-60%" },
       { label: "Close rate", value: "18% -> 38%" },
       { label: "Partner hours reclaimed", value: "8/wk" },
+    ],
+  },
+  {
+    slug: "hitech-expertise",
+    client: "Hi-Tech Expertise",
+    industry: "Energy & Power Solutions",
+    challenge: "No digital presence to showcase 13 global manufacturer partnerships and win Australian utility tenders.",
+    impact: "SEO-optimised website launched, positioning Hi-Tech as Australia's #1 authorized energy agent with full product catalogue and lead generation.",
+    services: ["Web Design & Development", "SEO"],
+    solutionsUsed: [],
+    narrative: [
+      "Hi-Tech Expertise is a Sydney-based authorized agent for 13 leading energy and power manufacturers across Italy, Germany, Spain, and China. They supply industrial batteries (FIAMM, Hoppecke), transformers (CEEG), HTLS conductors, OPGW cables, switchgear, instrument transformers, and smart meters to major Australian utilities including Transgrid, Ausgrid, and Endeavour Energy.",
+      "Despite 20+ years of experience and 100+ major infrastructure projects delivered, they had no website to showcase their authorized partnerships, product range, or tender capabilities. Utility procurement teams and EPC contractors had no way to discover or verify their credentials online.",
+      "We built a high-performance Next.js website with comprehensive product catalogues for all 12 product categories, dedicated partner pages for each of the 13 manufacturers, market-specific landing pages, and a blog strategy targeting utility procurement keywords. The site is fully AS/NZS compliant in its technical documentation and structured with Schema.org markup for maximum search visibility.",
+    ],
+    metrics: [
+      { label: "Product categories", value: "12" },
+      { label: "Manufacturer partners", value: "13" },
+      { label: "Utility clients served", value: "9+" },
     ],
   },
 ];
