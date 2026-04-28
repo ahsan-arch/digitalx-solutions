@@ -1,5 +1,6 @@
 import { ContactIntakeForm } from "@/components/forms/contact-intake-form";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
+import { SectionIllustration } from "@/components/ui";
 import { companyProfile } from "@/data/redesign";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
@@ -40,14 +41,21 @@ export default function ContactPage() {
             />
 
             <section className="container-shell">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Contact</p>
-                <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-                    Share your goals. We will map the fastest path to measurable improvement.
-                </h1>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
-                    Tell us where growth is getting blocked right now. We will reply with a clear recommendation on
-                    scope, sequencing, and expected outcomes.
-                </p>
+                <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Contact</p>
+                        <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
+                            Share your goals. We will map the fastest path to measurable improvement.
+                        </h1>
+                        <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+                            Tell us where growth is getting blocked right now. We will reply with a clear recommendation on
+                            scope, sequencing, and expected outcomes.
+                        </p>
+                    </div>
+                    <div className="relative">
+                        <SectionIllustration src="/illustrations/contact.svg" priority />
+                    </div>
+                </div>
             </section>
 
             <section className="container-shell mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">

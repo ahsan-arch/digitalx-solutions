@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/services/meta-ads", {
@@ -43,14 +44,21 @@ export default function MetaAdsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="container-shell">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Also available</p>
-        <h1 className="mt-3 max-w-4xl font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-          Meta Ads engineering, not just &ldquo;ads management&rdquo;.
-        </h1>
-        <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          Most agencies still rely on the browser pixel. We engineer the full attribution loop &mdash; CAPI,
-          server side tagging, deduplication &mdash; so Meta can actually find your customers.
-        </p>
+        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Also available</p>
+            <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
+              Meta Ads engineering, not just &ldquo;ads management&rdquo;.
+            </h1>
+            <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
+              Most agencies still rely on the browser pixel. We engineer the full attribution loop &mdash; CAPI,
+              server side tagging, deduplication &mdash; so Meta can actually find your customers.
+            </p>
+          </div>
+          <div className="relative">
+            <SectionIllustration src="/illustrations/meta-ads.svg" priority />
+          </div>
+        </div>
       </section>
 
       <section className="container-shell mt-12 grid gap-5 md:grid-cols-2">

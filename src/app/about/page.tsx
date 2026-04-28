@@ -5,6 +5,7 @@ import {
     companyProfile,
     heroMetrics,
 } from "@/data/redesign";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/about", {
@@ -65,31 +66,38 @@ export default function AboutPage() {
 
             <main id="main" className="pb-20 pt-12">
                 <section className="container-shell">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">About</p>
-                    <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-                        We build practical growth systems that your team can run after launch.
-                    </h1>
-                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
-                        {companyProfile.name} partners with operators who need execution quality, reporting clarity, and
-                        measurable outcomes across web, automation, and paid channels.
-                    </p>
-                    <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
-                        Our work spans the USA and Australia, with delivery designed to fit real team constraints and
-                        evolving go to market priorities.
-                    </p>
-                    <div className="mt-8 flex flex-wrap gap-3">
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep"
-                        >
-                            Book a strategy call
-                        </Link>
-                        <Link
-                            href="/work"
-                            className="inline-flex items-center rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100"
-                        >
-                            View outcomes
-                        </Link>
+                    <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+                        <div>
+                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">About</p>
+                            <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
+                                We build practical growth systems that your team can run after launch.
+                            </h1>
+                            <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+                                {companyProfile.name} partners with operators who need execution quality, reporting clarity, and
+                                measurable outcomes across web, automation, and paid channels.
+                            </p>
+                            <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+                                Our work spans the USA and Australia, with delivery designed to fit real team constraints and
+                                evolving go to market priorities.
+                            </p>
+                            <div className="mt-8 flex flex-wrap gap-3">
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep"
+                                >
+                                    Book a strategy call
+                                </Link>
+                                <Link
+                                    href="/work"
+                                    className="inline-flex items-center rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100"
+                                >
+                                    View outcomes
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="relative">
+                            <SectionIllustration src="/illustrations/about.svg" priority />
+                        </div>
                     </div>
                 </section>
 

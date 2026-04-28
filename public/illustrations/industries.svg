@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Industries grid illustration">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2e6e5e" opacity="0.09"/>
+    </pattern>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#d9632a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e6e5e" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#2e6e5e" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2e6e5e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tileWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+  <circle cx="660" cy="120" r="240" fill="url(#orangeGlow)"/>
+  <circle cx="140" cy="490" r="220" fill="url(#greenGlow)"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="120" y="140" width="160" height="120" rx="16" fill="url(#tileWhite)" stroke="#ebe4d6"/>
+    <g transform="translate(180 175)">
+      <rect x="14" y="0" width="12" height="40" fill="#d9632a"/>
+      <rect x="0" y="14" width="40" height="12" fill="#d9632a"/>
+    </g>
+    <rect x="140" y="230" width="80" height="6" rx="3" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="140" y="244" width="60" height="4" rx="2" fill="#1b1a17" fill-opacity="0.3"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="320" y="140" width="160" height="120" rx="16" fill="url(#tileWhite)" stroke="#ebe4d6"/>
+    <g transform="translate(380 175)" stroke="#2e6e5e" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M 6 12 L 18 0 L 30 12"/>
+      <path d="M 12 8 L 12 30 L 36 30 L 36 12"/>
+      <rect x="20" y="18" width="8" height="12"/>
+    </g>
+    <rect x="340" y="230" width="100" height="6" rx="3" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="340" y="244" width="70" height="4" rx="2" fill="#1b1a17" fill-opacity="0.3"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="520" y="140" width="160" height="120" rx="16" fill="url(#tileWhite)" stroke="#ebe4d6"/>
+    <g transform="translate(580 175)" stroke="#1b1a17" stroke-width="3" fill="none" stroke-linecap="round">
+      <line x1="6" y1="20" x2="36" y2="20"/>
+      <line x1="6" y1="14" x2="6" y2="26"/>
+      <line x1="36" y1="14" x2="36" y2="26"/>
+      <circle cx="14" cy="20" r="6" fill="#1b1a17"/>
+      <circle cx="28" cy="20" r="6" fill="#1b1a17"/>
+    </g>
+    <rect x="540" y="230" width="80" height="6" rx="3" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="540" y="244" width="60" height="4" rx="2" fill="#1b1a17" fill-opacity="0.3"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="120" y="300" width="160" height="120" rx="16" fill="url(#tileWhite)" stroke="#ebe4d6"/>
+    <g transform="translate(178 332)" stroke="#d9632a" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M 0 30 L 22 8 L 44 30"/>
+      <path d="M 6 30 L 6 50 L 38 50 L 38 30"/>
+      <rect x="18" y="36" width="8" height="14" fill="#d9632a"/>
+    </g>
+    <rect x="140" y="390" width="80" height="6" rx="3" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="140" y="404" width="60" height="4" rx="2" fill="#1b1a17" fill-opacity="0.3"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="320" y="300" width="160" height="120" rx="16" fill="url(#tileWhite)" stroke="#ebe4d6"/>
+    <g transform="translate(384 335)">
+      <circle cx="8" cy="6" r="6" fill="#2e6e5e"/>
+      <rect x="6" y="14" width="4" height="34" fill="#2e6e5e"/>
+      <path d="M 0 22 L 16 22" stroke="#2e6e5e" stroke-width="3" stroke-linecap="round"/>
+      <line x1="8" y1="48" x2="0" y2="56" stroke="#2e6e5e" stroke-width="3" stroke-linecap="round"/>
+      <line x1="8" y1="48" x2="16" y2="56" stroke="#2e6e5e" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <rect x="340" y="390" width="80" height="6" rx="3" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="340" y="404" width="60" height="4" rx="2" fill="#1b1a17" fill-opacity="0.3"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="520" y="300" width="160" height="120" rx="16" fill="url(#tileWhite)" stroke="#ebe4d6"/>
+    <g transform="translate(580 332)">
+      <rect x="0" y="0" width="40" height="50" rx="3" fill="none" stroke="#d9632a" stroke-width="2.5"/>
+      <line x1="10" y1="10" x2="30" y2="10" stroke="#d9632a" stroke-width="2"/>
+      <line x1="10" y1="20" x2="30" y2="20" stroke="#d9632a" stroke-width="2"/>
+      <line x1="10" y1="30" x2="22" y2="30" stroke="#d9632a" stroke-width="2"/>
+      <circle cx="32" cy="44" r="6" fill="#d9632a"/>
+    </g>
+    <rect x="540" y="390" width="100" height="6" rx="3" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="540" y="404" width="70" height="4" rx="2" fill="#1b1a17" fill-opacity="0.3"/>
+  </g>
+
+  <g fill="#d9632a">
+    <circle cx="80" cy="450" r="3"/>
+    <circle cx="720" cy="450" r="3"/>
+  </g>
+  <g fill="#2e6e5e">
+    <circle cx="400" cy="120" r="3"/>
+    <circle cx="400" cy="450" r="3"/>
+  </g>
+</svg>

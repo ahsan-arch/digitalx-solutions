@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Process and engagement steps illustration">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2e6e5e" opacity="0.09"/>
+    </pattern>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#d9632a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e6e5e" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#2e6e5e" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2e6e5e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stepFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <linearGradient id="circleOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec9367"/>
+      <stop offset="100%" stop-color="#c2551e"/>
+    </linearGradient>
+    <linearGradient id="circleGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5fa193"/>
+      <stop offset="100%" stop-color="#2e6e5e"/>
+    </linearGradient>
+    <linearGradient id="circleDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3833"/>
+      <stop offset="100%" stop-color="#1b1a17"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+  <circle cx="660" cy="120" r="240" fill="url(#orangeGlow)"/>
+  <circle cx="140" cy="490" r="220" fill="url(#greenGlow)"/>
+
+  <g stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="5 7">
+    <path d="M 130 200 Q 240 120 350 200" stroke="#d9632a" stroke-opacity="0.55"/>
+    <path d="M 350 200 Q 460 280 560 200" stroke="#2e6e5e" stroke-opacity="0.55"/>
+    <path d="M 560 200 Q 660 280 660 380" stroke="#d9632a" stroke-opacity="0.5"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="130" cy="200" r="48" fill="url(#circleOrange)"/>
+    <text x="130" y="212" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="800" fill="#ffffff">01</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="60" y="260" width="140" height="80" rx="10" fill="url(#stepFill)" stroke="#ebe4d6"/>
+    <rect x="76" y="278" width="60" height="6" rx="3" fill="#d9632a"/>
+    <rect x="76" y="294" width="100" height="4" rx="2" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="76" y="306" width="80" height="3" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+    <rect x="76" y="316" width="100" height="3" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="350" cy="200" r="48" fill="url(#circleGreen)"/>
+    <text x="350" y="212" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="800" fill="#ffffff">02</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="280" y="260" width="140" height="80" rx="10" fill="url(#stepFill)" stroke="#ebe4d6"/>
+    <rect x="296" y="278" width="80" height="6" rx="3" fill="#2e6e5e"/>
+    <rect x="296" y="294" width="100" height="4" rx="2" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="296" y="306" width="80" height="3" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+    <rect x="296" y="316" width="110" height="3" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="560" cy="200" r="48" fill="url(#circleOrange)"/>
+    <text x="560" y="212" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="800" fill="#ffffff">03</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="490" y="260" width="140" height="80" rx="10" fill="url(#stepFill)" stroke="#ebe4d6"/>
+    <rect x="506" y="278" width="60" height="6" rx="3" fill="#d9632a"/>
+    <rect x="506" y="294" width="100" height="4" rx="2" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="506" y="306" width="80" height="3" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+    <rect x="506" y="316" width="100" height="3" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="660" cy="430" r="52" fill="url(#circleDark)"/>
+    <text x="660" y="442" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="800" fill="#ffffff">04</text>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="500" y="490" width="140" height="50" rx="10" fill="url(#stepFill)" stroke="#ebe4d6"/>
+    <rect x="516" y="504" width="80" height="6" rx="3" fill="#1b1a17" fill-opacity="0.7"/>
+    <rect x="516" y="518" width="60" height="4" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+  </g>
+
+  <g fill="#d9632a">
+    <circle cx="80" cy="100" r="3"/>
+    <circle cx="500" cy="120" r="3"/>
+  </g>
+  <g fill="#2e6e5e">
+    <circle cx="200" cy="450" r="3"/>
+    <circle cx="380" cy="430" r="3"/>
+  </g>
+</svg>

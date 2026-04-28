@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Meta Ads analytics illustration">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2e6e5e" opacity="0.09"/>
+    </pattern>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#d9632a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e6e5e" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#2e6e5e" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2e6e5e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cardFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <linearGradient id="lineFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+  <circle cx="660" cy="120" r="240" fill="url(#orangeGlow)"/>
+  <circle cx="140" cy="490" r="220" fill="url(#greenGlow)"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="120" width="500" height="320" rx="16" fill="url(#cardFill)" stroke="#ebe4d6"/>
+    <rect x="120" y="140" width="120" height="6" rx="3" fill="#d9632a"/>
+    <text x="120" y="178" font-family="sans-serif" font-size="22" font-weight="700" fill="#1b1a17">ROAS performance</text>
+    <text x="120" y="200" font-family="sans-serif" font-size="11" fill="#1b1a17" fill-opacity="0.55">Last 90 days · CAPI on</text>
+
+    <g transform="translate(120 230)">
+      <line x1="0" y1="0" x2="0" y2="180" stroke="#1b1a17" stroke-opacity="0.18"/>
+      <line x1="0" y1="180" x2="460" y2="180" stroke="#1b1a17" stroke-opacity="0.18"/>
+      <line x1="0" y1="40" x2="460" y2="40" stroke="#1b1a17" stroke-opacity="0.08" stroke-dasharray="3 4"/>
+      <line x1="0" y1="100" x2="460" y2="100" stroke="#1b1a17" stroke-opacity="0.08" stroke-dasharray="3 4"/>
+      <line x1="0" y1="140" x2="460" y2="140" stroke="#1b1a17" stroke-opacity="0.08" stroke-dasharray="3 4"/>
+
+      <path d="M 0 140 L 60 130 L 120 100 L 180 110 L 240 70 L 300 60 L 360 30 L 420 20 L 460 10 L 460 180 L 0 180 Z" fill="url(#lineFill)"/>
+      <path d="M 0 140 L 60 130 L 120 100 L 180 110 L 240 70 L 300 60 L 360 30 L 420 20 L 460 10" stroke="#d9632a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="460" cy="10" r="6" fill="#d9632a"/>
+      <circle cx="460" cy="10" r="3" fill="#ffffff"/>
+
+      <path d="M 0 160 L 60 155 L 120 150 L 180 145 L 240 142 L 300 138 L 360 130 L 420 125 L 460 122" stroke="#2e6e5e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 5"/>
+    </g>
+
+    <g transform="translate(120 432)">
+      <circle cx="6" cy="6" r="4" fill="#d9632a"/>
+      <text x="18" y="10" font-family="sans-serif" font-size="10" fill="#1b1a17">CAPI on</text>
+      <circle cx="86" cy="6" r="4" fill="#2e6e5e"/>
+      <text x="98" y="10" font-family="sans-serif" font-size="10" fill="#1b1a17">Pixel only</text>
+    </g>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(620 130)">
+    <rect width="160" height="100" rx="12" fill="url(#cardFill)" stroke="#ebe4d6"/>
+    <text x="20" y="34" font-family="sans-serif" font-size="11" fill="#1b1a17" fill-opacity="0.6">ROAS</text>
+    <text x="20" y="68" font-family="sans-serif" font-size="30" font-weight="800" fill="#d9632a">4.6x</text>
+    <text x="20" y="86" font-family="sans-serif" font-size="10" fill="#2e6e5e" font-weight="700">↑ 1.4x vs prior</text>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(620 250)">
+    <rect width="160" height="100" rx="12" fill="url(#cardFill)" stroke="#ebe4d6"/>
+    <text x="20" y="34" font-family="sans-serif" font-size="11" fill="#1b1a17" fill-opacity="0.6">CPA</text>
+    <text x="20" y="68" font-family="sans-serif" font-size="30" font-weight="800" fill="#1b1a17">$38</text>
+    <text x="20" y="86" font-family="sans-serif" font-size="10" fill="#2e6e5e" font-weight="700">↓ 32% vs prior</text>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(620 370)">
+    <rect width="160" height="100" rx="12" fill="url(#cardFill)" stroke="#ebe4d6"/>
+    <text x="20" y="34" font-family="sans-serif" font-size="11" fill="#1b1a17" fill-opacity="0.6">Match rate</text>
+    <text x="20" y="68" font-family="sans-serif" font-size="30" font-weight="800" fill="#2e6e5e">94%</text>
+    <text x="20" y="86" font-family="sans-serif" font-size="10" fill="#1b1a17" fill-opacity="0.55">via Conversions API</text>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(180 470)">
+    <rect width="280" height="80" rx="12" fill="url(#cardFill)" stroke="#ebe4d6"/>
+    <g transform="translate(20 22)">
+      <circle cx="18" cy="18" r="18" fill="#d9632a"/>
+      <text x="18" y="24" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="800" fill="#ffffff">∞</text>
+    </g>
+    <text x="72" y="42" font-family="sans-serif" font-size="13" font-weight="700" fill="#1b1a17">Server-side tracking</text>
+    <text x="72" y="60" font-family="sans-serif" font-size="11" fill="#1b1a17" fill-opacity="0.6">CAPI · deduplication · iOS-resilient</text>
+  </g>
+
+  <g fill="#d9632a">
+    <circle cx="80" cy="200" r="3"/>
+    <circle cx="700" cy="500" r="3"/>
+  </g>
+  <g fill="#2e6e5e">
+    <circle cx="80" cy="500" r="3"/>
+    <circle cx="500" cy="100" r="3"/>
+  </g>
+</svg>

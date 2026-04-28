@@ -5,7 +5,9 @@
       "Bash(find \"/d/Aautomatex/Digital X Solution/src\" -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" \\\\\\) -exec grep -l \"framer-motion\" {} \\\\;)",
       "Bash(grep -v \":0$\")",
       "Bash(find \"/d/Aautomatex/Digital X Solution/src/app\" -name \"page.tsx\" -exec sh -c 'if ! grep -q \"export.*metadata\" \"$1\"; then echo \"$1\"; fi' _ {} \\\\;)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(bun run *)",
+      "Bash(npm run *)"
     ]
   }
 }

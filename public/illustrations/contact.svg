@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Contact and messaging illustration">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2e6e5e" opacity="0.09"/>
+    </pattern>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#d9632a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e6e5e" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#2e6e5e" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2e6e5e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bubbleOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec9367"/>
+      <stop offset="100%" stop-color="#c2551e"/>
+    </linearGradient>
+    <linearGradient id="bubbleGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5fa193"/>
+      <stop offset="100%" stop-color="#2e6e5e"/>
+    </linearGradient>
+    <linearGradient id="bubbleWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <linearGradient id="planeFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3833"/>
+      <stop offset="100%" stop-color="#1b1a17"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+  <circle cx="660" cy="120" r="240" fill="url(#orangeGlow)"/>
+  <circle cx="140" cy="490" r="220" fill="url(#greenGlow)"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M 100 180 Q 100 160 120 160 L 280 160 Q 300 160 300 180 L 300 230 Q 300 250 280 250 L 180 250 L 150 280 L 160 250 L 120 250 Q 100 250 100 230 Z"
+      fill="url(#bubbleWhite)" stroke="#ebe4d6"/>
+    <rect x="120" y="180" width="120" height="6" rx="3" fill="#d9632a"/>
+    <rect x="120" y="196" width="160" height="4" rx="2" fill="#1b1a17" fill-opacity="0.16"/>
+    <rect x="120" y="208" width="140" height="4" rx="2" fill="#1b1a17" fill-opacity="0.12"/>
+    <rect x="120" y="220" width="100" height="4" rx="2" fill="#1b1a17" fill-opacity="0.12"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <path d="M 380 280 Q 380 260 400 260 L 540 260 Q 560 260 560 280 L 560 330 Q 560 350 540 350 L 460 350 L 440 380 L 445 350 L 400 350 Q 380 350 380 330 Z"
+      fill="url(#bubbleOrange)"/>
+    <rect x="400" y="280" width="60" height="6" rx="3" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="400" y="296" width="140" height="4" rx="2" fill="#ffffff" fill-opacity="0.7"/>
+    <rect x="400" y="308" width="120" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="400" y="320" width="100" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <path d="M 200 380 Q 200 360 220 360 L 360 360 Q 380 360 380 380 L 380 430 Q 380 450 360 450 L 280 450 L 260 480 L 265 450 L 220 450 Q 200 450 200 430 Z"
+      fill="url(#bubbleGreen)"/>
+    <rect x="220" y="380" width="80" height="6" rx="3" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="220" y="396" width="140" height="4" rx="2" fill="#ffffff" fill-opacity="0.65"/>
+    <rect x="220" y="408" width="120" height="4" rx="2" fill="#ffffff" fill-opacity="0.5"/>
+    <g transform="translate(220 420)">
+      <circle cx="6" cy="6" r="6" fill="#ffffff" fill-opacity="0.3"/>
+      <circle cx="20" cy="6" r="6" fill="#ffffff" fill-opacity="0.3"/>
+      <circle cx="34" cy="6" r="6" fill="#ffffff" fill-opacity="0.3"/>
+    </g>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(560 140)">
+    <path d="M 0 60 L 140 0 L 110 80 L 70 60 L 50 100 L 60 70 Z" fill="url(#planeFill)"/>
+    <path d="M 60 70 L 110 80" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1"/>
+  </g>
+  <g stroke="#d9632a" stroke-width="1.5" fill="none" stroke-dasharray="4 6" stroke-linecap="round">
+    <path d="M 560 200 Q 480 220 420 280"/>
+  </g>
+
+  <g fill="#d9632a">
+    <circle cx="540" cy="140" r="3"/>
+    <circle cx="120" cy="380" r="2.5"/>
+    <circle cx="700" cy="380" r="3"/>
+  </g>
+  <g fill="#2e6e5e">
+    <circle cx="80" cy="320" r="3"/>
+    <circle cx="650" cy="500" r="3"/>
+  </g>
+</svg>

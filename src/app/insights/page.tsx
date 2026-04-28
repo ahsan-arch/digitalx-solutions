@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/insights", {
@@ -45,13 +46,20 @@ export default function InsightsPage() {
             />
 
             <section className="container-shell">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Insights</p>
-                <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-                    Practical notes on growth engineering and delivery systems.
-                </h1>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
-                    Read detailed breakdowns on attribution, automation architecture, and high-performance web delivery.
-                </p>
+                <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Insights</p>
+                        <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
+                            Practical notes on growth engineering and delivery systems.
+                        </h1>
+                        <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+                            Read detailed breakdowns on attribution, automation architecture, and high-performance web delivery.
+                        </p>
+                    </div>
+                    <div className="relative">
+                        <SectionIllustration src="/illustrations/insights.svg" priority />
+                    </div>
+                </div>
             </section>
 
             <section className="container-shell mt-10 grid gap-5">

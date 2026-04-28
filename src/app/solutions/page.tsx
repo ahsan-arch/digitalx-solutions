@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { processSteps, solutions } from "@/data/redesign";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/solutions", {
@@ -21,14 +22,21 @@ export default function SolutionsHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="container-shell">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Solutions</p>
-        <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-          Three integrated capabilities. One growth system.
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
-          Most teams split delivery across multiple vendors. We keep strategy, build, and optimization in one loop so
-          decisions are faster and outcomes are measurable.
-        </p>
+        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Solutions</p>
+            <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
+              Three integrated capabilities. One growth system.
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+              Most teams split delivery across multiple vendors. We keep strategy, build, and optimization in one loop so
+              decisions are faster and outcomes are measurable.
+            </p>
+          </div>
+          <div className="relative">
+            <SectionIllustration src="/illustrations/solutions.svg" priority />
+          </div>
+        </div>
       </section>
 
       <section className="container-shell mt-10">

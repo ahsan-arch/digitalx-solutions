@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { processSteps } from "@/data/redesign";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/process", {
@@ -47,14 +48,21 @@ export default function ProcessPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="container-shell">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Process</p>
-        <h1 className="mt-3 max-w-4xl font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-          A 4 to 6 week launch, then a system that compounds.
-        </h1>
-        <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          We do not disappear after launch and we do not drown you in onboarding decks. Every phase has a deliverable
-          you can see, measure, and own.
-        </p>
+        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Process</p>
+            <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
+              A 4 to 6 week launch, then a system that compounds.
+            </h1>
+            <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
+              We do not disappear after launch and we do not drown you in onboarding decks. Every phase has a deliverable
+              you can see, measure, and own.
+            </p>
+          </div>
+          <div className="relative">
+            <SectionIllustration src="/illustrations/process.svg" priority />
+          </div>
+        </div>
       </section>
 
       <section className="container-shell mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">

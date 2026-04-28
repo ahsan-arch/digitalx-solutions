@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ServiceAreaMap } from "@/components/ui";
+import { SectionIllustration, ServiceAreaMap } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/au", {
@@ -39,14 +39,21 @@ export default function AuPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(auLocalBusiness) }} />
 
       <section className="container-shell">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Australia</p>
-        <h1 className="mt-3 max-w-4xl font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-          AI automation for Australian service businesses.
-        </h1>
-        <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. AI voice, Missed call recovery,
-          and CRM systems tuned for Australian customers and Australian Privacy Principles.
-        </p>
+        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Australia</p>
+            <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
+              AI automation for Australian service businesses.
+            </h1>
+            <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
+              Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. AI voice, Missed call recovery,
+              and CRM systems tuned for Australian customers and Australian Privacy Principles.
+            </p>
+          </div>
+          <div className="relative">
+            <SectionIllustration src="/illustrations/au.svg" priority />
+          </div>
+        </div>
       </section>
 
       <section className="container-shell mt-12 grid gap-8 lg:grid-cols-[1.2fr_1fr]">

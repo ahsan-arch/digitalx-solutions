@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 import { results } from "@/data/redesign";
 
@@ -22,14 +23,21 @@ export default function WorkPage() {
             />
 
             <section className="container-shell">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Results</p>
-                <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-                    Outcomes driven by integrated execution.
-                </h1>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
-                    We focus on revenue quality, conversion efficiency, and operational reliability. The stories below
-                    show the type of performance shifts we target.
-                </p>
+                <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Results</p>
+                        <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
+                            Outcomes driven by integrated execution.
+                        </h1>
+                        <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+                            We focus on revenue quality, conversion efficiency, and operational reliability. The stories below
+                            show the type of performance shifts we target.
+                        </p>
+                    </div>
+                    <div className="relative">
+                        <SectionIllustration src="/illustrations/work.svg" priority />
+                    </div>
+                </div>
             </section>
 
             <section className="container-shell mt-10">

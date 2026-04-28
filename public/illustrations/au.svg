@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Australia operations illustration">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2e6e5e" opacity="0.09"/>
+    </pattern>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#d9632a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e6e5e" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#2e6e5e" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2e6e5e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="continentFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec9367"/>
+      <stop offset="100%" stop-color="#c2551e"/>
+    </linearGradient>
+    <linearGradient id="operaFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+  <circle cx="660" cy="120" r="240" fill="url(#orangeGlow)"/>
+  <circle cx="140" cy="490" r="220" fill="url(#greenGlow)"/>
+
+  <g filter="url(#softShadow)" transform="translate(140 140)">
+    <path d="M 80 80 Q 60 60 100 50 Q 140 30 200 40 Q 260 30 320 50 Q 380 50 420 80 Q 460 110 470 160 Q 480 210 460 240 Q 440 280 400 290 Q 360 310 300 305 Q 240 320 200 305 Q 140 310 100 290 Q 60 270 50 230 Q 30 190 50 150 Q 60 110 80 80 Z"
+      fill="url(#continentFill)" stroke="#ffffff" stroke-width="2" stroke-opacity="0.6"/>
+    <path d="M 320 270 Q 340 280 360 295 Q 350 320 320 320 Q 300 310 320 270 Z" fill="url(#continentFill)" stroke="#ffffff" stroke-width="2" stroke-opacity="0.6"/>
+  </g>
+
+  <g>
+    <circle cx="380" cy="250" r="6" fill="#ffffff"/>
+    <circle cx="380" cy="250" r="3" fill="#1b1a17"/>
+    <circle cx="380" cy="250" r="14" fill="none" stroke="#1b1a17" stroke-opacity="0.4" stroke-dasharray="2 3"/>
+    <circle cx="380" cy="250" r="22" fill="none" stroke="#1b1a17" stroke-opacity="0.25" stroke-dasharray="2 3"/>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(440 380)">
+    <rect x="0" y="40" width="200" height="80" rx="8" fill="url(#operaFill)" stroke="#ebe4d6"/>
+    <path d="M 14 80 Q 30 30 70 40 Q 80 25 100 40 Q 120 25 140 40 Q 160 25 186 40 L 186 80 Z" fill="url(#operaFill)" stroke="#2e6e5e" stroke-width="1.5"/>
+    <path d="M 100 80 L 100 40" stroke="#2e6e5e" stroke-width="1" stroke-opacity="0.5"/>
+    <path d="M 70 80 L 70 50" stroke="#2e6e5e" stroke-width="1" stroke-opacity="0.5"/>
+    <path d="M 140 80 L 140 50" stroke="#2e6e5e" stroke-width="1" stroke-opacity="0.5"/>
+    <rect x="0" y="118" width="200" height="4" fill="#2e6e5e" fill-opacity="0.4"/>
+  </g>
+
+  <g stroke="#d9632a" stroke-width="1.5" fill="none" stroke-dasharray="4 6" stroke-linecap="round">
+    <path d="M 380 250 Q 460 320 540 420"/>
+  </g>
+
+  <g fill="#1b1a17" font-family="sans-serif" font-size="11" font-weight="600">
+    <text x="190" y="200" fill="#1b1a17" fill-opacity="0.7">PERTH</text>
+    <text x="350" y="200" fill="#1b1a17" fill-opacity="0.7">DARWIN</text>
+    <text x="395" y="245">SYDNEY</text>
+    <text x="350" y="320" fill="#1b1a17" fill-opacity="0.7">MELBOURNE</text>
+    <text x="380" y="280" fill="#1b1a17" fill-opacity="0.7">CANBERRA</text>
+  </g>
+
+  <g fill="#2e6e5e">
+    <circle cx="200" cy="200" r="3"/>
+    <circle cx="340" cy="200" r="3"/>
+    <circle cx="350" cy="320" r="3"/>
+    <circle cx="380" cy="280" r="3"/>
+  </g>
+  <g fill="#d9632a">
+    <circle cx="700" cy="240" r="3"/>
+    <circle cx="120" cy="380" r="3"/>
+  </g>
+</svg>

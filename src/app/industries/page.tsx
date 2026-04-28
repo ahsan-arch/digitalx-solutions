@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { industries, industryCategories, getIndustriesByCategory } from "@/data/industries";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/industries", {
@@ -21,27 +22,33 @@ export default function IndustriesHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="container-shell">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industries</p>
-        <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-          Sector playbooks adapted to real operational constraints.
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
-          We do not force a generic framework onto every business. Each playbook maps demand generation, delivery
-          operations, and reporting to your customer journey.
-        </p>
+        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industries</p>
+            <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
+              Sector playbooks adapted to real operational constraints.
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+              We do not force a generic framework onto every business. Each playbook maps demand generation, delivery
+              operations, and reporting to your customer journey.
+            </p>
 
-        {/* Category quick-nav */}
-        <nav className="mt-8 flex flex-wrap gap-2" aria-label="Industry categories">
-          {industryCategories.map((category) => (
-            <a
-              key={category}
-              href={`#${category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-              className="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-foreground/70 transition hover:border-brand/40 hover:text-brand"
-            >
-              {category}
-            </a>
-          ))}
-        </nav>
+            <nav className="mt-8 flex flex-wrap gap-2" aria-label="Industry categories">
+              {industryCategories.map((category) => (
+                <a
+                  key={category}
+                  href={`#${category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                  className="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-foreground/70 transition hover:border-brand/40 hover:text-brand"
+                >
+                  {category}
+                </a>
+              ))}
+            </nav>
+          </div>
+          <div className="relative">
+            <SectionIllustration src="/illustrations/industries.svg" priority />
+          </div>
+        </div>
       </section>
 
       {industryCategories.map((category) => {

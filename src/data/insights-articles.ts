@@ -30,7 +30,7 @@ export type ArticleRecord = {
 
 // ── Article data ──
 export const articlesData: Record<string, ArticleRecord> = {
-    "server side-tracking-meta-ads": {
+    "server-side-tracking-meta-ads": {
         title: "Why Meta Server-Side Tracking (CAPI) is Mandatory for Scale",
         description: "Learn why relying solely on the Meta Pixel destroys ROI, and how implementing the Conversions API ensures accurate attribution in a post-iOS14 world.",
         date: "2024-03-15",
@@ -103,7 +103,7 @@ If you're spending more than $3,000/month on Meta Ads, the answer is unequivocal
         dateModified: "2026-02-15",
         authorKey: "ahsan",
         readTime: "10 min read",
-        relatedSlugs: ["server side-tracking-meta-ads", "ai voice-receptionists-guide"],
+        relatedSlugs: ["server-side-tracking-meta-ads", "ai-voice-receptionists-guide"],
         relatedServices: [
             { label: "Revenue Operations & n8n Automation", href: "/services/revenue-operations" },
             { label: "Custom Web Development", href: "/services/web-dev" },
@@ -167,7 +167,7 @@ For most businesses spending more than $100/month on Zapier, migrating to n8n sa
         `
     },
 
-    "ai voice-receptionists-guide": {
+    "ai-voice-receptionists-guide": {
         title: "AI Voice Receptionists for Dental Clinics, Salons & Medical Practices: Complete Guide",
         description: "How AI voice receptionists automate phone answering, appointment booking, and lead qualification for healthcare and service businesses. ROI analysis included.",
         date: "2025-09-05",

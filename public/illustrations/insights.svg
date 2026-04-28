@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Insights and articles illustration">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2e6e5e" opacity="0.09"/>
+    </pattern>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#d9632a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e6e5e" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#2e6e5e" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2e6e5e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paperFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <linearGradient id="bulbFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec9367"/>
+      <stop offset="100%" stop-color="#c2551e"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+  <circle cx="660" cy="120" r="240" fill="url(#orangeGlow)"/>
+  <circle cx="140" cy="490" r="220" fill="url(#greenGlow)"/>
+
+  <g filter="url(#softShadow)" transform="rotate(-4 160 320)">
+    <rect x="120" y="220" width="240" height="300" rx="14" fill="url(#paperFill)" stroke="#ebe4d6"/>
+    <rect x="140" y="240" width="60" height="6" rx="3" fill="#2e6e5e"/>
+    <rect x="140" y="258" width="200" height="14" rx="3" fill="#1b1a17" fill-opacity="0.85"/>
+    <rect x="140" y="284" width="200" height="4" rx="2" fill="#1b1a17" fill-opacity="0.18"/>
+    <rect x="140" y="296" width="180" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="140" y="308" width="200" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="140" y="320" width="160" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="140" y="345" width="200" height="60" rx="6" fill="#fbf2e8"/>
+    <rect x="140" y="420" width="200" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="140" y="432" width="170" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="140" y="455" width="80" height="10" rx="5" fill="#d9632a"/>
+  </g>
+
+  <g filter="url(#softShadow)" transform="rotate(3 480 280)">
+    <rect x="380" y="180" width="240" height="280" rx="14" fill="url(#paperFill)" stroke="#ebe4d6"/>
+    <rect x="400" y="200" width="60" height="6" rx="3" fill="#d9632a"/>
+    <rect x="400" y="218" width="200" height="14" rx="3" fill="#1b1a17" fill-opacity="0.85"/>
+    <rect x="400" y="244" width="200" height="4" rx="2" fill="#1b1a17" fill-opacity="0.18"/>
+    <rect x="400" y="256" width="180" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="400" y="268" width="200" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <g transform="translate(400 290)" stroke="#2e6e5e" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M 0 60 L 30 30 L 60 50 L 100 10 L 140 25 L 180 5"/>
+      <line x1="0" y1="60" x2="200" y2="60" stroke="#1b1a17" stroke-opacity="0.18"/>
+    </g>
+    <rect x="400" y="380" width="200" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="400" y="392" width="160" height="4" rx="2" fill="#1b1a17" fill-opacity="0.14"/>
+    <rect x="400" y="415" width="80" height="10" rx="5" fill="#2e6e5e"/>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(560 90)">
+    <path d="M 40 8 Q 70 8 70 38 Q 70 56 56 70 L 56 84 Q 56 92 48 92 L 32 92 Q 24 92 24 84 L 24 70 Q 10 56 10 38 Q 10 8 40 8 Z" fill="url(#bulbFill)"/>
+    <rect x="28" y="94" width="24" height="8" rx="2" fill="#1b1a17" fill-opacity="0.85"/>
+    <line x1="32" y1="106" x2="48" y2="106" stroke="#1b1a17" stroke-width="2"/>
+  </g>
+  <g stroke="#d9632a" stroke-width="1.5" fill="none" opacity="0.6">
+    <line x1="540" y1="100" x2="555" y2="120"/>
+    <line x1="640" y1="100" x2="625" y2="120"/>
+    <line x1="600" y1="60" x2="600" y2="78"/>
+  </g>
+
+  <g fill="#d9632a">
+    <circle cx="80" cy="200" r="3"/>
+    <circle cx="720" cy="380" r="3"/>
+  </g>
+  <g fill="#2e6e5e">
+    <circle cx="500" cy="500" r="3"/>
+    <circle cx="80" cy="500" r="3"/>
+  </g>
+</svg>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/services/web-design-and-development", {
@@ -50,14 +51,21 @@ export default function WebDesignDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="container-shell">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Also available</p>
-        <h1 className="mt-3 max-w-4xl font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-          Web design &amp; development for local service businesses.
-        </h1>
-        <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-          We are an automation first agency. When clients also need a new site &mdash; one engineered to feed leads
-          straight into the automation stack &mdash; we build it ourselves on Next.js.
-        </p>
+        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Also available</p>
+            <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
+              Web design &amp; development for local service businesses.
+            </h1>
+            <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
+              We are an automation first agency. When clients also need a new site &mdash; one engineered to feed leads
+              straight into the automation stack &mdash; we build it ourselves on Next.js.
+            </p>
+          </div>
+          <div className="relative">
+            <SectionIllustration src="/illustrations/web-dev.svg" priority />
+          </div>
+        </div>
       </section>
 
       <section className="container-shell mt-12 grid gap-8 lg:grid-cols-2">

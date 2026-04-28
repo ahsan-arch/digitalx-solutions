@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { HeroIllustration, TiltCard } from "@/components/ui";
 import {
   heroMetrics,
   processSteps,
@@ -24,36 +25,39 @@ export default function HomePage() {
       <main id="main" className="pb-24">
         <section className="container-shell pt-14 md:pt-20">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-50 px-6 py-12 shadow-sm md:px-10 md:py-16">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand/20 blur-3xl"
-            />
+            <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
+              <div>
+                <p className="mb-4 inline-flex rounded-full border border-border bg-white px-4 py-1.5 text-sm font-medium text-foreground/70">
+                  DigitalX Solutions
+                </p>
+                <h1 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
+                  Revenue systems for teams that need faster growth without operational chaos.
+                </h1>
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/72 md:text-lg">
+                  We combine web development, AI automation, and performance marketing into one execution model so growth
+                  strategy and delivery stay aligned.
+                </p>
 
-            <p className="mb-4 inline-flex rounded-full border border-border bg-white px-4 py-1.5 text-sm font-medium text-foreground/70">
-              DigitalX Solutions
-            </p>
-            <h1 className="max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-              Revenue systems for teams that need faster growth without operational chaos.
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/72 md:text-lg">
-              We combine web development, AI automation, and performance marketing into one execution model so growth
-              strategy and delivery stay aligned.
-            </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
+                  >
+                    Book a strategy call
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href="/solutions"
+                    className="inline-flex items-center justify-center rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
+                  >
+                    Explore solutions
+                  </Link>
+                </div>
+              </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
-              >
-                Book a strategy call
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/solutions"
-                className="inline-flex items-center justify-center rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
-              >
-                Explore solutions
-              </Link>
+              <div className="relative">
+                <HeroIllustration />
+              </div>
             </div>
 
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -80,10 +84,10 @@ export default function HomePage() {
 
           <div className="grid gap-5 md:grid-cols-3">
             {solutions.map((solution) => (
-              <Link
+              <TiltCard
                 key={solution.slug}
                 href={`/solutions/${solution.slug}`}
-                className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+                className="group block h-full rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-md"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">{solution.tagline}</p>
                 <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
@@ -92,11 +96,11 @@ export default function HomePage() {
                   Learn more
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </span>
-              </Link>
+              </TiltCard>
             ))}
-            <Link
+            <TiltCard
               href="/solutions"
-              className="group flex flex-col justify-center rounded-2xl border border-dashed border-brand/50 bg-white p-6 transition hover:border-brand hover:bg-surface-50"
+              className="group flex h-full flex-col justify-center rounded-2xl border border-dashed border-brand/50 bg-white p-6 transition hover:border-brand hover:bg-surface-50"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">All capability stacks</p>
               <h3 className="mt-2 font-display text-2xl text-foreground">See all solutions</h3>
@@ -107,7 +111,7 @@ export default function HomePage() {
                 View solutions
                 <ArrowRight className="ml-1 h-4 w-4" />
               </span>
-            </Link>
+            </TiltCard>
           </div>
         </section>
 
@@ -121,10 +125,10 @@ export default function HomePage() {
 
           <div className="grid gap-5 md:grid-cols-3">
             {developmentProjects.map((project) => (
-              <Link
+              <TiltCard
                 key={project.slug}
                 href={`/development/${project.slug}`}
-                className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+                className="group block h-full rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-md"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">{project.name}</p>
                 <h3 className="mt-2 font-display text-2xl text-foreground">{project.name}</h3>
@@ -133,7 +137,7 @@ export default function HomePage() {
                   View full details
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </span>
-              </Link>
+              </TiltCard>
             ))}
           </div>
         </section>

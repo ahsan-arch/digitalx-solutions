@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none" role="img" aria-label="Pricing tiers illustration">
+  <defs>
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#2e6e5e" opacity="0.09"/>
+    </pattern>
+    <radialGradient id="orangeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d9632a" stop-opacity="0.42"/>
+      <stop offset="55%" stop-color="#d9632a" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d9632a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2e6e5e" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#2e6e5e" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2e6e5e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tierWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbf8f2"/>
+    </linearGradient>
+    <linearGradient id="tierOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec9367"/>
+      <stop offset="100%" stop-color="#c2551e"/>
+    </linearGradient>
+    <linearGradient id="tierDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3833"/>
+      <stop offset="100%" stop-color="#1b1a17"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#dotGrid)"/>
+  <circle cx="660" cy="120" r="240" fill="url(#orangeGlow)"/>
+  <circle cx="140" cy="490" r="220" fill="url(#greenGlow)"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="100" y="280" width="180" height="220" rx="16" fill="url(#tierWhite)" stroke="#ebe4d6"/>
+    <rect x="120" y="300" width="60" height="6" rx="3" fill="#2e6e5e"/>
+    <text x="120" y="338" font-family="sans-serif" font-size="20" font-weight="700" fill="#1b1a17">Launch</text>
+    <text x="120" y="370" font-family="sans-serif" font-size="22" font-weight="800" fill="#1b1a17">$1.2k</text>
+    <text x="170" y="370" font-family="sans-serif" font-size="11" fill="#1b1a17" fill-opacity="0.6">/mo</text>
+    <g transform="translate(120 390)" stroke="#2e6e5e" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M 0 6 L 4 10 L 12 2"/>
+      <path d="M 0 26 L 4 30 L 12 22"/>
+      <path d="M 0 46 L 4 50 L 12 42"/>
+      <path d="M 0 66 L 4 70 L 12 62"/>
+    </g>
+    <rect x="138" y="392" width="100" height="4" rx="2" fill="#1b1a17" fill-opacity="0.5"/>
+    <rect x="138" y="412" width="120" height="4" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+    <rect x="138" y="432" width="90" height="4" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+    <rect x="138" y="452" width="110" height="4" rx="2" fill="#1b1a17" fill-opacity="0.4"/>
+    <rect x="120" y="468" width="140" height="20" rx="10" fill="#fbf2e8"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="310" y="200" width="180" height="300" rx="16" fill="url(#tierOrange)"/>
+    <rect x="330" y="220" width="80" height="6" rx="3" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="430" y="216" width="50" height="16" rx="8" fill="#ffffff"/>
+    <text x="436" y="227" font-family="sans-serif" font-size="9" font-weight="700" fill="#c2551e">POPULAR</text>
+    <text x="330" y="262" font-family="sans-serif" font-size="22" font-weight="700" fill="#ffffff">Operate</text>
+    <text x="330" y="298" font-family="sans-serif" font-size="26" font-weight="800" fill="#ffffff">$2.8k</text>
+    <text x="394" y="298" font-family="sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.85">/mo</text>
+    <g transform="translate(330 320)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M 0 6 L 4 10 L 12 2"/>
+      <path d="M 0 26 L 4 30 L 12 22"/>
+      <path d="M 0 46 L 4 50 L 12 42"/>
+      <path d="M 0 66 L 4 70 L 12 62"/>
+      <path d="M 0 86 L 4 90 L 12 82"/>
+      <path d="M 0 106 L 4 110 L 12 102"/>
+    </g>
+    <rect x="348" y="322" width="100" height="4" rx="2" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="348" y="342" width="120" height="4" rx="2" fill="#ffffff" fill-opacity="0.7"/>
+    <rect x="348" y="362" width="90" height="4" rx="2" fill="#ffffff" fill-opacity="0.7"/>
+    <rect x="348" y="382" width="110" height="4" rx="2" fill="#ffffff" fill-opacity="0.7"/>
+    <rect x="348" y="402" width="100" height="4" rx="2" fill="#ffffff" fill-opacity="0.7"/>
+    <rect x="348" y="422" width="120" height="4" rx="2" fill="#ffffff" fill-opacity="0.7"/>
+    <rect x="330" y="448" width="140" height="22" rx="11" fill="#ffffff"/>
+    <text x="370" y="463" font-family="sans-serif" font-size="11" font-weight="700" fill="#c2551e">Talk to us</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="520" y="160" width="180" height="340" rx="16" fill="url(#tierDark)"/>
+    <rect x="540" y="180" width="60" height="6" rx="3" fill="#d9632a"/>
+    <text x="540" y="218" font-family="sans-serif" font-size="20" font-weight="700" fill="#ffffff">Scale</text>
+    <text x="540" y="252" font-family="sans-serif" font-size="22" font-weight="800" fill="#ffffff">Custom</text>
+    <g transform="translate(540 280)" stroke="#d9632a" stroke-width="2" fill="none" stroke-linecap="round">
+      <path d="M 0 6 L 4 10 L 12 2"/>
+      <path d="M 0 26 L 4 30 L 12 22"/>
+      <path d="M 0 46 L 4 50 L 12 42"/>
+      <path d="M 0 66 L 4 70 L 12 62"/>
+      <path d="M 0 86 L 4 90 L 12 82"/>
+      <path d="M 0 106 L 4 110 L 12 102"/>
+      <path d="M 0 126 L 4 130 L 12 122"/>
+    </g>
+    <rect x="558" y="282" width="110" height="4" rx="2" fill="#ffffff" fill-opacity="0.7"/>
+    <rect x="558" y="302" width="100" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="558" y="322" width="120" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="558" y="342" width="90" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="558" y="362" width="110" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="558" y="382" width="100" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="558" y="402" width="80" height="4" rx="2" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="540" y="448" width="140" height="22" rx="11" fill="#d9632a"/>
+    <text x="570" y="463" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff">Request quote</text>
+  </g>
+
+  <g fill="#d9632a">
+    <circle cx="80" cy="200" r="3"/>
+    <circle cx="720" cy="100" r="3"/>
+  </g>
+  <g fill="#2e6e5e">
+    <circle cx="80" cy="540" r="3"/>
+    <circle cx="720" cy="540" r="3"/>
+  </g>
+</svg>
