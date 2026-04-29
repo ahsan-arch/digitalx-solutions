@@ -6,20 +6,21 @@ type ScriptSeed = {
   bookLine: string; closeLine: string;
 };
 
-function build(s: ScriptSeed): DemoScript {
+function build(slug: string, s: ScriptSeed): DemoScript {
   const agent = s.agent || "Ava";
+  const audio = (i: number) => `/demos/${slug}/turn-${i}.mp3`;
   return {
     businessName: s.biz, agentName: agent,
     turns: [
-      { speaker: "agent", text: `Hi, thank you for calling ${s.biz}! This is ${agent}, how can I help you today?` },
-      { speaker: "caller", text: s.callerOpener },
-      { speaker: "agent", text: `Absolutely, I can help with that. ${s.reason}` },
-      { speaker: "caller", text: s.detail },
-      { speaker: "agent", text: `Got it. ${s.bookLine}` },
-      { speaker: "caller", text: "That works, yeah let's do that." },
-      { speaker: "agent", text: `Perfect, you're all set! ${s.closeLine} Is there anything else I can help with?` },
-      { speaker: "caller", text: "No, that's everything. Thanks!" },
-      { speaker: "agent", text: "You're welcome! Have a great day. Goodbye!" },
+      { speaker: "agent",  text: `Hi, thank you for calling ${s.biz}! This is ${agent}, how can I help you today?`, audioUrl: audio(0) },
+      { speaker: "caller", text: s.callerOpener,                                                                     audioUrl: audio(1) },
+      { speaker: "agent",  text: `Absolutely, I can help with that. ${s.reason}`,                                    audioUrl: audio(2) },
+      { speaker: "caller", text: s.detail,                                                                           audioUrl: audio(3) },
+      { speaker: "agent",  text: `Got it. ${s.bookLine}`,                                                            audioUrl: audio(4) },
+      { speaker: "caller", text: "That works, yeah let's do that.",                                                  audioUrl: audio(5) },
+      { speaker: "agent",  text: `Perfect, you're all set! ${s.closeLine} Is there anything else I can help with?`,  audioUrl: audio(6) },
+      { speaker: "caller", text: "No, that's everything. Thanks!",                                                   audioUrl: audio(7) },
+      { speaker: "agent",  text: "You're welcome! Have a great day. Goodbye!",                                       audioUrl: audio(8) },
     ],
   };
 }
@@ -78,5 +79,5 @@ const seeds: Record<string, ScriptSeed> = {
 };
 
 export function getDemoScript(slug: string): DemoScript | null {
-  return seeds[slug] ? build(seeds[slug]) : null;
+  return seeds[slug] ? build(slug, seeds[slug]) : null;
 }

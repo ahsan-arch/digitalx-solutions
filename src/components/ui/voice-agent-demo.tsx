@@ -6,6 +6,7 @@ import { Phone, PhoneOff, Mic, Volume2, VolumeX } from "lucide-react";
 export type DemoTurn = {
   speaker: "caller" | "agent";
   text: string;
+  audioUrl?: string;
 };
 
 export type DemoScript = {
@@ -54,13 +55,34 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const animRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const speakResolveRef = useRef<(() => void) | null>(null);
   const mutedRef = useRef(false);
   const isCancelledRef = useRef(false);
 
-  // Keep muted ref in sync
+  const stopAudio = useCallback(() => {
+    if (audioRef.current) {
+      try {
+        audioRef.current.pause();
+        audioRef.current.removeAttribute("src");
+        audioRef.current.load();
+      } catch {}
+      audioRef.current = null;
+    }
+    setIsSpeaking(false);
+    if (speakResolveRef.current) {
+      const r = speakResolveRef.current;
+      speakResolveRef.current = null;
+      r();
+    }
+  }, []);
+
+  // Keep muted ref in sync; if user mutes mid-playback, stop the audio so the
+  // conversation continues silently.
   useEffect(() => {
     mutedRef.current = muted;
-  }, [muted]);
+    if (muted) stopAudio();
+  }, [muted, stopAudio]);
 
   const cleanup = useCallback(() => {
     isCancelledRef.current = true;
@@ -68,11 +90,8 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     if (animRef.current) clearTimeout(animRef.current);
     timerRef.current = null;
     animRef.current = null;
-    if (typeof window !== "undefined" && window.speechSynthesis) {
-      window.speechSynthesis.cancel();
-    }
-    setIsSpeaking(false);
-  }, []);
+    stopAudio();
+  }, [stopAudio]);
 
   useEffect(() => {
     return cleanup;
@@ -84,51 +103,39 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     }
   }, [visibleTurns, isTyping]);
 
-  /* ── Speak a line using Web Speech API ── */
-  const speak = useCallback((text: string, speaker: "caller" | "agent"): Promise<void> => {
+  /* ── Play a pre-recorded MP3 for one turn ── */
+  const speak = useCallback((audioUrl?: string): Promise<void> => {
     return new Promise((resolve) => {
-      if (typeof window === "undefined" || !window.speechSynthesis || mutedRef.current) {
+      if (typeof window === "undefined" || !audioUrl || mutedRef.current || isCancelledRef.current) {
         resolve();
         return;
       }
 
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.05;
-      utterance.pitch = speaker === "agent" ? 1.2 : 0.9;
+      const audio = new Audio(audioUrl);
+      audio.preload = "auto";
+      audioRef.current = audio;
+      speakResolveRef.current = resolve;
 
-      // Try to pick distinct voices
-      const voices = window.speechSynthesis.getVoices();
-      const femaleVoice = voices.find(
-        (v) => v.lang.startsWith("en") && /female|samantha|zira|karen|fiona/i.test(v.name)
-      );
-      const maleVoice = voices.find(
-        (v) => v.lang.startsWith("en") && /male|david|daniel|james|george/i.test(v.name)
-      );
-      const fallbackEn = voices.find((v) => v.lang.startsWith("en"));
-
-      utterance.voice =
-        speaker === "agent"
-          ? femaleVoice || fallbackEn || null
-          : maleVoice || fallbackEn || null;
-
-      utterance.onstart = () => setIsSpeaking(true);
-      utterance.onend = () => {
-        setIsSpeaking(false);
-        resolve();
-      };
-      utterance.onerror = () => {
-        setIsSpeaking(false);
-        resolve();
+      const finish = () => {
+        if (speakResolveRef.current === resolve) {
+          speakResolveRef.current = null;
+          audioRef.current = null;
+          setIsSpeaking(false);
+          resolve();
+        }
       };
 
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(utterance);
+      audio.addEventListener("ended", finish, { once: true });
+      audio.addEventListener("error", finish, { once: true });
+
+      setIsSpeaking(true);
+      audio.play().catch(() => finish());
     });
   }, []);
 
   const startDemo = useCallback(() => {
-    isCancelledRef.current = false;
     cleanup();
+    isCancelledRef.current = false;
     setIsActive(true);
     setVisibleTurns(0);
     setCallDuration(0);
@@ -138,16 +145,6 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     timerRef.current = setInterval(() => {
       setCallDuration((prev) => prev + 1);
     }, 1000);
-
-    // Pre-load voices (some browsers need this)
-    if (typeof window !== "undefined" && window.speechSynthesis) {
-      window.speechSynthesis.getVoices();
-      
-      // Unlock Web Speech API on iOS/Android (requires synchronous execution in user event handler)
-      const unlockUtterance = new SpeechSynthesisUtterance("");
-      unlockUtterance.volume = 0;
-      window.speechSynthesis.speak(unlockUtterance);
-    }
 
     let turnIndex = 0;
 
@@ -172,7 +169,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
       setVisibleTurns(turnIndex);
 
       // Speak it
-      await speak(turn.text, turn.speaker);
+      await speak(turn.audioUrl);
 
       if (isCancelledRef.current) return;
 
