@@ -139,6 +139,11 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     // Pre-load voices (some browsers need this)
     if (typeof window !== "undefined" && window.speechSynthesis) {
       window.speechSynthesis.getVoices();
+      
+      // Unlock Web Speech API on iOS/Android (requires synchronous execution in user event handler)
+      const unlockUtterance = new SpeechSynthesisUtterance("");
+      unlockUtterance.volume = 0;
+      window.speechSynthesis.speak(unlockUtterance);
     }
 
     let turnIndex = 0;

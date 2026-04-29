@@ -131,7 +131,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="DigitalX" />
       </head>
       <body
-        className={`${roboto.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground`}
+        className={`${roboto.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
       >
         <SiteHeader />
         <div className="relative min-h-screen pt-20">
