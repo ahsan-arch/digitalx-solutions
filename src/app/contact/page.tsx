@@ -97,22 +97,24 @@ export default function ContactPage() {
 
                     <div className="mt-4 rounded-2xl border border-border bg-surface-50 p-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Phone & WhatsApp</p>
-                        <a
-                            href={`tel:${companyProfile.phoneE164}`}
-                            className="mt-2 inline-block text-sm font-medium text-brand"
-                        >
-                            {companyProfile.phone}
-                        </a>
-                        <a
-                            href={companyProfile.whatsappUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Message us on WhatsApp"
-                            className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-brand"
-                        >
-                            <WhatsAppIcon className="h-4 w-4" />
-                            Message on WhatsApp
-                        </a>
+                        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
+                            <a
+                                href={`tel:${companyProfile.phoneE164}`}
+                                className="text-sm font-medium text-brand transition-colors hover:text-brand-deep"
+                            >
+                                {companyProfile.phone}
+                            </a>
+                            <a
+                                href={companyProfile.whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Message us on WhatsApp"
+                                className="inline-flex items-center gap-1.5 text-sm font-medium text-brand transition-colors hover:text-brand-deep"
+                            >
+                                <WhatsAppIcon className="h-[1.125rem] w-[1.125rem]" />
+                                Message on WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </aside>
             </section>
