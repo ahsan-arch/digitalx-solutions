@@ -55,6 +55,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const animRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mutedRef = useRef(false);
+  const isCancelledRef = useRef(false);
 
   // Keep muted ref in sync
   useEffect(() => {
@@ -62,6 +63,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
   }, [muted]);
 
   const cleanup = useCallback(() => {
+    isCancelledRef.current = true;
     if (timerRef.current) clearInterval(timerRef.current);
     if (animRef.current) clearTimeout(animRef.current);
     timerRef.current = null;
@@ -125,6 +127,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
   }, []);
 
   const startDemo = useCallback(() => {
+    isCancelledRef.current = false;
     cleanup();
     setIsActive(true);
     setVisibleTurns(0);
@@ -149,7 +152,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     let turnIndex = 0;
 
     async function showNext() {
-      if (turnIndex >= script.turns.length) return;
+      if (isCancelledRef.current || turnIndex >= script.turns.length) return;
 
       const turn = script.turns[turnIndex];
       setCurrentSpeaker(turn.speaker);
@@ -160,6 +163,8 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
         animRef.current = setTimeout(r, turn.speaker === "agent" ? 900 : 600);
       });
 
+      if (isCancelledRef.current) return;
+
       // Show the message
       setIsTyping(false);
       setCurrentSpeaker(null);
@@ -169,12 +174,16 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
       // Speak it
       await speak(turn.text, turn.speaker);
 
+      if (isCancelledRef.current) return;
+
       // Small pause between turns
       if (turnIndex < script.turns.length) {
         await new Promise((r) => {
           animRef.current = setTimeout(r, 400);
         });
-        showNext();
+        if (!isCancelledRef.current) {
+          showNext();
+        }
       }
     }
 
