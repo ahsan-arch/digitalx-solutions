@@ -3,6 +3,12 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Phone, PhoneOff, Mic, Volume2, VolumeX } from "lucide-react";
 
+// 40-byte silent WAV. Played once inside the click handler so mobile
+// browsers (iOS Safari, mobile Chrome) "unlock" the audio element for
+// later programmatic play() calls outside the user gesture.
+const SILENT_WAV =
+  "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
+
 export type DemoTurn = {
   speaker: "caller" | "agent";
   text: string;
@@ -77,12 +83,21 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     }
   }, []);
 
-  // Keep muted ref in sync; if user mutes mid-playback, stop the audio so the
-  // conversation continues silently.
+  // Keep muted ref in sync; if user mutes mid-playback, pause the audio so
+  // the conversation continues silently. We pause rather than destroying
+  // the element so unmuting later still works (the audioRef stays "unlocked").
   useEffect(() => {
     mutedRef.current = muted;
-    if (muted) stopAudio();
-  }, [muted, stopAudio]);
+    if (muted && audioRef.current) {
+      try { audioRef.current.pause(); } catch {}
+      setIsSpeaking(false);
+      if (speakResolveRef.current) {
+        const r = speakResolveRef.current;
+        speakResolveRef.current = null;
+        r();
+      }
+    }
+  }, [muted]);
 
   const cleanup = useCallback(() => {
     isCancelledRef.current = true;
@@ -111,23 +126,30 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
         return;
       }
 
-      const audio = new Audio(audioUrl);
-      audio.preload = "auto";
-      audioRef.current = audio;
+      // Reuse the unlocked audio element created inside the click handler.
+      const audio = audioRef.current;
+      if (!audio) {
+        resolve();
+        return;
+      }
+
       speakResolveRef.current = resolve;
 
       const finish = () => {
+        audio.removeEventListener("ended", finish);
+        audio.removeEventListener("error", finish);
         if (speakResolveRef.current === resolve) {
           speakResolveRef.current = null;
-          audioRef.current = null;
           setIsSpeaking(false);
           resolve();
         }
       };
 
-      audio.addEventListener("ended", finish, { once: true });
-      audio.addEventListener("error", finish, { once: true });
+      audio.addEventListener("ended", finish);
+      audio.addEventListener("error", finish);
 
+      audio.src = audioUrl;
+      audio.load();
       setIsSpeaking(true);
       audio.play().catch(() => finish());
     });
@@ -141,6 +163,16 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     setCallDuration(0);
     setIsTyping(false);
     setCurrentSpeaker(null);
+
+    // Mobile browsers (iOS Safari especially) require the first audio.play()
+    // to come directly from a user gesture. Create the audio element here
+    // inside the click handler and play a silent buffer to unlock it; later
+    // turn audio can then play without a fresh gesture.
+    const audio = new Audio();
+    audio.preload = "auto";
+    audio.src = SILENT_WAV;
+    audio.play().catch(() => {});
+    audioRef.current = audio;
 
     timerRef.current = setInterval(() => {
       setCallDuration((prev) => prev + 1);
