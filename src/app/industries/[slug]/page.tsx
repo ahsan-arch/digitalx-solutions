@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { getIndustryBySlug, industries } from "@/data/industries";
-import { getSolutionBySlug } from "@/data/redesign";
+import { getSolutionBySlug, results } from "@/data/redesign";
 import { getDemoScript } from "@/data/voice-demos";
 import { VoiceAgentDemo } from "@/components/ui/voice-agent-demo";
 import {
@@ -44,6 +44,8 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
   const linkedSolutions = industry.relatedSolutionSlugs
     .map((solutionSlug) => getSolutionBySlug(solutionSlug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
+
+  const industryCaseStudies = results.filter((r) => r.industrySlug === industry.slug);
 
   const demoScript = getDemoScript(slug);
 
@@ -116,6 +118,31 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           </div>
           <div className="max-w-xl">
             <VoiceAgentDemo script={demoScript} />
+          </div>
+        </section>
+      )}
+
+      {industryCaseStudies.length > 0 && (
+        <section className="container-shell mt-12">
+          <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
+            <h2 className="font-display text-2xl text-foreground">{industry.name} case studies</h2>
+            <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {industryCaseStudies.map((cs) => (
+                <Link
+                  key={cs.slug}
+                  href={`/work/${cs.slug}`}
+                  className="group rounded-xl border border-border bg-surface-50 p-5 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">{cs.industry}</p>
+                  <h3 className="mt-2 font-display text-lg text-foreground">{cs.client}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/68">{cs.impact}</p>
+                  <span className="mt-4 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                    Read case study
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       )}
