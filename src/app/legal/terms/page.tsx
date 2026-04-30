@@ -4,7 +4,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata: Metadata = generatePageMetadata("/legal/terms", {
   title: "Terms of Service | DigitalX Solutions",
   description:
-    "Terms governing use of digitalxsolutions.com, our contact forms, and engagements with DigitalX Solutions automation services.",
+    "Terms governing use of digitalx-solutions.com, our contact forms, and engagements with DigitalX Solutions automation services.",
 });
 
 const lastUpdated = "April 2026";
@@ -19,7 +19,7 @@ export default function TermsPage() {
 
         <div className="prose prose-slate mt-10 max-w-none prose-headings:font-display prose-headings:text-ink-primary prose-p:text-ink-secondary prose-li:text-ink-secondary prose-a:text-accent">
           <p>
-            These terms govern your use of digitalxsolutions.com and any services provided by DigitalX Solutions
+            These terms govern your use of digitalx-solutions.com and any services provided by DigitalX Solutions
             (&ldquo;we&rdquo;, &ldquo;us&rdquo;). By using this site or engaging us for services, you accept these
             terms.
           </p>

@@ -69,7 +69,7 @@ export function ContactIntakeForm() {
       setAttachment(null);
     } catch {
       setSubmitState("error");
-      setMessage("Something went wrong. Please email info@digitalxsolutions.com directly.");
+      setMessage("Something went wrong. Please email info@digitalx-solutions.com directly.");
     }
   }
 

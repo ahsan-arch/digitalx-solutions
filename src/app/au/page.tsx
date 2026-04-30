@@ -15,7 +15,7 @@ const auLocalBusiness = {
   "@id": `${siteConfig.domain}/au#localbusiness`,
   name: "DigitalX Solutions, Australia",
   url: `${siteConfig.domain}/au`,
-  email: "info@digitalxsolutions.com",
+  email: "info@digitalx-solutions.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Casula",
@@ -68,6 +68,63 @@ export default function AuPage() {
           </ul>
         </div>
         <ServiceAreaMap />
+      </section>
+
+      <section className="container-shell mt-16">
+        <h2 className="font-display text-display-sm text-ink-primary">Cities we serve across Australia</h2>
+        <p className="mt-3 max-w-2xl text-body text-ink-secondary">
+          Engineered in Casula, NSW, deployed for service businesses across every Australian capital. We work
+          remotely with on site visits scheduled when scope demands it.
+        </p>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Sydney</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Most of our AU client base is in Greater Sydney, from Parramatta tradies to North Shore clinics.
+              GoHighLevel, AI voice, and Missed call text back deployed across NSW based home services, healthcare,
+              and professional services.
+            </p>
+          </article>
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Melbourne</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Melbourne and Geelong service businesses face long inbound queues during peak demand. We deploy AI
+              voice agents tuned for Victorian accents, AEDT calendar logic, and Privacy Act aligned data handling
+              for medical and legal practices.
+            </p>
+          </article>
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Brisbane</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Brisbane and South East Queensland HVAC, roofing, and pool service operators depend on speed to lead.
+              Our Missed call text back recovers 30 to 50 percent of after hours callers across SEQ time zones.
+            </p>
+          </article>
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Perth</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              AWST puts Perth two hours behind the eastern states, which means local businesses miss calls from
+              east coast leads after 5pm WA time. Our 24/7 AI voice agents close that gap end to end.
+            </p>
+          </article>
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Adelaide</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Adelaide trade and healthcare operators lean heavily on referrals and repeat business. We layer
+              automated review, referral, and reactivation flows on top of your existing booking system so the
+              network compounds without manual chase.
+            </p>
+          </article>
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Regional NSW, VIC, QLD &amp; WA</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Tradies in regional Australia, Newcastle, Wollongong, Toowoomba, Bendigo, Geelong, Bunbury, are
+              especially hurt by missed calls. Voice plus SMS automation is the highest ROI investment in this
+              segment.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section className="container-shell mt-16">

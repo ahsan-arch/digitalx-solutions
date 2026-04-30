@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const siteConfig = {
-    domain: "https://digitalxsolutions.com",
+    domain: "https://digitalx-solutions.com",
     social: {
         twitter: "@digitalx_solutions",
     },
@@ -176,7 +176,7 @@ export function generateOrganizationSchema() {
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 url: siteConfig.domain,
-                email: "info@digitalxsolutions.com",
+                email: "info@digitalx-solutions.com",
                 logo: `${siteConfig.domain}/logo.png`,
                 image: `${siteConfig.domain}/api/og`,
                 priceRange: "$$$",
@@ -206,7 +206,7 @@ export function generateOrganizationSchema() {
                 contactPoint: {
                     "@type": "ContactPoint",
                     contactType: "customer service",
-                    email: "info@digitalxsolutions.com",
+                    email: "info@digitalx-solutions.com",
                     telephone: "+61 451 413 786",
                     availableLanguage: ["English"],
                 },
@@ -408,6 +408,25 @@ export function generateBreadcrumbSchema(
             position: index + 1,
             name: item.name,
             item: item.url,
+        })),
+    };
+}
+
+export function generateItemListSchema(
+    name: string,
+    items: { name: string; url: string; description?: string }[]
+) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name,
+        numberOfItems: items.length,
+        itemListElement: items.map((item, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.name,
+            url: item.url,
+            ...(item.description && { description: item.description }),
         })),
     };
 }

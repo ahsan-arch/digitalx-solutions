@@ -3,7 +3,12 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { industries, industryCategories, getIndustriesByCategory } from "@/data/industries";
 import { SectionIllustration } from "@/components/ui";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import {
+  generateBreadcrumbSchema,
+  generateItemListSchema,
+  generatePageMetadata,
+  siteConfig,
+} from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/industries", {
   title: "Industries We Serve | 50+ Sector Playbooks | USA & Australia",
@@ -17,9 +22,19 @@ export default function IndustriesHubPage() {
     { name: "Industries", url: `${siteConfig.domain}/industries` },
   ]);
 
+  const itemListSchema = generateItemListSchema(
+    "DigitalX Industry Playbooks",
+    industries.map((i) => ({
+      name: i.name,
+      url: `${siteConfig.domain}/industries/${i.slug}`,
+      description: i.summary,
+    }))
+  );
+
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
 
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">

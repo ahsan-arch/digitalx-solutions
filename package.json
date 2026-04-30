@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "seo:rank": "tsx --env-file=.env.local scripts/seo-rank-check.ts",
+    "seo:rank:full": "tsx --env-file=.env.local scripts/seo-rank-check.ts -- --full",
+    "seo:mine": "tsx --env-file=.env.local scripts/seo-content-mine.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -36,6 +39,7 @@
     "msedge-tts": "^2.0.5",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.0"
   }
 }

@@ -1,36 +1,28 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { SectionIllustration } from "@/components/ui";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import {
+    generateBreadcrumbSchema,
+    generateItemListSchema,
+    generatePageMetadata,
+    siteConfig,
+} from "@/lib/seo";
+import { articlesData } from "@/data/insights-articles";
 
 export const metadata: Metadata = generatePageMetadata("/insights", {
     title: "Digital Marketing & Performance Engineering Insights | DigitalX Solutions",
     description: "Advanced insights on deep-tech digital marketing, Next.js web development, server side tracking, and CRM automation strategies.",
 });
 
-const articles = [
-    {
-        slug: "n8n-vs-zapier",
-        title: "n8n vs Zapier in 2026: Complete Comparison for Business Automation",
-        description: "A detailed comparison of n8n and Zapier for business automation. Pricing, features, scalability, and which tool is right for your workflow needs.",
-        date: "2025-11-20",
-        readTime: "10 min read",
-    },
-    {
-        slug: "ai-voice-receptionists-guide",
-        title: "AI Voice Receptionists for Dental Clinics, Salons & Medical Practices: Complete Guide",
-        description: "How AI voice receptionists automate phone answering, appointment booking, and lead qualification for healthcare and service businesses.",
-        date: "2025-09-05",
-        readTime: "8 min read",
-    },
-    {
-        slug: "server-side-tracking-meta-ads",
-        title: "Why Meta Server-Side Tracking (CAPI) is Mandatory for Scale",
-        description: "Learn why relying solely on the Meta Pixel destroys ROI, and how implementing the Conversions API ensures accurate attribution in a post-iOS14 world.",
-        date: "2024-03-15",
-        readTime: "6 min read",
-    },
-];
+const articles = Object.entries(articlesData)
+    .map(([slug, a]) => ({
+        slug,
+        title: a.title,
+        description: a.description,
+        date: a.date,
+        readTime: a.readTime,
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export default function InsightsPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -38,11 +30,24 @@ export default function InsightsPage() {
         { name: "Insights", url: `${siteConfig.domain}/insights` },
     ]);
 
+    const itemListSchema = generateItemListSchema(
+        "DigitalX Insights",
+        articles.map((a) => ({
+            name: a.title,
+            url: `${siteConfig.domain}/insights/${a.slug}`,
+            description: a.description,
+        }))
+    );
+
     return (
         <main id="main" className="pb-20 pt-12">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
             />
 
             <section className="container-shell">

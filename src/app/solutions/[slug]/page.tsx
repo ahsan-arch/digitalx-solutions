@@ -6,6 +6,7 @@ import { getSolutionBySlug, solutions } from "@/data/redesign";
 import { industries } from "@/data/industries";
 import {
   generateBreadcrumbSchema,
+  generateFAQSchema,
   generatePageMetadata,
   generateServicePageSchema,
   siteConfig,
@@ -53,10 +54,17 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
     url: `${siteConfig.domain}/solutions/${solution.slug}`,
   });
 
+  const faqSchema = solution.faqs && solution.faqs.length > 0
+    ? generateFAQSchema(solution.faqs)
+    : null;
+
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       <section className="container-shell">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Solution</p>
@@ -102,6 +110,22 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
           </ul>
         </aside>
       </section>
+
+      {solution.faqs && solution.faqs.length > 0 && (
+        <section className="container-shell mt-12">
+          <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
+            <h2 className="font-display text-2xl text-foreground">Frequently asked questions</h2>
+            <dl className="mt-6 space-y-6">
+              {solution.faqs.map((faq) => (
+                <div key={faq.question} className="border-b border-border pb-6 last:border-b-0 last:pb-0">
+                  <dt className="font-display text-lg font-semibold text-foreground">{faq.question}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-foreground/72">{faq.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
 
       <section className="container-shell mt-12">
         <div className="rounded-3xl border border-border bg-white p-6 md:p-8">

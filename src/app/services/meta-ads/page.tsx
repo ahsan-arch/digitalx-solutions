@@ -1,13 +1,46 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionIllustration } from "@/components/ui";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import {
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  generatePageMetadata,
+  siteConfig,
+} from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/services/meta-ads", {
   title: "Meta Ads Engineering | CAPI + Server-Side Tracking",
   description:
     "Meta Ads management with server side tracking, Conversions API, and full attribution into your CRM. For service businesses spending $5k+/mo.",
 });
+
+const faqs = [
+  {
+    question: "What is server side tracking?",
+    answer:
+      "Server side tracking sends conversion data from your own server to advertising platforms like Meta and Google, instead of relying on the user's browser to fire pixels. This bypasses ad blockers, iOS App Tracking Transparency, and Safari's Intelligent Tracking Prevention, so you keep accurate attribution even when the browser pixel is blocked.",
+  },
+  {
+    question: "Is server side tracking legal?",
+    answer:
+      "Yes, server side tracking is legal when configured correctly. You still need to obtain user consent for cookies and tracking under GDPR, CCPA, and the Australian Privacy Principles, hash personal identifiers (email, phone) before sending, and disclose the practice in your privacy policy. The data flow itself is well within the rules, what matters is the consent and hashing layer around it.",
+  },
+  {
+    question: "What is the Meta Conversions API (CAPI)?",
+    answer:
+      "The Conversions API is Meta's official server side tracking endpoint. Instead of the browser pixel reporting events directly to Facebook, your server sends a secure server to server request after each conversion. Meta deduplicates events between the pixel and CAPI using an event_id, so the server event acts as a fallback when the browser pixel is blocked.",
+  },
+  {
+    question: "Why does server side tracking matter after iOS 14?",
+    answer:
+      "Since iOS 14.5 introduced App Tracking Transparency, browser pixels miss 20 to 50 percent of conversions for many service businesses. Meta's algorithm needs accurate conversion signals to find your buyers, so missing data inflates reported CPAs and degrades targeting. Clients we move to CAPI typically see Event Match Quality jump from around 4 to 8 plus on a 10 point scale and a 25 percent reduction in measured cost per acquisition within 30 days.",
+  },
+  {
+    question: "How long does it take to set up server side tracking?",
+    answer:
+      "A standard CAPI plus server tag setup takes 5 to 10 business days, faster if you are already on Next.js or have GTM Server Container access. The work covers infrastructure, event mapping, deduplication, hashing, consent layer, and a parallel run period to validate event match quality before cutting the browser pixel back.",
+  },
+];
 
 const pillars = [
   {
@@ -42,6 +75,7 @@ export default function MetaAdsPage() {
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }} />
 
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
@@ -68,6 +102,20 @@ export default function MetaAdsPage() {
             <p className="mt-3 text-body text-ink-secondary" dangerouslySetInnerHTML={{ __html: p.body }} />
           </article>
         ))}
+      </section>
+
+      <section className="container-shell mt-16">
+        <div className="rounded-lg border border-line-subtle bg-surface-raised p-6 md:p-10">
+          <h2 className="font-display text-display-sm text-ink-primary">Frequently asked questions</h2>
+          <dl className="mt-6 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-line-subtle pb-6 last:border-b-0 last:pb-0">
+                <dt className="font-display text-title-md text-ink-primary">{faq.question}</dt>
+                <dd className="mt-2 text-body text-ink-secondary">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
 
       <section className="container-shell mt-16 rounded-lg border border-line-subtle bg-surface-sunken p-6 md:p-10">

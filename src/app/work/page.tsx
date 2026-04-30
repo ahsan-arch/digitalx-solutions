@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { SectionIllustration } from "@/components/ui";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import {
+    generateBreadcrumbSchema,
+    generateItemListSchema,
+    generatePageMetadata,
+    siteConfig,
+} from "@/lib/seo";
 import { results } from "@/data/redesign";
 
 export const metadata = generatePageMetadata("/work", {
@@ -15,11 +20,24 @@ export default function WorkPage() {
         { name: "Results", url: `${siteConfig.domain}/work` },
     ]);
 
+    const itemListSchema = generateItemListSchema(
+        "DigitalX Solutions Case Studies",
+        results.map((r) => ({
+            name: `${r.client} — ${r.industry}`,
+            url: `${siteConfig.domain}/work/${r.slug}`,
+            description: r.impact,
+        }))
+    );
+
     return (
         <main id="main" className="pb-20 pt-12">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
             />
 
             <section className="container-shell">

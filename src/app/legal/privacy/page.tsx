@@ -19,7 +19,7 @@ export default function PrivacyPage() {
 
         <div className="prose prose-slate mt-10 max-w-none prose-headings:font-display prose-headings:text-ink-primary prose-p:text-ink-secondary prose-li:text-ink-secondary prose-a:text-accent">
           <p>
-            DigitalX Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;) operates digitalxsolutions.com and provides AI
+            DigitalX Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;) operates digitalx-solutions.com and provides AI
             voice, automation, and CRM services to local service businesses in the United States and Australia. This
             policy explains what personal information we collect, how we use it, and the choices you have.
           </p>
@@ -50,14 +50,14 @@ export default function PrivacyPage() {
           <h2>Your rights</h2>
           <p>
             You can request access, correction, or deletion of your personal information at any time. Email
-            <a href="mailto:info@digitalxsolutions.com"> info@digitalxsolutions.com</a> and we will respond within
+            <a href="mailto:info@digitalx-solutions.com"> info@digitalx-solutions.com</a> and we will respond within
             30 days.
           </p>
 
           <h2>Contact</h2>
           <p>
             DigitalX Solutions, Casula NSW Australia. Email{" "}
-            <a href="mailto:info@digitalxsolutions.com">info@digitalxsolutions.com</a>.
+            <a href="mailto:info@digitalx-solutions.com">info@digitalx-solutions.com</a>.
           </p>
         </div>
       </article>

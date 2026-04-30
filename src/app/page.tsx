@@ -9,6 +9,7 @@ import {
   developmentProjects,
   results,
 } from "@/data/redesign";
+import { industryCategories } from "@/data/industries";
 
 export default function HomePage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -112,6 +113,81 @@ export default function HomePage() {
                 <ArrowRight className="ml-1 h-4 w-4" />
               </span>
             </TiltCard>
+          </div>
+        </section>
+
+        <section className="container-shell mt-16">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industries</p>
+              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Playbooks tuned to your vertical</h2>
+            </div>
+            <Link href="/industries" className="text-sm font-semibold text-brand hover:text-brand-deep">
+              View all 50 playbooks
+            </Link>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {industryCategories.map((category) => {
+              const anchor = category.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+              return (
+                <Link
+                  key={category}
+                  href={`/industries#${anchor}`}
+                  className="rounded-2xl border border-border bg-surface-50 p-5 transition hover:border-brand/40 hover:shadow-sm"
+                >
+                  <h3 className="text-base font-semibold text-foreground">{category}</h3>
+                  <span className="mt-3 inline-flex items-center text-sm font-semibold text-brand">
+                    See industry playbooks
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="container-shell mt-16">
+          <div className="mb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Regions</p>
+            <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Serving the USA &amp; Australia</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/70 md:text-base">
+              Time zone aware automation, locale tuned voice agents, and country specific compliance baked into
+              every build.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <Link
+              href="/usa"
+              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-sm"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">United States</p>
+              <h3 className="mt-2 font-display text-2xl text-foreground">Automation for US service businesses</h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/68">
+                English &amp; Spanish AI voice, server side tracking with CAPI, and GoHighLevel snapshots for
+                home services, med spas, and law firms across all 50 states.
+              </p>
+              <span className="mt-5 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                See US capabilities
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </span>
+            </Link>
+            <Link
+              href="/au"
+              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-sm"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Australia</p>
+              <h3 className="mt-2 font-display text-2xl text-foreground">Automation for Australian operators</h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/68">
+                Sydney, Melbourne, Brisbane, Perth and regional. Privacy Act aligned data handling, AEDT/AWST
+                aware booking, and Australian payment integrations.
+              </p>
+              <span className="mt-5 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                See AU capabilities
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </span>
+            </Link>
           </div>
         </section>
 

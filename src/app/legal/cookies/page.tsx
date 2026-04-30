@@ -4,7 +4,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata: Metadata = generatePageMetadata("/legal/cookies", {
   title: "Cookie Policy | DigitalX Solutions",
   description:
-    "What cookies digitalxsolutions.com uses, why we use them, and how you can control or block them in your browser.",
+    "What cookies digitalx-solutions.com uses, why we use them, and how you can control or block them in your browser.",
 });
 
 const lastUpdated = "April 2026";
@@ -20,7 +20,7 @@ export default function CookiesPage() {
         <div className="prose prose-slate mt-10 max-w-none prose-headings:font-display prose-headings:text-ink-primary prose-p:text-ink-secondary prose-li:text-ink-secondary prose-a:text-accent">
           <p>
             This page explains how DigitalX Solutions uses cookies and similar tracking technologies on
-            digitalxsolutions.com.
+            digitalx-solutions.com.
           </p>
 
           <h2>What are cookies?</h2>
@@ -54,7 +54,7 @@ export default function CookiesPage() {
           <h2>Contact</h2>
           <p>
             Questions? Email{" "}
-            <a href="mailto:info@digitalxsolutions.com">info@digitalxsolutions.com</a>.
+            <a href="mailto:info@digitalx-solutions.com">info@digitalx-solutions.com</a>.
           </p>
         </div>
       </article>

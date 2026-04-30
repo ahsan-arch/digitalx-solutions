@@ -30,6 +30,8 @@ export type SolutionSlug =
   | "crm-integration"
   | "analytics-dashboards";
 
+export type SolutionFaq = { question: string; answer: string };
+
 export type Solution = {
   slug: SolutionSlug;
   name: string;
@@ -40,6 +42,7 @@ export type Solution = {
   bestFor: string;
   legacyPaths: string[];
   group: "capture" | "nurture" | "operate";
+  faqs?: SolutionFaq[];
 };
 
 export const solutions: Solution[] = [
@@ -66,6 +69,33 @@ export const solutions: Solution[] = [
       "Owner operators and agencies standardising on GoHighLevel who want a production grade build, not a template dump.",
     legacyPaths: ["/services/revenue-operations"],
     group: "operate",
+    faqs: [
+      {
+        question: "What is GoHighLevel and what is it used for?",
+        answer:
+          "GoHighLevel (GHL) is an all in one cloud based marketing and operations platform that combines CRM, pipelines, calendar booking, two way SMS, email automation, funnels, and reporting. Agencies and service businesses use it to replace a stack of separate tools (Mailchimp, Calendly, ActiveCampaign, ClickFunnels) with one system.",
+      },
+      {
+        question: "Is GoHighLevel like Salesforce?",
+        answer:
+          "For service businesses and agencies, GoHighLevel covers what most Salesforce users actually use day to day, pipeline management, contact tracking, workflow automation, and reporting, plus marketing channels (email, SMS, funnels, landing pages) that Salesforce sells separately. Salesforce is still the right choice for enterprise teams with deep custom data models. For everyone else, GHL is faster to deploy and dramatically cheaper.",
+      },
+      {
+        question: "How do I create automation workflows in GoHighLevel?",
+        answer:
+          "Inside GoHighLevel, open the Automations section, click Workflows, then Create New Workflow. Pick a trigger (form submission, missed call, tag added, appointment booked) and chain actions like sending an SMS, moving a deal stage, waiting an hour, or branching on a condition. Our implementation builds these workflows from production tested templates, with proper error handling and tagging so leads never get stuck silently.",
+      },
+      {
+        question: "Is GoHighLevel free to use?",
+        answer:
+          "GoHighLevel offers a 14 day trial but is not free long term. Plans start at around USD 97 per month for a single business and scale up for agencies that need sub accounts. The pricing usually pays for itself by replacing 4 to 6 separate SaaS tools. We help clients pick the right tier and consolidate their existing tool spend.",
+      },
+      {
+        question: "How long does a full GoHighLevel implementation take?",
+        answer:
+          "A focused implementation, snapshots, pipelines, automations, calendars, two way SMS, AI voice integration, and team handover, typically takes 2 to 4 weeks. Industry tuned snapshots cut this dramatically because we are not rebuilding the same flows from scratch every engagement.",
+      },
+    ],
   },
   {
     slug: "ai-voice-agents",
@@ -89,6 +119,33 @@ export const solutions: Solution[] = [
       "Owner operators who answer phones themselves, lose calls during jobs, or burn hours on unqualified tire kickers.",
     legacyPaths: ["/services/ai-voice-receptionists"],
     group: "capture",
+    faqs: [
+      {
+        question: "What is an AI voice receptionist?",
+        answer:
+          "An AI voice receptionist is a software agent that answers inbound phone calls, holds a natural conversation with the caller, qualifies them, and books the job into your calendar. It runs 24/7, never takes a sick day, and hands off to a human when the call needs one.",
+      },
+      {
+        question: "How much does an AI voice receptionist cost?",
+        answer:
+          "Pricing varies with call volume and complexity. Self serve tools start around USD 50 to 150 per month for low volume. Custom agents tuned to a specific industry and integrated with your CRM and calendar typically run USD 300 to 1,500 per month, with measurable ROI for any business losing more than a couple of after hours calls per week.",
+      },
+      {
+        question: "Can an AI voice agent book appointments directly into my calendar?",
+        answer:
+          "Yes. Our AI voice agents integrate with GoHighLevel, Google Calendar, HubSpot, and most modern booking systems. The agent checks live availability, holds the slot during the call, and writes the appointment back with full call notes attached.",
+      },
+      {
+        question: "Do AI receptionists work for tradies and home service businesses?",
+        answer:
+          "Yes, this is one of the strongest use cases. Plumbers, HVAC technicians, electricians, and roofers are usually on tools when calls come in. An AI voice agent answers every call, qualifies the job (emergency vs routine), books the visit, and texts the owner a summary, recovering revenue that otherwise goes to whichever competitor picks up first.",
+      },
+      {
+        question: "Will the AI voice agent sound robotic?",
+        answer:
+          "Modern voice agents use streaming neural voices that handle interruptions, pauses, and casual phrasing. Most callers cannot tell they are speaking to an AI in the first 30 seconds. We tune prompts, pacing, and accent for each market (US English, Australian English, bilingual Spanish where needed).",
+      },
+    ],
   },
   {
     slug: "missed-call-text-back",
@@ -701,7 +758,7 @@ export const aboutPrinciples = [
 
 export const companyProfile = {
   name: "DigitalX Solutions",
-  email: "info@digitalxsolutions.com",
+  email: "info@digitalx-solutions.com",
   location: "16 Boldrewood Ave, Casula, NSW 2170, Australia | Serving USA + Australia",
   tagline: "Stop losing revenue to missed calls and slow follow ups.",
   phone: "+61 451 413 786",

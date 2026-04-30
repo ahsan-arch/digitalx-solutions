@@ -4,7 +4,7 @@ import { solutions } from "@/data/redesign";
 import { industries } from "@/data/industries";
 
 const INDEX_NOW_KEY = "3c12d5a79b40fe68";
-const SITE = "https://digitalxsolutions.com";
+const SITE = "https://digitalx-solutions.com";
 
 const STATIC_PATHS = [
     "/",
@@ -46,7 +46,7 @@ export async function GET() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                host: "digitalxsolutions.com",
+                host: "digitalx-solutions.com",
                 key: INDEX_NOW_KEY,
                 keyLocation: `${SITE}/${INDEX_NOW_KEY}.txt`,
                 urlList,
