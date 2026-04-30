@@ -195,8 +195,9 @@ export function generateOrganizationSchema() {
                 },
                 telephone: "+61 451 413 786",
                 sameAs: [
-                    "https://instagram.com/digitalx_solutions",
-                    "https://facebook.com/digitalx_solutions",
+                    "https://www.instagram.com/digitalx_solutions/",
+                    "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
+                    "https://www.linkedin.com/company/digitalx-solutions-aus/",
                 ],
                 foundingDate: "2022",
                 numberOfEmployees: {
