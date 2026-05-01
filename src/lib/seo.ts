@@ -483,6 +483,24 @@ export function generateServicePageSchema(service: {
     };
 }
 
+export function generateReviewSchema(testimonial: {
+    quote: string;
+    author: string;
+    role: string;
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        itemReviewed: { "@id": `${siteConfig.domain}/#organization` },
+        author: {
+            "@type": "Person",
+            name: testimonial.author,
+            jobTitle: testimonial.role,
+        },
+        reviewBody: testimonial.quote,
+    };
+}
+
 export function generateArticleSchema(article: {
     headline: string;
     description: string;

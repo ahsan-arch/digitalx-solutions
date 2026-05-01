@@ -1,6 +1,10 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { ArrowRight, Quote } from "lucide-react";
+import {
+  generateBreadcrumbSchema,
+  generateReviewSchema,
+  siteConfig,
+} from "@/lib/seo";
 import { HeroIllustration, TiltCard } from "@/components/ui";
 import {
   heroMetrics,
@@ -8,6 +12,7 @@ import {
   solutions,
   developmentProjects,
   results,
+  testimonials,
 } from "@/data/redesign";
 import { industryCategories } from "@/data/industries";
 
@@ -22,6 +27,15 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {testimonials.map((t) => (
+        <script
+          key={t.author}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateReviewSchema(t)),
+          }}
+        />
+      ))}
 
       <main id="main" className="pb-24">
         <section className="container-shell pt-14 md:pt-20">
@@ -269,6 +283,35 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        {testimonials.length > 0 && (
+          <section className="container-shell mt-16">
+            <div className="mb-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">In their words</p>
+              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
+                What clients say about working with us
+              </h2>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3">
+              {testimonials.map((t) => (
+                <figure
+                  key={t.author}
+                  className="flex flex-col rounded-2xl border border-border bg-surface-50 p-6"
+                >
+                  <Quote className="h-6 w-6 text-brand/50" aria-hidden />
+                  <blockquote className="mt-4 text-base leading-relaxed text-foreground/85">
+                    {t.quote}
+                  </blockquote>
+                  <figcaption className="mt-auto border-t border-border pt-4">
+                    <div className="font-semibold text-foreground">{t.author}</div>
+                    <div className="text-sm text-foreground/65">{t.role}</div>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="container-shell mt-16">
           <div className="rounded-3xl border border-border bg-foreground px-6 py-12 text-white md:px-10">
