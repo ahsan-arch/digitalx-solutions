@@ -5,6 +5,10 @@ import { Footer } from "@/components/layout";
 import { SiteHeader } from "@/components/layout/site-header";
 import { MobileBookCall } from "@/components/navigation/mobile-book-call";
 import {
+  GoogleTagManager,
+  GoogleTagManagerNoscript,
+} from "@/components/analytics/gtm";
+import {
   generateOrganizationSchema,
   generateWebSiteSchema,
   seoCopy,
@@ -117,6 +121,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <GoogleTagManager />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
@@ -133,6 +138,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
       >
+        <GoogleTagManagerNoscript />
         <SiteHeader />
         <div className="relative min-h-screen pt-20">
           {children}
