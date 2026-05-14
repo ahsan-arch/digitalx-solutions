@@ -11,6 +11,7 @@ export const primaryNavigation: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Insights", href: "/insights" },
+  { label: "Voice Demo", href: "/try-voice-agent" },
 ];
 
 export const heroMetrics = [
