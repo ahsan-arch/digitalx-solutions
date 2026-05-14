@@ -146,25 +146,40 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
 
       try {
         // Primary: Microsoft Edge Neural TTS (free Azure voices).
+        // Wrapped in a hard 6 s timeout — msedge-tts uses a WebSocket to
+        // Microsoft's speech service, which can stall on serverless runtimes.
+        // If it hasn't responded by then, fall through to Groq.
         if (voice.edgeTtsVoice) {
+          const edgeTimeout = new AbortController();
+          const linkAbort = () => edgeTimeout.abort();
+          ctrl.signal.addEventListener("abort", linkAbort);
+          const timer = setTimeout(() => edgeTimeout.abort(), 6000);
           try {
             const res = await fetch("/api/voice-agent/edge-tts", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ text, voice: voice.edgeTtsVoice }),
-              signal: ctrl.signal,
+              signal: edgeTimeout.signal,
             });
             if (res.ok) {
               const blob = await res.blob();
               if (blob.size > 0) {
+                clearTimeout(timer);
+                ctrl.signal.removeEventListener("abort", linkAbort);
                 await playAudioBlob(blob, ctrl.signal);
                 return;
               }
             }
-            // res not ok → fall through to Groq / ElevenLabs / browser
-          } catch {
-            if (ctrl.signal.aborted) return;
+          } catch (err) {
+            if (ctrl.signal.aborted) {
+              clearTimeout(timer);
+              ctrl.signal.removeEventListener("abort", linkAbort);
+              return;
+            }
+            console.warn("[voice-agent] edge-tts failed, falling back", err);
           }
+          clearTimeout(timer);
+          ctrl.signal.removeEventListener("abort", linkAbort);
         }
 
         // Secondary: Groq PlayAI cloud TTS.

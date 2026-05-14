@@ -59,33 +59,61 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unknown voice" }, { status: 400 });
   }
 
+  const HARD_TIMEOUT_MS = 5000;
+
   try {
     const tts = new MsEdgeTTS();
-    await tts.setMetadata(
-      parsed.data.voice,
-      OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3
-    );
-    const { audioStream } = await tts.toStream(parsed.data.text);
+    const closeTts = () => {
+      try {
+        tts.close();
+      } catch {}
+    };
 
-    const chunks: Buffer[] = [];
-    await new Promise<void>((resolve, reject) => {
-      audioStream.on("data", (chunk: Buffer) => chunks.push(chunk));
-      audioStream.on("end", () => resolve());
-      audioStream.on("close", () => resolve());
-      audioStream.on("error", (err: unknown) => reject(err));
-    });
+    const result = await Promise.race<
+      | { ok: true; buffer: Buffer }
+      | { ok: false; reason: string }
+    >([
+      (async () => {
+        try {
+          await tts.setMetadata(
+            parsed.data.voice,
+            OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3
+          );
+          const { audioStream } = await tts.toStream(parsed.data.text);
+          const chunks: Buffer[] = [];
+          await new Promise<void>((resolve, reject) => {
+            audioStream.on("data", (chunk: Buffer) => chunks.push(chunk));
+            audioStream.on("end", () => resolve());
+            audioStream.on("close", () => resolve());
+            audioStream.on("error", (err: unknown) => reject(err));
+          });
+          if (chunks.length === 0) {
+            return { ok: false as const, reason: "empty audio stream" };
+          }
+          return { ok: true as const, buffer: Buffer.concat(chunks) };
+        } catch (err) {
+          return {
+            ok: false as const,
+            reason: (err as Error)?.message ?? String(err),
+          };
+        }
+      })(),
+      new Promise<{ ok: false; reason: string }>((resolve) =>
+        setTimeout(
+          () => resolve({ ok: false as const, reason: "timeout" }),
+          HARD_TIMEOUT_MS
+        )
+      ),
+    ]);
 
-    try {
-      tts.close();
-    } catch {}
+    closeTts();
 
-    if (chunks.length === 0) {
-      console.error("Edge TTS produced no audio for voice", parsed.data.voice);
-      return NextResponse.json({ error: "TTS produced no audio" }, { status: 502 });
+    if (!result.ok) {
+      console.error("Edge TTS failed:", result.reason, "voice=", parsed.data.voice);
+      return NextResponse.json({ error: result.reason }, { status: 502 });
     }
 
-    const audioBuffer = Buffer.concat(chunks);
-    return new Response(new Uint8Array(audioBuffer), {
+    return new Response(new Uint8Array(result.buffer), {
       headers: {
         "Content-Type": "audio/mpeg",
         "Cache-Control": "no-store",
