@@ -49,6 +49,11 @@ export const seoCopy = {
         description:
             "Deploy 24/7 AI voice agents that answer phones, book appointments & qualify leads. Custom automation for dental clinics, salons & medical practices.",
     },
+    tryVoiceAgent: {
+        title: "Try an AI Voice Agent Live | Free Demo for Your Business",
+        description:
+            "Tell us about your business, pick a voice, and have a live two way conversation with an AI receptionist trained on your details. Free to try.",
+    },
 };
 
 // ── Primary target keywords for metadata ──

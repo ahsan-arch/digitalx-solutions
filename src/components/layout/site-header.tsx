@@ -27,7 +27,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-7" aria-label="Primary navigation">
           {primaryNavigation.map((item) => {
             const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
@@ -35,7 +35,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors",
+                  "whitespace-nowrap text-sm font-medium transition-colors",
                   isActive ? "text-foreground" : "text-foreground/65 hover:text-foreground"
                 )}
               >
