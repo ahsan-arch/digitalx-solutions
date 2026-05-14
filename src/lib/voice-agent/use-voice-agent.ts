@@ -255,11 +255,26 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     if (activeRef.current) return;
 
     // Mobile audio unlock (must run inside the user click — before any await).
+    // Two separate unlocks needed on iOS Safari:
+    //   1. <audio> element — for ElevenLabs MP3 playback
+    //   2. speechSynthesis — for browser TTS path
+    // Each requires being invoked synchronously inside a user gesture.
     try {
       const audio = audioRef.current ?? new Audio();
       audio.src = SILENT_WAV;
       audio.play().catch(() => {});
       audioRef.current = audio;
+    } catch {}
+    try {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        const unlock = new SpeechSynthesisUtterance(" ");
+        unlock.volume = 0;
+        unlock.rate = 1;
+        window.speechSynthesis.speak(unlock);
+        // Some iOS versions need an explicit cancel of the silent utterance
+        // before the queue accepts the next real one.
+        window.speechSynthesis.cancel();
+      }
     } catch {}
 
     activeRef.current = true;
