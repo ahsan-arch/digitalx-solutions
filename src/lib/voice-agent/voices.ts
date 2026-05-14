@@ -7,6 +7,11 @@ export type Voice = {
   kind: VoiceKind;
   /** Optional badge text shown next to the label, e.g. "HOT" for the recommended voice. */
   badge?: string;
+  /**
+   * Groq PlayAI voice ID — when set, the agent uses Groq's cloud TTS so the same
+   * voice plays on every device. Falls back to browser TTS if the request fails.
+   */
+  groqVoice?: string;
   /** Used in `speechSynthesis.getVoices()` matching. Lower index = stronger preference. */
   browserVoiceMatchers?: RegExp[];
   /** Fallback gender preference if no matcher hits. */
@@ -18,9 +23,10 @@ export const voices: Voice[] = [
   {
     id: "aria",
     label: "Aria",
-    description: "Warm, friendly female voice. Microsoft neural / Google US English.",
+    description: "Warm, friendly female voice. Same voice on every device.",
     kind: "standard",
     badge: "HOT",
+    groqVoice: "Arista-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Aria Online/i,
       /Microsoft Aria/i,
@@ -32,8 +38,9 @@ export const voices: Voice[] = [
   {
     id: "jenny",
     label: "Jenny",
-    description: "Calm, professional female voice. Microsoft neural.",
+    description: "Calm, professional female voice. Same voice on every device.",
     kind: "standard",
+    groqVoice: "Eleanor-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Jenny Online/i,
       /Microsoft Jenny/i,
@@ -47,8 +54,9 @@ export const voices: Voice[] = [
   {
     id: "guy",
     label: "Guy",
-    description: "Friendly, approachable male voice. Microsoft neural.",
+    description: "Friendly, approachable male voice. Same voice on every device.",
     kind: "standard",
+    groqVoice: "Atlas-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Guy Online/i,
       /Microsoft Guy/i,
@@ -61,8 +69,9 @@ export const voices: Voice[] = [
   {
     id: "roger",
     label: "Roger",
-    description: "Confident, news-anchor male voice. Microsoft neural.",
+    description: "Confident, news-anchor male voice. Same voice on every device.",
     kind: "standard",
+    groqVoice: "Thunder-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Roger Online/i,
       /Microsoft Steffan Online/i,

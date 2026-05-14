@@ -66,7 +66,52 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
     abortRef.current = ctrl;
     setPlayingId(voice.id);
 
+    const playBlob = (blob: Blob) =>
+      new Promise<void>((resolve) => {
+        const url = URL.createObjectURL(blob);
+        const audio = audioRef.current ?? new Audio();
+        audio.src = url;
+        audioRef.current = audio;
+        const done = () => {
+          audio.removeEventListener("ended", done);
+          audio.removeEventListener("error", done);
+          URL.revokeObjectURL(url);
+          resolve();
+        };
+        audio.addEventListener("ended", done);
+        audio.addEventListener("error", done);
+        ctrl.signal.addEventListener(
+          "abort",
+          () => {
+            try {
+              audio.pause();
+            } catch {}
+            done();
+          },
+          { once: true }
+        );
+        audio.play().catch(done);
+      });
+
     try {
+      // Prefer Groq cloud TTS for cross-device parity.
+      if (voice.groqVoice) {
+        const res = await fetch("/api/voice-agent/speech", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: SAMPLE_TEXT, voice: voice.groqVoice }),
+          signal: ctrl.signal,
+        });
+        if (res.ok && res.body) {
+          const blob = await res.blob();
+          if (blob.size > 0) {
+            await playBlob(blob);
+            return;
+          }
+        }
+        // Fall through to other paths if Groq failed.
+      }
+
       if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
         const res = await fetch("/api/voice-agent/tts", {
           method: "POST",
@@ -74,42 +119,18 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
           body: JSON.stringify({ text: SAMPLE_TEXT, voiceId: voice.elevenLabsVoiceId }),
           signal: ctrl.signal,
         });
-        if (res.headers.get("X-TTS-Fallback") === "1" || !res.ok) {
-          setPremiumUnavailable(true);
-          const browserVoice = assignmentsRef.current.get(voice.id) ?? null;
-          await speakWithBrowser(SAMPLE_TEXT, browserVoice, ctrl.signal);
-        } else {
+        if (res.ok && res.headers.get("X-TTS-Fallback") !== "1") {
           const blob = await res.blob();
-          const url = URL.createObjectURL(blob);
-          const audio = audioRef.current ?? new Audio();
-          audio.src = url;
-          audioRef.current = audio;
-          await new Promise<void>((resolve) => {
-            const done = () => {
-              audio.removeEventListener("ended", done);
-              audio.removeEventListener("error", done);
-              URL.revokeObjectURL(url);
-              resolve();
-            };
-            audio.addEventListener("ended", done);
-            audio.addEventListener("error", done);
-            ctrl.signal.addEventListener(
-              "abort",
-              () => {
-                try {
-                  audio.pause();
-                } catch {}
-                done();
-              },
-              { once: true }
-            );
-            audio.play().catch(done);
-          });
+          if (blob.size > 0) {
+            await playBlob(blob);
+            return;
+          }
         }
-      } else {
-        const browserVoice = assignmentsRef.current.get(voice.id) ?? null;
-        await speakWithBrowser(SAMPLE_TEXT, browserVoice, ctrl.signal);
+        setPremiumUnavailable(true);
       }
+
+      const browserVoice = assignmentsRef.current.get(voice.id) ?? null;
+      await speakWithBrowser(SAMPLE_TEXT, browserVoice, ctrl.signal);
     } catch {
       // ignore
     } finally {

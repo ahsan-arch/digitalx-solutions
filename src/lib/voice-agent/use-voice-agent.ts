@@ -97,7 +97,44 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     };
   }, []);
 
-  /* ───────── Play a chunk of text in the chosen voice ───────── */
+  /** Play an audio Blob and resolve when ended / aborted. */
+  const playAudioBlob = useCallback(
+    (blob: Blob, signal: AbortSignal): Promise<void> => {
+      return new Promise((resolve) => {
+        const url = URL.createObjectURL(blob);
+        const audio = audioRef.current ?? new Audio();
+        audioRef.current = audio;
+        audio.src = url;
+        const onDone = () => {
+          audio.removeEventListener("ended", onDone);
+          audio.removeEventListener("error", onDone);
+          URL.revokeObjectURL(url);
+          resolve();
+        };
+        audio.addEventListener("ended", onDone);
+        audio.addEventListener("error", onDone);
+        signal.addEventListener(
+          "abort",
+          () => {
+            try {
+              audio.pause();
+            } catch {}
+            onDone();
+          },
+          { once: true }
+        );
+        audio.play().catch(onDone);
+      });
+    },
+    []
+  );
+
+  /* ───────── Play a chunk of text in the chosen voice ─────────
+   * Preference order:
+   *   1. Groq PlayAI TTS  — cloud, same voice on every device, ~300ms latency
+   *   2. ElevenLabs TTS   — when voice.kind === "premium" and key is set
+   *   3. Browser TTS      — device-specific voices, instant fallback
+   */
   const speakChunk = useCallback(
     async (text: string): Promise<void> => {
       if (!text.trim() || !activeRef.current) return;
@@ -106,58 +143,59 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
       const ctrl = new AbortController();
       speakAbortRef.current = ctrl;
 
-      if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
-        try {
-          const res = await fetch("/api/voice-agent/tts", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text, voiceId: voice.elevenLabsVoiceId }),
-            signal: ctrl.signal,
-          });
-          if (res.headers.get("X-TTS-Fallback") === "1" || !res.ok) {
-            setPremiumFallbackNotice(true);
-            await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
-          } else {
-            const blob = await res.blob();
-            const url = URL.createObjectURL(blob);
-            const audio = audioRef.current ?? new Audio();
-            audioRef.current = audio;
-            audio.src = url;
-            await new Promise<void>((resolve) => {
-              const onDone = () => {
-                audio.removeEventListener("ended", onDone);
-                audio.removeEventListener("error", onDone);
-                URL.revokeObjectURL(url);
-                resolve();
-              };
-              audio.addEventListener("ended", onDone);
-              audio.addEventListener("error", onDone);
-              ctrl.signal.addEventListener(
-                "abort",
-                () => {
-                  try {
-                    audio.pause();
-                  } catch {}
-                  onDone();
-                },
-                { once: true }
-              );
-              audio.play().catch(onDone);
+      try {
+        // Cloud TTS (Groq) — uniform voice across devices.
+        if (voice.groqVoice) {
+          try {
+            const res = await fetch("/api/voice-agent/speech", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text, voice: voice.groqVoice }),
+              signal: ctrl.signal,
             });
-          }
-        } catch {
-          if (!ctrl.signal.aborted) {
-            setPremiumFallbackNotice(true);
-            await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
+            if (res.ok && res.body) {
+              const blob = await res.blob();
+              if (blob.size > 0) {
+                await playAudioBlob(blob, ctrl.signal);
+                return;
+              }
+            }
+            // res not ok → fall through to ElevenLabs or browser
+          } catch {
+            if (ctrl.signal.aborted) return;
           }
         }
-      } else {
-        await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
-      }
 
-      if (speakAbortRef.current === ctrl) speakAbortRef.current = null;
+        // ElevenLabs path (Premium voices)
+        if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
+          try {
+            const res = await fetch("/api/voice-agent/tts", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text, voiceId: voice.elevenLabsVoiceId }),
+              signal: ctrl.signal,
+            });
+            if (res.ok && res.headers.get("X-TTS-Fallback") !== "1") {
+              const blob = await res.blob();
+              if (blob.size > 0) {
+                await playAudioBlob(blob, ctrl.signal);
+                return;
+              }
+            }
+            setPremiumFallbackNotice(true);
+          } catch {
+            if (ctrl.signal.aborted) return;
+            setPremiumFallbackNotice(true);
+          }
+        }
+
+        // Last resort: browser native TTS (device-specific voice).
+        await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
+      } finally {
+        if (speakAbortRef.current === ctrl) speakAbortRef.current = null;
+      }
     },
-    [voice]
+    [voice, playAudioBlob]
   );
 
   /* ───────── Stream agent reply: LLM → sentence-by-sentence TTS ───────── */
