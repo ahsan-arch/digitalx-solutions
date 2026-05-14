@@ -8,8 +8,12 @@ export type Voice = {
   /** Optional badge text shown next to the label, e.g. "HOT" for the recommended voice. */
   badge?: string;
   /**
-   * Groq PlayAI voice ID — when set, the agent uses Groq's cloud TTS so the same
-   * voice plays on every device. Falls back to browser TTS if the request fails.
+   * Microsoft Edge Neural TTS voice. Free, no API key, premium quality —
+   * the same Azure Neural voices Windows 11 ships with. Primary path.
+   */
+  edgeTtsVoice?: string;
+  /**
+   * Groq PlayAI voice ID — secondary fallback if edge-tts is unavailable.
    */
   groqVoice?: string;
   /** Used in `speechSynthesis.getVoices()` matching. Lower index = stronger preference. */
@@ -23,9 +27,10 @@ export const voices: Voice[] = [
   {
     id: "aria",
     label: "Aria",
-    description: "Warm, friendly female voice. Same voice on every device.",
+    description: "Warm, friendly female voice. Azure Neural, same on every device.",
     kind: "standard",
     badge: "HOT",
+    edgeTtsVoice: "en-US-AriaNeural",
     groqVoice: "Arista-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Aria Online/i,
@@ -38,8 +43,9 @@ export const voices: Voice[] = [
   {
     id: "jenny",
     label: "Jenny",
-    description: "Calm, professional female voice. Same voice on every device.",
+    description: "Calm, professional female voice. Azure Neural, same on every device.",
     kind: "standard",
+    edgeTtsVoice: "en-US-JennyNeural",
     groqVoice: "Eleanor-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Jenny Online/i,
@@ -54,8 +60,9 @@ export const voices: Voice[] = [
   {
     id: "guy",
     label: "Guy",
-    description: "Friendly, approachable male voice. Same voice on every device.",
+    description: "Friendly, approachable male voice. Azure Neural, same on every device.",
     kind: "standard",
+    edgeTtsVoice: "en-US-GuyNeural",
     groqVoice: "Atlas-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Guy Online/i,
@@ -69,8 +76,9 @@ export const voices: Voice[] = [
   {
     id: "roger",
     label: "Roger",
-    description: "Confident, news-anchor male voice. Same voice on every device.",
+    description: "Confident, news-anchor male voice. Azure Neural, same on every device.",
     kind: "standard",
+    edgeTtsVoice: "en-US-RogerNeural",
     groqVoice: "Thunder-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Roger Online/i,

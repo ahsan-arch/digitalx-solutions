@@ -131,9 +131,10 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
 
   /* ───────── Play a chunk of text in the chosen voice ─────────
    * Preference order:
-   *   1. Groq PlayAI TTS  — cloud, same voice on every device, ~300ms latency
-   *   2. ElevenLabs TTS   — when voice.kind === "premium" and key is set
-   *   3. Browser TTS      — device-specific voices, instant fallback
+   *   1. Edge Neural TTS  — Azure-grade, free, no key, same voice everywhere
+   *   2. Groq PlayAI TTS  — cloud fallback if Edge fails
+   *   3. ElevenLabs TTS   — when voice.kind === "premium" and key is set
+   *   4. Browser TTS      — device-specific voices, instant final fallback
    */
   const speakChunk = useCallback(
     async (text: string): Promise<void> => {
@@ -144,7 +145,29 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
       speakAbortRef.current = ctrl;
 
       try {
-        // Cloud TTS (Groq) — uniform voice across devices.
+        // Primary: Microsoft Edge Neural TTS (free Azure voices).
+        if (voice.edgeTtsVoice) {
+          try {
+            const res = await fetch("/api/voice-agent/edge-tts", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text, voice: voice.edgeTtsVoice }),
+              signal: ctrl.signal,
+            });
+            if (res.ok) {
+              const blob = await res.blob();
+              if (blob.size > 0) {
+                await playAudioBlob(blob, ctrl.signal);
+                return;
+              }
+            }
+            // res not ok → fall through to Groq / ElevenLabs / browser
+          } catch {
+            if (ctrl.signal.aborted) return;
+          }
+        }
+
+        // Secondary: Groq PlayAI cloud TTS.
         if (voice.groqVoice) {
           try {
             const res = await fetch("/api/voice-agent/speech", {
@@ -160,13 +183,12 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
                 return;
               }
             }
-            // res not ok → fall through to ElevenLabs or browser
           } catch {
             if (ctrl.signal.aborted) return;
           }
         }
 
-        // ElevenLabs path (Premium voices)
+        // ElevenLabs path (Premium voices).
         if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
           try {
             const res = await fetch("/api/voice-agent/tts", {

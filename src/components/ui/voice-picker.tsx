@@ -94,7 +94,24 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
       });
 
     try {
-      // Prefer Groq cloud TTS for cross-device parity.
+      // Primary: Microsoft Edge Neural TTS.
+      if (voice.edgeTtsVoice) {
+        const res = await fetch("/api/voice-agent/edge-tts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: SAMPLE_TEXT, voice: voice.edgeTtsVoice }),
+          signal: ctrl.signal,
+        });
+        if (res.ok) {
+          const blob = await res.blob();
+          if (blob.size > 0) {
+            await playBlob(blob);
+            return;
+          }
+        }
+      }
+
+      // Secondary: Groq PlayAI cloud TTS.
       if (voice.groqVoice) {
         const res = await fetch("/api/voice-agent/speech", {
           method: "POST",
@@ -109,7 +126,6 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
             return;
           }
         }
-        // Fall through to other paths if Groq failed.
       }
 
       if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
