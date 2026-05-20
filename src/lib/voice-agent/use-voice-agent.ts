@@ -97,7 +97,45 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     };
   }, []);
 
-  /* ───────── Play a chunk of text in the chosen voice ───────── */
+  /** Play an audio Blob and resolve when ended / aborted. */
+  const playAudioBlob = useCallback(
+    (blob: Blob, signal: AbortSignal): Promise<void> => {
+      return new Promise((resolve) => {
+        const url = URL.createObjectURL(blob);
+        const audio = audioRef.current ?? new Audio();
+        audioRef.current = audio;
+        audio.src = url;
+        const onDone = () => {
+          audio.removeEventListener("ended", onDone);
+          audio.removeEventListener("error", onDone);
+          URL.revokeObjectURL(url);
+          resolve();
+        };
+        audio.addEventListener("ended", onDone);
+        audio.addEventListener("error", onDone);
+        signal.addEventListener(
+          "abort",
+          () => {
+            try {
+              audio.pause();
+            } catch {}
+            onDone();
+          },
+          { once: true }
+        );
+        audio.play().catch(onDone);
+      });
+    },
+    []
+  );
+
+  /* ───────── Play a chunk of text in the chosen voice ─────────
+   * Preference order:
+   *   1. Edge Neural TTS  — Azure-grade, free, no key, same voice everywhere
+   *   2. Groq PlayAI TTS  — cloud fallback if Edge fails
+   *   3. ElevenLabs TTS   — when voice.kind === "premium" and key is set
+   *   4. Browser TTS      — device-specific voices, instant final fallback
+   */
   const speakChunk = useCallback(
     async (text: string): Promise<void> => {
       if (!text.trim() || !activeRef.current) return;
@@ -106,58 +144,95 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
       const ctrl = new AbortController();
       speakAbortRef.current = ctrl;
 
-      if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
-        try {
-          const res = await fetch("/api/voice-agent/tts", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text, voiceId: voice.elevenLabsVoiceId }),
-            signal: ctrl.signal,
-          });
-          if (res.headers.get("X-TTS-Fallback") === "1" || !res.ok) {
-            setPremiumFallbackNotice(true);
-            await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
-          } else {
-            const blob = await res.blob();
-            const url = URL.createObjectURL(blob);
-            const audio = audioRef.current ?? new Audio();
-            audioRef.current = audio;
-            audio.src = url;
-            await new Promise<void>((resolve) => {
-              const onDone = () => {
-                audio.removeEventListener("ended", onDone);
-                audio.removeEventListener("error", onDone);
-                URL.revokeObjectURL(url);
-                resolve();
-              };
-              audio.addEventListener("ended", onDone);
-              audio.addEventListener("error", onDone);
-              ctrl.signal.addEventListener(
-                "abort",
-                () => {
-                  try {
-                    audio.pause();
-                  } catch {}
-                  onDone();
-                },
-                { once: true }
-              );
-              audio.play().catch(onDone);
+      try {
+        // Primary: Microsoft Edge Neural TTS (free Azure voices).
+        // Wrapped in a hard 6 s timeout — msedge-tts uses a WebSocket to
+        // Microsoft's speech service, which can stall on serverless runtimes.
+        // If it hasn't responded by then, fall through to Groq.
+        if (voice.edgeTtsVoice) {
+          const edgeTimeout = new AbortController();
+          const linkAbort = () => edgeTimeout.abort();
+          ctrl.signal.addEventListener("abort", linkAbort);
+          const timer = setTimeout(() => edgeTimeout.abort(), 6000);
+          try {
+            const res = await fetch("/api/voice-agent/edge-tts", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text, voice: voice.edgeTtsVoice }),
+              signal: edgeTimeout.signal,
             });
+            if (res.ok) {
+              const blob = await res.blob();
+              if (blob.size > 0) {
+                clearTimeout(timer);
+                ctrl.signal.removeEventListener("abort", linkAbort);
+                await playAudioBlob(blob, ctrl.signal);
+                return;
+              }
+            }
+          } catch (err) {
+            if (ctrl.signal.aborted) {
+              clearTimeout(timer);
+              ctrl.signal.removeEventListener("abort", linkAbort);
+              return;
+            }
+            console.warn("[voice-agent] edge-tts failed, falling back", err);
           }
-        } catch {
-          if (!ctrl.signal.aborted) {
-            setPremiumFallbackNotice(true);
-            await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
+          clearTimeout(timer);
+          ctrl.signal.removeEventListener("abort", linkAbort);
+        }
+
+        // Secondary: Groq PlayAI cloud TTS.
+        if (voice.groqVoice) {
+          try {
+            const res = await fetch("/api/voice-agent/speech", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text, voice: voice.groqVoice }),
+              signal: ctrl.signal,
+            });
+            if (res.ok && res.body) {
+              const blob = await res.blob();
+              if (blob.size > 0) {
+                await playAudioBlob(blob, ctrl.signal);
+                return;
+              }
+            }
+          } catch {
+            if (ctrl.signal.aborted) return;
           }
         }
-      } else {
-        await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
-      }
 
-      if (speakAbortRef.current === ctrl) speakAbortRef.current = null;
+        // ElevenLabs path (Premium voices).
+        if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
+          try {
+            const res = await fetch("/api/voice-agent/tts", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text, voiceId: voice.elevenLabsVoiceId }),
+              signal: ctrl.signal,
+            });
+            if (res.ok && res.headers.get("X-TTS-Fallback") !== "1") {
+              const blob = await res.blob();
+              if (blob.size > 0) {
+                await playAudioBlob(blob, ctrl.signal);
+                return;
+              }
+            }
+            setPremiumFallbackNotice(true);
+          } catch {
+            if (ctrl.signal.aborted) return;
+            setPremiumFallbackNotice(true);
+          }
+        }
+
+        // Last resort: browser native TTS (device-specific voice).
+        await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
+      } finally {
+        if (speakAbortRef.current === ctrl) speakAbortRef.current = null;
+      }
     },
-    [voice]
+    [voice, playAudioBlob]
   );
 
   /* ───────── Stream agent reply: LLM → sentence-by-sentence TTS ───────── */
@@ -255,11 +330,26 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     if (activeRef.current) return;
 
     // Mobile audio unlock (must run inside the user click — before any await).
+    // Two separate unlocks needed on iOS Safari:
+    //   1. <audio> element — for ElevenLabs MP3 playback
+    //   2. speechSynthesis — for browser TTS path
+    // Each requires being invoked synchronously inside a user gesture.
     try {
       const audio = audioRef.current ?? new Audio();
       audio.src = SILENT_WAV;
       audio.play().catch(() => {});
       audioRef.current = audio;
+    } catch {}
+    try {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        const unlock = new SpeechSynthesisUtterance(" ");
+        unlock.volume = 0;
+        unlock.rate = 1;
+        window.speechSynthesis.speak(unlock);
+        // Some iOS versions need an explicit cancel of the silent utterance
+        // before the queue accepts the next real one.
+        window.speechSynthesis.cancel();
+      }
     } catch {}
 
     activeRef.current = true;

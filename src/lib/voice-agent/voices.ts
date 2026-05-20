@@ -7,6 +7,15 @@ export type Voice = {
   kind: VoiceKind;
   /** Optional badge text shown next to the label, e.g. "HOT" for the recommended voice. */
   badge?: string;
+  /**
+   * Microsoft Edge Neural TTS voice. Free, no API key, premium quality —
+   * the same Azure Neural voices Windows 11 ships with. Primary path.
+   */
+  edgeTtsVoice?: string;
+  /**
+   * Groq PlayAI voice ID — secondary fallback if edge-tts is unavailable.
+   */
+  groqVoice?: string;
   /** Used in `speechSynthesis.getVoices()` matching. Lower index = stronger preference. */
   browserVoiceMatchers?: RegExp[];
   /** Fallback gender preference if no matcher hits. */
@@ -18,9 +27,11 @@ export const voices: Voice[] = [
   {
     id: "aria",
     label: "Aria",
-    description: "Warm, friendly female voice. Microsoft neural / Google US English.",
+    description: "Warm, friendly female voice. Azure Neural, same on every device.",
     kind: "standard",
     badge: "HOT",
+    edgeTtsVoice: "en-US-AriaNeural",
+    groqVoice: "Arista-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Aria Online/i,
       /Microsoft Aria/i,
@@ -32,8 +43,10 @@ export const voices: Voice[] = [
   {
     id: "jenny",
     label: "Jenny",
-    description: "Calm, professional female voice. Microsoft neural.",
+    description: "Calm, professional female voice. Azure Neural, same on every device.",
     kind: "standard",
+    edgeTtsVoice: "en-US-JennyNeural",
+    groqVoice: "Eleanor-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Jenny Online/i,
       /Microsoft Jenny/i,
@@ -47,8 +60,10 @@ export const voices: Voice[] = [
   {
     id: "guy",
     label: "Guy",
-    description: "Friendly, approachable male voice. Microsoft neural.",
+    description: "Friendly, approachable male voice. Azure Neural, same on every device.",
     kind: "standard",
+    edgeTtsVoice: "en-US-GuyNeural",
+    groqVoice: "Atlas-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Guy Online/i,
       /Microsoft Guy/i,
@@ -61,8 +76,10 @@ export const voices: Voice[] = [
   {
     id: "roger",
     label: "Roger",
-    description: "Confident, news-anchor male voice. Microsoft neural.",
+    description: "Confident, news-anchor male voice. Azure Neural, same on every device.",
     kind: "standard",
+    edgeTtsVoice: "en-US-RogerNeural",
+    groqVoice: "Thunder-PlayAI",
     browserVoiceMatchers: [
       /Microsoft Roger Online/i,
       /Microsoft Steffan Online/i,

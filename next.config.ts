@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["framer-motion", "lucide-react"],
   },
-  serverExternalPackages: ["nodemailer"],
+  // msedge-tts + ws need runtime loading (not Webpack bundling) so the native
+  // WebSocket frame-mask helper resolves correctly on serverless.
+  serverExternalPackages: ["nodemailer", "msedge-tts", "ws"],
   async redirects() {
     return [
       // Consolidated secondary services
@@ -87,8 +89,10 @@ const nextConfig: NextConfig = {
             value: "strict-origin-when-cross-origin",
           },
           {
+            // Allow the voice-agent page to request mic permission from this origin.
+            // `self` permits use on the same origin only — third-party iframes still blocked.
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
+            value: "camera=(), microphone=(self), geolocation=()",
           },
           {
             key: "Strict-Transport-Security",
