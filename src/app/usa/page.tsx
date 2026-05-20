@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionIllustration, ServiceAreaMap } from "@/components/ui";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import {
+  generateBreadcrumbSchema,
+  generateLocalBusinessSchema,
+  generatePageMetadata,
+  siteConfig,
+} from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/usa", {
   title: "Automation & AI for US Service Businesses | DigitalX",
@@ -9,17 +14,22 @@ export const metadata: Metadata = generatePageMetadata("/usa", {
     "DigitalX Solutions delivers AI voice agents, Missed call recovery, and CRM automation for US local service businesses across all 50 states.",
 });
 
-const usaLocalBusiness = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": `${siteConfig.domain}/usa#localbusiness`,
+const usaLocalBusiness = generateLocalBusinessSchema({
+  pathname: "/usa",
   name: "DigitalX Solutions, USA",
-  url: `${siteConfig.domain}/usa`,
-  email: "info@digitalx-solutions.com",
-  areaServed: { "@type": "Country", name: "United States" },
   description:
-    "AI voice agents, Missed call text back, CRM automation, and growth dashboards for US local service businesses.",
-};
+    "AI voice agents, Missed call text back, CRM automation, and growth dashboards for US local service businesses across all 50 states.",
+  addressCountry: "US",
+  areaServed: [
+    { type: "Country", name: "United States" },
+    { type: "City", name: "New York" },
+    { type: "City", name: "Los Angeles" },
+    { type: "City", name: "Chicago" },
+    { type: "City", name: "Miami" },
+    { type: "City", name: "Houston" },
+    { type: "City", name: "Phoenix" },
+  ],
+});
 
 export default function UsaPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([

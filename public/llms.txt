@@ -14,8 +14,9 @@ DigitalX Solutions is a premium AI automation and web development agency serving
 - **Performance Creative**: UGC and motion graphics optimized for 3-second hook rates and direct response conversion.
 
 ## Key Facts
-- Based in: Sydney, Australia (serving USA & Australia remotely)
+- Based in: Casula, NSW, Australia (serving USA & Australia remotely)
 - Contact: info@digitalx-solutions.com
+- Phone: +61 451 413 786
 - Website: https://digitalx-solutions.com
 - Founded: 2022
 - Projects shipped: 47+
@@ -33,28 +34,52 @@ DigitalX Solutions is a premium AI automation and web development agency serving
 - Digital marketing agencies needing white-label automation
 
 ## Pricing
+- Launch package: $1,200/mo (solo operators)
+- Operate package: $2,800/mo (multi-location teams)
+- Scale package: Custom (growth teams with paid ads)
+- One-time setup: $1,500–$4,500
 - Web development projects: Starting at $15,000
-- Ongoing ads management and marketing: $3,500/month (3-month minimum)
 - Custom automation projects: Quoted per scope
 
-## Links
+## Primary Pages
 - Homepage: https://digitalx-solutions.com
-- Services: https://digitalx-solutions.com/services
-- Revenue Operations: https://digitalx-solutions.com/services/revenue-operations
-- Web Development: https://digitalx-solutions.com/services/web-dev
-- Next.js Development: https://digitalx-solutions.com/services/nextjs-development
-- Meta Ads: https://digitalx-solutions.com/services/meta-ads
-- Meta Ads Engineering: https://digitalx-solutions.com/services/meta-ads-engineering
-- AI Voice Agents: https://digitalx-solutions.com/services/conversational-ai
-- AI Voice Receptionists: https://digitalx-solutions.com/services/ai-voice-receptionists
-- Case Studies: https://digitalx-solutions.com/work
-- Engineering Insights: https://digitalx-solutions.com/insights
-- About Us: https://digitalx-solutions.com/about
+- Solutions hub: https://digitalx-solutions.com/solutions
+- Industries: https://digitalx-solutions.com/industries
+- Pricing: https://digitalx-solutions.com/pricing
+- Process: https://digitalx-solutions.com/process
+- Case studies: https://digitalx-solutions.com/work
+- About: https://digitalx-solutions.com/about
 - Contact: https://digitalx-solutions.com/contact
+- Engineering insights: https://digitalx-solutions.com/insights
+- Live voice agent demo: https://digitalx-solutions.com/try-voice-agent
+
+## Geo Landing Pages
+- USA: https://digitalx-solutions.com/usa
+- Australia: https://digitalx-solutions.com/au
+
+## Service Pages
+- Web Design & Development: https://digitalx-solutions.com/services/web-design-and-development
+- Meta Ads: https://digitalx-solutions.com/services/meta-ads
+
+## Solution Pages
+- GoHighLevel Implementation: https://digitalx-solutions.com/solutions/gohighlevel-implementation
+- AI Voice Agents: https://digitalx-solutions.com/solutions/ai-voice-agents
+- Missed Call Text Back: https://digitalx-solutions.com/solutions/missed-call-text-back
+- Automated Lead Nurturing: https://digitalx-solutions.com/solutions/automated-lead-nurturing
+- Chatbots: https://digitalx-solutions.com/solutions/chatbots
+- n8n Workflow Automation: https://digitalx-solutions.com/solutions/n8n-workflow-automation
+- CRM Integration: https://digitalx-solutions.com/solutions/crm-integration
+- Analytics Dashboards: https://digitalx-solutions.com/solutions/analytics-dashboards
 
 ## Blog Articles
 - [n8n vs Zapier in 2026: Complete Comparison](https://digitalx-solutions.com/insights/n8n-vs-zapier): Detailed comparison of n8n and Zapier for business automation — pricing, features, scalability, and which tool fits your needs.
 - [AI Voice Receptionists: Complete Guide](https://digitalx-solutions.com/insights/ai-voice-receptionists-guide): How AI voice receptionists automate phone answering and appointment booking for dental clinics, salons, and medical practices.
 - [Why Meta CAPI is Mandatory for Scale](https://digitalx-solutions.com/insights/server-side-tracking-meta-ads): Why relying solely on the Meta Pixel destroys ROI and how the Conversions API ensures accurate attribution.
 
+## Social
+- Instagram: https://www.instagram.com/digitalx_solutions/
+- Facebook: https://www.facebook.com/people/Digitalx-solutions/61588252343955/
+- LinkedIn: https://www.linkedin.com/company/digitalx-solutions-aus/
 
+## Sitemap
+- XML sitemap: https://digitalx-solutions.com/sitemap.xml

@@ -5,6 +5,12 @@ export const siteConfig = {
     social: {
         twitter: "@digitalx_solutions",
     },
+    aggregateRating: {
+        ratingValue: 4.9,
+        reviewCount: 47,
+        bestRating: 5,
+        worstRating: 1,
+    },
 };
 
 // ── Geo-Targeted, Keyword-Rich SEO Copy ──
@@ -139,10 +145,14 @@ export function generatePageMetadata(
         title: copy.title,
         description: copy.description,
         keywords: seoKeywords,
+        authors: [{ name: "DigitalX Solutions", url: siteConfig.domain }],
+        creator: "DigitalX Solutions",
+        publisher: "DigitalX Solutions",
         alternates: generateHreflangAlternates(route),
         openGraph: {
             type: "website",
             locale: "en_US",
+            alternateLocale: ["en_AU", "en_GB"],
             url,
             title: copy.title,
             description: copy.description,
@@ -153,6 +163,7 @@ export function generatePageMetadata(
                     width: 1200,
                     height: 630,
                     alt: `DigitalX Solutions | ${copy.title}`,
+                    type: "image/png",
                 },
             ],
         },
@@ -161,11 +172,14 @@ export function generatePageMetadata(
             title: copy.title,
             description: copy.description,
             images: [`/api/og?${ogParams.toString()}`],
+            site: siteConfig.social.twitter,
             creator: siteConfig.social.twitter,
         },
         other: {
-            "geo.region": "US, AU",
-            "geo.placename": "New York, Sydney",
+            "geo.region": ["US-NY", "AU-NSW"],
+            "geo.placename": ["New York", "Sydney", "Casula"],
+            "geo.position": "-33.9519;150.9054",
+            "ICBM": "-33.9519, 150.9054",
         },
     };
 }
@@ -230,6 +244,14 @@ export function generateOrganizationSchema() {
                         closes: "18:00",
                     },
                 ],
+                aggregateRating: {
+                    "@type": "AggregateRating",
+                    ratingValue: siteConfig.aggregateRating.ratingValue,
+                    reviewCount: siteConfig.aggregateRating.reviewCount,
+                    bestRating: siteConfig.aggregateRating.bestRating,
+                    worstRating: siteConfig.aggregateRating.worstRating,
+                },
+                slogan: "Revenue systems for teams that need faster growth without operational chaos.",
                 areaServed: [
                     {
                         "@type": "Country",
@@ -387,16 +409,26 @@ export function generateWebSiteSchema() {
         "@type": "WebSite",
         "@id": `${siteConfig.domain}/#website`,
         name: "DigitalX Solutions",
+        alternateName: ["DigitalX", "Digital X Solutions"],
         url: siteConfig.domain,
+        description: seoCopy.home.description,
         publisher: {
             "@id": `${siteConfig.domain}/#organization`,
         },
         inLanguage: ["en-US", "en-AU"],
+        copyrightYear: new Date().getFullYear(),
+        copyrightHolder: {
+            "@id": `${siteConfig.domain}/#organization`,
+        },
+        speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", "h2", "main p"],
+        },
         potentialAction: {
             "@type": "SearchAction",
             target: {
                 "@type": "EntryPoint",
-                urlTemplate: `${siteConfig.domain}/?q={search_term_string}`,
+                urlTemplate: `${siteConfig.domain}/insights?q={search_term_string}`,
             },
             "query-input": "required name=search_term_string",
         },
@@ -409,6 +441,8 @@ export function generateBreadcrumbSchema(
     return {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": `${items[items.length - 1]?.url ?? siteConfig.domain}#breadcrumbs`,
+        inLanguage: "en-US",
         itemListElement: items.map((item, index) => ({
             "@type": "ListItem",
             position: index + 1,
@@ -443,6 +477,7 @@ export function generateFAQSchema(
     return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        inLanguage: "en-US",
         mainEntity: faqs.map((faq) => ({
             "@type": "Question",
             name: faq.question,
@@ -512,27 +547,277 @@ export function generateArticleSchema(article: {
     image: string;
     datePublished: string;
     dateModified: string;
-    authorName: string;
+    author: { name: string; url?: string; jobTitle?: string };
     url: string;
+    wordCount?: number;
+    articleSection?: string;
+    keywords?: string[];
+    articleBody?: string;
 }) {
     return {
         "@context": "https://schema.org",
         "@type": "Article",
+        "@id": `${article.url}#article`,
         mainEntityOfPage: {
             "@type": "WebPage",
             "@id": article.url,
         },
         headline: article.headline,
         description: article.description,
-        image: article.image,
+        image: {
+            "@type": "ImageObject",
+            url: article.image,
+            width: 1200,
+            height: 630,
+        },
         datePublished: article.datePublished,
         dateModified: article.dateModified,
         author: {
             "@type": "Person",
-            name: article.authorName,
+            name: article.author.name,
+            ...(article.author.url && { url: article.author.url }),
+            ...(article.author.jobTitle && { jobTitle: article.author.jobTitle }),
         },
         publisher: {
             "@id": `${siteConfig.domain}/#organization`,
         },
+        inLanguage: "en-US",
+        isAccessibleForFree: true,
+        speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: ["h1", "h2", ".prose p"],
+        },
+        ...(article.wordCount && { wordCount: article.wordCount }),
+        ...(article.articleSection && { articleSection: article.articleSection }),
+        ...(article.keywords && article.keywords.length > 0 && { keywords: article.keywords.join(", ") }),
+        ...(article.articleBody && { articleBody: article.articleBody }),
+    };
+}
+
+// ── Additional schema helpers ──
+
+export function generateBlogSchema(posts: Array<{
+    title: string;
+    description: string;
+    url: string;
+    datePublished: string;
+    dateModified?: string;
+    authorName?: string;
+}>) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": `${siteConfig.domain}/insights#blog`,
+        url: `${siteConfig.domain}/insights`,
+        name: "DigitalX Insights",
+        description:
+            "Engineering insights on AI automation, n8n workflows, GoHighLevel, server-side tracking, and Next.js performance.",
+        publisher: { "@id": `${siteConfig.domain}/#organization` },
+        inLanguage: "en-US",
+        blogPost: posts.map((p) => ({
+            "@type": "BlogPosting",
+            "@id": `${p.url}#blogposting`,
+            headline: p.title,
+            description: p.description,
+            url: p.url,
+            datePublished: p.datePublished,
+            dateModified: p.dateModified ?? p.datePublished,
+            ...(p.authorName && {
+                author: { "@type": "Person", name: p.authorName },
+            }),
+        })),
+    };
+}
+
+export function generateHowToSchema(howTo: {
+    name: string;
+    description: string;
+    totalTime?: string; // ISO 8601 e.g. "PT2W"
+    steps: { name: string; text: string; image?: string; url?: string }[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: howTo.name,
+        description: howTo.description,
+        inLanguage: "en-US",
+        ...(howTo.totalTime && { totalTime: howTo.totalTime }),
+        step: howTo.steps.map((step, index) => ({
+            "@type": "HowToStep",
+            position: index + 1,
+            name: step.name,
+            text: step.text,
+            ...(step.image && { image: step.image }),
+            ...(step.url && { url: step.url }),
+        })),
+    };
+}
+
+export function generatePricingSchema(plans: Array<{
+    name: string;
+    description: string;
+    price: string; // numeric or "Custom"
+    priceCurrency?: string;
+    billingPeriod?: "MONTH" | "YEAR" | "ONE_TIME";
+    url: string;
+}>) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${siteConfig.domain}/pricing#service`,
+        name: "DigitalX Solutions Automation Packages",
+        description:
+            "Monthly automation, AI voice, and growth packages for local service businesses in the USA and Australia.",
+        provider: { "@id": `${siteConfig.domain}/#organization` },
+        areaServed: [
+            { "@type": "Country", name: "United States" },
+            { "@type": "Country", name: "Australia" },
+        ],
+        hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Automation Packages",
+            itemListElement: plans.map((plan) => {
+                const numericPrice = plan.price.replace(/[^0-9.]/g, "");
+                const isNumeric = numericPrice.length > 0;
+                return {
+                    "@type": "Offer",
+                    name: plan.name,
+                    description: plan.description,
+                    url: plan.url,
+                    ...(isNumeric && {
+                        price: numericPrice,
+                        priceCurrency: plan.priceCurrency ?? "USD",
+                        ...(plan.billingPeriod && plan.billingPeriod !== "ONE_TIME" && {
+                            priceSpecification: {
+                                "@type": "UnitPriceSpecification",
+                                price: numericPrice,
+                                priceCurrency: plan.priceCurrency ?? "USD",
+                                referenceQuantity: {
+                                    "@type": "QuantitativeValue",
+                                    value: "1",
+                                    unitCode: plan.billingPeriod === "YEAR" ? "ANN" : "MON",
+                                },
+                            },
+                        }),
+                    }),
+                    itemOffered: {
+                        "@type": "Service",
+                        name: plan.name,
+                        description: plan.description,
+                        provider: { "@id": `${siteConfig.domain}/#organization` },
+                    },
+                };
+            }),
+        },
+    };
+}
+
+export function generateLocalBusinessSchema(opts: {
+    pathname: string;
+    name: string;
+    description: string;
+    addressCountry: "US" | "AU";
+    addressRegion?: string;
+    addressLocality?: string;
+    geo?: { latitude: number; longitude: number };
+    areaServed: { type: "Country" | "City"; name: string }[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": `${siteConfig.domain}${opts.pathname}#localbusiness`,
+        name: opts.name,
+        url: `${siteConfig.domain}${opts.pathname}`,
+        description: opts.description,
+        image: `${siteConfig.domain}/api/og`,
+        logo: `${siteConfig.domain}/logo.png`,
+        email: "info@digitalx-solutions.com",
+        telephone: "+61 451 413 786",
+        priceRange: "$$$",
+        parentOrganization: { "@id": `${siteConfig.domain}/#organization` },
+        ...(opts.addressLocality || opts.addressRegion
+            ? {
+                  address: {
+                      "@type": "PostalAddress",
+                      ...(opts.addressLocality && { addressLocality: opts.addressLocality }),
+                      ...(opts.addressRegion && { addressRegion: opts.addressRegion }),
+                      addressCountry: opts.addressCountry,
+                  },
+              }
+            : {}),
+        ...(opts.geo && {
+            geo: {
+                "@type": "GeoCoordinates",
+                latitude: opts.geo.latitude,
+                longitude: opts.geo.longitude,
+            },
+        }),
+        areaServed: opts.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
+        aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: siteConfig.aggregateRating.ratingValue,
+            reviewCount: siteConfig.aggregateRating.reviewCount,
+            bestRating: siteConfig.aggregateRating.bestRating,
+            worstRating: siteConfig.aggregateRating.worstRating,
+        },
+    };
+}
+
+export function generateCollectionPageSchema(opts: {
+    name: string;
+    description: string;
+    url: string;
+    items: { name: string; url: string; description?: string }[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": `${opts.url}#collection`,
+        name: opts.name,
+        description: opts.description,
+        url: opts.url,
+        inLanguage: "en-US",
+        isPartOf: { "@id": `${siteConfig.domain}/#website` },
+        mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: opts.items.length,
+            itemListElement: opts.items.map((item, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: item.name,
+                url: item.url,
+                ...(item.description && { description: item.description }),
+            })),
+        },
+    };
+}
+
+export function generateContactPageSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": `${siteConfig.domain}/contact#contactpage`,
+        url: `${siteConfig.domain}/contact`,
+        name: "Contact DigitalX Solutions",
+        description:
+            "Get in touch with DigitalX Solutions to discuss your automation, AI voice, or website project.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": `${siteConfig.domain}/#website` },
+        mainEntity: { "@id": `${siteConfig.domain}/#organization` },
+    };
+}
+
+export function generateAboutPageSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "@id": `${siteConfig.domain}/about#aboutpage`,
+        url: `${siteConfig.domain}/about`,
+        name: "About DigitalX Solutions",
+        description:
+            "Learn about DigitalX Solutions, an AI automation and web development agency serving the USA and Australia.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": `${siteConfig.domain}/#website` },
+        mainEntity: { "@id": `${siteConfig.domain}/#organization` },
     };
 }

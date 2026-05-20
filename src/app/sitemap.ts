@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${siteConfig.domain}/about`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/contact`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/insights`, changeFrequency: "weekly" as const, priority: 0.8 },
+        { url: `${siteConfig.domain}/try-voice-agent`, changeFrequency: "weekly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/usa`, changeFrequency: "weekly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/au`, changeFrequency: "weekly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/legal/privacy`, changeFrequency: "yearly" as const, priority: 0.3 },

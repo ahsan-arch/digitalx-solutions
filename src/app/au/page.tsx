@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionIllustration, ServiceAreaMap } from "@/components/ui";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import {
+  generateBreadcrumbSchema,
+  generateLocalBusinessSchema,
+  generatePageMetadata,
+  siteConfig,
+} from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/au", {
   title: "Automation & AI for Australian Service Businesses | DigitalX",
@@ -9,23 +14,25 @@ export const metadata: Metadata = generatePageMetadata("/au", {
     "DigitalX Solutions deploys AI voice agents, Missed call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
 });
 
-const auLocalBusiness = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": `${siteConfig.domain}/au#localbusiness`,
+const auLocalBusiness = generateLocalBusinessSchema({
+  pathname: "/au",
   name: "DigitalX Solutions, Australia",
-  url: `${siteConfig.domain}/au`,
-  email: "info@digitalx-solutions.com",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Casula",
-    addressRegion: "NSW",
-    addressCountry: "AU",
-  },
-  areaServed: { "@type": "Country", name: "Australia" },
   description:
-    "AI voice agents, Missed call text back, CRM automation, and growth dashboards for Australian local service businesses.",
-};
+    "AI voice agents, Missed call text back, CRM automation, and growth dashboards for Australian local service businesses across Sydney, Melbourne, Brisbane, Perth, Adelaide.",
+  addressCountry: "AU",
+  addressLocality: "Casula",
+  addressRegion: "NSW",
+  geo: { latitude: -33.9519, longitude: 150.9054 },
+  areaServed: [
+    { type: "Country", name: "Australia" },
+    { type: "City", name: "Sydney" },
+    { type: "City", name: "Melbourne" },
+    { type: "City", name: "Brisbane" },
+    { type: "City", name: "Perth" },
+    { type: "City", name: "Adelaide" },
+    { type: "City", name: "Canberra" },
+  ],
+});
 
 export default function AuPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([

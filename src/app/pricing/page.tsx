@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { SectionIllustration } from "@/components/ui";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import {
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  generatePageMetadata,
+  generatePricingSchema,
+  siteConfig,
+} from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/pricing", {
   title: "Pricing | DigitalX Solutions Automation Packages",
@@ -57,15 +63,53 @@ const tiers = [
   },
 ];
 
+const pricingFaqs = [
+  {
+    question: "How does DigitalX Solutions pricing work?",
+    answer:
+      "We charge a transparent monthly retainer per package (Launch $1,200, Operate $2,800, Scale Custom) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
+  },
+  {
+    question: "Do you offer custom pricing for high-volume teams?",
+    answer:
+      "Yes. Our Scale package is fully custom for teams running paid ads, multi-channel automation, or high call volumes. Pricing depends on call volume, ad spend managed, and the number of integrations required. Book a strategy call for a tailored quote.",
+  },
+  {
+    question: "Is there a minimum contract length?",
+    answer:
+      "Operate and Scale packages have a 3-month minimum so we have enough runway to build, deploy, and optimise. After that, billing is month-to-month. Launch is fully month-to-month from day one.",
+  },
+  {
+    question: "What is included in the setup fee?",
+    answer:
+      "Setup covers discovery and scoping, AI voice prompt tuning, full GoHighLevel (or your CRM) build, calendar and booking integrations, server-side tracking with CAPI where required, and team SOPs for handover.",
+  },
+];
+
 export default function PricingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
     { name: "Pricing", url: `${siteConfig.domain}/pricing` },
   ]);
 
+  const pricingSchema = generatePricingSchema(
+    tiers.map((tier) => ({
+      name: `${tier.name} Package`,
+      description: tier.summary,
+      price: tier.price === "Custom" ? "Custom" : tier.price,
+      priceCurrency: "USD",
+      billingPeriod: "MONTH",
+      url: `${siteConfig.domain}/pricing#${tier.name.toLowerCase()}`,
+    })),
+  );
+
+  const faqSchema = generateFAQSchema(pricingFaqs);
+
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">

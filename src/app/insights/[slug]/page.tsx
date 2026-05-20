@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import { generateArticleSchema, generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -50,23 +50,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         { name: article.title, url },
     ]);
 
-    const articleSchema = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    const wordCount = article.content.split(/\s+/).filter(Boolean).length;
+    const keywords = article.relatedServices.map((s) => s.label);
+
+    const articleSchema = generateArticleSchema({
         headline: article.title,
         description: article.description,
         image: `${siteConfig.domain}/api/og?title=${encodeURIComponent(article.title)}`,
         datePublished: article.date,
         dateModified: article.dateModified,
-        author: {
-            "@type": "Person",
-            name: author.name,
-            url: author.url,
-            jobTitle: author.role,
-        },
-        publisher: { "@id": `${siteConfig.domain}/#organization` },
-    };
+        author: { name: author.name, url: author.url, jobTitle: author.role },
+        url,
+        wordCount,
+        articleSection: "Engineering Insights",
+        keywords,
+    });
 
     return (
         <>

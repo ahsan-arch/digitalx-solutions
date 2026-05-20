@@ -2,12 +2,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { SectionIllustration } from "@/components/ui";
 import {
+    generateBlogSchema,
     generateBreadcrumbSchema,
     generateItemListSchema,
     generatePageMetadata,
     siteConfig,
 } from "@/lib/seo";
-import { articlesData } from "@/data/insights-articles";
+import { articlesData, authors } from "@/data/insights-articles";
 
 export const metadata: Metadata = generatePageMetadata("/insights", {
     title: "Digital Marketing & Performance Engineering Insights | DigitalX Solutions",
@@ -20,6 +21,8 @@ const articles = Object.entries(articlesData)
         title: a.title,
         description: a.description,
         date: a.date,
+        dateModified: a.dateModified,
+        authorKey: a.authorKey,
         readTime: a.readTime,
     }))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -39,6 +42,17 @@ export default function InsightsPage() {
         }))
     );
 
+    const blogSchema = generateBlogSchema(
+        articles.map((a) => ({
+            title: a.title,
+            description: a.description,
+            url: `${siteConfig.domain}/insights/${a.slug}`,
+            datePublished: a.date,
+            dateModified: a.dateModified,
+            authorName: authors[a.authorKey]?.name,
+        }))
+    );
+
     return (
         <main id="main" className="pb-20 pt-12">
             <script
@@ -48,6 +62,10 @@ export default function InsightsPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
             />
 
             <section className="container-shell">
