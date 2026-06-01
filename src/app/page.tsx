@@ -211,6 +211,9 @@ export default function HomePage() {
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Development</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Featured Projects</h2>
             </div>
+            <Link href="/development" className="text-sm font-semibold text-brand hover:text-brand-deep">
+              View all projects
+            </Link>
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">

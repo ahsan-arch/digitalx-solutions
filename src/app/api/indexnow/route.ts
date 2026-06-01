@@ -13,6 +13,7 @@ const STATIC_PATHS = [
     "/services/web-design-and-development",
     "/services/meta-ads",
     "/work",
+    "/development",
     "/pricing",
     "/process",
     "/about",

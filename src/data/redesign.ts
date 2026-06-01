@@ -798,6 +798,7 @@ export const footerColumns = [
       { label: "About", href: "/about" },
       { label: "Process", href: "/process" },
       { label: "Work", href: "/work" },
+      { label: "Development", href: "/development" },
       { label: "Pricing", href: "/pricing" },
       { label: "Insights", href: "/insights" },
       { label: "Contact", href: "/contact" },

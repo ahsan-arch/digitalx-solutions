@@ -39,7 +39,7 @@ export default async function DevelopmentProjectPage(props: Props) {
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
-    { name: "Development", url: `${siteConfig.domain}/#development` },
+    { name: "Development", url: `${siteConfig.domain}/development` },
     { name: project.name, url: `${siteConfig.domain}/development/${project.slug}` },
   ]);
 
@@ -50,11 +50,11 @@ export default async function DevelopmentProjectPage(props: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Link
-        href="/#development"
+        href="/development"
         className="mb-8 inline-flex items-center text-sm font-medium text-foreground/60 transition hover:text-foreground"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
-        Back to Home
+        Back to projects
       </Link>
 
       <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-16">
