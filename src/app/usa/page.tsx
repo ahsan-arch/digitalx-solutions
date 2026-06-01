@@ -8,11 +8,15 @@ import {
   siteConfig,
 } from "@/lib/seo";
 
-export const metadata: Metadata = generatePageMetadata("/usa", {
-  title: "Automation & AI for US Service Businesses | DigitalX",
-  description:
-    "DigitalX Solutions delivers AI voice agents, Missed call recovery, and CRM automation for US local service businesses across all 50 states.",
-});
+export const metadata: Metadata = generatePageMetadata(
+  "/usa",
+  {
+    title: "Automation & AI for US Service Businesses | DigitalX",
+    description:
+      "AI voice agents, missed-call recovery & CRM automation for US service businesses — New York, LA, Chicago, Houston, Miami, Phoenix & all 50 states.",
+  },
+  { region: "US", placename: "United States" }
+);
 
 const usaLocalBusiness = generateLocalBusinessSchema({
   pathname: "/usa",
@@ -28,6 +32,7 @@ const usaLocalBusiness = generateLocalBusinessSchema({
     { type: "City", name: "Miami" },
     { type: "City", name: "Houston" },
     { type: "City", name: "Phoenix" },
+    { type: "City", name: "Austin" },
   ],
 });
 
@@ -116,6 +121,22 @@ export default function UsaPage() {
             <p className="mt-2 text-body-sm text-ink-secondary">
               Austin and Central Texas service businesses scale fast and need automation that keeps up. We deploy
               n8n workflows plus GHL pipelines that handle 5x lead volume without 5x the back office.
+            </p>
+          </article>
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Houston</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Houston and the Gulf Coast run high call volumes across home services, medical, and commercial trades in
+              a heavily bilingual market. We deploy English plus Spanish AI voice and CAPI tracking so large ad budgets
+              stay accountable.
+            </p>
+          </article>
+          <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Phoenix</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Phoenix and the Valley see extreme summer HVAC demand in one of the fastest growing metros in the US. We
+              wire seasonal triggers and after hours booking onto GoHighLevel so peak demand converts instead of
+              ringing out.
             </p>
           </article>
           <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">

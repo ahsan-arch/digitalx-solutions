@@ -41,7 +41,7 @@ const tiers = [
       "Multi step nurture sequences",
       "Pipeline + lead scoring",
       "Live ROI dashboard",
-      "Bi-weekly optimisation calls",
+      "Bi-weekly optimization calls",
     ],
     cta: "Talk to us",
     highlight: true,
@@ -67,7 +67,7 @@ const pricingFaqs = [
   {
     question: "How does DigitalX Solutions pricing work?",
     answer:
-      "We charge a transparent monthly retainer per package (Launch $1,200, Operate $2,800, Scale Custom) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
+      "We charge a transparent monthly retainer per package (Launch $1,200, Operate $2,800, Scale Custom — all prices in USD) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
   },
   {
     question: "Do you offer custom pricing for high-volume teams?",
@@ -77,7 +77,7 @@ const pricingFaqs = [
   {
     question: "Is there a minimum contract length?",
     answer:
-      "Operate and Scale packages have a 3-month minimum so we have enough runway to build, deploy, and optimise. After that, billing is month-to-month. Launch is fully month-to-month from day one.",
+      "Operate and Scale packages have a 3-month minimum so we have enough runway to build, deploy, and optimize. After that, billing is month-to-month. Launch is fully month-to-month from day one.",
   },
   {
     question: "What is included in the setup fee?",
@@ -170,6 +170,10 @@ export default function PricingPage() {
           </article>
         ))}
       </section>
+
+      <p className="container-shell mt-5 text-center text-sm text-ink-tertiary">
+        All prices shown in USD. Australian clients can be invoiced in AUD at the current exchange rate &mdash; just ask.
+      </p>
 
       <section className="container-shell mt-16">
         <div className="rounded-lg border border-line-subtle bg-surface-sunken p-6 md:p-10">

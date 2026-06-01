@@ -701,13 +701,13 @@ export const results: ResultCard[] = [
     client: "Hi-Tech Expertise",
     industry: "Energy & Power Solutions",
     challenge: "No digital presence to showcase 13 global manufacturer partnerships and win Australian utility tenders.",
-    impact: "SEO-optimised website launched, positioning Hi-Tech as Australia's #1 authorized energy agent with full product catalogue and lead generation.",
+    impact: "SEO-optimized website launched, positioning Hi-Tech as Australia's #1 authorized energy agent with full product catalog and lead generation.",
     services: ["Web Design & Development", "SEO"],
     solutionsUsed: [],
     narrative: [
       "Hi-Tech Expertise is a Sydney-based authorized agent for 13 leading energy and power manufacturers across Italy, Germany, Spain, and China. They supply industrial batteries (FIAMM, Hoppecke), transformers (CEEG), HTLS conductors, OPGW cables, switchgear, instrument transformers, and smart meters to major Australian utilities including Transgrid, Ausgrid, and Endeavour Energy.",
       "Despite 20+ years of experience and 100+ major infrastructure projects delivered, they had no website to showcase their authorized partnerships, product range, or tender capabilities. Utility procurement teams and EPC contractors had no way to discover or verify their credentials online.",
-      "We built a high-performance Next.js website with comprehensive product catalogues for all 12 product categories, dedicated partner pages for each of the 13 manufacturers, market-specific landing pages, and a blog strategy targeting utility procurement keywords. The site is fully AS/NZS compliant in its technical documentation and structured with Schema.org markup for maximum search visibility.",
+      "We built a high-performance Next.js website with comprehensive product catalogs for all 12 product categories, dedicated partner pages for each of the 13 manufacturers, market-specific landing pages, and a blog strategy targeting utility procurement keywords. The site is fully AS/NZS compliant in its technical documentation and structured with Schema.org markup for maximum search visibility.",
     ],
     metrics: [
       { label: "Product categories", value: "12" },
@@ -847,20 +847,5 @@ export const developmentProjects = [
       'Panoramic image processing via Python and Flask microservice'
     ],
     techStack: ['React', 'Redux', 'Tailwind', 'Node.js', 'MongoDB', 'Flask']
-  },
-  {
-    slug: 'truckify',
-    name: 'Truckify',
-    overview: 'AI driven logistics platform for the freight industry.',
-    problem: 'Pakistan\'s freight industry was highly fragmented, plagued by operational inefficiencies, opaque pricing, and a lack of trust between shippers and independent fleet owners. Requesting quotes and matching loads took days instead of minutes.',
-    solution: 'Truckify.pk centralizes the logistics pipeline with a microservices based portal connecting shippers directly to drivers. It utilizes dynamic AI based pricing to instantly calculate freight quotes and behavioral scoring to bring accountability to the market.',
-    features: [
-      'Dynamic AI Pricing generating freight quotes in under 1.5 seconds',
-      'TrustAI Scoring system from 0 to 100 for driver and shipper reliability',
-      'Microservices architecture with 6 independent Node.js services',
-      'PECA Compliant AES 256 PII encryption and role based access',
-      'Automated load bidding and notification pipelines'
-    ],
-    techStack: ['Node.js', 'Microservices', 'AI Pricing', 'JWT', 'AES 256']
   }
 ];

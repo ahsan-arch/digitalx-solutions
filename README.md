@@ -1,6 +1,6 @@
- # Velocity Digital
+ # DigitalX Solutions
 
-Premium agency site — Web Development, Meta Ads, Growth Marketing.
+AI automation & web development agency for service businesses in the USA and Australia — Web Development, AI Voice Agents, Meta Ads, Growth Marketing.
 
 ## Tech Stack
 

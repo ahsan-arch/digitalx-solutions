@@ -28,7 +28,7 @@ export const seoCopy = {
     webDev: {
         title: "Web Development Agency USA & Australia | Next.js Experts",
         description:
-            "Custom web development & design with sub-200ms loads. SEO-baked Next.js architecture, 98+ Lighthouse scores. Top website agency in Sydney & USA.",
+            "Custom web development & design with sub-200ms loads. SEO-baked Next.js architecture, 98+ Lighthouse scores. Top website agency for the USA & Australia.",
     },
     metaAds: {
         title: "Meta Ads Agency | Server-Side Tracking & CAPI | USA & AU",
@@ -107,6 +107,14 @@ export const seoKeywords = [
     "AI automation agency",
     "conversational AI agency",
 
+    // US local-intent (balance the AU city coverage above)
+    "automation agency New York",
+    "automation agency Los Angeles",
+    "AI voice receptionist USA",
+    "GoHighLevel agency USA",
+    "Meta Ads agency USA",
+    "web development agency New York",
+
     // Brand + Local
     "DigitalX Solutions",
     "digital agency Sydney",
@@ -116,18 +124,29 @@ export const seoKeywords = [
 
 
 /**
- * Generate hreflang alternates for US + AU targeting.
- * x-default = main domain (en-US)
+ * Reciprocal hreflang cluster for the geo-targeted pages.
+ * en-US -> /usa, en-AU -> /au, x-default -> homepage.
+ * Every page in the cluster must list the SAME set of alternates for Google
+ * to honour them, so this constant is shared by the homepage, /usa and /au.
+ */
+export const geoHreflangLanguages = {
+    "en-US": `${siteConfig.domain}/usa`,
+    "en-AU": `${siteConfig.domain}/au`,
+    "x-default": siteConfig.domain,
+};
+
+/**
+ * Generate hreflang alternates.
+ * Only the geo-targeted routes (homepage, /usa, /au) emit en-US/en-AU
+ * alternates — pointing two locales at one URL on country-agnostic pages
+ * (services, solutions, insights, …) is invalid, so those get a self-canonical only.
  */
 function generateHreflangAlternates(route: string) {
-    const url = `${siteConfig.domain}${route || "/"}`;
+    const isGeoPage =
+        route === "" || route === "/" || route === "/usa" || route === "/au";
     return {
         canonical: route || "/",
-        languages: {
-            "en-US": url,
-            "en-AU": url,
-            "x-default": url,
-        },
+        ...(isGeoPage ? { languages: geoHreflangLanguages } : {}),
     };
 }
 
@@ -136,10 +155,26 @@ function generateHreflangAlternates(route: string) {
  */
 export function generatePageMetadata(
     route: string,
-    copy: { title: string; description: string }
+    copy: { title: string; description: string },
+    geo?: { region: string | string[]; placename: string | string[]; position?: string }
 ): Metadata {
     const url = `${siteConfig.domain}${route}`;
     const ogParams = new URLSearchParams({ title: copy.title });
+
+    // Default to a neutral US+AU signal (no single lat/long, which would pin the
+    // whole site to one country). Country pages pass their own geo.
+    const geoOther = geo
+        ? {
+              "geo.region": geo.region,
+              "geo.placename": geo.placename,
+              ...(geo.position
+                  ? { "geo.position": geo.position, ICBM: geo.position.replace(";", ", ") }
+                  : {}),
+          }
+        : {
+              "geo.region": ["US", "AU"],
+              "geo.placename": ["United States", "Australia"],
+          };
 
     return {
         title: copy.title,
@@ -152,7 +187,7 @@ export function generatePageMetadata(
         openGraph: {
             type: "website",
             locale: "en_US",
-            alternateLocale: ["en_AU", "en_GB"],
+            alternateLocale: ["en_AU"],
             url,
             title: copy.title,
             description: copy.description,
@@ -175,12 +210,7 @@ export function generatePageMetadata(
             site: siteConfig.social.twitter,
             creator: siteConfig.social.twitter,
         },
-        other: {
-            "geo.region": ["US-NY", "AU-NSW"],
-            "geo.placename": ["New York", "Sydney", "Casula"],
-            "geo.position": "-33.9519;150.9054",
-            "ICBM": "-33.9519, 150.9054",
-        },
+        other: geoOther,
     };
 }
 
@@ -228,7 +258,8 @@ export function generateOrganizationSchema() {
                     contactType: "customer service",
                     email: "info@digitalx-solutions.com",
                     telephone: "+61 451 413 786",
-                    availableLanguage: ["English"],
+                    availableLanguage: ["en-US", "en-AU"],
+                    areaServed: ["US", "AU"],
                 },
                 openingHoursSpecification: [
                     {

@@ -11,24 +11,31 @@ import {
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
+  geoHreflangLanguages,
   seoCopy,
   seoKeywords,
   siteConfig,
 } from "@/lib/seo";
 
 const roboto = Roboto({
-  weight: ["300", "400", "500", "700", "900"],
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-roboto",
 });
 
 const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-inter",
 });
 
+// Mono is only used in niche accents (none above the fold), so keep it out of
+// the initial preload set — it still loads on demand when a font-mono element renders.
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
   variable: "--font-jetbrains-mono",
 });
 
@@ -50,11 +57,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": siteConfig.domain,
-      "en-AU": siteConfig.domain,
-      "x-default": siteConfig.domain,
-    },
+    languages: geoHreflangLanguages,
   },
   authors: [{ name: "DigitalX Solutions", url: siteConfig.domain }],
   creator: "DigitalX Solutions",
@@ -63,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    alternateLocale: ["en_AU", "en_GB"],
+    alternateLocale: ["en_AU"],
     url: siteConfig.domain,
     title: seoCopy.home.title,
     description: seoCopy.home.description,
@@ -112,7 +115,7 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": ["US", "AU"],
-    "geo.placename": ["New York", "Sydney", "Casula"],
+    "geo.placename": ["New York", "Sydney"],
     "mobile-web-app-capable": "yes",
   },
 };
@@ -128,6 +131,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <GoogleTagManager />
         <script
           type="application/ld+json"

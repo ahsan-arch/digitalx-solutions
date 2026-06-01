@@ -11,7 +11,7 @@ export const authors: Record<string, { name: string; role: string; bio: string; 
     "digitalx": {
         name: "DigitalX Engineering",
         role: "Engineering Team",
-        bio: "The DigitalX Solutions engineering team specialises in automation, web performance, and conversational AI systems.",
+        bio: "The DigitalX Solutions engineering team specializes in automation, web performance, and conversational AI systems.",
         url: `${siteConfig.domain}/about`,
     },
 };
@@ -176,8 +176,8 @@ For most businesses spending more than $100/month on Zapier, migrating to n8n sa
         readTime: "8 min read",
         relatedSlugs: ["n8n-vs-zapier"],
         relatedServices: [
-            { label: "AI Voice Receptionists", href: "/services/conversational-ai" },
-            { label: "AI Voice Agent Services", href: "/services/ai voice-receptionists" },
+            { label: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
+            { label: "AI Voice Agent Services", href: "/solutions/ai-voice-agents" },
         ],
         content: `
 ## What is an AI Voice Receptionist?
@@ -208,7 +208,7 @@ Membership inquiries, class bookings, and tour scheduling, automated 24/7. Our A
 ## How It Works: Technical Architecture
 
 1. **Call Arrives:** A patient calls your business number.
-2. **AI Answers:** The AI voice agent picks up within 2 seconds with a natural greeting customised to your business.
+2. **AI Answers:** The AI voice agent picks up within 2 seconds with a natural greeting customized to your business.
 3. **Conversation:** The AI understands intent (booking, question, emergency) and responds naturally. It can handle multi turn conversations, ask clarifying questions, and handle objections.
 4. **Action:** Based on the conversation, the AI books an appointment in your calendar, sends a confirmation SMS, creates a lead in your CRM, or transfers to a human for complex cases.
 5. **Follow up:** Automated SMS/email confirmation sent to the caller with appointment details.
@@ -240,7 +240,7 @@ Implementing an AI voice receptionist with DigitalX Solutions follows a straight
 2. **AI agent design**, We build your custom AI agent with your brand voice, services, and business rules.
 3. **Integration**, We connect the AI agent to your CRM, calendar, and phone system.
 4. **Testing**, 1 week of supervised testing with real calls.
-5. **Go live**, Full deployment with ongoing monitoring and optimisation.
+5. **Go live**, Full deployment with ongoing monitoring and optimization.
 
 **Ready to stop missing calls?** [Contact us](/contact) to schedule a demo of our AI voice receptionist system.
         `

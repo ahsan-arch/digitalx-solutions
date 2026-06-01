@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { articlesData } from "@/data/insights-articles";
-import { solutions } from "@/data/redesign";
+import { developmentProjects, results, solutions } from "@/data/redesign";
 import { industries } from "@/data/industries";
 
 const INDEX_NOW_KEY = "3c12d5a79b40fe68";
@@ -18,6 +18,7 @@ const STATIC_PATHS = [
     "/about",
     "/contact",
     "/insights",
+    "/try-voice-agent",
     "/usa",
     "/au",
     "/legal/privacy",
@@ -36,6 +37,8 @@ export async function GET() {
     const dynamicPaths = [
         ...solutions.map((s) => `/solutions/${s.slug}`),
         ...industries.map((i) => `/industries/${i.slug}`),
+        ...results.map((r) => `/work/${r.slug}`),
+        ...developmentProjects.map((p) => `/development/${p.slug}`),
         ...Object.keys(articlesData).map((slug) => `/insights/${slug}`),
     ];
 

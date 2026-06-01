@@ -1,9 +1,9 @@
 # DigitalX Solutions
 
-> AI Automation & Web Development Agency — Australia & USA
+> AI Automation & Web Development Agency — USA & Australia
 
 ## About
-DigitalX Solutions is a premium AI automation and web development agency serving businesses in Australia and the United States. We specialize in building custom n8n workflows, GoHighLevel (GHL) systems, conversational AI agents, high-performance Next.js websites, and Meta Ads engineering with server-side CAPI tracking.
+DigitalX Solutions is a premium AI automation and web development agency serving businesses in the United States and Australia. We specialize in building custom n8n workflows, GoHighLevel (GHL) systems, conversational AI agents, high-performance Next.js websites, and Meta Ads engineering with server-side CAPI tracking.
 
 ## Core Services
 - **n8n Workflow Automation**: Custom n8n workflow development for complex multi-step business process automation. We build what Zapier and Make.com cannot handle.

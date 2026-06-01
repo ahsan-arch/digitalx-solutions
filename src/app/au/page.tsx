@@ -8,11 +8,15 @@ import {
   siteConfig,
 } from "@/lib/seo";
 
-export const metadata: Metadata = generatePageMetadata("/au", {
-  title: "Automation & AI for Australian Service Businesses | DigitalX",
-  description:
-    "DigitalX Solutions deploys AI voice agents, Missed call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
-});
+export const metadata: Metadata = generatePageMetadata(
+  "/au",
+  {
+    title: "Automation & AI for Australian Service Businesses | DigitalX",
+    description:
+      "DigitalX Solutions deploys AI voice agents, Missed call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
+  },
+  { region: "AU-NSW", placename: ["Sydney", "Casula"], position: "-33.9519;150.9054" }
+);
 
 const auLocalBusiness = generateLocalBusinessSchema({
   pathname: "/au",

@@ -39,6 +39,15 @@ export function Footer() {
                 WhatsApp
               </a>
             </div>
+            <nav aria-label="Regions" className="mt-4 flex items-center gap-x-4 text-sm">
+              <span className="text-foreground/55">Regions:</span>
+              <Link href="/usa" className="font-medium text-foreground/70 transition-colors hover:text-foreground">
+                United States
+              </Link>
+              <Link href="/au" className="font-medium text-foreground/70 transition-colors hover:text-foreground">
+                Australia
+              </Link>
+            </nav>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
