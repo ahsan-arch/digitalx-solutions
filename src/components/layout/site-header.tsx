@@ -17,7 +17,7 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 md:px-8">
+      <div className="mx-auto flex h-20 w-full max-w-[1200px] items-center justify-between px-4 md:px-8">
         <Link href="/" className="group flex items-center gap-3" aria-label="DigitalX Solutions home">
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-100 text-brand">
             DX
@@ -27,7 +27,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex lg:gap-7" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-6 xl:flex 2xl:gap-7" aria-label="Primary navigation">
           {primaryNavigation.map((item) => {
             const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
@@ -45,7 +45,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <Link
             href="/contact"
             className="inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-deep"
@@ -57,7 +57,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setMenuOpen((open) => !open)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground xl:hidden"
           aria-expanded={menuOpen}
           aria-label="Toggle navigation"
         >
@@ -66,7 +66,7 @@ export function SiteHeader() {
       </div>
 
       {menuOpen ? (
-        <div className="border-t border-border/70 bg-background/95 px-4 pb-5 pt-3 md:hidden">
+        <div className="border-t border-border/70 bg-background/95 px-4 pb-5 pt-3 xl:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
             {primaryNavigation.map((item) => {
               const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
