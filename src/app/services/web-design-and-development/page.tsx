@@ -40,6 +40,16 @@ const faqs = [
     answer:
       "A focused marketing site with 8 to 15 pages, custom design, CMS, and CRM wired forms typically ships in 4 to 8 weeks. Faster if you bring existing brand assets and content. We stage the work so you see a live preview every week and can redirect priorities before the final cut.",
   },
+  {
+    question: "How much does a custom Next.js website cost?",
+    answer:
+      "Custom website projects start at about 15,000 US dollars and scale with the number of pages, custom design, CMS, and integrations. Australian clients can be billed in Australian dollars at the current exchange rate on request. We scope based on the leads you need to capture and give a fixed quote before we start.",
+  },
+  {
+    question: "Do you build websites for US and Australian businesses?",
+    answer:
+      "Yes. We build and host high performance websites for service businesses across the United States and Australia, tested on real devices and slow networks in both markets.",
+  },
 ];
 
 const capabilities = [
@@ -66,6 +76,25 @@ const positioning = [
     title: "Plugs into your automation stack from day one",
     body:
       "Forms, calendar embeds, and lead routing connect directly to GoHighLevel, n8n, or your existing CRM, never an isolated WordPress island.",
+  },
+];
+
+const buildProcess = [
+  {
+    step: "Scope",
+    body: "We map the pages, leads, and integrations the site needs based on how you actually win customers.",
+  },
+  {
+    step: "Design",
+    body: "We design mobile first around conversion, with brand decoration only where it earns its place.",
+  },
+  {
+    step: "Build",
+    body: "We build on Next.js with a live preview every week so you can redirect priorities before the final cut.",
+  },
+  {
+    step: "Launch and connect",
+    body: "We wire forms and booking into your CRM, ship server side analytics, and hand over a fast, SEO ready site.",
   },
 ];
 
@@ -126,6 +155,19 @@ export default function WebDesignDevelopmentPage() {
       </section>
 
       <section className="container-shell mt-16">
+        <h2 className="font-display text-display-sm text-ink-primary">How we build it</h2>
+        <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {buildProcess.map((p, i) => (
+            <article key={p.step} className="rounded-lg border border-line-subtle bg-surface-raised p-6">
+              <p className="font-mono text-overline text-accent">Step {i + 1}</p>
+              <h3 className="mt-2 font-display text-title-lg text-ink-primary">{p.step}</h3>
+              <p className="mt-3 text-body-sm text-ink-secondary">{p.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell mt-16">
         <div className="rounded-lg border border-line-subtle bg-surface-raised p-6 md:p-10">
           <h2 className="font-display text-display-sm text-ink-primary">Frequently asked questions</h2>
           <dl className="mt-6 space-y-6">
@@ -136,6 +178,24 @@ export default function WebDesignDevelopmentPage() {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      <section className="container-shell mt-16">
+        <div className="rounded-lg border border-line-subtle bg-surface-raised p-6 md:p-8">
+          <h2 className="font-display text-title-lg text-ink-primary">Proof</h2>
+          <p className="mt-3 text-body text-ink-secondary">
+            See how we built a high performance Next.js site that positioned an Australian energy supplier to win
+            utility tenders, then browse the rest of our development work.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold text-accent">
+            <Link href="/work/hitech-expertise" className="hover:text-accent-hover">
+              Read the case study
+            </Link>
+            <Link href="/development" className="hover:text-accent-hover">
+              See development projects
+            </Link>
+          </div>
         </div>
       </section>
 
