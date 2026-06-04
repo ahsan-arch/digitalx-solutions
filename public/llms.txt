@@ -33,6 +33,11 @@ DigitalX Solutions is a premium AI automation and web development agency serving
 - SaaS startups (pre-seed to Series B)
 - Digital marketing agencies needing white-label automation
 
+## Service Areas
+DigitalX Solutions works with service businesses across the United States and Australia.
+- United States: New York, Los Angeles, Chicago, Houston, Miami, Phoenix, Austin, and all 50 states remotely
+- Australia: Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra, and nationwide remotely
+
 ## Pricing
 - Launch package: $1,200/mo (solo operators)
 - Operate package: $2,800/mo (multi-location teams)
@@ -40,6 +45,13 @@ DigitalX Solutions is a premium AI automation and web development agency serving
 - One-time setup: $1,500–$4,500
 - Web development projects: Starting at $15,000
 - Custom automation projects: Quoted per scope
+
+## Frequently Asked Questions
+- What does DigitalX Solutions do: We build AI voice agents, automated lead capture and nurture, GoHighLevel and CRM systems, high performance websites, and Meta Ads tracking for service businesses.
+- Who is it for: Local and service businesses in the United States and Australia, including home services, medical and dental clinics, salons, gyms, law firms, and real estate teams.
+- Where does it operate: Across the United States and Australia, working remotely with clients in every time zone.
+- What makes it different: One team that combines web development, AI automation, and performance marketing so strategy and delivery stay aligned.
+- How to get started: Book a strategy call at https://digitalx-solutions.com/contact
 
 ## Primary Pages
 - Homepage: https://digitalx-solutions.com
