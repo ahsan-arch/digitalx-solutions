@@ -225,7 +225,7 @@ If your business misses calls, this is one of the fastest ways to recover revenu
         relatedSlugs: ["n8n-vs-zapier"],
         relatedServices: [
             { label: "Meta Ads Engineering", href: "/services/meta-ads" },
-            { label: "Revenue Operations", href: "/services/revenue-operations" },
+            { label: "Revenue Operations", href: "/solutions/crm-integration" },
         ],
         content: `
 ## The Death of the Browser Pixel
@@ -290,8 +290,8 @@ If you're spending more than $3,000/month on Meta Ads, the answer is unequivocal
         readTime: "10 min read",
         relatedSlugs: ["server-side-tracking-meta-ads", "ai-voice-receptionists-guide"],
         relatedServices: [
-            { label: "Revenue Operations & n8n Automation", href: "/services/revenue-operations" },
-            { label: "Custom Web Development", href: "/services/web-dev" },
+            { label: "Revenue Operations & n8n Automation", href: "/solutions/crm-integration" },
+            { label: "Custom Web Development", href: "/services/web-design-and-development" },
         ],
         content: `
 ## What is n8n?

@@ -98,6 +98,30 @@ const nextConfig: NextConfig = {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
           },
+          {
+            // Report-only first: this never blocks anything, it only surfaces
+            // violations in the browser console so the policy can be tuned
+            // before switching the key to "Content-Security-Policy" to enforce.
+            // 'unsafe-inline'/'unsafe-eval' are required while GTM and Next.js
+            // hydration scripts run without per-request nonces. Watch the console
+            // for blocked sources (e.g. Meta Pixel) and add them before enforcing.
+            key: "Content-Security-Policy-Report-Only",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: blob: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
+              "font-src 'self' data:",
+              "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com",
+              "media-src 'self' blob: data:",
+              "frame-src 'self' https://www.googletagmanager.com",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "frame-ancestors 'none'",
+              "upgrade-insecure-requests",
+            ].join("; "),
+          },
         ],
       },
       {
