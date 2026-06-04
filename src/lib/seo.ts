@@ -5,12 +5,6 @@ export const siteConfig = {
     social: {
         twitter: "@digitalx_solutions",
     },
-    aggregateRating: {
-        ratingValue: 4.9,
-        reviewCount: 47,
-        bestRating: 5,
-        worstRating: 1,
-    },
 };
 
 // ── Geo-Targeted, Keyword-Rich SEO Copy ──
@@ -275,13 +269,6 @@ export function generateOrganizationSchema() {
                         closes: "18:00",
                     },
                 ],
-                aggregateRating: {
-                    "@type": "AggregateRating",
-                    ratingValue: siteConfig.aggregateRating.ratingValue,
-                    reviewCount: siteConfig.aggregateRating.reviewCount,
-                    bestRating: siteConfig.aggregateRating.bestRating,
-                    worstRating: siteConfig.aggregateRating.worstRating,
-                },
                 slogan: "Revenue systems for teams that need faster growth without operational chaos.",
                 areaServed: [
                     {
@@ -784,13 +771,6 @@ export function generateLocalBusinessSchema(opts: {
             },
         }),
         areaServed: opts.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: siteConfig.aggregateRating.ratingValue,
-            reviewCount: siteConfig.aggregateRating.reviewCount,
-            bestRating: siteConfig.aggregateRating.bestRating,
-            worstRating: siteConfig.aggregateRating.worstRating,
-        },
     };
 }
 
