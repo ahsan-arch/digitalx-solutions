@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SectionIllustration, ServiceAreaMap } from "@/components/ui";
 import {
   generateBreadcrumbSchema,
+  generateFAQSchema,
   generateLocalBusinessSchema,
   generatePageMetadata,
   siteConfig,
@@ -36,16 +37,46 @@ const usaLocalBusiness = generateLocalBusinessSchema({
   ],
 });
 
+const usaFaqs = [
+  {
+    question: "What does DigitalX Solutions do for service businesses in the United States?",
+    answer:
+      "We build AI voice receptionists, missed call recovery, automated lead nurture, GoHighLevel and CRM systems, and Meta Ads tracking for US service businesses, from home services to medical, dental, and legal practices, across all 50 states.",
+  },
+  {
+    question: "Which US cities does DigitalX Solutions serve?",
+    answer:
+      "We work remotely with businesses in New York, Los Angeles, Chicago, Houston, Miami, Phoenix, Austin, and every other US market, with time zone aware automation across Eastern, Central, Mountain, and Pacific time.",
+  },
+  {
+    question: "How much does an AI voice agent or automation setup cost in the US?",
+    answer:
+      "Monthly plans start at 1,200 US dollars for solo operators and 2,800 US dollars for multi location teams, plus a one time setup fee based on scope. Larger custom projects are quoted to fit your goals. All prices are in US dollars.",
+  },
+  {
+    question: "What makes DigitalX Solutions different from other US automation agencies?",
+    answer:
+      "One team combines web development, AI automation, and performance marketing, so you get strategy and delivery from a single partner instead of juggling vendors. We also build server side tracking with the Meta Conversions API to protect ad measurement after recent privacy changes.",
+  },
+  {
+    question: "Does DigitalX Solutions support US privacy and data expectations?",
+    answer:
+      "Yes. We build with privacy in mind, support consent based tracking, and align customer data handling with US expectations such as the CCPA, so your data stays protected.",
+  },
+];
+
 export default function UsaPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
     { name: "USA", url: `${siteConfig.domain}/usa` },
   ]);
+  const faqSchema = generateFAQSchema(usaFaqs);
 
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(usaLocalBusiness) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
@@ -146,6 +177,20 @@ export default function UsaPage() {
               after hours coverage are baked into every build.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section className="container-shell mt-16">
+        <h2 className="font-display text-display-sm text-ink-primary">USA frequently asked questions</h2>
+        <div className="mt-6 space-y-3">
+          {usaFaqs.map((faq) => (
+            <details key={faq.question} className="rounded-lg border border-line-subtle bg-surface-raised p-5">
+              <summary className="cursor-pointer list-none text-base font-semibold text-ink-primary">
+                {faq.question}
+              </summary>
+              <p className="mt-3 text-body-sm leading-relaxed text-ink-secondary">{faq.answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 

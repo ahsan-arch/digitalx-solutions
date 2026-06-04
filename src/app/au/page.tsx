@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SectionIllustration, ServiceAreaMap } from "@/components/ui";
 import {
   generateBreadcrumbSchema,
+  generateFAQSchema,
   generateLocalBusinessSchema,
   generatePageMetadata,
   siteConfig,
@@ -38,16 +39,46 @@ const auLocalBusiness = generateLocalBusinessSchema({
   ],
 });
 
+const auFaqs = [
+  {
+    question: "What does DigitalX Solutions do for service businesses in Australia?",
+    answer:
+      "We build AI voice receptionists, missed call recovery, automated lead nurture, GoHighLevel and CRM systems, and Meta Ads tracking for Australian service businesses, from trades and clinics to salons and professional services, nationwide.",
+  },
+  {
+    question: "Which Australian cities does DigitalX Solutions serve?",
+    answer:
+      "We work with businesses in Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra, and regional Australia, with booking flows tuned for AEDT and AWST time zones.",
+  },
+  {
+    question: "How much does an AI voice agent or automation setup cost in Australia?",
+    answer:
+      "Monthly plans start at 1,200 US dollars for solo operators and 2,800 US dollars for multi location teams, and Australian clients can be billed in Australian dollars at the current exchange rate on request. A one time setup fee applies based on scope.",
+  },
+  {
+    question: "What makes DigitalX Solutions different from other Australian automation agencies?",
+    answer:
+      "One team combines web development, AI automation, and performance marketing, so Australian businesses get aligned strategy and delivery from a single partner, with local time zone aware automation and Australian payment integrations such as Stripe AU and Ezidebit.",
+  },
+  {
+    question: "Does DigitalX Solutions follow Australian privacy rules?",
+    answer:
+      "Yes. We align data handling with the Australian Privacy Principles under the Privacy Act, support consent based tracking, and keep customer data secure.",
+  },
+];
+
 export default function AuPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
     { name: "Australia", url: `${siteConfig.domain}/au` },
   ]);
+  const faqSchema = generateFAQSchema(auFaqs);
 
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(auLocalBusiness) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
@@ -135,6 +166,20 @@ export default function AuPage() {
               segment.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section className="container-shell mt-16">
+        <h2 className="font-display text-display-sm text-ink-primary">Australia frequently asked questions</h2>
+        <div className="mt-6 space-y-3">
+          {auFaqs.map((faq) => (
+            <details key={faq.question} className="rounded-lg border border-line-subtle bg-surface-raised p-5">
+              <summary className="cursor-pointer list-none text-base font-semibold text-ink-primary">
+                {faq.question}
+              </summary>
+              <p className="mt-3 text-body-sm leading-relaxed text-ink-secondary">{faq.answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 
