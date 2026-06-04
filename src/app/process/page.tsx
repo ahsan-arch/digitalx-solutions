@@ -4,7 +4,6 @@ import { processSteps } from "@/data/redesign";
 import { SectionIllustration } from "@/components/ui";
 import {
   generateBreadcrumbSchema,
-  generateHowToSchema,
   generatePageMetadata,
   siteConfig,
 } from "@/lib/seo";
@@ -48,22 +47,9 @@ export default function ProcessPage() {
     { name: "Process", url: `${siteConfig.domain}/process` },
   ]);
 
-  const howToSchema = generateHowToSchema({
-    name: "How DigitalX Solutions Deploys an Automation System",
-    description:
-      "A 4 to 6 week engagement model for deploying AI voice agents, CRM automation, and growth dashboards for service businesses.",
-    totalTime: "P6W",
-    steps: detail.map((d) => ({
-      name: `${d.week}: ${d.title}`,
-      text: d.body,
-      url: `${siteConfig.domain}/process`,
-    })),
-  });
-
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">

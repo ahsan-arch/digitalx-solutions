@@ -442,14 +442,6 @@ export function generateWebSiteSchema() {
             "@type": "SpeakableSpecification",
             cssSelector: ["h1", "h2", "main p"],
         },
-        potentialAction: {
-            "@type": "SearchAction",
-            target: {
-                "@type": "EntryPoint",
-                urlTemplate: `${siteConfig.domain}/insights?q={search_term_string}`,
-            },
-            "query-input": "required name=search_term_string",
-        },
     };
 }
 
@@ -643,30 +635,6 @@ export function generateBlogSchema(posts: Array<{
             ...(p.authorName && {
                 author: { "@type": "Person", name: p.authorName },
             }),
-        })),
-    };
-}
-
-export function generateHowToSchema(howTo: {
-    name: string;
-    description: string;
-    totalTime?: string; // ISO 8601 e.g. "PT2W"
-    steps: { name: string; text: string; image?: string; url?: string }[];
-}) {
-    return {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        name: howTo.name,
-        description: howTo.description,
-        inLanguage: "en-US",
-        ...(howTo.totalTime && { totalTime: howTo.totalTime }),
-        step: howTo.steps.map((step, index) => ({
-            "@type": "HowToStep",
-            position: index + 1,
-            name: step.name,
-            text: step.text,
-            ...(step.image && { image: step.image }),
-            ...(step.url && { url: step.url }),
         })),
     };
 }
