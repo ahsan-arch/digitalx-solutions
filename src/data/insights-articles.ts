@@ -30,6 +30,191 @@ export type ArticleRecord = {
 
 // ── Article data ──
 export const articlesData: Record<string, ArticleRecord> = {
+    "ai-voice-receptionist-cost": {
+        title: "How Much Does an AI Voice Receptionist Cost in 2026",
+        description: "A clear breakdown of what an AI voice receptionist costs for service businesses in the USA and Australia, including setup, monthly plans, and what drives the price.",
+        date: "2026-06-04",
+        dateModified: "2026-06-04",
+        authorKey: "digitalx",
+        readTime: "5 min read",
+        relatedSlugs: ["ai-voice-receptionists-guide"],
+        relatedServices: [
+            { label: "AI Voice Agents", href: "/solutions/ai-voice-agents" },
+            { label: "Missed Call Text Back", href: "/solutions/missed-call-text-back" },
+        ],
+        content: `
+## What does an AI voice receptionist cost
+
+For most service businesses in the United States and Australia, an AI voice receptionist runs as a monthly subscription plus a one time setup fee. At DigitalX Solutions, monthly plans start at 1,200 US dollars for solo operators and 2,800 US dollars for multi location teams. Setup ranges from 1,500 to 4,500 US dollars depending on scope. Australian clients can be billed in Australian dollars at the current exchange rate on request.
+
+## What is included in the price
+
+A complete AI voice receptionist is more than a phone bot. The price usually covers:
+
+- A natural sounding voice agent trained on your services, hours, and pricing
+- Direct booking into your calendar or practice software
+- Missed call text back so no caller is ever lost
+- Lead qualification and routing to the right person
+- Confirmation and reminder messages to reduce no shows
+- A dashboard that shows booked calls and recovered revenue
+
+## What drives the cost up or down
+
+Several factors move the price:
+
+- Call volume, since higher volumes need more capacity and tuning
+- The number of locations and team members
+- Integrations, since connecting your CRM, calendar, and payment tools adds setup work
+- Languages, since English and Spanish coverage is common in the United States
+- Complexity of the call flow, such as emergency routing for trades or clinics
+
+## Is it worth it
+
+For a business that misses even a handful of calls a week, the math is simple. If a single booked job is worth a few hundred dollars or more, recovering a few lost calls each month covers the cost many times over. Businesses in home services, dental, medical, legal, and beauty see the fastest return because every missed call is a missed booking.
+
+## How to get an exact quote
+
+Pricing depends on your call volume and the tools you already use. Book a strategy call and we will map your current call flow and give you a clear quote with timelines. [Talk to our team](/contact).
+`,
+    },
+    "best-ai-receptionist-dental-clinics-usa": {
+        title: "Best AI Receptionist for Dental Clinics in the USA",
+        description: "How US dental clinics choose an AI receptionist that books patients around the clock, reduces no shows, and fills the schedule without adding front desk staff.",
+        date: "2026-06-04",
+        dateModified: "2026-06-04",
+        authorKey: "digitalx",
+        readTime: "5 min read",
+        relatedSlugs: ["ai-voice-receptionists-guide", "ai-voice-receptionist-cost"],
+        relatedServices: [
+            { label: "AI Voice Agents", href: "/solutions/ai-voice-agents" },
+            { label: "GoHighLevel Implementation", href: "/solutions/gohighlevel-implementation" },
+        ],
+        content: `
+## Why US dental clinics need an AI receptionist
+
+Dental clinics across the United States lose new patients every week to missed calls. Front desk teams are with patients, on other lines, or gone for the day, and callers who reach voicemail simply book at the next clinic. An AI receptionist answers every call, day and night, so the schedule stays full.
+
+## What the best AI receptionist for a dental clinic does
+
+The strongest setups for US dental practices share a few traits:
+
+- Answers every inbound call in natural language within seconds
+- Books, reschedules, and cancels directly in the practice management software
+- Sends confirmations and reminders to cut no shows
+- Handles common questions about insurance, hours, and procedures
+- Routes true emergencies to the on call dentist
+- Offers English and Spanish for diverse patient bases
+
+## What to look for when choosing
+
+When comparing options for a US clinic, focus on:
+
+- Integration with your existing scheduling and patient records
+- A natural voice that patients trust, not a rigid menu system
+- Clear reporting on booked appointments and recovered calls
+- Privacy aware data handling aligned with US expectations such as the CCPA
+
+## How DigitalX Solutions builds it
+
+We train the agent on your services, providers, hours, and intake script, then connect it to your calendar and CRM. It handles overflow and after hours calls, books directly, and texts a confirmation in seconds. Clinics typically see more booked appointments without hiring extra front desk staff.
+
+## Next step
+
+If you run a dental clinic in the United States and want every call answered, [book a strategy call](/contact) and we will scope a setup for your practice.
+`,
+    },
+    "gohighlevel-setup-australia": {
+        title: "GoHighLevel Setup Cost and Timeline in Australia",
+        description: "What Australian service businesses pay and how long it takes to set up GoHighLevel for lead capture, automation, and CRM, delivered by a local team.",
+        date: "2026-06-04",
+        dateModified: "2026-06-04",
+        authorKey: "digitalx",
+        readTime: "5 min read",
+        relatedSlugs: ["n8n-vs-zapier"],
+        relatedServices: [
+            { label: "GoHighLevel Implementation", href: "/solutions/gohighlevel-implementation" },
+            { label: "CRM Integration", href: "/solutions/crm-integration" },
+        ],
+        content: `
+## GoHighLevel for Australian businesses
+
+GoHighLevel is a popular platform for service businesses that want their leads, calls, bookings, and follow up in one place. For Australian operators, a proper setup means more than turning it on. It means building pipelines, automations, and integrations that fit how you actually work, with local time zones and tools in mind.
+
+## What a GoHighLevel setup costs in Australia
+
+At DigitalX Solutions, a full build is delivered through our monthly plans, which start at 1,200 US dollars for solo operators and 2,800 US dollars for multi location teams, with a one time setup based on scope. Australian clients can be invoiced in Australian dollars at the current exchange rate on request. The exact figure depends on how many pipelines, automations, and integrations you need.
+
+## How long it takes
+
+Most setups follow a clear timeline:
+
+- Week one is discovery and mapping of your current lead flow and tools
+- Week two is the build of pipelines, calendars, and core automations
+- Week three is integrations, testing, and team training
+- Week four is go live with dashboards and ongoing tuning
+
+Simple builds can be faster, and larger multi location builds take longer.
+
+## What is included
+
+- Pipeline and stage design for your sales process
+- Lead capture from ads, forms, calls, and chat
+- Automated nurture by email and SMS
+- Calendar and booking integration
+- Local payment integrations such as Stripe AU and Ezidebit
+- Reporting dashboards for owners
+
+## Why use a local team
+
+An onshore team means fast iteration without offshore time gaps, builds that respect AEDT and AWST scheduling, and data handling aligned with the Australian Privacy Principles under the Privacy Act.
+
+## Get a quote
+
+Tell us about your business and we will scope a GoHighLevel build with a clear price and timeline. [Book a strategy call](/contact).
+`,
+    },
+    "missed-call-text-back-guide": {
+        title: "Missed Call Text Back for US and Australian Service Businesses",
+        description: "How missed call text back recovers lost leads for service businesses in the USA and Australia by sending an instant SMS to every call you cannot answer.",
+        date: "2026-06-04",
+        dateModified: "2026-06-04",
+        authorKey: "digitalx",
+        readTime: "4 min read",
+        relatedSlugs: ["ai-voice-receptionist-cost"],
+        relatedServices: [
+            { label: "Missed Call Text Back", href: "/solutions/missed-call-text-back" },
+            { label: "AI Voice Agents", href: "/solutions/ai-voice-agents" },
+        ],
+        content: `
+## What is missed call text back
+
+Missed call text back is a simple automation with a big payoff. When a call comes in that you cannot answer, the system sends the caller an instant text message. Instead of moving on to a competitor, the caller is engaged in a conversation that can book the job.
+
+## Why it matters for service businesses
+
+In both the United States and Australia, service businesses lose a large share of inbound calls, especially after hours and during busy periods. Tradies are on the tools, clinics are with patients, and salons are mid service. A missed call often means a lost customer. Missed call text back recovers many of those callers, often 30 to 50 percent of them.
+
+## How it works
+
+- A call comes in and is not answered
+- The caller receives an automatic text within seconds
+- The text invites them to reply, book, or ask a question
+- Replies flow into your CRM where the team or an AI agent can respond
+- The lead is captured instead of lost
+
+## Best paired with an AI voice agent
+
+Missed call text back is strongest when combined with an AI voice agent. The voice agent answers as many calls as possible, and text back catches anyone who still slips through. Together they make sure no lead is ever ignored, day or night.
+
+## Works across the USA and Australia
+
+The automation is time zone aware, so it works for businesses in every US time zone and across AEDT and AWST in Australia. Messages can be tuned to local language and tone for each market.
+
+## Get started
+
+If your business misses calls, this is one of the fastest ways to recover revenue. [Book a strategy call](/contact) and we will set it up for you.
+`,
+    },
     "server-side-tracking-meta-ads": {
         title: "Why Meta Server-Side Tracking (CAPI) is Mandatory for Scale",
         description: "Learn why relying solely on the Meta Pixel destroys ROI, and how implementing the Conversions API ensures accurate attribution in a post-iOS14 world.",
