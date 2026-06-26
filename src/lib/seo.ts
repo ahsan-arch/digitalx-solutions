@@ -218,6 +218,11 @@ export function generateOrganizationSchema() {
                 "@type": ["ProfessionalService", "LocalBusiness"],
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
+                alternateName: ["DigitalX", "Digital X Solutions"],
+                description:
+                    "DigitalX Solutions is a web development, AI automation, and performance marketing agency serving service businesses in the United States and Australia. We build websites, AI voice agents, GoHighLevel and CRM systems, and Meta Ads tracking.",
+                disambiguatingDescription:
+                    "A digital marketing and software agency. Not a medical imaging, radiology, or X-ray provider.",
                 url: siteConfig.domain,
                 email: "info@digitalx-solutions.com",
                 logo: `${siteConfig.domain}/logo.png`,
@@ -241,6 +246,7 @@ export function generateOrganizationSchema() {
                     "https://www.instagram.com/digitalx_solutions/",
                     "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
                     "https://www.linkedin.com/company/digitalx-solutions-aus/",
+                    "https://x.com/digitalx_solutions",
                 ],
                 foundingDate: "2022",
                 numberOfEmployees: {
