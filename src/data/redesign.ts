@@ -736,7 +736,7 @@ export const results: ResultCard[] = [
   },
   {
     slug: "automation-home-services",
-    client: "Anonymous",
+    client: "Confidential Home Services Brand",
     industry: "Home Services",
     challenge: "Missed after hours calls and manual scheduling were losing booked jobs to faster competitors.",
     impact: "Deployed AI voice, missed call text back, and a new website so every inbound lead is captured and booked.",
@@ -755,7 +755,7 @@ export const results: ResultCard[] = [
   },
   {
     slug: "automation-healthcare-clinic",
-    client: "Anonymous",
+    client: "Confidential Dental Group",
     industry: "Healthcare",
     challenge: "A busy front desk was sending new patient calls to voicemail, and many enquiries never got a callback.",
     impact: "An AI receptionist, CRM automation, and a faster website cut missed calls and filled the schedule.",
@@ -774,7 +774,7 @@ export const results: ResultCard[] = [
   },
   {
     slug: "automation-ecommerce-brand",
-    client: "Anonymous",
+    client: "Confidential Ecommerce Brand",
     industry: "Ecommerce",
     challenge: "Abandoned carts and unreliable ad tracking after browser changes were quietly draining revenue.",
     impact: "A fast website, server side conversion tracking, and automated cart recovery protected revenue and ad spend.",
