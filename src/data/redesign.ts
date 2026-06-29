@@ -715,6 +715,25 @@ export const results: ResultCard[] = [
       { label: "Utility clients served", value: "9+" },
     ],
   },
+  {
+    slug: "njprotiling",
+    client: "NJ Pro Tiling",
+    industry: "Tiling Contractor",
+    challenge: "A licensed Melbourne tiling contractor with no website to win premium residential work or show up in local search.",
+    impact: "Designed and built a professional website and ran a full SEO program so NJ Pro Tiling can be found for tiling work across Melbourne.",
+    services: ["Web Design & Development", "SEO"],
+    solutionsUsed: [],
+    narrative: [
+      "NJ Pro Tiling is a licensed Melbourne tiling contractor delivering floor and wall tiling, bathroom renovations, kitchen splashbacks, outdoor tiling, and AS 3740 compliant waterproofing. The craftsmanship was excellent, but there was no website to showcase it or capture the homeowners searching online for a tiler.",
+      "We designed and built a fast, mobile first website at njprotiling.com using the company's own project photography rather than stock images. It leads with the services, trust signals, and certifications premium clients look for, including licensed status, AS 3740 waterproofing, and clear pages for bathrooms, splashbacks, and outdoor tiling.",
+      "We then ran a full SEO program: clean technical setup, on page optimization, and local SEO targeting tiling searches across Melbourne suburbs, with Schema markup so search engines and AI assistants understand the business. The result is a professional site built to rank locally and turn visitors into quote requests.",
+    ],
+    metrics: [
+      { label: "Engagement", value: "Web and SEO" },
+      { label: "Service area", value: "Melbourne" },
+      { label: "Built for", value: "Local leads" },
+    ],
+  },
 ];
 
 export function getResultBySlug(slug: string): ResultCard | undefined {
