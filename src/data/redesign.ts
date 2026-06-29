@@ -734,6 +734,63 @@ export const results: ResultCard[] = [
       { label: "Built for", value: "Local leads" },
     ],
   },
+  {
+    slug: "automation-home-services",
+    client: "Anonymous",
+    industry: "Home Services",
+    challenge: "Missed after hours calls and manual scheduling were losing booked jobs to faster competitors.",
+    impact: "Deployed AI voice, missed call text back, and a new website so every inbound lead is captured and booked.",
+    services: ["AI Voice Agents", "Missed Call Text Back", "Web Design & Development"],
+    solutionsUsed: ["ai-voice-agents", "missed-call-text-back", "gohighlevel-implementation"],
+    narrative: [
+      "This client is a home services business that was strong on the tools but losing work online. Calls went unanswered after hours and on busy days, and scheduling was handled by hand, so leads slipped to whichever competitor picked up first.",
+      "We built a fast website wired to capture and route leads, then deployed an AI voice agent that answers every call, qualifies the job, and books it, plus missed call text back that reaches anyone who still slips through. Everything flows into a GoHighLevel pipeline.",
+      "The business now captures inbound leads day and night without adding front desk staff, and the owner can see every lead, job, and follow up in one place.",
+    ],
+    metrics: [
+      { label: "Engagement", value: "Automation and Web" },
+      { label: "Coverage", value: "Around the clock" },
+      { label: "Focus", value: "Lead capture" },
+    ],
+  },
+  {
+    slug: "automation-healthcare-clinic",
+    client: "Anonymous",
+    industry: "Healthcare",
+    challenge: "A busy front desk was sending new patient calls to voicemail, and many enquiries never got a callback.",
+    impact: "An AI receptionist, CRM automation, and a faster website cut missed calls and filled the schedule.",
+    services: ["AI Voice Agents", "CRM Integration", "Web Design & Development"],
+    solutionsUsed: ["ai-voice-agents", "crm-integration", "automated-lead-nurturing"],
+    narrative: [
+      "This client is a healthcare practice whose front desk was overwhelmed by inbound calls while caring for patients in the room. New patient enquiries went to voicemail and many were never followed up.",
+      "We deployed an AI voice receptionist that answers and books appointments, connected it to the practice CRM, and added automated reminders and nurture so enquiries do not go cold. We also rebuilt the website to load fast and convert.",
+      "Reception now stays focused on patients in the building while the AI handles overflow and after hours enquiries, and the schedule fills without extra hires.",
+    ],
+    metrics: [
+      { label: "Engagement", value: "Automation and Web" },
+      { label: "Focus", value: "Booked appointments" },
+      { label: "Channels", value: "Voice and CRM" },
+    ],
+  },
+  {
+    slug: "automation-ecommerce-brand",
+    client: "Anonymous",
+    industry: "Ecommerce",
+    challenge: "Abandoned carts and unreliable ad tracking after browser changes were quietly draining revenue.",
+    impact: "A fast website, server side conversion tracking, and automated cart recovery protected revenue and ad spend.",
+    services: ["Web Design & Development", "n8n Workflow Automation", "CRM Integration"],
+    solutionsUsed: ["n8n-workflow-automation", "crm-integration"],
+    narrative: [
+      "This client is an online brand that was losing sales to abandoned carts and could not trust its ad reporting after browser tracking changes, while a slow site hurt conversions.",
+      "We built a fast website, added server side tracking with the Meta Conversions API for accurate attribution, and wired automated cart recovery and customer flows in n8n connected to the CRM.",
+      "The brand now sees accurate conversion data to guide ad spend, recovers carts automatically, and runs on a site built for speed and conversion.",
+    ],
+    metrics: [
+      { label: "Engagement", value: "Automation and Web" },
+      { label: "Focus", value: "Recovered revenue" },
+      { label: "Tracking", value: "Server side" },
+    ],
+  },
 ];
 
 export function getResultBySlug(slug: string): ResultCard | undefined {
