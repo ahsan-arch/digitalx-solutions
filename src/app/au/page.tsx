@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = generatePageMetadata(
   "/au",
   {
-    title: "Automation & AI for Australian Service Businesses | DigitalX",
+    title: "Automation Services in Australia for Service Businesses",
     description:
       "DigitalX Solutions deploys AI voice agents, Missed call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
   },
@@ -85,7 +85,7 @@ export default function AuPage() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Australia</p>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-              AI automation for Australian service businesses.
+              Automation services for Australian service businesses.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
               Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. AI voice, Missed call recovery,

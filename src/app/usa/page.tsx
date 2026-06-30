@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = generatePageMetadata(
   "/usa",
   {
-    title: "Automation & AI for US Service Businesses | DigitalX",
+    title: "Automation Services in the USA for Service Businesses",
     description:
       "AI voice agents, missed-call recovery & CRM automation for US service businesses — New York, LA, Chicago, Houston, Miami, Phoenix & all 50 states.",
   },
@@ -83,7 +83,7 @@ export default function UsaPage() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">United States</p>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-              AI-powered automation for US local service businesses.
+              Automation services for US service businesses across all 50 states.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
               From Brooklyn brownstones to Austin med spas, we deploy AI voice, Missed call text back, and CRM
