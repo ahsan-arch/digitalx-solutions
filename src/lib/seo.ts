@@ -229,12 +229,24 @@ export function generateOrganizationSchema() {
                 },
                 telephone: "+61 451 413 786",
                 sameAs: [
-                    "https://www.instagram.com/digitalx_solutions/",
-                    "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
                     "https://www.linkedin.com/company/digitalx-solutions-aus/",
                     "https://x.com/digitalx_solutions",
+                    "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
+                    "https://www.instagram.com/digitalx_solutions/",
+                    "https://github.com/digitalx-solutions",
+                    "https://clutch.co/profile/digitalx-solutions",
+                    "https://www.crunchbase.com/organization/digitalx-solutions",
+                    "https://www.trustpilot.com/review/digitalx-solutions.com",
+                    "https://community.n8n.io/u/digitalx_solutions",
+                    "https://www.producthunt.com/@digitalx_solutions",
                 ],
                 foundingDate: "2022",
+                founder: {
+                    "@type": "Person",
+                    name: "Ahsan Architect",
+                    jobTitle: "Founder & Lead Automation Engineer",
+                    url: `${siteConfig.domain}/about`,
+                },
                 numberOfEmployees: {
                     "@type": "QuantitativeValue",
                     value: "10",
@@ -733,6 +745,16 @@ export function generateLocalBusinessSchema(opts: {
         telephone: "+61 451 413 786",
         priceRange: "$$$",
         parentOrganization: { "@id": `${siteConfig.domain}/#organization` },
+        sameAs: [
+            "https://www.linkedin.com/company/digitalx-solutions-aus/",
+            "https://x.com/digitalx_solutions",
+            "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
+            "https://www.instagram.com/digitalx_solutions/",
+            "https://github.com/digitalx-solutions",
+            "https://clutch.co/profile/digitalx-solutions",
+            "https://www.crunchbase.com/organization/digitalx-solutions",
+            "https://www.trustpilot.com/review/digitalx-solutions.com",
+        ],
         ...(opts.addressLocality || opts.addressRegion
             ? {
                   address: {
