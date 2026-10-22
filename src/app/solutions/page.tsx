@@ -11,9 +11,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/solutions", {
-  title: "Solutions | Web Development, AI Automation, Performance Marketing",
+  title: "AI Voice, Automation & CRM Solutions",
   description:
-    "Explore DigitalX Solutions capability stacks across web development, AI automation, and performance marketing for US and Australian teams.",
+    "Explore AI voice receptionists, missed-call text-back, GoHighLevel systems, and n8n workflow automations engineered to scale revenue.",
 });
 
 export default function SolutionsHubPage() {

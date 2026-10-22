@@ -114,7 +114,7 @@ const nextConfig: NextConfig = {
               "font-src 'self' data:",
               "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com",
               "media-src 'self' blob: data:",
-              "frame-src 'self' https://www.googletagmanager.com",
+              "frame-src 'self' https://www.googletagmanager.com https://calendar.google.com https://calendar.app.google",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",

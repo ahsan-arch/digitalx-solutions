@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/legal/terms", {
-  title: "Terms of Service | DigitalX Solutions",
+  title: "Terms of Service",
   description:
     "Terms governing use of digitalx-solutions.com, our contact forms, and engagements with DigitalX Solutions automation services.",
 });

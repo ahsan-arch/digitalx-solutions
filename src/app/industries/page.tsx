@@ -11,9 +11,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/industries", {
-  title: "Industries We Serve | 50+ Sector Playbooks | USA & Australia",
+  title: "Industry AI & Automation Solutions",
   description:
-    "Explore DigitalX Solutions automation playbooks for home services, healthcare, professional services, beauty, hospitality, automotive, and more.",
+    "Specialized AI voice receptionists and CRM workflows for trades, healthcare, legal, real estate, and local businesses in the US and Australia.",
 });
 
 export default function IndustriesHubPage() {

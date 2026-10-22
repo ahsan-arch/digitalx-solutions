@@ -5,7 +5,7 @@ export type NavItem = {
 
 export const primaryNavigation: NavItem[] = [
   { label: "Solutions", href: "/solutions" },
-  { label: "Development", href: "/#development" },
+  { label: "Development", href: "/development" },
   { label: "Industries", href: "/industries" },
   { label: "Work", href: "/work" },
   { label: "Pricing", href: "/pricing" },
@@ -33,6 +33,34 @@ export type SolutionSlug =
 
 export type SolutionFaq = { question: string; answer: string };
 
+export type SolutionStep = {
+  name: string;
+  text: string;
+  detail: string;
+};
+
+export type SolutionComparisonRow = {
+  feature: string;
+  digitalx: string;
+  traditional: string;
+  manual: string;
+};
+
+export type TechnicalSpec = {
+  label: string;
+  value: string;
+  description: string;
+};
+
+export type SolutionPricingTier = {
+  name: string;
+  price: string;
+  cadence: string;
+  description: string;
+  features: string[];
+  highlight?: boolean;
+};
+
 export type Solution = {
   slug: SolutionSlug;
   name: string;
@@ -44,6 +72,10 @@ export type Solution = {
   legacyPaths: string[];
   group: "capture" | "nurture" | "operate";
   faqs?: SolutionFaq[];
+  workflowSteps: SolutionStep[];
+  comparison: SolutionComparisonRow[];
+  technicalSpecs: TechnicalSpec[];
+  pricingTiers: SolutionPricingTier[];
 };
 
 export const solutions: Solution[] = [
@@ -52,7 +84,7 @@ export const solutions: Solution[] = [
     name: "GoHighLevel Implementation",
     tagline: "Full GHL build out + snapshots + automations",
     summary:
-      "We stand up GoHighLevel end to end, pipelines, snapshots, workflows, calendars, and SMS, so every lead, job, and follow up runs on one system instead of five tabs.",
+      "We stand up GoHighLevel end-to-end: snapshots, workflows, calendars, and two-way SMS so every lead, job, and follow-up runs on one system instead of five tabs.",
     outcomes: [
       "One source of truth for leads, calls, SMS, bookings, and deals",
       "Industry tuned snapshots live in days, not months",
@@ -70,6 +102,105 @@ export const solutions: Solution[] = [
       "Owner operators and agencies standardising on GoHighLevel who want a production grade build, not a template dump.",
     legacyPaths: ["/services/revenue-operations"],
     group: "operate",
+    workflowSteps: [
+      {
+        name: "Stack Audit & Architecture Design",
+        text: "We inventory current tech stack, forms, calendars, and pipelines to eliminate redundant subscriptions.",
+        detail: "Identify data bottlenecks and cancel overlapping subscriptions (Calendly, ActiveCampaign, Zapier) to reduce software overhead.",
+      },
+      {
+        name: "Sub-Account & Compliance Setup",
+        text: "Configure 10DLC A2P brand registration, custom DNS records, SPF, DKIM, and DMARC.",
+        detail: "Carrier-compliant messaging setup ensuring 99%+ deliverability across US and Australian telecom carriers.",
+      },
+      {
+        name: "Master Snapshot & Automation Deployment",
+        text: "Install battle-tested pipelines, calendars, two-way SMS, and speed-to-lead automations.",
+        detail: "Pre-configured opportunity stages, automated win/loss logic, review sequences, and AI voice routing tailored to your vertical.",
+      },
+      {
+        name: "Team Training & Custom SOP Handover",
+        text: "Live screen-recorded staff training and documented standard operating procedures.",
+        detail: "Role-specific video walkthroughs, mobile app setup for field technicians, and ongoing workflow refinement.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Build Architecture",
+        digitalx: "Production-grade custom schemas & workflows",
+        traditional: "Unconfigured generic template snapshot",
+        manual: "Fragile DIY setup after weeks of tutorials",
+      },
+      {
+        feature: "Deliverability (SMS/Email)",
+        digitalx: "Verified 10DLC A2P + DMARC configuration",
+        traditional: "Default shared numbers (high carrier spam rate)",
+        manual: "Blocked carrier traffic and spam filtering",
+      },
+      {
+        feature: "Field Team Adoption",
+        digitalx: "Role-specific training & mobile SOPs",
+        traditional: "Zero documentation or team onboarding",
+        manual: "High staff friction; abandoned in 60 days",
+      },
+      {
+        feature: "Third-Party Integration",
+        digitalx: "Native webhooks into n8n, QuickBooks, Xero & CAPI",
+        traditional: "Isolated within GHL without accounting sync",
+        manual: "Manual CSV exports and double-entry",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Deployment Window",
+        value: "14 - 21 Business Days",
+        description: "Turnkey delivery including 10DLC verification, pipelines, and workflows",
+      },
+      {
+        label: "Inboxing Protocols",
+        value: "10DLC, DKIM, SPF, DMARC",
+        description: "Carrier-compliant infrastructure for maximum SMS and email deliverability",
+      },
+      {
+        label: "Integration Layer",
+        value: "REST API & Webhooks",
+        description: "Direct sync with accounting, Meta Conversions API (CAPI), and external ERPs",
+      },
+      {
+        label: "Security Grade",
+        value: "HIPAA & APPs Capable",
+        description: "Encrypted sub-accounts adhering to US and Australian data protection baselines",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Core Buildout",
+        price: "$2,400 one-time",
+        cadence: "turnkey implementation",
+        description: "Complete GoHighLevel setup for single-location operators",
+        features: [
+          "Sub-account architecture & custom domain DNS",
+          "10DLC A2P brand registration",
+          "Industry opportunity pipelines & calendar routing",
+          "5 core automated SMS/email follow-up sequences",
+          "Team handover session & mobile SOP library",
+        ],
+      },
+      {
+        name: "Enterprise Architecture",
+        price: "$4,800 one-time",
+        cadence: "multi-location rollout",
+        description: "Advanced setup for multi-location or high-volume service businesses",
+        highlight: true,
+        features: [
+          "Everything in Core Buildout",
+          "Custom n8n API middleware & external webhook sync",
+          "Meta Conversions API (CAPI) server-side tracking",
+          "Historical database migration & deduplication",
+          "30 days post-launch hypercare & SLA support",
+        ],
+      },
+    ],
     faqs: [
       {
         question: "What is GoHighLevel and what is it used for?",
@@ -120,6 +251,105 @@ export const solutions: Solution[] = [
       "Owner operators who answer phones themselves, lose calls during jobs, or burn hours on unqualified tire kickers.",
     legacyPaths: ["/services/ai-voice-receptionists"],
     group: "capture",
+    workflowSteps: [
+      {
+        name: "Sub-500ms Inbound Answering",
+        text: "Telephony stream connects instantly without robotic delay or unnatural pauses.",
+        detail: "Ultra-low latency streaming neural voice greets the caller in a natural, region-matched accent (US or Australian English).",
+      },
+      {
+        name: "Natural Intent & Emergency Triage",
+        text: "Identifies emergency repair calls vs routine estimate inquiries and extracts full caller details.",
+        detail: "Handles interruptions naturally and asks intelligent follow-up questions regarding location, urgency, and service requirements.",
+      },
+      {
+        name: "Live Calendar Booking & Verification",
+        text: "Queries live availability in GoHighLevel or Google Calendar and locks the appointment.",
+        detail: "Direct calendar verification prevents double-bookings and immediately syncs customer details to the CRM pipeline.",
+      },
+      {
+        name: "Automated Dispatch & Audio Delivery",
+        text: "Sends an immediate SMS confirmation to the caller and alerts on-duty staff with recording and transcript.",
+        detail: "Full call audio recording, sentiment analysis, and transcribed action items are delivered via SMS, email, or Slack within 15 seconds.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Availability",
+        digitalx: "24/7/365 instant pick-up",
+        traditional: "Business hours or slow call centers",
+        manual: "Voicemail / missed while on jobs",
+      },
+      {
+        feature: "Speed to Answer",
+        digitalx: "< 500ms streaming neural voice",
+        traditional: "30-90 second hold times",
+        manual: "Hours before callback",
+      },
+      {
+        feature: "Live Calendar Booking",
+        digitalx: "Bi-directional real-time calendar sync",
+        traditional: "Takes handwritten message; requires callback",
+        manual: "Frustrating phone tag",
+      },
+      {
+        feature: "Operating Cost",
+        digitalx: "Flat retainers ($1,200 - $2,800/mo)",
+        traditional: "$3,500 - $6,000/mo per full-time rep",
+        manual: "Thousands lost to competing bidders",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Voice Engine Latency",
+        value: "< 500ms Time-to-Speech",
+        description: "Real-time streaming neural speech engine with interruption & barge-in support",
+      },
+      {
+        label: "Telephony Compatibility",
+        value: "Twilio / SIP / Carrier Forwarding",
+        description: "Works with Telstra, Optus, AT&T, Verizon, T-Mobile, RingCentral, and VoIP lines",
+      },
+      {
+        label: "Calendar & CRM Sync",
+        value: "Live Bi-Directional Webhooks",
+        description: "Direct integration into GoHighLevel, Google Calendar, HubSpot, and ServiceTitan",
+      },
+      {
+        label: "Uptime SLA",
+        value: "99.9% Telephony Redundancy",
+        description: "Geo-distributed carrier gateways across US East/West and Australia East",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Operator Launch",
+        price: "$1,200/mo",
+        cadence: "billed monthly (AUD/USD)",
+        description: "For solo trades and single-van service businesses",
+        features: [
+          "Up to 300 minutes voice intake included",
+          "Tuned industry conversation prompt",
+          "Live calendar booking & CRM sync",
+          "Instant SMS notifications with audio & transcript",
+          "US or Australian native neural voice model",
+        ],
+      },
+      {
+        name: "Multi-Van Scale",
+        price: "$2,800/mo",
+        cadence: "billed monthly (AUD/USD)",
+        description: "For busy clinics, multi-truck contractors, and high-volume operations",
+        highlight: true,
+        features: [
+          "Up to 1,000 minutes voice intake included",
+          "Multi-technician emergency routing & escalation",
+          "After-hours on-call dispatch automation",
+          "Bi-directional CRM & webhook integration",
+          "Dedicated solutions engineer & quarterly tuning",
+        ],
+      },
+    ],
     faqs: [
       {
         question: "What is an AI voice receptionist?",
@@ -153,7 +383,7 @@ export const solutions: Solution[] = [
     name: "Missed Call text back",
     tagline: "Under a minute to every missed caller",
     summary:
-      "Every call you can't pick up triggers an instant SMS, so the lead is engaged before they dial your competitor.",
+      "Every call you cannot pick up triggers an instant SMS so the lead is engaged before they dial a competitor. Recover lost revenue 24/7.",
     outcomes: [
       "Recover 30 to 50% of otherwise lost callers",
       "Start the conversation before the next business opens",
@@ -170,6 +400,127 @@ export const solutions: Solution[] = [
       "Any business where a missed call equals a lost customer, home services, clinics, salons, law firms.",
     legacyPaths: [],
     group: "capture",
+    workflowSteps: [
+      {
+        name: "Carrier Signal Interception",
+        text: "The system detects an unanswered, abandoned, or busy incoming call within 15 seconds.",
+        detail: "Catches lost callers before they leave your Google Business Profile to dial a competing contractor.",
+      },
+      {
+        name: "Contextual Conversational SMS",
+        text: "Dispatches an instant, personalized SMS addressing the caller and offering immediate help.",
+        detail: "Custom variations like: 'Hi, sorry we missed you on tools! How can our team help you right now?'",
+      },
+      {
+        name: "Automated Conversational Triage",
+        text: "AI conversational engine asks qualifying questions or provides a self-booking appointment link.",
+        detail: "Captures urgency, job location, and photos via two-way MMS without requiring human intervention.",
+      },
+      {
+        name: "CRM Pipeline Sync & Tech Alert",
+        text: "Inserts the contact into GoHighLevel, tags as 'Recovered Lead', and alerts the on-duty tech.",
+        detail: "Full message transcript and contact data are instantly visible in your mobile app and CRM pipeline.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Response Speed",
+        digitalx: "< 30 seconds automatic outreach",
+        traditional: "15-45 minutes manual text",
+        manual: "Hours later or ignored",
+      },
+      {
+        feature: "Carrier Reputation",
+        digitalx: "10DLC registered & carrier approved",
+        traditional: "Shared unregistered VoIP numbers",
+        manual: "Personal carrier spam filters",
+      },
+      {
+        feature: "Lead Recovery Rate",
+        digitalx: "30% - 50% caller engagement",
+        traditional: "10% - 15% callback rate",
+        manual: "< 5% voicemail callback rate",
+      },
+      {
+        feature: "Workflow Automation",
+        digitalx: "Auto-books appointment & updates CRM",
+        traditional: "Leaves conversation hanging",
+        manual: "Requires constant manual typing",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Trigger Response Time",
+        value: "< 30 Seconds",
+        description: "Dispatches SMS immediately when telephony carrier signals an unanswered call",
+      },
+      {
+        label: "Compliance Registration",
+        value: "10DLC / A2P Registered",
+        description: "Approved brand & campaign registration ensuring 99%+ carrier delivery rate",
+      },
+      {
+        label: "Regulatory Safeguards",
+        value: "TCPA & Spam Act 2003",
+        description: "Automated opt-out enforcement (STOP, CANCEL) and clear business identification",
+      },
+      {
+        label: "CRM Sync",
+        value: "Native GoHighLevel / Webhooks",
+        description: "Two-way conversational history logged in real time to contact timeline",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Essential Recovery",
+        price: "$450/mo",
+        cadence: "billed monthly",
+        description: "Essential missed-call protection for solo contractors and local shops",
+        features: [
+          "Instant missed-call text-back (<30s)",
+          "10DLC brand registration assistance",
+          "Customized business greeting templates",
+          "Mobile app for team two-way messaging",
+          "Monthly lead recovery reporting",
+        ],
+      },
+      {
+        name: "Conversational Growth",
+        price: "$950/mo",
+        cadence: "billed monthly",
+        description: "Two-way AI text triage and automated calendar scheduling",
+        highlight: true,
+        features: [
+          "Everything in Essential Recovery",
+          "Conversational AI SMS qualifying bot",
+          "Direct self-booking calendar integration",
+          "Multi-user staff push notifications",
+          "CRM pipeline automation & stage progression",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How does missed-call text-back integrate with my existing business phone?",
+        answer:
+          "We configure simple conditional call forwarding or carrier webhooks from your existing mobile, landline, or VoIP provider (Telstra, Optus, AT&T, Verizon, RingCentral). When a call is unanswered or busy, the carrier signals our system and triggers an instant SMS within 30 seconds.",
+      },
+      {
+        question: "Does this comply with US TCPA and Australian Spam Act 2003 laws?",
+        answer:
+          "Yes, strictly. We configure 10DLC A2P brand and campaign registration for US clients, include mandatory business identification and opt-out keywords (STOP, UNSUBSCRIBE), and adhere to Australian Spam Act 2003 transactional communication exemptions.",
+      },
+      {
+        question: "Can the customer text back and have a natural conversation?",
+        answer:
+          "Yes. Customers can reply directly to the SMS. You can configure the system to use conversational AI to triage their inquiry and provide a booking link, or manage replies directly from our unified mobile app.",
+      },
+      {
+        question: "What percentage of missed callers actually engage with the text?",
+        answer:
+          "Across our home services and clinic clients in the US and Australia, between 30% and 50% of missed callers reply to the automated text within 5 minutes, allowing you to secure the job before they dial a competitor.",
+      },
+    ],
   },
   {
     slug: "automated-lead-nurturing",
@@ -193,6 +544,127 @@ export const solutions: Solution[] = [
       "Services with consideration cycles, med spas, legal, mortgage, fitness memberships, home improvement estimates.",
     legacyPaths: [],
     group: "nurture",
+    workflowSteps: [
+      {
+        name: "Multi-Source Lead Ingestion",
+        text: "Ingest leads from Google Ads, Meta Ads, website forms, and incoming calls into one normalized pipeline.",
+        detail: "Eliminates duplicate records and tags each lead with service intent, campaign origin, and timestamp.",
+      },
+      {
+        name: "Speed-to-Lead Initial Touch",
+        text: "Dispatches personalized SMS and email confirmation within 60 seconds of inquiry.",
+        detail: "Acknowledges the inquiry immediately, shares social proof or customer reviews, and offers instant scheduling.",
+      },
+      {
+        name: "Behavior-Adaptive Multi-Channel Follow-up",
+        text: "Chains strategic SMS, email, and WhatsApp touchpoints adapted to how the prospect engages.",
+        detail: "If an email is opened but no booking is made, a gentle SMS follow-up triggers 24 hours later.",
+      },
+      {
+        name: "Automated Pause & Sales Handoff",
+        text: "The sequence instantly disengages upon customer reply or booking, alerting your team.",
+        detail: "Prevents awkward duplicate outreach and pushes the qualified opportunity into your sales rep's priority queue.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Cadence Intelligence",
+        digitalx: "Behavior-triggered branching & pausing",
+        traditional: "Rigid one-size-fits-all drip emails",
+        manual: "Sporadic manual follow-up emails",
+      },
+      {
+        feature: "Channels Used",
+        digitalx: "SMS + Email + WhatsApp in harmony",
+        traditional: "Email only (low open rates)",
+        manual: "Single phone call attempt",
+      },
+      {
+        feature: "Response Tracking",
+        digitalx: "Pauses immediately upon customer reply",
+        traditional: "Keeps sending emails after reply",
+        manual: "Messy inboxes and missed replies",
+      },
+      {
+        feature: "Lead Re-engagement",
+        digitalx: "Recovers 20-35% of stalled estimates",
+        traditional: "< 5% cold list reactivation",
+        manual: "Lost leads forgotten in spreadsheets",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Channel Support",
+        value: "SMS, Email & WhatsApp API",
+        description: "Synchronized multi-channel outreach preventing customer fatigue",
+      },
+      {
+        label: "Deliverability Optimization",
+        value: "Dedicated IP & Warmup",
+        description: "Automated sending cadence, domain reputation monitoring, and spam-score audits",
+      },
+      {
+        label: "Logic Engine",
+        value: "Conditional Branching",
+        description: "Workflows adapt based on email opens, link clicks, SMS replies, and form submissions",
+      },
+      {
+        label: "Attribution Sync",
+        value: "UTM & Campaign Tracking",
+        description: "Passes original ad source and conversion timestamps to your CRM analytics",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Nurture Launch",
+        price: "$950/mo",
+        cadence: "billed monthly",
+        description: "Turnkey follow-up automation for active quote pipelines",
+        features: [
+          "Up to 3 multi-channel nurture workflows",
+          "Speed-to-lead instant SMS & email",
+          "Stalled quote re-engagement sequence",
+          "Review & referral generation sequence",
+          "Monthly conversion rate optimization",
+        ],
+      },
+      {
+        name: "Full Lifecycle Engine",
+        price: "$1,800/mo",
+        cadence: "billed monthly",
+        description: "End-to-end customer lifecycle, reactivation, and VIP retention",
+        highlight: true,
+        features: [
+          "Unlimited custom nurture workflows",
+          "Database reactivation sprints (past customers)",
+          "Dynamic segmentation based on customer lifetime value",
+          "Advanced A/B testing on subject lines and copy",
+          "Bi-directional webhook sync with external CRMs",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How quickly does the lead nurture sequence trigger after an inquiry?",
+        answer:
+          "The initial touchpoint (SMS or email confirmation) triggers in under 60 seconds. Research shows responding within 5 minutes increases conversion rates by up to 391% compared to waiting an hour.",
+      },
+      {
+        question: "Will the automated messages stop sending if the customer replies?",
+        answer:
+          "Yes, automatically. The moment a contact replies to an SMS, clicks to book an appointment, or calls your office, the nurture workflow immediately disengages and notifies your sales team to prevent awkward duplicate messages.",
+      },
+      {
+        question: "Can you help reactivate our old list of previous inquiries?",
+        answer:
+          "Yes. We design and execute dedicated 'Database Reactivation' campaigns using non-spammy, high-converting SMS and email offers that routinely generate dozens of booked jobs from dormant customer databases.",
+      },
+      {
+        question: "What platforms do you build the nurture sequences on?",
+        answer:
+          "We primarily build and manage sequences inside GoHighLevel, but can also integrate or synchronize with HubSpot, ActiveCampaign, Klaviyo, or custom webhooks via n8n.",
+      },
+    ],
   },
   {
     slug: "chatbots",
@@ -216,13 +688,134 @@ export const solutions: Solution[] = [
       "Any business with a website doing more than $10k/mo in leads, especially multi location and after hours heavy.",
     legacyPaths: ["/services/conversational-ai"],
     group: "nurture",
+    workflowSteps: [
+      {
+        name: "Knowledge Base & Guardrail Ingestion",
+        text: "The conversational AI is grounded on your services, pricing parameters, service areas, and company FAQs.",
+        detail: "Strict retrieval guardrails prevent hallucinations, unauthorized price promises, or off-topic responses.",
+      },
+      {
+        name: "Omnichannel Deployment",
+        text: "Embedded on your website, WhatsApp Business API, and SMS with matching brand styling.",
+        detail: "Responsive, lightweight widget that does not degrade mobile Core Web Vitals or page load speeds.",
+      },
+      {
+        name: "Conversational Qualification & Intake",
+        text: "Engages visitors 24/7, answers technical questions, filters price shoppers, and extracts job details.",
+        detail: "Collects customer name, verified phone number, job address, and preferred booking date naturally.",
+      },
+      {
+        name: "Direct Calendar Booking & Team Handoff",
+        text: "Presents live booking availability or transfers high-intent chats to staff with full context.",
+        detail: "Locks the appointment directly into your calendar or sends an instant push notification for staff takeover.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Conversational Depth",
+        digitalx: "Context-aware LLM with guardrails",
+        traditional: "Rigid button-based decision trees",
+        manual: "Live chat unattended after 5pm",
+      },
+      {
+        feature: "Channel Integration",
+        digitalx: "Website + WhatsApp + SMS",
+        traditional: "Website widget only",
+        manual: "Scattered across different inboxes",
+      },
+      {
+        feature: "Calendar Integration",
+        digitalx: "Embeds live real-time booking slots",
+        traditional: "Collects email and promises reply",
+        manual: "Back-and-forth scheduling emails",
+      },
+      {
+        feature: "Knowledge Guardrails",
+        digitalx: "Strict company policy grounding",
+        traditional: "Generic canned answers",
+        manual: "Inconsistent staff answers",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Inference Latency",
+        value: "< 800ms Token Streaming",
+        description: "Instant conversational responses using optimized cloud LLM inference",
+      },
+      {
+        label: "Guardrail Architecture",
+        value: "Retrieval-Augmented (RAG)",
+        description: "Answers strictly restricted to verified business data with hallucination prevention",
+      },
+      {
+        label: "Omnichannel Endpoints",
+        value: "Web, WhatsApp & SMS",
+        description: "Single unified knowledge base driving all customer chat endpoints",
+      },
+      {
+        label: "Security Compliance",
+        value: "No Training on PII",
+        description: "Caller and customer personal data is never used to train public models",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Web Conversion Bot",
+        price: "$650/mo",
+        cadence: "billed monthly",
+        description: "24/7 website chat qualification and appointment booking",
+        features: [
+          "Custom website chat widget styled to your brand",
+          "Trained on company FAQs, pricing & service areas",
+          "Direct calendar booking integration",
+          "Real-time lead alerts via email & SMS",
+          "Monthly chat transcript review and prompt tuning",
+        ],
+      },
+      {
+        name: "Omnichannel Suite",
+        price: "$1,450/mo",
+        cadence: "billed monthly",
+        description: "Comprehensive web, WhatsApp Business, and SMS conversational AI",
+        highlight: true,
+        features: [
+          "Everything in Web Conversion Bot",
+          "Official WhatsApp Business API integration",
+          "SMS conversational AI answering",
+          "Live human takeover with mobile push notifications",
+          "CRM contact record auto-creation and tagging",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Will the chatbot make up prices or hallucinate false information?",
+        answer:
+          "No. We utilize strict Retrieval-Augmented Generation (RAG) architecture and boundary guardrails. If a visitor asks a question outside of the bot's verified knowledge base, it politely declines to guess and routes the question to your human team.",
+      },
+      {
+        question: "Can the chatbot book appointments directly into our calendar?",
+        answer:
+          "Yes. The bot connects directly with GoHighLevel, Google Calendar, Calendly, or your proprietary CRM to present live availability and secure the booking right inside the chat window.",
+      },
+      {
+        question: "How does the bot hand off a conversation to a human team member?",
+        answer:
+          "When a customer requests human support or meets high-value lead criteria, the bot flags the conversation, sends an urgent push notification to your team, and allows any staff member to jump into the chat seamlessly.",
+      },
+      {
+        question: "Does the WhatsApp bot require an official WhatsApp Business API account?",
+        answer:
+          "Yes, we handle the complete Meta Business Verification and WhatsApp Business Cloud API setup, ensuring your business has an official, verified business profile.",
+      },
+    ],
   },
   {
     slug: "n8n-workflow-automation",
     name: "n8n Workflow Automation",
     tagline: "Custom automations that replace your manual ops",
     summary:
-      "Bespoke n8n workflows that wire your CRM, ads, forms, calendars, and AI into automated pipelines, self hosted or cloud, with 90%+ cost savings vs Zapier at scale.",
+      "Custom n8n workflows connecting your CRM, ads, forms, calendars, and AI into automated pipelines. Self-hosted or cloud with 90%+ savings vs Zapier.",
     outcomes: [
       "Kill the $600/mo Zapier bill and run 10x more workflows",
       "Automate the 3 to 8 hours per week every team loses to copy/paste",
@@ -240,6 +833,127 @@ export const solutions: Solution[] = [
       "Teams hitting Zapier cost ceilings or needing logic their SaaS automation tool can't do.",
     legacyPaths: [],
     group: "operate",
+    workflowSteps: [
+      {
+        name: "Process Audit & Schema Blueprint",
+        text: "We document every manual copy-paste task, software silo, and data flow between your operational tools.",
+        detail: "Map inputs, endpoints, error conditions, and rate limits across your CRM, accounting, and marketing stack.",
+      },
+      {
+        name: "Hardened Infrastructure Deployment",
+        text: "Spin up a dedicated n8n instance (self-hosted Docker container or secure cloud) with SSL, backups, and encryption.",
+        detail: "Configured with SSL, automated database backups, AES-256 credential encryption, and execution pruning.",
+      },
+      {
+        name: "Resilient Node Pipeline Engineering",
+        text: "Build custom automation workflows with conditional branching, data transformations, and custom JavaScript/Python nodes.",
+        detail: "Transform data payloads with JavaScript/Python code nodes and handle pagination and edge cases.",
+      },
+      {
+        name: "Error Handling & Observability",
+        text: "Configure automated dead-letter queues, execution logging, and real-time alerts to Slack, Discord, or email on failure.",
+        detail: "Every execution is logged; failed executions automatically retry with exponential backoff and alert engineers.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Task Cost Structure",
+        digitalx: "Zero per-task charges (flat host/retainer)",
+        traditional: "Expensive per-task fees ($300-$1,500/mo)",
+        manual: "Hundreds of manual hours lost each month",
+      },
+      {
+        feature: "Data Sovereignty",
+        digitalx: "100% on your own secure server",
+        traditional: "Third-party US cloud servers",
+        manual: "Scattered in spreadsheets and browser tabs",
+      },
+      {
+        feature: "Complex Logic & Coding",
+        digitalx: "Full JS/Python loops, sub-workflows & webhooks",
+        traditional: "Severely restricted step limits",
+        manual: "High human calculation error rate",
+      },
+      {
+        feature: "Error Recovery",
+        digitalx: "Automatic retries & Slack alert triggers",
+        traditional: "Silent task pauses requiring manual re-run",
+        manual: "Data errors go unnoticed for weeks",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Deployment Options",
+        value: "Self-Hosted or Cloud",
+        description: "Deploy on your private AWS, DigitalOcean, Hetzner, or managed n8n Cloud instance",
+      },
+      {
+        label: "Cost Optimization",
+        value: "90%+ Savings vs Zapier",
+        description: "Run millions of workflow executions with zero incremental per-task bills",
+      },
+      {
+        label: "Security Architecture",
+        value: "AES-256 Encryption",
+        description: "Credentials stored with database-level encryption behind private VPC firewalls",
+      },
+      {
+        label: "Execution Observability",
+        value: "Live Webhook Logging",
+        description: "Full audit trails for every API payload, response status, and transformation",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Workflow Sprint",
+        price: "$1,800 one-time",
+        cadence: "turnkey buildout",
+        description: "Dedicated deployment of n8n server and 3 custom operational workflows",
+        features: [
+          "Production n8n Docker deployment with SSL & backups",
+          "3 custom API workflows (CRM, billing, marketing)",
+          "Automated error notification triggers to Slack/Email",
+          "Encrypted credential vault setup",
+          "Full technical architecture documentation & handover",
+        ],
+      },
+      {
+        name: "Managed Automation Retainer",
+        price: "$1,200/mo",
+        cadence: "billed monthly",
+        description: "Continuous automation engineering, monitoring, and workflow expansion",
+        highlight: true,
+        features: [
+          "Up to 10 active managed production workflows",
+          "24/7 server monitoring and automated error recovery",
+          "Zapier/Make task migration into n8n",
+          "Priority SLA support via dedicated Slack channel",
+          "Monthly pipeline optimization & new API integrations",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why should we migrate from Zapier to n8n?",
+        answer:
+          "Zapier charges aggressive per-task fees that punish growing businesses, often reaching $500 to $2,000+ per month. n8n is open-source and self-hostable, allowing you to run unlimited executions for a fraction of the hosting cost, with far more powerful data transformation capabilities.",
+      },
+      {
+        question: "Can n8n run inside our own private cloud or data center?",
+        answer:
+          "Yes. We frequently deploy n8n inside our clients' own AWS, Google Cloud, DigitalOcean, or on-premises Docker environments. Your sensitive customer and financial data never passes through third-party servers.",
+      },
+      {
+        question: "What happens if an external API or service experiences downtime?",
+        answer:
+          "Our n8n pipelines are engineered with error triggers, automatic exponential retry mechanisms, and dead-letter queues. If an external service is temporarily unreachable, the payload is held and re-attempted, while sending an immediate alert to our team.",
+      },
+      {
+        question: "Can n8n connect to custom or legacy software without native integrations?",
+        answer:
+          "Yes. n8n features versatile HTTP Request nodes, raw webhook listeners, and custom JavaScript/Python execution nodes, enabling connection to any software with a REST API, GraphQL endpoint, or SQL database.",
+      },
+    ],
   },
   {
     slug: "crm-integration",
@@ -263,13 +977,134 @@ export const solutions: Solution[] = [
       "Owner operators outgrowing spreadsheets and agencies stitched from 6 separate tools.",
     legacyPaths: ["/services/revenue-operations"],
     group: "operate",
+    workflowSteps: [
+      {
+        name: "Database Normalization & Cleansing",
+        text: "Clean, deduplicate, and standardize existing customer records across previous CRMs, spreadsheets, and accounting tools.",
+        detail: "Eliminates duplicate contacts, standardizes phone numbers into E.164 international format, and maps legacy tags.",
+      },
+      {
+        name: "Custom Pipeline & Schema Architecture",
+        text: "Configure custom deal stages, custom contact fields, tags, and automated win/loss tracking matching your exact sales cycle.",
+        detail: "Maps deal stages to real-world operations (Quote Requested, Estimate Sent, Job In-Progress, Invoiced, Closed-Won).",
+      },
+      {
+        name: "Full-Stack API & Webhook Wiring",
+        text: "Connect website forms, ad platforms (Meta CAPI & Google Ads), call tracking, and field software into one central hub.",
+        detail: "Bi-directional synchronization between GoHighLevel, field software (ServiceTitan, Jobber), and accounting (QuickBooks, Xero).",
+      },
+      {
+        name: "Role-Based Team Handover & Dashboards",
+        text: "Configure permissions for dispatchers, technicians, and managers, accompanied by live training and process SOPs.",
+        detail: "Includes screen-recorded training videos, mobile app setup for field teams, and custom manager dashboards.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Data Cohesion",
+        digitalx: "Single unified source of truth",
+        traditional: "Fragmented across 4 different platforms",
+        manual: "Spreadsheets updated haphazardly",
+      },
+      {
+        feature: "Marketing Attribution",
+        digitalx: "Closed-loop revenue attribution",
+        traditional: "Click tracking without revenue data",
+        manual: "No idea which marketing channel works",
+      },
+      {
+        feature: "Automation Triggering",
+        digitalx: "Instant stage-change automations",
+        traditional: "Manual status updates by staff",
+        manual: "Leads go neglected for weeks",
+      },
+      {
+        feature: "Accounting Sync",
+        digitalx: "Bi-directional Xero / QuickBooks sync",
+        traditional: "Manual invoice creation",
+        manual: "Double data entry and billing errors",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Supported CRMs",
+        value: "GoHighLevel, HubSpot, Salesforce",
+        description: "Specialized in GoHighLevel architecture with enterprise API sync to legacy CRMs",
+      },
+      {
+        label: "Attribution Precision",
+        value: "Server-Side CAPI + UTMs",
+        description: "Closed-loop offline conversion tracking sent back to Meta and Google Ads",
+      },
+      {
+        label: "Field Integration",
+        value: "ServiceTitan, Jobber & Clio",
+        description: "Bridges modern marketing engines with industry-specific ERP and field software",
+      },
+      {
+        label: "Data Security",
+        value: "SOC2 & APPs Aligned",
+        description: "Strict role-based access control, field encryption, and automated audit logging",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Core CRM Integration",
+        price: "$2,200 one-time",
+        cadence: "turnkey integration",
+        description: "Connect your marketing channels, website, and phone into one unified CRM",
+        features: [
+          "GoHighLevel or HubSpot pipeline setup",
+          "Lead capture forms & call tracking synchronization",
+          "Meta Ads & Google Ads conversion tracking",
+          "Clean contact import & tag architecture",
+          "Staff training workshop & workflow documentation",
+        ],
+      },
+      {
+        name: "Full Enterprise Stack",
+        price: "$4,500 one-time",
+        cadence: "enterprise buildout",
+        description: "Multi-system synchronization connecting CRM, ERP, accounting, and field software",
+        highlight: true,
+        features: [
+          "Everything in Core CRM Integration",
+          "Bi-directional accounting sync (QuickBooks/Xero)",
+          "Field service software bridge (ServiceTitan, Jobber)",
+          "Custom n8n middleware for complex data schemas",
+          "30 days post-launch hypercare & schema optimization",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Which CRM platforms does DigitalX Solutions implement?",
+        answer:
+          "We specialize deeply in GoHighLevel for service businesses and agencies due to its all-in-one capabilities. We also build custom bidirectional integrations with HubSpot, Salesforce, Pipedrive, and industry platforms like ServiceTitan and Jobber.",
+      },
+      {
+        question: "Can you migrate our existing customer data without losing history?",
+        answer:
+          "Yes. We perform structured data migration sprints where we export, clean, map, and import your existing contact history, tags, notes, and deals so your team hits the ground running with zero data loss.",
+      },
+      {
+        question: "How do you track which ad campaign produced a paying customer?",
+        answer:
+          "We implement closed-loop server-side tracking using the Meta Conversions API (CAPI) and Google Ads offline conversion imports. When a deal reaches 'Won' in your CRM, the actual revenue is sent back to the ad network to train the bidding algorithm on real profit.",
+      },
+      {
+        question: "How long does a typical CRM integration project take?",
+        answer:
+          "A standard CRM implementation typically takes between 2 to 3 weeks, including data migration, automation testing, and live staff training.",
+      },
+    ],
   },
   {
     slug: "analytics-dashboards",
     name: "Analytics & Reporting Dashboards",
     tagline: "Live pipeline + ROI dashboards for owners",
     summary:
-      "See bookings, revenue, ad spend, and pipeline health in one dashboard, not seven tabs you forget to check.",
+      "Track bookings, revenue, ad spend, and pipeline conversion in one unified dashboard instead of logging into separate ad, CRM, and call tools.",
     outcomes: [
       "Know your true cost per booked job this week, not next quarter",
       "Spot channel drop offs before they blow up your month",
@@ -286,6 +1121,127 @@ export const solutions: Solution[] = [
       "Owners who want numbers at a glance, not another report to chase.",
     legacyPaths: [],
     group: "operate",
+    workflowSteps: [
+      {
+        name: "Data Source Identification & Extraction",
+        text: "Connect ad accounts (Meta, Google), CRM (GoHighLevel, HubSpot), telephony, and accounting (Xero, QuickBooks).",
+        detail: "Extracts daily impression, spend, click, lead, deal, and payment data through official secure APIs.",
+      },
+      {
+        name: "Data Modeling & Transformation",
+        text: "Build unified data schemas that calculate true Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), and Average Order Value (AOV).",
+        detail: "Resolves data discrepancies between ad platforms and closed bank deposits for undeniable financial truth.",
+      },
+      {
+        name: "Visual Dashboard Construction",
+        text: "Design clean, responsive executive dashboards with real-time KPI cards, pipeline stage visualizers, and technician scorecards.",
+        detail: "Mobile-optimized views allowing business owners to monitor real-time company vitals from anywhere.",
+      },
+      {
+        name: "Automated Reporting Digests",
+        text: "Configure weekly and monthly automated summary reports delivered directly to the business owner via email and Slack.",
+        detail: "Provides high-level performance highlights, top-performing channels, and proactive warnings on pipeline dips.",
+      },
+    ],
+    comparison: [
+      {
+        feature: "Reporting Accuracy",
+        digitalx: "Closed-loop reconciled revenue data",
+        traditional: "Discrepancy-ridden platform metrics",
+        manual: "Manual Excel sheets compiled monthly",
+      },
+      {
+        feature: "Metric Freshness",
+        digitalx: "Near real-time live data updates",
+        traditional: "Delayed weekly batch updates",
+        manual: "Outdated by the time it is compiled",
+      },
+      {
+        feature: "Actionable Insights",
+        digitalx: "Identifies exact bottlenecks by team/ad",
+        traditional: "Overwhelming vanity metrics",
+        manual: "High-level guesses without context",
+      },
+      {
+        feature: "Executive Accessibility",
+        digitalx: "Single mobile-friendly dashboard & digests",
+        traditional: "Multiple complex tool logins",
+        manual: "Scattered paper and email reports",
+      },
+    ],
+    technicalSpecs: [
+      {
+        label: "Refresh Cadence",
+        value: "Near Real-Time / Hourly",
+        description: "Automated API webhooks and scheduled extraction pipelines",
+      },
+      {
+        label: "Data Visualization",
+        value: "Tailored Executive Views",
+        description: "Custom interactive dashboards accessible via web or embedded in GoHighLevel",
+      },
+      {
+        label: "Calculated KPIs",
+        value: "CAC, LTV, ROAS & Pipeline Velocity",
+        description: "True business metrics calculated by merging ad spend with closed CRM revenue",
+      },
+      {
+        label: "Access Controls",
+        value: "Role-Based Permissions",
+        description: "Restrict financial and sales performance data based on employee hierarchy",
+      },
+    ],
+    pricingTiers: [
+      {
+        name: "Executive KPI Dashboard",
+        price: "$1,600 one-time",
+        cadence: "turnkey buildout",
+        description: "Unified dashboard connecting ad spend, lead volume, and booked revenue",
+        features: [
+          "Multi-source data pipeline setup (Ads + CRM + Calls)",
+          "Custom executive KPI dashboard layout",
+          "Automated weekly email summary digest",
+          "Cost per Lead & Cost per Booked Call tracking",
+          "Dashboard walkthrough and metric definition guide",
+        ],
+      },
+      {
+        name: "Operational Intelligence Suite",
+        price: "$3,200 one-time",
+        cadence: "enterprise rollout",
+        description: "Comprehensive reporting suite with technician scorecards and LTV forecasting",
+        highlight: true,
+        features: [
+          "Everything in Executive KPI Dashboard",
+          "Individual salesperson & technician performance metrics",
+          "Closed-loop accounting reconciliation (Xero/QuickBooks)",
+          "Predictive pipeline and seasonal demand forecasting",
+          "Quarterly metric review and dashboard refinement",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why shouldn't I just look at Google Ads or Facebook Ads Manager reports?",
+        answer:
+          "Platform ad managers only show self-reported click and conversion data, often taking credit for the same customer multiple times while ignoring refunds, cancellations, and sales cycles. A unified dashboard matches actual closed revenue from your CRM to ad spend for true profit measurement.",
+      },
+      {
+        question: "Can this dashboard be accessed on mobile devices?",
+        answer:
+          "Yes, our dashboards are built with responsive layouts optimized for mobile screens, and we also configure automated weekly snapshot emails so you can review performance without needing to log in.",
+      },
+      {
+        question: "Can we track individual sales rep or technician performance?",
+        answer:
+          "Yes. If your team logs appointments, closed jobs, or quotes inside your CRM or field software, we can build individual scorecards tracking close rates, average job value, and customer satisfaction.",
+      },
+      {
+        question: "Do we need to pay ongoing licensing fees for dashboard software?",
+        answer:
+          "We design dashboards using cost-effective tools (such as Looker Studio, native GoHighLevel reporting, or lightweight cloud tools) so you avoid expensive enterprise business intelligence licensing fees.",
+      },
+    ],
   },
 ];
 
@@ -851,13 +1807,13 @@ export const footerColumns = [
   {
     title: "Industries",
     links: [
-      { label: "Home Services & Contractors", href: "/industries#home-services---contractors" },
-      { label: "Healthcare & Medical", href: "/industries#healthcare---medical" },
-      { label: "Professional & Financial", href: "/industries#professional---financial-services" },
-      { label: "Beauty, Fitness & Wellness", href: "/industries#beauty--fitness---wellness" },
-      { label: "Events & Hospitality", href: "/industries#events---hospitality" },
+      { label: "Home Services & Contractors", href: "/industries#home-services-contractors" },
+      { label: "Healthcare & Medical", href: "/industries#healthcare-medical" },
+      { label: "Professional & Financial", href: "/industries#professional-financial-services" },
+      { label: "Beauty, Fitness & Wellness", href: "/industries#beauty-fitness-wellness" },
+      { label: "Events & Hospitality", href: "/industries#events-hospitality" },
       { label: "Automotive", href: "/industries#automotive" },
-      { label: "Family, Pet & Specialty Care", href: "/industries#family--pet---specialty-care" },
+      { label: "Family, Pet & Specialty Care", href: "/industries#family-pet-specialty-care" },
       { label: "View All Industries", href: "/industries" },
     ],
   },

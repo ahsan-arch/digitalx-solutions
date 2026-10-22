@@ -11,8 +11,8 @@ import {
 import { articlesData, authors } from "@/data/insights-articles";
 
 export const metadata: Metadata = generatePageMetadata("/insights", {
-    title: "Digital Marketing & Performance Engineering Insights | DigitalX Solutions",
-    description: "Advanced insights on deep-tech digital marketing, Next.js web development, server side tracking, and CRM automation strategies.",
+    title: "Automation & AI Voice Insights",
+    description: "Practical guides on AI voice receptionists, missed-call text-back, GoHighLevel setup, and workflow automation for US and Australian service businesses.",
 });
 
 const articles = Object.entries(articlesData)

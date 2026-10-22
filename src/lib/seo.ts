@@ -11,48 +11,48 @@ export const siteConfig = {
 // Every title ≤60 chars, every description ≤155 chars, includes US/AU signals
 export const seoCopy = {
     home: {
-        title: "#1 Automation & Website Development Agency | USA & Australia",
-        description: "DigitalX Solutions: custom business automation, AI workflows & high-performance website development. n8n, GoHighLevel & Next.js experts serving USA & AU.",
+        title: "AI Voice Receptionist & GoHighLevel Setup | USA & Australia",
+        description: "AI voice receptionists, missed-call text-back, and GoHighLevel setup for US and Australian service businesses. Capture every lead and book more jobs 24/7.",
     },
     services: {
-        title: "Automation & Website Services | AI, n8n, Meta Ads Agency",
+        title: "AI Voice & Business Automation Services",
         description:
-            "Full stack automation and website services: custom n8n workflows, AI voice agents, Next.js websites & Meta Ads CAPI tracking. USA & Australia.",
+            "Full-stack AI automation services: voice receptionists, missed-call text-back, n8n workflows, and GoHighLevel setups for US and AU businesses.",
     },
     webDev: {
-        title: "Web Development Agency USA & Australia | Next.js Experts",
+        title: "Next.js Web Development Agency",
         description:
-            "Custom web development & design with sub-200ms loads. SEO-baked Next.js architecture, 98+ Lighthouse scores. Top website agency for the USA & Australia.",
+            "Custom web development with sub-200ms load times and Next.js architecture. High-performance, SEO-baked websites for US and Australian businesses.",
     },
     metaAds: {
-        title: "Meta Ads Agency | Server-Side Tracking & CAPI | USA & AU",
+        title: "Meta Ads & Server-Side CAPI Agency",
         description:
-            "Stop iOS14 signal loss. Full funnel Meta Ads with Facebook Conversion API & server side tagging. High-ROAS ad automation for US & Australian clients.",
+            "Full-funnel Meta Ads management with Facebook Conversions API and server-side tagging. Maximize ROAS for US and Australian businesses.",
     },
     revenueOps: {
-        title: "Business Automation Agency | n8n & GoHighLevel Workflows",
+        title: "Workflow Automation & n8n Agency",
         description:
-            "Custom workflow automation with n8n & GoHighLevel CRM. We automate sales pipelines, lead routing & data sync for businesses in the USA & Australia.",
+            "Custom workflow automation with n8n and GoHighLevel CRM. Automate sales pipelines, lead routing, and database sync across the US and Australia.",
     },
     work: {
-        title: "Automation & Website Case Studies | Real Client Results",
+        title: "AI Voice & CRM Automation Case Studies",
         description:
-            "See how our automation and website development agency scales revenue. Real numbers: 3.2x ROAS, $2.4M revenue automated, 98+ Lighthouse scores.",
+            "Explore real-world client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows.",
     },
     contact: {
-        title: "Hire an Automation & Website Agency | Start Your Project",
+        title: "Book a Strategy Call",
         description:
-            "Contact DigitalX Solutions, the automation and website development agency serving USA & Australia. Get a free consultation for your project.",
+            "Schedule a strategy consultation with DigitalX Solutions. Get a custom roadmap for AI voice receptionists, missed-call recovery, and CRM automation.",
     },
     conversationalAI: {
-        title: "AI Voice Receptionists & Automation for Service Businesses",
+        title: "AI Voice Receptionists for Service Businesses",
         description:
-            "Deploy 24/7 AI voice agents that answer phones, book appointments & qualify leads. Custom automation for dental clinics, salons & medical practices.",
+            "Deploy 24/7 AI voice agents that answer calls, book appointments, and qualify leads with human-grade latency for service businesses in the US & AU.",
     },
     tryVoiceAgent: {
-        title: "Try an AI Voice Agent Live | Free Demo for Your Business",
+        title: "Live AI Voice Agent Demo",
         description:
-            "Tell us about your business, pick a voice, and have a live two way conversation with an AI receptionist trained on your details. Free to try.",
+            "Test a live AI voice receptionist trained on your business. Have a real-time conversation and experience interactive voice booking for free.",
     },
 };
 
@@ -149,31 +149,18 @@ function generateHreflangAlternates(route: string) {
  */
 export function generatePageMetadata(
     route: string,
-    copy: { title: string; description: string },
-    geo?: { region: string | string[]; placename: string | string[]; position?: string }
+    copy: { title: string; description: string }
 ): Metadata {
-    const url = `${siteConfig.domain}${route}`;
-    const ogParams = new URLSearchParams({ title: copy.title });
+    const cleanTitle = copy.title
+        .replace(/\s*\|\s*DigitalX(?:(?:\s+Solutions|\s+Insights|\s+Automation|\s+Agency)?).*$/gi, "")
+        .trim();
 
-    // Default to a neutral US+AU signal (no single lat/long, which would pin the
-    // whole site to one country). Country pages pass their own geo.
-    const geoOther = geo
-        ? {
-              "geo.region": geo.region,
-              "geo.placename": geo.placename,
-              ...(geo.position
-                  ? { "geo.position": geo.position, ICBM: geo.position.replace(";", ", ") }
-                  : {}),
-          }
-        : {
-              "geo.region": ["US", "AU"],
-              "geo.placename": ["United States", "Australia"],
-          };
+    const url = `${siteConfig.domain}${route}`;
+    const ogParams = new URLSearchParams({ title: cleanTitle });
 
     return {
-        title: copy.title,
+        title: cleanTitle,
         description: copy.description,
-        keywords: seoKeywords,
         authors: [{ name: "DigitalX Solutions", url: siteConfig.domain }],
         creator: "DigitalX Solutions",
         publisher: "DigitalX Solutions",
@@ -183,7 +170,7 @@ export function generatePageMetadata(
             locale: "en_US",
             alternateLocale: ["en_AU"],
             url,
-            title: copy.title,
+            title: `${cleanTitle} | DigitalX`,
             description: copy.description,
             siteName: "DigitalX Solutions",
             images: [
@@ -191,20 +178,19 @@ export function generatePageMetadata(
                     url: `/api/og?${ogParams.toString()}`,
                     width: 1200,
                     height: 630,
-                    alt: `DigitalX Solutions | ${copy.title}`,
+                    alt: `DigitalX | ${cleanTitle}`,
                     type: "image/png",
                 },
             ],
         },
         twitter: {
             card: "summary_large_image",
-            title: copy.title,
+            title: `${cleanTitle} | DigitalX`,
             description: copy.description,
             images: [`/api/og?${ogParams.toString()}`],
             site: siteConfig.social.twitter,
             creator: siteConfig.social.twitter,
         },
-        other: geoOther,
     };
 }
 
@@ -222,7 +208,7 @@ export function generateOrganizationSchema() {
                 description:
                     "DigitalX Solutions is a web development, AI automation, and performance marketing agency serving service businesses in the United States and Australia. We build websites, AI voice agents, GoHighLevel and CRM systems, and Meta Ads tracking.",
                 disambiguatingDescription:
-                    "A digital marketing and software agency. Not a medical imaging, radiology, or X-ray provider.",
+                    "DigitalX Solutions is an automation and web development agency for service businesses in the United States and Australia. Not affiliated with DigitalX Limited (ASX: DCC) cryptocurrency funds or medical imaging and radiology providers.",
                 url: siteConfig.domain,
                 email: "info@digitalx-solutions.com",
                 logo: `${siteConfig.domain}/logo.png`,
@@ -243,12 +229,24 @@ export function generateOrganizationSchema() {
                 },
                 telephone: "+61 451 413 786",
                 sameAs: [
-                    "https://www.instagram.com/digitalx_solutions/",
-                    "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
                     "https://www.linkedin.com/company/digitalx-solutions-aus/",
                     "https://x.com/digitalx_solutions",
+                    "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
+                    "https://www.instagram.com/digitalx_solutions/",
+                    "https://github.com/digitalx-solutions",
+                    "https://clutch.co/profile/digitalx-solutions",
+                    "https://www.crunchbase.com/organization/digitalx-solutions",
+                    "https://www.trustpilot.com/review/digitalx-solutions.com",
+                    "https://community.n8n.io/u/digitalx_solutions",
+                    "https://www.producthunt.com/@digitalx_solutions",
                 ],
                 foundingDate: "2022",
+                founder: {
+                    "@type": "Person",
+                    name: "Ahsan Architect",
+                    jobTitle: "Founder & Lead Automation Engineer",
+                    url: `${siteConfig.domain}/about`,
+                },
                 numberOfEmployees: {
                     "@type": "QuantitativeValue",
                     value: "10",
@@ -539,6 +537,26 @@ export function generateServicePageSchema(service: {
     };
 }
 
+export function generateHowToSchema(howto: {
+    name: string;
+    description: string;
+    steps: { name: string; text: string; url?: string }[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: howto.name,
+        description: howto.description,
+        step: howto.steps.map((step, idx) => ({
+            "@type": "HowToStep",
+            position: idx + 1,
+            name: step.name,
+            text: step.text,
+            ...(step.url && { url: step.url }),
+        })),
+    };
+}
+
 export function generateReviewSchema(testimonial: {
     quote: string;
     author: string;
@@ -727,6 +745,16 @@ export function generateLocalBusinessSchema(opts: {
         telephone: "+61 451 413 786",
         priceRange: "$$$",
         parentOrganization: { "@id": `${siteConfig.domain}/#organization` },
+        sameAs: [
+            "https://www.linkedin.com/company/digitalx-solutions-aus/",
+            "https://x.com/digitalx_solutions",
+            "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
+            "https://www.instagram.com/digitalx_solutions/",
+            "https://github.com/digitalx-solutions",
+            "https://clutch.co/profile/digitalx-solutions",
+            "https://www.crunchbase.com/organization/digitalx-solutions",
+            "https://www.trustpilot.com/review/digitalx-solutions.com",
+        ],
         ...(opts.addressLocality || opts.addressRegion
             ? {
                   address: {

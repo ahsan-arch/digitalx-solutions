@@ -9,9 +9,9 @@ import {
 import { developmentProjects } from "@/data/redesign";
 
 export const metadata = generatePageMetadata("/development", {
-  title: "Development Projects | Custom Software and Automation Builds",
+  title: "Custom AI & Automation Builds",
   description:
-    "Explore custom software and automation projects we have built, from AI voice receptionists and lead automation to ecommerce tracking and analytics dashboards.",
+    "Explore custom software builds, AI voice receptionist integrations, CRM workflows, and performance web apps engineered by DigitalX Solutions.",
 });
 
 export default function DevelopmentPage() {

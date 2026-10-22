@@ -9,9 +9,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/services/meta-ads", {
-  title: "Meta Ads Engineering | CAPI + Server-Side Tracking",
+  title: "Meta Ads & Server-Side CAPI Tracking",
   description:
-    "Meta Ads management with server side tracking, Conversions API, and full attribution into your CRM. For service businesses spending $5k+/mo.",
+    "Meta Ads management with server-side tracking, Facebook Conversions API, and full CRM attribution for high-growth service businesses.",
 });
 
 const faqs = [

@@ -9,9 +9,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/process", {
-  title: "Our Process | DigitalX Solutions Engagement Model",
+  title: "Our 4-Week AI Deployment Process",
   description:
-    "From discovery to ongoing iteration, see how we deploy AI voice, CRM automation, and growth dashboards inside 4 to 6 weeks.",
+    "From intake audit to live production, see how we launch custom AI voice agents and GoHighLevel CRM pipelines within 4 to 6 weeks.",
 });
 
 const detail = [

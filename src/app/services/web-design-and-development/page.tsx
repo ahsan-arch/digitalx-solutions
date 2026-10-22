@@ -9,9 +9,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/services/web-design-and-development", {
-  title: "Web Design & Development | Next.js Sites for Service Businesses",
+  title: "Next.js Web Design & Development",
   description:
-    "Conversion-focused websites built on Next.js for local service businesses. Sub-200ms load times, SEO-baked architecture, and CRM-ready forms.",
+    "Fast, conversion-focused Next.js websites for service businesses. Sub-200ms load times, SEO architecture, and CRM-ready booking integrations.",
 });
 
 const faqs = [

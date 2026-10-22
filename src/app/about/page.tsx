@@ -9,9 +9,9 @@ import { SectionIllustration } from "@/components/ui";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/about", {
-    title: "About DigitalX Solutions | Revenue Systems Partner",
+    title: "About Our AI & Automation Team",
     description:
-        "Meet DigitalX Solutions, the team behind integrated web, automation, and performance systems for growth-focused businesses in the USA and Australia.",
+        "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automation for businesses across the USA and Australia.",
 });
 
 const milestones = [

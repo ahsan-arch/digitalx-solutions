@@ -11,9 +11,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/pricing", {
-  title: "Pricing | DigitalX Solutions Automation Packages",
+  title: "Transparent AI Automation Pricing",
   description:
-    "Transparent monthly pricing for AI voice agents, Missed call text back, CRM automation, and growth dashboards for local service businesses.",
+    "Transparent pricing for AI voice receptionists, missed-call text back, and GoHighLevel CRM automation for businesses in the US and Australia.",
 });
 
 const tiers = [

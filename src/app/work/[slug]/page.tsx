@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
   if (!result) return { title: "Case Study Not Found" };
 
   return generatePageMetadata(`/work/${result.slug}`, {
-    title: `${result.client} Case Study | ${result.industry}`,
-    description: result.impact,
+    title: `${result.client} Case Study`,
+    description: `${result.client}: ${result.impact} See the full case study and revenue results with DigitalX.`.slice(0, 155),
   });
 }
 

@@ -9,9 +9,9 @@ import {
 import { results } from "@/data/redesign";
 
 export const metadata = generatePageMetadata("/work", {
-    title: "Results | DigitalX Solutions Case Studies",
+    title: "AI Voice & CRM Automation Case Studies",
     description:
-        "Review selected DigitalX Solutions outcomes across home services, healthcare, professional services, and e commerce teams.",
+        "Explore real-world client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows.",
 });
 
 export default function WorkPage() {

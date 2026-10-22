@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     const author = authors[article.authorKey];
     const base = generatePageMetadata(`/insights/${resolvedParams.slug}`, {
-        title: `${article.title} | DigitalX Insights`,
+        title: article.metaTitle || article.title,
         description: article.description,
     });
 
