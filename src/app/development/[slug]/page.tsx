@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return generatePageMetadata(`/development/${project.slug}`, {
     title: `${project.name} Case Study`,
-    description: `${project.name}: ${project.overview} Custom software and automation engineering delivered by DigitalX.`.slice(0, 155),
+    description: (project as { metaDescription?: string }).metaDescription || `${project.name}: ${project.overview} Custom software and automation engineering delivered by DigitalX.`.slice(0, 155),
   });
 }
 

@@ -88,17 +88,25 @@ for (const s of solutions) {
 
 // ── 3. Industries (50 routes) ──
 for (const ind of industries) {
-  checkMetadata(`/industries/${ind.slug}`, `${ind.name} Automation Playbook`, ind.summary);
+  const fallbackDesc = `Automate ${ind.name.toLowerCase()} operations with 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows across the US and Australia.`;
+  const description =
+    ind.metaDescription ||
+    (fallbackDesc.length < 150
+      ? `Automate ${ind.name.toLowerCase()} operations with 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows across both the US and Australia.`
+      : fallbackDesc);
+  checkMetadata(`/industries/${ind.slug}`, `${ind.name} Automation Playbook`, description);
 }
 
 // ── 4. Development Projects (8 routes) ──
 for (const dev of developmentProjects) {
-  checkMetadata(`/development/${dev.slug}`, `${dev.name} Case Study`, `${dev.name}: ${dev.overview} Custom software and automation engineering delivered by DigitalX.`.slice(0, 155));
+  const description = (dev as { metaDescription?: string }).metaDescription || `${dev.name}: ${dev.overview} Custom software and automation engineering delivered by DigitalX.`.slice(0, 155);
+  checkMetadata(`/development/${dev.slug}`, `${dev.name} Case Study`, description);
 }
 
-// ── 5. Work Case Studies (3 routes) ──
+// ── 5. Work Case Studies (8 routes) ──
 for (const w of results) {
-  checkMetadata(`/work/${w.slug}`, `${w.client} Case Study`, `${w.client}: ${w.impact} See the full case study and revenue results with DigitalX.`.slice(0, 155));
+  const description = w.metaDescription || `${w.client}: ${w.impact} See the full case study and revenue results with DigitalX.`.slice(0, 155);
+  checkMetadata(`/work/${w.slug}`, `${w.client} Case Study`, description);
 }
 
 // ── 6. Insights Articles (7 routes) ──

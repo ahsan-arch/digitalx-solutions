@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
 
   return generatePageMetadata(`/work/${result.slug}`, {
     title: `${result.client} Case Study`,
-    description: `${result.client}: ${result.impact} See the full case study and revenue results with DigitalX.`.slice(0, 155),
+    description: result.metaDescription || `${result.client}: ${result.impact} See the full case study and revenue results with DigitalX.`.slice(0, 155),
   });
 }
 

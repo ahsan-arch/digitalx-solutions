@@ -58,6 +58,7 @@ export type Industry = {
   softwareIntegrations: IndustrySoftwareIntegrations;
   complianceAndStandards: IndustryCompliance;
   unitEconomics: IndustryUnitEconomics;
+  metaDescription?: string;
   faqs: IndustryFaq[];
 };
 
@@ -3036,6 +3037,7 @@ export const industries: Industry[] = [
     "category": "Beauty, Fitness & Wellness",
     "headline": "Keep every chair booked and reduce no shows.",
     "summary": "Automate appointment reminders, rebooking prompts, and loyalty rewards so your nail technicians stay productive and your schedule stays full 24/7.",
+    "metaDescription": "Fill nail technician chairs and cut appointment no-shows with DigitalX AI voice receptionists, conversational SMS booking, and automated re-engagement flows.",
     "niches": [
       "Manicure & Pedicure",
       "Nail Art",
@@ -4360,6 +4362,7 @@ export const industries: Industry[] = [
     "category": "Family, Pet & Specialty Care",
     "headline": "Enroll more students and keep families engaged.",
     "summary": "Automate enrollment inquiries, session reminders, and progress updates so tutoring center directors focus on teaching and student achievement.",
+    "metaDescription": "Streamline student enrollment, consultation scheduling, and parent SMS updates 24/7 with DigitalX AI voice receptionists engineered for tutoring centers.",
     "niches": [
       "K-12 Tutoring",
       "Test Prep",
@@ -4455,6 +4458,7 @@ export const industries: Industry[] = [
     "category": "Family, Pet & Specialty Care",
     "headline": "Fill open spots faster and keep parents informed.",
     "summary": "Automate waitlist management, tour booking, enrollment follow-ups, and daily family communication for childcare and daycare centers in the US and AU.",
+    "metaDescription": "Automate daycare tour bookings, waitlist triage, and parent inquiries 24/7 with DigitalX AI voice receptionists and instant missed-call text-back workflows.",
     "niches": [
       "Infant Care",
       "Preschool Programs",

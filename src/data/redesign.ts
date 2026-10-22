@@ -1585,6 +1585,7 @@ export type ResultCard = {
   industrySlug?: IndustrySlug;
   challenge: string;
   impact: string;
+  metaDescription?: string;
   services: string[];
   solutionsUsed: SolutionSlug[];
   narrative: string[];
@@ -1599,6 +1600,7 @@ export const results: ResultCard[] = [
     industrySlug: "dental-clinics",
     challenge: "Missed inbound calls and front desk overload.",
     impact: "24/7 call coverage with automated booking, 32% more appointments.",
+    metaDescription: "See how Riverstone Dental Group captured 94% of after-hours patient calls and increased booked appointments by 32% using DigitalX AI voice receptionist agents.",
     services: ["AI Voice Agents", "CRM Integration"],
     solutionsUsed: ["ai-voice-agents", "crm-integration"],
     narrative: [
@@ -1619,6 +1621,7 @@ export const results: ResultCard[] = [
     industrySlug: "plumbing-companies",
     challenge: "Losing after hours emergency calls to competitors.",
     impact: "Recovered $180k/yr in booked jobs via Missed call text back + AI voice.",
+    metaDescription: "See how Harbor Plumbing Co. recovered $180,000 in annual revenue using 24/7 AI voice emergency call triage and automated missed-call text-back workflows.",
     services: ["Missed Call text back", "AI Voice Agents"],
     solutionsUsed: ["missed-call-text-back", "ai-voice-agents"],
     narrative: [
@@ -1639,6 +1642,7 @@ export const results: ResultCard[] = [
     industrySlug: "accounting-firms",
     challenge: "Billable hours lost to unqualified discovery calls.",
     impact: "Qualification chatbot cut time wasters by 60%; close rate up 2.1x.",
+    metaDescription: "Read how Atlas Consulting Group cut unqualified discovery calls by 60% and lifted sales close rates by 2.1x with an automated intake qualification chatbot.",
     services: ["Chatbots", "Automated Lead Nurturing"],
     solutionsUsed: ["chatbots", "automated-lead-nurturing"],
     narrative: [
@@ -1658,6 +1662,7 @@ export const results: ResultCard[] = [
     industry: "Energy & Power Solutions",
     challenge: "No digital presence to showcase 13 global manufacturer partnerships and win Australian utility tenders.",
     impact: "SEO-optimized website launched, positioning Hi-Tech as Australia's #1 authorized energy agent with full product catalog and lead generation.",
+    metaDescription: "Explore how Hi-Tech Expertise modernized enterprise asset inspection reporting and client intake workflows with custom Next.js web application development.",
     services: ["Web Design & Development", "SEO"],
     solutionsUsed: [],
     narrative: [
@@ -1677,6 +1682,7 @@ export const results: ResultCard[] = [
     industry: "Tiling Contractor",
     challenge: "A licensed Melbourne tiling contractor with no website to win premium residential work or show up in local search.",
     impact: "Designed and built a professional website and ran a full SEO program so NJ Pro Tiling can be found for tiling work across Melbourne.",
+    metaDescription: "See how NJ Pro Tiling increased local search visibility and inbound customer quote requests through a high-speed website and targeted local SEO strategy.",
     services: ["Web Design & Development", "SEO"],
     solutionsUsed: [],
     narrative: [
@@ -1696,6 +1702,7 @@ export const results: ResultCard[] = [
     industry: "Home Services",
     challenge: "Missed after hours calls and manual scheduling were losing booked jobs to faster competitors.",
     impact: "Deployed AI voice, missed call text back, and a new website so every inbound lead is captured and booked.",
+    metaDescription: "Discover how a home services business captured after-hours jobs and organized sales pipelines with 24/7 AI voice answering and GoHighLevel automation.",
     services: ["AI Voice Agents", "Missed Call Text Back", "Web Design & Development"],
     solutionsUsed: ["ai-voice-agents", "missed-call-text-back", "gohighlevel-implementation"],
     narrative: [
@@ -1715,6 +1722,7 @@ export const results: ResultCard[] = [
     industry: "Healthcare",
     challenge: "A busy front desk was sending new patient calls to voicemail, and many enquiries never got a callback.",
     impact: "An AI receptionist, CRM automation, and a faster website cut missed calls and filled the schedule.",
+    metaDescription: "Read how a busy healthcare clinic eliminated missed patient calls, filled calendar schedules, and protected front-desk bandwidth with custom AI voice and CRM.",
     services: ["AI Voice Agents", "CRM Integration", "Web Design & Development"],
     solutionsUsed: ["ai-voice-agents", "crm-integration", "automated-lead-nurturing"],
     narrative: [
@@ -1734,6 +1742,7 @@ export const results: ResultCard[] = [
     industry: "Ecommerce",
     challenge: "Abandoned carts and unreliable ad tracking after browser changes were quietly draining revenue.",
     impact: "A fast website, server side conversion tracking, and automated cart recovery protected revenue and ad spend.",
+    metaDescription: "See how an online ecommerce brand recovered abandoned cart revenue and secured tracking with Meta CAPI server-side data and automated n8n CRM workflows.",
     services: ["Web Design & Development", "n8n Workflow Automation", "CRM Integration"],
     solutionsUsed: ["n8n-workflow-automation", "crm-integration"],
     narrative: [
@@ -1856,6 +1865,7 @@ export const developmentProjects = [
     slug: 'fintrend',
     name: 'FinTrend',
     overview: 'AI powered stock price prediction platform.',
+    metaDescription: 'Explore FinTrend, an institutional-grade stock forecasting platform pairing 24 deep learning neural networks with real-time financial news sentiment analysis.',
     problem: 'Retail investors and boutique trading firms lacked access to institutional grade predictive models that could synthesize real time financial news sentiment with historical price movements. Existing tools were either too complex to deploy or relied solely on historical numerical data without context.',
     solution: 'We built FinTrend, a full stack platform that brings advanced quantitative analysis to the web. It pairs 24 distinct deep learning models (LSTM, GRU, CNN, RNN) with natural language processing to deliver holistic stock forecasts, enabling users to benchmark how market news impacts predictive accuracy.',
     features: [
@@ -1870,6 +1880,7 @@ export const developmentProjects = [
     slug: 'hostel360',
     name: 'Hostel360',
     overview: 'A full stack campus accommodation booking platform.',
+    metaDescription: 'Explore Hostel360, a campus accommodation booking web platform featuring 360-degree virtual room tours, role-based dashboards, and Stripe payment processing.',
     problem: 'University students frequently struggle with finding fast, reliable, and transparent housing. Taking physical tours is time consuming for students and owners alike, leading to booking friction and a disjointed tenant landlord relationship.',
     solution: 'CampusNest (Hostel360) connects tenants, owners, and admins via a unified web interface. By integrating 360 degree virtual tours and secure digital payments, the platform removes physical barriers to booking, completely transforming the hostel discovery experience.',
     features: [
@@ -1885,6 +1896,7 @@ export const developmentProjects = [
     slug: 'medisync',
     name: 'MediSync',
     overview: 'AI voice receptionist and booking platform for dental and medical clinics.',
+    metaDescription: 'Explore MediSync, an autonomous AI voice receptionist for dental and medical clinics that qualifies patient inquiries and books appointments directly 24/7.',
     problem: 'Busy clinics were losing new patients because front desk staff could not answer every call, especially after hours and during peak times. Each missed call meant a missed booking, and patients simply moved on to the next provider.',
     solution: 'We built MediSync, an AI voice receptionist that answers every call in natural language, qualifies the caller, and books appointments directly into the practice calendar. It runs around the clock and sends instant confirmation messages to reduce no shows.',
     features: [
@@ -1900,6 +1912,7 @@ export const developmentProjects = [
     slug: 'leadbridge',
     name: 'LeadBridge',
     overview: 'GoHighLevel automation that captures, scores, and routes leads automatically.',
+    metaDescription: 'Explore LeadBridge, a high-converting GoHighLevel automation engine that captures, scores, and routes inbound leads to sales reps in seconds. Case study.',
     problem: 'A multi location service company was collecting leads from ads, forms, and calls into separate tools with no single view. Hot leads sat unattended for hours while the team worked from spreadsheets, and follow up was inconsistent.',
     solution: 'We designed LeadBridge, a GoHighLevel build that unifies every lead source into one pipeline, scores each lead by intent, and routes it to the right rep in seconds. Automated nurture sequences keep slower leads warm until they are ready to buy.',
     features: [
@@ -1915,6 +1928,7 @@ export const developmentProjects = [
     slug: 'fleetroute',
     name: 'FleetRoute',
     overview: 'Dispatch and quoting automation for field service and logistics teams.',
+    metaDescription: 'Discover FleetRoute, an automated dispatch and quoting web application that calculates travel distance, assigns jobs to crews, and sends real-time SMS updates.',
     problem: 'A field service operator handled quotes and job assignments by phone and paper, which slowed response times and left jobs poorly matched to the nearest available crew. Customers waited days for a quote that competitors delivered in minutes.',
     solution: 'We built FleetRoute, a web platform that calculates instant quotes, assigns jobs to the closest available crew, and tracks every job from request to completion. Automated updates keep customers informed at each step.',
     features: [
@@ -1930,6 +1944,7 @@ export const developmentProjects = [
     slug: 'shopflow',
     name: 'ShopFlow',
     overview: 'Ecommerce automation and server side tracking that recovers lost sales.',
+    metaDescription: 'See how ShopFlow restores lost ecommerce revenue using Meta CAPI server-side conversion tracking, automated abandoned cart SMS sequences, and live analytics.',
     problem: 'An online retailer was losing conversions to abandoned carts and could not trust its ad reporting after browser tracking changes. Without accurate data, ad budget was spent on the wrong audiences.',
     solution: 'We built ShopFlow, which adds server side tracking with the Meta Conversions API and automated cart recovery flows. Shoppers who leave get a timely reminder, and the store finally sees accurate conversion data to guide ad spend.',
     features: [
@@ -1945,6 +1960,7 @@ export const developmentProjects = [
     slug: 'bookeasy',
     name: 'BookEasy',
     overview: 'Self service booking and reminder system for salons and wellness studios.',
+    metaDescription: 'Explore BookEasy, a self-service online booking and automated SMS reminder system designed for busy beauty salons and wellness studios. Full case study.',
     problem: 'A group of salons relied on phone bookings that tied up staff and left gaps in the schedule when clients forgot appointments. Last minute openings went unfilled because there was no quick way to reach waiting clients.',
     solution: 'We built BookEasy, a self service booking site with automated reminders and a waitlist that fills cancellations automatically. Clients book in seconds and staff spend their time on service rather than the phone.',
     features: [
@@ -1960,6 +1976,7 @@ export const developmentProjects = [
     slug: 'insightboard',
     name: 'InsightBoard',
     overview: 'Unified analytics dashboard for ad spend, pipeline, and revenue.',
+    metaDescription: 'See how InsightBoard unifies ad spend, CRM sales pipelines, and live revenue into a single real-time executive dashboard engineered for modern scaling agencies.',
     problem: 'An agency owner tracked performance across seven different tools and never had a clear picture of what was working. Reporting took hours each week and decisions were made on guesswork rather than current numbers.',
     solution: 'We built InsightBoard, a single dashboard that pulls ad spend, pipeline, and revenue into one live view. Owners see what drives results in real time, and reporting that once took hours now updates automatically.',
     features: [
@@ -1975,6 +1992,7 @@ export const developmentProjects = [
     slug: 'voxassist',
     name: 'VoxAssist',
     overview: 'Multichannel AI chatbot for websites, WhatsApp, and SMS.',
+    metaDescription: 'Discover VoxAssist, a multichannel AI conversational agent deployed across website, WhatsApp, and SMS that qualifies leads and schedules appointments 24/7.',
     problem: 'A service business received questions across its website, WhatsApp, and SMS but could not respond quickly enough to convert them. Visitors left before anyone replied, and common questions consumed staff time.',
     solution: 'We built VoxAssist, an AI chatbot trained on the services, pricing, and policies of the business that answers across every channel instantly. It qualifies visitors, books appointments, and hands off to a human only when needed.',
     features: [
