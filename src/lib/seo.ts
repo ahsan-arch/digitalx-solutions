@@ -17,42 +17,42 @@ export const seoCopy = {
     services: {
         title: "AI Voice & Business Automation Services",
         description:
-            "Full-stack AI automation services: voice receptionists, missed-call text-back, n8n workflows, and GoHighLevel setups for US and AU businesses.",
+            "Full-stack AI automation services: AI voice receptionists, missed-call text-back, n8n workflows, and GoHighLevel CRM setup for US and Australian businesses.",
     },
     webDev: {
         title: "Next.js Web Development Agency",
         description:
-            "Custom web development with sub-200ms load times and Next.js architecture. High-performance, SEO-baked websites for US and Australian businesses.",
+            "Custom web development with sub-200ms load times and Next.js architecture. High-performance, SEO-optimized websites for US and Australian service companies.",
     },
     metaAds: {
         title: "Meta Ads & Server-Side CAPI Agency",
         description:
-            "Full-funnel Meta Ads management with Facebook Conversions API and server-side tagging. Maximize ROAS for US and Australian businesses.",
+            "Full-funnel Meta Ads management with Facebook Conversions API and server-side tagging. Maximize ROAS and lead tracking for US and Australian service brands.",
     },
     revenueOps: {
         title: "Workflow Automation & n8n Agency",
         description:
-            "Custom workflow automation with n8n and GoHighLevel CRM. Automate sales pipelines, lead routing, and database sync across the US and Australia.",
+            "Custom workflow automation with n8n and GoHighLevel CRM. Automate sales pipelines, lead routing, and database sync for US and Australian service businesses.",
     },
     work: {
         title: "AI Voice & CRM Automation Case Studies",
         description:
-            "Explore real-world client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows.",
+            "Explore real-world client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows in the USA and Australia.",
     },
     contact: {
         title: "Book a Strategy Call",
         description:
-            "Schedule a strategy consultation with DigitalX Solutions. Get a custom roadmap for AI voice receptionists, missed-call recovery, and CRM automation.",
+            "Schedule an automation consultation with DigitalX Solutions. Get a custom roadmap for AI voice receptionists, missed-call recovery, and GoHighLevel systems.",
     },
     conversationalAI: {
         title: "AI Voice Receptionists for Service Businesses",
         description:
-            "Deploy 24/7 AI voice agents that answer calls, book appointments, and qualify leads with human-grade latency for service businesses in the US & AU.",
+            "Deploy 24/7 AI voice agents that answer calls, book appointments, and qualify leads with human-grade latency for service businesses across the USA & Australia.",
     },
     tryVoiceAgent: {
         title: "Live AI Voice Agent Demo",
         description:
-            "Test a live AI voice receptionist trained on your business. Have a real-time conversation and experience interactive voice booking for free.",
+            "Test a live AI voice receptionist trained on your business. Have a real-time conversation and experience interactive voice appointment booking for free today.",
     },
 };
 

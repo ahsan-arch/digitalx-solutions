@@ -11,7 +11,7 @@ import { developmentProjects } from "@/data/redesign";
 export const metadata = generatePageMetadata("/development", {
   title: "Custom AI & Automation Builds",
   description:
-    "Explore custom software builds, AI voice receptionist integrations, CRM workflows, and performance web apps engineered by DigitalX Solutions.",
+    "Explore custom software builds, AI voice receptionist integrations, CRM workflows, and high-performance web apps engineered by DigitalX Solutions experts.",
 });
 
 export default function DevelopmentPage() {

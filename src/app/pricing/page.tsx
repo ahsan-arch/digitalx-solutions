@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/pricing", {
   title: "Transparent AI Automation Pricing",
   description:
-    "Transparent pricing for AI voice receptionists, missed-call text back, and GoHighLevel CRM automation for businesses in the US and Australia.",
+    "Transparent pricing for AI voice receptionists, missed-call text back, and GoHighLevel CRM automation for growing businesses in the United States and Australia.",
 });
 
 const tiers = [

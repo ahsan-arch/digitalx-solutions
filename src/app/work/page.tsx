@@ -11,7 +11,7 @@ import { results } from "@/data/redesign";
 export const metadata = generatePageMetadata("/work", {
     title: "AI Voice & CRM Automation Case Studies",
     description:
-        "Explore real-world client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows.",
+        "Explore verified client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows across the US and Australia.",
 });
 
 export default function WorkPage() {

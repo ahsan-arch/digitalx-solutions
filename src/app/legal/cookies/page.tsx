@@ -4,7 +4,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata: Metadata = generatePageMetadata("/legal/cookies", {
   title: "Cookie Policy",
   description:
-    "What cookies digitalx-solutions.com uses, why we use them, and how you can control or block them in your browser.",
+    "Understand what cookies digitalx-solutions.com uses, why we use them, and how you can easily manage, control, or block cookie preferences in your web browser.",
 });
 
 const lastUpdated = "April 2026";

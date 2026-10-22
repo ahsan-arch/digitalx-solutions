@@ -4,7 +4,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata: Metadata = generatePageMetadata("/legal/privacy", {
   title: "Privacy Policy",
   description:
-    "How DigitalX Solutions collects, uses, and protects personal information across our website, contact forms, and client integrations.",
+    "Read how DigitalX Solutions collects, uses, and protects personal information across our website, discovery forms, and custom enterprise client integrations.",
 });
 
 const lastUpdated = "April 2026";

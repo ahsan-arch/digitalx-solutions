@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/industries", {
   title: "Industry AI & Automation Solutions",
   description:
-    "Specialized AI voice receptionists and CRM workflows for trades, healthcare, legal, real estate, and local businesses in the US and Australia.",
+    "Specialized AI voice receptionists and CRM workflows for trades, healthcare, legal, real estate, and local service businesses across the US and Australia.",
 });
 
 export default function IndustriesHubPage() {

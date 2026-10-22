@@ -11,7 +11,7 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata: Metadata = generatePageMetadata("/about", {
     title: "About Our AI & Automation Team",
     description:
-        "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automation for businesses across the USA and Australia.",
+        "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.",
 });
 
 const milestones = [

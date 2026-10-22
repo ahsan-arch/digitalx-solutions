@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
       : fallbackDesc);
 
   return generatePageMetadata(`/industries/${industry.slug}`, {
-    title: `${industry.name} Automation Playbook`,
+    title: `${industry.name} AI Playbook`,
     description,
   });
 }

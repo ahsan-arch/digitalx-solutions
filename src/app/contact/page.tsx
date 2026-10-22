@@ -7,7 +7,7 @@ import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/li
 export const metadata = generatePageMetadata("/contact", {
     title: "Book a Strategy Call",
     description:
-        "Share your growth objectives with DigitalX Solutions. We respond with a practical plan for AI voice agents, CRM automation, and revenue systems.",
+        "Share your growth objectives with DigitalX Solutions. We respond with a practical engineering plan for AI voice agents, CRM automation, and revenue systems.",
 });
 
 export default function ContactPage() {

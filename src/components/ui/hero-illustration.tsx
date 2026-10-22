@@ -35,7 +35,7 @@ export function HeroIllustration() {
       >
         <Image
           src="/hero-illustration.svg"
-          alt=""
+          alt="DigitalX Solutions AI voice agents and business automation architecture diagram"
           fill
           priority
           sizes="(min-width: 768px) 50vw, 100vw"

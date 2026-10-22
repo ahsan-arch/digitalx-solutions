@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/services/meta-ads", {
   title: "Meta Ads & Server-Side CAPI Tracking",
   description:
-    "Meta Ads management with server-side tracking, Facebook Conversions API, and full CRM attribution for high-growth service businesses.",
+    "Meta Ads management with server-side tracking, Facebook Conversions API, and full CRM attribution for growth-focused service brands across the US and Australia.",
 });
 
 const faqs = [

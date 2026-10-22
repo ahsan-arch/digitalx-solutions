@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/process", {
   title: "Our 4-Week AI Deployment Process",
   description:
-    "From intake audit to live production, see how we launch custom AI voice agents and GoHighLevel CRM pipelines within 4 to 6 weeks.",
+    "From discovery intake to live production, see how we launch custom AI voice agents and GoHighLevel CRM automation pipelines within an agile 4 to 6 week roadmap.",
 });
 
 const detail = [

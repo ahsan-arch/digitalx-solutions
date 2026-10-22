@@ -4,7 +4,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata: Metadata = generatePageMetadata("/legal/terms", {
   title: "Terms of Service",
   description:
-    "Terms governing use of digitalx-solutions.com, our contact forms, and engagements with DigitalX Solutions automation services.",
+    "Review terms governing use of digitalx-solutions.com, our strategy consultation forms, and professional engagements with DigitalX Solutions AI services.",
 });
 
 const lastUpdated = "April 2026";

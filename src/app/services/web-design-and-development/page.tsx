@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/services/web-design-and-development", {
   title: "Next.js Web Design & Development",
   description:
-    "Fast, conversion-focused Next.js websites for service businesses. Sub-200ms load times, SEO architecture, and CRM-ready booking integrations.",
+    "Fast, conversion-focused Next.js websites for service teams. Sub-200ms load times, SEO architecture, and CRM-ready booking integrations for US and AU firms.",
 });
 
 const faqs = [

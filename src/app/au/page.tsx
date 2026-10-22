@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/au", {
   title: "AI Voice & Automation Australia",
   description:
-    "AI voice agents, missed-call text back & CRM automation for Australian service businesses across Sydney, Melbourne, Brisbane, Perth & Adelaide.",
+    "AI voice agents, missed-call text back & CRM automation for Australian service businesses across Sydney, Melbourne, Brisbane, Perth, Adelaide & regional hubs.",
 });
 
 const auLocalBusiness = generateLocalBusinessSchema({
