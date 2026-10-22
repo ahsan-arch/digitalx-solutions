@@ -2,9 +2,9 @@ name: SEO Quality Gate & Build Verification
 
 on:
   push:
-    branches: [main, "seo/*", "feat/*"]
+    branches: [main, master, "seo/*", "feat/*"]
   pull_request:
-    branches: [main]
+    branches: [main, master]
 
 jobs:
   seo-qa:
