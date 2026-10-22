@@ -39,36 +39,39 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Audio too large" }, { status: 413 });
   }
 
-  const groqForm = new FormData();
+  const models = ["whisper-large-v3-turbo", "whisper-large-v3"];
   const filename = audio.type.includes("mp4")
     ? "audio.mp4"
     : audio.type.includes("ogg")
       ? "audio.ogg"
       : "audio.webm";
-  groqForm.append("file", audio, filename);
-  groqForm.append("model", MODEL);
-  groqForm.append("language", "en");
-  groqForm.append("response_format", "json");
-  groqForm.append("temperature", "0");
 
-  let upstream: Response;
-  try {
-    upstream = await fetch(GROQ_URL, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${apiKey}` },
-      body: groqForm,
-    });
-  } catch (err) {
-    console.error("Groq transcribe fetch failed", err);
-    return NextResponse.json({ error: "Transcription service unreachable" }, { status: 502 });
+  for (const model of models) {
+    try {
+      const groqForm = new FormData();
+      groqForm.append("file", audio, filename);
+      groqForm.append("model", model);
+      groqForm.append("language", "en");
+      groqForm.append("response_format", "json");
+      groqForm.append("temperature", "0");
+
+      const upstream = await fetch(GROQ_URL, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${apiKey}` },
+        body: groqForm,
+      });
+
+      if (upstream.ok) {
+        const data = (await upstream.json()) as { text?: string };
+        return NextResponse.json({ text: (data.text ?? "").trim() });
+      }
+
+      const detail = await upstream.text().catch(() => "");
+      console.warn(`Groq transcribe model ${model} failed (${upstream.status}):`, detail);
+    } catch (err) {
+      console.warn(`Groq transcribe fetch failed for ${model}`, err);
+    }
   }
 
-  if (!upstream.ok) {
-    const detail = await upstream.text().catch(() => "");
-    console.error("Groq transcribe error", upstream.status, detail);
-    return NextResponse.json({ error: "Transcription failed" }, { status: 502 });
-  }
-
-  const data = (await upstream.json()) as { text?: string };
-  return NextResponse.json({ text: (data.text ?? "").trim() });
+  return NextResponse.json({ error: "Transcription failed" }, { status: 502 });
 }

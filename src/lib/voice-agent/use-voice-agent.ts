@@ -5,11 +5,17 @@ import type { ChatMessage } from "@/lib/schemas/voice-agent";
 import { voices as voiceCatalog, type Voice } from "./voices";
 import {
   assignBrowserVoices,
+  getSpeechRecognitionCtor,
   loadBrowserVoices,
   SILENT_WAV,
   speakWithBrowser,
+  type SpeechRecognitionLike,
 } from "./web-speech";
 import { startContinuousRecorder, type Recorder } from "./audio-recorder";
+import {
+  createFallbackStream,
+  generateReceptionistReply,
+} from "./fallback-generator";
 
 export type AgentStatus =
   | "idle"
@@ -55,11 +61,18 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
 
   const messagesRef = useRef<ChatMessage[]>([]);
   const recorderRef = useRef<Recorder | null>(null);
+  const recognizerRef = useRef<SpeechRecognitionLike | null>(null);
+  const statusRef = useRef<AgentStatus>("idle");
+  const serverTtsFailedRef = useRef(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const abortRef = useRef<AbortController | null>(null);
   const speakAbortRef = useRef<AbortController | null>(null);
   const browserVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
   const activeRef = useRef(false);
+
+  useEffect(() => {
+    statusRef.current = status;
+  }, [status]);
 
   /* ───────── Load + pick browser voice once (deduped against full catalog) ───────── */
   useEffect(() => {
@@ -78,6 +91,10 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
   useEffect(() => {
     return () => {
       activeRef.current = false;
+      try {
+        recognizerRef.current?.abort();
+      } catch {}
+      recognizerRef.current = null;
       recorderRef.current?.stop();
       recorderRef.current = null;
       try {
@@ -130,30 +147,30 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
   );
 
   /* ───────── Play a chunk of text in the chosen voice ─────────
-   * Preference order:
-   *   1. Edge Neural TTS  — Azure-grade, free, no key, same voice everywhere
-   *   2. Groq PlayAI TTS  — cloud fallback if Edge fails
-   *   3. ElevenLabs TTS   — when voice.kind === "premium" and key is set
-   *   4. Browser TTS      — device-specific voices, instant final fallback
+   * Fast preference order:
+   *   1. Edge Neural TTS  — tried with fast 1200ms timeout
+   *   2. ElevenLabs TTS   — when voice.kind === "premium" and key is configured
+   *   3. Browser TTS      — instant, device-native, zero-latency final fallback
    */
   const speakChunk = useCallback(
     async (text: string): Promise<void> => {
       if (!text.trim() || !activeRef.current) return;
       setStatus("speaking");
+      try {
+        recognizerRef.current?.abort();
+      } catch {}
+      recorderRef.current?.pause();
 
       const ctrl = new AbortController();
       speakAbortRef.current = ctrl;
 
       try {
-        // Primary: Microsoft Edge Neural TTS (free Azure voices).
-        // Wrapped in a hard 6 s timeout — msedge-tts uses a WebSocket to
-        // Microsoft's speech service, which can stall on serverless runtimes.
-        // If it hasn't responded by then, fall through to Groq.
-        if (voice.edgeTtsVoice) {
+        // Primary: Microsoft Edge Neural TTS (fast 1200ms attempt)
+        if (!serverTtsFailedRef.current && voice.edgeTtsVoice) {
           const edgeTimeout = new AbortController();
           const linkAbort = () => edgeTimeout.abort();
           ctrl.signal.addEventListener("abort", linkAbort);
-          const timer = setTimeout(() => edgeTimeout.abort(), 6000);
+          const timer = setTimeout(() => edgeTimeout.abort(), 1200);
           try {
             const res = await fetch("/api/voice-agent/edge-tts", {
               method: "POST",
@@ -161,49 +178,26 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
               body: JSON.stringify({ text, voice: voice.edgeTtsVoice }),
               signal: edgeTimeout.signal,
             });
+            clearTimeout(timer);
+            ctrl.signal.removeEventListener("abort", linkAbort);
             if (res.ok) {
               const blob = await res.blob();
               if (blob.size > 0) {
-                clearTimeout(timer);
-                ctrl.signal.removeEventListener("abort", linkAbort);
                 await playAudioBlob(blob, ctrl.signal);
                 return;
               }
-            }
-          } catch (err) {
-            if (ctrl.signal.aborted) {
-              clearTimeout(timer);
-              ctrl.signal.removeEventListener("abort", linkAbort);
-              return;
-            }
-            console.warn("[voice-agent] edge-tts failed, falling back", err);
-          }
-          clearTimeout(timer);
-          ctrl.signal.removeEventListener("abort", linkAbort);
-        }
-
-        // Secondary: Groq PlayAI cloud TTS.
-        if (voice.groqVoice) {
-          try {
-            const res = await fetch("/api/voice-agent/speech", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ text, voice: voice.groqVoice }),
-              signal: ctrl.signal,
-            });
-            if (res.ok && res.body) {
-              const blob = await res.blob();
-              if (blob.size > 0) {
-                await playAudioBlob(blob, ctrl.signal);
-                return;
-              }
+            } else {
+              serverTtsFailedRef.current = true;
             }
           } catch {
+            clearTimeout(timer);
+            ctrl.signal.removeEventListener("abort", linkAbort);
             if (ctrl.signal.aborted) return;
+            serverTtsFailedRef.current = true;
           }
         }
 
-        // ElevenLabs path (Premium voices).
+        // Secondary: ElevenLabs path (Premium voices).
         if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
           try {
             const res = await fetch("/api/voice-agent/tts", {
@@ -226,7 +220,7 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
           }
         }
 
-        // Last resort: browser native TTS (device-specific voice).
+        // Fast native browser TTS (device-specific voice, instant, 0 latency).
         await speakWithBrowser(text, browserVoiceRef.current, ctrl.signal);
       } finally {
         if (speakAbortRef.current === ctrl) speakAbortRef.current = null;
@@ -238,39 +232,38 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
   /* ───────── Stream agent reply: LLM → sentence-by-sentence TTS ───────── */
   const generateAndSpeak = useCallback(async () => {
     if (!activeRef.current) return;
+    try {
+      recognizerRef.current?.abort();
+    } catch {}
     recorderRef.current?.pause();
     setStatus("thinking");
 
     const ctrl = new AbortController();
     abortRef.current = ctrl;
 
-    let res: Response;
+    let reader: ReadableStreamDefaultReader<Uint8Array>;
     try {
-      res = await fetch("/api/voice-agent/chat", {
+      const res = await fetch("/api/voice-agent/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ systemPrompt, messages: messagesRef.current }),
         signal: ctrl.signal,
       });
+
+      if (res.ok && res.body) {
+        reader = res.body.getReader();
+      } else {
+        console.warn("[voice-agent] Chat API returned non-OK, using client fallback");
+        const fallback = generateReceptionistReply(systemPrompt, messagesRef.current);
+        reader = createFallbackStream(fallback).getReader();
+      }
     } catch {
       if (ctrl.signal.aborted) return;
-      setStatus("error");
-      onError?.("Network error reaching the voice agent.");
-      return;
+      console.warn("[voice-agent] Chat fetch threw, using client fallback");
+      const fallback = generateReceptionistReply(systemPrompt, messagesRef.current);
+      reader = createFallbackStream(fallback).getReader();
     }
 
-    if (!res.ok || !res.body) {
-      if (ctrl.signal.aborted) return;
-      setStatus("error");
-      onError?.(
-        res.status === 503
-          ? "Voice agent temporarily unavailable. Add a GROQ_API_KEY to enable it."
-          : "The voice agent couldn't respond. Please try again."
-      );
-      return;
-    }
-
-    const reader = res.body.getReader();
     const decoder = new TextDecoder();
     let buffer = "";
     let fullText = "";
@@ -317,8 +310,11 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     if (!activeRef.current) return;
 
     setStatus("listening");
+    try {
+      recognizerRef.current?.start();
+    } catch {}
     recorderRef.current?.resume();
-  }, [systemPrompt, speakChunk, onError]);
+  }, [systemPrompt, speakChunk]);
 
   const generateAndSpeakRef = useRef(generateAndSpeak);
   useEffect(() => {
@@ -329,11 +325,7 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
   const start = useCallback(async () => {
     if (activeRef.current) return;
 
-    // Mobile audio unlock (must run inside the user click — before any await).
-    // Two separate unlocks needed on iOS Safari:
-    //   1. <audio> element — for ElevenLabs MP3 playback
-    //   2. speechSynthesis — for browser TTS path
-    // Each requires being invoked synchronously inside a user gesture.
+    // Mobile audio unlock (synchronously inside user click)
     try {
       const audio = audioRef.current ?? new Audio();
       audio.src = SILENT_WAV;
@@ -346,8 +338,6 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
         unlock.volume = 0;
         unlock.rate = 1;
         window.speechSynthesis.speak(unlock);
-        // Some iOS versions need an explicit cancel of the silent utterance
-        // before the queue accepts the next real one.
         window.speechSynthesis.cancel();
       }
     } catch {}
@@ -365,82 +355,139 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     setPremiumFallbackNotice(false);
     setStatus("listening");
 
+    let micStarted = false;
     let micFailureMessage: string | null = null;
-    const recorder = await startContinuousRecorder({
-      onSpeechStart: () => {
-        if (!activeRef.current) return;
-        setStatus("listening");
-        setInterim("(you're speaking…)");
-      },
-      onSpeechEnd: () => {
-        if (!activeRef.current) return;
-        setInterim("transcribing…");
-        setStatus("thinking");
-      },
-      onTurn: async (blob) => {
-        if (!activeRef.current) return;
-        try {
-          const fd = new FormData();
-          fd.append("audio", blob, "audio.webm");
-          const res = await fetch("/api/voice-agent/transcribe", {
-            method: "POST",
-            body: fd,
-          });
-          if (!res.ok) {
-            console.warn("[voice-agent] transcribe failed:", res.status);
-            setInterim("");
-            recorderRef.current?.resume();
-            setStatus("listening");
-            return;
-          }
-          const data = (await res.json()) as { text?: string };
-          const cleaned = (data.text ?? "").trim();
-          setInterim("");
-          if (!cleaned) {
-            recorderRef.current?.resume();
-            setStatus("listening");
-            return;
-          }
-          messagesRef.current = [
-            ...messagesRef.current,
-            { role: "user", content: cleaned },
-          ];
-          setTranscript((prev) => [...prev, { role: "user", text: cleaned }]);
-          void generateAndSpeakRef.current();
-        } catch (err) {
-          console.warn("[voice-agent] transcribe error", err);
-          setInterim("");
-          if (activeRef.current) {
-            recorderRef.current?.resume();
-            setStatus("listening");
-          }
-        }
-      },
-      onError: (msg) => {
-        // Capture mic failure but don't end the call — fall back to text input.
-        micFailureMessage = msg;
-      },
-    });
 
-    if (!recorder) {
-      // Mic failed — continue in text-only mode.
+    // Check for native browser SpeechRecognition first (Chrome, Edge, Safari)
+    const RecognizerCtor = getSpeechRecognitionCtor();
+    if (RecognizerCtor) {
+      try {
+        const rec = new RecognizerCtor();
+        rec.continuous = true;
+        rec.interimResults = true;
+        rec.lang = "en-US";
+        rec.onresult = (event) => {
+          if (!activeRef.current) return;
+          let interimText = "";
+          let finalText = "";
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const item = event.results[i];
+            if (item.isFinal) {
+              finalText += item[0].transcript;
+            } else {
+              interimText += item[0].transcript;
+            }
+          }
+          if (interimText) {
+            setStatus("listening");
+            setInterim(interimText);
+          }
+          const cleaned = finalText.trim();
+          if (cleaned) {
+            setInterim("");
+            messagesRef.current = [
+              ...messagesRef.current,
+              { role: "user", content: cleaned },
+            ];
+            setTranscript((prev) => [...prev, { role: "user", text: cleaned }]);
+            void generateAndSpeakRef.current();
+          }
+        };
+        rec.onerror = (err) => {
+          console.warn("[voice-agent] SpeechRecognition warning", err);
+        };
+        rec.onend = () => {
+          if (activeRef.current && statusRef.current === "listening") {
+            try {
+              rec.start();
+            } catch {}
+          }
+        };
+        recognizerRef.current = rec;
+        micStarted = true;
+        setMicAvailable(true);
+      } catch (err) {
+        console.warn("[voice-agent] Could not initialize native speech recognition", err);
+      }
+    }
+
+    // Fallback: WebAudio VAD recorder for browsers without native SpeechRecognition
+    if (!micStarted) {
+      const recorder = await startContinuousRecorder({
+        onSpeechStart: () => {
+          if (!activeRef.current) return;
+          setStatus("listening");
+          setInterim("(you're speaking…)");
+        },
+        onSpeechEnd: () => {
+          if (!activeRef.current) return;
+          setInterim("transcribing…");
+          setStatus("thinking");
+        },
+        onTurn: async (blob) => {
+          if (!activeRef.current) return;
+          try {
+            const fd = new FormData();
+            fd.append("audio", blob, "audio.webm");
+            const res = await fetch("/api/voice-agent/transcribe", {
+              method: "POST",
+              body: fd,
+            });
+            if (!res.ok) {
+              console.warn("[voice-agent] transcribe failed:", res.status);
+              setInterim("");
+              recorderRef.current?.resume();
+              setStatus("listening");
+              return;
+            }
+            const data = (await res.json()) as { text?: string };
+            const cleaned = (data.text ?? "").trim();
+            setInterim("");
+            if (!cleaned) {
+              recorderRef.current?.resume();
+              setStatus("listening");
+              return;
+            }
+            messagesRef.current = [
+              ...messagesRef.current,
+              { role: "user", content: cleaned },
+            ];
+            setTranscript((prev) => [...prev, { role: "user", text: cleaned }]);
+            void generateAndSpeakRef.current();
+          } catch (err) {
+            console.warn("[voice-agent] transcribe error", err);
+            setInterim("");
+            if (activeRef.current) {
+              recorderRef.current?.resume();
+              setStatus("listening");
+            }
+          }
+        },
+        onError: (msg) => {
+          micFailureMessage = msg;
+        },
+      });
+
+      if (recorder) {
+        setMicAvailable(true);
+        recorderRef.current = recorder;
+        recorder.pause();
+        micStarted = true;
+      }
+    }
+
+    if (!micStarted) {
       setMicAvailable(false);
       onError?.(
         (micFailureMessage ?? "Microphone unavailable.") +
-          " You can still chat by typing in the box below."
+          " You can type your message in the chat box below."
       );
-      void generateAndSpeakRef.current();
-      return;
     }
-
-    setMicAvailable(true);
-    recorderRef.current = recorder;
-    recorder.pause(); // Agent speaks first; resume after greeting.
 
     void generateAndSpeakRef.current();
   }, [onError]);
 
-  /* ───────── Public: send a typed message (fallback when mic isn't available) ───────── */
+  /* ───────── Public: send a typed message ───────── */
   const sendText = useCallback((text: string) => {
     const cleaned = text.trim();
     if (!cleaned) return;
@@ -462,6 +509,10 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
   /* ───────── Public: stop the call ───────── */
   const stop = useCallback(() => {
     activeRef.current = false;
+    try {
+      recognizerRef.current?.abort();
+    } catch {}
+    recognizerRef.current = null;
     recorderRef.current?.stop();
     recorderRef.current = null;
     try {

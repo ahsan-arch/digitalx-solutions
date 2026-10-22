@@ -26,6 +26,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
   const assignmentsRef = useRef<Map<string, SpeechSynthesisVoice | null>>(new Map());
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const serverTtsFailedRef = useRef(false);
 
   useEffect(() => {
     loadBrowserVoices().then((list) => {
@@ -94,56 +95,34 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
       });
 
     try {
-      // Primary: Microsoft Edge Neural TTS.
-      if (voice.edgeTtsVoice) {
-        const res = await fetch("/api/voice-agent/edge-tts", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: SAMPLE_TEXT, voice: voice.edgeTtsVoice }),
-          signal: ctrl.signal,
-        });
-        if (res.ok) {
-          const blob = await res.blob();
-          if (blob.size > 0) {
-            await playBlob(blob);
-            return;
+      // Primary: Microsoft Edge Neural TTS (if not previously failed)
+      if (!serverTtsFailedRef.current && voice.edgeTtsVoice) {
+        const timeoutCtrl = new AbortController();
+        const timeoutId = setTimeout(() => timeoutCtrl.abort(), 1200);
+        try {
+          const res = await fetch("/api/voice-agent/edge-tts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: SAMPLE_TEXT, voice: voice.edgeTtsVoice }),
+            signal: timeoutCtrl.signal,
+          });
+          clearTimeout(timeoutId);
+          if (res.ok) {
+            const blob = await res.blob();
+            if (blob.size > 0) {
+              await playBlob(blob);
+              return;
+            }
+          } else {
+            serverTtsFailedRef.current = true;
           }
+        } catch {
+          clearTimeout(timeoutId);
+          serverTtsFailedRef.current = true;
         }
       }
 
-      // Secondary: Groq PlayAI cloud TTS.
-      if (voice.groqVoice) {
-        const res = await fetch("/api/voice-agent/speech", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: SAMPLE_TEXT, voice: voice.groqVoice }),
-          signal: ctrl.signal,
-        });
-        if (res.ok && res.body) {
-          const blob = await res.blob();
-          if (blob.size > 0) {
-            await playBlob(blob);
-            return;
-          }
-        }
-      }
-
-      if (voice.kind === "premium" && voice.elevenLabsVoiceId) {
-        const res = await fetch("/api/voice-agent/tts", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: SAMPLE_TEXT, voiceId: voice.elevenLabsVoiceId }),
-          signal: ctrl.signal,
-        });
-        if (res.ok && res.headers.get("X-TTS-Fallback") !== "1") {
-          const blob = await res.blob();
-          if (blob.size > 0) {
-            await playBlob(blob);
-            return;
-          }
-        }
-        setPremiumUnavailable(true);
-      }
+      if (ctrl.signal.aborted) return;
 
       const browserVoice = assignmentsRef.current.get(voice.id) ?? null;
       await speakWithBrowser(SAMPLE_TEXT, browserVoice, ctrl.signal);

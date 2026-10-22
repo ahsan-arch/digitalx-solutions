@@ -223,8 +223,8 @@ export function VoiceAgentLive({
         </div>
       )}
 
-      {/* Text input fallback — shown when mic isn't available */}
-      {started && micAvailable === false && (
+      {/* Text input — always available during the call for typing or accessibility */}
+      {started && status !== "ended" && (
         <form
           onSubmit={(e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
@@ -239,10 +239,17 @@ export function VoiceAgentLive({
             type="text"
             value={textDraft}
             onChange={(e) => setTextDraft(e.target.value)}
-            placeholder="Type your message to the agent..."
+            placeholder={
+              status === "speaking"
+                ? `${agentName} is speaking...`
+                : status === "thinking"
+                  ? `${agentName} is thinking...`
+                  : micAvailable
+                    ? "Speak into your mic or type a message here..."
+                    : "Type your message to the agent..."
+            }
             disabled={status === "speaking" || status === "thinking"}
             className="flex-1 rounded-full border border-border bg-surface-50 px-4 py-2 text-sm text-foreground outline-none focus:border-brand disabled:opacity-60"
-            autoFocus
           />
           <button
             type="submit"

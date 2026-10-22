@@ -59,7 +59,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unknown voice" }, { status: 400 });
   }
 
-  const HARD_TIMEOUT_MS = 5000;
+  const HARD_TIMEOUT_MS = 1200;
 
   try {
     const tts = new MsEdgeTTS();
