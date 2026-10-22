@@ -180,12 +180,34 @@ export default function AuPage() {
       </section>
 
       <section className="container-shell mt-16">
-        <Link
-          href="/contact"
-          className="inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover"
-        >
-          Book an AU consultation
-        </Link>
+        <div className="flex flex-col justify-between rounded-2xl border border-line-subtle bg-surface-raised p-6 md:p-8 sm:flex-row sm:items-center">
+          <div>
+            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse mr-2" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-accent">Sydney HQ & Nationwide AU Delivery</span>
+            <h2 className="mt-2 font-display text-title-lg text-ink-primary">
+              Ready to automate your Australian service business?
+            </h2>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              16 Boldrewood Ave, Casula NSW 2170 | Mon–Fri 8am–6pm AEDT
+            </p>
+            <div className="mt-3 flex items-center gap-4 text-body-sm">
+              <a href="tel:+61451413786" className="font-semibold text-accent hover:underline">
+                Call +61 451 413 786
+              </a>
+              <a href="https://wa.me/61451413786" target="_blank" rel="noopener noreferrer" className="text-ink-secondary hover:text-accent">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+          <div className="mt-6 sm:mt-0">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover shadow-sm"
+            >
+              Book an AU Consultation
+            </Link>
+          </div>
+        </div>
       </section>
     </main>
   );

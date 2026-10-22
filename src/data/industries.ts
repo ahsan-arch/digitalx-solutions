@@ -9,6 +9,41 @@ export type IndustryCategory =
   | "Automotive"
   | "Family, Pet & Specialty Care";
 
+export type IndustryIntakeStep = {
+  name: string;
+  text: string;
+};
+
+export type IndustryIntakeArchitecture = {
+  emergencyCriteria: string;
+  dispatchProtocol: string;
+  intakeSteps: IndustryIntakeStep[];
+};
+
+export type IndustrySoftwareIntegrations = {
+  primaryCrms: string[];
+  fieldSoftware: string[];
+  telephony: string[];
+};
+
+export type IndustryCompliance = {
+  usRegulations: string;
+  auRegulations: string;
+  dataHandling: string;
+};
+
+export type IndustryUnitEconomics = {
+  averageJobValue: string;
+  monthlyMissedCallsEst: string;
+  recoveredRevenueModel: string;
+  roiMultiple: string;
+};
+
+export type IndustryFaq = {
+  question: string;
+  answer: string;
+};
+
 export type Industry = {
   slug: string;
   name: string;
@@ -19,386 +54,4781 @@ export type Industry = {
   painPoints: string[];
   playbook: string[];
   relatedSolutionSlugs: SolutionSlug[];
-};
-
-function ind(
-  slug: string, name: string, category: IndustryCategory, headline: string,
-  summary: string, niches: string[], painPoints: string[], playbook: string[],
-  related: SolutionSlug[]
-): Industry {
-  return { slug, name, category, headline, summary, niches, painPoints, playbook, relatedSolutionSlugs: related };
-}
-
-const S: Record<string, SolutionSlug> = {
-  ghl: "gohighlevel-implementation", voice: "ai-voice-agents", mctb: "missed-call-text-back",
-  nurture: "automated-lead-nurturing", chat: "chatbots", n8n: "n8n-workflow-automation",
-  crm: "crm-integration", dash: "analytics-dashboards",
+  intakeArchitecture: IndustryIntakeArchitecture;
+  softwareIntegrations: IndustrySoftwareIntegrations;
+  complianceAndStandards: IndustryCompliance;
+  unitEconomics: IndustryUnitEconomics;
+  faqs: IndustryFaq[];
 };
 
 export const industries: Industry[] = [
-  // ── Home Services & Contractors ──
-  ind("hvac-companies","HVAC Companies","Home Services & Contractors",
-    "Capture every AC blowout and furnace failure instantly.",
-    "During peak seasons, speed to lead is everything. We add front end qualification and nurture so your trucks get to the highest value jobs first.",
-    ["AC Repair","Heating Specialists","Commercial HVAC"],
-    ["Scaling support during peak season surges","Losing after hours emergency calls to competitors","Routing emergencies to whichever tech answers first, not the right one"],
-    ["AI chatbot qualifies emergencies vs. routine","Lead scoring + routing to available trucks","After hours automated booking with emergency escalation","Seasonal nurture for tune ups and maintenance plans"],
-    [S.chat, S.voice, S.ghl, S.n8n]),
-  ind("roofing-companies","Roofing Companies","Home Services & Contractors",
-    "Book every storm lead before the next roofer knocks.",
-    "Storm damage and urgent repairs hit in bursts. Capture, qualify, and schedule inspections instantly.",
-    ["Residential Roofing","Commercial Roofing","Storm Damage & Insurance Claims"],
-    ["Storm driven lead surges overwhelming the front desk","Insurance claim leads slipping through the cracks","Long gap between inspection, quote, and signed contract"],
-    ["AI voice agent handles inspection booking 24/7","Missed call text back during storm surges","Automated quote follow up tailored to insurance vs. cash jobs","Post install review and referral asks wired to GHL"],
-    [S.voice, S.mctb, S.nurture, S.ghl]),
-  ind("plumbing-companies","Plumbing Companies","Home Services & Contractors",
-    "Stop losing jobs to the first plumber who picks up.",
-    "Deploy AI voice agents, Missed call text back, and booking automation so every quote request turns into a scheduled visit.",
-    ["Residential Plumbing","Commercial Plumbing","Emergency Services"],
-    ["Missing calls while on tools, losing the job to whoever answers next","Quote follow ups slipping through the cracks","Ad spend that can't be traced to booked revenue"],
-    ["AI voice agent answers every call, qualifies, books the visit","Missed call text back recovers 30–50% of lost callers","Automated quote follow ups via SMS + email","GHL pipeline with job-type tagging for Meta retargeting"],
-    [S.voice, S.mctb, S.nurture, S.ghl]),
-  ind("electricians","Electricians","Home Services & Contractors",
-    "Keep your schedule full and never miss an emergency call.",
-    "Automate intake, scheduling, and reminders so your technicians are always moving to the next profitable job.",
-    ["Residential Electricians","Commercial Electricians","Industrial Electrical"],
-    ["High inbound volume with no dedicated front desk","Emergency calls going to voicemail after hours","Scheduling conflicts between routine and urgent jobs"],
-    ["AI voice + chat intake with emergency priority routing","Automated appointment confirmations + reminders","After hours booking with technician dispatch logic","Review asks post visit to compound local SEO"],
-    [S.voice, S.chat, S.nurture, S.ghl]),
-  ind("pest-control-companies","Pest Control Companies","Home Services & Contractors",
-    "Answer panic calls instantly and lock in recurring plans.",
-    "Pest emergencies are time sensitive. Capture every frantic caller, book the inspection, and upsell quarterly plans on autopilot.",
-    ["Residential Pest Control","Commercial Pest Control","Termite & Wildlife Removal"],
-    ["Seasonal spikes overwhelming phone lines","One-time customers never converted to recurring plans","After hours emergency calls going unanswered"],
-    ["AI voice agent triages emergency vs. routine pest calls","Missed call text back with booking link","Post service nurture sequences for quarterly plan upsell","Seasonal campaign triggers for high-pest months"],
-    [S.voice, S.mctb, S.nurture, S.ghl]),
-  ind("landscaping-businesses","Landscaping Businesses","Home Services & Contractors",
-    "Fill your schedule from spring through fall without chasing.",
-    "Automate estimate requests, seasonal reminders, and follow ups so your crews stay booked and your pipeline stays warm.",
-    ["Residential Landscaping","Commercial Grounds Maintenance","Hardscaping & Design"],
-    ["Seasonal demand swings leaving gaps in the schedule","Manual estimate follow ups that never happen","No system for rebooking seasonal clients year over year"],
-    ["AI chatbot captures estimate requests 24/7","Automated seasonal reactivation campaigns","Quote follow up sequences via SMS + email","GHL pipeline tracking from inquiry to job completion"],
-    [S.chat, S.nurture, S.ghl, S.dash]),
-  ind("pool-service-companies","Pool Service Companies","Home Services & Contractors",
-    "Keep pools clean and your calendar full year round.",
-    "Automate seasonal opening/closing bookings, recurring service reminders, and new customer onboarding.",
-    ["Residential Pool Service","Commercial Pool Maintenance","Pool Installation & Repair"],
-    ["Seasonal booking surges for openings and closings","Recurring customers forgetting to rebook","Manual scheduling eating into field time"],
-    ["Automated seasonal booking campaigns","Recurring service reminders via SMS","AI chatbot for new customer intake and pricing FAQs","Dashboard tracking recurring vs. one-time revenue"],
-    [S.chat, S.nurture, S.ghl, S.dash]),
-  ind("moving-companies","Moving Companies","Home Services & Contractors",
-    "Quote faster, book more moves, lose fewer leads.",
-    "Speed to quote wins in moving. Automate intake, instant estimates, and follow ups so you book before the next company calls back.",
-    ["Residential Moving","Commercial Relocation","Long-Distance Moving"],
-    ["Leads requesting quotes from 5+ companies simultaneously","Slow quote turnaround losing jobs to faster competitors","No shows and last minute cancellations"],
-    ["AI chatbot collects move details and provides instant ballpark","Automated quote follow up within 30 minutes","Confirmation + reminder sequences to reduce no shows","Post move review asks and referral incentives"],
-    [S.chat, S.nurture, S.mctb, S.ghl]),
-  ind("flooring-contractors","Flooring Contractors","Home Services & Contractors",
-    "Turn every showroom visit and inquiry into a booked estimate.",
-    "Automate lead capture from showroom visits, website inquiries, and ad campaigns into one pipeline for flooring contractors across the US and Australia.",
-    ["Hardwood Flooring","Tile & Stone","Carpet Installation"],
-    ["Showroom walk ins never followed up properly","Long decision cycles for large flooring projects","No tracking of which ad campaigns drive actual installs"],
-    ["AI chatbot for instant material and pricing FAQs","Multi touch nurture for high ticket flooring projects","Automated post install review and referral asks","Revenue attribution dashboard across all lead sources"],
-    [S.chat, S.nurture, S.dash, S.ghl]),
-  ind("window-door-companies","Window & Door Companies","Home Services & Contractors",
-    "Shorten the sales cycle from inquiry to signed contract.",
-    "High ticket window and door replacements need persistent, professional follow up. Automate the nurture so your closers focus on closing.",
-    ["Window Replacement","Door Installation","Custom Window & Door"],
-    ["3–6 month decision cycles with leads going cold","In home consultations that never convert without follow up","No system for managing referrals from past projects"],
-    ["Multi touch nurture tailored to 3–6 month timelines","Automated post consultation follow up sequences","Referral and review automation after project completion","Pipeline dashboard tracking consultation to close rate"],
-    [S.nurture, S.ghl, S.dash, S.crm]),
-  ind("solar-installers","Solar Installers","Home Services & Contractors",
-    "Qualify faster, close more installs, reduce tire kickers.",
-    "Solar sales cycles are long and full of unqualified leads. Automate qualification, nurture, and appointment setting.",
-    ["Residential Solar","Commercial Solar","Solar Battery Storage"],
-    ["80% of leads are unqualified or just price shopping","Long 2–6 month sales cycles","High cost per acquisition from paid ads"],
-    ["AI chatbot qualifies roof type, ownership, and utility spend","Automated nurture drips with ROI calculators and testimonials","Appointment scheduling for qualified site surveys only","Lead scoring to prioritize high intent prospects"],
-    [S.chat, S.nurture, S.ghl, S.dash]),
-  ind("home-remodeling-companies","Home Remodeling Companies","Home Services & Contractors",
-    "Nurture high ticket leads without the manual chase.",
-    "Remodeling has a long consideration cycle. We automate multi touch nurture and follow ups so your pipeline stays warm.",
-    ["Kitchen Remodels","Bathroom Renovations","Full Home Makeovers"],
-    ["3–6 month sales cycles with leads going cold","No system for staying top of mind between quote and deposit","Review and referral asks never getting sent post project"],
-    ["Multi touch nurture tailored to 3–6 month decision cycles","Automated before/after portfolio drips","Post project review asks wired to your CRM","Dashboards to track quote to close velocity"],
-    [S.nurture, S.chat, S.dash, S.ghl]),
-  ind("painting-contractors","Painting Contractors","Home Services & Contractors",
-    "Book more paint jobs with zero phone tag.",
-    "Automate estimate requests, follow ups, and rebooking so your painters stay on ladders, not on phones.",
-    ["Residential Painting","Commercial Painting","Cabinet Refinishing"],
-    ["Estimates given but never followed up","Seasonal lulls with no proactive outreach","Repeat customers not being rebooked annually"],
-    ["AI chatbot captures project details and schedules estimates","Automated estimate follow up via SMS + email","Seasonal reactivation campaigns for exterior painting","Post job review asks and referral sequences"],
-    [S.chat, S.nurture, S.mctb, S.ghl]),
-  ind("cleaning-services","Cleaning Services","Home Services & Contractors",
-    "Fill recurring slots and reduce last minute cancellations.",
-    "Automate booking, reminders, and rebooking so your cleaning crews stay fully scheduled without manual coordination.",
-    ["Residential Cleaning","Commercial Janitorial","Move-In/Move-Out Cleaning"],
-    ["High cancellation and no show rates","Difficulty converting one-time cleans to recurring contracts","Manual scheduling across multiple crews and locations"],
-    ["AI chatbot for instant booking and pricing","Automated reminders to reduce cancellations","Post clean follow up with recurring plan upsell","Multi crew scheduling and route optimization tracking"],
-    [S.chat, S.nurture, S.ghl, S.dash]),
-
-  // ── Healthcare & Medical ──
-  ind("dental-clinics","Dental Clinics","Healthcare & Medical",
-    "Automate patient recall and reduce no shows.",
-    "Ensure every hygiene appointment is filled and every high ticket consultation is nurtured through automated sequences.",
-    ["General Dentistry","Orthodontics","Cosmetic Dentistry"],
-    ["Empty chairs from last minute cancellations","Patients overdue for hygiene never getting recalled","Front desk tied up on calls instead of chairside support"],
-    ["Automated recall sequences by treatment type","Missed call text back during peak hours","Waitlist activation on cancellation","Multi touch nurture for implants and cosmetic consults"],
-    [S.nurture, S.ghl, S.dash, S.voice]),
-  ind("med-spas","Med Spas","Healthcare & Medical",
-    "Book more treatments without discounting your way there.",
-    "Automate consultation booking, treatment reminders, and membership upsells so your injectors focus on results, not admin.",
-    ["Injectables & Fillers","Laser Treatments","Body Contouring"],
-    ["No shows on high value treatment slots","Consultations that never convert without follow up","Membership and package renewals falling through the cracks"],
-    ["AI chatbot for treatment FAQs and consultation booking","Automated pre/post treatment reminders","Membership renewal and upsell sequences","Review asks after every treatment visit"],
-    [S.chat, S.nurture, S.ghl, S.mctb]),
-  ind("chiropractic-offices","Chiropractic Offices","Healthcare & Medical",
-    "Keep adjustment tables full and patients on plan.",
-    "Automate appointment reminders, care plan adherence, and reactivation for patients who drop off mid plan.",
-    ["General Chiropractic","Sports Chiropractic","Pediatric Chiropractic"],
-    ["Patients dropping off care plans after 3–4 visits","No shows costing $100+ per empty slot","Manual reminder calls consuming front desk time"],
-    ["Automated care plan reminders and milestone messages","No show recovery workflows","Reactivation campaigns for lapsed patients","Missed call text back for after hours inquiries"],
-    [S.nurture, S.mctb, S.ghl, S.voice]),
-  ind("plastic-surgery-centers","Plastic Surgery Centers","Healthcare & Medical",
-    "Nurture high value consultations into booked procedures.",
-    "Plastic surgery decisions take months. Automate the nurture so your practice stays top of mind from consult to procedure day.",
-    ["Cosmetic Surgery","Reconstructive Surgery","Non-Surgical Procedures"],
-    ["Long 3–12 month decision cycles for elective procedures","Consultations that go cold without persistent follow up","High cost per lead from competitive paid ads"],
-    ["Multi touch nurture with before/after galleries and testimonials","Automated consultation follow up sequences","Lead scoring for procedure ready patients","Post procedure review and referral automation"],
-    [S.nurture, S.chat, S.ghl, S.dash]),
-  ind("physical-therapy-clinics","Physical Therapy Clinics","Healthcare & Medical",
-    "Fill the calendar without hiring another receptionist.",
-    "Automate patient intake, scheduling, waitlists, and reminders while staying compliant to keep chairs full.",
-    ["Sports Therapy","Rehabilitation","Chiropractic Care"],
-    ["No shows costing $150+ per empty slot","Front desk overload during peak hours","Manual waitlist management when cancellations hit"],
-    ["AI voice intake with compliance aware handling","Automated reminders via SMS + email","No show recovery workflows that refill cancellations","Missed call text back for after hours inquiries"],
-    [S.voice, S.mctb, S.chat, S.ghl]),
-  ind("urgent-care-clinics","Urgent Care Clinics","Healthcare & Medical",
-    "Manage patient flow and reduce wait time walk outs.",
-    "Automate check in, wait time updates, and post visit follow ups so patients choose your clinic every time.",
-    ["Walk-In Urgent Care","Pediatric Urgent Care","Occupational Health"],
-    ["Patients leaving due to long perceived wait times","No post visit follow up or feedback collection","Manual check in processes slowing intake"],
-    ["AI chatbot for symptom pre screening and check in","Automated wait time SMS updates","Post visit follow up and review requests","Capacity tracking dashboard"],
-    [S.chat, S.ghl, S.nurture, S.dash]),
-  ind("optometry-offices","Optometry Offices","Healthcare & Medical",
-    "Automate recalls and keep exam chairs booked year round.",
-    "Most patients forget their annual exam. Automate recall reminders, frame promotions, and appointment booking.",
-    ["General Optometry","Pediatric Eye Care","Contact Lens Specialists"],
-    ["Patients overdue for annual exams not being contacted","Frame inventory promotions not reaching the right patients","Manual appointment scheduling consuming staff time"],
-    ["Automated annual exam recall sequences","Targeted frame promotion campaigns","AI chatbot for appointment scheduling and insurance FAQs","Post exam review and referral asks"],
-    [S.nurture, S.chat, S.ghl, S.mctb]),
-  ind("pharmacy-chains","Pharmacy Chains","Healthcare & Medical",
-    "Boost refill adherence and drive front store traffic.",
-    "Automate prescription refill reminders, health screenings, and loyalty promotions across multiple locations.",
-    ["Retail Pharmacy","Compounding Pharmacy","Specialty Pharmacy"],
-    ["Low prescription refill adherence rates","Underutilized health screening and immunization services","No automated loyalty or promotional outreach"],
-    ["Automated refill reminder sequences via SMS","Health screening and immunization campaign triggers","Loyalty program enrollment and engagement automation","Multi location performance dashboards"],
-    [S.nurture, S.ghl, S.n8n, S.dash]),
-  ind("orthodontic-offices","Orthodontic Offices","Healthcare & Medical",
-    "Convert more consultations into treatment starts.",
-    "Orthodontic treatment is a big decision. Automate consultation follow ups, payment plan info, and parent communication.",
-    ["Traditional Braces","Clear Aligners","Pediatric Orthodontics"],
-    ["Consultations that never convert to treatment starts","Parents needing multiple touchpoints before committing","Manual tracking of treatment milestones and appointments"],
-    ["Automated post consultation nurture with payment plan details","Parent focused SMS and email sequences","Treatment milestone reminders and progress updates","Review asks timed to treatment completion"],
-    [S.nurture, S.chat, S.ghl, S.dash]),
-
-  // ── Professional & Financial Services ──
-  ind("law-firms","Law Firms","Professional & Financial Services",
-    "Qualify cases faster and stop wasting partner hours.",
-    "Automate intake screening, consultation booking, and case-type routing so attorneys focus on billable work.",
-    ["Personal Injury","Family Law","Criminal Defense"],
-    ["Unqualified consultations consuming attorney time","Slow intake response losing cases to faster firms","No system for nurturing unconverted consultations"],
-    ["AI chatbot for case type screening and qualification","Automated consultation booking with conflict checks","Case-type routing to the right attorney","Long term nurture for not yet ready prospects"],
-    [S.chat, S.voice, S.nurture, S.ghl]),
-  ind("real-estate-agencies","Real Estate Agencies","Professional & Financial Services",
-    "Respond first. Win the listing or the sale.",
-    "Make sure every portal lead and ad inquiry is handled instantly, qualifying buyers and sellers before you even dial.",
-    ["Residential Real Estate","Commercial Real Estate","Property Management"],
-    ["Leads going cold in the 20-minute gap between alerts","80% of portal leads are unqualified and waste agent time","No post close referral or review system"],
-    ["Instant AI response to every portal + ad lead","Qualification flow for serious buyers vs. tire kickers","Drip nurture for long horizon buyers","Post close referral + review automation"],
-    [S.chat, S.nurture, S.ghl, S.crm]),
-  ind("mortgage-brokers","Mortgage Brokers","Professional & Financial Services",
-    "Stay top of mind through the entire rate shopping cycle.",
-    "Mortgage decisions take weeks. Automate rate updates, document collection, and follow ups so borrowers close with you.",
-    ["Residential Mortgages","Commercial Lending","Refinancing"],
-    ["Borrowers shopping 5+ lenders simultaneously","Document collection delays slowing closings","No automated follow up for pre approved leads who go quiet"],
-    ["Automated rate update campaigns for active shoppers","Document request sequences with reminder automation","Pre approval nurture for leads not yet ready","Pipeline dashboard tracking application to close rate"],
-    [S.nurture, S.chat, S.ghl, S.dash]),
-  ind("insurance-agencies","Insurance Agencies","Professional & Financial Services",
-    "Automate renewals, cross sells, and quote follow ups.",
-    "Stop losing renewals to competitors and leaving cross sell revenue on the table with automated lifecycle campaigns.",
-    ["Property & Casualty","Life Insurance","Health Insurance"],
-    ["Renewal reminders sent too late or not at all","No systematic cross sell for existing policyholders","Quote follow ups that never happen"],
-    ["Automated renewal reminder sequences 90/60/30 days out","Cross sell campaigns based on existing policy gaps","Quote follow up automation within 24 hours","Client lifetime value tracking dashboard"],
-    [S.nurture, S.ghl, S.dash, S.n8n]),
-  ind("accounting-firms","Accounting Firms","Professional & Financial Services",
-    "Qualify better clients before tax season hits.",
-    "Automate tax season intake, document collection, and scheduling so CPAs focus on billable advisory work.",
-    ["Tax Preparation","Corporate Accounting","Bookkeeping"],
-    ["Too many manual document requests consuming staff time","Unqualified prospects clogging the calendar","Tax season creating capacity bottlenecks"],
-    ["AI chatbot for intake and qualification","Automated document request sequences with reminders","Lead routing based on service need","Year round nurture for advisory cross sell"],
-    [S.chat, S.nurture, S.ghl, S.n8n]),
-  ind("tax-preparation-firms","Tax Preparation Firms","Professional & Financial Services",
-    "Maximize seasonal capacity and year round engagement.",
-    "Automate client intake, document reminders, and off season engagement to smooth out tax season chaos.",
-    ["Individual Tax Prep","Business Tax Services","Tax Planning & Advisory"],
-    ["Extreme seasonal bottlenecks from January to April","Clients submitting documents late or incomplete","No engagement with clients outside of tax season"],
-    ["Automated document checklist delivery and reminders","Capacity based appointment scheduling","Off season nurture for tax planning and advisory","Referral campaigns timed to post filing satisfaction"],
-    [S.nurture, S.ghl, S.chat, S.dash]),
-  ind("title-companies","Title Companies","Professional & Financial Services",
-    "Speed up closings and keep all parties informed.",
-    "Automate status updates, document collection, and closing coordination so your team handles more transactions.",
-    ["Residential Title","Commercial Title","Escrow Services"],
-    ["Manual status update calls to agents, lenders, and buyers","Document collection delays from multiple parties","No visibility into bottlenecks slowing closings"],
-    ["Automated closing milestone notifications to all parties","Document request and collection automation","Transaction pipeline dashboard with bottleneck alerts","Post closing review and referral sequences"],
-    [S.n8n, S.ghl, S.nurture, S.dash]),
-  ind("staffing-agencies","Staffing Agencies","Professional & Financial Services",
-    "Place faster, nurture deeper talent pools.",
-    "Automate candidate engagement, client follow ups, and placement pipeline tracking to fill roles faster.",
-    ["Temporary Staffing","Direct Hire","Executive Search"],
-    ["Candidates going cold between outreach and placement","Manual job matching consuming recruiter time","No systematic client follow up for repeat placements"],
-    ["AI chatbot for candidate pre screening","Automated candidate nurture and job match alerts","Client follow up sequences for reorders and referrals","Placement pipeline and fill rate dashboards"],
-    [S.chat, S.nurture, S.ghl, S.dash]),
-
-  // ── Beauty, Fitness & Wellness ──
-  ind("nail-salons","Nail Salons","Beauty, Fitness & Wellness",
-    "Keep every chair booked and reduce no shows.",
-    "Automate appointment reminders, rebooking prompts, and loyalty rewards so your nail technicians stay productive and your schedule stays full 24/7.",
-    ["Manicure & Pedicure","Nail Art","Acrylic & Gel Extensions"],
-    ["High no show rates on weekend appointments","Walk in customers never converted to recurring bookings","No loyalty program driving repeat visits"],
-    ["Automated appointment reminders via SMS","Post visit rebooking prompts","Loyalty reward automation for repeat customers","Missed call text back for booking inquiries"],
-    [S.nurture, S.mctb, S.ghl, S.chat]),
-  ind("hair-salons","Hair Salons","Beauty, Fitness & Wellness",
-    "Fill stylist chairs and build client loyalty on autopilot.",
-    "Automate salon booking, appointment reminders, and rebooking prompts so your stylists focus on clients while AI handles phone calls around the clock.",
-    ["Haircuts & Styling","Color Services","Hair Extensions"],
-    ["Stylists losing time answering phones between clients","No shows on prime Saturday slots","Clients not rebooking at their regular interval"],
-    ["AI chatbot for 24/7 booking and service FAQs","Automated appointment reminders and rebooking prompts","Birthday and loyalty campaigns","Review asks after every visit"],
-    [S.chat, S.nurture, S.mctb, S.ghl]),
-  ind("tattoo-studios","Tattoo Studios","Beauty, Fitness & Wellness",
-    "Manage consultations, deposits, and waitlists automatically.",
-    "Automate inquiry handling, deposit collection, and appointment management so artists focus on creating.",
-    ["Custom Tattoos","Walk-In Flash","Cover-Ups & Touch-Ups"],
-    ["DM and email inquiries piling up without responses","No shows on consultation slots wasting artist time","Waitlists managed manually in spreadsheets"],
-    ["AI chatbot for style, pricing, and availability FAQs","Automated consultation booking with deposit collection","Waitlist management with notification automation","Post session aftercare and review sequences"],
-    [S.chat, S.ghl, S.nurture, S.n8n]),
-  ind("gyms-fitness-studios","Gyms & Fitness Studios","Beauty, Fitness & Wellness",
-    "Convert trial members and reduce churn automatically.",
-    "Automate trial to member conversion, class reminders, and retention campaigns to maximize lifetime value.",
-    ["CrossFit Gyms","Yoga Studios","Personal Training Studios"],
-    ["Trial members not converting to paid memberships","High churn rates after the first 90 days","Class no shows wasting instructor capacity"],
-    ["Automated trial to membership nurture sequences","Class reminder and waitlist notifications","Churn prevention campaigns at 30/60/90 day marks","Referral incentive automation for active members"],
-    [S.nurture, S.ghl, S.chat, S.dash]),
-  ind("spa-wellness-centers","Spa & Wellness Centers","Beauty, Fitness & Wellness",
-    "Book more treatments and build recurring wellness plans.",
-    "Automate appointment booking, package upsells, and client communication so therapists focus on service delivery.",
-    ["Day Spas","Medical Spas","Wellness Retreats"],
-    ["Empty treatment rooms during off peak hours","Package and membership renewals handled manually","No system for rebooking clients at optimal intervals"],
-    ["AI chatbot for service menus and booking","Off peak promotional campaigns","Package renewal and upsell automation","Post treatment rebooking and review asks"],
-    [S.chat, S.nurture, S.ghl, S.mctb]),
-
-  // ── Events & Hospitality ──
-  ind("restaurants","Restaurants","Events & Hospitality",
-    "Fill tables, manage reservations, and build loyal regulars.",
-    "Automate reservation management, waitlist notifications, and loyalty campaigns to keep tables full and customers returning.",
-    ["Fine Dining","Casual Dining","Fast Casual & QSR"],
-    ["No shows on peak hour reservations","No system for building a regular customer base","Manual waitlist management during rush hours"],
-    ["AI chatbot for reservations and menu FAQs","Automated waitlist SMS notifications","Loyalty and birthday campaign automation","Post visit review asks and return incentives"],
-    [S.chat, S.nurture, S.ghl, S.mctb]),
-  ind("wedding-planners","Wedding Planners","Events & Hospitality",
-    "Nurture engaged couples from inquiry to 'I do.'",
-    "Wedding planning has a long sales cycle. Automate inquiry follow ups, vendor coordination, and timeline reminders.",
-    ["Full-Service Planning","Day-Of Coordination","Destination Weddings"],
-    ["Inquiries going cold during the comparison shopping phase","Manual vendor coordination across 10+ suppliers","No automated timeline or milestone reminders for couples"],
-    ["Automated inquiry follow up with portfolio showcases","Vendor coordination workflow automation","Milestone and timeline reminder sequences","Post wedding review and referral campaigns"],
-    [S.nurture, S.n8n, S.ghl, S.chat]),
-  ind("photography-studios","Photography Studios","Events & Hospitality",
-    "Book more sessions and deliver galleries on autopilot.",
-    "Automate session booking, preparation guides, and gallery delivery so you spend more time behind the camera.",
-    ["Wedding Photography","Portrait Studios","Commercial Photography"],
-    ["Inquiry follow ups delayed by shooting schedules","Manual gallery delivery and feedback collection","No system for rebooking annual sessions"],
-    ["AI chatbot for package info and session booking","Automated pre session preparation guides","Gallery delivery and feedback collection workflows","Annual session rebooking campaigns"],
-    [S.chat, S.nurture, S.n8n, S.ghl]),
-  ind("event-venues","Event Venues","Events & Hospitality",
-    "Convert venue tours into signed contracts faster.",
-    "Automate tour scheduling, follow ups, and contract management so your sales team closes more events.",
-    ["Wedding Venues","Corporate Event Spaces","Conference Centers"],
-    ["Tour requests not followed up within 24 hours","Long decision cycles between tour and signed contract","Manual contract and deposit tracking"],
-    ["Automated tour scheduling with availability checks","Post tour follow up sequences with virtual tour links","Contract and deposit reminder automation","Event pipeline tracking dashboard"],
-    [S.nurture, S.ghl, S.chat, S.dash]),
-  ind("catering-companies","Catering Companies","Events & Hospitality",
-    "Capture every event inquiry and streamline proposals.",
-    "Automate inquiry handling, menu customization, and proposal follow ups so your kitchen stays focused on food.",
-    ["Corporate Catering","Wedding Catering","Private Events"],
-    ["Event inquiries lost in email during busy seasons","Manual proposal creation consuming hours per event","No follow up system for proposals sent but not signed"],
-    ["AI chatbot for menu options and availability","Automated proposal follow up sequences","Event coordination workflow automation","Post event review and rebooking campaigns"],
-    [S.chat, S.nurture, S.n8n, S.ghl]),
-
-  // ── Automotive ──
-  ind("auto-dealerships","Auto Dealerships","Automotive",
-    "Engage every lead and sell more cars with less floor time.",
-    "Automate lead follow ups, test drive scheduling, and post sale service reminders to maximize per customer revenue.",
-    ["New Car Sales","Used Car Sales","Certified Pre-Owned"],
-    ["Internet leads going cold within hours","No systematic follow up after test drives","Service department underutilized for post sale revenue"],
-    ["Instant AI response to every online inquiry","Automated test drive scheduling and follow up","Post sale service reminder sequences","Lead to-sale pipeline dashboard"],
-    [S.chat, S.voice, S.nurture, S.ghl]),
-  ind("car-rental-agencies","Car Rental Agencies","Automotive",
-    "Streamline bookings and maximize fleet utilization.",
-    "Automate reservation management, pickup/return reminders, and upsell campaigns to keep your fleet on the road.",
-    ["Leisure Rentals","Corporate Fleet","Specialty & Luxury Rentals"],
-    ["Manual reservation management across multiple channels","No shows and late returns disrupting fleet planning","No automated upsell for insurance, GPS, or upgrades"],
-    ["AI chatbot for availability and booking","Automated pickup/return reminders","Upsell campaigns for insurance and upgrades","Fleet utilization dashboard"],
-    [S.chat, S.ghl, S.nurture, S.dash]),
-  ind("auto-body-shops","Auto Body Shops","Automotive",
-    "Keep bays full and customers informed throughout repairs.",
-    "Automate estimate follow ups, repair status updates, and review collection so your team focuses on quality work.",
-    ["Collision Repair","Paint & Body Work","Insurance Claims"],
-    ["Estimates given but customers shopping 3+ shops","No automated repair status updates for customers","Insurance claim coordination consuming admin time"],
-    ["Automated estimate follow up within 24 hours","Repair status update notifications via SMS","Insurance claim coordination workflows","Post repair review and referral asks"],
-    [S.nurture, S.mctb, S.n8n, S.ghl]),
-
-  // ── Family, Pet & Specialty Care ──
-  ind("veterinary-clinics","Veterinary Clinics","Family, Pet & Specialty Care",
-    "Better support for pet owners, 24/7.",
-    "Handle emergency triage, routine booking, and vaccination reminders automatically without expanding front desk headcount.",
-    ["General Veterinary","Emergency Animal Hospitals","Specialty Pet Care"],
-    ["High call volume with limited front desk staff","Sorting emergency vs. routine calls on the fly","Missed annual checkups and vaccination recalls"],
-    ["AI voice agent for triage routing","Automated vaccination and checkup reminders","Missed call text back for routine inquiries","Waitlist activation for cancellations"],
-    [S.voice, S.mctb, S.nurture, S.ghl]),
-  ind("tutoring-centers","Tutoring Centers","Family, Pet & Specialty Care",
-    "Enroll more students and keep families engaged.",
-    "Automate enrollment inquiries, session reminders, and progress updates so tutoring center directors focus on teaching and student achievement.",
-    ["K-12 Tutoring","Test Prep","College Counseling"],
-    ["Parent inquiries not followed up during session hours","No shows wasting tutor time and revenue","No systematic progress reporting to parents"],
-    ["AI chatbot for program info and enrollment","Automated session reminders for students and parents","Progress update sequences after assessment milestones","Re enrollment campaigns for returning semesters"],
-    [S.chat, S.nurture, S.ghl, S.mctb]),
-  ind("daycare-centers","Daycare Centers","Family, Pet & Specialty Care",
-    "Fill open spots faster and keep parents informed.",
-    "Automate waitlist management, tour booking, enrollment follow-ups, and daily family communication for childcare and daycare centers in the US and AU.",
-    ["Infant Care","Preschool Programs","After-School Care"],
-    ["Long waitlists with no automated communication","Manual daily reports consuming staff time","Enrollment inquiries lost during busy drop off/pickup"],
-    ["Automated waitlist position updates and enrollment prompts","Digital daily report delivery to parents","AI chatbot for program info and tour scheduling","Re enrollment campaigns for upcoming school years"],
-    [S.chat, S.nurture, S.ghl, S.n8n]),
-  ind("senior-care-facilities","Senior Care Facilities","Family, Pet & Specialty Care",
-    "Compassionate, prompt responses for families in need.",
-    "Provide instant answers to touring and pricing questions 24/7, capturing tour bookings from your website or phone line.",
-    ["Assisted Living","Memory Care","Independent Living"],
-    ["Families needing immediate answers after hours","Slow tour scheduling losing the family to another facility","Lost inquiries sitting in an inbox no one checks"],
-    ["AI voice agent for 24/7 compassionate intake","Automated tour scheduling with reminder sequences","Lead scoring for high intent families","CRM pipeline tracking from first call to move in"],
-    [S.voice, S.nurture, S.ghl, S.crm]),
-  ind("dog-grooming-boarding","Dog Grooming & Boarding","Family, Pet & Specialty Care",
-    "Keep grooming tables and boarding kennels fully booked.",
-    "Automate booking, vaccination verification, and rebooking so your team focuses on the pets, not the phones.",
-    ["Dog Grooming","Dog Boarding","Doggy Daycare"],
-    ["No shows on grooming appointments","Manual vaccination record verification before boarding","Customers not rebooking at regular grooming intervals"],
-    ["AI chatbot for booking and service FAQs","Automated vaccination verification workflows","Rebooking reminders at breed specific intervals","Post visit review asks and loyalty rewards"],
-    [S.chat, S.nurture, S.ghl, S.n8n]),
-  ind("funeral-homes","Funeral Homes","Family, Pet & Specialty Care",
-    "Compassionate, immediate response when families need it most.",
-    "Ensure every call is answered with care, arrangements are coordinated smoothly, and families receive ongoing support.",
-    ["Traditional Funeral Services","Cremation Services","Pre-Planning"],
-    ["After hours calls from grieving families going to voicemail","Complex coordination across multiple service providers","No system for pre planning outreach and community engagement"],
-    ["AI voice agent with compassionate after hours handling","Arrangement coordination workflow automation","Pre planning campaign sequences for community outreach","Post service follow up and memorial anniversary reminders"],
-    [S.voice, S.n8n, S.nurture, S.ghl]),
+  {
+    "slug": "hvac-companies",
+    "name": "HVAC Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Capture every AC blowout and furnace failure instantly.",
+    "summary": "During peak seasons, speed to lead is everything. We add front end qualification and nurture so your trucks get to the highest value jobs first.",
+    "niches": [
+      "AC Repair",
+      "Heating Specialists",
+      "Commercial HVAC"
+    ],
+    "painPoints": [
+      "Scaling support during peak season surges",
+      "Losing after hours emergency calls to competitors",
+      "Routing emergencies to whichever tech answers first",
+      "not the right one"
+    ],
+    "playbook": [
+      "AI chatbot qualifies emergencies vs. routine",
+      "Lead scoring + routing to available trucks",
+      "After hours automated booking with emergency escalation",
+      "Seasonal nurture for tune ups and maintenance plans"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "ai-voice-agents",
+      "gohighlevel-implementation",
+      "n8n-workflow-automation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Complete furnace failure in freezing weather, AC condenser blowout in heatwave (>95°F / 35°C), gas odor or carbon monoxide warnings.",
+      "dispatchProtocol": "Instant on-call HVAC technician ring-group escalation with caller audio and address notes; fallback to dispatch manager after 3 rings.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for hvac companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against hvac companies operational standards, identifying emergency criteria (Complete furnace failure in freezing weather, AC condenser blowout in heatwave (...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for HVAC Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Complete furnace failure in freezing weather, AC condenser blowout in heatwave (>95°F / 35...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing HVAC Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for HVAC Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In hvac companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "roofing-companies",
+    "name": "Roofing Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Book every storm lead before the next roofer knocks.",
+    "summary": "Storm damage and urgent repairs hit in bursts. Capture, qualify, and schedule inspections instantly.",
+    "niches": [
+      "Residential Roofing",
+      "Commercial Roofing",
+      "Storm Damage & Insurance Claims"
+    ],
+    "painPoints": [
+      "Storm driven lead surges overwhelming the front desk",
+      "Insurance claim leads slipping through the cracks",
+      "Long gap between inspection",
+      "quote",
+      "and signed contract"
+    ],
+    "playbook": [
+      "AI voice agent handles inspection booking 24/7",
+      "Missed call text back during storm surges",
+      "Automated quote follow up tailored to insurance vs. cash jobs",
+      "Post install review and referral asks wired to GHL"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "missed-call-text-back",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Active storm water penetration, missing shingles after severe wind event, fallen tree damage on residential structure.",
+      "dispatchProtocol": "Emergency tarping crew notification dispatched within 5 minutes; drone inspection booking link texted to homeowner immediately.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for roofing companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against roofing companies operational standards, identifying emergency criteria (Active storm water penetration, missing shingles after severe wind event, fallen...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Roofing Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Active storm water penetration, missing shingles after severe wind event, fallen tree dama...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Roofing Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Roofing Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In roofing companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "plumbing-companies",
+    "name": "Plumbing Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Stop losing jobs to the first plumber who picks up.",
+    "summary": "Deploy AI voice agents, Missed call text back, and booking automation so every quote request turns into a scheduled visit.",
+    "niches": [
+      "Residential Plumbing",
+      "Commercial Plumbing",
+      "Emergency Services"
+    ],
+    "painPoints": [
+      "Missing calls while on tools",
+      "losing the job to whoever answers next",
+      "Quote follow ups slipping through the cracks",
+      "Ad spend that can't be traced to booked revenue"
+    ],
+    "playbook": [
+      "AI voice agent answers every call",
+      "qualifies",
+      "books the visit",
+      "Missed call text back recovers 30–50% of lost callers",
+      "Automated quote follow ups via SMS + email",
+      "GHL pipeline with job-type tagging for Meta retargeting"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "missed-call-text-back",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Burst water supply line, main sewer line backup into home, failed water heater flooding garage or basement, commercial restaurant drain stoppage.",
+      "dispatchProtocol": "Immediate SMS + voice broadcast to closest available service van using geo-location routing; customer receives live technician ETA tracker.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for plumbing companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against plumbing companies operational standards, identifying emergency criteria (Burst water supply line, main sewer line backup into home, failed water heater f...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Plumbing Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Burst water supply line, main sewer line backup into home, failed water heater flooding ga...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Plumbing Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Plumbing Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In plumbing companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "electricians",
+    "name": "Electricians",
+    "category": "Home Services & Contractors",
+    "headline": "Keep your schedule full and never miss an emergency call.",
+    "summary": "Automate intake, scheduling, and reminders so your technicians are always moving to the next profitable job.",
+    "niches": [
+      "Residential Electricians",
+      "Commercial Electricians",
+      "Industrial Electrical"
+    ],
+    "painPoints": [
+      "High inbound volume with no dedicated front desk",
+      "Emergency calls going to voicemail after hours",
+      "Scheduling conflicts between routine and urgent jobs"
+    ],
+    "playbook": [
+      "AI voice + chat intake with emergency priority routing",
+      "Automated appointment confirmations + reminders",
+      "After hours booking with technician dispatch logic",
+      "Review asks post visit to compound local SEO"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Sparking breaker panel, total blackout in occupied dwelling, exposed live wiring, commercial refrigeration power outage.",
+      "dispatchProtocol": "Direct transfer to emergency licensed electrician on standby; automated warning prompt advising caller to shut off main breaker if safe.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for electricians."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against electricians operational standards, identifying emergency criteria (Sparking breaker panel, total blackout in occupied dwelling, exposed live wiring...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Electricians?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Sparking breaker panel, total blackout in occupied dwelling, exposed live wiring, commerci...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Electricians software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Electricians?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In electricians, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "pest-control-companies",
+    "name": "Pest Control Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Answer panic calls instantly and lock in recurring plans.",
+    "summary": "Pest emergencies are time sensitive. Capture every frantic caller, book the inspection, and upsell quarterly plans on autopilot.",
+    "niches": [
+      "Residential Pest Control",
+      "Commercial Pest Control",
+      "Termite & Wildlife Removal"
+    ],
+    "painPoints": [
+      "Seasonal spikes overwhelming phone lines",
+      "One-time customers never converted to recurring plans",
+      "After hours emergency calls going unanswered"
+    ],
+    "playbook": [
+      "AI voice agent triages emergency vs. routine pest calls",
+      "Missed call text back with booking link",
+      "Post service nurture sequences for quarterly plan upsell",
+      "Seasonal campaign triggers for high-pest months"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "missed-call-text-back",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Termite swarming inside living quarters, rodent infestation in food handling area, aggressive wasp or hornet nest near entryway.",
+      "dispatchProtocol": "Inspection route optimization based on pest severity; priority slot booked into technician calendar within 24 hours.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for pest control companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against pest control companies operational standards, identifying emergency criteria (Termite swarming inside living quarters, rodent infestation in food handling are...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Pest Control Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Termite swarming inside living quarters, rodent infestation in food handling area, aggress...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Pest Control Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Pest Control Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In pest control companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "landscaping-businesses",
+    "name": "Landscaping Businesses",
+    "category": "Home Services & Contractors",
+    "headline": "Fill your schedule from spring through fall without chasing.",
+    "summary": "Automate estimate requests, seasonal reminders, and follow ups so your crews stay booked and your pipeline stays warm.",
+    "niches": [
+      "Residential Landscaping",
+      "Commercial Grounds Maintenance",
+      "Hardscaping & Design"
+    ],
+    "painPoints": [
+      "Seasonal demand swings leaving gaps in the schedule",
+      "Manual estimate follow ups that never happen",
+      "No system for rebooking seasonal clients year over year"
+    ],
+    "playbook": [
+      "AI chatbot captures estimate requests 24/7",
+      "Automated seasonal reactivation campaigns",
+      "Quote follow up sequences via SMS + email",
+      "GHL pipeline tracking from inquiry to job completion"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Fallen tree blocking driveway or road, irrigation mainline burst flooding lawn, hazardous storm debris.",
+      "dispatchProtocol": "Emergency tree crew alert sent via mobile app; standard lawn care and hardscaping quote requests routed to estimator calendar.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for landscaping businesses."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against landscaping businesses operational standards, identifying emergency criteria (Fallen tree blocking driveway or road, irrigation mainline burst flooding lawn, ...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Landscaping Businesses?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Fallen tree blocking driveway or road, irrigation mainline burst flooding lawn, hazardous ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Landscaping Businesses software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Landscaping Businesses?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In landscaping businesses, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "pool-service-companies",
+    "name": "Pool Service Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Keep pools clean and your calendar full year round.",
+    "summary": "Automate seasonal opening/closing bookings, recurring service reminders, and new customer onboarding.",
+    "niches": [
+      "Residential Pool Service",
+      "Commercial Pool Maintenance",
+      "Pool Installation & Repair"
+    ],
+    "painPoints": [
+      "Seasonal booking surges for openings and closings",
+      "Recurring customers forgetting to rebook",
+      "Manual scheduling eating into field time"
+    ],
+    "playbook": [
+      "Automated seasonal booking campaigns",
+      "Recurring service reminders via SMS",
+      "AI chatbot for new customer intake and pricing FAQs",
+      "Dashboard tracking recurring vs. one-time revenue"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Pool pump motor failure causing green water algae bloom, filtration leak flooding equipment pad, broken chemical feeder.",
+      "dispatchProtocol": "Triage based on commercial vs residential pool status; route tech assigned for same-day chemical inspection.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for pool service companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against pool service companies operational standards, identifying emergency criteria (Pool pump motor failure causing green water algae bloom, filtration leak floodin...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Pool Service Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Pool pump motor failure causing green water algae bloom, filtration leak flooding equipmen...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Pool Service Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Pool Service Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In pool service companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "moving-companies",
+    "name": "Moving Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Quote faster, book more moves, lose fewer leads.",
+    "summary": "Speed to quote wins in moving. Automate intake, instant estimates, and follow ups so you book before the next company calls back.",
+    "niches": [
+      "Residential Moving",
+      "Commercial Relocation",
+      "Long-Distance Moving"
+    ],
+    "painPoints": [
+      "Leads requesting quotes from 5+ companies simultaneously",
+      "Slow quote turnaround losing jobs to faster competitors",
+      "No shows and last minute cancellations"
+    ],
+    "playbook": [
+      "AI chatbot collects move details and provides instant ballpark",
+      "Automated quote follow up within 30 minutes",
+      "Confirmation + reminder sequences to reduce no shows",
+      "Post move review asks and referral incentives"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "missed-call-text-back",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Last-minute mover cancellation, emergency same-day relocation, lease expiration deadline.",
+      "dispatchProtocol": "Instant inventory estimate intake via SMS; dispatch coordinator alerted to available truck capacity within 10 minutes.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for moving companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against moving companies operational standards, identifying emergency criteria (Last-minute mover cancellation, emergency same-day relocation, lease expiration ...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Moving Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Last-minute mover cancellation, emergency same-day relocation, lease expiration deadline....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Moving Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Moving Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In moving companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "flooring-contractors",
+    "name": "Flooring Contractors",
+    "category": "Home Services & Contractors",
+    "headline": "Turn every showroom visit and inquiry into a booked estimate.",
+    "summary": "Automate lead capture from showroom visits, website inquiries, and ad campaigns into one pipeline for flooring contractors across the US and Australia.",
+    "niches": [
+      "Hardwood Flooring",
+      "Tile & Stone",
+      "Carpet Installation"
+    ],
+    "painPoints": [
+      "Showroom walk ins never followed up properly",
+      "Long decision cycles for large flooring projects",
+      "No tracking of which ad campaigns drive actual installs"
+    ],
+    "playbook": [
+      "AI chatbot for instant material and pricing FAQs",
+      "Multi touch nurture for high ticket flooring projects",
+      "Automated post install review and referral asks",
+      "Revenue attribution dashboard across all lead sources"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "analytics-dashboards",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Water damage subfloor failure, urgent commercial floor installation before grand opening, hazardous damaged tile.",
+      "dispatchProtocol": "Measurement specialist scheduled for on-site laser estimate; showroom walk-in follow-up sequence triggered via SMS.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for flooring contractors."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against flooring contractors operational standards, identifying emergency criteria (Water damage subfloor failure, urgent commercial floor installation before grand...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Flooring Contractors?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Water damage subfloor failure, urgent commercial floor installation before grand opening, ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Flooring Contractors software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Flooring Contractors?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In flooring contractors, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "window-door-companies",
+    "name": "Window & Door Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Shorten the sales cycle from inquiry to signed contract.",
+    "summary": "High ticket window and door replacements need persistent, professional follow up. Automate the nurture so your closers focus on closing.",
+    "niches": [
+      "Window Replacement",
+      "Door Installation",
+      "Custom Window & Door"
+    ],
+    "painPoints": [
+      "3–6 month decision cycles with leads going cold",
+      "In home consultations that never convert without follow up",
+      "No system for managing referrals from past projects"
+    ],
+    "playbook": [
+      "Multi touch nurture tailored to 3–6 month timelines",
+      "Automated post consultation follow up sequences",
+      "Referral and review automation after project completion",
+      "Pipeline dashboard tracking consultation to close rate"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards",
+      "crm-integration"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Broken patio glass door compromising home security, commercial storefront glass shatter, drafty seal during winter blizzard.",
+      "dispatchProtocol": "Emergency board-up dispatch alert triggered; custom replacement window measurement booked with lead specialist.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for window & door companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against window & door companies operational standards, identifying emergency criteria (Broken patio glass door compromising home security, commercial storefront glass ...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Window & Door Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Broken patio glass door compromising home security, commercial storefront glass shatter, d...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Window & Door Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Window & Door Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In window & door companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "solar-installers",
+    "name": "Solar Installers",
+    "category": "Home Services & Contractors",
+    "headline": "Qualify faster, close more installs, reduce tire kickers.",
+    "summary": "Solar sales cycles are long and full of unqualified leads. Automate qualification, nurture, and appointment setting.",
+    "niches": [
+      "Residential Solar",
+      "Commercial Solar",
+      "Solar Battery Storage"
+    ],
+    "painPoints": [
+      "80% of leads are unqualified or just price shopping",
+      "Long 2–6 month sales cycles",
+      "High cost per acquisition from paid ads"
+    ],
+    "playbook": [
+      "AI chatbot qualifies roof type",
+      "ownership",
+      "and utility spend",
+      "Automated nurture drips with ROI calculators and testimonials",
+      "Appointment scheduling for qualified site surveys only",
+      "Lead scoring to prioritize high intent prospects"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Inverter failure tripping main breaker, solar battery storage disconnect, roof penetration leak around solar brackets.",
+      "dispatchProtocol": "Solar technician service ticket created in CRM; automated utility bill analysis intake link sent to residential prospect.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for solar installers."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against solar installers operational standards, identifying emergency criteria (Inverter failure tripping main breaker, solar battery storage disconnect, roof p...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Solar Installers?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Inverter failure tripping main breaker, solar battery storage disconnect, roof penetration...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Solar Installers software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Solar Installers?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In solar installers, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "home-remodeling-companies",
+    "name": "Home Remodeling Companies",
+    "category": "Home Services & Contractors",
+    "headline": "Nurture high ticket leads without the manual chase.",
+    "summary": "Remodeling has a long consideration cycle. We automate multi touch nurture and follow ups so your pipeline stays warm.",
+    "niches": [
+      "Kitchen Remodels",
+      "Bathroom Renovations",
+      "Full Home Makeovers"
+    ],
+    "painPoints": [
+      "3–6 month sales cycles with leads going cold",
+      "No system for staying top of mind between quote and deposit",
+      "Review and referral asks never getting sent post project"
+    ],
+    "playbook": [
+      "Multi touch nurture tailored to 3–6 month decision cycles",
+      "Automated before/after portfolio drips",
+      "Post project review asks wired to your CRM",
+      "Dashboards to track quote to close velocity"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "chatbots",
+      "analytics-dashboards",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Structural load-bearing wall issue, burst pipe during kitchen demolition, mold discovery during bathroom remodel.",
+      "dispatchProtocol": "Project manager urgent site visit notification; design consultation calendar link dispatched with inspiration lookbook.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for home remodeling companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against home remodeling companies operational standards, identifying emergency criteria (Structural load-bearing wall issue, burst pipe during kitchen demolition, mold d...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Home Remodeling Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Structural load-bearing wall issue, burst pipe during kitchen demolition, mold discovery d...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Home Remodeling Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Home Remodeling Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In home remodeling companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "painting-contractors",
+    "name": "Painting Contractors",
+    "category": "Home Services & Contractors",
+    "headline": "Book more paint jobs with zero phone tag.",
+    "summary": "Automate estimate requests, follow ups, and rebooking so your painters stay on ladders, not on phones.",
+    "niches": [
+      "Residential Painting",
+      "Commercial Painting",
+      "Cabinet Refinishing"
+    ],
+    "painPoints": [
+      "Estimates given but never followed up",
+      "Seasonal lulls with no proactive outreach",
+      "Repeat customers not being rebooked annually"
+    ],
+    "playbook": [
+      "AI chatbot captures project details and schedules estimates",
+      "Automated estimate follow up via SMS + email",
+      "Seasonal reactivation campaigns for exterior painting",
+      "Post job review asks and referral sequences"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "missed-call-text-back",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Commercial tenant move-out turnover deadline, exterior weather window closing before rain season.",
+      "dispatchProtocol": "Instant square footage estimator calculator sent via text; estimator visit scheduled within 48 hours.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for painting contractors."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against painting contractors operational standards, identifying emergency criteria (Commercial tenant move-out turnover deadline, exterior weather window closing be...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Painting Contractors?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Commercial tenant move-out turnover deadline, exterior weather window closing before rain ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Painting Contractors software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Painting Contractors?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In painting contractors, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "cleaning-services",
+    "name": "Cleaning Services",
+    "category": "Home Services & Contractors",
+    "headline": "Fill recurring slots and reduce last minute cancellations.",
+    "summary": "Automate booking, reminders, and rebooking so your cleaning crews stay fully scheduled without manual coordination.",
+    "niches": [
+      "Residential Cleaning",
+      "Commercial Janitorial",
+      "Move-In/Move-Out Cleaning"
+    ],
+    "painPoints": [
+      "High cancellation and no show rates",
+      "Difficulty converting one-time cleans to recurring contracts",
+      "Manual scheduling across multiple crews and locations"
+    ],
+    "playbook": [
+      "AI chatbot for instant booking and pricing",
+      "Automated reminders to reduce cancellations",
+      "Post clean follow up with recurring plan upsell",
+      "Multi crew scheduling and route optimization tracking"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Emergency post-flood sanitization, end-of-lease bond inspection turnover, urgent biohazard cleanup.",
+      "dispatchProtocol": "Rapid response cleaning crew alerted via push notification; automated checklist and key pickup instructions texted to customer.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for cleaning services."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against cleaning services operational standards, identifying emergency criteria (Emergency post-flood sanitization, end-of-lease bond inspection turnover, urgent...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "ServiceTitan",
+        "Housecall Pro",
+        "Jobber"
+      ],
+      "fieldSoftware": [
+        "QuickBooks Online",
+        "Xero",
+        "Simpro",
+        "FieldEdge"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral",
+        "Carrier Mobile Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "TCPA express written consent for automated SMS/calls, state contractor license disclosures, OSHA emergency protocol handling.",
+      "auRegulations": "Australian Privacy Principles (Privacy Act 1988), Spam Act 2003 transactional messaging exemptions, state trade licensing compliance (e.g. Fair Trading, QBCC).",
+      "dataHandling": "End-to-end TLS encryption, PII field-level access control, automated opt-out (STOP) suppression."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $3,800",
+      "monthlyMissedCallsEst": "18 – 40 calls",
+      "recoveredRevenueModel": "Recovering 8–14 missed calls monthly captures $3,600 to $28,000+ in booked gross margin jobs.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Cleaning Services?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Emergency post-flood sanitization, end-of-lease bond inspection turnover, urgent biohazard...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Cleaning Services software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, ServiceTitan, Housecall Pro, Jobber) and field management systems (QuickBooks Online, Xero, Simpro) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Cleaning Services?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In cleaning services, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "dental-clinics",
+    "name": "Dental Clinics",
+    "category": "Healthcare & Medical",
+    "headline": "Automate patient recall and reduce no shows.",
+    "summary": "Ensure every hygiene appointment is filled and every high ticket consultation is nurtured through automated sequences.",
+    "niches": [
+      "General Dentistry",
+      "Orthodontics",
+      "Cosmetic Dentistry"
+    ],
+    "painPoints": [
+      "Empty chairs from last minute cancellations",
+      "Patients overdue for hygiene never getting recalled",
+      "Front desk tied up on calls instead of chairside support"
+    ],
+    "playbook": [
+      "Automated recall sequences by treatment type",
+      "Missed call text back during peak hours",
+      "Waitlist activation on cancellation",
+      "Multi touch nurture for implants and cosmetic consults"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards",
+      "ai-voice-agents"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Severe toothache, knocked-out permanent tooth, broken crown, post-extraction uncontrolled bleeding.",
+      "dispatchProtocol": "Immediate on-call dentist notification; emergency patient intake form texted with ice and pain management instructions.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for dental clinics."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against dental clinics operational standards, identifying emergency criteria (Severe toothache, knocked-out permanent tooth, broken crown, post-extraction unc...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Dental Clinics?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Severe toothache, knocked-out permanent tooth, broken crown, post-extraction uncontrolled ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Dental Clinics software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Dental Clinics?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In dental clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "med-spas",
+    "name": "Med Spas",
+    "category": "Healthcare & Medical",
+    "headline": "Book more treatments without discounting your way there.",
+    "summary": "Automate consultation booking, treatment reminders, and membership upsells so your injectors focus on results, not admin.",
+    "niches": [
+      "Injectables & Fillers",
+      "Laser Treatments",
+      "Body Contouring"
+    ],
+    "painPoints": [
+      "No shows on high value treatment slots",
+      "Consultations that never convert without follow up",
+      "Membership and package renewals falling through the cracks"
+    ],
+    "playbook": [
+      "AI chatbot for treatment FAQs and consultation booking",
+      "Automated pre/post treatment reminders",
+      "Membership renewal and upsell sequences",
+      "Review asks after every treatment visit"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "missed-call-text-back"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Adverse dermal filler reaction, vascular occlusion concern, intense post-laser burning sensation.",
+      "dispatchProtocol": "Immediate warm transfer to supervising medical doctor or nurse practitioner; consultation booking for elective treatments.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for med spas."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against med spas operational standards, identifying emergency criteria (Adverse dermal filler reaction, vascular occlusion concern, intense post-laser b...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Med Spas?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Adverse dermal filler reaction, vascular occlusion concern, intense post-laser burning sen...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Med Spas software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Med Spas?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In med spas, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "chiropractic-offices",
+    "name": "Chiropractic Offices",
+    "category": "Healthcare & Medical",
+    "headline": "Keep adjustment tables full and patients on plan.",
+    "summary": "Automate appointment reminders, care plan adherence, and reactivation for patients who drop off mid plan.",
+    "niches": [
+      "General Chiropractic",
+      "Sports Chiropractic",
+      "Pediatric Chiropractic"
+    ],
+    "painPoints": [
+      "Patients dropping off care plans after 3–4 visits",
+      "No shows costing $100+ per empty slot",
+      "Manual reminder calls consuming front desk time"
+    ],
+    "playbook": [
+      "Automated care plan reminders and milestone messages",
+      "No show recovery workflows",
+      "Reactivation campaigns for lapsed patients",
+      "Missed call text back for after hours inquiries"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "missed-call-text-back",
+      "gohighlevel-implementation",
+      "ai-voice-agents"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Acute low back spasms leaving patient unable to walk, recent motor vehicle whiplash trauma, severe sciatica flare-up.",
+      "dispatchProtocol": "Same-day decompression or adjustment slot offered via automated calendar; digital intake forms texted prior to arrival.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for chiropractic offices."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against chiropractic offices operational standards, identifying emergency criteria (Acute low back spasms leaving patient unable to walk, recent motor vehicle whipl...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Chiropractic Offices?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Acute low back spasms leaving patient unable to walk, recent motor vehicle whiplash trauma...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Chiropractic Offices software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Chiropractic Offices?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In chiropractic offices, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "plastic-surgery-centers",
+    "name": "Plastic Surgery Centers",
+    "category": "Healthcare & Medical",
+    "headline": "Nurture high value consultations into booked procedures.",
+    "summary": "Plastic surgery decisions take months. Automate the nurture so your practice stays top of mind from consult to procedure day.",
+    "niches": [
+      "Cosmetic Surgery",
+      "Reconstructive Surgery",
+      "Non-Surgical Procedures"
+    ],
+    "painPoints": [
+      "Long 3–12 month decision cycles for elective procedures",
+      "Consultations that go cold without persistent follow up",
+      "High cost per lead from competitive paid ads"
+    ],
+    "playbook": [
+      "Multi touch nurture with before/after galleries and testimonials",
+      "Automated consultation follow up sequences",
+      "Lead scoring for procedure ready patients",
+      "Post procedure review and referral automation"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "chatbots",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Post-operative hematoma, high fever following surgery, incision separation or wound drainage.",
+      "dispatchProtocol": "Direct escalation to surgeon's private cell or emergency triage line; standard consultation requests routed to patient coordinator.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for plastic surgery centers."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against plastic surgery centers operational standards, identifying emergency criteria (Post-operative hematoma, high fever following surgery, incision separation or wo...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Plastic Surgery Centers?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Post-operative hematoma, high fever following surgery, incision separation or wound draina...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Plastic Surgery Centers software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Plastic Surgery Centers?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In plastic surgery centers, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "physical-therapy-clinics",
+    "name": "Physical Therapy Clinics",
+    "category": "Healthcare & Medical",
+    "headline": "Fill the calendar without hiring another receptionist.",
+    "summary": "Automate patient intake, scheduling, waitlists, and reminders while staying compliant to keep chairs full.",
+    "niches": [
+      "Sports Therapy",
+      "Rehabilitation",
+      "Chiropractic Care"
+    ],
+    "painPoints": [
+      "No shows costing $150+ per empty slot",
+      "Front desk overload during peak hours",
+      "Manual waitlist management when cancellations hit"
+    ],
+    "playbook": [
+      "AI voice intake with compliance aware handling",
+      "Automated reminders via SMS + email",
+      "No show recovery workflows that refill cancellations",
+      "Missed call text back for after hours inquiries"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "missed-call-text-back",
+      "chatbots",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Post-surgical rehabilitation delay, acute sports injury needing functional evaluation before competition.",
+      "dispatchProtocol": "Physical therapist schedule matched by specialty (orthopedic, neuro, pelvic health); automated insurance verification initiated.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for physical therapy clinics."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against physical therapy clinics operational standards, identifying emergency criteria (Post-surgical rehabilitation delay, acute sports injury needing functional evalu...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Physical Therapy Clinics?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Post-surgical rehabilitation delay, acute sports injury needing functional evaluation befo...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Physical Therapy Clinics software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Physical Therapy Clinics?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In physical therapy clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "urgent-care-clinics",
+    "name": "Urgent Care Clinics",
+    "category": "Healthcare & Medical",
+    "headline": "Manage patient flow and reduce wait time walk outs.",
+    "summary": "Automate check in, wait time updates, and post visit follow ups so patients choose your clinic every time.",
+    "niches": [
+      "Walk-In Urgent Care",
+      "Pediatric Urgent Care",
+      "Occupational Health"
+    ],
+    "painPoints": [
+      "Patients leaving due to long perceived wait times",
+      "No post visit follow up or feedback collection",
+      "Manual check in processes slowing intake"
+    ],
+    "playbook": [
+      "AI chatbot for symptom pre screening and check in",
+      "Automated wait time SMS updates",
+      "Post visit follow up and review requests",
+      "Capacity tracking dashboard"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "gohighlevel-implementation",
+      "automated-lead-nurturing",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Deep lacerations requiring sutures, suspected bone fracture, moderate asthma attack, high fever in toddler.",
+      "dispatchProtocol": "Live clinic wait time and queue registration link sent via SMS; critical emergencies instructed to divert to hospital ER.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for urgent care clinics."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against urgent care clinics operational standards, identifying emergency criteria (Deep lacerations requiring sutures, suspected bone fracture, moderate asthma att...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Urgent Care Clinics?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Deep lacerations requiring sutures, suspected bone fracture, moderate asthma attack, high ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Urgent Care Clinics software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Urgent Care Clinics?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In urgent care clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "optometry-offices",
+    "name": "Optometry Offices",
+    "category": "Healthcare & Medical",
+    "headline": "Automate recalls and keep exam chairs booked year round.",
+    "summary": "Most patients forget their annual exam. Automate recall reminders, frame promotions, and appointment booking.",
+    "niches": [
+      "General Optometry",
+      "Pediatric Eye Care",
+      "Contact Lens Specialists"
+    ],
+    "painPoints": [
+      "Patients overdue for annual exams not being contacted",
+      "Frame inventory promotions not reaching the right patients",
+      "Manual appointment scheduling consuming staff time"
+    ],
+    "playbook": [
+      "Automated annual exam recall sequences",
+      "Targeted frame promotion campaigns",
+      "AI chatbot for appointment scheduling and insurance FAQs",
+      "Post exam review and referral asks"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "chatbots",
+      "gohighlevel-implementation",
+      "missed-call-text-back"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Sudden vision loss, chemical splash in eye, foreign metal object in cornea, retinal detachment flashes or floaters.",
+      "dispatchProtocol": "Immediate optometrist triage alert; standard annual comprehensive exam bookings scheduled in practice calendar.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for optometry offices."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against optometry offices operational standards, identifying emergency criteria (Sudden vision loss, chemical splash in eye, foreign metal object in cornea, reti...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Optometry Offices?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Sudden vision loss, chemical splash in eye, foreign metal object in cornea, retinal detach...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Optometry Offices software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Optometry Offices?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In optometry offices, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "pharmacy-chains",
+    "name": "Pharmacy Chains",
+    "category": "Healthcare & Medical",
+    "headline": "Boost refill adherence and drive front store traffic.",
+    "summary": "Automate prescription refill reminders, health screenings, and loyalty promotions across multiple locations.",
+    "niches": [
+      "Retail Pharmacy",
+      "Compounding Pharmacy",
+      "Specialty Pharmacy"
+    ],
+    "painPoints": [
+      "Low prescription refill adherence rates",
+      "Underutilized health screening and immunization services",
+      "No automated loyalty or promotional outreach"
+    ],
+    "playbook": [
+      "Automated refill reminder sequences via SMS",
+      "Health screening and immunization campaign triggers",
+      "Loyalty program enrollment and engagement automation",
+      "Multi location performance dashboards"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "n8n-workflow-automation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Critical medication stockout for life-saving prescription, urgent drug interaction inquiry from prescribing physician.",
+      "dispatchProtocol": "Direct connection to on-duty licensed pharmacist; automated refill requests processed via conversational SMS.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for pharmacy chains."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against pharmacy chains operational standards, identifying emergency criteria (Critical medication stockout for life-saving prescription, urgent drug interacti...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Pharmacy Chains?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Critical medication stockout for life-saving prescription, urgent drug interaction inquiry...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Pharmacy Chains software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Pharmacy Chains?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In pharmacy chains, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "orthodontic-offices",
+    "name": "Orthodontic Offices",
+    "category": "Healthcare & Medical",
+    "headline": "Convert more consultations into treatment starts.",
+    "summary": "Orthodontic treatment is a big decision. Automate consultation follow ups, payment plan info, and parent communication.",
+    "niches": [
+      "Traditional Braces",
+      "Clear Aligners",
+      "Pediatric Orthodontics"
+    ],
+    "painPoints": [
+      "Consultations that never convert to treatment starts",
+      "Parents needing multiple touchpoints before committing",
+      "Manual tracking of treatment milestones and appointments"
+    ],
+    "playbook": [
+      "Automated post consultation nurture with payment plan details",
+      "Parent focused SMS and email sequences",
+      "Treatment milestone reminders and progress updates",
+      "Review asks timed to treatment completion"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "chatbots",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Poking archwire puncturing cheek, swallowed bracket, broken palate expander preventing eating.",
+      "dispatchProtocol": "Emergency repair instructions texted with wax application video; complimentary clear aligner consultation booked.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for orthodontic offices."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against orthodontic offices operational standards, identifying emergency criteria (Poking archwire puncturing cheek, swallowed bracket, broken palate expander prev...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel HIPAA Sub-Account",
+        "Kareo",
+        "DrChrono"
+      ],
+      "fieldSoftware": [
+        "Dentrix",
+        "Jane App",
+        "WebPT",
+        "Curve Dental",
+        "Epic Systems"
+      ],
+      "telephony": [
+        "Twilio HIPAA BAA Voice",
+        "RingCentral for Healthcare"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "HIPAA Business Associate Agreement (BAA) execution, HITECH Act encryption standards, mandatory 911 emergency disclaimer on all intake flows.",
+      "auRegulations": "Privacy Act 1988 (Health Privacy Principles), AHPRA advertising compliance, Australian Digital Health Agency data handling standards.",
+      "dataHandling": "AES-256 database encryption, strict audit logging, zero AI model training on protected health information (PHI)."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $4,500 LTV",
+      "monthlyMissedCallsEst": "25 – 60 calls",
+      "recoveredRevenueModel": "Capturing 10–18 after-hours patient inquiries recovers $6,500 to $35,000+ in treatment plan revenue.",
+      "roiMultiple": "6x – 15x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Orthodontic Offices?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Poking archwire puncturing cheek, swallowed bracket, broken palate expander preventing eat...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Orthodontic Offices software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel HIPAA Sub-Account, Kareo, DrChrono) and field management systems (Dentrix, Jane App, WebPT) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Orthodontic Offices?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In orthodontic offices, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "law-firms",
+    "name": "Law Firms",
+    "category": "Professional & Financial Services",
+    "headline": "Qualify cases faster and stop wasting partner hours.",
+    "summary": "Automate intake screening, consultation booking, and case-type routing so attorneys focus on billable work.",
+    "niches": [
+      "Personal Injury",
+      "Family Law",
+      "Criminal Defense"
+    ],
+    "painPoints": [
+      "Unqualified consultations consuming attorney time",
+      "Slow intake response losing cases to faster firms",
+      "No system for nurturing unconverted consultations"
+    ],
+    "playbook": [
+      "AI chatbot for case type screening and qualification",
+      "Automated consultation booking with conflict checks",
+      "Case-type routing to the right attorney",
+      "Long term nurture for not yet ready prospects"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "ai-voice-agents",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Arrest or police detention, execution of search warrant, urgent temporary restraining order, impending statute of limitations filing.",
+      "dispatchProtocol": "Immediate escalation to senior partner or duty attorney; conflict check screening questions captured in CRM.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for law firms."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against law firms operational standards, identifying emergency criteria (Arrest or police detention, execution of search warrant, urgent temporary restra...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Law Firms?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Arrest or police detention, execution of search warrant, urgent temporary restraining orde...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Law Firms software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Law Firms?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In law firms, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "real-estate-agencies",
+    "name": "Real Estate Agencies",
+    "category": "Professional & Financial Services",
+    "headline": "Respond first. Win the listing or the sale.",
+    "summary": "Make sure every portal lead and ad inquiry is handled instantly, qualifying buyers and sellers before you even dial.",
+    "niches": [
+      "Residential Real Estate",
+      "Commercial Real Estate",
+      "Property Management"
+    ],
+    "painPoints": [
+      "Leads going cold in the 20-minute gap between alerts",
+      "80% of portal leads are unqualified and waste agent time",
+      "No post close referral or review system"
+    ],
+    "playbook": [
+      "Instant AI response to every portal + ad lead",
+      "Qualification flow for serious buyers vs. tire kickers",
+      "Drip nurture for long horizon buyers",
+      "Post close referral + review automation"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "crm-integration"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Multiple offer deadline expiring on listing, buyer inspection contingency objection, auction day registration.",
+      "dispatchProtocol": "Lead routing to listing agent within 60 seconds; property brochure and virtual tour link sent via SMS.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for real estate agencies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against real estate agencies operational standards, identifying emergency criteria (Multiple offer deadline expiring on listing, buyer inspection contingency object...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Real Estate Agencies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Multiple offer deadline expiring on listing, buyer inspection contingency objection, aucti...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Real Estate Agencies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Real Estate Agencies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In real estate agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "mortgage-brokers",
+    "name": "Mortgage Brokers",
+    "category": "Professional & Financial Services",
+    "headline": "Stay top of mind through the entire rate shopping cycle.",
+    "summary": "Mortgage decisions take weeks. Automate rate updates, document collection, and follow ups so borrowers close with you.",
+    "niches": [
+      "Residential Mortgages",
+      "Commercial Lending",
+      "Refinancing"
+    ],
+    "painPoints": [
+      "Borrowers shopping 5+ lenders simultaneously",
+      "Document collection delays slowing closings",
+      "No automated follow up for pre approved leads who go quiet"
+    ],
+    "playbook": [
+      "Automated rate update campaigns for active shoppers",
+      "Document request sequences with reminder automation",
+      "Pre approval nurture for leads not yet ready",
+      "Pipeline dashboard tracking application to close rate"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "chatbots",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Rate lock expiration deadline, pre-approval letter needed for weekend property open house offer, financing contingency date.",
+      "dispatchProtocol": "Loan officer instant SMS alert; secure document portal link texted to borrower for tax return and pay stub upload.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for mortgage brokers."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against mortgage brokers operational standards, identifying emergency criteria (Rate lock expiration deadline, pre-approval letter needed for weekend property o...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Mortgage Brokers?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Rate lock expiration deadline, pre-approval letter needed for weekend property open house ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Mortgage Brokers software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Mortgage Brokers?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In mortgage brokers, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "insurance-agencies",
+    "name": "Insurance Agencies",
+    "category": "Professional & Financial Services",
+    "headline": "Automate renewals, cross sells, and quote follow ups.",
+    "summary": "Stop losing renewals to competitors and leaving cross sell revenue on the table with automated lifecycle campaigns.",
+    "niches": [
+      "Property & Casualty",
+      "Life Insurance",
+      "Health Insurance"
+    ],
+    "painPoints": [
+      "Renewal reminders sent too late or not at all",
+      "No systematic cross sell for existing policyholders",
+      "Quote follow ups that never happen"
+    ],
+    "playbook": [
+      "Automated renewal reminder sequences 90/60/30 days out",
+      "Cross sell campaigns based on existing policy gaps",
+      "Quote follow up automation within 24 hours",
+      "Client lifetime value tracking dashboard"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards",
+      "n8n-workflow-automation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Major house fire or total vehicle loss claim, lapse of coverage notification before driving commercial fleet.",
+      "dispatchProtocol": "Claims department emergency routing; multi-line policy discount quote sequence initiated via automated email/SMS.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for insurance agencies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against insurance agencies operational standards, identifying emergency criteria (Major house fire or total vehicle loss claim, lapse of coverage notification bef...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Insurance Agencies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Major house fire or total vehicle loss claim, lapse of coverage notification before drivin...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Insurance Agencies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Insurance Agencies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In insurance agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "accounting-firms",
+    "name": "Accounting Firms",
+    "category": "Professional & Financial Services",
+    "headline": "Qualify better clients before tax season hits.",
+    "summary": "Automate tax season intake, document collection, and scheduling so CPAs focus on billable advisory work.",
+    "niches": [
+      "Tax Preparation",
+      "Corporate Accounting",
+      "Bookkeeping"
+    ],
+    "painPoints": [
+      "Too many manual document requests consuming staff time",
+      "Unqualified prospects clogging the calendar",
+      "Tax season creating capacity bottlenecks"
+    ],
+    "playbook": [
+      "AI chatbot for intake and qualification",
+      "Automated document request sequences with reminders",
+      "Lead routing based on service need",
+      "Year round nurture for advisory cross sell"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "n8n-workflow-automation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "IRS or ATO audit notice with 10-day deadline, payroll tax levy, impending quarterly tax filing deadline.",
+      "dispatchProtocol": "CPA review scheduled; encrypted client portal link texted for tax document and bank statement transmission.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for accounting firms."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against accounting firms operational standards, identifying emergency criteria (IRS or ATO audit notice with 10-day deadline, payroll tax levy, impending quarte...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Accounting Firms?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (IRS or ATO audit notice with 10-day deadline, payroll tax levy, impending quarterly tax fi...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Accounting Firms software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Accounting Firms?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In accounting firms, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "tax-preparation-firms",
+    "name": "Tax Preparation Firms",
+    "category": "Professional & Financial Services",
+    "headline": "Maximize seasonal capacity and year round engagement.",
+    "summary": "Automate client intake, document reminders, and off season engagement to smooth out tax season chaos.",
+    "niches": [
+      "Individual Tax Prep",
+      "Business Tax Services",
+      "Tax Planning & Advisory"
+    ],
+    "painPoints": [
+      "Extreme seasonal bottlenecks from January to April",
+      "Clients submitting documents late or incomplete",
+      "No engagement with clients outside of tax season"
+    ],
+    "playbook": [
+      "Automated document checklist delivery and reminders",
+      "Capacity based appointment scheduling",
+      "Off season nurture for tax planning and advisory",
+      "Referral campaigns timed to post filing satisfaction"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "chatbots",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Unfiled back taxes facing wage garnishment, tax extension filing deadline, identity theft tax return alert.",
+      "dispatchProtocol": "Senior tax advisor matched by case type (individual vs S-Corp/LLC); intake checklist automatically sent.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for tax preparation firms."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against tax preparation firms operational standards, identifying emergency criteria (Unfiled back taxes facing wage garnishment, tax extension filing deadline, ident...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Tax Preparation Firms?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Unfiled back taxes facing wage garnishment, tax extension filing deadline, identity theft ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Tax Preparation Firms software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Tax Preparation Firms?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In tax preparation firms, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "title-companies",
+    "name": "Title Companies",
+    "category": "Professional & Financial Services",
+    "headline": "Speed up closings and keep all parties informed.",
+    "summary": "Automate status updates, document collection, and closing coordination so your team handles more transactions.",
+    "niches": [
+      "Residential Title",
+      "Commercial Title",
+      "Escrow Services"
+    ],
+    "painPoints": [
+      "Manual status update calls to agents",
+      "lenders",
+      "and buyers",
+      "Document collection delays from multiple parties",
+      "No visibility into bottlenecks slowing closings"
+    ],
+    "playbook": [
+      "Automated closing milestone notifications to all parties",
+      "Document request and collection automation",
+      "Transaction pipeline dashboard with bottleneck alerts",
+      "Post closing review and referral sequences"
+    ],
+    "relatedSolutionSlugs": [
+      "n8n-workflow-automation",
+      "gohighlevel-implementation",
+      "automated-lead-nurturing",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Closing day wire instruction verification, title defect discovered 24 hours before settlement, missing deed signature.",
+      "dispatchProtocol": "Escrow officer urgent phone alert with anti-fraud wire verification protocol enforced; closing schedule sync.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for title companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against title companies operational standards, identifying emergency criteria (Closing day wire instruction verification, title defect discovered 24 hours befo...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Title Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Closing day wire instruction verification, title defect discovered 24 hours before settlem...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Title Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Title Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In title companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "staffing-agencies",
+    "name": "Staffing Agencies",
+    "category": "Professional & Financial Services",
+    "headline": "Place faster, nurture deeper talent pools.",
+    "summary": "Automate candidate engagement, client follow ups, and placement pipeline tracking to fill roles faster.",
+    "niches": [
+      "Temporary Staffing",
+      "Direct Hire",
+      "Executive Search"
+    ],
+    "painPoints": [
+      "Candidates going cold between outreach and placement",
+      "Manual job matching consuming recruiter time",
+      "No systematic client follow up for repeat placements"
+    ],
+    "playbook": [
+      "AI chatbot for candidate pre screening",
+      "Automated candidate nurture and job match alerts",
+      "Client follow up sequences for reorders and referrals",
+      "Placement pipeline and fill rate dashboards"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Warehouse shift no-show requiring 10 immediate temp replacements, urgent healthcare facility nurse shortage.",
+      "dispatchProtocol": "Broadcast SMS alert to pre-vetted candidate bench; recruitment consultant notified of candidate responses.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for staffing agencies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against staffing agencies operational standards, identifying emergency criteria (Warehouse shift no-show requiring 10 immediate temp replacements, urgent healthc...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "HubSpot CRM",
+        "Clio Grow",
+        "Follow Up Boss"
+      ],
+      "fieldSoftware": [
+        "Clio Manage",
+        "MyCase",
+        "Xero Practice Manager",
+        "QuickBooks Online",
+        "Applied Epic"
+      ],
+      "telephony": [
+        "Twilio Enterprise",
+        "RingCentral",
+        "Vonage Business"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Gramm-Leach-Bliley Act (GLBA) financial privacy safeguards, state bar association advertising rules, SEC/FINRA electronic record retention.",
+      "auRegulations": "Privacy Act 1988, Australian Financial Services Licence (AFSL) disclosure standards, Tax Agent Services Act (TASA) client confidentiality.",
+      "dataHandling": "Role-based document permissions, encrypted webhook payloads, automated client conflict check tagging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$1,800 – $8,500 retainer / deal",
+      "monthlyMissedCallsEst": "12 – 30 calls",
+      "recoveredRevenueModel": "Securing 4–8 high-intent retainer or client consultations monthly generates $7,200 to $45,000+ in professional fees.",
+      "roiMultiple": "5x – 14x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Staffing Agencies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Warehouse shift no-show requiring 10 immediate temp replacements, urgent healthcare facili...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Staffing Agencies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, HubSpot CRM, Clio Grow, Follow Up Boss) and field management systems (Clio Manage, MyCase, Xero Practice Manager) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Staffing Agencies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In staffing agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "nail-salons",
+    "name": "Nail Salons",
+    "category": "Beauty, Fitness & Wellness",
+    "headline": "Keep every chair booked and reduce no shows.",
+    "summary": "Automate appointment reminders, rebooking prompts, and loyalty rewards so your nail technicians stay productive and your schedule stays full 24/7.",
+    "niches": [
+      "Manicure & Pedicure",
+      "Nail Art",
+      "Acrylic & Gel Extensions"
+    ],
+    "painPoints": [
+      "High no show rates on weekend appointments",
+      "Walk in customers never converted to recurring bookings",
+      "No loyalty program driving repeat visits"
+    ],
+    "playbook": [
+      "Automated appointment reminders via SMS",
+      "Post visit rebooking prompts",
+      "Loyalty reward automation for repeat customers",
+      "Missed call text back for booking inquiries"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "missed-call-text-back",
+      "gohighlevel-implementation",
+      "chatbots"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Urgent bridal party cancellation refill, acrylic nail repair before photo shoot.",
+      "dispatchProtocol": "Immediate slot booking via conversational widget; automated reminder sequence with nail design photo upload.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for nail salons."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against nail salons operational standards, identifying emergency criteria (Urgent bridal party cancellation refill, acrylic nail repair before photo shoot....)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Mindbody",
+        "Vagaro",
+        "Fresha"
+      ],
+      "fieldSoftware": [
+        "Boulevard",
+        "Zenoti",
+        "Mariana Tek",
+        "Stripe AU/US"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Mobile Carrier Direct Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Cardholder data security (PCI-DSS Level 1), state cosmetology board sanitization disclosures, explicit SMS marketing opt-ins.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law (ACL) rules regarding cancellations and deposits, Spam Act 2003 consent tracking.",
+      "dataHandling": "Tokenized payment processing via Stripe, zero storage of raw credit card numbers, automated appointment reminder opt-outs."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$120 – $450 ticket / membership",
+      "monthlyMissedCallsEst": "35 – 80 calls",
+      "recoveredRevenueModel": "Recovering 15–30 missed appointment inquiries fills open chairs and generates $2,200 to $8,500+ in monthly recurring revenue.",
+      "roiMultiple": "4x – 10x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Nail Salons?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Urgent bridal party cancellation refill, acrylic nail repair before photo shoot....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Nail Salons software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Mindbody, Vagaro, Fresha) and field management systems (Boulevard, Zenoti, Mariana Tek) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Nail Salons?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In nail salons, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "hair-salons",
+    "name": "Hair Salons",
+    "category": "Beauty, Fitness & Wellness",
+    "headline": "Fill stylist chairs and build client loyalty on autopilot.",
+    "summary": "Automate salon booking, appointment reminders, and rebooking prompts so your stylists focus on clients while AI handles phone calls around the clock.",
+    "niches": [
+      "Haircuts & Styling",
+      "Color Services",
+      "Hair Extensions"
+    ],
+    "painPoints": [
+      "Stylists losing time answering phones between clients",
+      "No shows on prime Saturday slots",
+      "Clients not rebooking at their regular interval"
+    ],
+    "playbook": [
+      "AI chatbot for 24/7 booking and service FAQs",
+      "Automated appointment reminders and rebooking prompts",
+      "Birthday and loyalty campaigns",
+      "Review asks after every visit"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "missed-call-text-back",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Color correction emergency after home dye disaster, last-minute event blowout appointment.",
+      "dispatchProtocol": "Stylist portfolio sent via text; hair texture and consultation questions collected before chair time.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for hair salons."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against hair salons operational standards, identifying emergency criteria (Color correction emergency after home dye disaster, last-minute event blowout ap...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Mindbody",
+        "Vagaro",
+        "Fresha"
+      ],
+      "fieldSoftware": [
+        "Boulevard",
+        "Zenoti",
+        "Mariana Tek",
+        "Stripe AU/US"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Mobile Carrier Direct Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Cardholder data security (PCI-DSS Level 1), state cosmetology board sanitization disclosures, explicit SMS marketing opt-ins.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law (ACL) rules regarding cancellations and deposits, Spam Act 2003 consent tracking.",
+      "dataHandling": "Tokenized payment processing via Stripe, zero storage of raw credit card numbers, automated appointment reminder opt-outs."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$120 – $450 ticket / membership",
+      "monthlyMissedCallsEst": "35 – 80 calls",
+      "recoveredRevenueModel": "Recovering 15–30 missed appointment inquiries fills open chairs and generates $2,200 to $8,500+ in monthly recurring revenue.",
+      "roiMultiple": "4x – 10x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Hair Salons?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Color correction emergency after home dye disaster, last-minute event blowout appointment....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Hair Salons software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Mindbody, Vagaro, Fresha) and field management systems (Boulevard, Zenoti, Mariana Tek) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Hair Salons?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In hair salons, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "tattoo-studios",
+    "name": "Tattoo Studios",
+    "category": "Beauty, Fitness & Wellness",
+    "headline": "Manage consultations, deposits, and waitlists automatically.",
+    "summary": "Automate inquiry handling, deposit collection, and appointment management so artists focus on creating.",
+    "niches": [
+      "Custom Tattoos",
+      "Walk-In Flash",
+      "Cover-Ups & Touch-Ups"
+    ],
+    "painPoints": [
+      "DM and email inquiries piling up without responses",
+      "No shows on consultation slots wasting artist time",
+      "Waitlists managed manually in spreadsheets"
+    ],
+    "playbook": [
+      "AI chatbot for style",
+      "pricing",
+      "and availability FAQs",
+      "Automated consultation booking with deposit collection",
+      "Waitlist management with notification automation",
+      "Post session aftercare and review sequences"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "gohighlevel-implementation",
+      "automated-lead-nurturing",
+      "n8n-workflow-automation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Guest artist cancellation filling, infected tattoo inquiry, touch-up before major event.",
+      "dispatchProtocol": "Artist availability matched by style (fine-line, traditional, realism); deposit link sent to lock drawing time.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for tattoo studios."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against tattoo studios operational standards, identifying emergency criteria (Guest artist cancellation filling, infected tattoo inquiry, touch-up before majo...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Mindbody",
+        "Vagaro",
+        "Fresha"
+      ],
+      "fieldSoftware": [
+        "Boulevard",
+        "Zenoti",
+        "Mariana Tek",
+        "Stripe AU/US"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Mobile Carrier Direct Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Cardholder data security (PCI-DSS Level 1), state cosmetology board sanitization disclosures, explicit SMS marketing opt-ins.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law (ACL) rules regarding cancellations and deposits, Spam Act 2003 consent tracking.",
+      "dataHandling": "Tokenized payment processing via Stripe, zero storage of raw credit card numbers, automated appointment reminder opt-outs."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$120 – $450 ticket / membership",
+      "monthlyMissedCallsEst": "35 – 80 calls",
+      "recoveredRevenueModel": "Recovering 15–30 missed appointment inquiries fills open chairs and generates $2,200 to $8,500+ in monthly recurring revenue.",
+      "roiMultiple": "4x – 10x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Tattoo Studios?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Guest artist cancellation filling, infected tattoo inquiry, touch-up before major event....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Tattoo Studios software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Mindbody, Vagaro, Fresha) and field management systems (Boulevard, Zenoti, Mariana Tek) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Tattoo Studios?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In tattoo studios, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "gyms-fitness-studios",
+    "name": "Gyms & Fitness Studios",
+    "category": "Beauty, Fitness & Wellness",
+    "headline": "Convert trial members and reduce churn automatically.",
+    "summary": "Automate trial to member conversion, class reminders, and retention campaigns to maximize lifetime value.",
+    "niches": [
+      "CrossFit Gyms",
+      "Yoga Studios",
+      "Personal Training Studios"
+    ],
+    "painPoints": [
+      "Trial members not converting to paid memberships",
+      "High churn rates after the first 90 days",
+      "Class no shows wasting instructor capacity"
+    ],
+    "playbook": [
+      "Automated trial to membership nurture sequences",
+      "Class reminder and waitlist notifications",
+      "Churn prevention campaigns at 30/60/90 day marks",
+      "Referral incentive automation for active members"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "chatbots",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Equipment malfunction causing member injury, urgent membership freeze/cancellation dispute.",
+      "dispatchProtocol": "Free trial pass and class schedule texted to prospect; manager alerted to membership retention risk.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for gyms & fitness studios."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against gyms & fitness studios operational standards, identifying emergency criteria (Equipment malfunction causing member injury, urgent membership freeze/cancellati...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Mindbody",
+        "Vagaro",
+        "Fresha"
+      ],
+      "fieldSoftware": [
+        "Boulevard",
+        "Zenoti",
+        "Mariana Tek",
+        "Stripe AU/US"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Mobile Carrier Direct Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Cardholder data security (PCI-DSS Level 1), state cosmetology board sanitization disclosures, explicit SMS marketing opt-ins.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law (ACL) rules regarding cancellations and deposits, Spam Act 2003 consent tracking.",
+      "dataHandling": "Tokenized payment processing via Stripe, zero storage of raw credit card numbers, automated appointment reminder opt-outs."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$120 – $450 ticket / membership",
+      "monthlyMissedCallsEst": "35 – 80 calls",
+      "recoveredRevenueModel": "Recovering 15–30 missed appointment inquiries fills open chairs and generates $2,200 to $8,500+ in monthly recurring revenue.",
+      "roiMultiple": "4x – 10x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Gyms & Fitness Studios?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Equipment malfunction causing member injury, urgent membership freeze/cancellation dispute...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Gyms & Fitness Studios software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Mindbody, Vagaro, Fresha) and field management systems (Boulevard, Zenoti, Mariana Tek) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Gyms & Fitness Studios?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In gyms & fitness studios, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "spa-wellness-centers",
+    "name": "Spa & Wellness Centers",
+    "category": "Beauty, Fitness & Wellness",
+    "headline": "Book more treatments and build recurring wellness plans.",
+    "summary": "Automate appointment booking, package upsells, and client communication so therapists focus on service delivery.",
+    "niches": [
+      "Day Spas",
+      "Medical Spas",
+      "Wellness Retreats"
+    ],
+    "painPoints": [
+      "Empty treatment rooms during off peak hours",
+      "Package and membership renewals handled manually",
+      "No system for rebooking clients at optimal intervals"
+    ],
+    "playbook": [
+      "AI chatbot for service menus and booking",
+      "Off peak promotional campaigns",
+      "Package renewal and upsell automation",
+      "Post treatment rebooking and review asks"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "missed-call-text-back"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Full-day luxury package cancellation backfill, couple's massage anniversary request.",
+      "dispatchProtocol": "Therapist schedule optimized; customized intake sent regarding essential oil allergies and pressure preferences.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for spa & wellness centers."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against spa & wellness centers operational standards, identifying emergency criteria (Full-day luxury package cancellation backfill, couple's massage anniversary requ...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Mindbody",
+        "Vagaro",
+        "Fresha"
+      ],
+      "fieldSoftware": [
+        "Boulevard",
+        "Zenoti",
+        "Mariana Tek",
+        "Stripe AU/US"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Mobile Carrier Direct Forwarding"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Cardholder data security (PCI-DSS Level 1), state cosmetology board sanitization disclosures, explicit SMS marketing opt-ins.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law (ACL) rules regarding cancellations and deposits, Spam Act 2003 consent tracking.",
+      "dataHandling": "Tokenized payment processing via Stripe, zero storage of raw credit card numbers, automated appointment reminder opt-outs."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$120 – $450 ticket / membership",
+      "monthlyMissedCallsEst": "35 – 80 calls",
+      "recoveredRevenueModel": "Recovering 15–30 missed appointment inquiries fills open chairs and generates $2,200 to $8,500+ in monthly recurring revenue.",
+      "roiMultiple": "4x – 10x ROI on software retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Spa & Wellness Centers?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Full-day luxury package cancellation backfill, couple's massage anniversary request....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Spa & Wellness Centers software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Mindbody, Vagaro, Fresha) and field management systems (Boulevard, Zenoti, Mariana Tek) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Spa & Wellness Centers?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In spa & wellness centers, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "restaurants",
+    "name": "Restaurants",
+    "category": "Events & Hospitality",
+    "headline": "Fill tables, manage reservations, and build loyal regulars.",
+    "summary": "Automate reservation management, waitlist notifications, and loyalty campaigns to keep tables full and customers returning.",
+    "niches": [
+      "Fine Dining",
+      "Casual Dining",
+      "Fast Casual & QSR"
+    ],
+    "painPoints": [
+      "No shows on peak hour reservations",
+      "No system for building a regular customer base",
+      "Manual waitlist management during rush hours"
+    ],
+    "playbook": [
+      "AI chatbot for reservations and menu FAQs",
+      "Automated waitlist SMS notifications",
+      "Loyalty and birthday campaign automation",
+      "Post visit review asks and return incentives"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "missed-call-text-back"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "VIP private dining room request for tonight, food allergen emergency inquiry from patron.",
+      "dispatchProtocol": "Manager on duty notified via SMS; party size and dietary notes synchronized into reservation system.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for restaurants."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against restaurants operational standards, identifying emergency criteria (VIP private dining room request for tonight, food allergen emergency inquiry fro...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Tripleseat",
+        "HoneyBook",
+        "Aisle Planner"
+      ],
+      "fieldSoftware": [
+        "Toast POS",
+        "OpenTable",
+        "Resy",
+        "QuickBooks Online"
+      ],
+      "telephony": [
+        "Twilio Programmable Voice",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Food safety handling regulations, ADA public accommodation standards, PCI-DSS compliance for banquet deposits.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law deposit and postponement provisions, state liquor licensing compliance.",
+      "dataHandling": "Encrypted contract storage, digital signature audit trails via DocuSign/GHL, automated deposit milestone triggers."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$3,500 – $25,000+ contract",
+      "monthlyMissedCallsEst": "15 – 35 inquiries",
+      "recoveredRevenueModel": "Capturing 3–6 high-value event or private dining inquiries monthly adds $10,500 to $75,000+ in booked revenue.",
+      "roiMultiple": "6x – 18x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Restaurants?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (VIP private dining room request for tonight, food allergen emergency inquiry from patron....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Restaurants software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Tripleseat, HoneyBook, Aisle Planner) and field management systems (Toast POS, OpenTable, Resy) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Restaurants?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In restaurants, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "wedding-planners",
+    "name": "Wedding Planners",
+    "category": "Events & Hospitality",
+    "headline": "Nurture engaged couples from inquiry to 'I do.'",
+    "summary": "Wedding planning has a long sales cycle. Automate inquiry follow ups, vendor coordination, and timeline reminders.",
+    "niches": [
+      "Full-Service Planning",
+      "Day-Of Coordination",
+      "Destination Weddings"
+    ],
+    "painPoints": [
+      "Inquiries going cold during the comparison shopping phase",
+      "Manual vendor coordination across 10+ suppliers",
+      "No automated timeline or milestone reminders for couples"
+    ],
+    "playbook": [
+      "Automated inquiry follow up with portfolio showcases",
+      "Vendor coordination workflow automation",
+      "Milestone and timeline reminder sequences",
+      "Post wedding review and referral campaigns"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "n8n-workflow-automation",
+      "gohighlevel-implementation",
+      "chatbots"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Venue cancellation 30 days before wedding, florist or caterer bankruptcy emergency.",
+      "dispatchProtocol": "Lead wedding planner consultation scheduled; budget worksheet and date availability questionnaire texted.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for wedding planners."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against wedding planners operational standards, identifying emergency criteria (Venue cancellation 30 days before wedding, florist or caterer bankruptcy emergen...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Tripleseat",
+        "HoneyBook",
+        "Aisle Planner"
+      ],
+      "fieldSoftware": [
+        "Toast POS",
+        "OpenTable",
+        "Resy",
+        "QuickBooks Online"
+      ],
+      "telephony": [
+        "Twilio Programmable Voice",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Food safety handling regulations, ADA public accommodation standards, PCI-DSS compliance for banquet deposits.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law deposit and postponement provisions, state liquor licensing compliance.",
+      "dataHandling": "Encrypted contract storage, digital signature audit trails via DocuSign/GHL, automated deposit milestone triggers."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$3,500 – $25,000+ contract",
+      "monthlyMissedCallsEst": "15 – 35 inquiries",
+      "recoveredRevenueModel": "Capturing 3–6 high-value event or private dining inquiries monthly adds $10,500 to $75,000+ in booked revenue.",
+      "roiMultiple": "6x – 18x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Wedding Planners?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Venue cancellation 30 days before wedding, florist or caterer bankruptcy emergency....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Wedding Planners software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Tripleseat, HoneyBook, Aisle Planner) and field management systems (Toast POS, OpenTable, Resy) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Wedding Planners?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In wedding planners, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "photography-studios",
+    "name": "Photography Studios",
+    "category": "Events & Hospitality",
+    "headline": "Book more sessions and deliver galleries on autopilot.",
+    "summary": "Automate session booking, preparation guides, and gallery delivery so you spend more time behind the camera.",
+    "niches": [
+      "Wedding Photography",
+      "Portrait Studios",
+      "Commercial Photography"
+    ],
+    "painPoints": [
+      "Inquiry follow ups delayed by shooting schedules",
+      "Manual gallery delivery and feedback collection",
+      "No system for rebooking annual sessions"
+    ],
+    "playbook": [
+      "AI chatbot for package info and session booking",
+      "Automated pre session preparation guides",
+      "Gallery delivery and feedback collection workflows",
+      "Annual session rebooking campaigns"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "n8n-workflow-automation",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Wedding photographer emergency substitution, newborn session window closing (<14 days old).",
+      "dispatchProtocol": "Studio schedule matched; automated style guide and wardrobe checklist texted to family.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for photography studios."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against photography studios operational standards, identifying emergency criteria (Wedding photographer emergency substitution, newborn session window closing (<14...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Tripleseat",
+        "HoneyBook",
+        "Aisle Planner"
+      ],
+      "fieldSoftware": [
+        "Toast POS",
+        "OpenTable",
+        "Resy",
+        "QuickBooks Online"
+      ],
+      "telephony": [
+        "Twilio Programmable Voice",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Food safety handling regulations, ADA public accommodation standards, PCI-DSS compliance for banquet deposits.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law deposit and postponement provisions, state liquor licensing compliance.",
+      "dataHandling": "Encrypted contract storage, digital signature audit trails via DocuSign/GHL, automated deposit milestone triggers."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$3,500 – $25,000+ contract",
+      "monthlyMissedCallsEst": "15 – 35 inquiries",
+      "recoveredRevenueModel": "Capturing 3–6 high-value event or private dining inquiries monthly adds $10,500 to $75,000+ in booked revenue.",
+      "roiMultiple": "6x – 18x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Photography Studios?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Wedding photographer emergency substitution, newborn session window closing (<14 days old)...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Photography Studios software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Tripleseat, HoneyBook, Aisle Planner) and field management systems (Toast POS, OpenTable, Resy) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Photography Studios?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In photography studios, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "event-venues",
+    "name": "Event Venues",
+    "category": "Events & Hospitality",
+    "headline": "Convert venue tours into signed contracts faster.",
+    "summary": "Automate tour scheduling, follow ups, and contract management so your sales team closes more events.",
+    "niches": [
+      "Wedding Venues",
+      "Corporate Event Spaces",
+      "Conference Centers"
+    ],
+    "painPoints": [
+      "Tour requests not followed up within 24 hours",
+      "Long decision cycles between tour and signed contract",
+      "Manual contract and deposit tracking"
+    ],
+    "playbook": [
+      "Automated tour scheduling with availability checks",
+      "Post tour follow up sequences with virtual tour links",
+      "Contract and deposit reminder automation",
+      "Event pipeline tracking dashboard"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "chatbots",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Corporate event cancellation re-booking, wedding date double-booking resolution.",
+      "dispatchProtocol": "Venue coordinator calendar sync; interactive 3D floorplan and catering package links texted to planner.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for event venues."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against event venues operational standards, identifying emergency criteria (Corporate event cancellation re-booking, wedding date double-booking resolution....)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Tripleseat",
+        "HoneyBook",
+        "Aisle Planner"
+      ],
+      "fieldSoftware": [
+        "Toast POS",
+        "OpenTable",
+        "Resy",
+        "QuickBooks Online"
+      ],
+      "telephony": [
+        "Twilio Programmable Voice",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Food safety handling regulations, ADA public accommodation standards, PCI-DSS compliance for banquet deposits.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law deposit and postponement provisions, state liquor licensing compliance.",
+      "dataHandling": "Encrypted contract storage, digital signature audit trails via DocuSign/GHL, automated deposit milestone triggers."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$3,500 – $25,000+ contract",
+      "monthlyMissedCallsEst": "15 – 35 inquiries",
+      "recoveredRevenueModel": "Capturing 3–6 high-value event or private dining inquiries monthly adds $10,500 to $75,000+ in booked revenue.",
+      "roiMultiple": "6x – 18x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Event Venues?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Corporate event cancellation re-booking, wedding date double-booking resolution....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Event Venues software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Tripleseat, HoneyBook, Aisle Planner) and field management systems (Toast POS, OpenTable, Resy) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Event Venues?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In event venues, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "catering-companies",
+    "name": "Catering Companies",
+    "category": "Events & Hospitality",
+    "headline": "Capture every event inquiry and streamline proposals.",
+    "summary": "Automate inquiry handling, menu customization, and proposal follow ups so your kitchen stays focused on food.",
+    "niches": [
+      "Corporate Catering",
+      "Wedding Catering",
+      "Private Events"
+    ],
+    "painPoints": [
+      "Event inquiries lost in email during busy seasons",
+      "Manual proposal creation consuming hours per event",
+      "No follow up system for proposals sent but not signed"
+    ],
+    "playbook": [
+      "AI chatbot for menu options and availability",
+      "Automated proposal follow up sequences",
+      "Event coordination workflow automation",
+      "Post event review and rebooking campaigns"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "n8n-workflow-automation",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Corporate breakfast order for 100 people needed tomorrow morning, wedding tasting reschedule.",
+      "dispatchProtocol": "Head chef and event coordinator alert; custom tasting menu builder link sent to inquiry.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for catering companies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against catering companies operational standards, identifying emergency criteria (Corporate breakfast order for 100 people needed tomorrow morning, wedding tastin...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Tripleseat",
+        "HoneyBook",
+        "Aisle Planner"
+      ],
+      "fieldSoftware": [
+        "Toast POS",
+        "OpenTable",
+        "Resy",
+        "QuickBooks Online"
+      ],
+      "telephony": [
+        "Twilio Programmable Voice",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Food safety handling regulations, ADA public accommodation standards, PCI-DSS compliance for banquet deposits.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law deposit and postponement provisions, state liquor licensing compliance.",
+      "dataHandling": "Encrypted contract storage, digital signature audit trails via DocuSign/GHL, automated deposit milestone triggers."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$3,500 – $25,000+ contract",
+      "monthlyMissedCallsEst": "15 – 35 inquiries",
+      "recoveredRevenueModel": "Capturing 3–6 high-value event or private dining inquiries monthly adds $10,500 to $75,000+ in booked revenue.",
+      "roiMultiple": "6x – 18x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Catering Companies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Corporate breakfast order for 100 people needed tomorrow morning, wedding tasting reschedu...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Catering Companies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Tripleseat, HoneyBook, Aisle Planner) and field management systems (Toast POS, OpenTable, Resy) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Catering Companies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In catering companies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "auto-dealerships",
+    "name": "Auto Dealerships",
+    "category": "Automotive",
+    "headline": "Engage every lead and sell more cars with less floor time.",
+    "summary": "Automate lead follow ups, test drive scheduling, and post sale service reminders to maximize per customer revenue.",
+    "niches": [
+      "New Car Sales",
+      "Used Car Sales",
+      "Certified Pre-Owned"
+    ],
+    "painPoints": [
+      "Internet leads going cold within hours",
+      "No systematic follow up after test drives",
+      "Service department underutilized for post sale revenue"
+    ],
+    "playbook": [
+      "Instant AI response to every online inquiry",
+      "Automated test drive scheduling and follow up",
+      "Post sale service reminder sequences",
+      "Lead to-sale pipeline dashboard"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "ai-voice-agents",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Customer holding cash wanting to test drive specific VIN on lot right now, trade-in appraisal before competitor sale.",
+      "dispatchProtocol": "Direct push to floor sales manager; test drive confirmation and vehicle window sticker texted to buyer.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for auto dealerships."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against auto dealerships operational standards, identifying emergency criteria (Customer holding cash wanting to test drive specific VIN on lot right now, trade...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "DealerSocket",
+        "Tekmetric",
+        "Mitchell 1"
+      ],
+      "fieldSoftware": [
+        "CCC ONE",
+        "Shopmonkey",
+        "CDK Global",
+        "Reynolds & Reynolds"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Consumer Credit Protection Act (Truth in Lending), federal Lemon Law disclosure requirements, state Bureau of Automotive Repair standards.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law statutory warranties for motor vehicles, state motor dealer licensing regulations.",
+      "dataHandling": "VIN-indexed customer records, encrypted estimate delivery, automated repair order signature logging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $3,200 repair / $18k vehicle",
+      "monthlyMissedCallsEst": "25 – 65 calls",
+      "recoveredRevenueModel": "Recovering 12–22 missed repair and estimate inquiries generates $7,800 to $32,000+ in shop labor and parts revenue.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Auto Dealerships?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Customer holding cash wanting to test drive specific VIN on lot right now, trade-in apprai...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Auto Dealerships software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, DealerSocket, Tekmetric, Mitchell 1) and field management systems (CCC ONE, Shopmonkey, CDK Global) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Auto Dealerships?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In auto dealerships, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "car-rental-agencies",
+    "name": "Car Rental Agencies",
+    "category": "Automotive",
+    "headline": "Streamline bookings and maximize fleet utilization.",
+    "summary": "Automate reservation management, pickup/return reminders, and upsell campaigns to keep your fleet on the road.",
+    "niches": [
+      "Leisure Rentals",
+      "Corporate Fleet",
+      "Specialty & Luxury Rentals"
+    ],
+    "painPoints": [
+      "Manual reservation management across multiple channels",
+      "No shows and late returns disrupting fleet planning",
+      "No automated upsell for insurance",
+      "GPS",
+      "or upgrades"
+    ],
+    "playbook": [
+      "AI chatbot for availability and booking",
+      "Automated pickup/return reminders",
+      "Upsell campaigns for insurance and upgrades",
+      "Fleet utilization dashboard"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "gohighlevel-implementation",
+      "automated-lead-nurturing",
+      "analytics-dashboards"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Flight delay stranded traveler needing rental at 2am, insurance replacement vehicle needed after crash.",
+      "dispatchProtocol": "Automated reservation lock with vehicle class confirmation; digital driver's license verification link texted.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for car rental agencies."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against car rental agencies operational standards, identifying emergency criteria (Flight delay stranded traveler needing rental at 2am, insurance replacement vehi...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "DealerSocket",
+        "Tekmetric",
+        "Mitchell 1"
+      ],
+      "fieldSoftware": [
+        "CCC ONE",
+        "Shopmonkey",
+        "CDK Global",
+        "Reynolds & Reynolds"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Consumer Credit Protection Act (Truth in Lending), federal Lemon Law disclosure requirements, state Bureau of Automotive Repair standards.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law statutory warranties for motor vehicles, state motor dealer licensing regulations.",
+      "dataHandling": "VIN-indexed customer records, encrypted estimate delivery, automated repair order signature logging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $3,200 repair / $18k vehicle",
+      "monthlyMissedCallsEst": "25 – 65 calls",
+      "recoveredRevenueModel": "Recovering 12–22 missed repair and estimate inquiries generates $7,800 to $32,000+ in shop labor and parts revenue.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Car Rental Agencies?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Flight delay stranded traveler needing rental at 2am, insurance replacement vehicle needed...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Car Rental Agencies software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, DealerSocket, Tekmetric, Mitchell 1) and field management systems (CCC ONE, Shopmonkey, CDK Global) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Car Rental Agencies?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In car rental agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "auto-body-shops",
+    "name": "Auto Body Shops",
+    "category": "Automotive",
+    "headline": "Keep bays full and customers informed throughout repairs.",
+    "summary": "Automate estimate follow ups, repair status updates, and review collection so your team focuses on quality work.",
+    "niches": [
+      "Collision Repair",
+      "Paint & Body Work",
+      "Insurance Claims"
+    ],
+    "painPoints": [
+      "Estimates given but customers shopping 3+ shops",
+      "No automated repair status updates for customers",
+      "Insurance claim coordination consuming admin time"
+    ],
+    "playbook": [
+      "Automated estimate follow up within 24 hours",
+      "Repair status update notifications via SMS",
+      "Insurance claim coordination workflows",
+      "Post repair review and referral asks"
+    ],
+    "relatedSolutionSlugs": [
+      "automated-lead-nurturing",
+      "missed-call-text-back",
+      "n8n-workflow-automation",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Towed vehicle arriving from accident scene, non-drivable car blocking roadway, insurance claim deadline.",
+      "dispatchProtocol": "Photo estimate link texted to vehicle owner; tow truck coordinates directly with body shop intake bay.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for auto body shops."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against auto body shops operational standards, identifying emergency criteria (Towed vehicle arriving from accident scene, non-drivable car blocking roadway, i...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "DealerSocket",
+        "Tekmetric",
+        "Mitchell 1"
+      ],
+      "fieldSoftware": [
+        "CCC ONE",
+        "Shopmonkey",
+        "CDK Global",
+        "Reynolds & Reynolds"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "Consumer Credit Protection Act (Truth in Lending), federal Lemon Law disclosure requirements, state Bureau of Automotive Repair standards.",
+      "auRegulations": "Privacy Act 1988, Australian Consumer Law statutory warranties for motor vehicles, state motor dealer licensing regulations.",
+      "dataHandling": "VIN-indexed customer records, encrypted estimate delivery, automated repair order signature logging."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$650 – $3,200 repair / $18k vehicle",
+      "monthlyMissedCallsEst": "25 – 65 calls",
+      "recoveredRevenueModel": "Recovering 12–22 missed repair and estimate inquiries generates $7,800 to $32,000+ in shop labor and parts revenue.",
+      "roiMultiple": "5x – 12x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Auto Body Shops?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Towed vehicle arriving from accident scene, non-drivable car blocking roadway, insurance c...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Auto Body Shops software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, DealerSocket, Tekmetric, Mitchell 1) and field management systems (CCC ONE, Shopmonkey, CDK Global) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Auto Body Shops?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In auto body shops, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "veterinary-clinics",
+    "name": "Veterinary Clinics",
+    "category": "Family, Pet & Specialty Care",
+    "headline": "Better support for pet owners, 24/7.",
+    "summary": "Handle emergency triage, routine booking, and vaccination reminders automatically without expanding front desk headcount.",
+    "niches": [
+      "General Veterinary",
+      "Emergency Animal Hospitals",
+      "Specialty Pet Care"
+    ],
+    "painPoints": [
+      "High call volume with limited front desk staff",
+      "Sorting emergency vs. routine calls on the fly",
+      "Missed annual checkups and vaccination recalls"
+    ],
+    "playbook": [
+      "AI voice agent for triage routing",
+      "Automated vaccination and checkup reminders",
+      "Missed call text back for routine inquiries",
+      "Waitlist activation for cancellations"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "missed-call-text-back",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Pet ingested chocolate or rat poison, bloated abdomen, hit by car trauma, difficulty breathing.",
+      "dispatchProtocol": "Emergency alert to triage vet technician; automated warning to caller on safe pet transport and immediate stabilization.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for veterinary clinics."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against veterinary clinics operational standards, identifying emergency criteria (Pet ingested chocolate or rat poison, bloated abdomen, hit by car trauma, diffic...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Gingr",
+        "Procare",
+        "PointClickCare"
+      ],
+      "fieldSoftware": [
+        "IDEXX Neo",
+        "Cornerstone",
+        "Brightwheel",
+        "Passare"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "State veterinary medical board rules, childcare licensing child-to-staff ratio guidelines, HIPAA / elder care reporting requirements.",
+      "auRegulations": "Privacy Act 1988, National Quality Framework (NQF) for early education, Aged Care Quality Standards, state veterinary acts.",
+      "dataHandling": "Encrypted guardian and pet records, vaccination certificate attachment handling, compassionate emergency escalation protocols."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $4,800 LTV",
+      "monthlyMissedCallsEst": "20 – 45 calls",
+      "recoveredRevenueModel": "Capturing 8–16 recurring enrollment or specialty care inquiries generates $4,200 to $22,000+ in steady client revenue.",
+      "roiMultiple": "4x – 11x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Veterinary Clinics?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Pet ingested chocolate or rat poison, bloated abdomen, hit by car trauma, difficulty breat...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Veterinary Clinics software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Gingr, Procare, PointClickCare) and field management systems (IDEXX Neo, Cornerstone, Brightwheel) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Veterinary Clinics?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In veterinary clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "tutoring-centers",
+    "name": "Tutoring Centers",
+    "category": "Family, Pet & Specialty Care",
+    "headline": "Enroll more students and keep families engaged.",
+    "summary": "Automate enrollment inquiries, session reminders, and progress updates so tutoring center directors focus on teaching and student achievement.",
+    "niches": [
+      "K-12 Tutoring",
+      "Test Prep",
+      "College Counseling"
+    ],
+    "painPoints": [
+      "Parent inquiries not followed up during session hours",
+      "No shows wasting tutor time and revenue",
+      "No systematic progress reporting to parents"
+    ],
+    "playbook": [
+      "AI chatbot for program info and enrollment",
+      "Automated session reminders for students and parents",
+      "Progress update sequences after assessment milestones",
+      "Re enrollment campaigns for returning semesters"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "missed-call-text-back"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Failing grade before final exam, SAT/ACT test in 10 days, urgent IEP advocacy consultation.",
+      "dispatchProtocol": "Academic diagnostic assessment booked; subject specialist matched to student grade level.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for tutoring centers."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against tutoring centers operational standards, identifying emergency criteria (Failing grade before final exam, SAT/ACT test in 10 days, urgent IEP advocacy co...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Gingr",
+        "Procare",
+        "PointClickCare"
+      ],
+      "fieldSoftware": [
+        "IDEXX Neo",
+        "Cornerstone",
+        "Brightwheel",
+        "Passare"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "State veterinary medical board rules, childcare licensing child-to-staff ratio guidelines, HIPAA / elder care reporting requirements.",
+      "auRegulations": "Privacy Act 1988, National Quality Framework (NQF) for early education, Aged Care Quality Standards, state veterinary acts.",
+      "dataHandling": "Encrypted guardian and pet records, vaccination certificate attachment handling, compassionate emergency escalation protocols."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $4,800 LTV",
+      "monthlyMissedCallsEst": "20 – 45 calls",
+      "recoveredRevenueModel": "Capturing 8–16 recurring enrollment or specialty care inquiries generates $4,200 to $22,000+ in steady client revenue.",
+      "roiMultiple": "4x – 11x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Tutoring Centers?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Failing grade before final exam, SAT/ACT test in 10 days, urgent IEP advocacy consultation...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Tutoring Centers software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Gingr, Procare, PointClickCare) and field management systems (IDEXX Neo, Cornerstone, Brightwheel) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Tutoring Centers?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In tutoring centers, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "daycare-centers",
+    "name": "Daycare Centers",
+    "category": "Family, Pet & Specialty Care",
+    "headline": "Fill open spots faster and keep parents informed.",
+    "summary": "Automate waitlist management, tour booking, enrollment follow-ups, and daily family communication for childcare and daycare centers in the US and AU.",
+    "niches": [
+      "Infant Care",
+      "Preschool Programs",
+      "After-School Care"
+    ],
+    "painPoints": [
+      "Long waitlists with no automated communication",
+      "Manual daily reports consuming staff time",
+      "Enrollment inquiries lost during busy drop off/pickup"
+    ],
+    "playbook": [
+      "Automated waitlist position updates and enrollment prompts",
+      "Digital daily report delivery to parents",
+      "AI chatbot for program info and tour scheduling",
+      "Re enrollment campaigns for upcoming school years"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "n8n-workflow-automation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Emergency child pickup authorization change, unexpected facility closure notification, urgent infant spot opening.",
+      "dispatchProtocol": "Center director instant notification; licensed parent tour and enrollment packet texted to family.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for daycare centers."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against daycare centers operational standards, identifying emergency criteria (Emergency child pickup authorization change, unexpected facility closure notific...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Gingr",
+        "Procare",
+        "PointClickCare"
+      ],
+      "fieldSoftware": [
+        "IDEXX Neo",
+        "Cornerstone",
+        "Brightwheel",
+        "Passare"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "State veterinary medical board rules, childcare licensing child-to-staff ratio guidelines, HIPAA / elder care reporting requirements.",
+      "auRegulations": "Privacy Act 1988, National Quality Framework (NQF) for early education, Aged Care Quality Standards, state veterinary acts.",
+      "dataHandling": "Encrypted guardian and pet records, vaccination certificate attachment handling, compassionate emergency escalation protocols."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $4,800 LTV",
+      "monthlyMissedCallsEst": "20 – 45 calls",
+      "recoveredRevenueModel": "Capturing 8–16 recurring enrollment or specialty care inquiries generates $4,200 to $22,000+ in steady client revenue.",
+      "roiMultiple": "4x – 11x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Daycare Centers?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Emergency child pickup authorization change, unexpected facility closure notification, urg...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Daycare Centers software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Gingr, Procare, PointClickCare) and field management systems (IDEXX Neo, Cornerstone, Brightwheel) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Daycare Centers?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In daycare centers, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "senior-care-facilities",
+    "name": "Senior Care Facilities",
+    "category": "Family, Pet & Specialty Care",
+    "headline": "Compassionate, prompt responses for families in need.",
+    "summary": "Provide instant answers to touring and pricing questions 24/7, capturing tour bookings from your website or phone line.",
+    "niches": [
+      "Assisted Living",
+      "Memory Care",
+      "Independent Living"
+    ],
+    "painPoints": [
+      "Families needing immediate answers after hours",
+      "Slow tour scheduling losing the family to another facility",
+      "Lost inquiries sitting in an inbox no one checks"
+    ],
+    "playbook": [
+      "AI voice agent for 24/7 compassionate intake",
+      "Automated tour scheduling with reminder sequences",
+      "Lead scoring for high intent families",
+      "CRM pipeline tracking from first call to move in"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "crm-integration"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Hospital discharge needing immediate assisted living placement, sudden dementia wandering episode.",
+      "dispatchProtocol": "Compassionate intake coordinator alerted; private family facility tour scheduled with room availability matrix.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for senior care facilities."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against senior care facilities operational standards, identifying emergency criteria (Hospital discharge needing immediate assisted living placement, sudden dementia ...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Gingr",
+        "Procare",
+        "PointClickCare"
+      ],
+      "fieldSoftware": [
+        "IDEXX Neo",
+        "Cornerstone",
+        "Brightwheel",
+        "Passare"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "State veterinary medical board rules, childcare licensing child-to-staff ratio guidelines, HIPAA / elder care reporting requirements.",
+      "auRegulations": "Privacy Act 1988, National Quality Framework (NQF) for early education, Aged Care Quality Standards, state veterinary acts.",
+      "dataHandling": "Encrypted guardian and pet records, vaccination certificate attachment handling, compassionate emergency escalation protocols."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $4,800 LTV",
+      "monthlyMissedCallsEst": "20 – 45 calls",
+      "recoveredRevenueModel": "Capturing 8–16 recurring enrollment or specialty care inquiries generates $4,200 to $22,000+ in steady client revenue.",
+      "roiMultiple": "4x – 11x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Senior Care Facilities?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Hospital discharge needing immediate assisted living placement, sudden dementia wandering ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Senior Care Facilities software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Gingr, Procare, PointClickCare) and field management systems (IDEXX Neo, Cornerstone, Brightwheel) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Senior Care Facilities?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In senior care facilities, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "dog-grooming-boarding",
+    "name": "Dog Grooming & Boarding",
+    "category": "Family, Pet & Specialty Care",
+    "headline": "Keep grooming tables and boarding kennels fully booked.",
+    "summary": "Automate booking, vaccination verification, and rebooking so your team focuses on the pets, not the phones.",
+    "niches": [
+      "Dog Grooming",
+      "Dog Boarding",
+      "Doggy Daycare"
+    ],
+    "painPoints": [
+      "No shows on grooming appointments",
+      "Manual vaccination record verification before boarding",
+      "Customers not rebooking at regular grooming intervals"
+    ],
+    "playbook": [
+      "AI chatbot for booking and service FAQs",
+      "Automated vaccination verification workflows",
+      "Rebooking reminders at breed specific intervals",
+      "Post visit review asks and loyalty rewards"
+    ],
+    "relatedSolutionSlugs": [
+      "chatbots",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation",
+      "n8n-workflow-automation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Last-minute holiday boarding request, dog skunked or severely matted requiring emergency bath.",
+      "dispatchProtocol": "Vaccination record upload link sent via SMS; kennel or grooming table reserved in system.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for dog grooming & boarding."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against dog grooming & boarding operational standards, identifying emergency criteria (Last-minute holiday boarding request, dog skunked or severely matted requiring e...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Gingr",
+        "Procare",
+        "PointClickCare"
+      ],
+      "fieldSoftware": [
+        "IDEXX Neo",
+        "Cornerstone",
+        "Brightwheel",
+        "Passare"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "State veterinary medical board rules, childcare licensing child-to-staff ratio guidelines, HIPAA / elder care reporting requirements.",
+      "auRegulations": "Privacy Act 1988, National Quality Framework (NQF) for early education, Aged Care Quality Standards, state veterinary acts.",
+      "dataHandling": "Encrypted guardian and pet records, vaccination certificate attachment handling, compassionate emergency escalation protocols."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $4,800 LTV",
+      "monthlyMissedCallsEst": "20 – 45 calls",
+      "recoveredRevenueModel": "Capturing 8–16 recurring enrollment or specialty care inquiries generates $4,200 to $22,000+ in steady client revenue.",
+      "roiMultiple": "4x – 11x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Dog Grooming & Boarding?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Last-minute holiday boarding request, dog skunked or severely matted requiring emergency b...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Dog Grooming & Boarding software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Gingr, Procare, PointClickCare) and field management systems (IDEXX Neo, Cornerstone, Brightwheel) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Dog Grooming & Boarding?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In dog grooming & boarding, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  },
+  {
+    "slug": "funeral-homes",
+    "name": "Funeral Homes",
+    "category": "Family, Pet & Specialty Care",
+    "headline": "Compassionate, immediate response when families need it most.",
+    "summary": "Ensure every call is answered with care, arrangements are coordinated smoothly, and families receive ongoing support.",
+    "niches": [
+      "Traditional Funeral Services",
+      "Cremation Services",
+      "Pre-Planning"
+    ],
+    "painPoints": [
+      "After hours calls from grieving families going to voicemail",
+      "Complex coordination across multiple service providers",
+      "No system for pre planning outreach and community engagement"
+    ],
+    "playbook": [
+      "AI voice agent with compassionate after hours handling",
+      "Arrangement coordination workflow automation",
+      "Pre planning campaign sequences for community outreach",
+      "Post service follow up and memorial anniversary reminders"
+    ],
+    "relatedSolutionSlugs": [
+      "ai-voice-agents",
+      "n8n-workflow-automation",
+      "automated-lead-nurturing",
+      "gohighlevel-implementation"
+    ],
+    "intakeArchitecture": {
+      "emergencyCriteria": "Death has occurred at home or hospice; immediate transfer and transport coordination required.",
+      "dispatchProtocol": "Instant warm transfer to licensed funeral director on duty; gentle condolence message and arrangement checklist texted.",
+      "intakeSteps": [
+        {
+          "name": "Instant Telephony & Message Ingestion",
+          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for funeral homes."
+        },
+        {
+          "name": "Vertical Triage & Need Qualification",
+          "text": "Evaluates inquiry against funeral homes operational standards, identifying emergency criteria (Death has occurred at home or hospice; immediate transfer and transport coordina...)."
+        },
+        {
+          "name": "Direct Calendar Booking & Dispatch",
+          "text": "Directly coordinates with team calendar availability or executes on-call escalation protocol."
+        },
+        {
+          "name": "Automated Confirmation & CRM Sync",
+          "text": "Dispatches immediate SMS confirmation to caller with prep instructions and writes complete transcript into GoHighLevel."
+        }
+      ]
+    },
+    "softwareIntegrations": {
+      "primaryCrms": [
+        "GoHighLevel",
+        "Gingr",
+        "Procare",
+        "PointClickCare"
+      ],
+      "fieldSoftware": [
+        "IDEXX Neo",
+        "Cornerstone",
+        "Brightwheel",
+        "Passare"
+      ],
+      "telephony": [
+        "Twilio Voice",
+        "Dialpad",
+        "RingCentral"
+      ]
+    },
+    "complianceAndStandards": {
+      "usRegulations": "State veterinary medical board rules, childcare licensing child-to-staff ratio guidelines, HIPAA / elder care reporting requirements.",
+      "auRegulations": "Privacy Act 1988, National Quality Framework (NQF) for early education, Aged Care Quality Standards, state veterinary acts.",
+      "dataHandling": "Encrypted guardian and pet records, vaccination certificate attachment handling, compassionate emergency escalation protocols."
+    },
+    "unitEconomics": {
+      "averageJobValue": "$450 – $4,800 LTV",
+      "monthlyMissedCallsEst": "20 – 45 calls",
+      "recoveredRevenueModel": "Capturing 8–16 recurring enrollment or specialty care inquiries generates $4,200 to $22,000+ in steady client revenue.",
+      "roiMultiple": "4x – 11x ROI on automation retainer"
+    },
+    "faqs": [
+      {
+        "question": "How does the AI voice receptionist handle after-hours inquiries for Funeral Homes?",
+        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Death has occurred at home or hospice; immediate transfer and transport coordination requi...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+      },
+      {
+        "question": "Does this system integrate directly with our existing Funeral Homes software stack?",
+        "answer": "Yes. We synchronize leads, appointments, and contact records directly into your core CRM (GoHighLevel, Gingr, Procare, PointClickCare) and field management systems (IDEXX Neo, Cornerstone, Brightwheel) using real-time webhooks and n8n middleware."
+      },
+      {
+        "question": "How does missed-call text-back increase booked revenue for Funeral Homes?",
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In funeral homes, this captures between 30% and 50% of prospects before they dial a competitor."
+      }
+    ]
+  }
 ];
 
 export const industryCategories: IndustryCategory[] = [

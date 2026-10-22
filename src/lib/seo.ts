@@ -525,6 +525,26 @@ export function generateServicePageSchema(service: {
     };
 }
 
+export function generateHowToSchema(howto: {
+    name: string;
+    description: string;
+    steps: { name: string; text: string; url?: string }[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: howto.name,
+        description: howto.description,
+        step: howto.steps.map((step, idx) => ({
+            "@type": "HowToStep",
+            position: idx + 1,
+            name: step.name,
+            text: step.text,
+            ...(step.url && { url: step.url }),
+        })),
+    };
+}
+
 export function generateReviewSchema(testimonial: {
     quote: string;
     author: string;
