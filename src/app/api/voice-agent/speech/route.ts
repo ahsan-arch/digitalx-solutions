@@ -99,7 +99,7 @@ export async function POST(req: Request) {
   if (!upstream.ok || !upstream.body) {
     const detail = await upstream.text().catch(() => "");
     console.error("Groq TTS error", upstream.status, detail);
-    return NextResponse.json({ error: "Speech synthesis failed" }, { status: 502 });
+    return NextResponse.json({ error: "Speech synthesis failed", status: upstream.status, detail }, { status: 502 });
   }
 
   return new Response(upstream.body, {

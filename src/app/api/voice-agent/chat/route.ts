@@ -54,7 +54,7 @@ export async function POST(req: Request) {
   if (!upstream.ok || !upstream.body) {
     const detail = await upstream.text().catch(() => "");
     console.error("Groq upstream error", upstream.status, detail);
-    return NextResponse.json({ error: "Upstream LLM error" }, { status: 502 });
+    return NextResponse.json({ error: "Upstream LLM error", status: upstream.status, detail }, { status: 502 });
   }
 
   const reader = upstream.body.getReader();
