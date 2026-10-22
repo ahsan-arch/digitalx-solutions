@@ -1,0 +1,38 @@
+Keyword,Country,Search_Intent,Cluster,Target_URL,Status,Priority,Primary_Secondary_Queries
+AI voice receptionist,Global,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/solutions/ai-voice-agents,Existing,P1,Primary
+AI receptionist cost 2026,Global,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/insights/ai-voice-receptionist-cost,Existing,P1,Primary
+AI answering service for plumbers,USA,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/industries/plumbing-companies,Existing,P1,Primary
+AI voice agent for HVAC contractors,USA,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/industries/hvac-companies,Existing,P1,Primary
+AI receptionist for roofing companies,USA,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/industries/roofing-companies,Existing,P1,Primary
+AI receptionist for electricians,Australia,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/industries/electrical-contractors,Existing,P1,Primary
+best AI receptionist for dental clinics USA,USA,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/insights/best-ai-receptionist-dental-clinics-usa,Existing,P1,Primary
+AI receptionist Australia,Australia,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/au,Existing,P1,Primary
+AI receptionist vs human receptionist cost,Global,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/insights/ai-voice-receptionists-guide,Existing,P2,Secondary
+AI voice agent for medical clinics,Global,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/industries/medical-practices,Existing,P2,Secondary
+AI phone answering for law firms,Global,Commercial,Cluster A: AI Voice Agents,https://digitalx-solutions.com/industries/law-firms,Existing,P2,Secondary
+missed call text back for contractors,USA,Commercial,Cluster B: Missed Call Text Back,https://digitalx-solutions.com/solutions/missed-call-text-back,Existing,P1,Primary
+missed call text back tradies Australia,Australia,Commercial,Cluster B: Missed Call Text Back,https://digitalx-solutions.com/solutions/missed-call-text-back,Existing,P1,Primary
+missed call text back laws and compliance,Global,Informational,Cluster B: Missed Call Text Back,https://digitalx-solutions.com/insights/missed-call-text-back-guide,Existing,P1,Primary
+automated lead response for tradies,Australia,Commercial,Cluster B: Missed Call Text Back,https://digitalx-solutions.com/solutions/automated-lead-nurturing,Existing,P2,Secondary
+missed call SMS auto reply for plumbers,USA,Commercial,Cluster B: Missed Call Text Back,https://digitalx-solutions.com/industries/plumbing-companies,Existing,P2,Secondary
+missed call text back calculator,Global,Transactional,Cluster B: Missed Call Text Back,https://digitalx-solutions.com/tools/missed-call-calculator,New,P1,Primary
+GoHighLevel agency Australia,Australia,Commercial,Cluster C: GoHighLevel,https://digitalx-solutions.com/solutions/gohighlevel-implementation,Existing,P1,Primary
+GoHighLevel setup agency USA,USA,Commercial,Cluster C: GoHighLevel,https://digitalx-solutions.com/solutions/gohighlevel-implementation,Existing,P1,Primary
+GoHighLevel setup cost and timeline,Australia,Commercial,Cluster C: GoHighLevel,https://digitalx-solutions.com/insights/gohighlevel-setup-australia,Existing,P1,Primary
+GoHighLevel snapshot for home services,USA,Commercial,Cluster C: GoHighLevel,https://digitalx-solutions.com/solutions/gohighlevel-implementation,Existing,P1,Primary
+GoHighLevel vs HubSpot for contractors,Global,Commercial,Cluster C: GoHighLevel,https://digitalx-solutions.com/insights/gohighlevel-vs-hubspot-home-services,New,P1,Primary
+certified HighLevel partner agency Sydney,Australia,Commercial,Cluster C: GoHighLevel,https://digitalx-solutions.com/au,Existing,P2,Secondary
+GHL CRM integration for field service,USA,Commercial,Cluster C: GoHighLevel,https://digitalx-solutions.com/solutions/crm-integration,Existing,P2,Secondary
+n8n workflow automation agency,Global,Commercial,Cluster D: n8n Automation,https://digitalx-solutions.com/solutions/n8n-workflow-automation,Existing,P2,Primary
+n8n vs Zapier vs Make comparison,Global,Informational,Cluster D: n8n Automation,https://digitalx-solutions.com/insights/n8n-vs-zapier,Existing,P2,Primary
+Zapier to n8n migration service,Global,Commercial,Cluster D: n8n Automation,https://digitalx-solutions.com/solutions/n8n-workflow-automation,Existing,P2,Secondary
+automation agency Sydney,Australia,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/sydney,New,P2,Primary
+automation agency Melbourne,Australia,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/melbourne,New,P2,Primary
+automation agency Brisbane,Australia,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/brisbane,New,P2,Primary
+automation agency Perth,Australia,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/perth,New,P2,Primary
+automation agency Adelaide,Australia,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/adelaide,New,P3,Primary
+AI voice receptionist Los Angeles,USA,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/los-angeles,New,P2,Primary
+AI voice receptionist Dallas,USA,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/dallas,New,P2,Primary
+AI voice receptionist Austin,USA,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/austin,New,P2,Primary
+AI voice receptionist Miami,USA,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/miami,New,P2,Primary
+AI voice receptionist Chicago,USA,Commercial,Cluster E: Local Metros,https://digitalx-solutions.com/locations/chicago,New,P3,Primary
