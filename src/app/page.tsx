@@ -36,7 +36,7 @@ export default function HomePage() {
                   DigitalX Solutions
                 </p>
                 <h1 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
-                  AI Voice Receptionists, Missed-Call Text Back &amp; GoHighLevel Setup
+                  AI Voice Receptionists, Missed-Call Recovery &amp; GoHighLevel CRM Systems
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/72 md:text-lg">
                   We deploy 24/7 AI answering agents, instant text-back automations, and custom GoHighLevel CRM architecture for home services, medical, and trade businesses across the USA and Australia.

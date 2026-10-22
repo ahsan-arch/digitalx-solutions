@@ -11,7 +11,7 @@ export const siteConfig = {
 // Every title ≤60 chars, every description ≤155 chars, includes US/AU signals
 export const seoCopy = {
     home: {
-        title: "AI Voice Receptionist & GoHighLevel Setup | USA & Australia",
+        title: "AI Voice Receptionist & CRM Systems | DigitalX Solutions",
         description: "AI voice receptionists, missed-call text-back, and GoHighLevel setup for US and Australian service businesses. Capture every lead and book more jobs 24/7.",
     },
     services: {

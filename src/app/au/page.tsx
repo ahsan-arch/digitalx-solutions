@@ -49,7 +49,7 @@ const auFaqs = [
   {
     question: "How much does an AI voice agent or automation setup cost in Australia?",
     answer:
-      "Monthly plans start at 1,200 US dollars for solo operators and 2,800 US dollars for multi location teams, and Australian clients can be billed in Australian dollars at the current exchange rate on request. A one time setup fee applies based on scope.",
+      "Standalone missed-call text-back automation starts from 450 US dollars per month. Full-stack AI voice receptionists and GoHighLevel CRM implementations start at 1,200 US dollars for solo operators and 2,800 US dollars for multi-location teams, plus a one-time onboarding setup fee based on scope. Australian clients can be invoiced in AUD at current exchange rates.",
   },
   {
     question: "What makes DigitalX Solutions different from other Australian automation agencies?",

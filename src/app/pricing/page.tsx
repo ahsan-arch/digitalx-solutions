@@ -18,13 +18,27 @@ export const metadata: Metadata = generatePageMetadata("/pricing", {
 
 const tiers = [
   {
+    name: "Missed-Call Recovery",
+    price: "$450/mo",
+    summary: "For local operators looking to recover missed calls via instant SMS text-back.",
+    includes: [
+      "Instant missed-call text-back (<30s)",
+      "10DLC A2P brand registration assistance",
+      "Two-way SMS conversational triage",
+      "Lead notification routing to staff",
+      "Monthly recovery performance report",
+    ],
+    cta: "Start with Recovery",
+    highlight: false,
+  },
+  {
     name: "Launch",
     price: "$1,200/mo",
-    summary: "For solo operators ready to stop missing calls.",
+    summary: "For solo operators ready to deploy an AI voice receptionist.",
     includes: [
       "AI voice agent (single number)",
-      "Missed call text back",
-      "GoHighLevel CRM setup",
+      "Missed call text back & recovery",
+      "GoHighLevel CRM setup & pipelines",
       "Booking calendar integration",
       "Monthly performance review",
     ],
@@ -67,7 +81,7 @@ const pricingFaqs = [
   {
     question: "How does DigitalX Solutions pricing work?",
     answer:
-      "We charge a transparent monthly retainer per package (Launch $1,200, Operate $2,800, Scale Custom — all prices in USD) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
+      "We charge a transparent monthly retainer per package (Standalone Missed-Call Recovery from $450, Launch AI Voice from $1,200, Operate $2,800, Scale Custom — all prices in USD) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
   },
   {
     question: "Do you offer custom pricing for high-volume teams?",
@@ -129,7 +143,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="container-shell mt-12 grid gap-5 lg:grid-cols-3">
+      <section className="container-shell mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {tiers.map((tier) => (
           <article
             key={tier.name}

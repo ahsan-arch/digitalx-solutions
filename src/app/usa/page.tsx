@@ -47,7 +47,7 @@ const usaFaqs = [
   {
     question: "How much does an AI voice agent or automation setup cost in the US?",
     answer:
-      "Monthly plans start at 1,200 US dollars for solo operators and 2,800 US dollars for multi location teams, plus a one time setup fee based on scope. Larger custom projects are quoted to fit your goals. All prices are in US dollars.",
+      "Standalone missed-call text-back automation starts from 450 US dollars per month. Complete end-to-end AI voice receptionists and GoHighLevel CRM implementations start at 1,200 US dollars for solo operators and 2,800 US dollars for multi-location teams, plus a one-time onboarding setup fee based on scope. All prices are in US dollars.",
   },
   {
     question: "What makes DigitalX Solutions different from other US automation agencies?",

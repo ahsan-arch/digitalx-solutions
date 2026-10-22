@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { ExternalLink, MapPin, ShieldCheck, UserCheck } from "lucide-react";
 import {
     aboutPrinciples,
     companyProfile,
@@ -42,10 +43,27 @@ export default function AboutPage() {
         "@id": `${siteConfig.domain}/about`,
         name: "About DigitalX Solutions",
         description:
-            "Learn how DigitalX Solutions operates, what we optimize for, and how we deliver growth systems for clients.",
+            "Learn how DigitalX Solutions operates, what we optimize for, and how we deliver AI voice agents and CRM automation systems for service businesses.",
         url: `${siteConfig.domain}/about`,
         mainEntity: {
-            "@id": `${siteConfig.domain}/#organization`,
+            "@type": "Organization",
+            name: "DigitalX Solutions",
+            url: siteConfig.domain,
+            founder: {
+                "@type": "Person",
+                name: "Ahsan Architect",
+                jobTitle: "Founder & Lead Solutions Engineer",
+                url: "https://www.linkedin.com/in/ahsan-architect",
+                sameAs: ["https://www.linkedin.com/in/ahsan-architect"],
+            },
+            address: {
+                "@type": "PostalAddress",
+                streetAddress: "16 Boldrewood Ave",
+                addressLocality: "Casula",
+                addressRegion: "NSW",
+                postalCode: "2170",
+                addressCountry: "AU",
+            },
         },
     };
 
@@ -122,6 +140,65 @@ export default function AboutPage() {
                                     <p className="mt-2 text-sm leading-relaxed text-foreground/70">{principle.body}</p>
                                 </article>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="container-shell mt-12">
+                    <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
+                        <div className="flex flex-wrap items-center justify-between gap-4">
+                            <div>
+                                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">E-E-A-T Leadership & Verification</p>
+                                <h2 className="mt-1 font-display text-3xl text-foreground">Engineering Leadership</h2>
+                            </div>
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> Verified Australian Entity
+                            </span>
+                        </div>
+
+                        <div className="mt-6 grid gap-6 md:grid-cols-[1fr_1fr]">
+                            <div className="rounded-2xl border border-border bg-surface-50 p-6">
+                                <div className="flex items-center gap-4">
+                                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl font-bold text-white shadow-sm">
+                                        AA
+                                    </div>
+                                    <div>
+                                        <h3 className="font-display text-xl font-semibold text-foreground">Ahsan Architect</h3>
+                                        <p className="text-xs font-medium text-brand">Founder &amp; Lead Solutions Engineer</p>
+                                    </div>
+                                </div>
+                                <p className="mt-4 text-sm leading-relaxed text-foreground/75">
+                                    Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and sub-500ms neural AI voice agents for enterprise and local service operators across the USA and Australia.
+                                </p>
+                                <div className="mt-5 flex items-center gap-3">
+                                    <a
+                                        href="https://www.linkedin.com/in/ahsan-architect"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition-colors"
+                                    >
+                                        <UserCheck className="h-3.5 w-3.5 text-brand" /> LinkedIn Profile
+                                        <ExternalLink className="h-3 w-3 text-foreground/50" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="rounded-2xl border border-border bg-surface-50 p-6">
+                                <div className="flex items-center gap-2 text-foreground font-semibold">
+                                    <MapPin className="h-4 w-4 text-brand" /> Registered Entity &amp; Global Delivery
+                                </div>
+                                <div className="mt-3 text-sm leading-relaxed text-foreground/75 space-y-2">
+                                    <p>
+                                        <strong className="text-foreground">Registered Office:</strong> 16 Boldrewood Ave, Casula NSW 2170, Australia.
+                                    </p>
+                                    <p>
+                                        <strong className="text-foreground">Global Delivery Model:</strong> Sydney-registered legal entity with a distributed global remote engineering team providing 24/7 technical operations across US Eastern/Pacific and Australian Eastern/Western time zones.
+                                    </p>
+                                    <p>
+                                        <strong className="text-foreground">Compliance:</strong> Australian Privacy Principles (Privacy Act 1988), US 10DLC A2P Carrier Compliance, and GDPR/CCPA data handling standards.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
