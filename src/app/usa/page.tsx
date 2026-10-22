@@ -9,15 +9,11 @@ import {
   siteConfig,
 } from "@/lib/seo";
 
-export const metadata: Metadata = generatePageMetadata(
-  "/usa",
-  {
-    title: "Automation Services in the USA for Service Businesses",
-    description:
-      "AI voice agents, missed-call recovery & CRM automation for US service businesses — New York, LA, Chicago, Houston, Miami, Phoenix & all 50 states.",
-  },
-  { region: "US", placename: "United States" }
-);
+export const metadata: Metadata = generatePageMetadata("/usa", {
+  title: "AI Voice & Automation Agency USA",
+  description:
+    "AI voice agents, missed-call recovery & CRM automation for US service businesses — New York, LA, Chicago, Houston, Miami, Phoenix & all 50 states.",
+});
 
 const usaLocalBusiness = generateLocalBusinessSchema({
   pathname: "/usa",

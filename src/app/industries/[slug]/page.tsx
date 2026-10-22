@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
   }
 
   return generatePageMetadata(`/industries/${industry.slug}`, {
-    title: `${industry.name} Growth Playbook | DigitalX Solutions`,
+    title: `${industry.name} Automation Playbook`,
     description: industry.summary,
   });
 }

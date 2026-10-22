@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/legal/cookies", {
-  title: "Cookie Policy | DigitalX Solutions",
+  title: "Cookie Policy",
   description:
     "What cookies digitalx-solutions.com uses, why we use them, and how you can control or block them in your browser.",
 });

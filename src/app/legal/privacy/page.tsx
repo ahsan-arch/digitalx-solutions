@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/legal/privacy", {
-  title: "Privacy Policy | DigitalX Solutions",
+  title: "Privacy Policy",
   description:
     "How DigitalX Solutions collects, uses, and protects personal information across our website, contact forms, and client integrations.",
 });

@@ -5,7 +5,9 @@ import { developmentProjects, results, solutions } from "@/data/redesign";
 import { industries } from "@/data/industries";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const now = new Date();
+    // Stable release timestamp so Googlebot respects <lastmod> instead of
+    // treating it as dynamic spam on every crawl request.
+    const releaseDate = new Date("2026-04-15T00:00:00.000Z");
 
     const geoAlternates = { languages: geoHreflangLanguages };
 
@@ -28,32 +30,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${siteConfig.domain}/legal/privacy`, changeFrequency: "yearly" as const, priority: 0.3 },
         { url: `${siteConfig.domain}/legal/terms`, changeFrequency: "yearly" as const, priority: 0.3 },
         { url: `${siteConfig.domain}/legal/cookies`, changeFrequency: "yearly" as const, priority: 0.3 },
-    ].map((entry) => ({ ...entry, lastModified: now }));
+    ].map((entry) => ({ ...entry, lastModified: releaseDate }));
 
     const solutionEntries: MetadataRoute.Sitemap = solutions.map((s) => ({
         url: `${siteConfig.domain}/solutions/${s.slug}`,
-        lastModified: now,
+        lastModified: releaseDate,
         changeFrequency: "monthly",
         priority: 0.85,
     }));
 
     const industryEntries: MetadataRoute.Sitemap = industries.map((i) => ({
         url: `${siteConfig.domain}/industries/${i.slug}`,
-        lastModified: now,
+        lastModified: releaseDate,
         changeFrequency: "monthly",
         priority: 0.85,
     }));
 
     const developmentEntries: MetadataRoute.Sitemap = developmentProjects.map((p) => ({
         url: `${siteConfig.domain}/development/${p.slug}`,
-        lastModified: now,
+        lastModified: releaseDate,
         changeFrequency: "yearly",
         priority: 0.7,
     }));
 
     const workEntries: MetadataRoute.Sitemap = results.map((r) => ({
         url: `${siteConfig.domain}/work/${r.slug}`,
-        lastModified: now,
+        lastModified: releaseDate,
         changeFrequency: "monthly",
         priority: 0.7,
     }));

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Quote } from "lucide-react";
 import {
   generateBreadcrumbSchema,
-  generateReviewSchema,
   siteConfig,
 } from "@/lib/seo";
 import { HeroIllustration, TiltCard } from "@/components/ui";
@@ -27,15 +26,6 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      {testimonials.map((t) => (
-        <script
-          key={t.author}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateReviewSchema(t)),
-          }}
-        />
-      ))}
 
       <main id="main" className="pb-24">
         <section className="container-shell pt-14 md:pt-20">
@@ -46,11 +36,10 @@ export default function HomePage() {
                   DigitalX Solutions
                 </p>
                 <h1 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
-                  Revenue systems for teams that need faster growth without operational chaos.
+                  AI Voice Receptionists, Missed-Call Text Back &amp; GoHighLevel Setup
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/72 md:text-lg">
-                  We combine web development, AI automation, and performance marketing into one execution model so growth
-                  strategy and delivery stay aligned.
+                  We deploy 24/7 AI answering agents, instant text-back automations, and custom GoHighLevel CRM architecture for home services, medical, and trade businesses across the USA and Australia.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">

@@ -5,7 +5,7 @@ export type NavItem = {
 
 export const primaryNavigation: NavItem[] = [
   { label: "Solutions", href: "/solutions" },
-  { label: "Development", href: "/#development" },
+  { label: "Development", href: "/development" },
   { label: "Industries", href: "/industries" },
   { label: "Work", href: "/work" },
   { label: "Pricing", href: "/pricing" },
@@ -52,7 +52,7 @@ export const solutions: Solution[] = [
     name: "GoHighLevel Implementation",
     tagline: "Full GHL build out + snapshots + automations",
     summary:
-      "We stand up GoHighLevel end to end, pipelines, snapshots, workflows, calendars, and SMS, so every lead, job, and follow up runs on one system instead of five tabs.",
+      "We stand up GoHighLevel end-to-end: snapshots, workflows, calendars, and two-way SMS so every lead, job, and follow-up runs on one system instead of five tabs.",
     outcomes: [
       "One source of truth for leads, calls, SMS, bookings, and deals",
       "Industry tuned snapshots live in days, not months",
@@ -153,7 +153,7 @@ export const solutions: Solution[] = [
     name: "Missed Call text back",
     tagline: "Under a minute to every missed caller",
     summary:
-      "Every call you can't pick up triggers an instant SMS, so the lead is engaged before they dial your competitor.",
+      "Every call you cannot pick up triggers an instant SMS so the lead is engaged before they dial a competitor. Recover lost revenue 24/7.",
     outcomes: [
       "Recover 30 to 50% of otherwise lost callers",
       "Start the conversation before the next business opens",
@@ -222,7 +222,7 @@ export const solutions: Solution[] = [
     name: "n8n Workflow Automation",
     tagline: "Custom automations that replace your manual ops",
     summary:
-      "Bespoke n8n workflows that wire your CRM, ads, forms, calendars, and AI into automated pipelines, self hosted or cloud, with 90%+ cost savings vs Zapier at scale.",
+      "Custom n8n workflows connecting your CRM, ads, forms, calendars, and AI into automated pipelines. Self-hosted or cloud with 90%+ savings vs Zapier.",
     outcomes: [
       "Kill the $600/mo Zapier bill and run 10x more workflows",
       "Automate the 3 to 8 hours per week every team loses to copy/paste",
@@ -269,7 +269,7 @@ export const solutions: Solution[] = [
     name: "Analytics & Reporting Dashboards",
     tagline: "Live pipeline + ROI dashboards for owners",
     summary:
-      "See bookings, revenue, ad spend, and pipeline health in one dashboard, not seven tabs you forget to check.",
+      "Track bookings, revenue, ad spend, and pipeline conversion in one unified dashboard instead of logging into separate ad, CRM, and call tools.",
     outcomes: [
       "Know your true cost per booked job this week, not next quarter",
       "Spot channel drop offs before they blow up your month",
@@ -851,13 +851,13 @@ export const footerColumns = [
   {
     title: "Industries",
     links: [
-      { label: "Home Services & Contractors", href: "/industries#home-services---contractors" },
-      { label: "Healthcare & Medical", href: "/industries#healthcare---medical" },
-      { label: "Professional & Financial", href: "/industries#professional---financial-services" },
-      { label: "Beauty, Fitness & Wellness", href: "/industries#beauty--fitness---wellness" },
-      { label: "Events & Hospitality", href: "/industries#events---hospitality" },
+      { label: "Home Services & Contractors", href: "/industries#home-services-contractors" },
+      { label: "Healthcare & Medical", href: "/industries#healthcare-medical" },
+      { label: "Professional & Financial", href: "/industries#professional-financial-services" },
+      { label: "Beauty, Fitness & Wellness", href: "/industries#beauty-fitness-wellness" },
+      { label: "Events & Hospitality", href: "/industries#events-hospitality" },
       { label: "Automotive", href: "/industries#automotive" },
-      { label: "Family, Pet & Specialty Care", href: "/industries#family--pet---specialty-care" },
+      { label: "Family, Pet & Specialty Care", href: "/industries#family-pet-specialty-care" },
       { label: "View All Industries", href: "/industries" },
     ],
   },

@@ -9,15 +9,11 @@ import {
   siteConfig,
 } from "@/lib/seo";
 
-export const metadata: Metadata = generatePageMetadata(
-  "/au",
-  {
-    title: "Automation Services in Australia for Service Businesses",
-    description:
-      "DigitalX Solutions deploys AI voice agents, Missed call recovery, and CRM automation for Australian local service businesses, Sydney, Melbourne, Brisbane, Perth.",
-  },
-  { region: "AU-NSW", placename: ["Sydney", "Casula"], position: "-33.9519;150.9054" }
-);
+export const metadata: Metadata = generatePageMetadata("/au", {
+  title: "AI Voice & Automation Australia",
+  description:
+    "AI voice agents, missed-call text back & CRM automation for Australian service businesses across Sydney, Melbourne, Brisbane, Perth & Adelaide.",
+});
 
 const auLocalBusiness = generateLocalBusinessSchema({
   pathname: "/au",

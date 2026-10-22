@@ -26,8 +26,15 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
     return { title: "Solution Not Found" };
   }
 
+  const formattedTitle =
+    solution.name.toLowerCase().endsWith("implementation") ||
+    solution.name.toLowerCase().endsWith("automation") ||
+    solution.name.toLowerCase().endsWith("dashboards")
+      ? solution.name
+      : `${solution.name} Solutions`;
+
   return generatePageMetadata(`/solutions/${solution.slug}`, {
-    title: `${solution.name} Solutions | DigitalX Solutions`,
+    title: formattedTitle,
     description: solution.summary,
   });
 }

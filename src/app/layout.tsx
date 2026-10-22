@@ -13,7 +13,6 @@ import {
   generateWebSiteSchema,
   geoHreflangLanguages,
   seoCopy,
-  seoKeywords,
   siteConfig,
 } from "@/lib/seo";
 
@@ -50,10 +49,9 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     default: seoCopy.home.title,
-    template: `%s | DigitalX Solutions`,
+    template: `%s | DigitalX`,
   },
   description: seoCopy.home.description,
-  keywords: seoKeywords,
   metadataBase: new URL(siteConfig.domain),
   alternates: {
     canonical: "/",
@@ -76,7 +74,7 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "DigitalX Solutions | Web Development & Automation Agency USA & Australia",
+        alt: "DigitalX Solutions | AI Receptionist, Missed-Call Text Back & GoHighLevel Setup",
         type: "image/png",
       },
     ],
@@ -112,11 +110,6 @@ export const metadata: Metadata = {
     telephone: true,
     email: true,
     address: true,
-  },
-  other: {
-    "geo.region": ["US", "AU"],
-    "geo.placename": ["New York", "Sydney"],
-    "mobile-web-app-capable": "yes",
   },
 };
 

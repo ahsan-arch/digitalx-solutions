@@ -18,6 +18,7 @@ export const authors: Record<string, { name: string; role: string; bio: string; 
 
 export type ArticleRecord = {
     title: string;
+    metaTitle?: string;
     description: string;
     date: string;
     dateModified: string;
@@ -32,7 +33,8 @@ export type ArticleRecord = {
 export const articlesData: Record<string, ArticleRecord> = {
     "ai-voice-receptionist-cost": {
         title: "How Much Does an AI Voice Receptionist Cost in 2026",
-        description: "A clear breakdown of what an AI voice receptionist costs for service businesses in the USA and Australia, including setup, monthly plans, and what drives the price.",
+        metaTitle: "AI Voice Receptionist Cost in 2026",
+        description: "A clear breakdown of what an AI voice receptionist costs for service businesses in the USA and Australia, including setup, monthly plans, and pricing factors.",
         date: "2026-06-04",
         dateModified: "2026-06-04",
         authorKey: "digitalx",
@@ -79,6 +81,7 @@ Pricing depends on your call volume and the tools you already use. Book a strate
     },
     "best-ai-receptionist-dental-clinics-usa": {
         title: "Best AI Receptionist for Dental Clinics in the USA",
+        metaTitle: "AI Receptionist for Dental Clinics (USA)",
         description: "How US dental clinics choose an AI receptionist that books patients around the clock, reduces no shows, and fills the schedule without adding front desk staff.",
         date: "2026-06-04",
         dateModified: "2026-06-04",
@@ -125,6 +128,7 @@ If you run a dental clinic in the United States and want every call answered, [b
     },
     "gohighlevel-setup-australia": {
         title: "GoHighLevel Setup Cost and Timeline in Australia",
+        metaTitle: "GoHighLevel Setup Cost in Australia",
         description: "What Australian service businesses pay and how long it takes to set up GoHighLevel for lead capture, automation, and CRM, delivered by a local team.",
         date: "2026-06-04",
         dateModified: "2026-06-04",
@@ -175,6 +179,7 @@ Tell us about your business and we will scope a GoHighLevel build with a clear p
     },
     "missed-call-text-back-guide": {
         title: "Missed Call Text Back for US and Australian Service Businesses",
+        metaTitle: "Missed Call Text Back for Businesses",
         description: "How missed call text back recovers lost leads for service businesses in the USA and Australia by sending an instant SMS to every call you cannot answer.",
         date: "2026-06-04",
         dateModified: "2026-06-04",
@@ -217,6 +222,7 @@ If your business misses calls, this is one of the fastest ways to recover revenu
     },
     "server-side-tracking-meta-ads": {
         title: "Why Meta Server-Side Tracking (CAPI) is Mandatory for Scale",
+        metaTitle: "Meta Server-Side Tracking (CAPI) Guide",
         description: "Learn why relying solely on the Meta Pixel destroys ROI, and how implementing the Conversions API ensures accurate attribution in a post-iOS14 world.",
         date: "2024-03-15",
         dateModified: "2025-12-10",
@@ -283,6 +289,7 @@ If you're spending more than $3,000/month on Meta Ads, the answer is unequivocal
 
     "n8n-vs-zapier": {
         title: "n8n vs Zapier in 2026: Complete Comparison for Business Automation",
+        metaTitle: "n8n vs Zapier 2026 Comparison",
         description: "A detailed comparison of n8n and Zapier for business automation. Pricing, features, scalability, and which tool is right for your workflow needs.",
         date: "2025-11-20",
         dateModified: "2026-02-15",
@@ -354,6 +361,7 @@ For most businesses spending more than $100/month on Zapier, migrating to n8n sa
 
     "ai-voice-receptionists-guide": {
         title: "AI Voice Receptionists for Dental Clinics, Salons & Medical Practices: Complete Guide",
+        metaTitle: "AI Voice Receptionists Guide 2026",
         description: "How AI voice receptionists automate phone answering, appointment booking, and lead qualification for healthcare and service businesses. ROI analysis included.",
         date: "2025-09-05",
         dateModified: "2026-01-20",

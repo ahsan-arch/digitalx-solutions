@@ -5,9 +5,9 @@ import { companyProfile } from "@/data/redesign";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata = generatePageMetadata("/contact", {
-    title: "Contact DigitalX Solutions | Book a Strategy Call",
+    title: "Book a Strategy Call",
     description:
-        "Share your growth objectives with DigitalX Solutions. We respond with a practical plan for web, automation, and performance execution.",
+        "Share your growth objectives with DigitalX Solutions. We respond with a practical plan for AI voice agents, CRM automation, and revenue systems.",
 });
 
 export default function ContactPage() {
@@ -66,6 +66,7 @@ export default function ContactPage() {
                             style={{ border: 0, width: '100%', height: '100%', minHeight: '650px' }} 
                             frameBorder="0"
                             title="Book a Strategy Call"
+                            loading="lazy"
                         ></iframe>
                     </div>
 
