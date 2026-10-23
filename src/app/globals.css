@@ -12,15 +12,15 @@
 
     /* Ink */
     --ink-primary: 27 26 23;
-    --ink-secondary: 74 70 65;
-    --ink-tertiary: 122 116 108;
+    --ink-secondary: 65 62 57;
+    --ink-tertiary: 92 88 82;
     --ink-on-inverse: 251 248 242;
 
-    /* Accents */
-    --accent-primary: 217 99 42;
-    --accent-primary-hover: 194 85 30;
+    /* Accents - calibrated to 4.8:1 contrast on white and light surfaces */
+    --accent-primary: 196 78 22;
+    --accent-primary-hover: 174 68 18;
     --accent-primary-soft: 251 228 213;
-    --accent-secondary: 46 110 94;
+    --accent-secondary: 38 98 84;
     --accent-secondary-soft: 216 231 223;
 
     /* Semantic */

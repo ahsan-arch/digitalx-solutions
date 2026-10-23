@@ -110,17 +110,26 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob: https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
+              "img-src 'self' data: blob: https:",
               "font-src 'self' data:",
-              "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com",
+              "connect-src 'self' data: blob: https: wss:",
               "media-src 'self' blob: data:",
               "frame-src 'self' https://www.googletagmanager.com https://calendar.google.com https://calendar.app.google",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
               "frame-ancestors 'none'",
-              "upgrade-insecure-requests",
             ].join("; "),
+          },
+        ],
+      },
+      {
+        // Cache static files (images, icons, fonts) aggressively for 1 year
+        source: "/:path*.(svg|png|jpg|jpeg|webp|avif|ico|woff|woff2)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
@@ -140,7 +149,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

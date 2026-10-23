@@ -13,8 +13,8 @@ export function Footer() {
             <Link href="/" className="text-2xl font-semibold tracking-tight text-foreground">
               {companyProfile.name}
             </Link>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/70">{companyProfile.tagline}</p>
-            <p className="mt-4 text-sm text-foreground/60">{companyProfile.location}</p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/80">{companyProfile.tagline}</p>
+            <p className="mt-4 text-sm text-foreground/75">{companyProfile.location}</p>
             <a
               href={`mailto:${companyProfile.email}`}
               className="mt-2 inline-block text-sm font-medium text-brand transition-colors hover:text-brand-deep"
@@ -44,13 +44,13 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {footerColumns.map((column) => (
               <div key={column.title}>
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">
+                <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-foreground/80">
                   {column.title}
                 </h3>
                 <ul className="space-y-3">
                   {column.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-sm text-foreground/70 transition-colors hover:text-foreground">
+                      <Link href={link.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">
                         {link.label}
                       </Link>
                     </li>
@@ -61,7 +61,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-sm text-foreground/55 md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-sm text-foreground/75 md:flex-row md:items-center md:justify-between">
           <p>
             (c) {currentYear} {companyProfile.name}. All rights reserved.
           </p>

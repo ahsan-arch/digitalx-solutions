@@ -18,11 +18,11 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex h-20 w-full max-w-[1200px] items-center justify-between px-4 md:px-8">
-        <Link href="/" className="group flex items-center gap-3" aria-label="DigitalX Solutions home">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-100 text-brand">
+        <Link href="/" className="group flex items-center gap-3" aria-label="DigitalX Solutions">
+          <span aria-hidden="true" className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-100 text-brand">
             DX
           </span>
-          <span className="hidden text-lg font-semibold text-foreground/90 sm:block">
+          <span className="text-lg font-semibold text-foreground/90">
             {companyProfile.name}
           </span>
         </Link>

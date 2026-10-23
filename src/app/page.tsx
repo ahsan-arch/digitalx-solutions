@@ -32,13 +32,13 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-50 px-6 py-12 shadow-sm md:px-10 md:py-16">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <p className="mb-4 inline-flex rounded-full border border-border bg-white px-4 py-1.5 text-sm font-medium text-foreground/70">
+                <p className="mb-4 inline-flex rounded-full border border-border bg-white px-4 py-1.5 text-sm font-medium text-foreground/80">
                   DigitalX Solutions
                 </p>
                 <h1 className="font-display text-4xl leading-tight text-foreground md:text-6xl">
                   AI Voice Receptionists, Missed-Call Recovery &amp; GoHighLevel CRM Systems
                 </h1>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/72 md:text-lg">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
                   We deploy 24/7 AI answering agents, instant text-back automations, and custom GoHighLevel CRM architecture for home services, medical, and trade businesses across the USA and Australia.
                 </p>
 
@@ -68,7 +68,7 @@ export default function HomePage() {
               {heroMetrics.map((metric) => (
                 <div key={metric.label} className="rounded-2xl border border-border/80 bg-white/80 p-4">
                   <p className="text-2xl font-semibold text-foreground">{metric.value}</p>
-                  <p className="mt-1 text-sm text-foreground/65">{metric.label}</p>
+                  <p className="mt-1 text-sm text-foreground/75">{metric.label}</p>
                 </div>
               ))}
             </div>
@@ -78,7 +78,7 @@ export default function HomePage() {
         <section className="container-shell mt-16">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Solutions</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">Solutions</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Capability stacks built to work together</h2>
             </div>
             <Link href="/solutions" className="text-sm font-semibold text-brand hover:text-brand-deep">
@@ -93,9 +93,9 @@ export default function HomePage() {
                 href={`/solutions/${solution.slug}`}
                 className="group block h-full rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-md"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">{solution.tagline}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">{solution.tagline}</p>
                 <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/68">{solution.summary}</p>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/80">{solution.summary}</p>
                 <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
                   Learn more
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -106,9 +106,9 @@ export default function HomePage() {
               href="/solutions"
               className="group flex h-full flex-col justify-center rounded-2xl border border-dashed border-brand/50 bg-white p-6 transition hover:border-brand hover:bg-surface-50"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">All capability stacks</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">All capability stacks</p>
               <h3 className="mt-2 font-display text-2xl text-foreground">See all solutions</h3>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/68">
+              <p className="mt-3 text-sm leading-relaxed text-foreground/80">
                 Explore every solution we deploy, from AI voice agents to GoHighLevel builds and custom n8n automations.
               </p>
               <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
@@ -122,7 +122,7 @@ export default function HomePage() {
         <section className="container-shell mt-16">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industries</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">Industries</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Playbooks tuned to your vertical</h2>
             </div>
             <Link href="/industries" className="text-sm font-semibold text-brand hover:text-brand-deep">
@@ -152,9 +152,9 @@ export default function HomePage() {
 
         <section className="container-shell mt-16">
           <div className="mb-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Regions</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">Regions</p>
             <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Serving the USA &amp; Australia</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/70 md:text-base">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/80 md:text-base">
               Time zone aware automation, locale tuned voice agents, and country specific compliance baked into
               every build.
             </p>
@@ -167,7 +167,7 @@ export default function HomePage() {
             >
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">United States</p>
               <h3 className="mt-2 font-display text-2xl text-foreground">Automation for US service businesses</h3>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/68">
+              <p className="mt-3 text-sm leading-relaxed text-foreground/80">
                 English &amp; Spanish AI voice, server side tracking with CAPI, and GoHighLevel snapshots for
                 home services, med spas, and law firms across all 50 states.
               </p>
@@ -182,7 +182,7 @@ export default function HomePage() {
             >
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Australia</p>
               <h3 className="mt-2 font-display text-2xl text-foreground">Automation for Australian operators</h3>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/68">
+              <p className="mt-3 text-sm leading-relaxed text-foreground/80">
                 Sydney, Melbourne, Brisbane, Perth and regional. Privacy Act aligned data handling, AEDT/AWST
                 aware booking, and Australian payment integrations.
               </p>
@@ -197,7 +197,7 @@ export default function HomePage() {
         <section id="development" className="container-shell mt-16 scroll-mt-24">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Development</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">Development</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">Featured Projects</h2>
             </div>
             <Link href="/development" className="text-sm font-semibold text-brand hover:text-brand-deep">
@@ -214,7 +214,7 @@ export default function HomePage() {
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">{project.name}</p>
                 <h3 className="mt-2 font-display text-2xl text-foreground">{project.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/68">{project.overview}</p>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/80">{project.overview}</p>
                 <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
                   View full details
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -232,7 +232,7 @@ export default function HomePage() {
                 <div key={step.title} className="rounded-2xl border border-border bg-surface-50 p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">0{index + 1}</p>
                   <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground/68">{step.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/80">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -254,14 +254,14 @@ export default function HomePage() {
                 href={`/work/${result.slug}`}
                 className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">{result.industry}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">{result.industry}</p>
                 <h3 className="mt-2 font-display text-2xl text-foreground">{result.client}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/68">{result.impact}</p>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/80">{result.impact}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {result.metrics.slice(0, 2).map((metric) => (
                     <span
                       key={metric.label}
-                      className="rounded-full border border-border bg-white px-3 py-1 text-xs font-semibold text-foreground/70"
+                      className="rounded-full border border-border bg-white px-3 py-1 text-xs font-semibold text-foreground/80"
                     >
                       {metric.label}: {metric.value}
                     </span>
@@ -279,7 +279,7 @@ export default function HomePage() {
         {testimonials.length > 0 && (
           <section className="container-shell mt-16">
             <div className="mb-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">In their words</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75">In their words</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 What clients say about working with us
               </h2>
@@ -297,7 +297,7 @@ export default function HomePage() {
                   </blockquote>
                   <figcaption className="mt-auto border-t border-border pt-4">
                     <div className="font-semibold text-foreground">{t.author}</div>
-                    <div className="text-sm text-foreground/65">{t.role}</div>
+                    <div className="text-sm text-foreground/75">{t.role}</div>
                   </figcaption>
                 </figure>
               ))}
