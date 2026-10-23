@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateArticleSchema, generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { articlesData, authors } from "@/data/insights-articles";
 
 export function generateStaticParams() {
@@ -122,6 +122,36 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                                 .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded-md bg-surface-sunken text-accent font-mono text-sm">$1</code>')
                         }}
                     />
+
+                    {/* Free AI Automation Audit CTA Box */}
+                    <div className="my-14 overflow-hidden rounded-2xl border border-brand/40 bg-surface-50 p-8 shadow-sm md:p-10">
+                        <div className="max-w-2xl">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
+                                Free Telephony &amp; Lead Recovery Audit
+                            </span>
+                            <h3 className="mt-3 font-display text-2xl font-semibold text-foreground md:text-3xl">
+                                Discover how many leads you&apos;re currently losing from missed calls
+                            </h3>
+                            <p className="mt-3 text-base leading-relaxed text-foreground/80">
+                                Over 80% of after-hours callers hang up when they reach voicemail. Book a free 20-minute AI automation audit and we will inspect your intake workflow, calculate your uncaptured call revenue, and demonstrate how our AI receptionist answers and books clients 24/7.
+                            </p>
+                            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                                <Link
+                                    href="/contact"
+                                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-deep"
+                                >
+                                    Book a free AI automation audit
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                                <Link
+                                    href="/try-voice-agent"
+                                    className="inline-flex items-center justify-center rounded-full border border-border bg-white px-5 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-200"
+                                >
+                                    Test live voice agent
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
 
                     {article.relatedServices.length > 0 && (
                         <div className="mt-16 pt-8 border-t border-line-subtle">

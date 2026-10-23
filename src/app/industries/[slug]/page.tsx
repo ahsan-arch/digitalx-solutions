@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
       : fallbackDesc);
 
   return generatePageMetadata(`/industries/${industry.slug}`, {
-    title: `${industry.name} AI Playbook`,
+    title: industry.metaTitle || `${industry.name} AI Playbook`,
     description,
   });
 }
@@ -118,7 +118,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <span className="text-xs font-medium text-foreground/60">Production Playbook</span>
         </div>
         <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-          {industry.name} Automation Playbook
+          {industry.metaTitle || `${industry.name} Automation Playbook`}
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/75 md:text-lg">
           {industry.headline} {industry.summary}

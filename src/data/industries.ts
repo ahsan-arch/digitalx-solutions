@@ -47,6 +47,7 @@ export type IndustryFaq = {
 export type Industry = {
   slug: string;
   name: string;
+  metaTitle?: string;
   category: IndustryCategory;
   headline: string;
   summary: string;
@@ -66,6 +67,7 @@ export const industries: Industry[] = [
   {
     "slug": "hvac-companies",
     "name": "HVAC Companies",
+    "metaTitle": "AI Receptionist for HVAC",
     "category": "Home Services & Contractors",
     "headline": "Capture every AC blowout and furnace failure instantly.",
     "summary": "During peak seasons, speed to lead is everything. We add front end qualification and nurture so your trucks get to the highest value jobs first.",
@@ -261,6 +263,7 @@ export const industries: Industry[] = [
   {
     "slug": "plumbing-companies",
     "name": "Plumbing Companies",
+    "metaTitle": "AI Receptionist for Plumbers",
     "category": "Home Services & Contractors",
     "headline": "Stop losing jobs to the first plumber who picks up.",
     "summary": "Deploy AI voice agents, Missed call text back, and booking automation so every quote request turns into a scheduled visit.",
@@ -360,6 +363,7 @@ export const industries: Industry[] = [
   {
     "slug": "electricians",
     "name": "Electricians",
+    "metaTitle": "AI Receptionist for Electricians",
     "category": "Home Services & Contractors",
     "headline": "Keep your schedule full and never miss an emergency call.",
     "summary": "Automate intake, scheduling, and reminders so your technicians are always moving to the next profitable job.",
@@ -1418,6 +1422,7 @@ export const industries: Industry[] = [
   {
     "slug": "dental-clinics",
     "name": "Dental Clinics",
+    "metaTitle": "GoHighLevel for Dentists",
     "category": "Healthcare & Medical",
     "headline": "Automate patient recall and reduce no shows.",
     "summary": "Ensure every hygiene appointment is filled and every high ticket consultation is nurtured through automated sequences.",
@@ -1512,6 +1517,7 @@ export const industries: Industry[] = [
   {
     "slug": "med-spas",
     "name": "Med Spas",
+    "metaTitle": "Automation for Med Spas",
     "category": "Healthcare & Medical",
     "headline": "Book more treatments without discounting your way there.",
     "summary": "Automate consultation booking, treatment reminders, and membership upsells so your injectors focus on results, not admin.",

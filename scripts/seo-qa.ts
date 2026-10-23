@@ -78,11 +78,12 @@ checkMetadata("/legal/cookies", "Cookie Policy", "What cookies digitalx-solution
 // ── 2. Solutions (8 routes) ──
 for (const s of solutions) {
   const formattedTitle =
-    s.name.toLowerCase().endsWith("implementation") ||
+    s.metaTitle ||
+    (s.name.toLowerCase().endsWith("implementation") ||
     s.name.toLowerCase().endsWith("automation") ||
     s.name.toLowerCase().endsWith("dashboards")
       ? s.name
-      : `${s.name} Solutions`;
+      : `${s.name} Solutions`);
   checkMetadata(`/solutions/${s.slug}`, formattedTitle, s.summary);
 }
 
@@ -94,7 +95,8 @@ for (const ind of industries) {
     (fallbackDesc.length < 150
       ? `Automate ${ind.name.toLowerCase()} operations with 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows across both the US and Australia.`
       : fallbackDesc);
-  checkMetadata(`/industries/${ind.slug}`, `${ind.name} Automation Playbook`, description);
+  const title = ind.metaTitle || `${ind.name} Automation Playbook`;
+  checkMetadata(`/industries/${ind.slug}`, title, description);
 }
 
 // ── 4. Development Projects (8 routes) ──

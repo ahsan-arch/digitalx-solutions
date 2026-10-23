@@ -64,6 +64,7 @@ export type SolutionPricingTier = {
 export type Solution = {
   slug: SolutionSlug;
   name: string;
+  metaTitle?: string;
   tagline: string;
   summary: string;
   outcomes: string[];
@@ -82,6 +83,7 @@ export const solutions: Solution[] = [
   {
     slug: "gohighlevel-implementation",
     name: "GoHighLevel Implementation",
+    metaTitle: "GoHighLevel Expert & Setup Service",
     tagline: "Full GHL build out + snapshots + automations",
     summary:
       "We stand up GoHighLevel end-to-end: snapshots, workflows, calendars, and two-way SMS so every lead, job, and follow-up runs on one system instead of five tabs.",
@@ -232,6 +234,7 @@ export const solutions: Solution[] = [
   {
     slug: "ai-voice-agents",
     name: "AI Voice Agents",
+    metaTitle: "AI Receptionist Service & Voice Agents",
     tagline: "24/7 answering + qualification + booking",
     summary:
       "Human sounding AI receptionists answer every call, qualify the caller, and book the job, day, night, weekends, and holidays.",
@@ -813,6 +816,7 @@ export const solutions: Solution[] = [
   {
     slug: "n8n-workflow-automation",
     name: "n8n Workflow Automation",
+    metaTitle: "n8n Automation Agency & Workflows",
     tagline: "Custom automations that replace your manual ops",
     summary:
       "Custom n8n workflows connecting your CRM, ads, forms, calendars, and AI into automated pipelines. Self-hosted or cloud with 90%+ savings vs Zapier.",
@@ -958,6 +962,7 @@ export const solutions: Solution[] = [
   {
     slug: "crm-integration",
     name: "CRM Integration",
+    metaTitle: "CRM Automation Agency & Setup",
     tagline: "GoHighLevel, n8n, and your existing stack, wired together",
     summary:
       "We connect your phone, chat, forms, ads, and calendar into one CRM so every lead is tracked, scored, and routed automatically.",

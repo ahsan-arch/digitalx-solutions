@@ -28,11 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
   }
 
   const formattedTitle =
-    solution.name.toLowerCase().endsWith("implementation") ||
+    solution.metaTitle ||
+    (solution.name.toLowerCase().endsWith("implementation") ||
     solution.name.toLowerCase().endsWith("automation") ||
     solution.name.toLowerCase().endsWith("dashboards")
       ? solution.name
-      : `${solution.name} Solutions`;
+      : `${solution.name} Solutions`);
 
   return generatePageMetadata(`/solutions/${solution.slug}`, {
     title: formattedTitle,
