@@ -128,7 +128,11 @@ export default function MetaAdsPage() {
             </p>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/meta-ads.svg" priority />
+            <SectionIllustration
+              src="/illustrations/meta-ads.svg"
+              alt="Meta Ads Conversion API CAPI server-side tracking and attribution architecture"
+              priority
+            />
           </div>
         </div>
       </section>

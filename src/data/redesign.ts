@@ -234,21 +234,22 @@ export const solutions: Solution[] = [
   {
     slug: "ai-voice-agents",
     name: "AI Voice Agents",
-    metaTitle: "AI Receptionist Service & Voice Agents",
+    metaTitle: "AI Voice Agents & AI Automation Service",
     tagline: "24/7 answering + qualification + booking",
     summary:
-      "Human sounding AI receptionists answer every call, qualify the caller, and book the job, day, night, weekends, and holidays.",
+      "Human-sounding AI voice receptionists and real-time automation answer calls, qualify prospects, and book appointments 24/7 across the US & Australia.",
     outcomes: [
       "Zero missed calls and after hours revenue leaks",
       "Consistent qualification every time, not when staff are free",
       "Bookings dropped directly into your calendar and CRM",
     ],
     capabilities: [
-      "Industry tuned voice prompts (plumbers, med spas, gyms, etc.)",
-      "Live call forwarding with intent detection",
-      "Multi language support (English, Spanish, Arabic)",
-      "Calendar + CRM integration (GHL, Google Calendar, HubSpot)",
-      "Call transcripts + sentiment reports",
+      "Real-time voice automation with sub-500ms response latency",
+      "Industry tuned voice prompts (plumbers, clinics, contractors)",
+      "Live call forwarding with intelligent intent detection",
+      "Multi-language support (English, Spanish, Arabic)",
+      "Calendar + CRM integration (GoHighLevel, Google Calendar, HubSpot)",
+      "Instant call transcripts, audio recordings, and sentiment reports",
     ],
     bestFor:
       "Owner operators who answer phones themselves, lose calls during jobs, or burn hours on unqualified tire kickers.",
@@ -384,20 +385,21 @@ export const solutions: Solution[] = [
   {
     slug: "missed-call-text-back",
     name: "Missed Call text back",
+    metaTitle: "Missed-Call Text-Back & Recovery",
     tagline: "Under a minute to every missed caller",
     summary:
-      "Every call you cannot pick up triggers an instant SMS so the lead is engaged before they dial a competitor. Recover lost revenue 24/7.",
+      "Instant missed-call text-back and automated lead recovery for service businesses. Engage callers under 30 seconds before they dial a competitor in the US & AU.",
     outcomes: [
       "Recover 30 to 50% of otherwise lost callers",
       "Start the conversation before the next business opens",
       "Zero ops overhead, runs silently in the background",
     ],
     capabilities: [
-      "Instant SMS trigger on every missed call",
-      "Two way SMS with AI-assisted replies",
-      "Escalation rules (handoff to team, booking link, voicemail)",
-      "Business hours logic + holiday handling",
-      "Reporting on recovery rate + revenue attribution",
+      "Instant real-time SMS trigger on every missed or unanswered call",
+      "Two-way SMS with conversational AI recovery assistance",
+      "Escalation rules (team handoff, booking links, emergency triage)",
+      "Time-zone aware business hours logic & holiday routing",
+      "Live reporting on lead recovery rate & attributed job revenue",
     ],
     bestFor:
       "Any business where a missed call equals a lost customer, home services, clinics, salons, law firms.",
@@ -819,7 +821,7 @@ export const solutions: Solution[] = [
     metaTitle: "n8n Automation Agency & Workflows",
     tagline: "Custom automations that replace your manual ops",
     summary:
-      "Custom n8n workflows connecting your CRM, ads, forms, calendars, and AI into automated pipelines. Self-hosted or cloud with 90%+ savings vs Zapier.",
+      "Custom n8n workflows connecting your CRM, ads, forms, calendars, and AI into automated pipelines. Deploy self-hosted or cloud with 90%+ savings vs Zapier.",
     outcomes: [
       "Kill the $600/mo Zapier bill and run 10x more workflows",
       "Automate the 3 to 8 hours per week every team loses to copy/paste",

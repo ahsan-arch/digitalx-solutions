@@ -53,7 +53,11 @@ export default function ContactPage() {
                         </p>
                     </div>
                     <div className="relative">
-                        <SectionIllustration src="/illustrations/contact.svg" priority />
+                        <SectionIllustration
+                            src="/illustrations/contact.svg"
+                            alt="Schedule a strategy consultation for AI voice receptionists and workflow automations"
+                            priority
+                        />
                     </div>
                 </div>
             </section>

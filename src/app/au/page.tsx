@@ -89,7 +89,11 @@ export default function AuPage() {
             </p>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/au.svg" priority />
+            <SectionIllustration
+              src="/illustrations/au.svg"
+              alt="DigitalX Solutions Australian operations map for AI voice agents and CRM integrations"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -106,6 +110,52 @@ export default function AuPage() {
           </ul>
         </div>
         <ServiceAreaMap />
+      </section>
+
+      <section className="container-shell mt-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Australian Capabilities</p>
+            <h2 className="mt-2 font-display text-display-sm text-ink-primary">Core AI &amp; Revenue Automations for Australian Businesses</h2>
+          </div>
+          <Link href="/try-voice-agent" className="text-sm font-semibold text-accent hover:underline">
+            Test Live Voice Demo &rarr;
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <Link href="/solutions/ai-voice-agents" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">AI Voice Agents Australia</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              24/7 AI receptionists tuned with Australian English accents, AEST/AWST time zones, and live calendar booking.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore AI Voice &rarr;</span>
+          </Link>
+
+          <Link href="/solutions/missed-call-text-back" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">Tradie Missed-Call Text-Back</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Instant SMS text-back in under 30 seconds compliant with Spam Act 2003, recovering 30% to 50% of after-hours tradie leads.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore Recovery &rarr;</span>
+          </Link>
+
+          <Link href="/solutions/n8n-workflow-automation" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">Custom n8n Workflows</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Connect ServiceM8, simPRO, Xero, and CRMs with automated webhook workflows that eliminate manual data entry.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore n8n Workflows &rarr;</span>
+          </Link>
+
+          <Link href="/solutions/gohighlevel-implementation" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">GoHighLevel Australia Setup</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Australian GoHighLevel agency builds, industry snapshots, localized SMS twilio/carrier routing, and pipeline hygiene.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore GHL Setup &rarr;</span>
+          </Link>
+        </div>
       </section>
 
       <section className="container-shell mt-16">

@@ -49,7 +49,11 @@ export default function SolutionsHubPage() {
             </p>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/solutions.svg" priority />
+            <SectionIllustration
+              src="/illustrations/solutions.svg"
+              alt="DigitalX Solutions integrated AI voice agents, CRM integrations, and n8n workflow automations"
+              priority
+            />
           </div>
         </div>
       </section>

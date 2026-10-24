@@ -61,7 +61,11 @@ export default function IndustriesHubPage() {
             </nav>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/industries.svg" priority />
+            <SectionIllustration
+              src="/illustrations/industries.svg"
+              alt="Industry-specific AI voice automation playbooks for US and Australian local service businesses"
+              priority
+            />
           </div>
         </div>
       </section>

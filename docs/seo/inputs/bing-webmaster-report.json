@@ -2001,6 +2001,24 @@
         "DnsFailures": 0,
         "InIndex": 99,
         "InLinks": 1
+      },
+      {
+        "__type": "CrawlStats:#Microsoft.Bing.Webmaster.Api",
+        "AllOtherCodes": 40,
+        "BlockedByRobotsTxt": 0,
+        "Code2xx": 81,
+        "Code301": 0,
+        "Code302": 0,
+        "Code4xx": 2,
+        "Code5xx": 0,
+        "ConnectionTimeout": 0,
+        "ContainsMalware": 0,
+        "CrawledPages": 80,
+        "CrawlErrors": 4,
+        "Date": "/Date(1792540800000)/",
+        "DnsFailures": 0,
+        "InIndex": 99,
+        "InLinks": 1
       }
     ]
   },
@@ -2027,6 +2045,15 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
+        "AvgImpressionPosition": 7,
+        "Clicks": 0,
+        "Date": "/Date(1783641600000)/",
+        "Impressions": 1,
+        "Query": "what is the average cost for an ai receptionist for voice bot"
+      },
+      {
+        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+        "AvgClickPosition": -1,
         "AvgImpressionPosition": 10,
         "Clicks": 0,
         "Date": "/Date(1783641600000)/",
@@ -2041,15 +2068,6 @@
         "Date": "/Date(1783641600000)/",
         "Impressions": 1,
         "Query": "digital solutions missed call"
-      },
-      {
-        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-        "AvgClickPosition": -1,
-        "AvgImpressionPosition": 7,
-        "Clicks": 0,
-        "Date": "/Date(1783641600000)/",
-        "Impressions": 1,
-        "Query": "what is the average cost for an ai receptionist for voice bot"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2081,15 +2099,6 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 10,
-        "Clicks": 0,
-        "Date": "/Date(1784246400000)/",
-        "Impressions": 1,
-        "Query": "digitalx"
-      },
-      {
-        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-        "AvgClickPosition": -1,
         "AvgImpressionPosition": 2,
         "Clicks": 0,
         "Date": "/Date(1784246400000)/",
@@ -2099,11 +2108,11 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 7,
+        "AvgImpressionPosition": 10,
         "Clicks": 0,
-        "Date": "/Date(1784851200000)/",
-        "Impressions": 3,
-        "Query": "ai voice receptionist for dentists clinics revenue model"
+        "Date": "/Date(1784246400000)/",
+        "Impressions": 1,
+        "Query": "digitalx"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2117,11 +2126,11 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 69,
+        "AvgImpressionPosition": 7,
         "Clicks": 0,
         "Date": "/Date(1784851200000)/",
-        "Impressions": 1,
-        "Query": "missed call txt back for tradies"
+        "Impressions": 3,
+        "Query": "ai voice receptionist for dentists clinics revenue model"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2135,11 +2144,11 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 6,
+        "AvgImpressionPosition": 69,
         "Clicks": 0,
         "Date": "/Date(1784851200000)/",
         "Impressions": 1,
-        "Query": "supported x private mortgage bankers.#N##N##N##N#developed quality frameworks used across x markets.#N##N##N##N#trained x new hires.#N##N##N##N#evaluated x customer interactions.#N##N##N##N#partnered with leaders across x departments."
+        "Query": "missed call txt back for tradies"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2149,6 +2158,15 @@
         "Date": "/Date(1784851200000)/",
         "Impressions": 1,
         "Query": "digitalx-co-uk-nwo-middleware"
+      },
+      {
+        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+        "AvgClickPosition": -1,
+        "AvgImpressionPosition": 6,
+        "Clicks": 0,
+        "Date": "/Date(1784851200000)/",
+        "Impressions": 1,
+        "Query": "supported x private mortgage bankers.#N##N##N##N#developed quality frameworks used across x markets.#N##N##N##N#trained x new hires.#N##N##N##N#evaluated x customer interactions.#N##N##N##N#partnered with leaders across x departments."
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2202,7 +2220,7 @@
         "Clicks": 0,
         "Date": "/Date(1785456000000)/",
         "Impressions": 3,
-        "Query": "vertical saas playbook for med spas in nigeria"
+        "Query": "dentist ai receptionist niche usa"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2211,7 +2229,7 @@
         "Clicks": 0,
         "Date": "/Date(1785456000000)/",
         "Impressions": 3,
-        "Query": "dentist ai receptionist niche usa"
+        "Query": "vertical saas playbook for med spas in nigeria"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2288,15 +2306,6 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 10,
-        "Clicks": 0,
-        "Date": "/Date(1787270400000)/",
-        "Impressions": 1,
-        "Query": "digitalx business partners"
-      },
-      {
-        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-        "AvgClickPosition": -1,
         "AvgImpressionPosition": 5,
         "Clicks": 0,
         "Date": "/Date(1787270400000)/",
@@ -2311,6 +2320,15 @@
         "Date": "/Date(1787270400000)/",
         "Impressions": 1,
         "Query": "alexa@bookeasysolutions.com"
+      },
+      {
+        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+        "AvgClickPosition": -1,
+        "AvgImpressionPosition": 10,
+        "Clicks": 0,
+        "Date": "/Date(1787270400000)/",
+        "Impressions": 1,
+        "Query": "digitalx business partners"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2351,15 +2369,6 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 1,
-        "Clicks": 0,
-        "Date": "/Date(1789084800000)/",
-        "Impressions": 1,
-        "Query": "mplementation plan: medisync - ai patient case-taking software (sih26047)"
-      },
-      {
-        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-        "AvgClickPosition": -1,
         "AvgImpressionPosition": 5,
         "Clicks": 0,
         "Date": "/Date(1789084800000)/",
@@ -2378,11 +2387,11 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 7,
+        "AvgImpressionPosition": 1,
         "Clicks": 0,
-        "Date": "/Date(1789689600000)/",
+        "Date": "/Date(1789084800000)/",
         "Impressions": 1,
-        "Query": "how to produce a veterinary caseflow digital playbook"
+        "Query": "mplementation plan: medisync - ai patient case-taking software (sih26047)"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2396,15 +2405,6 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 5,
-        "Clicks": 0,
-        "Date": "/Date(1789689600000)/",
-        "Impressions": 1,
-        "Query": "fleetroute technologies react.js node.js lead"
-      },
-      {
-        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
-        "AvgClickPosition": -1,
         "AvgImpressionPosition": 2,
         "Clicks": 0,
         "Date": "/Date(1789689600000)/",
@@ -2414,20 +2414,20 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 1,
+        "AvgImpressionPosition": 7,
         "Clicks": 0,
-        "Date": "/Date(1790294400000)/",
+        "Date": "/Date(1789689600000)/",
         "Impressions": 1,
-        "Query": "australia ai agency perth adelaide canberra referral partner automation"
+        "Query": "how to produce a veterinary caseflow digital playbook"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 4,
+        "AvgImpressionPosition": 5,
         "Clicks": 0,
-        "Date": "/Date(1790294400000)/",
+        "Date": "/Date(1789689600000)/",
         "Impressions": 1,
-        "Query": "best ai receptionist for dental clinics usa"
+        "Query": "fleetroute technologies react.js node.js lead"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2445,7 +2445,7 @@
         "Clicks": 0,
         "Date": "/Date(1790294400000)/",
         "Impressions": 1,
-        "Query": "gohighlevel lead follow up automation pricing australia"
+        "Query": "australia ai agency perth adelaide canberra referral partner automation"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2468,20 +2468,20 @@
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 8,
+        "AvgImpressionPosition": 1,
         "Clicks": 0,
-        "Date": "/Date(1792108800000)/",
+        "Date": "/Date(1790294400000)/",
         "Impressions": 1,
-        "Query": "staffing agency team connection playbook"
+        "Query": "gohighlevel lead follow up automation pricing australia"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
         "AvgClickPosition": -1,
-        "AvgImpressionPosition": 8,
+        "AvgImpressionPosition": 4,
         "Clicks": 0,
-        "Date": "/Date(1792108800000)/",
+        "Date": "/Date(1790294400000)/",
         "Impressions": 1,
-        "Query": "digital x contact"
+        "Query": "best ai receptionist for dental clinics usa"
       },
       {
         "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
@@ -2500,6 +2500,24 @@
         "Date": "/Date(1792108800000)/",
         "Impressions": 1,
         "Query": "digital solutions miss call"
+      },
+      {
+        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+        "AvgClickPosition": -1,
+        "AvgImpressionPosition": 8,
+        "Clicks": 0,
+        "Date": "/Date(1792108800000)/",
+        "Impressions": 1,
+        "Query": "staffing agency team connection playbook"
+      },
+      {
+        "__type": "QueryStats:#Microsoft.Bing.Webmaster.Api",
+        "AvgClickPosition": -1,
+        "AvgImpressionPosition": 8,
+        "Clicks": 0,
+        "Date": "/Date(1792108800000)/",
+        "Impressions": 1,
+        "Query": "digital x contact"
       }
     ]
   },
@@ -3190,24 +3208,24 @@
       {
         "__type": "Feed:#Microsoft.Bing.Webmaster.Api",
         "Compressed": false,
-        "FileSize": 21070,
-        "LastCrawled": "/Date(1792669048000)/",
-        "Status": "Success",
-        "Submitted": "/Date(1792669047944)/",
+        "FileSize": 0,
+        "LastCrawled": "/Date(1792672343000)/",
+        "Status": "The feed was empty.",
+        "Submitted": "/Date(1792722512939)/",
         "Type": "Sitemap",
-        "Url": "https://digitalx-solutions.com/sitemap.xml",
-        "UrlCount": 101
+        "Url": "https://digitalx-solutions.com/",
+        "UrlCount": 0
       },
       {
         "__type": "Feed:#Microsoft.Bing.Webmaster.Api",
         "Compressed": false,
         "FileSize": 0,
-        "LastCrawled": "/Date(1782780605000)/",
-        "Status": "The feed was empty.",
-        "Submitted": "/Date(1782780605122)/",
+        "LastCrawled": "/Date(1792669095000)/",
+        "Status": "Success",
+        "Submitted": "/Date(1792669047944)/",
         "Type": "Sitemap",
-        "Url": "https://digitalx-solutions.com/",
-        "UrlCount": 0
+        "Url": "https://digitalx-solutions.com/sitemap.xml",
+        "UrlCount": 101
       },
       {
         "__type": "Feed:#Microsoft.Bing.Webmaster.Api",
@@ -3226,7 +3244,7 @@
     "d": {
       "__type": "UrlSubmissionQuota:#Microsoft.Bing.Webmaster.Api",
       "DailyQuota": 100,
-      "MonthlyQuota": 1000
+      "MonthlyQuota": 900
     }
   }
 }

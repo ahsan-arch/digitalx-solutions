@@ -53,7 +53,11 @@ export default function WorkPage() {
                         </p>
                     </div>
                     <div className="relative">
-                        <SectionIllustration src="/illustrations/work.svg" priority />
+                        <SectionIllustration
+                            src="/illustrations/work.svg"
+                            alt="Enterprise client case studies, verified ROI metrics, and automation results"
+                            priority
+                        />
                     </div>
                 </div>
             </section>

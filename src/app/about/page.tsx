@@ -114,7 +114,11 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="relative">
-                            <SectionIllustration src="/illustrations/about.svg" priority />
+                            <SectionIllustration
+                                src="/illustrations/about.svg"
+                                alt="DigitalX Solutions engineering team and enterprise automation architecture"
+                                priority
+                            />
                         </div>
                     </div>
                 </section>

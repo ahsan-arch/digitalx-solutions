@@ -166,13 +166,12 @@ export default function HomePage() {
               className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-sm"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">United States</p>
-              <h3 className="mt-2 font-display text-2xl text-foreground">Automation for US service businesses</h3>
+              <h3 className="mt-2 font-display text-2xl text-foreground">AI Automation Agency USA &amp; Voice Systems</h3>
               <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                English &amp; Spanish AI voice, server side tracking with CAPI, and GoHighLevel snapshots for
-                home services, med spas, and law firms across all 50 states.
+                24/7 AI voice receptionists, 10DLC missed-call recovery, server-side CAPI tracking, and custom GoHighLevel CRM workflows across all 50 states.
               </p>
               <span className="mt-5 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
-                See US capabilities
+                Explore US AI Automation Capabilities
                 <ArrowRight className="ml-1 h-4 w-4" />
               </span>
             </Link>
@@ -181,13 +180,12 @@ export default function HomePage() {
               className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-sm"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Australia</p>
-              <h3 className="mt-2 font-display text-2xl text-foreground">Automation for Australian operators</h3>
+              <h3 className="mt-2 font-display text-2xl text-foreground">AI Voice Agents &amp; Tradie Automation Australia</h3>
               <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                Sydney, Melbourne, Brisbane, Perth and regional. Privacy Act aligned data handling, AEDT/AWST
-                aware booking, and Australian payment integrations.
+                Sydney, Melbourne, Brisbane, Perth and regional. ServiceM8 &amp; simPRO workflows, Spam Act compliant text-back, and localized AI phone answering.
               </p>
               <span className="mt-5 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
-                See AU capabilities
+                Explore Australian AI Voice &amp; CRM Systems
                 <ArrowRight className="ml-1 h-4 w-4" />
               </span>
             </Link>

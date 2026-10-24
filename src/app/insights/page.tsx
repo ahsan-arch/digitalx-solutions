@@ -80,7 +80,11 @@ export default function InsightsPage() {
                         </p>
                     </div>
                     <div className="relative">
-                        <SectionIllustration src="/illustrations/insights.svg" priority />
+                        <SectionIllustration
+                            src="/illustrations/insights.svg"
+                            alt="Technical insights and ROI benchmarks for AI voice receptionists and automations"
+                            priority
+                        />
                     </div>
                 </div>
             </section>

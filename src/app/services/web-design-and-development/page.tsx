@@ -126,7 +126,11 @@ export default function WebDesignDevelopmentPage() {
             </p>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/web-dev.svg" priority />
+            <SectionIllustration
+              src="/illustrations/web-dev.svg"
+              alt="Modern high-performance Next.js web application architecture and design"
+              priority
+            />
           </div>
         </div>
       </section>

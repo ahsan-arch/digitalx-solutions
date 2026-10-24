@@ -138,7 +138,11 @@ export default function PricingPage() {
             </p>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/pricing.svg" priority />
+            <SectionIllustration
+              src="/illustrations/pricing.svg"
+              alt="Transparent pricing breakdown for AI voice receptionists, GoHighLevel setup, and n8n automations"
+              priority
+            />
           </div>
         </div>
       </section>

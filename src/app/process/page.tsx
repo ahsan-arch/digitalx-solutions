@@ -64,7 +64,11 @@ export default function ProcessPage() {
             </p>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/process.svg" priority />
+            <SectionIllustration
+              src="/illustrations/process.svg"
+              alt="DigitalX 4-phase agile methodology for designing and deploying enterprise automations"
+              priority
+            />
           </div>
         </div>
       </section>

@@ -87,7 +87,11 @@ export default function UsaPage() {
             </p>
           </div>
           <div className="relative">
-            <SectionIllustration src="/illustrations/usa.svg" priority />
+            <SectionIllustration
+              src="/illustrations/usa.svg"
+              alt="DigitalX Solutions United States service area map for AI automation and CAPI tracking"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -104,6 +108,52 @@ export default function UsaPage() {
           </ul>
         </div>
         <ServiceAreaMap />
+      </section>
+
+      <section className="container-shell mt-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">US Capabilities</p>
+            <h2 className="mt-2 font-display text-display-sm text-ink-primary">Core AI &amp; Revenue Automations for US Businesses</h2>
+          </div>
+          <Link href="/try-voice-agent" className="text-sm font-semibold text-accent hover:underline">
+            Test Live Voice Demo &rarr;
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <Link href="/solutions/ai-voice-agents" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">AI Voice Receptionists</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              24/7 real-time voice automation answering calls in under 500ms, qualifying leads, and syncing bookings to US calendars.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore AI Voice &rarr;</span>
+          </Link>
+
+          <Link href="/solutions/missed-call-text-back" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">Missed-Call Recovery</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              10DLC registered SMS text-back in under 30 seconds that recovers 30% to 50% of lost callers before they dial competitors.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore Recovery &rarr;</span>
+          </Link>
+
+          <Link href="/solutions/n8n-workflow-automation" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">n8n Workflows</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Enterprise workflow automations connecting CRMs, payment gateways, and ad channels with 90%+ savings vs Zapier.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore n8n Workflows &rarr;</span>
+          </Link>
+
+          <Link href="/solutions/gohighlevel-implementation" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
+            <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">GoHighLevel Setup</h3>
+            <p className="mt-2 text-body-sm text-ink-secondary">
+              Custom industry snapshots, compliant A2P 10DLC registration, and multi-stage pipelines tailored for US service operators.
+            </p>
+            <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore GHL Setup &rarr;</span>
+          </Link>
+        </div>
       </section>
 
       <section className="container-shell mt-16">
