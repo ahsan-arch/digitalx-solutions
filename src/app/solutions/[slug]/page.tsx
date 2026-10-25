@@ -16,7 +16,14 @@ import {
 type PageParams = { slug: string };
 
 export function generateStaticParams() {
-  return solutions.map((solution) => ({ slug: solution.slug }));
+  const primarySlugs = solutions.map((solution) => ({ slug: solution.slug }));
+  const legacySlugs = [
+    { slug: "ai-voice-agents" },
+    { slug: "chatbots" },
+    { slug: "automated-lead-nurturing" },
+    { slug: "crm-integration" },
+  ];
+  return [...primarySlugs, ...legacySlugs];
 }
 
 export async function generateMetadata({ params }: { params: Promise<PageParams> }): Promise<Metadata> {

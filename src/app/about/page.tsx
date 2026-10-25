@@ -7,7 +7,9 @@ import {
     heroMetrics,
 } from "@/data/redesign";
 import { SectionIllustration } from "@/components/ui";
+import { CertifiedPartnerStrip } from "@/components/ui/partner-strip";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import factsData from "../../../data/facts.json";
 
 export const metadata: Metadata = generatePageMetadata("/about", {
     title: "About Our AI & Automation Team",
@@ -123,6 +125,10 @@ export default function AboutPage() {
                     </div>
                 </section>
 
+                <section className="container-shell mt-8">
+                    <CertifiedPartnerStrip />
+                </section>
+
                 <section className="container-shell mt-10">
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {heroMetrics.map((stat) => (
@@ -202,6 +208,51 @@ export default function AboutPage() {
                                         <strong className="text-foreground">Compliance:</strong> Australian Privacy Principles (Privacy Act 1988), US 10DLC A2P Carrier Compliance, and GDPR/CCPA data handling standards.
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* Partner Certifications Ledger & Proof Links */}
+                        <div className="mt-8 border-t border-border pt-6">
+                            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
+                                Held Partner Certifications &amp; Verification Proof
+                            </h3>
+                            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                                {factsData.partnerCertifications.map((cert) => (
+                                    <div
+                                        key={cert.platform}
+                                        className="rounded-2xl border border-border bg-surface-50 p-4 flex flex-col justify-between"
+                                    >
+                                        <div>
+                                            <span className="text-xs font-bold text-brand uppercase tracking-wider">
+                                                {cert.platform}
+                                            </span>
+                                            <h4 className="mt-1 text-sm font-semibold text-foreground">
+                                                {cert.credential}
+                                            </h4>
+                                            <p className="mt-1 text-xs text-foreground/60">
+                                                Tier: {cert.tier}
+                                            </p>
+                                        </div>
+
+                                        <div className="mt-4 pt-3 border-t border-border/70 text-xs">
+                                            {cert.proofUrl && cert.proofUrl.startsWith("http") ? (
+                                                <a
+                                                    href={cert.proofUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center text-brand font-semibold hover:underline"
+                                                >
+                                                    View Directory Listing
+                                                    <ExternalLink className="ml-1 h-3 w-3" />
+                                                </a>
+                                            ) : (
+                                                <span className="text-amber-700 font-mono text-[11px] block">
+                                                    {cert.proofUrl}
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

@@ -7,4 +7,8 @@ export type ClientProject = typeof factsData.clientProjects[number];
 export type Testimonial = typeof factsData.testimonials[number];
 
 export const facts = factsData;
+export const clientProjects = factsData.clientProjects.map((p) => ({
+  ...p,
+  slug: p.id,
+}));
 export default factsData;
