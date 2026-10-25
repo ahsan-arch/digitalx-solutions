@@ -7,7 +7,7 @@ export const primaryNavigation: NavItem[] = [
   { label: "Solutions", href: "/solutions" },
   { label: "Development", href: "/development" },
   { label: "Industries", href: "/industries" },
-  { label: "Work", href: "/work" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Insights", href: "/insights" },
@@ -2010,7 +2010,7 @@ export const footerColumns = [
     links: [
       { label: "About", href: "/about" },
       { label: "Process", href: "/process" },
-      { label: "Work", href: "/work" },
+      { label: "Case Studies", href: "/case-studies" },
       { label: "Development", href: "/development" },
       { label: "Pricing", href: "/pricing" },
       { label: "Insights", href: "/insights" },

@@ -404,7 +404,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
               {industryCaseStudies.map((cs) => (
                 <Link
                   key={cs.slug}
-                  href={`/work/${cs.slug}`}
+                  href={`/case-studies/${cs.slug}`}
                   className="group rounded-xl border border-border bg-surface-50 p-5 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">{cs.industry}</p>

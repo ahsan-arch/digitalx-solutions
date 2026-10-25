@@ -244,7 +244,7 @@ When evaluating AI receptionist systems for US dental practices, top-performing 
 
 ## Real-World Case Study: Riverstone Dental Group
 
-In our work with [Riverstone Dental Group](/work/riverstone-dental-group), the two-receptionist front desk was missing 35% of inbound calls during peak lunchtime rushes and weekend hours. By implementing DigitalX's AI voice receptionist and CRM workflow:
+In our work with [Riverstone Dental Group](/case-studies/riverstone-dental), the two-receptionist front desk was missing 35% of inbound calls during peak lunchtime rushes and weekend hours. By implementing DigitalX's AI voice receptionist and CRM workflow:
 - **94% of after-hours patient calls** were captured and triaged.
 - Booked patient consultations increased by **32% within 60 days**.
 - Zero additional front-desk administrative hires were required.
@@ -895,7 +895,7 @@ Do not deploy toys on your primary phone line. Test our live streaming voice age
         relatedServices: [
             { label: "AI Voice Agents", href: "/solutions/ai-voice-agents" },
             { label: "Plumbing Industry Playbook", href: "/industries/plumbing-companies" },
-            { label: "Harbor Plumbing Case Study", href: "/work/harbor-plumbing" },
+            { label: "Harbor Plumbing Case Study", href: "/case-studies/harbor-plumbing" },
         ],
         content: `
 ## Background: The Owner-Operator Call Bottleneck
@@ -952,7 +952,7 @@ Emergency trade clients do not leave voicemails. They have water gushing across 
         relatedServices: [
             { label: "AI Voice Agents", href: "/solutions/ai-voice-agents" },
             { label: "Dental Practice Automation", href: "/industries/dental-clinics" },
-            { label: "Riverstone Dental Case Study", href: "/work/riverstone-dental-group" },
+            { label: "Riverstone Dental Case Study", href: "/case-studies/riverstone-dental" },
         ],
         content: `
 ## Background: High Practice Overhead & Unanswered Inbound Calls

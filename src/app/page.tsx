@@ -155,7 +155,9 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 2: CERTIFIED PARTNER STRIP */}
-        <CertifiedPartnerStrip />
+        <section className="container-shell mt-8 md:mt-12">
+          <CertifiedPartnerStrip />
+        </section>
 
         {/* SECTION 3: WHY AUTOMATION MATTERS */}
         <section className="container-shell mt-16 md:mt-20">
@@ -258,7 +260,7 @@ export default function HomePage() {
                 Recent Automation Deployments
               </h2>
             </div>
-            <Link href="/work" className="text-sm font-semibold text-brand hover:text-brand-deep">
+            <Link href="/case-studies" className="text-sm font-semibold text-brand hover:text-brand-deep">
               See all case studies
             </Link>
           </div>

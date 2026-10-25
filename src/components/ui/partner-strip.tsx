@@ -4,7 +4,13 @@ import Link from "next/link";
 import { ShieldCheck, ExternalLink } from "lucide-react";
 import factsData from "@/data/facts";
 
-export function CertifiedPartnerStrip() {
+import { cn } from "@/lib/utils";
+
+interface CertifiedPartnerStripProps {
+  className?: string;
+}
+
+export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps) {
   const { partnerCertifications } = factsData;
 
   // Map logo SVGs
@@ -14,62 +20,65 @@ export function CertifiedPartnerStrip() {
     HubSpot: "/logos/hubspot.svg",
   };
 
+  const partnerDetails: Record<string, { role: string; highlight: string }> = {
+    GoHighLevel: {
+      role: "Official Agency Partner",
+      highlight: "Snapshots, AI Voice & CRM Workflows",
+    },
+    n8n: {
+      role: "Certified Workflow Partner",
+      highlight: "Custom Webhook & API Orchestration",
+    },
+    HubSpot: {
+      role: "Certified Solutions Partner",
+      highlight: "Pipeline Sync & Revenue Operations",
+    },
+  };
+
   return (
-    <section className="border-y border-border/80 bg-surface-50/80 py-6">
-      <div className="container-shell">
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="h-4 w-4 text-brand" />
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/60">
-              Certified Automation Partners
-            </span>
-          </div>
+    <div className={cn("w-full py-6 md:py-8", className)}>
+      <div className="flex flex-col items-center text-center">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/80 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-foreground/75 shadow-xs">
+          <ShieldCheck className="h-4 w-4 text-brand" />
+          <span>Certified Automation Partnerships</span>
+        </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            {partnerCertifications.map((cert) => {
-              const logoSrc = logoMap[cert.platform] || "/logos/gohighlevel.svg";
-              const hasValidProof = cert.proofUrl && !cert.proofUrl.includes("[TODO");
+        <div className="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
+          {partnerCertifications.map((cert) => {
+            const logoSrc = logoMap[cert.platform] || "/logos/gohighlevel.svg";
+            const details = partnerDetails[cert.platform] || {
+              role: cert.credential,
+              highlight: "Verified Automation Systems",
+            };
 
-              return (
-                <div
-                  key={cert.platform}
-                  className="group flex items-center gap-3 rounded-xl border border-border/60 bg-white px-4 py-2 shadow-xs transition-all hover:border-brand/40"
-                >
-                  <div className="relative h-6 w-24 shrink-0">
-                    <Image
-                      src={logoSrc}
-                      alt={`${cert.platform} certified partner logo`}
-                      fill
-                      className="object-contain"
-                      sizes="96px"
-                    />
+            return (
+              <div
+                key={cert.platform}
+                className="group flex flex-col items-center justify-between rounded-2xl border border-border/80 bg-white p-5 shadow-xs transition-all hover:border-brand/40 hover:shadow-sm"
+              >
+                <div className="relative mb-3.5 h-8 w-28">
+                  <Image
+                    src={logoSrc}
+                    alt={`${cert.platform} certified partner logo`}
+                    fill
+                    className="object-contain"
+                    sizes="112px"
+                  />
+                </div>
+                <div className="text-center">
+                  <div className="text-xs font-bold text-foreground">
+                    {details.role}
                   </div>
-                  <div className="border-l border-border/60 pl-3">
-                    <div className="text-[11px] font-semibold text-foreground leading-tight">
-                      {cert.credential}
-                    </div>
-                    {hasValidProof ? (
-                      <a
-                        href={cert.proofUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-[10px] text-brand hover:underline"
-                      >
-                        Verify Credential <ExternalLink className="h-2.5 w-2.5" />
-                      </a>
-                    ) : (
-                      <span className="text-[10px] text-foreground/50">
-                        {cert.status}
-                      </span>
-                    )}
+                  <div className="mt-1 text-[11px] text-foreground/65 leading-tight">
+                    {details.highlight}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

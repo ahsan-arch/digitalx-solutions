@@ -55,8 +55,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </div>
 
-          <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700 border border-emerald-600/20">
-            {project.measurableResult.split(";")[0]}
+          <span className="shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700 border border-emerald-600/20">
+            Verified Case Study
           </span>
         </div>
 
@@ -78,6 +78,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <p className="mt-1 text-sm text-foreground/85 leading-relaxed font-medium">
               {project.whatWasBuilt}
             </p>
+          </div>
+        </div>
+
+        {/* Verified Measurable Result */}
+        <div className="mt-5 rounded-2xl border border-emerald-200/70 bg-emerald-50/60 p-4">
+          <div className="flex items-start gap-2.5">
+            <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">
+                Verified Operational Result
+              </span>
+              <p className="mt-0.5 text-xs font-semibold text-emerald-950 leading-relaxed">
+                {project.measurableResult}
+              </p>
+            </div>
           </div>
         </div>
 
@@ -115,16 +130,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Footer Result & CTA */}
       <div className="mt-6 border-t border-border/60 pt-4 flex items-center justify-between">
-        <div className="flex items-center gap-1.5 text-xs text-emerald-700 font-semibold">
-          <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-          <span>{project.measurableResult}</span>
-        </div>
+        <span className="text-xs font-medium text-foreground/60">
+          Full technical architecture
+        </span>
 
         <Link
-          href={`/work/${project.id.replace("-dental", "-dental-group")}`}
-          className="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+          href={`/case-studies/${project.id}`}
+          className="inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3.5 py-1.5 text-xs font-semibold text-brand transition hover:bg-brand hover:text-white"
         >
-          Case Study <ArrowRight className="h-3 w-3" />
+          View Case Study <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
     </article>

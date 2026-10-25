@@ -67,14 +67,14 @@ export default function TryVoiceAgentPage() {
       {/* Hero Section */}
       <section className="container-shell">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
             <Sparkles className="h-3.5 w-3.5" />
             Interactive Voice Demo
           </span>
-          <h1 className="mt-4 font-display text-4xl leading-tight text-ink-primary md:text-6xl">
+          <h1 className="mt-4 font-display text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
             Try an AI voice agent trained on your business.
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-secondary md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
             Tell us about your business in a few quick fields, pick a conversational voice, and experience a real-time
             spoken conversation with an AI receptionist. No sign-up, no credit card required &mdash; runs directly in your browser.
           </p>

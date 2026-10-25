@@ -64,13 +64,8 @@ export default function CaseStudiesIndexPage() {
         </div>
       </section>
 
-      {/* Partner Strip */}
-      <section className="container-shell mt-10">
-        <CertifiedPartnerStrip />
-      </section>
-
       {/* Project Cards Grid */}
-      <section className="container-shell mt-14">
+      <section className="container-shell mt-12">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="font-display text-2xl text-foreground md:text-3xl">
@@ -87,6 +82,11 @@ export default function CaseStudiesIndexPage() {
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
+      </section>
+
+      {/* Partner Strip */}
+      <section className="container-shell mt-16">
+        <CertifiedPartnerStrip />
       </section>
 
       {/* Methodology & Verification Standards */}
