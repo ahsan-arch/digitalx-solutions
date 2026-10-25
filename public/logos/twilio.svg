@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 35" fill="none" aria-label="Twilio">
+  <circle cx="16" cy="17.5" r="11" fill="#F22F46"/>
+  <circle cx="12.5" cy="14" r="2.2" fill="#FFFFFF"/>
+  <circle cx="19.5" cy="14" r="2.2" fill="#FFFFFF"/>
+  <circle cx="12.5" cy="21" r="2.2" fill="#FFFFFF"/>
+  <circle cx="19.5" cy="21" r="2.2" fill="#FFFFFF"/>
+  <text x="35" y="24" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="20" fill="#1A202C">twilio</text>
+</svg>

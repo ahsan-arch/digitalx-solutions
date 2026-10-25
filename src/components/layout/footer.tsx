@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { companyProfile, footerColumns } from "@/data/redesign";
+import { PlatformIntegrationsStrip } from "@/components/ui";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -61,11 +62,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-sm text-foreground/75 md:flex-row md:items-center md:justify-between">
+        <div className="mt-12">
+          <PlatformIntegrationsStrip />
+        </div>
+
+        <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-sm text-foreground/75 md:flex-row md:items-center md:justify-between">
           <p>
             (c) {currentYear} {companyProfile.name}. All rights reserved.
           </p>
-          <p>Built for measurable growth in the USA and Australia.</p>
+          <p>Casula NSW, Australia &amp; US Operations | Built for measurable revenue outcomes.</p>
         </div>
         <div className="mt-3 h-px w-full bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
       </div>

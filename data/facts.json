@@ -102,7 +102,7 @@
       "setupFeeRange": "$2,500 - $7,500 one-time",
       "notes": "[TODO: confirm current client pricing]"
     }
-  ],
+  },
   "clientProjects": [
     {
       "id": "riverstone-dental",

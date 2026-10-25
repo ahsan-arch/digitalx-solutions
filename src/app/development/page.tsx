@@ -1,103 +1,146 @@
+import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import {
-  generateBreadcrumbSchema,
-  generateItemListSchema,
-  generatePageMetadata,
-  siteConfig,
-} from "@/lib/seo";
-import { developmentProjects } from "@/data/redesign";
+import { ArrowRight, Code, Cpu, Database, Layers, ShieldCheck, ChevronRight } from "lucide-react";
+import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { developmentServices } from "@/data/development-services";
 
-export const metadata = generatePageMetadata("/development", {
-  title: "Custom AI & Automation Builds",
+export const metadata: Metadata = {
+  title: "Custom AI & Automation Development | DigitalX",
   description:
-    "Explore custom software builds, AI voice receptionist integrations, CRM workflows, and high-performance web apps engineered by DigitalX Solutions experts.",
-});
+    "Explore custom CRM development, API and webhook integrations, AI agent development, and white-label CRM platforms engineered by DigitalX Solutions.",
+  alternates: {
+    canonical: `${siteConfig.domain}/development`,
+  },
+};
 
-export default function DevelopmentPage() {
+export default function DevelopmentHubPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
     { name: "Development", url: `${siteConfig.domain}/development` },
   ]);
 
-  const itemListSchema = generateItemListSchema(
-    "DigitalX Solutions Development Projects",
-    developmentProjects.map((project) => ({
-      name: project.name,
-      url: `${siteConfig.domain}/development/${project.slug}`,
-      description: project.overview,
-    })),
-  );
-
   return (
-    <main id="main" className="pb-20 pt-12">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
-      />
 
-      <section className="container-shell">
-        <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Development</p>
-          <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
-            Custom software and automation we have built.
-          </h1>
-          <p className="mt-4 text-base leading-relaxed text-foreground/70 md:text-lg">
-            From AI voice receptionists to lead automation, ecommerce tracking, and analytics dashboards, these are the
-            kinds of systems we design and ship for service businesses across the USA and Australia.
-          </p>
-        </div>
-      </section>
+      <main id="main" className="pb-24 pt-12">
+        <section className="container-shell">
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+              <Code className="h-3.5 w-3.5" />
+              Software Engineering &amp; Custom Architecture
+            </div>
+            <h1 className="font-display text-4xl text-foreground md:text-5xl lg:text-6xl font-semibold leading-tight">
+              Custom AI &amp; Automation Development Services
+            </h1>
+            <p className="mt-4 text-base leading-relaxed text-foreground/75 md:text-lg">
+              When standard SaaS templates fall short, DigitalX Solutions designs, engineers, and ships bespoke software systems. From custom CRM architectures and resilient API webhook middleware to autonomous tool-calling AI agents and turnkey white-label platforms, our engineering team builds solutions that scale your operations without technical debt.
+            </p>
+          </div>
+        </section>
 
-      <section className="container-shell mt-10">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {developmentProjects.map((project) => (
-            <Link
-              key={project.slug}
-              href={`/development/${project.slug}`}
-              className="group flex flex-col rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
-            >
-              <h2 className="font-display text-2xl text-foreground group-hover:text-brand">{project.name}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/70">{project.overview}</p>
+        {/* 4 Core Development Service Pillars */}
+        <section className="container-shell mt-12 md:mt-16">
+          <div className="grid gap-6 md:grid-cols-2">
+            {developmentServices.map((service) => (
+              <article
+                key={service.slug}
+                className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-600/20">
+                      <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                      Production Architecture
+                    </span>
+                    <span className="text-[11px] font-semibold text-foreground/50 uppercase tracking-wider">
+                      Fixed-Scope Delivery
+                    </span>
+                  </div>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-border bg-surface-100 px-3 py-1 text-[11px] font-medium text-foreground/75"
+                  <h2 className="mt-4 font-display text-2xl font-semibold text-foreground">
+                    {service.name}
+                  </h2>
+                  <p className="mt-2 text-xs font-semibold text-brand">
+                    {service.tagline}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/75">
+                    {service.summary.slice(0, 180)}...
+                  </p>
+
+                  <div className="mt-5 border-t border-border/60 pt-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/50">
+                      Core Stack Components
+                    </span>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {service.architecturalComponents.map((comp) => (
+                        <span
+                          key={comp}
+                          className="rounded-md bg-surface-50 px-2.5 py-0.5 text-[11px] font-medium text-foreground/70 border border-border/60"
+                        >
+                          {comp}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 border-t border-border/60 pt-4">
+                  <Link
+                    href={`/development/${service.slug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-deep transition-colors"
                   >
-                    {tech}
-                  </span>
-                ))}
+                    View Engineering Blueprint <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Technical Standards Callout */}
+        <section className="container-shell mt-16 md:mt-20">
+          <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-12">
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
+              Our Engineering Standards &amp; Principles
+            </h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-3">
+              <div className="rounded-2xl border border-border/80 bg-white p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand font-bold mb-4">
+                  <Cpu className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-lg font-semibold text-foreground">Sub-500ms Execution</h3>
+                <p className="mt-2 text-xs leading-relaxed text-foreground/75">
+                  We optimize webhook endpoints, neural speech models, and database queries for low latency so callers and users experience zero lag.
+                </p>
               </div>
 
-              <span className="mt-auto pt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
-                View full details
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
+              <div className="rounded-2xl border border-border/80 bg-white p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 font-bold mb-4">
+                  <Database className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-lg font-semibold text-foreground">Idempotent Pipelines</h3>
+                <p className="mt-2 text-xs leading-relaxed text-foreground/75">
+                  Every webhook and data sync pipeline implements unique hash keys, ensuring dropped or retried packets never duplicate records.
+                </p>
+              </div>
 
-      <section className="container-shell mt-12">
-        <div className="rounded-3xl border border-border bg-foreground px-6 py-12 text-center text-white md:px-10">
-          <h2 className="font-display text-3xl md:text-4xl">Have a project in mind?</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
-            Tell us what you want to build or automate and we will scope a clear plan with timelines and pricing.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-foreground"
-          >
-            Book a strategy call
-          </Link>
-        </div>
-      </section>
-    </main>
+              <div className="rounded-2xl border border-border/80 bg-white p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700 font-bold mb-4">
+                  <Layers className="h-5 w-5" />
+                </div>
+                <h3 className="font-display text-lg font-semibold text-foreground">Strict Schema Safety</h3>
+                <p className="mt-2 text-xs leading-relaxed text-foreground/75">
+                  LLM tool calls are bound by deterministic Zod and Pydantic schemas, eliminating hallucinated function parameters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
