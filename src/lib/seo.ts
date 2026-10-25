@@ -22,12 +22,12 @@ export const seoCopy = {
     webDev: {
         title: "Next.js Web Development Agency",
         description:
-            "Custom web development with sub-200ms load times and Next.js architecture. High-performance, SEO-optimized websites for US and Australian service companies.",
+            "Custom web development with sub-200ms load times and Next.js architecture. Fast, SEO-optimized websites for US and Australian service companies.",
     },
     metaAds: {
         title: "Meta Ads & Server-Side CAPI Agency",
         description:
-            "Full-funnel Meta Ads management with Facebook Conversions API and server-side tagging. Maximize ROAS and lead tracking for US and Australian service brands.",
+            "Full-funnel Meta Ads management with Facebook Conversions API and server-side tagging. Maximize ROAS and lead tracking across the US and Australia.",
     },
     revenueOps: {
         title: "Workflow Automation & n8n Agency",
