@@ -8,6 +8,7 @@ import {
   GoogleTagManager,
   GoogleTagManagerNoscript,
 } from "@/components/analytics/gtm";
+import { ApolloTracker } from "@/components/analytics/apollo-tracker";
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
@@ -126,7 +127,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://assets.apollo.io" />
+        <link rel="dns-prefetch" href="https://assets.apollo.io" />
         <GoogleTagManager />
+        <ApolloTracker />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
