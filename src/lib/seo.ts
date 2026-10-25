@@ -167,8 +167,8 @@ export function generatePageMetadata(
         alternates: generateHreflangAlternates(route),
         openGraph: {
             type: "website",
-            locale: "en_US",
-            alternateLocale: ["en_AU"],
+            locale: "en_AU",
+            alternateLocale: ["en_US"],
             url,
             title: `${cleanTitle} | DigitalX`,
             description: copy.description,

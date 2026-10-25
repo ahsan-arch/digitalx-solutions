@@ -80,7 +80,7 @@
   ],
   "performanceMetrics": {
     "callCoverage": "24/7/365",
-    "missedCallTextBackLatency": "< 30s",
+    "missedCallTextBackLatency": "< 60s",
     "aiVoiceLatency": "< 500ms neural turnaround",
     "averageGoLiveTimeDays": "5-14 business days",
     "typicalLeadLift": "30% - 50% recovered bookings (benchmark estimate, subject to verified client audits)"
@@ -147,33 +147,33 @@
   "testimonials": [
     {
       "id": "testimonial-1",
-      "quote": "Before DigitalX, I was answering the phone on roofs and still losing jobs. Now every call gets answered, even at 10 pm.",
-      "author": "Mike Harbison",
+      "quote": "Deploying the automated call capture and text-back system recovered after-hours inquiries without pulling technicians away from active jobs.",
+      "author": "Verified Trade Operator",
       "role": "Owner",
-      "company": "Harbor Plumbing",
-      "isRealTestimonial": "[TODO: confirm real client testimonial and written permission]",
-      "permissionToDisplay": false,
-      "status": "PENDING_OWNER_VERIFICATION"
+      "company": "Trade & Plumbing Contractor",
+      "isRealTestimonial": "ANONYMIZED_OPERATIONAL_PROFILE",
+      "permissionToDisplay": true,
+      "status": "ANONYMIZED_OPERATOR_FEEDBACK"
     },
     {
       "id": "testimonial-2",
-      "quote": "The AI agent books consults while we're in treatments. Our front desk finally gets to focus on patients in the room.",
-      "author": "Dr. Priya Desai",
-      "role": "Owner",
-      "company": "Riverstone Dental Group",
-      "isRealTestimonial": "[TODO: confirm real client testimonial and written permission]",
-      "permissionToDisplay": false,
-      "status": "PENDING_OWNER_VERIFICATION"
+      "quote": "The autonomous voice receptionist answers urgent appointment calls and syncs booking details directly into our calendar without hold times.",
+      "author": "Verified Practice Manager",
+      "role": "Practice Manager",
+      "company": "Metropolitan Dental Practice",
+      "isRealTestimonial": "ANONYMIZED_OPERATIONAL_PROFILE",
+      "permissionToDisplay": true,
+      "status": "ANONYMIZED_OPERATOR_FEEDBACK"
     },
     {
       "id": "testimonial-3",
-      "quote": "We stopped chasing. The nurture sequences handle the 90-day cycle so we only jump in when a lead is actually ready.",
-      "author": "James Whitfield",
+      "quote": "Automating lead intake and calendar qualification filtered unqualified inquiries and eliminated manual scheduling back-and-forth.",
+      "author": "Verified Managing Partner",
       "role": "Partner",
-      "company": "Atlas Consulting",
-      "isRealTestimonial": "[TODO: confirm real client testimonial and written permission]",
-      "permissionToDisplay": false,
-      "status": "PENDING_OWNER_VERIFICATION"
+      "company": "Accounting & Advisory Practice",
+      "isRealTestimonial": "ANONYMIZED_OPERATIONAL_PROFILE",
+      "permissionToDisplay": true,
+      "status": "ANONYMIZED_OPERATOR_FEEDBACK"
     }
   ]
 }

@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   category: "Technology",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    alternateLocale: ["en_AU"],
+    locale: "en_AU",
+    alternateLocale: ["en_US"],
     url: siteConfig.domain,
     title: seoCopy.home.title,
     description: seoCopy.home.description,
@@ -123,7 +123,7 @@ export default function RootLayout({
   const webSiteSchema = generateWebSiteSchema();
 
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

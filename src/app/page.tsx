@@ -127,7 +127,7 @@ export default function HomePage() {
                   AI Automation Agency for High-Growth Service Businesses
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
-                  DigitalX Solutions builds and deploys 24/7 human-sounding AI voice receptionists, under-30-second missed-call text-back, GoHighLevel CRM architectures, and custom n8n workflow automations for trades, healthcare clinics, and professional services across Australia and the United States.
+                  DigitalX Solutions builds and deploys 24/7 human-sounding AI voice receptionists, under-60-second missed-call text-back, GoHighLevel and HubSpot CRM architectures, and custom n8n workflow automations for trades, healthcare clinics, and professional services across Australia and the United States.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">

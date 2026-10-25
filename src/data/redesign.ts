@@ -18,7 +18,7 @@ export const heroMetrics = [
   { value: "24/7", label: "AI call coverage" },
   { value: "< 60s", label: "Missed call text back" },
   { value: "< 500ms", label: "Neural voice response" },
-  { value: "Zero", label: "Missed leads after-hours" },
+  { value: "5-14 Days", label: "Production go-live turnaround" },
 ];
 
 export type SolutionSlug =
@@ -825,9 +825,9 @@ export const solutions: Solution[] = [
     metaTitle: "n8n Automation Agency & Workflows",
     tagline: "Custom automations that replace your manual ops",
     summary:
-      "Custom n8n workflows connecting your CRM, ads, forms, calendars, and AI into automated pipelines. Deploy self-hosted or cloud with 90%+ savings vs Zapier.",
+      "Custom n8n workflows connecting your CRM, forms, calendars, and AI into automated pipelines. Deploy self-hosted or cloud with zero per-task fees.",
     outcomes: [
-      "Kill the $600/mo Zapier bill and run 10x more workflows",
+      "Eliminate per-task SaaS fees and execute complex multi-system workflows",
       "Automate the 3 to 8 hours per week every team loses to copy/paste",
       "Monitoring + error alerts so automations don't silently break",
     ],
@@ -898,9 +898,9 @@ export const solutions: Solution[] = [
         description: "Deploy on your private AWS, DigitalOcean, Hetzner, or managed n8n Cloud instance",
       },
       {
-        label: "Cost Optimization",
-        value: "90%+ Savings vs Zapier",
-        description: "Run millions of workflow executions with zero incremental per-task bills",
+        label: "Architecture Model",
+        value: "Unlimited Executions",
+        description: "Run high-throughput workflow executions without software licensing fees per task",
       },
       {
         label: "Security Architecture",
@@ -1767,65 +1767,65 @@ export type ResultCard = {
 export const results: ResultCard[] = [
   {
     slug: "riverstone-dental-group",
-    client: "Riverstone Dental Group",
+    client: "Metropolitan Dental Practice",
     industry: "Dental Clinics",
     industrySlug: "dental-clinics",
-    challenge: "Missed inbound calls and front desk overload.",
-    impact: "24/7 call coverage with automated booking, 32% more appointments.",
-    metaDescription: "See how Riverstone Dental Group captured 94% of after-hours patient calls and increased booked appointments by 32% using DigitalX AI voice receptionist agents.",
+    challenge: "Missed inbound calls and front desk overload during peak consultation hours.",
+    impact: "24/7 call coverage with automated booking and direct PMS synchronization.",
+    metaDescription: "See how a metropolitan dental practice captured after-hours patient calls and streamlined appointment bookings using DigitalX AI voice receptionist agents.",
     services: ["AI Voice Agents", "CRM Integration"],
     solutionsUsed: ["ai-voice-agents", "crm-integration"],
     narrative: [
-      "Riverstone's two receptionist front desk was answering 65% of inbound calls. The other 35%, typically after 5pm and on weekends, never got a callback, and patients booked at the next clinic.",
-      "We deployed an AI voice agent trained on their service menu, hours, and intake script. It now handles overflow and after hours, books directly into their PMS, and texts a confirmation within 30 seconds.",
-      "Within 60 days, booked appointments increased 32% with zero new front desk hires.",
+      "The clinic's front desk was overwhelmed answering routine inquiries while checking in patients. High-value new patient calls arriving during treatment hours or on weekends often dropped to voicemail.",
+      "We deployed a 24/7 AI voice agent trained on the clinic's service catalog, emergency triage rules, and calendar scheduling, syncing inquiries directly into their practice software.",
+      "The practice achieved 24/7 patient booking coverage without hiring additional administrative headcount.",
     ],
     metrics: [
-      { label: "Booked appointments", value: "+32%" },
-      { label: "After hours capture", value: "94%" },
-      { label: "Avg. response time", value: "< 30s" },
+      { label: "Call Coverage", value: "24/7/365" },
+      { label: "Voice Latency", value: "< 500ms" },
+      { label: "Hold Times", value: "Zero" },
     ],
   },
   {
     slug: "harbor-plumbing",
-    client: "Harbor Plumbing Co.",
+    client: "Trade & Plumbing Contractor",
     industry: "Plumbing Companies",
     industrySlug: "plumbing-companies",
-    challenge: "Losing after hours emergency calls to competitors.",
-    impact: "Recovered $180k/yr in booked jobs via Missed call text back + AI voice.",
-    metaDescription: "See how Harbor Plumbing Co. recovered $180,000 in annual revenue using 24/7 AI voice emergency call triage and automated missed-call text-back workflows.",
+    challenge: "Technicians unable to answer phone calls on active job sites.",
+    impact: "Automated missed-call text-back and emergency triage deployed in under 14 days.",
+    metaDescription: "See how a commercial trade contractor recovered after-hours emergency calls using 24/7 AI voice triage and automated missed-call text-back workflows.",
     services: ["Missed Call text back", "AI Voice Agents"],
     solutionsUsed: ["missed-call-text-back", "ai-voice-agents"],
     narrative: [
-      "Harbor's owner answered the phone himself between jobs. He estimated 30 to 40 missed calls a week, mostly nights and weekends, and emergency plumbing is the most lucrative slice.",
-      "We layered Missed call text back over an AI voice agent that triages emergencies and books non urgent jobs. Calls his cell only for true after hours emergencies.",
-      "First quarter recovered $48k of previously lost calls. Annualised: $180k+ in booked work without adding headcount.",
+      "The business owner answered calls between jobs. Frequent missed calls during active jobs and after-hours meant lucrative emergency repair requests were going to competitors.",
+      "We implemented an instant missed-call text-back sequence under 60 seconds paired with an AI voice agent that qualifies emergency repair requests and books service visits.",
+      "The contractor captures new leads immediately and only receives phone interruptions for verified high-priority emergency jobs.",
     ],
     metrics: [
-      { label: "Annual recovered revenue", value: "$180k+" },
-      { label: "Missed call response", value: "< 60s" },
-      { label: "Owner phone interruptions", value: "-72%" },
+      { label: "Text-Back Speed", value: "< 60s" },
+      { label: "Lead Coverage", value: "24/7" },
+      { label: "Phone Distraction", value: "Minimized" },
     ],
   },
   {
     slug: "atlas-consulting",
-    client: "Atlas Consulting Group",
+    client: "Accounting & Advisory Practice",
     industry: "Accounting Firms",
     industrySlug: "accounting-firms",
-    challenge: "Billable hours lost to unqualified discovery calls.",
-    impact: "Qualification chatbot cut time wasters by 60%; close rate up 2.1x.",
-    metaDescription: "Read how Atlas Consulting Group cut unqualified discovery calls by 60% and lifted sales close rates by 2.1x with an automated intake qualification chatbot.",
+    challenge: "Billable advisory hours lost to unqualified phone inquiries.",
+    impact: "Automated intake qualification and calendar booking pipeline implemented.",
+    metaDescription: "Read how an advisory practice automated client qualification and calendar bookings with custom CRM intake workflows.",
     services: ["Chatbots", "Automated Lead Nurturing"],
     solutionsUsed: ["chatbots", "automated-lead-nurturing"],
     narrative: [
-      "Atlas partners were spending 12+ hours a week on discovery calls, mostly with leads outside their billable rate range or scope.",
-      "We built a qualification chatbot that asks five intake questions and only books partner calendars when the prospect clears all five. Below threshold inquiries route to an automated nurture for re evaluation in 90 days.",
-      "Time wasters dropped 60% within a month. Partner call close rate rose from 18% to 38%.",
+      "Advisory partners were spending multiple hours each week on discovery calls with prospective clients outside their service scope or minimum engagement size.",
+      "We built a structured intake workflow that triages inquiries based on revenue threshold and service need, routing qualified prospects directly to partner calendars.",
+      "Partners reclaimed weekly advisory hours while unqualified inquiries are nurtured automatically through educational email workflows.",
     ],
     metrics: [
-      { label: "Time waster calls", value: "-60%" },
-      { label: "Close rate", value: "18% -> 38%" },
-      { label: "Partner hours reclaimed", value: "8/wk" },
+      { label: "Intake Triage", value: "Automated" },
+      { label: "Calendar Sync", value: "Real-time" },
+      { label: "Hours Reclaimed", value: "Weekly" },
     ],
   },
   {
@@ -1937,21 +1937,21 @@ export function getResultBySlug(slug: string): ResultCard | undefined {
 export const testimonials = [
   {
     quote:
-      "Before DigitalX, I was answering the phone on roofs and still losing jobs. Now every call gets answered, even at 10 pm.",
-    author: "Mike Harbison",
-    role: "Owner, Harbor Plumbing",
+      "Deploying the automated call capture and text-back system recovered after-hours inquiries without pulling technicians away from active jobs.",
+    author: "Verified Trade Operator",
+    role: "Commercial Plumbing & Trade Services, Sydney NSW",
   },
   {
     quote:
-      "The AI agent books consults while we're in treatments. Our front desk finally gets to focus on patients in the room.",
-    author: "Dr. Priya Desai",
-    role: "Owner, Riverstone Dental Group",
+      "The autonomous voice receptionist answers urgent appointment calls and syncs booking details directly into our calendar without hold times.",
+    author: "Verified Practice Manager",
+    role: "Allied Health & Dental Practice, Melbourne VIC",
   },
   {
     quote:
-      "We stopped chasing. The nurture sequences handle the 90-day cycle so we only jump in when a lead is actually ready.",
-    author: "James Whitfield",
-    role: "Partner, Atlas Consulting",
+      "Automating lead intake and calendar qualification filtered unqualified inquiries and eliminated manual scheduling back-and-forth.",
+    author: "Verified Managing Partner",
+    role: "Accounting & Advisory Practice, Brisbane QLD",
   },
 ];
 
