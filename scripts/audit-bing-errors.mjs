@@ -69,7 +69,8 @@ pageFiles.forEach(file => {
 });
 
 import { industries } from '../src/data/industries.js';
-import { solutions, developmentProjects, results } from '../src/data/redesign.js';
+import { solutions, results } from '../src/data/redesign.js';
+import { developmentServices } from '../src/data/development-services.js';
 import { articlesData } from '../src/data/insights-articles.js';
 
 console.log('\n--- SCANNING ALL DYNAMIC ROUTES ---');
@@ -104,16 +105,16 @@ solutions.forEach(sol => {
   }
 });
 
-// 3. Development Projects
-developmentProjects.forEach(proj => {
-  const fullTitle = `${proj.title} | DigitalX Solutions`;
+// 3. Development Services
+developmentServices.forEach(dev => {
+  const fullTitle = `${dev.metaTitle} | DigitalX Solutions`;
   if (fullTitle.length > 65) {
-    console.log(`[Dev Title too long] (${fullTitle.length}) ${proj.slug}: "${fullTitle}"`);
+    console.log(`[Dev Title too long] (${fullTitle.length}) ${dev.slug}: "${fullTitle}"`);
     dynamicIssues++;
   }
-  const desc = proj.metaDescription || proj.summary;
+  const desc = dev.metaDescription || dev.summary;
   if (desc.length < 150 || desc.length > 165) {
-    console.log(`[Dev Desc out of bounds] (${desc.length}) ${proj.slug}: "${desc}"`);
+    console.log(`[Dev Desc out of bounds] (${desc.length}) ${dev.slug}: "${desc}"`);
     dynamicIssues++;
   }
 });

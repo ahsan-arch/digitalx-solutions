@@ -11,78 +11,93 @@ export default function HomePage() {
     { name: "Home", url: siteConfig.domain },
   ]);
 
-  const localBusinessSchema = {
+  const homeGraphSchema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "@id": `${siteConfig.domain}/#organization`,
-    name: "DigitalX Solutions",
-    url: siteConfig.domain,
-    logo: `${siteConfig.domain}/logos/gohighlevel.svg`,
-    description:
-      "AI automation agency deploying 24/7 AI voice receptionists, missed-call text-back, and GoHighLevel CRM workflows for businesses across Australia and the United States.",
-    telephone: "+61 451 413 786",
-    email: "info@digitalx-solutions.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "16 Boldrewood Ave",
-      addressLocality: "Casula",
-      addressRegion: "NSW",
-      postalCode: "2170",
-      addressCountry: "AU",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -33.9518,
-      longitude: 150.9044,
-    },
-    areaServed: [
-      { "@type": "Country", name: "Australia" },
-      { "@type": "Country", name: "United States" },
-    ],
-    priceRange: "$$",
-    sameAs: [
-      "https://www.linkedin.com/company/digitalx-solutions-aus",
-      "https://www.instagram.com/digitalx_solutions",
-      "https://www.facebook.com/people/Digitalx-solutions/61588252343955",
-      "https://x.com/digitalx_solutions",
-    ],
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
+    "@graph": [
       {
-        "@type": "Question",
-        name: "How fast can DigitalX set up my AI receptionist?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Most businesses go live in 5 to 14 business days. We configure your voice persona, call flow logic, calendar booking, and CRM integration, then test with real call scenarios before switching your line live.",
+        "@type": "LocalBusiness",
+        "@id": `${siteConfig.domain}/#organization`,
+        name: "DigitalX Solutions",
+        url: siteConfig.domain,
+        logo: `${siteConfig.domain}/assets/logo.png`,
+        image: `${siteConfig.domain}/assets/og-home-image.jpg`,
+        telephone: "+61 451 413 786",
+        email: "info@digitalx-solutions.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "16 Belwood Ave",
+          addressLocality: "Casula",
+          addressRegion: "NSW",
+          postalCode: "2170",
+          addressCountry: "AU",
         },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "-33.951079",
+          longitude: "150.906952",
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+          ],
+          opens: "08:00",
+          closes: "18:00",
+        },
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "Australia",
+          },
+          {
+            "@type": "Country",
+            name: "United States",
+          },
+        ],
+        sameAs: [
+          "https://www.linkedin.com/company/digitalx-solutions",
+        ],
       },
       {
-        "@type": "Question",
-        name: "Will callers notice a delay when the AI responds?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Our agents are tuned for natural conversation, responding with sub-500ms neural turnaround after the caller finishes speaking. We test latency on your actual phone line and call flows before go-live.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Does the AI receptionist sync with GoHighLevel?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Contacts, call transcripts, audio recordings, and booked appointments sync into your GoHighLevel pipeline automatically, and we trigger automated follow-up workflows from each call outcome.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I keep my existing business number?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. We set up conditional call forwarding or number porting, or provision a dedicated local number through Twilio. Callers see the number they already know and your team keeps full control.",
-        },
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How fast does the AI answering agent answer incoming calls?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Our AI Voice Receptionists feature sub-500ms voice response latency. Calling patients or customers receive immediate responses with no robotic pause or delay, 24/7.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does this AI integrate with existing CRMs?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We specialize in custom GoHighLevel CRM setup and integrate directly with ServiceTitan, HubSpot, and Google Calendar via webhooks and API. Client records, appointment bookings, and full transcripts update automatically.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can the voice agents handle phone number forwarding?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, through carriers and Twilio, we connect existing US and Australian numbers, meaning your business can use our services without needing any complex forwarding steps.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does the missed-call lead recovery work?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "If you are busy on the line, our automated missed-call text back system sends an instant text to the missed caller in under 60 seconds to triage, recover, and schedule the lead.",
+            },
+          },
+        ],
       },
     ],
   };
@@ -95,11 +110,7 @@ export default function HomePage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeGraphSchema) }}
       />
 
       <main id="main" className="pb-24">
@@ -418,37 +429,37 @@ export default function HomePage() {
             <div className="mt-8 space-y-4">
               <div className="rounded-2xl border border-border bg-surface-50 p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
-                  How fast can DigitalX set up my AI receptionist?
+                  How fast does the AI answering agent answer incoming calls?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Most businesses go live in 5 to 14 business days. We configure your voice persona, call flow logic, calendar booking, and CRM integration, then test with real call scenarios before switching your line live.
+                  Our AI Voice Receptionists feature sub-500ms voice response latency. Calling patients or customers receive immediate responses with no robotic pause or delay, 24/7.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-border bg-surface-50 p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
-                  Will callers notice a delay when the AI responds?
+                  Does this AI integrate with existing CRMs?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Our agents are tuned for natural conversation, responding with sub-500ms neural turnaround after the caller finishes speaking. We test latency on your actual phone line and call flows before go-live.
+                  Yes. We specialize in custom GoHighLevel CRM setup and integrate directly with ServiceTitan, HubSpot, and Google Calendar via webhooks and API. Client records, appointment bookings, and full transcripts update automatically.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-border bg-surface-50 p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
-                  Does the AI receptionist sync with GoHighLevel?
+                  Can the voice agents handle phone number forwarding?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Yes. Contacts, call transcripts, audio recordings, and booked appointments sync into your GoHighLevel pipeline automatically, and we trigger automated follow-up workflows from each call outcome.
+                  Yes, through carriers and Twilio, we connect existing US and Australian numbers, meaning your business can use our services without needing any complex forwarding steps.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-border bg-surface-50 p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
-                  Can I keep my existing business number?
+                  How does the missed-call lead recovery work?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Yes. We set up conditional call forwarding or number porting, or provision a dedicated local number through Twilio. Callers see the number they already know and your team keeps full control.
+                  If you are busy on the line, our automated missed-call text back system sends an instant text to the missed caller in under 60 seconds to triage, recover, and schedule the lead.
                 </p>
               </div>
             </div>

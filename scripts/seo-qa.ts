@@ -1,5 +1,5 @@
 import { siteConfig, seoCopy } from "../src/lib/seo";
-import { solutions, primaryNavigation } from "../src/data/redesign";
+import { solutions, primaryNavigation, footerColumns } from "../src/data/redesign";
 import { industries } from "../src/data/industries";
 import { developmentServices } from "../src/data/development-services";
 import { integrations } from "../src/data/integrations";
@@ -132,6 +132,20 @@ for (const nav of primaryNavigation) {
       value: nav.href,
       reason: "Primary navigation item contains hash link to homepage instead of standalone canonical page",
     });
+  }
+}
+
+// ── 10. Footer Anchor Trap Check ──
+for (const col of footerColumns) {
+  for (const link of col.links) {
+    if (link.href.includes("/industries#") || link.href.includes("/#")) {
+      failures.push({
+        route: "Footer",
+        field: "Anchor Link in Footer",
+        value: `${col.title} -> ${link.label} (${link.href})`,
+        reason: "Footer link must point to dedicated canonical page, not an anchor fragment",
+      });
+    }
   }
 }
 

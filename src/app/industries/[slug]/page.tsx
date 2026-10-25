@@ -114,11 +114,35 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <span className="text-xs font-medium text-foreground/60">Production Playbook</span>
         </div>
         <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
-          {industry.metaTitle || `${industry.name} Automation Playbook`}
+          {industry.h1 || industry.metaTitle || `${industry.name} Automation Playbook`}
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/75 md:text-lg">
-          {industry.headline} {industry.summary}
+          {industry.subheadline ? industry.subheadline : `${industry.headline} ${industry.summary}`}
         </p>
+
+        {/* Action CTAs */}
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-sm"
+          >
+            Book a Strategy Call
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+          <Link
+            href="/try-voice-agent"
+            className="inline-flex items-center justify-center rounded-full border border-border bg-surface-50 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
+          >
+            <Phone className="mr-2 h-4 w-4 text-brand" />
+            Hear a Demo (2 Min)
+          </Link>
+        </div>
+
+        {industry.trustBanner && (
+          <p className="mt-4 text-xs font-medium text-foreground/60 italic">
+            &ldquo;{industry.trustBanner}&rdquo;
+          </p>
+        )}
 
         {industry.niches && industry.niches.length > 0 && (
           <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -370,6 +394,38 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
             </p>
             <div className="mt-6 max-w-xl">
               <VoiceAgentDemo script={demoScript} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Traditional vs DigitalX Comparison */}
+      {industry.comparison && industry.comparison.length > 0 && (
+        <section className="container-shell mt-14">
+          <div className="rounded-3xl border border-border bg-white p-6 md:p-10 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Overcoming Price &amp; Trust Objections</p>
+            <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
+              Traditional Answering vs. DigitalX AI Automation
+            </h2>
+            <div className="mt-8 overflow-x-auto">
+              <table className="w-full min-w-[600px] border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-surface-50 text-foreground">
+                    <th className="p-4 font-display font-semibold">Feature</th>
+                    <th className="p-4 font-display font-semibold text-foreground/60">Traditional Call Centers / Front Desk</th>
+                    <th className="p-4 font-display font-semibold text-brand">DigitalX AI Automation (AU &amp; US)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {industry.comparison.map((row) => (
+                    <tr key={row.feature} className="hover:bg-surface-50/50 transition-colors">
+                      <td className="p-4 font-medium text-foreground">{row.feature}</td>
+                      <td className="p-4 text-foreground/70">{row.traditional}</td>
+                      <td className="p-4 font-medium text-brand">{row.digitalx}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

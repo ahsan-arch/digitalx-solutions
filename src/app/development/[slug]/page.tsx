@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
 import { developmentServices, getDevelopmentServiceBySlug } from "@/data/development-services";
-import { developmentProjects } from "@/data/redesign";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -367,76 +366,5 @@ export default async function DevelopmentSlugPage(props: Props) {
     );
   }
 
-  // Fallback for legacy developmentProjects
-  const project = developmentProjects.find((p) => p.slug === slug);
-  if (!project) notFound();
-
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: siteConfig.domain },
-    { name: "Development", url: `${siteConfig.domain}/development` },
-    { name: project.name, url: `${siteConfig.domain}/development/${project.slug}` },
-  ]);
-
-  return (
-    <main className="container-shell py-20 pb-32">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <Link
-        href="/development"
-        className="mb-8 inline-flex items-center text-sm font-medium text-foreground/60 transition hover:text-foreground"
-      >
-        <ArrowLeft className="mr-2 h-4 w-4" />
-        Back to projects
-      </Link>
-
-      <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-16">
-        <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
-          Technical Build Specification
-        </span>
-        <h1 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
-          {project.name}
-        </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80">
-          {project.overview}
-        </p>
-
-        <div className="mt-12 grid gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="font-display text-xl text-foreground font-semibold">Core Architecture &amp; Stack</h2>
-            <ul className="mt-4 space-y-2">
-              {project.techStack.map((item) => (
-                <li key={item} className="flex items-center text-sm text-foreground/75">
-                  <span className="mr-2 h-1.5 w-1.5 rounded-full bg-brand" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-display text-xl text-foreground font-semibold">Deliverables &amp; Outcomes</h2>
-            <ul className="mt-4 space-y-2">
-              {project.features.map((item) => (
-                <li key={item} className="flex items-center text-sm text-foreground/75">
-                  <span className="mr-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 border-t border-border pt-8 flex items-center justify-between">
-          <Link
-            href="/contact"
-            className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep"
-          >
-            Inquire About Similar Architecture
-          </Link>
-        </div>
-      </div>
-    </main>
-  );
+  notFound();
 }

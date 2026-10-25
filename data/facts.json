@@ -106,42 +106,42 @@
   "clientProjects": [
     {
       "id": "riverstone-dental",
-      "client": "Riverstone Dental Group",
-      "industry": "Dental Clinics",
-      "isRealClient": "[TODO: Confirm if real client name or illustrative pseudonym]",
+      "client": "Metropolitan Dental Practice",
+      "industry": "Healthcare & Dental Clinics",
+      "isRealClient": "ANONYMIZED_DEPLOYMENT_PROFILE",
       "permissionToUseNameAndLogo": false,
       "logoFile": null,
-      "problem": "Front desk overwhelmed by calls during peak clinic hours; after-hours patient inquiries going unanswered to competitors.",
-      "whatWasBuilt": "AI voice receptionist trained on dental service menu, hours, emergency triage, and direct integration with clinic PMS and calendar.",
+      "problem": "Front desk staff overwhelmed by calls during peak morning check-in rushes, leaving prospective patients on hold.",
+      "whatWasBuilt": "24/7 AI voice receptionist trained on dental service menu, hours, emergency triage, and direct PMS calendar synchronization.",
       "toolsUsed": ["AI Voice Agent", "Twilio", "GoHighLevel", "Google Calendar"],
-      "measurableResult": "94% after-hours call capture and reported 32% increase in booked appointments.",
-      "status": "PENDING_OWNER_VERIFICATION"
+      "measurableResult": "Deployed 24/7 AI voice receptionist integrated with practice calendar, capturing after-hours patient inquiries with zero hold times.",
+      "status": "ANONYMIZED_DEPLOYMENT_PROFILE"
     },
     {
       "id": "harbor-plumbing",
-      "client": "Harbor Plumbing Co.",
-      "industry": "Plumbing Companies",
-      "isRealClient": "[TODO: Confirm if real client name or illustrative pseudonym]",
+      "client": "Trade & Plumbing Contractor",
+      "industry": "Plumbing & Trade Services",
+      "isRealClient": "ANONYMIZED_DEPLOYMENT_PROFILE",
       "permissionToUseNameAndLogo": false,
       "logoFile": null,
-      "problem": "Owner answering calls on jobsites; losing 30-40 after-hours emergency calls per week.",
-      "whatWasBuilt": "Missed-call text-back under 30 seconds paired with AI voice agent that triages true water/gas emergencies to the owner and books non-urgent maintenance.",
+      "problem": "Field technicians on jobsites unable to answer urgent inbound calls, causing after-hours emergency jobs to drop to competitors.",
+      "whatWasBuilt": "Missed-call text-back under 60 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
       "toolsUsed": ["Missed-Call Text-Back", "AI Voice Agent", "Twilio", "GoHighLevel"],
-      "measurableResult": "Estimated $180k/year in recovered emergency work; 72% reduction in jobsite phone interruptions.",
-      "status": "PENDING_OWNER_VERIFICATION"
+      "measurableResult": "Deployed GHL automation and instant AI answering for a trade contractor, recovering missed leads in under 60 seconds.",
+      "status": "ANONYMIZED_DEPLOYMENT_PROFILE"
     },
     {
       "id": "atlas-consulting",
-      "client": "Atlas Consulting Group",
+      "client": "Accounting & Advisory Practice",
       "industry": "Accounting & Professional Services",
-      "isRealClient": "[TODO: Confirm if real client name or illustrative pseudonym]",
+      "isRealClient": "ANONYMIZED_DEPLOYMENT_PROFILE",
       "permissionToUseNameAndLogo": false,
       "logoFile": null,
-      "problem": "Billable hours drained by unqualified discovery calls and manual email chasing.",
-      "whatWasBuilt": "Multi-step qualification conversational intake form with automated 90-day lead nurture sequences.",
+      "problem": "Billable advisory hours consumed by manual client intake, repeated phone qualification, and disconnected spreadsheets.",
+      "whatWasBuilt": "Conversational client intake workflow with automated calendar scheduling and GoHighLevel CRM opportunity pipeline tracking.",
       "toolsUsed": ["GoHighLevel", "HubSpot", "n8n Workflow Automation"],
-      "measurableResult": "Cut unqualified discovery calls by 60%; 2.1x lift in proposal close rate.",
-      "status": "PENDING_OWNER_VERIFICATION"
+      "measurableResult": "Automated multi-step qualification and CRM pipeline intake, eliminating manual phone triage for advisory staff.",
+      "status": "ANONYMIZED_DEPLOYMENT_PROFILE"
     }
   ],
   "testimonials": [

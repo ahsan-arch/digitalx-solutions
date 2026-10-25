@@ -17,8 +17,8 @@ export const primaryNavigation: NavItem[] = [
 export const heroMetrics = [
   { value: "24/7", label: "AI call coverage" },
   { value: "< 60s", label: "Missed call text back" },
-  { value: "5x", label: "Lift in booked jobs" },
-  { value: "Zero", label: "Missed leads at 2 am" },
+  { value: "< 500ms", label: "Neural voice response" },
+  { value: "Zero", label: "Missed leads after-hours" },
 ];
 
 export type SolutionSlug =
@@ -236,9 +236,9 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "ai-voice-receptionists",
-    name: "AI Voice Receptionists",
-    metaTitle: "AI Voice Receptionist for Business",
+    slug: "ai-voice-agents",
+    name: "24/7 AI Voice Receptionists",
+    metaTitle: "24/7 AI Voice Receptionist & Answering Service",
     tagline: "24/7 answering + qualification + booking",
     summary:
       "Human-sounding AI voice receptionists and real-time automation answer calls, qualify prospects, and book appointments 24/7 across the US & Australia.",
@@ -257,7 +257,7 @@ export const solutions: Solution[] = [
     ],
     bestFor:
       "Owner operators who answer phones themselves, lose calls during jobs, or burn hours on unqualified tire kickers.",
-    legacyPaths: ["/services/ai-voice-receptionists"],
+    legacyPaths: ["/services/ai-voice-receptionists", "/solutions/ai-voice-receptionists"],
     group: "capture",
     workflowSteps: [
       {
@@ -1405,7 +1405,7 @@ export const solutions: Solution[] = [
 ];
 
 const solutionLegacyAliases: Record<string, string> = {
-  "ai-voice-agents": "ai-voice-receptionists",
+  "ai-voice-receptionists": "ai-voice-agents",
   "chatbots": "ai-agents-chatbots",
   "automated-lead-nurturing": "lead-generation",
   "crm-integration": "hubspot-automation",
@@ -1988,13 +1988,13 @@ export const footerColumns = [
   {
     title: "Industries",
     links: [
-      { label: "Home Services & Contractors", href: "/industries#home-services-contractors" },
-      { label: "Healthcare & Medical", href: "/industries#healthcare-medical" },
-      { label: "Professional & Financial", href: "/industries#professional-financial-services" },
-      { label: "Beauty, Fitness & Wellness", href: "/industries#beauty-fitness-wellness" },
-      { label: "Events & Hospitality", href: "/industries#events-hospitality" },
-      { label: "Automotive", href: "/industries#automotive" },
-      { label: "Family, Pet & Specialty Care", href: "/industries#family-pet-specialty-care" },
+      { label: "Plumbers, HVAC & Trades", href: "/industries/plumbers-hvac-trades" },
+      { label: "Medical & Dental Clinics", href: "/industries/medical-dental-clinics" },
+      { label: "Law Firms & Legal", href: "/industries/law-firms" },
+      { label: "Med Spas & Aesthetics", href: "/industries/med-spas" },
+      { label: "Accounting & Advisory", href: "/industries/accounting-firms" },
+      { label: "Real Estate Agencies", href: "/industries/real-estate-agencies" },
+      { label: "Automotive Workshops", href: "/industries/automotive-workshops" },
       { label: "View All Industries", href: "/industries" },
     ],
   },
@@ -2032,148 +2032,13 @@ export const footerColumns = [
 
 
 
-export const developmentProjects = [
-  {
-    slug: 'fintrend',
-    name: 'FinTrend',
-    overview: 'AI powered stock price prediction platform.',
-    metaDescription: 'Explore FinTrend, an institutional-grade stock forecasting platform pairing 24 deep learning neural networks with real-time financial news sentiment analysis.',
-    problem: 'Retail investors and boutique trading firms lacked access to institutional grade predictive models that could synthesize real time financial news sentiment with historical price movements. Existing tools were either too complex to deploy or relied solely on historical numerical data without context.',
-    solution: 'We built FinTrend, a full stack platform that brings advanced quantitative analysis to the web. It pairs 24 distinct deep learning models (LSTM, GRU, CNN, RNN) with natural language processing to deliver holistic stock forecasts, enabling users to benchmark how market news impacts predictive accuracy.',
-    features: [
-      'Real time dashboard for historical data visualization',
-      'Side by side model comparison and performance benchmarking',
-      'NLP sentiment analysis integration using the FNSPID dataset',
-      'FastAPI backend serving 24 diverse neural network architectures'
-    ],
-    techStack: ['React', 'FastAPI', 'Deep Learning', 'Python', 'NLP']
-  },
-  {
-    slug: 'hostel360',
-    name: 'Hostel360',
-    overview: 'A full stack campus accommodation booking platform.',
-    metaDescription: 'Explore Hostel360, a campus accommodation booking web platform featuring 360-degree virtual room tours, role-based dashboards, and Stripe payment processing.',
-    problem: 'University students frequently struggle with finding fast, reliable, and transparent housing. Taking physical tours is time consuming for students and owners alike, leading to booking friction and a disjointed tenant landlord relationship.',
-    solution: 'CampusNest (Hostel360) connects tenants, owners, and admins via a unified web interface. By integrating 360 degree virtual tours and secure digital payments, the platform removes physical barriers to booking, completely transforming the hostel discovery experience.',
-    features: [
-      'Immersive 360 degree virtual room tours using Panolens.js',
-      'Secure automated booking with Stripe checkout',
-      'JWT based role authentication for tenants, owners and admins',
-      'Comprehensive admin dashboard for managing reviews and revenue',
-      'Panoramic image processing via Python and Flask microservice'
-    ],
-    techStack: ['React', 'Redux', 'Tailwind', 'Node.js', 'MongoDB', 'Flask']
-  },
-  {
-    slug: 'medisync',
-    name: 'MediSync',
-    overview: 'AI voice receptionist and booking platform for dental and medical clinics.',
-    metaDescription: 'Explore MediSync, an autonomous AI voice receptionist for dental and medical clinics that qualifies patient inquiries and books appointments directly 24/7.',
-    problem: 'Busy clinics were losing new patients because front desk staff could not answer every call, especially after hours and during peak times. Each missed call meant a missed booking, and patients simply moved on to the next provider.',
-    solution: 'We built MediSync, an AI voice receptionist that answers every call in natural language, qualifies the caller, and books appointments directly into the practice calendar. It runs around the clock and sends instant confirmation messages to reduce no shows.',
-    features: [
-      'Natural language AI voice answering for every inbound call',
-      'Direct booking into the clinic calendar with conflict checks',
-      'Automated appointment reminders by SMS and email',
-      'Intelligent routing for emergencies versus routine visits',
-      'Live dashboard showing booked calls and recovered patients'
-    ],
-    techStack: ['Next.js', 'Vapi', 'Twilio', 'Node.js', 'GoHighLevel']
-  },
-  {
-    slug: 'leadbridge',
-    name: 'LeadBridge',
-    overview: 'GoHighLevel automation that captures, scores, and routes leads automatically.',
-    metaDescription: 'Explore LeadBridge, a high-converting GoHighLevel automation engine that captures, scores, and routes inbound leads to sales reps in seconds. Case study.',
-    problem: 'A multi location service company was collecting leads from ads, forms, and calls into separate tools with no single view. Hot leads sat unattended for hours while the team worked from spreadsheets, and follow up was inconsistent.',
-    solution: 'We designed LeadBridge, a GoHighLevel build that unifies every lead source into one pipeline, scores each lead by intent, and routes it to the right rep in seconds. Automated nurture sequences keep slower leads warm until they are ready to buy.',
-    features: [
-      'Unified pipeline pulling leads from ads, forms, chat, and calls',
-      'Automatic lead scoring based on source and behavior',
-      'Instant routing to the right team member by location',
-      'Multi step nurture sequences for email and SMS',
-      'Owner dashboard for pipeline value and conversion rates'
-    ],
-    techStack: ['GoHighLevel', 'n8n', 'Node.js', 'Meta CAPI', 'Webhooks']
-  },
-  {
-    slug: 'fleetroute',
-    name: 'FleetRoute',
-    overview: 'Dispatch and quoting automation for field service and logistics teams.',
-    metaDescription: 'Discover FleetRoute, an automated dispatch and quoting web application that calculates travel distance, assigns jobs to crews, and sends real-time SMS updates.',
-    problem: 'A field service operator handled quotes and job assignments by phone and paper, which slowed response times and left jobs poorly matched to the nearest available crew. Customers waited days for a quote that competitors delivered in minutes.',
-    solution: 'We built FleetRoute, a web platform that calculates instant quotes, assigns jobs to the closest available crew, and tracks every job from request to completion. Automated updates keep customers informed at each step.',
-    features: [
-      'Instant automated quoting based on job type and distance',
-      'Smart job assignment to the nearest available crew',
-      'Live job tracking from request to completion',
-      'Automated status updates by SMS to customers',
-      'Reporting on response times and crew utilization'
-    ],
-    techStack: ['React', 'Node.js', 'PostgreSQL', 'Mapbox', 'Express']
-  },
-  {
-    slug: 'shopflow',
-    name: 'ShopFlow',
-    overview: 'Ecommerce automation and server side tracking that recovers lost sales.',
-    metaDescription: 'See how ShopFlow restores lost ecommerce revenue using Meta CAPI server-side conversion tracking, automated abandoned cart SMS sequences, and live analytics.',
-    problem: 'An online retailer was losing conversions to abandoned carts and could not trust its ad reporting after browser tracking changes. Without accurate data, ad budget was spent on the wrong audiences.',
-    solution: 'We built ShopFlow, which adds server side tracking with the Meta Conversions API and automated cart recovery flows. Shoppers who leave get a timely reminder, and the store finally sees accurate conversion data to guide ad spend.',
-    features: [
-      'Server side tracking with the Meta Conversions API',
-      'Automated abandoned cart recovery by email and SMS',
-      'Accurate conversion reporting after browser tracking loss',
-      'Product feed sync for dynamic retargeting',
-      'Revenue and return on ad spend dashboard'
-    ],
-    techStack: ['Next.js', 'Shopify', 'Meta CAPI', 'n8n', 'Node.js']
-  },
-  {
-    slug: 'bookeasy',
-    name: 'BookEasy',
-    overview: 'Self service booking and reminder system for salons and wellness studios.',
-    metaDescription: 'Explore BookEasy, a self-service online booking and automated SMS reminder system designed for busy beauty salons and wellness studios. Full case study.',
-    problem: 'A group of salons relied on phone bookings that tied up staff and left gaps in the schedule when clients forgot appointments. Last minute openings went unfilled because there was no quick way to reach waiting clients.',
-    solution: 'We built BookEasy, a self service booking site with automated reminders and a waitlist that fills cancellations automatically. Clients book in seconds and staff spend their time on service rather than the phone.',
-    features: [
-      'Self service online booking available any time',
-      'Automated reminders that reduce missed appointments',
-      'Waitlist that fills cancellations automatically',
-      'Repeat visit prompts to improve retention',
-      'Simple dashboard for staff schedules and revenue'
-    ],
-    techStack: ['Next.js', 'Supabase', 'Stripe', 'Twilio', 'Tailwind']
-  },
-  {
-    slug: 'insightboard',
-    name: 'InsightBoard',
-    overview: 'Unified analytics dashboard for ad spend, pipeline, and revenue.',
-    metaDescription: 'See how InsightBoard unifies ad spend, CRM sales pipelines, and live revenue into a single real-time executive dashboard engineered for modern scaling agencies.',
-    problem: 'An agency owner tracked performance across seven different tools and never had a clear picture of what was working. Reporting took hours each week and decisions were made on guesswork rather than current numbers.',
-    solution: 'We built InsightBoard, a single dashboard that pulls ad spend, pipeline, and revenue into one live view. Owners see what drives results in real time, and reporting that once took hours now updates automatically.',
-    features: [
-      'One live view of ad spend, pipeline, and revenue',
-      'Automated data sync from ad platforms and the CRM',
-      'Custom alerts when key numbers move',
-      'Client ready reports generated automatically',
-      'Trend views for booked jobs and cost per lead'
-    ],
-    techStack: ['Next.js', 'n8n', 'BigQuery', 'Node.js', 'Recharts']
-  },
-  {
-    slug: 'voxassist',
-    name: 'VoxAssist',
-    overview: 'Multichannel AI chatbot for websites, WhatsApp, and SMS.',
-    metaDescription: 'Discover VoxAssist, a multichannel AI conversational agent deployed across website, WhatsApp, and SMS that qualifies leads and schedules appointments 24/7.',
-    problem: 'A service business received questions across its website, WhatsApp, and SMS but could not respond quickly enough to convert them. Visitors left before anyone replied, and common questions consumed staff time.',
-    solution: 'We built VoxAssist, an AI chatbot trained on the services, pricing, and policies of the business that answers across every channel instantly. It qualifies visitors, books appointments, and hands off to a human only when needed.',
-    features: [
-      'One AI assistant across website, WhatsApp, and SMS',
-      'Trained on real services, pricing, and policies',
-      'Qualifies visitors and books appointments instantly',
-      'Smart handoff to a human for complex requests',
-      'Conversation analytics to improve answers over time'
-    ],
-    techStack: ['Next.js', 'OpenAI', 'Twilio', 'WhatsApp Business API', 'Node.js']
-  }
-];
+export const developmentProjects: {
+  slug: string;
+  name: string;
+  overview: string;
+  metaDescription: string;
+  problem: string;
+  solution: string;
+  features: string[];
+  techStack: string[];
+}[] = [];

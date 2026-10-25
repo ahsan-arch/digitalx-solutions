@@ -44,10 +44,19 @@ export type IndustryFaq = {
   answer: string;
 };
 
+export type IndustryComparisonRow = {
+  feature: string;
+  traditional: string;
+  digitalx: string;
+};
+
 export type Industry = {
   slug: string;
   name: string;
   metaTitle?: string;
+  h1?: string;
+  subheadline?: string;
+  trustBanner?: string;
   category: IndustryCategory;
   headline: string;
   summary: string;
@@ -61,14 +70,18 @@ export type Industry = {
   unitEconomics: IndustryUnitEconomics;
   metaDescription?: string;
   faqs: IndustryFaq[];
+  comparison?: IndustryComparisonRow[];
 };
 
 export const industries: Industry[] = [
   {
     "slug": "plumbers-hvac-trades",
     "name": "Plumbers, HVAC & Trade Businesses",
-    "metaTitle": "AI Receptionist for Plumbers & HVAC Trades",
-    "metaDescription": "Never lose a call-out again. Deploy 24/7 AI answering for plumbers, HVAC, and trades that triages emergencies, captures addresses, and books site visits.",
+    "metaTitle": "24/7 AI Answering & Dispatch for Plumbers & HVAC | DigitalX",
+    "h1": "24/7 AI Answering & Dispatch Automation for Plumbers, HVAC, and Trades",
+    "subheadline": "Never miss another $300+ emergency dispatch call. Capture after-hours leads, schedule jobs directly into your dispatch software, and recover missed calls in under 60 seconds—all without paying for a traditional call center.",
+    "trustBanner": "Trusted by residential & commercial trade contractors across Australia & the USA to handle 24/7 client booking.",
+    "metaDescription": "Stop losing high-value after-hours calls. We deploy 24/7 AI answering, emergency dispatch, and GoHighLevel CRM setups for trade businesses in the US & AU.",
     "category": "Home Services & Contractors",
     "headline": "You're under a sink or up a ladder when the phone rings. We make sure the job lands in your diary, not a competitor's.",
     "summary": "Trade customers call in a crisis and ring until someone answers. DigitalX equips trade businesses with an AI receptionist that answers every call in under 500ms, screens emergencies, collects job addresses, and syncs directly with ServiceTitan, Jobber, or Google Calendar.",
@@ -93,13 +106,13 @@ export const industries: Industry[] = [
       "Instant missed-call text-back triggers in under 30 seconds for any dropped or busy call"
     ],
     "relatedSolutionSlugs": [
-      "ai-voice-receptionists",
+      "ai-voice-agents",
       "missed-call-text-back",
       "gohighlevel-implementation",
       "n8n-workflow-automation"
     ],
     "intakeArchitecture": {
-      "emergencyCriteria": "Burst pipes with active flooding, gas odors, no hot water in winter, or complete air conditioning condenser failure during heatwaves (>35\u00b0C / 95\u00b0F).",
+      "emergencyCriteria": "Burst pipes with active flooding, gas odors, no hot water in winter, or complete air conditioning condenser failure during heatwaves (>35°C / 95°F).",
       "dispatchProtocol": "Immediate ring-group transfer to on-call duty plumber mobile. If unanswered within 18 seconds, sends high-priority SMS alert with caller audio, transcription, and GPS address pin.",
       "intakeSteps": [
         {
@@ -151,30 +164,60 @@ export const industries: Industry[] = [
       "recoveredRevenueModel": "Recovering just 5 missed emergency jobs per month generates $6,500 - $16,000 in net new monthly revenue.",
       "roiMultiple": "4.8x - 12x return on investment"
     },
+    "comparison": [
+      {
+        "feature": "Cost",
+        "traditional": "$3,500 - $6,000/mo (hourly, seat, & call rates)",
+        "digitalx": "Flat Monthly retainer with unlimited call capacity"
+      },
+      {
+        "feature": "Pickup Speed",
+        "traditional": "Missed during busy rushes or on hold 1-2 mins",
+        "digitalx": "Under 500ms latency, zero hold times 24/7/365"
+      },
+      {
+        "feature": "Accuracy",
+        "traditional": "Prone to human data entry errors and typos",
+        "digitalx": "Exact address and phone capture, recorded, synced"
+      },
+      {
+        "feature": "Missed Call Backup",
+        "traditional": "None (if line is busy, client goes to voicemail)",
+        "digitalx": "Automated SMS text-back in under 60s"
+      },
+      {
+        "feature": "Software Integration",
+        "traditional": "Relies on manual booking, messy hand-offs",
+        "digitalx": "Instant integration with GoHighLevel / CRMs"
+      }
+    ],
     "faqs": [
       {
-        "question": "Can the AI handle urgent emergency plumbing call-outs after hours?",
-        "answer": "Yes. The AI voice agent distinguishes active emergencies (such as burst water mains or gas leaks) from routine requests (like quoting a mixer tap replacement). When an emergency is detected, it asks the caller for safety status, collects their exact address, and immediately warm-transfers to your on-call plumber's mobile or fires a high-priority SMS alert with the recording attached."
+        "question": "Can the AI handle emergency dispatch calls?",
+        "answer": "Yes. You configure the triage rules. If a caller reports a major emergency, the AI captures the location, details, and phone number, then immediately notifies your on-call technician via automated dispatch alerts."
       },
       {
-        "question": "Does it integrate with ServiceTitan or Jobber?",
-        "answer": "Yes. We connect the AI voice agent directly to ServiceTitan, Jobber, Housecall Pro, or Fergus via native APIs. As soon as the call ends, a new customer record, service address, and unassigned work order appear on your dispatch board without manual double-entry."
+        "question": "Does this connect to my existing software?",
+        "answer": "Yes, we integrate with GoHighLevel, ServiceTitan, and major calendars via webhooks and API. Booking, pipeline status, and transcripts update automatically."
       },
       {
-        "question": "Do I need to change my current business phone number on my vans and website?",
-        "answer": "No. You keep your existing business telephone number. We configure carrier call forwarding so your phone rings on your mobile first, and if you are on the tools or unavailable after 3 rings, the call seamlessly forwards to your AI receptionist."
+        "question": "What happen with noisy background environments?",
+        "answer": "The system is powered by natural voice-to-text filters. Even if someone calls from a loud job site, our AI filters the noise, gets the information, and confirms details with natural dialogue."
       },
       {
-        "question": "What if the customer wants to speak to a real person?",
-        "answer": "If a caller says 'I want to speak to a person' or asks for you by name, the AI politely confirms their inquiry and attempts a warm live transfer to your mobile, or notes their urgent request and texts you their contact details instantly."
+        "question": "Can it work with my Australian/US number?",
+        "answer": "Yes. Using Twilio or carrier forwarding, we can use your existing number. Callers won't need to learn any new steps."
       }
     ]
   },
   {
     "slug": "medical-dental-clinics",
     "name": "Medical & Dental Clinics",
-    "metaTitle": "AI Receptionist for Dentists & Medical Clinics",
-    "metaDescription": "24/7 patient booking and emergency triage for dental and healthcare clinics. Connects to Cliniko, Dentrix, and Google Calendar across Australia and the USA.",
+    "metaTitle": "24/7 AI Medical Receptionist & Patient Booking | DigitalX",
+    "h1": "24/7 AI Medical Receptionists & Appointment Booking for Healthcare & Dental Clinics",
+    "subheadline": "Keep your practice running smoothly without overloading your front desk. Capture 100% of patient inquiries, book appointments directly into your practice calendar 24/7, and automatically follow up with patient inquiries in seconds—fully secure and automated.",
+    "trustBanner": "Deployed across medical, dental, and wellness practices in Australia & the USA to guarantee zero missed patient calls.",
+    "metaDescription": "Stop losing new patients to voicemail. We deploy 24/7 AI medical receptionists, automated appointment booking, and GHL CRM systems for clinics in the US & AU.",
     "category": "Healthcare & Medical",
     "headline": "While your front desk checks in patients and handles claims, phones ring off the hook. We capture every patient booking 24/7.",
     "summary": "Medical and dental practices lose thousands in patient lifetime value when prospective patients hit busy signals or after-hours voicemail. DigitalX deploys compliant AI receptionists that answer inquiries in natural professional tones, triage dental emergencies, and book appointments directly into practice management systems.",
@@ -199,7 +242,7 @@ export const industries: Industry[] = [
       "Two-way SMS text-back recovering missed calls within 30 seconds"
     ],
     "relatedSolutionSlugs": [
-      "ai-voice-receptionists",
+      "ai-voice-agents",
       "missed-call-text-back",
       "gohighlevel-implementation",
       "hubspot-automation"
@@ -258,22 +301,44 @@ export const industries: Industry[] = [
       "recoveredRevenueModel": "Recovering 12 missed new patient appointments per month adds $18,000 - $35,000 in patient lifetime value.",
       "roiMultiple": "6x - 15x return on monthly retainer"
     },
+    "comparison": [
+      {
+        "feature": "Cost",
+        "traditional": "High per-call, peak-time, or seat-based costs",
+        "digitalx": "Flat monthly retainer with unlimited booking capacity"
+      },
+      {
+        "feature": "Response Time",
+        "traditional": "Patients often experience holds during peak times",
+        "digitalx": "Answers under 500ms latency, zero hold times 24/7/365"
+      },
+      {
+        "feature": "Integrations",
+        "traditional": "Hand-written notes forwarded to email / inbox",
+        "digitalx": "Automated integration with CRM & appointment calendars"
+      },
+      {
+        "feature": "Handling Capacity",
+        "traditional": "Limited by staff count (can only take one call at a time)",
+        "digitalx": "Unlimited concurrent calls—never busy, never on hold"
+      }
+    ],
     "faqs": [
       {
-        "question": "Is the AI receptionist compliant with Australian Privacy Principles and US HIPAA?",
-        "answer": "Yes. Our telephony and AI infrastructure encrypts all in-transit and at-rest voice data, operates under strict regional data residency rules (Australia or US), and redacts sensitive financial information. We ensure all patient intake complies with the Privacy Act 1988 in Australia and HIPAA standards in the United States."
+        "question": "Is the patient booking AI data-secure?",
+        "answer": "Yes. Our systems are built to handle patient details with data-secure routing. Call records can be processed, stored, or deleted based on your clinic's privacy and compliance requirements."
       },
       {
-        "question": "Can the AI book directly into Cliniko or our dental practice software?",
-        "answer": "Yes. We integrate directly with Cliniko, Dentrix, Halaxy, and web booking portals. The AI queries chair and practitioner availability in real time, reserves the exact appointment duration, and inputs new patient details without double-booking."
+        "question": "Can the AI determine if a call is an emergency?",
+        "answer": "Absolutely. You configure the screening criteria. If a patient describes an urgent medical event, the AI identifies it, stops booking, and provides immediate emergency instructions or routes the call to an on-call manager."
       },
       {
-        "question": "How does the AI handle patient dental emergencies?",
-        "answer": "The AI is programmed with specific clinical triage protocols. If a caller reports acute facial swelling, severe trauma, or bleeding, it flags the call as high-urgency, offers safety instructions, and immediately routes the patient to your on-call emergency line or advises emergency room care."
+        "question": "Does the AI voice sound robotic?",
+        "answer": "No. Powered by modern human-like neural voice patterns, callers receive warm, natural responses that hold a fluid, natural tempo."
       },
       {
-        "question": "Can it answer common questions about health funds and private health insurance?",
-        "answer": "Yes. We train the AI on your exact accepted health funds (e.g. Bupa, Medibank, HCF in Australia or Delta Dental, MetLife, Cigna in the US), standard payment plans (Afterpay, Zip, SuperCare), and clinic parking or opening hours."
+        "question": "How does it connect to my booking software?",
+        "answer": "We bridge our systems via GoHighLevel webhooks, APIs, and modern CRMs, ensuring patient schedules updating instantly without double-booking."
       }
     ]
   },

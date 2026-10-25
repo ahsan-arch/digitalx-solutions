@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { siteConfig, geoHreflangLanguages } from "@/lib/seo";
 import { articlesData } from "@/data/insights-articles";
-import { developmentProjects, results, solutions } from "@/data/redesign";
+import { results, solutions } from "@/data/redesign";
 import { developmentServices } from "@/data/development-services";
 import { integrations } from "@/data/integrations";
 import { clientProjects } from "@/data/facts";

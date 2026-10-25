@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { articlesData } from "@/data/insights-articles";
-import { developmentProjects, results, solutions } from "@/data/redesign";
+import { results, solutions } from "@/data/redesign";
 import { industries } from "@/data/industries";
+import { developmentServices } from "@/data/development-services";
 
 const INDEX_NOW_KEY = "3c12d5a79b40fe68";
 const SITE = "https://digitalx-solutions.com";
@@ -40,7 +41,7 @@ export async function GET() {
         ...solutions.map((s) => `/solutions/${s.slug}`),
         ...industries.map((i) => `/industries/${i.slug}`),
         ...results.map((r) => `/case-studies/${r.slug}`),
-        ...developmentProjects.map((p) => `/development/${p.slug}`),
+        ...developmentServices.map((d) => `/development/${d.slug}`),
         ...Object.keys(articlesData).map((slug) => `/insights/${slug}`),
     ];
 

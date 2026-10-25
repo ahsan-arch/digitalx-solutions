@@ -19,11 +19,11 @@ const nextConfig: NextConfig = {
       { source: "/services/nextjs-development", destination: "/services/web-design-and-development", permanent: true },
       { source: "/services/meta-ads-engineering", destination: "/services/meta-ads", permanent: true },
       // Old service pages → matching canonical Solution pages
-      { source: "/services/ai-voice-receptionists", destination: "/solutions/ai-voice-receptionists", permanent: true },
+      { source: "/services/ai-voice-receptionists", destination: "/solutions/ai-voice-agents", permanent: true },
       { source: "/services/conversational-ai", destination: "/solutions/ai-agents-chatbots", permanent: true },
       { source: "/services/revenue-operations", destination: "/solutions/hubspot-automation", permanent: true },
       // Legacy solution aliases → canonical pillar URLs
-      { source: "/solutions/ai-voice-agents", destination: "/solutions/ai-voice-receptionists", permanent: true },
+      { source: "/solutions/ai-voice-receptionists", destination: "/solutions/ai-voice-agents", permanent: true },
       { source: "/solutions/chatbots", destination: "/solutions/ai-agents-chatbots", permanent: true },
       { source: "/solutions/automated-lead-nurturing", destination: "/solutions/lead-generation", permanent: true },
       { source: "/solutions/crm-integration", destination: "/solutions/hubspot-automation", permanent: true },
