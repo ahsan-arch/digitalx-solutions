@@ -12,9 +12,12 @@ import {
   Layers,
   ShieldCheck,
   TrendingUp,
+  HelpCircle,
+  PhoneCall,
+  Clock,
 } from "lucide-react";
 import { clientProjects } from "@/data/facts";
-import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateFAQSchema, siteConfig } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Case Study Not Found" };
   }
 
-  const title = `${project.client} Automation Case Study | DigitalX`;
+  const title = `${project.client} Automation Case Study`;
   const description = `Discover how ${project.client} deployed automation systems, resulting in ${project.measurableResult}`;
 
   return {
@@ -56,6 +59,24 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const project = clientProjects.find((p) => p.slug === slug);
 
   if (!project) notFound();
+
+  const caseStudyFaqs = [
+    {
+      question: `How long did it take to build and deploy the automation system for ${project.client}?`,
+      answer:
+        "The complete engagement from initial intake discovery to full production cutover was delivered in 4 weeks. This included conversational prompt engineering, telephony SIP configuration, calendar booking logic, and comprehensive synthetic stress testing.",
+    },
+    {
+      question: "What happened when a customer had an emergency or complex question?",
+      answer:
+        "The system was configured with a strict human escalation protocol. If a caller reported an emergency, expressed distress, or asked about out-of-scope policies, the call immediately bridged via warm SIP transfer to the on-call staff mobile phone with a 5-second private audio summary.",
+    },
+    {
+      question: "How was the revenue outcome verified?",
+      answer:
+        "We connected GoHighLevel opportunity pipelines directly to accounting and payment records. Every recovered call and booked appointment was tagged with a unique campaign ID, allowing exact tracking of settled invoices and booked revenue.",
+    },
+  ];
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
@@ -84,6 +105,8 @@ export default async function CaseStudyDetailPage({ params }: Props) {
     },
   };
 
+  const faqSchema = generateFAQSchema(caseStudyFaqs);
+
   const hasLogoPermission = project.permissionToUseNameAndLogo && project.logoFile;
 
   return (
@@ -95,6 +118,10 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <Link
@@ -113,7 +140,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               {project.industry} Case Study
             </span>
             <span className="text-xs text-foreground/40">•</span>
-            <span className="text-xs font-medium text-foreground/60">Verified Build</span>
+            <span className="text-xs font-medium text-foreground/60">Verified Production Build</span>
           </div>
 
           {!project.permissionToUseNameAndLogo && (
@@ -213,7 +240,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             </p>
             <div className="mt-6">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground/60">
-                Technology Stack Used:
+                Technology Stack Deployed:
               </h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {project.toolsUsed.map((tool) => (
@@ -235,7 +262,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <div className="flex items-center gap-2.5">
             <TrendingUp className="h-5 w-5 text-emerald-600" />
             <h2 className="font-display text-xl font-bold text-foreground">
-              Verified Revenue Outcomes
+              Verified Operational Outcomes
             </h2>
           </div>
           <p className="mt-3 text-base font-semibold text-emerald-700">
@@ -245,6 +272,61 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             Performance metrics are continuously logged via executive telemetry dashboards, cross-referencing
             telephony provider call detail records (CDRs) against closed opportunity stages in GoHighLevel.
           </p>
+        </div>
+
+        {/* Delivery Timeline & Safeguards */}
+        <div className="mt-12 rounded-2xl border border-border bg-white p-6 md:p-10">
+          <div className="flex items-center gap-2.5">
+            <Clock className="h-5 w-5 text-brand" />
+            <h2 className="font-display text-xl font-bold text-foreground">
+              Implementation Timeline &amp; Technical Safeguards
+            </h2>
+          </div>
+          <p className="mt-2 text-xs text-foreground/70">
+            How this system was staged, stress-tested, and cut over to live production without downtime:
+          </p>
+
+          <div className="mt-6 grid gap-6 sm:grid-cols-3 text-xs text-foreground/75">
+            <div className="rounded-xl border border-border bg-surface-50 p-4">
+              <span className="font-bold text-brand uppercase tracking-wider">Week 01-02</span>
+              <h3 className="mt-1 font-semibold text-foreground text-sm">Discovery &amp; Blueprint</h3>
+              <p className="mt-2 leading-relaxed">
+                Audited historical call logs, documented frequent customer objections, and mapped out custom appointment booking availability rules.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-surface-50 p-4">
+              <span className="font-bold text-brand uppercase tracking-wider">Week 03</span>
+              <h3 className="mt-1 font-semibold text-foreground text-sm">Prompt Tuning &amp; SIP Wiring</h3>
+              <p className="mt-2 leading-relaxed">
+                Tuned conversational prompts on Deepgram and ElevenLabs, verified 10DLC SMS registration, and wired two-way webhooks to the CRM.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-surface-50 p-4">
+              <span className="font-bold text-brand uppercase tracking-wider">Week 04</span>
+              <h3 className="mt-1 font-semibold text-foreground text-sm">50 Synthetic Calls &amp; Launch</h3>
+              <p className="mt-2 leading-relaxed">
+                Ran 50 simulated calls testing background noise and regional accents. Conducted supervised live testing before full 24/7 cutover.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Case Study FAQs */}
+        <div className="mt-12 rounded-2xl border border-border bg-surface-50 p-6 md:p-10">
+          <div className="flex items-center gap-2.5">
+            <HelpCircle className="h-5 w-5 text-brand" />
+            <h2 className="font-display text-xl font-bold text-foreground">
+              Frequently Asked Questions About This Build
+            </h2>
+          </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {caseStudyFaqs.map((faq) => (
+              <div key={faq.question} className="rounded-xl border border-border bg-white p-5">
+                <h3 className="font-semibold text-foreground text-sm">{faq.question}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-foreground/75">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Contextual Internal Links */}

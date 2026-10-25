@@ -10,9 +10,10 @@ const STATIC_PATHS = [
     "/",
     "/solutions",
     "/industries",
+    "/integrations",
     "/services/web-design-and-development",
     "/services/meta-ads",
-    "/work",
+    "/case-studies",
     "/development",
     "/pricing",
     "/process",
@@ -38,7 +39,7 @@ export async function GET() {
     const dynamicPaths = [
         ...solutions.map((s) => `/solutions/${s.slug}`),
         ...industries.map((i) => `/industries/${i.slug}`),
-        ...results.map((r) => `/work/${r.slug}`),
+        ...results.map((r) => `/case-studies/${r.slug}`),
         ...developmentProjects.map((p) => `/development/${p.slug}`),
         ...Object.keys(articlesData).map((slug) => `/insights/${slug}`),
     ];

@@ -2,6 +2,9 @@ import { MetadataRoute } from "next";
 import { siteConfig, geoHreflangLanguages } from "@/lib/seo";
 import { articlesData } from "@/data/insights-articles";
 import { developmentProjects, results, solutions } from "@/data/redesign";
+import { developmentServices } from "@/data/development-services";
+import { integrations } from "@/data/integrations";
+import { clientProjects } from "@/data/facts";
 import { industries } from "@/data/industries";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,10 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: siteConfig.domain, changeFrequency: "weekly" as const, priority: 1.0, alternates: geoAlternates },
         { url: `${siteConfig.domain}/solutions`, changeFrequency: "monthly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/industries`, changeFrequency: "weekly" as const, priority: 0.9 },
+        { url: `${siteConfig.domain}/integrations`, changeFrequency: "weekly" as const, priority: 0.9 },
+        { url: `${siteConfig.domain}/development`, changeFrequency: "monthly" as const, priority: 0.85 },
+        { url: `${siteConfig.domain}/case-studies`, changeFrequency: "monthly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/services/web-design-and-development`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/services/meta-ads`, changeFrequency: "monthly" as const, priority: 0.7 },
-        { url: `${siteConfig.domain}/work`, changeFrequency: "monthly" as const, priority: 0.8 },
-        { url: `${siteConfig.domain}/development`, changeFrequency: "monthly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/pricing`, changeFrequency: "monthly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/process`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/about`, changeFrequency: "monthly" as const, priority: 0.7 },
@@ -46,18 +50,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.85,
     }));
 
-    const developmentEntries: MetadataRoute.Sitemap = developmentProjects.map((p) => ({
-        url: `${siteConfig.domain}/development/${p.slug}`,
-        lastModified: releaseDate,
-        changeFrequency: "yearly",
-        priority: 0.7,
-    }));
-
-    const workEntries: MetadataRoute.Sitemap = results.map((r) => ({
-        url: `${siteConfig.domain}/work/${r.slug}`,
+    const devServiceEntries: MetadataRoute.Sitemap = developmentServices.map((s) => ({
+        url: `${siteConfig.domain}/development/${s.slug}`,
         lastModified: releaseDate,
         changeFrequency: "monthly",
-        priority: 0.7,
+        priority: 0.85,
+    }));
+
+    const integrationEntries: MetadataRoute.Sitemap = integrations.map((i) => ({
+        url: `${siteConfig.domain}/integrations/${i.slug}`,
+        lastModified: releaseDate,
+        changeFrequency: "monthly",
+        priority: 0.85,
+    }));
+
+    const caseStudiesEntries: MetadataRoute.Sitemap = clientProjects.map((p) => ({
+        url: `${siteConfig.domain}/case-studies/${p.slug}`,
+        lastModified: releaseDate,
+        changeFrequency: "monthly",
+        priority: 0.75,
     }));
 
     const articleEntries: MetadataRoute.Sitemap = Object.entries(articlesData).map(([slug, article]) => ({
@@ -71,8 +82,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...staticEntries,
         ...solutionEntries,
         ...industryEntries,
-        ...developmentEntries,
-        ...workEntries,
+        ...devServiceEntries,
+        ...integrationEntries,
+        ...caseStudiesEntries,
         ...articleEntries,
     ];
 }

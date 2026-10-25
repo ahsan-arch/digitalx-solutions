@@ -108,7 +108,7 @@ export default function AboutPage() {
                                     Book a strategy call
                                 </Link>
                                 <Link
-                                    href="/work"
+                                    href="/case-studies"
                                     className="inline-flex items-center rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100"
                                 >
                                     View outcomes
@@ -272,6 +272,37 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="container-shell mt-12">
+                    <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
+                        <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
+                            Our Operating Principles &amp; Delivery Standards
+                        </h2>
+                        <p className="mt-2 text-sm text-foreground/70 max-w-2xl">
+                            We built DigitalX Solutions to provide honest, high-leverage technical execution without agency fluff or vanity metrics.
+                        </p>
+                        <div className="mt-6 grid gap-6 sm:grid-cols-3 text-sm text-foreground/75">
+                            <div className="rounded-2xl border border-border bg-white p-5">
+                                <h3 className="font-semibold text-foreground">1. You Own 100% of the Assets</h3>
+                                <p className="mt-2 text-xs leading-relaxed">
+                                    All CRM setups, Twilio SIP numbers, n8n workflows, and custom Next.js code are built directly in your cloud accounts. If you ever stop working with us, your operational infrastructure stays fully intact.
+                                </p>
+                            </div>
+                            <div className="rounded-2xl border border-border bg-white p-5">
+                                <h3 className="font-semibold text-foreground">2. Concrete Telephony Latency Budgets</h3>
+                                <p className="mt-2 text-xs leading-relaxed">
+                                    We benchmark conversational AI response times under 800ms. An AI voice receptionist that pauses awkwardly frustrates callers; our systems respond with natural conversational timing.
+                                </p>
+                            </div>
+                            <div className="rounded-2xl border border-border bg-white p-5">
+                                <h3 className="font-semibold text-foreground">3. Zero Hallucination Guardrails</h3>
+                                <p className="mt-2 text-xs leading-relaxed">
+                                    Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside verified parameters, it gracefully routes to your on-call team.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>

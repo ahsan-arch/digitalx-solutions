@@ -11,7 +11,7 @@ export const siteConfig = {
 // Every title ≤60 chars, every description ≤155 chars, includes US/AU signals
 export const seoCopy = {
     home: {
-        title: "AI Automation Agency Australia & USA | DigitalX Solutions",
+        title: "AI Automation Agency Australia & USA | DigitalX",
         description: "DigitalX Solutions is an AI automation agency deploying AI voice agents, missed-call text-back, and GoHighLevel CRM workflows across Australia and the US.",
     },
     services: {
@@ -37,7 +37,7 @@ export const seoCopy = {
     work: {
         title: "AI Voice & CRM Automation Case Studies",
         description:
-            "Explore real-world client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows in the USA and Australia.",
+            "Explore real-world client case studies and revenue results across AI voice receptionists, GoHighLevel setups, and automated workflows across the US & AU.",
     },
     contact: {
         title: "Book a Strategy Call",
@@ -52,7 +52,7 @@ export const seoCopy = {
     tryVoiceAgent: {
         title: "Live AI Voice Agent Demo",
         description:
-            "Test a live AI voice receptionist trained on your business. Have a real-time conversation and experience interactive voice appointment booking for free today.",
+            "Test a live AI voice receptionist trained on your business. Have a real-time conversation and experience interactive voice appointment booking today.",
     },
 };
 

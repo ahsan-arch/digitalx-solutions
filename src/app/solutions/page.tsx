@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/solutions", {
   title: "AI Voice, Automation & CRM Solutions",
   description:
-    "Explore AI voice receptionists, missed-call text-back, GoHighLevel systems, and n8n workflow automations engineered to scale revenue across the US & Australia.",
+    "Explore AI voice receptionists, missed-call text-back, GoHighLevel systems, and n8n workflow automations engineered to scale revenue across the US and AU.",
 });
 
 export default function SolutionsHubPage() {

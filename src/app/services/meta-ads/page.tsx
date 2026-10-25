@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/services/meta-ads", {
   title: "Meta Ads & Server-Side CAPI Tracking",
   description:
-    "Meta Ads management with server-side tracking, Facebook Conversions API, and full CRM attribution for growth-focused service brands across the US and Australia.",
+    "Meta Ads management with server-side tracking, Facebook Conversions API, and full CRM attribution for growth-focused service brands in the US and AU.",
 });
 
 const faqs = [
@@ -181,7 +181,7 @@ export default function MetaAdsPage() {
             <Link href="/insights/server-side-tracking-meta-ads" className="hover:text-accent-hover">
               Why Meta CAPI is mandatory
             </Link>
-            <Link href="/work" className="hover:text-accent-hover">
+            <Link href="/case-studies" className="hover:text-accent-hover">
               See client outcomes
             </Link>
           </div>

@@ -30,14 +30,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const integration = getIntegrationBySlug(slug);
   if (!integration) return {};
 
+  const cleanTitle = integration.metaTitle.replace(/\s*\|\s*DigitalX.*$/gi, "").trim();
+
   return {
-    title: `${integration.metaTitle} | DigitalX`,
+    title: cleanTitle,
     description: integration.metaDescription,
     alternates: {
       canonical: `${siteConfig.domain}/integrations/${integration.slug}`,
     },
     openGraph: {
-      title: `${integration.metaTitle} | DigitalX`,
+      title: `${cleanTitle} | DigitalX`,
       description: integration.metaDescription,
       url: `${siteConfig.domain}/integrations/${integration.slug}`,
       siteName: "DigitalX Solutions",

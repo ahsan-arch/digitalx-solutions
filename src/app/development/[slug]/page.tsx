@@ -22,44 +22,31 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const serviceSlugs = developmentServices.map((s) => ({ slug: s.slug }));
-  const projectSlugs = developmentProjects.map((p) => ({ slug: p.slug }));
-  return [...serviceSlugs, ...projectSlugs];
+  return developmentServices.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getDevelopmentServiceBySlug(slug);
 
-  if (service) {
-    return {
-      title: `${service.metaTitle} | DigitalX`,
+  if (!service) {
+    return { title: "Service Not Found" };
+  }
+
+  return {
+    title: service.metaTitle,
+    description: service.metaDescription,
+    alternates: {
+      canonical: `${siteConfig.domain}/development/${service.slug}`,
+    },
+    openGraph: {
+      title: service.metaTitle,
       description: service.metaDescription,
-      alternates: {
-        canonical: `${siteConfig.domain}/development/${service.slug}`,
-      },
-      openGraph: {
-        title: `${service.metaTitle} | DigitalX`,
-        description: service.metaDescription,
-        url: `${siteConfig.domain}/development/${service.slug}`,
-        siteName: "DigitalX Solutions",
-        type: "website",
-      },
-    };
-  }
-
-  const project = developmentProjects.find((p) => p.slug === slug);
-  if (project) {
-    return {
-      title: `${project.name} Build Specs | DigitalX`,
-      description: (project as { metaDescription?: string }).metaDescription || `${project.name}: ${project.overview} Custom software and automation engineering delivered by DigitalX.`.slice(0, 155),
-      alternates: {
-        canonical: `${siteConfig.domain}/development/${project.slug}`,
-      },
-    };
-  }
-
-  return { title: "Service Not Found" };
+      url: `${siteConfig.domain}/development/${service.slug}`,
+      siteName: "DigitalX Solutions",
+      type: "website",
+    },
+  };
 }
 
 export default async function DevelopmentSlugPage(props: Props) {

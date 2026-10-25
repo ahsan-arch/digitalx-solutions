@@ -42,12 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
     return { title: "Industry Not Found" };
   }
 
-  const fallbackDesc = `Automate ${industry.name.toLowerCase()} operations with 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows across the US and Australia.`;
-  const description =
-    industry.metaDescription ||
-    (fallbackDesc.length < 150
-      ? `Automate ${industry.name.toLowerCase()} operations with 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows across both the US and Australia.`
-      : fallbackDesc);
+  const rawDesc = industry.metaDescription || `Automate ${industry.name.toLowerCase()} with 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows in the US & AU.`;
+  const description = rawDesc.length > 155 ? `${rawDesc.slice(0, 151).trim()}...` : rawDesc;
 
   return generatePageMetadata(`/industries/${industry.slug}`, {
     title: industry.metaTitle || `${industry.name} AI Playbook`,

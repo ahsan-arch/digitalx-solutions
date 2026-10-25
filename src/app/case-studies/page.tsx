@@ -105,6 +105,9 @@ export default function CaseStudiesIndexPage() {
               unanswered inbound call volume, average speed-to-lead on ad clicks or web inquiries, and
               opportunity drop-off rate between quote generation and deal closure.
             </p>
+            <p className="mt-3 text-sm leading-relaxed text-foreground/75 md:text-base">
+              Post-launch, our automated reporting pipelines ingest call logs, SMS conversational outcomes, and calendar bookings, delivering weekly executive dashboards that correlate automated customer touches with actual bank-settled revenue.
+            </p>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">

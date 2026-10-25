@@ -48,10 +48,10 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: seoCopy.home.title,
-    template: `%s | DigitalX`,
+    default: "AI Automation Agency Australia & USA | DigitalX",
+    template: "%s",
   },
-  description: seoCopy.home.description,
+  description: "DigitalX Solutions is an AI automation agency deploying AI voice agents, missed-call text-back, and GoHighLevel CRM workflows across Australia and the US.",
   metadataBase: new URL(siteConfig.domain),
   alternates: {
     canonical: "/",

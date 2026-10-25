@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/services/web-design-and-development", {
   title: "Next.js Web Design & Development",
   description:
-    "Fast, conversion-focused Next.js websites for service teams. Sub-200ms load times, SEO architecture, and CRM-ready booking integrations for US and AU firms.",
+    "Fast, conversion-focused Next.js websites for service teams. Sub-200ms load times, SEO architecture, and CRM booking integrations for US and AU firms.",
 });
 
 const faqs = [
@@ -193,7 +193,7 @@ export default function WebDesignDevelopmentPage() {
             utility tenders, then browse the rest of our development work.
           </p>
           <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold text-accent">
-            <Link href="/work/hitech-expertise" className="hover:text-accent-hover">
+            <Link href="/case-studies/hitech-expertise" className="hover:text-accent-hover">
               Read the case study
             </Link>
             <Link href="/development" className="hover:text-accent-hover">

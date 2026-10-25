@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/usa", {
   title: "AI Voice & Automation Agency USA",
   description:
-    "AI voice agents, missed-call recovery & CRM automation for US service businesses across New York, California, Texas, Florida, Illinois, and all fifty states.",
+    "AI voice agents, missed-call recovery & CRM automation for US service businesses across New York, California, Texas, Florida, and all fifty states.",
 });
 
 const usaLocalBusiness = generateLocalBusinessSchema({
