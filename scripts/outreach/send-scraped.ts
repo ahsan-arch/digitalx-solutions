@@ -203,6 +203,12 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
       continue;
     }
 
+    // Duplicate check
+    if (tracker.isAlreadyContacted(lead.email)) {
+      console.log(`  ℹ Already contacted within last 60 days. Skipping duplicate.`);
+      continue;
+    }
+
     // Live SMTP Mailbox Verification Probe (HELO/MAIL FROM/RCPT TO)
     process.stdout.write(`  Probing recipient mailbox on ${lead.domain}... `);
     const probe = await probeSmtpMailbox(lead.email);

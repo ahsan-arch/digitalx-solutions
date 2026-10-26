@@ -15,19 +15,18 @@
     "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ed2d79asi13608918f8f.480 - gsmtp"
   },
   {
-    "name": "Dr. John Chuback",
-    "firstName": "Dr. Chuback",
-    "title": "Founder & Chief Vision Officer",
+    "name": "John Chuback, Md, Facs",
+    "firstName": "John",
+    "title": "Cvo - chief vision officer and founder",
     "company": "Vitasupportmd",
     "domain": "vitasupportmd.com",
-    "email": "john@vitasupportmd.com",
     "category": "healthcare",
     "country": "United States",
-    "problem": "Patient inquiry calls and consultation requests dropping to voicemail during peak clinic hours.",
-    "solution": "24/7 AI voice answering that qualifies patient inquiries and schedules appointments directly.",
+    "problem": "Front desk staff cannot keep up with patient call volume so appointment requests and after-hours calls go to voicemail.",
+    "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
     "verifiedEmail": "help@vitasupportmd.com",
     "source": "direct_probe",
-    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ece8764si15689018f8f.157 - gsmtp"
+    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ed1e5bcsi14694099f8f.419 - gsmtp"
   },
   {
     "name": "Dr. Will Bozeman",

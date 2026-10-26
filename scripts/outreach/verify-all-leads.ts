@@ -159,23 +159,61 @@ export async function generateVerifiedLeadList() {
   console.log("============================================================");
   console.log("   DIGITALX SOLUTIONS — 100% VERIFIED LEAD GENERATOR        ");
   console.log("============================================================\n");
-  console.log(`Checking ${scrapedLeads.length} scraped prospects with live SMTP probe...\n`);
+
+  const allLeadsPath = path.join(process.cwd(), "data", "all-extracted-leads.json");
+  let pool: ScrapedLead[] = scrapedLeads;
+  if (fs.existsSync(allLeadsPath)) {
+    try {
+      pool = JSON.parse(fs.readFileSync(allLeadsPath, "utf8"));
+      console.log(`Loaded ${pool.length} total prospect leads from data/all-extracted-leads.json`);
+    } catch {}
+  }
 
   const outputPath = path.join(process.cwd(), "data", "verified-leads.json");
-  const verified: VerifiedLead[] = [];
+  const verifiedMap = new Map<string, VerifiedLead>();
 
-  for (let i = 0; i < scrapedLeads.length; i++) {
-    const lead = scrapedLeads[i];
+  // Load existing verified leads to preserve them
+  if (fs.existsSync(outputPath)) {
+    try {
+      const existing: VerifiedLead[] = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+      existing.forEach((v) => verifiedMap.set(v.verifiedEmail, v));
+      console.log(`Preserved ${verifiedMap.size} existing verified leads from disk.`);
+    } catch {}
+  }
+
+  // Load sent history to avoid re-verifying already completed leads
+  const historyPath = path.join(process.cwd(), "data", "outreach-history.json");
+  const sentEmails = new Set<string>();
+  if (fs.existsSync(historyPath)) {
+    try {
+      const history = JSON.parse(fs.readFileSync(historyPath, "utf8"));
+      history.forEach((h: any) => sentEmails.add(h.email.toLowerCase()));
+    } catch {}
+  }
+
+  console.log(`Checking unverified prospects with live SMTP probe...\n`);
+
+  for (let i = 0; i < pool.length; i++) {
+    const lead = pool[i];
+    // Check if domain or lead already has a verified email that was sent
+    const alreadyVerified = Array.from(verifiedMap.values()).find(
+      (v) => v.domain.toLowerCase() === lead.domain.toLowerCase() && v.name.toLowerCase() === lead.name.toLowerCase()
+    );
+    if (alreadyVerified) {
+      continue;
+    }
+
     const res = await findVerifiedEmailForLead(lead);
     if (res) {
-      verified.push(res);
-      fs.writeFileSync(outputPath, JSON.stringify(verified, null, 2), "utf8");
-      console.log(`  🎉 ADDED TO VERIFIED LIST: ${res.verifiedEmail} (${verified.length} verified so far)`);
+      verifiedMap.set(res.verifiedEmail, res);
+      fs.writeFileSync(outputPath, JSON.stringify(Array.from(verifiedMap.values()), null, 2), "utf8");
+      console.log(`  🎉 ADDED TO VERIFIED LIST: ${res.verifiedEmail} (${verifiedMap.size} total verified)`);
     }
   }
 
+  const finalList = Array.from(verifiedMap.values());
   console.log("\n============================================================");
-  console.log(`VERIFICATION COMPLETE! Saved ${verified.length} verified leads to: ${outputPath}`);
+  console.log(`VERIFICATION COMPLETE! Total verified leads in database: ${finalList.length}`);
   console.log("============================================================\n");
 }
 
