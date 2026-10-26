@@ -10,8 +10,8 @@ if (typeof (process as any).loadEnvFile === "function") {
 
 export const defaultOutreachConfig: OutreachConfig = {
   dailyCap: parseInt(process.env.OUTREACH_DAILY_CAP || "50", 10),
-  minDelaySeconds: parseInt(process.env.OUTREACH_MIN_DELAY_SEC || "45", 10),
-  maxDelaySeconds: parseInt(process.env.OUTREACH_MAX_DELAY_SEC || "120", 10),
+  minDelaySeconds: parseInt(process.env.OUTREACH_MIN_DELAY_SEC || "120", 10),
+  maxDelaySeconds: parseInt(process.env.OUTREACH_MAX_DELAY_SEC || "180", 10),
   senderName: process.env.OUTREACH_SENDER_NAME || "Ahsan Architect",
   senderEmail: process.env.OUTREACH_FROM_EMAIL || process.env.EMAIL_USER || "ahsan@digitalx-solutions.com",
   replyTo: process.env.OUTREACH_REPLY_TO || process.env.EMAIL_USER || "info@digitalx-solutions.com",

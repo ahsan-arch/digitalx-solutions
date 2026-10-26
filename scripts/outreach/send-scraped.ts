@@ -1,6 +1,9 @@
 import nodemailer from "nodemailer";
+import fs from "fs";
+import path from "path";
 import { scrapedLeads, ScrapedLead } from "./scraped-leads";
 import { verifyDomainMx, validateEmailSyntax } from "./validator";
+import { probeSmtpMailbox } from "./smtp-verifier";
 import { OutreachTracker } from "./tracker";
 import { defaultOutreachConfig } from "./config";
 
@@ -9,9 +12,10 @@ function sleep(ms: number): Promise<void> {
 }
 
 function getRandomDelayMs(minSec: number, maxSec: number): number {
-  const min = Math.min(minSec, maxSec);
-  const max = Math.max(minSec, maxSec);
-  const seconds = Math.floor(Math.random() * (max - min + 1)) + min;
+  // Strictly enforce minimum 120 seconds (2 full minutes) between sends to prevent spam flagging
+  const safeMin = Math.max(120, Math.min(minSec, maxSec));
+  const safeMax = Math.max(safeMin, Math.max(minSec, maxSec));
+  const seconds = Math.floor(Math.random() * (safeMax - safeMin + 1)) + safeMin;
   return seconds * 1000;
 }
 
@@ -36,7 +40,9 @@ Best regards,
 Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
-+61 451 413 786`;
++61 451 413 786
+
+PS: If you would prefer not to receive emails from me, just reply and let me know.`;
       break;
 
     case "veterinary":
@@ -55,7 +61,9 @@ Best regards,
 Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
-+61 451 413 786`;
++61 451 413 786
+
+PS: If you would prefer not to receive emails from me, just reply and let me know.`;
       break;
 
     case "beauty_wellness":
@@ -74,7 +82,9 @@ Best regards,
 Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
-+61 451 413 786`;
++61 451 413 786
+
+PS: If you would prefer not to receive emails from me, just reply and let me know.`;
       break;
 
     default: // professional_services
@@ -93,7 +103,9 @@ Best regards,
 Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
-+61 451 413 786`;
++61 451 413 786
+
+PS: If you would prefer not to receive emails from me, just reply and let me know.`;
       break;
   }
 
@@ -158,12 +170,28 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
   let sent = 0;
   let skipped = 0;
 
-  for (let i = 0; i < scrapedLeads.length && sent < remainingQuota; i++) {
-    const lead = scrapedLeads[i];
+  // Prefer verified leads file if available
+  const verifiedPath = path.join(process.cwd(), "data", "verified-leads.json");
+  let leadsToProcess: ScrapedLead[] = scrapedLeads;
+  if (fs.existsSync(verifiedPath)) {
+    try {
+      const parsed = JSON.parse(fs.readFileSync(verifiedPath, "utf8"));
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        leadsToProcess = parsed.map((item: any) => ({
+          ...item,
+          email: item.verifiedEmail || item.email,
+        }));
+        console.log(`Loaded ${leadsToProcess.length} pre-verified leads from data/verified-leads.json`);
+      }
+    } catch {}
+  }
+
+  for (let i = 0; i < leadsToProcess.length && sent < remainingQuota; i++) {
+    const lead = leadsToProcess[i];
     console.log(`------------------------------------------------------------`);
     console.log(`[${sent + 1}/${remainingQuota}] ${lead.name} — ${lead.title} (${lead.company})`);
     console.log(`  Category: ${lead.category} | Domain: ${lead.domain}`);
-    console.log(`  Derived Email: ${lead.email}`);
+    console.log(`  Target Email: ${lead.email}`);
     console.log(`  Identified Problem: ${lead.problem}`);
     console.log(`  Offered Solution:   ${lead.solution}`);
 
@@ -175,16 +203,16 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
       continue;
     }
 
-    // MX Verification
-    process.stdout.write(`  Checking domain MX for ${lead.domain}... `);
-    const hasMx = await verifyDomainMx(lead.email);
-    if (!hasMx) {
-      console.log(`FAILED. No mail exchangers found.`);
+    // Live SMTP Mailbox Verification Probe (HELO/MAIL FROM/RCPT TO)
+    process.stdout.write(`  Probing recipient mailbox on ${lead.domain}... `);
+    const probe = await probeSmtpMailbox(lead.email);
+    if (!probe.isValid) {
+      console.log(`REJECTED (${probe.code}). ${probe.message}`);
       console.log(`  ❌ Skipped to protect domain reputation against bounce.`);
       skipped++;
       continue;
     }
-    console.log(`VERIFIED ✔`);
+    console.log(`VERIFIED & ACCEPTED (250 OK) ✔`);
 
     const emailContent = generateHumanEmail(lead);
 
@@ -220,10 +248,10 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
       });
       sent++;
 
-      // Human delay jitter between sends
+      // Strict anti-spam break (minimum 2 minutes)
       if (sent < remainingQuota) {
         const delayMs = getRandomDelayMs(defaultOutreachConfig.minDelaySeconds, defaultOutreachConfig.maxDelaySeconds);
-        console.log(`  ⏳ Jitter delay: Waiting ${(delayMs / 1000).toFixed(0)}s to protect account...`);
+        console.log(`  ⏳ Anti-spam break: Waiting ${(delayMs / 1000).toFixed(0)}s (minimum 2 minutes) to protect inbox placement...`);
         await sleep(delayMs);
       }
     } catch (err: any) {

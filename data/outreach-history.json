@@ -370,5 +370,27 @@
     "status": "sent",
     "provider": "smtp",
     "messageId": "<cf83ad8d-6f5f-648b-98fe-4a903af15b68@digitalx-solutions.com>"
+  },
+  {
+    "email": "micah@stratumnutrition.com",
+    "name": "Micah Osborne",
+    "company": "Stratum Nutrition",
+    "industry": "b2b",
+    "subject": "patient phone inquiries at Stratum Nutrition",
+    "sentAt": "2026-10-26T15:48:39.449Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<8a047856-5696-f5f8-76f9-63fa824e6326@digitalx-solutions.com>"
+  },
+  {
+    "email": "will@relatyv.com",
+    "name": "Dr. Will Bozeman",
+    "company": "Relatyv Mobile Medical",
+    "industry": "b2b",
+    "subject": "patient phone inquiries at Relatyv Mobile Medical",
+    "sentAt": "2026-10-26T15:49:34.006Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<9c920fca-22b2-d582-73d7-7656a1ec68e1@digitalx-solutions.com>"
   }
 ]

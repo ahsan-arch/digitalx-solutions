@@ -18,6 +18,7 @@
     "outreach:send": "tsx --env-file=.env.local scripts/outreach/engine.ts --send",
     "outreach:stats": "tsx --env-file=.env.local scripts/outreach/engine.ts --stats",
     "outreach:scraped": "tsx --env-file=.env.local scripts/outreach/send-scraped.ts --send",
+    "outreach:verify": "tsx --env-file=.env.local scripts/outreach/verify-all-leads.ts",
     "outreach:test": "tsx --env-file=.env.local scripts/outreach/send-scraped.ts --test jazibshahid0@gmail.com"
   },
   "dependencies": {
