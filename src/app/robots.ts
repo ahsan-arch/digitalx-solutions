@@ -8,26 +8,35 @@ export default function robots(): MetadataRoute.Robots {
         };
     }
 
+    // High-priority AI crawlers and search grounding bots
+    const aiAndSearchBots = [
+        "*",
+        "Googlebot",
+        "Bingbot",
+        "GPTBot",             // OpenAI model training
+        "OAI-SearchBot",      // OpenAI ChatGPT Search citations & grounding
+        "ChatGPT-User",       // OpenAI ChatGPT Browse user sessions
+        "ClaudeBot",          // Anthropic model training & web fetch
+        "Claude-SearchBot",   // Anthropic Claude Search citations
+        "PerplexityBot",      // Perplexity search indexing
+        "Perplexity-User",    // Perplexity real-time user browsing
+        "Google-Extended",    // Gemini / Google AI Overviews grounding
+        "meta-externalagent", // Meta AI web retrieval
+        "Bytespider",         // ByteDance
+        "Applebot-Extended",  // Apple Intelligence web grounding
+        "Amazonbot",          // Amazon Alexa & Bedrock retrieval
+        "cohere-ai",          // Cohere Command models
+        "DuckAssistBot",      // DuckDuckGo AI Assist
+    ];
+
+    const rules = aiAndSearchBots.map((bot) => ({
+        userAgent: bot,
+        allow: ["/", "/api/og"],
+        disallow: ["/api/", "/admin/"],
+    }));
+
     return {
-        rules: [
-            { userAgent: "*", allow: ["/", "/api/og"], disallow: "/api/" },
-            { userAgent: "GPTBot", allow: ["/", "/api/og"], disallow: "/api/" },
-            { userAgent: "ChatGPT-User", allow: "/" },
-            { userAgent: "Google-Extended", allow: "/" },
-            { userAgent: "PerplexityBot", allow: "/" },
-            { userAgent: "Anthropic-ai", allow: "/" },
-            { userAgent: "ClaudeBot", allow: "/" },
-            { userAgent: "Claude-User", allow: "/" },
-            { userAgent: "Claude-SearchBot", allow: "/" },
-            { userAgent: "Bytespider", allow: "/" },
-            { userAgent: "OAI-SearchBot", allow: "/" },
-            { userAgent: "Perplexity-User", allow: "/" },
-            { userAgent: "Applebot-Extended", allow: "/" },
-            { userAgent: "meta-externalagent", allow: "/" },
-            { userAgent: "DuckAssistBot", allow: "/" },
-            { userAgent: "Amazonbot", allow: "/" },
-            { userAgent: "cohere-ai", allow: "/" },
-        ],
+        rules,
         sitemap: `${siteConfig.domain}/sitemap.xml`,
     };
 }

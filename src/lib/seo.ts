@@ -456,7 +456,7 @@ export function generateBreadcrumbSchema(
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "@id": `${items[items.length - 1]?.url ?? siteConfig.domain}#breadcrumbs`,
-        inLanguage: "en-US",
+        inLanguage: ["en-AU", "en-US"],
         itemListElement: items.map((item, index) => ({
             "@type": "ListItem",
             position: index + 1,
@@ -491,7 +491,7 @@ export function generateFAQSchema(
     return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        inLanguage: "en-US",
+        inLanguage: ["en-AU", "en-US"],
         mainEntity: faqs.map((faq) => ({
             "@type": "Question",
             name: faq.question,
@@ -615,7 +615,7 @@ export function generateArticleSchema(article: {
         publisher: {
             "@id": `${siteConfig.domain}/#organization`,
         },
-        inLanguage: "en-US",
+        inLanguage: ["en-AU", "en-US"],
         isAccessibleForFree: true,
         speakable: {
             "@type": "SpeakableSpecification",
@@ -647,7 +647,7 @@ export function generateBlogSchema(posts: Array<{
         description:
             "Engineering insights on AI automation, n8n workflows, GoHighLevel, server-side tracking, and Next.js performance.",
         publisher: { "@id": `${siteConfig.domain}/#organization` },
-        inLanguage: "en-US",
+        inLanguage: ["en-AU", "en-US"],
         blogPost: posts.map((p) => ({
             "@type": "BlogPosting",
             "@id": `${p.url}#blogposting`,
@@ -789,7 +789,7 @@ export function generateCollectionPageSchema(opts: {
         name: opts.name,
         description: opts.description,
         url: opts.url,
-        inLanguage: "en-US",
+        inLanguage: ["en-AU", "en-US"],
         isPartOf: { "@id": `${siteConfig.domain}/#website` },
         mainEntity: {
             "@type": "ItemList",
@@ -814,7 +814,7 @@ export function generateContactPageSchema() {
         name: "Contact DigitalX Solutions",
         description:
             "Get in touch with DigitalX Solutions to discuss your automation, AI voice, or website project.",
-        inLanguage: "en-US",
+        inLanguage: ["en-AU", "en-US"],
         isPartOf: { "@id": `${siteConfig.domain}/#website` },
         mainEntity: { "@id": `${siteConfig.domain}/#organization` },
     };
@@ -829,7 +829,7 @@ export function generateAboutPageSchema() {
         name: "About DigitalX Solutions",
         description:
             "Learn about DigitalX Solutions, an AI automation and web development agency serving the USA and Australia.",
-        inLanguage: "en-US",
+        inLanguage: ["en-AU", "en-US"],
         isPartOf: { "@id": `${siteConfig.domain}/#website` },
         mainEntity: { "@id": `${siteConfig.domain}/#organization` },
     };

@@ -243,7 +243,7 @@ export const solutions: Solution[] = [
     summary:
       "Human-sounding AI voice receptionists and real-time automation answer calls, qualify prospects, and book appointments 24/7 across the US & Australia.",
     outcomes: [
-      "Zero missed calls and after hours revenue leaks",
+      "24/7 call answering coverage to capture after-hours inquiries",
       "Consistent qualification every time, not when staff are free",
       "Bookings dropped directly into your calendar and CRM",
     ],

@@ -1,9 +1,42 @@
-import { Metadata } from "next";
-import { generateArticleSchema, generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
+import type { Metadata } from "next";
+import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { articlesData, authors } from "@/data/insights-articles";
+
+function extractFaqsFromContent(content: string): { question: string; answer: string }[] {
+    const normalized = content.replace(/\\n/g, '\n').replace(/\\r/g, '').replace(/\r\n/g, '\n');
+    const parts = normalized.split(/## Frequently Asked Questions/i);
+    if (parts.length < 2) return [];
+
+    const afterFaq = parts[1];
+    const endMatch = afterFaq.match(/\n## (?!#)/);
+    const faqSection = endMatch ? afterFaq.slice(0, endMatch.index) : afterFaq;
+
+    const qParts = faqSection.split(/\n### /);
+    const faqs: { question: string; answer: string }[] = [];
+
+    for (let i = 1; i < qParts.length; i++) {
+        const item = qParts[i];
+        const firstLineEnd = item.indexOf('\n');
+        if (firstLineEnd === -1) continue;
+        const question = item.slice(0, firstLineEnd).trim();
+        const rawAnswer = item.slice(firstLineEnd).trim();
+
+        const cleanAnswer = rawAnswer
+            .split(/\n---\n/)[0]
+            .split(/\n\*[^*]+\*\s*$/)[0]
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+            .replace(/[*_`#]/g, '')
+            .trim();
+
+        if (question && cleanAnswer) {
+            faqs.push({ question, answer: cleanAnswer });
+        }
+    }
+    return faqs;
+}
 
 export function generateStaticParams() {
     return Object.keys(articlesData).map((slug) => ({ slug }));
@@ -66,10 +99,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         keywords,
     });
 
+    const extractedFaqs = extractFaqsFromContent(article.content);
+    const faqSchema = extractedFaqs.length > 0 ? generateFAQSchema(extractedFaqs) : null;
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            {faqSchema && (
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            )}
 
             <main id="main" className="pb-24 pt-12">
                 <article className="mx-auto w-full max-w-reading px-4 md:px-8">
@@ -82,7 +121,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                             {article.title}
                         </h1>
                         <div className="flex flex-wrap items-center gap-4 font-mono text-caption text-ink-tertiary border-b border-line-subtle pb-8">
-                            <time dateTime={article.date}>{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                            <time dateTime={article.date}>Published: {new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                            {article.dateModified && (
+                                <>
+                                    <span className="w-1 h-1 rounded-full bg-ink-tertiary/50" />
+                                    <time dateTime={article.dateModified} className="text-accent font-semibold">
+                                        Last Updated: {new Date(article.dateModified).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                    </time>
+                                </>
+                            )}
                             <span className="w-1 h-1 rounded-full bg-ink-tertiary/50" />
                             <span>{article.readTime}</span>
                             <span className="w-1 h-1 rounded-full bg-ink-tertiary/50" />

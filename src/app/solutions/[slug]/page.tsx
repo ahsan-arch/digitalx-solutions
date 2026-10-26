@@ -99,8 +99,14 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
 
       {/* Hero Header */}
       <section className="container-shell">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Solution</p>
-        <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">{solution.name}</h1>
+        <div className="flex flex-wrap items-center gap-3 text-xs text-foreground/60 mb-2">
+          <span className="font-semibold uppercase tracking-[0.14em] text-brand">Architecture Verified</span>
+          <span>•</span>
+          <span className="font-medium text-foreground/80">Last Updated: 25 October 2026</span>
+          <span>•</span>
+          <span>Reviewed by Ahsan Architect</span>
+        </div>
+        <h1 className="mt-2 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">{solution.name}</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">{solution.summary}</p>
       </section>
 

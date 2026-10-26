@@ -25,7 +25,7 @@ export default function HomePage() {
         email: "info@digitalx-solutions.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "16 Belwood Ave",
+          streetAddress: "16 Boldrewood Ave",
           addressLocality: "Casula",
           addressRegion: "NSW",
           postalCode: "2170",
@@ -33,8 +33,8 @@ export default function HomePage() {
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: "-33.951079",
-          longitude: "150.906952",
+          latitude: -33.9519,
+          longitude: 150.9054,
         },
         openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",
@@ -59,7 +59,16 @@ export default function HomePage() {
           },
         ],
         sameAs: [
-          "https://www.linkedin.com/company/digitalx-solutions",
+          "https://www.linkedin.com/company/digitalx-solutions-aus/",
+          "https://x.com/digitalx_solutions",
+          "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
+          "https://www.instagram.com/digitalx_solutions/",
+          "https://github.com/digitalx-solutions",
+          "https://clutch.co/profile/digitalx-solutions",
+          "https://www.crunchbase.com/organization/digitalx-solutions",
+          "https://www.trustpilot.com/review/digitalx-solutions.com",
+          "https://community.n8n.io/u/digitalx_solutions",
+          "https://www.producthunt.com/@digitalx_solutions",
         ],
       },
       {
