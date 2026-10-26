@@ -1,5 +1,13 @@
 import { OutreachConfig } from "./types";
 
+if (typeof (process as any).loadEnvFile === "function") {
+  try {
+    (process as any).loadEnvFile(".env.local");
+  } catch {
+    // Ignore if file is not found
+  }
+}
+
 export const defaultOutreachConfig: OutreachConfig = {
   dailyCap: parseInt(process.env.OUTREACH_DAILY_CAP || "50", 10),
   minDelaySeconds: parseInt(process.env.OUTREACH_MIN_DELAY_SEC || "45", 10),

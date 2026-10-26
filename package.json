@@ -14,9 +14,11 @@
     "seo:rank": "tsx --env-file=.env.local scripts/seo-rank-check.ts",
     "seo:rank:full": "tsx --env-file=.env.local scripts/seo-rank-check.ts -- --full",
     "seo:mine": "tsx --env-file=.env.local scripts/seo-content-mine.ts",
-    "outreach:dry-run": "tsx scripts/outreach/engine.ts --dry-run",
-    "outreach:send": "tsx scripts/outreach/engine.ts --send",
-    "outreach:stats": "tsx scripts/outreach/engine.ts --stats"
+    "outreach:dry-run": "tsx --env-file=.env.local scripts/outreach/engine.ts --dry-run",
+    "outreach:send": "tsx --env-file=.env.local scripts/outreach/engine.ts --send",
+    "outreach:stats": "tsx --env-file=.env.local scripts/outreach/engine.ts --stats",
+    "outreach:scraped": "tsx --env-file=.env.local scripts/outreach/send-scraped.ts --send",
+    "outreach:test": "tsx --env-file=.env.local scripts/outreach/send-scraped.ts --test jazibshahid0@gmail.com"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
