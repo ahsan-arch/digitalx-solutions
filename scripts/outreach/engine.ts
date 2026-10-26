@@ -70,15 +70,22 @@ async function sendViaSmtp(
   html: string
 ): Promise<{ success: boolean; messageId?: string; error?: string }> {
   try {
-    const transporter = nodemailer.createTransport({
-      host: smtpConfig.host,
-      port: smtpConfig.port,
-      secure: smtpConfig.secure,
+    const transportOpts: any = {
       auth: {
         user: smtpConfig.user,
         pass: smtpConfig.pass,
       },
-    });
+    };
+
+    if (smtpConfig.service === "gmail") {
+      transportOpts.service = "gmail";
+    } else {
+      transportOpts.host = smtpConfig.host;
+      transportOpts.port = smtpConfig.port;
+      transportOpts.secure = smtpConfig.secure;
+    }
+
+    const transporter = nodemailer.createTransport(transportOpts);
 
     const info = await transporter.sendMail({
       from,
