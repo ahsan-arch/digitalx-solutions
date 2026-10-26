@@ -22,7 +22,7 @@ We built an AI voice agent for medical practices that answers every call 24/7 an
 Would you be open to a quick 5 minute chat this week to see how it works?
 
 Best regards,
-Muhammad Hashir Butt
+Ahsan
 DigitalX Solutions
 digitalx-solutions.com
 +61 451 413 786`;
@@ -33,7 +33,7 @@ digitalx-solutions.com
 
   console.log("Sending human-written test email to jazibshahid0@gmail.com...");
   const info = await transporter.sendMail({
-    from: "Muhammad Hashir Butt <info@digitalx-solutions.com>",
+    from: "Ahsan | DigitalX Solutions <info@digitalx-solutions.com>",
     to: "jazibshahid0@gmail.com",
     replyTo: "info@digitalx-solutions.com",
     subject: subject,

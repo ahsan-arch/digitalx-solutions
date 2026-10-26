@@ -34,8 +34,8 @@
   },
   "leadership": {
     "founder": {
-      "fullName": "Muhammad Hashir Butt (Jazib) / Ahsan Architect",
-      "preferredPublicName": "[TODO: clarify canonical public founder name for E-E-A-T: 'Jazib / Muhammad Hashir Butt' vs 'Ahsan Architect']",
+      "fullName": "Ahsan Architect",
+      "preferredPublicName": "Ahsan Architect",
       "jobTitle": "Founder & Lead Solutions Engineer",
       "bio": "Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and sub-500ms neural AI voice agents for enterprise and local service operators across the USA and Australia.",
       "linkedinUrl": "https://www.linkedin.com/in/ahsan-architect",

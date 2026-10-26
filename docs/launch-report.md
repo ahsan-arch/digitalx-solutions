@@ -158,8 +158,8 @@ Every indexable content route in the codebase has been rewritten, architected, a
 *In strict compliance with **Non-Negotiable Rule 1** (Never invent facts, statistics, reviews, or partner claims), all unverified claims and pending proof links are held in visible `[TODO]` state in `/data/facts.json` and `/docs/missing-info.md`. Below is the complete ledger of items the business owner must provide:*
 
 ### A. Leadership & Entity Verification
-1. **Founder Legal Name Confirmation**:
-   - *Current State*: Displays `Ahsan Architect` (in `/about`) vs `Jazib / Muhammad Hashir Butt` in repository history.
+1. **Founder Public Name Confirmation**:
+   - *Current State*: Set to `Ahsan Architect` across `/about`, author bylines, schema, and cold outreach.
    - *Action Required*: Confirm canonical personal name for author bylines, schema entity identification, and Google E-E-A-T matching.
 2. **Founder LinkedIn Profile**:
    - *Current State*: `https://www.linkedin.com/in/ahsan-architect`

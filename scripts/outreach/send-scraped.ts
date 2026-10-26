@@ -33,7 +33,7 @@ We set up AI voice receptionists that pick up every call twenty four seven, answ
 Would you be open to a quick five minute chat this week to see how this works for other clinics?
 
 Best regards,
-Muhammad Hashir Butt
+Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
 +61 451 413 786`;
@@ -52,7 +52,7 @@ We built an AI voice assistant that answers calls instantly, separates emergency
 Would you have five minutes this week for a brief conversation to see how it works?
 
 Best regards,
-Muhammad Hashir Butt
+Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
 +61 451 413 786`;
@@ -71,7 +71,7 @@ We set up unified CRM systems that bring all your messages and calls into one pl
 Would you be open to a quick five minute chat this week to see if this could help your team?
 
 Best regards,
-Muhammad Hashir Butt
+Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
 +61 451 413 786`;
@@ -90,7 +90,7 @@ We build custom CRM and workflow automations that capture every lead instantly, 
 Would you be open to a brief five minute chat this week to see how we set this up?
 
 Best regards,
-Muhammad Hashir Butt
+Ahsan
 DigitalX Solutions
 info@digitalx-solutions.com
 +61 451 413 786`;
@@ -111,12 +111,16 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
     },
   });
 
+  const senderName = process.env.OUTREACH_SENDER_NAME || "Ahsan | DigitalX Solutions";
+  const senderEmail = process.env.OUTREACH_FROM_EMAIL || process.env.EMAIL_USER || "info@digitalx-solutions.com";
+  const fromHeader = `"${senderName}" <${senderEmail}>`;
+
   console.log("\n============================================================");
   console.log("   DIGITALX SOLUTIONS — SCRAPED REPORT OUTREACH RUNNER       ");
   console.log("============================================================\n");
   console.log(`Total Leads in Report:  ${scrapedLeads.length}`);
   console.log(`Execution Mode:         ${mode.toUpperCase()}`);
-  console.log(`Authenticated Sender:   ${process.env.EMAIL_USER || "info@digitalx-solutions.com"}\n`);
+  console.log(`Sender:                 ${fromHeader}\n`);
 
   if (mode === "test" && testEmail) {
     console.log(`Sending sample human emails across all 4 categories to: ${testEmail}...`);
@@ -131,7 +135,7 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
       const emailContent = generateHumanEmail(lead);
       console.log(`\nSending [${lead.category}] sample for ${lead.company}...`);
       const info = await transporter.sendMail({
-        from: '"Muhammad Hashir Butt | DigitalX Solutions" <info@digitalx-solutions.com>',
+        from: fromHeader,
         to: testEmail,
         replyTo: "info@digitalx-solutions.com",
         subject: `[TEST SAMPLE - ${lead.category.toUpperCase()}] ${emailContent.subject}`,
@@ -195,7 +199,7 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
     // Live send
     try {
       const info = await transporter.sendMail({
-        from: '"Muhammad Hashir Butt | DigitalX Solutions" <info@digitalx-solutions.com>',
+        from: fromHeader,
         to: lead.email,
         replyTo: "info@digitalx-solutions.com",
         subject: emailContent.subject,

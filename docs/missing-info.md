@@ -9,7 +9,7 @@
 
 | Field | Current Site Value | Needed Owner Input | Impact / Location |
 | :--- | :--- | :--- | :--- |
-| **Founder Canonical Name** | `Ahsan Architect` (in `/about`) vs `Jazib / Muhammad Hashir Butt` (in git/docs) | Clarify canonical name to display publicly on `/about`, article bylines, and JSON-LD `Person` schema. | Google E-E-A-T entity matching across LinkedIn, Google Knowledge Graph, and Wikidata. |
+| **Founder Canonical Name** | `Ahsan Architect` (in `/about`) | Canonical public name confirmed across all public channels, outreach, and JSON-LD schema. | Google E-E-A-T entity matching across LinkedIn, Google Knowledge Graph, and Wikidata. |
 | **Founder LinkedIn URL** | `https://www.linkedin.com/in/ahsan-architect` | Verify if this is the active personal LinkedIn profile URL or provide the canonical profile. | Founder profile link on `/about` and author cards. |
 | **Legal Business Entity** | DigitalX Solutions | Supply registered legal business name, ABN (Australian Business Number), or ACN. | Footer, `/legal/terms`, and `LocalBusiness` schema. |
 | **US Telephone Number** | None (currently Australian `+61 451 413 786` only) | Supply dedicated US inbound / forwarding phone number (e.g. Twilio / GHL line). | US landing page (`/usa`), Google Business Profile US, and national schema. |
