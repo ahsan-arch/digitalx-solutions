@@ -13,7 +13,10 @@
     "seo:qa": "node scripts/seo-qa.mjs",
     "seo:rank": "tsx --env-file=.env.local scripts/seo-rank-check.ts",
     "seo:rank:full": "tsx --env-file=.env.local scripts/seo-rank-check.ts -- --full",
-    "seo:mine": "tsx --env-file=.env.local scripts/seo-content-mine.ts"
+    "seo:mine": "tsx --env-file=.env.local scripts/seo-content-mine.ts",
+    "outreach:dry-run": "tsx scripts/outreach/engine.ts --dry-run",
+    "outreach:send": "tsx scripts/outreach/engine.ts --send",
+    "outreach:stats": "tsx scripts/outreach/engine.ts --stats"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

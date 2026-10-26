@@ -1,0 +1,352 @@
+[
+  {
+    "email": "david@apexplumbingsyd.com.au",
+    "name": "David Miller",
+    "company": "Apex Plumbing Services",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:58.000Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "mark@harboremergencyplumbing.com.au",
+    "name": "Mark Harrison",
+    "company": "Harbor Emergency Plumbing",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:58.245Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "brad@brisbanehvacpros.com.au",
+    "name": "Brad Thomson",
+    "company": "Brisbane HVAC & Electrical",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:58.485Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "chris@vancegasandwater.com.au",
+    "name": "Chris Vance",
+    "company": "Vance Gas & Plumbing",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:58.618Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "luke@rapidresponseplumbers.com.au",
+    "name": "Luke Reynolds",
+    "company": "Rapid Response Plumbing",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:58.826Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "jason@summitroofingelectrical.com.au",
+    "name": "Jason Smith",
+    "company": "Summit Roofing & Trades",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:59.035Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "anthony@bellandcoproperties.com.au",
+    "name": "Anthony Bell",
+    "company": "Bell Maintenance & Plumbing",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:59.268Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "scott@coastalairrepairs.com.au",
+    "name": "Scott Davis",
+    "company": "Coastal Air & Cooling",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:59.388Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "paul@gallagherdrainage.com.au",
+    "name": "Paul Gallagher",
+    "company": "Gallagher Drains & Relining",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:59.619Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "matt@walkerplumbingcontractors.com.au",
+    "name": "Matt Walker",
+    "company": "Walker Plumbing Contractors",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:59.743Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "craig@fletcherroofandplumb.com.au",
+    "name": "Craig Fletcher",
+    "company": "Fletcher Trade Services",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:21:59.950Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "steve@kingselectriciansyd.com.au",
+    "name": "Steve King",
+    "company": "Kings Electrical & Solar",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:00.132Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "robert@allhoursplumbingvic.com.au",
+    "name": "Robert Ward",
+    "company": "All Hours Plumbing Vic",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:00.369Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "gary@fosterheatingcooling.com.au",
+    "name": "Gary Foster",
+    "company": "Foster Heating & Cooling",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:00.525Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "nathan@hughestradesolutions.com.au",
+    "name": "Nathan Hughes",
+    "company": "Hughes Trade Solutions",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:00.636Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "tim@precisionplumbers.com.au",
+    "name": "Tim Edwards",
+    "company": "Precision Plumbers Co",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:01.055Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "aaron@clarkpipeandleak.com.au",
+    "name": "Aaron Clark",
+    "company": "Clark Pipe & Leak Detection",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:01.287Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "michael@oconnormaintenance.com.au",
+    "name": "Michael O'Connor",
+    "company": "O'Connor Commercial Plumbing",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:01.410Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "daniel@kellysonthetools.com.au",
+    "name": "Daniel Kelly",
+    "company": "Kelly Emergency Services",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:01.660Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "ryan@murphyairconditioning.com.au",
+    "name": "Ryan Murphy",
+    "company": "Murphy Air Conditioning",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:01.788Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "jason@brooksplumbingaustin.com",
+    "name": "Jason Brooks",
+    "company": "Brooks Plumbing & Drain",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:01.944Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "tyler@jenkinsheatandair.com",
+    "name": "Tyler Jenkins",
+    "company": "Jenkins HVAC Solutions",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:02.148Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "marcus@stoneelectrictx.com",
+    "name": "Marcus Stone",
+    "company": "Stone Electrical Contractors",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:02.300Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "cole@bennettroofingpros.com",
+    "name": "Cole Bennett",
+    "company": "Bennett Roofing Pros",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:02.503Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "brandon@hayesplumbingrepair.com",
+    "name": "Brandon Hayes",
+    "company": "Hayes Plumbing Repair",
+    "industry": "trades",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:02.675Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "awong@melbournesmiledesign.com.au",
+    "name": "Dr. Andrew Wong",
+    "company": "Melbourne Smile Design",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:03.667Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "revans@brisbanedentalaesthetics.com.au",
+    "name": "Dr. Rachel Evans",
+    "company": "Brisbane Dental Aesthetics",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:03.903Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "jhenderson@sydneyalliedphysio.com.au",
+    "name": "Dr. James Henderson",
+    "company": "Sydney Allied Health & Physio",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:04.158Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "cmartin@glowaestheticsmelb.com.au",
+    "name": "Dr. Chloe Martin",
+    "company": "Glow Medical Aesthetics",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:04.373Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "ltaylor@southbankdentalgroup.com.au",
+    "name": "Dr. Lisa Taylor",
+    "company": "Southbank Dental Group",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:04.863Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "mcooper@queenslandortho.com.au",
+    "name": "Dr. Matthew Cooper",
+    "company": "Queensland Orthodontics",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:05.095Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "erichardson@botanicahealth.com.au",
+    "name": "Dr. Emma Richardson",
+    "company": "Botanica Health & Wellness",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:05.233Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "spatel@stkildachirocare.com.au",
+    "name": "Dr. Simon Patel",
+    "company": "St Kilda Chiropractic Clinic",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:05.455Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "jwhite@perthfamilydental.com.au",
+    "name": "Dr. Jessica White",
+    "company": "Perth Family Dental",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:05.630Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  },
+  {
+    "email": "dchen@adelaidedentalstudio.com.au",
+    "name": "Dr. David Chen",
+    "company": "Adelaide Dental Studio",
+    "industry": "dental",
+    "subject": "N/A",
+    "sentAt": "2026-10-26T04:22:05.849Z",
+    "status": "skipped_invalid_mx",
+    "provider": "dry_run"
+  }
+]
