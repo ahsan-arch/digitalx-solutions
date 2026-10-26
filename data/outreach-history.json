@@ -700,5 +700,16 @@
     "status": "sent",
     "provider": "smtp",
     "messageId": "<bb244b7d-4a4c-38e6-08da-5535556ba079@digitalx-solutions.com>"
+  },
+  {
+    "email": "hello@reperiohealth.com",
+    "name": "Justin Autrey",
+    "company": "Reperio health",
+    "industry": "b2b",
+    "subject": "patient phone inquiries at Reperio health",
+    "sentAt": "2026-10-26T23:10:38.848Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<9145e99e-abec-af22-acc8-cf66e84de565@digitalx-solutions.com>"
   }
 ]
