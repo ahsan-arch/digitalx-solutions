@@ -239,11 +239,13 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
 
 if (require.main === module) {
   const args = process.argv.slice(2);
-  const isSend = args.includes("--send");
   const isTest = args.includes("--test");
+  const isDryRun = args.includes("--dry-run");
+  const isSend = args.includes("--send") && !isDryRun;
   const testEmail = isTest ? args[args.indexOf("--test") + 1] || "jazibshahid0@gmail.com" : undefined;
 
-  runScrapedOutreach(isTest ? "test" : isSend ? "send" : "dry_run", testEmail).catch((err) => {
+  const mode = isTest ? "test" : isSend ? "send" : "dry_run";
+  runScrapedOutreach(mode, testEmail).catch((err) => {
     console.error("Outreach runner failed:", err);
     process.exit(1);
   });

@@ -348,5 +348,27 @@
     "sentAt": "2026-10-26T04:22:05.849Z",
     "status": "skipped_invalid_mx",
     "provider": "dry_run"
+  },
+  {
+    "email": "alex@perelelhealth.com",
+    "name": "Alex Taylor",
+    "company": "Perelel",
+    "industry": "b2b",
+    "subject": "patient phone inquiries at Perelel",
+    "sentAt": "2026-10-26T15:46:38.007Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<80db62ba-641a-cc75-e645-02519e696981@digitalx-solutions.com>"
+  },
+  {
+    "email": "john@vitasupportmd.com",
+    "name": "Dr. John Chuback",
+    "company": "Vitasupportmd",
+    "industry": "b2b",
+    "subject": "patient phone inquiries at Vitasupportmd",
+    "sentAt": "2026-10-26T15:47:32.562Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<cf83ad8d-6f5f-648b-98fe-4a903af15b68@digitalx-solutions.com>"
   }
 ]
