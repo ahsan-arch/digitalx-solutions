@@ -77,9 +77,10 @@ DigitalX Solutions works with service businesses across the United States and Au
 - GoHighLevel Implementation: https://digitalx-solutions.com/solutions/gohighlevel-implementation
 - AI Voice Agents: https://digitalx-solutions.com/solutions/ai-voice-agents
 - Missed Call Text Back: https://digitalx-solutions.com/solutions/missed-call-text-back
-- Automated Lead Nurturing: https://digitalx-solutions.com/solutions/automated-lead-nurturing
-- Chatbots: https://digitalx-solutions.com/solutions/chatbots
+- Lead Generation & Nurturing: https://digitalx-solutions.com/solutions/lead-generation
+- AI Agents & Chatbots: https://digitalx-solutions.com/solutions/ai-agents-chatbots
 - n8n Workflow Automation: https://digitalx-solutions.com/solutions/n8n-workflow-automation
+- HubSpot Automation: https://digitalx-solutions.com/solutions/hubspot-automation
 - CRM Integration: https://digitalx-solutions.com/solutions/crm-integration
 - Analytics Dashboards: https://digitalx-solutions.com/solutions/analytics-dashboards
 

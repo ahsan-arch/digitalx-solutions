@@ -532,8 +532,9 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "automated-lead-nurturing",
-    name: "Automated Lead Nurturing",
+    slug: "lead-generation",
+    name: "Lead Generation & Automated Nurturing",
+    metaTitle: "Automated Lead Nurturing & Lead Generation",
     tagline: "Multi step email + SMS sequences that close",
     summary:
       "Every new inquiry gets a tailored, multi touch follow up sequence so leads don't go cold while you run your business.",
@@ -551,7 +552,7 @@ export const solutions: Solution[] = [
     ],
     bestFor:
       "Services with consideration cycles, med spas, legal, mortgage, fitness memberships, home improvement estimates.",
-    legacyPaths: [],
+    legacyPaths: ["/solutions/automated-lead-nurturing"],
     group: "nurture",
     workflowSteps: [
       {
@@ -676,8 +677,9 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "chatbots",
-    name: "Chatbots (Web + WhatsApp + SMS)",
+    slug: "ai-agents-chatbots",
+    name: "AI Agents & Chatbots (Web + WhatsApp + SMS)",
+    metaTitle: "AI Agents for Business & Intelligent Chatbots",
     tagline: "AI that qualifies, books, and answers 24/7",
     summary:
       "Deploy AI chat on your website, WhatsApp, and SMS. Trained on your services, pricing, and FAQs, so it actually converts.",
@@ -695,7 +697,7 @@ export const solutions: Solution[] = [
     ],
     bestFor:
       "Any business with a website doing more than $10k/mo in leads, especially multi location and after hours heavy.",
-    legacyPaths: ["/services/conversational-ai"],
+    legacyPaths: ["/services/conversational-ai", "/solutions/chatbots"],
     group: "nurture",
     workflowSteps: [
       {
@@ -1404,11 +1406,18 @@ export const solutions: Solution[] = [
   },
 ];
 
-const solutionLegacyAliases: Record<string, string> = {
+export const solutionLegacyAliases: Record<string, string> = {
+  // Legacy aliases -> Canonical slugs
   "ai-voice-receptionists": "ai-voice-agents",
   "chatbots": "ai-agents-chatbots",
   "automated-lead-nurturing": "lead-generation",
   "crm-integration": "hubspot-automation",
+
+  // Canonical slugs -> Legacy aliases (bidirectional lookup safety)
+  "ai-voice-agents": "ai-voice-receptionists",
+  "ai-agents-chatbots": "chatbots",
+  "lead-generation": "automated-lead-nurturing",
+  "hubspot-automation": "crm-integration",
 };
 
 export function getSolutionBySlug(slug: string): Solution | undefined {

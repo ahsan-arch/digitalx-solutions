@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, Clock, MessageSquare, Phone, ShieldCheck, Zap } from "lucide-react";
-import { getSolutionBySlug, results, solutions } from "@/data/redesign";
+import { getSolutionBySlug, results, solutionLegacyAliases, solutions } from "@/data/redesign";
 import { industries } from "@/data/industries";
 import {
   generateBreadcrumbSchema,
@@ -19,11 +19,16 @@ export function generateStaticParams() {
   const primarySlugs = solutions.map((solution) => ({ slug: solution.slug }));
   const legacySlugs = [
     { slug: "ai-voice-agents" },
+    { slug: "ai-voice-receptionists" },
+    { slug: "ai-agents-chatbots" },
     { slug: "chatbots" },
+    { slug: "lead-generation" },
     { slug: "automated-lead-nurturing" },
+    { slug: "hubspot-automation" },
     { slug: "crm-integration" },
   ];
-  return [...primarySlugs, ...legacySlugs];
+  const allSlugs = Array.from(new Set([...primarySlugs.map((s) => s.slug), ...legacySlugs.map((s) => s.slug)]));
+  return allSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<PageParams> }): Promise<Metadata> {
@@ -56,8 +61,15 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
     notFound();
   }
 
-  const relatedIndustries = industries.filter((industry) => industry.relatedSolutionSlugs.includes(solution.slug));
-  const relatedCaseStudies = results.filter((r) => r.solutionsUsed.includes(solution.slug));
+  const aliasSlug = solutionLegacyAliases[solution.slug];
+  const matchingSlugs = aliasSlug ? [solution.slug, aliasSlug] : [solution.slug];
+
+  const relatedIndustries = industries.filter((industry) =>
+    industry.relatedSolutionSlugs.some((s) => matchingSlugs.includes(s as any))
+  );
+  const relatedCaseStudies = results.filter((r) =>
+    r.solutionsUsed.some((s) => matchingSlugs.includes(s as any))
+  );
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },

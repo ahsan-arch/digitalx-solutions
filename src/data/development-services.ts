@@ -219,8 +219,8 @@ export const developmentServices: DevelopmentService[] = [
       }
     ],
     relatedSolutions: [
-      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-receptionists" },
-      { title: "AI Agents & Chatbots", href: "/solutions/chatbots" },
+      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
+      { title: "AI Agents & Chatbots", href: "/solutions/ai-agents-chatbots" },
       { title: "API & Webhook Integrations", href: "/development/api-webhook-integrations" }
     ],
     relatedInsights: [
