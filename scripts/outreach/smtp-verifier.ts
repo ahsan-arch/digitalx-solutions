@@ -9,6 +9,21 @@ export interface SmtpVerifyResult {
   isValid: boolean;
   code: number;
   message: string;
+  isCatchAll?: boolean;
+}
+
+const catchAllCache = new Map<string, boolean>();
+
+export async function isCatchAllDomain(domain: string): Promise<boolean> {
+  const clean = domain.toLowerCase().trim();
+  if (catchAllCache.has(clean)) {
+    return catchAllCache.get(clean)!;
+  }
+  const randomEmail = `check_catchall_${Date.now()}@${clean}`;
+  const res = await probeSmtpMailbox(randomEmail, 5000);
+  const isCatchAll = res.isValid && res.code === 250;
+  catchAllCache.set(clean, isCatchAll);
+  return isCatchAll;
 }
 
 export async function resolveMxHost(domain: string): Promise<string | null> {
