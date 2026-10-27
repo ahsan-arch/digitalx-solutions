@@ -6,6 +6,7 @@ import { verifyDomainMx, validateEmailSyntax } from "./validator";
 import { probeSmtpMailbox } from "./smtp-verifier";
 import { OutreachTracker } from "./tracker";
 import { defaultOutreachConfig } from "./config";
+import { findVerifiedEmailForLead } from "./verify-all-leads";
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -112,7 +113,16 @@ PS: If you would prefer not to receive emails from me, just reply and let me kno
   return { subject, body };
 }
 
-export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", testEmail?: string) {
+export interface ScrapedOutreachOptions {
+  batchSize?: number;
+  intervalSeconds?: number;
+}
+
+export async function runScrapedOutreach(
+  mode: "dry_run" | "send" | "test",
+  testEmail?: string,
+  options?: ScrapedOutreachOptions
+) {
   const tracker = new OutreachTracker();
 
   const transporter = nodemailer.createTransport({
@@ -127,11 +137,17 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
   const senderEmail = process.env.OUTREACH_FROM_EMAIL || process.env.EMAIL_USER || "info@digitalx-solutions.com";
   const fromHeader = `"${senderName}" <${senderEmail}>`;
 
+  const remainingQuota = tracker.getRemainingDailyQuota(50);
+  const targetBatch = options?.batchSize ?? (mode === "send" ? remainingQuota : 50);
+  const intervalSeconds = options?.intervalSeconds ?? 300; // default 5 minutes (300 seconds)
+
   console.log("\n============================================================");
   console.log("   DIGITALX SOLUTIONS — SCRAPED REPORT OUTREACH RUNNER       ");
   console.log("============================================================\n");
-  console.log(`Total Leads in Report:  ${scrapedLeads.length}`);
   console.log(`Execution Mode:         ${mode.toUpperCase()}`);
+  console.log(`Target Batch Size:      ${targetBatch} emails`);
+  console.log(`Interval Between Sends: ${intervalSeconds}s (${(intervalSeconds / 60).toFixed(1)} minutes)`);
+  console.log(`Remaining Daily Quota:  ${remainingQuota} emails`);
   console.log(`Sender:                 ${fromHeader}\n`);
 
   if (mode === "test" && testEmail) {
@@ -159,10 +175,7 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
     return;
   }
 
-  const remainingQuota = tracker.getRemainingDailyQuota(50);
-  console.log(`Remaining Daily Quota: ${remainingQuota} emails`);
-
-  if (remainingQuota <= 0 && mode === "send") {
+  if (!options?.batchSize && remainingQuota <= 0 && mode === "send") {
     console.log("\nDaily 50-email quota has already been met for today. Halting.");
     return;
   }
@@ -170,47 +183,82 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
   let sent = 0;
   let skipped = 0;
 
-  // Prefer verified leads file if available
+  // Load verified leads first, followed by all extracted leads (deduplicated by domain)
   const verifiedPath = path.join(process.cwd(), "data", "verified-leads.json");
-  let leadsToProcess: ScrapedLead[] = scrapedLeads;
+  const allLeadsPath = path.join(process.cwd(), "data", "all-extracted-leads.json");
+  let leadsToProcess: ScrapedLead[] = [];
+  const seenDomains = new Set<string>();
+
   if (fs.existsSync(verifiedPath)) {
     try {
       const parsed = JSON.parse(fs.readFileSync(verifiedPath, "utf8"));
       if (Array.isArray(parsed) && parsed.length > 0) {
-        leadsToProcess = parsed.map((item: any) => ({
-          ...item,
-          email: item.verifiedEmail || item.email,
-        }));
-        console.log(`Loaded ${leadsToProcess.length} pre-verified leads from data/verified-leads.json`);
+        parsed.forEach((item: any) => {
+          const dom = (item.domain || "").toLowerCase();
+          if (dom && !seenDomains.has(dom)) {
+            leadsToProcess.push({
+              ...item,
+              email: item.verifiedEmail || item.email,
+            });
+            seenDomains.add(dom);
+          }
+        });
+        console.log(`Loaded ${leadsToProcess.length} verified leads from data/verified-leads.json`);
       }
     } catch {}
   }
 
-  for (let i = 0; i < leadsToProcess.length && sent < remainingQuota; i++) {
+  if (fs.existsSync(allLeadsPath)) {
+    try {
+      const allExtracted: ScrapedLead[] = JSON.parse(fs.readFileSync(allLeadsPath, "utf8"));
+      let added = 0;
+      for (const lead of allExtracted) {
+        const dom = (lead.domain || "").toLowerCase();
+        if (dom && !seenDomains.has(dom)) {
+          leadsToProcess.push(lead);
+          seenDomains.add(dom);
+          added++;
+        }
+      }
+      if (added > 0) {
+        console.log(`Appended ${added} leads from data/all-extracted-leads.json`);
+      }
+    } catch {}
+  }
+
+  if (leadsToProcess.length === 0) {
+    leadsToProcess = scrapedLeads;
+  }
+
+  console.log(`Total prospect pool for this run: ${leadsToProcess.length} leads\n`);
+
+  for (let i = 0; i < leadsToProcess.length && sent < targetBatch; i++) {
     const lead = leadsToProcess[i];
     console.log(`------------------------------------------------------------`);
-    console.log(`[${sent + 1}/${remainingQuota}] ${lead.name} — ${lead.title} (${lead.company})`);
+    console.log(`[${sent + 1}/${targetBatch}] ${lead.name} — ${lead.title} (${lead.company})`);
     console.log(`  Category: ${lead.category} | Domain: ${lead.domain}`);
-    console.log(`  Target Email: ${lead.email}`);
-    console.log(`  Identified Problem: ${lead.problem}`);
-    console.log(`  Offered Solution:   ${lead.solution}`);
 
-    // Syntax validation
-    const syntax = validateEmailSyntax(lead.email);
-    if (!syntax.isValid) {
-      console.log(`  ❌ Skipped: Invalid syntax.`);
-      skipped++;
-      continue;
+    // If lead has no email or placeholder, probe for verified email
+    if (!lead.email || !validateEmailSyntax(lead.email).isValid) {
+      process.stdout.write(`  Probing recipient mailbox for ${lead.company}... `);
+      const res = await findVerifiedEmailForLead(lead);
+      if (res && res.verifiedEmail) {
+        lead.email = res.verifiedEmail;
+      } else {
+        console.log(`  ❌ Skipped: No accepted mailboxes found.`);
+        skipped++;
+        continue;
+      }
     }
 
     // Duplicate check
     if (tracker.isAlreadyContacted(lead.email)) {
-      console.log(`  ℹ Already contacted within last 60 days. Skipping duplicate.`);
+      console.log(`  ℹ Already contacted within last 60 days (${lead.email}). Skipping duplicate.`);
       continue;
     }
 
     // Live SMTP Mailbox Verification Probe (HELO/MAIL FROM/RCPT TO)
-    process.stdout.write(`  Probing recipient mailbox on ${lead.domain}... `);
+    process.stdout.write(`  Probing recipient mailbox on ${lead.domain} (${lead.email})... `);
     const probe = await probeSmtpMailbox(lead.email);
     if (!probe.isValid) {
       console.log(`REJECTED (${probe.code}). ${probe.message}`);
@@ -240,7 +288,7 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
         text: emailContent.body,
       });
 
-      console.log(`  🚀 SENT! Message ID: ${info.messageId}`);
+      console.log(`  🚀 SENT [${sent + 1}/${targetBatch}]! Message ID: ${info.messageId}`);
       tracker.recordSend({
         email: lead.email,
         name: lead.name,
@@ -254,10 +302,10 @@ export async function runScrapedOutreach(mode: "dry_run" | "send" | "test", test
       });
       sent++;
 
-      // Strict anti-spam break (minimum 2 minutes)
-      if (sent < remainingQuota) {
-        const delayMs = getRandomDelayMs(defaultOutreachConfig.minDelaySeconds, defaultOutreachConfig.maxDelaySeconds);
-        console.log(`  ⏳ Anti-spam break: Waiting ${(delayMs / 1000).toFixed(0)}s (minimum 2 minutes) to protect inbox placement...`);
+      // User requested interval (e.g. 5 minutes)
+      if (sent < targetBatch) {
+        const delayMs = intervalSeconds * 1000;
+        console.log(`  ⏳ Anti-spam interval: Waiting ${intervalSeconds}s (${(intervalSeconds / 60).toFixed(1)} minutes) before sending next email...`);
         await sleep(delayMs);
       }
     } catch (err: any) {
@@ -278,8 +326,13 @@ if (require.main === module) {
   const isSend = args.includes("--send") && !isDryRun;
   const testEmail = isTest ? args[args.indexOf("--test") + 1] || "jazibshahid0@gmail.com" : undefined;
 
+  const batchIdx = args.indexOf("--batch") !== -1 ? args.indexOf("--batch") : args.indexOf("--count");
+  const intervalIdx = args.indexOf("--interval");
+  const batchSize = batchIdx !== -1 ? parseInt(args[batchIdx + 1], 10) : undefined;
+  const intervalSeconds = intervalIdx !== -1 ? parseInt(args[intervalIdx + 1], 10) : 300;
+
   const mode = isTest ? "test" : isSend ? "send" : "dry_run";
-  runScrapedOutreach(mode, testEmail).catch((err) => {
+  runScrapedOutreach(mode, testEmail, { batchSize, intervalSeconds }).catch((err) => {
     console.error("Outreach runner failed:", err);
     process.exit(1);
   });

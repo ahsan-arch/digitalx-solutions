@@ -1250,5 +1250,71 @@
     "status": "sent",
     "provider": "smtp",
     "messageId": "<83d88dfb-bcee-83ff-47e5-e8dc47b5e3b1@digitalx-solutions.com>"
+  },
+  {
+    "email": "danielle@facileskin.com",
+    "name": "Danielle Nadick Levy",
+    "company": "Facile dermatology + boutique",
+    "industry": "b2b",
+    "subject": "lead follow up workflow at Facile dermatology + boutique",
+    "sentAt": "2026-10-27T10:03:39.719Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<769e2567-5587-bfc6-4d53-5291a03cc043@digitalx-solutions.com>"
+  },
+  {
+    "email": "maya@outcomes4me.com",
+    "name": "Maya Said",
+    "company": "Outcomes4me",
+    "industry": "b2b",
+    "subject": "lead follow up workflow at Outcomes4me",
+    "sentAt": "2026-10-27T10:08:43.179Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<8e58e57b-0486-8a59-0be0-11a9c758ae79@digitalx-solutions.com>"
+  },
+  {
+    "email": "rachel@upaceapp.com",
+    "name": "Rachel Koretsky",
+    "company": "Upace",
+    "industry": "b2b",
+    "subject": "lead follow up workflow at Upace",
+    "sentAt": "2026-10-27T10:13:47.932Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<c4ba2fd4-9447-db2a-5c12-faa10a57087a@digitalx-solutions.com>"
+  },
+  {
+    "email": "support@talktomira.com",
+    "name": "Khang T V.",
+    "company": "Mira",
+    "industry": "b2b",
+    "subject": "lead follow up workflow at Mira",
+    "sentAt": "2026-10-27T10:18:51.851Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<c9209aa1-0402-8c19-6060-12c10e0bc2c2@digitalx-solutions.com>"
+  },
+  {
+    "email": "meridith@nixbiosensors.com",
+    "name": "Meridith Cass",
+    "company": "Nix biosensors",
+    "industry": "b2b",
+    "subject": "lead follow up workflow at Nix biosensors",
+    "sentAt": "2026-10-27T10:23:56.116Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<36ee0cfc-a039-ef3d-04e0-1e6a3fdd768d@digitalx-solutions.com>"
+  },
+  {
+    "email": "dathanasiou@neurofenix.com",
+    "name": "Dimitris Athanasiou",
+    "company": "Neurofenix",
+    "industry": "b2b",
+    "subject": "lead follow up workflow at Neurofenix",
+    "sentAt": "2026-10-27T10:29:00.319Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<f9e1d5d8-a291-5bca-0ddb-8c7d79756914@digitalx-solutions.com>"
   }
 ]

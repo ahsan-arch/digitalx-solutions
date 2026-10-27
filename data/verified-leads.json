@@ -26,7 +26,7 @@
     "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
     "verifiedEmail": "help@vitasupportmd.com",
     "source": "direct_probe",
-    "smtpResponse": "250 2.1.5 OK 5b1f17b1804b1-4a35a04bfe8si275304595e9.2 - gsmtp"
+    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ed2e5d2si18593990f8f.477 - gsmtp"
   },
   {
     "name": "Dr. Will Bozeman",
@@ -59,9 +59,9 @@
     "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ed2787bsi13932567f8f.458 - gsmtp"
   },
   {
-    "name": "Tom Daguanno",
-    "firstName": "Tom",
-    "title": "Chief operating officer",
+    "name": "Paul Thomas, M.d.",
+    "firstName": "Paul",
+    "title": "Chief executive officer and chief medical officer",
     "company": "Plum health dpc",
     "domain": "plumhealthdpc.com",
     "category": "healthcare",
@@ -70,7 +70,7 @@
     "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
     "verifiedEmail": "info@plumhealthdpc.com",
     "source": "direct_probe",
-    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ed20c11si15715315f8f.428 - gsmtp"
+    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ece9b45si18088387f8f.208 - gsmtp"
   },
   {
     "name": "Matthew Rogers",
@@ -418,7 +418,7 @@
     "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
     "verifiedEmail": "hello@reperiohealth.com",
     "source": "direct_probe",
-    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ed2db59si14940443f8f.481 - gsmtp"
+    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ed0a26bsi25377452f8f.319 - gsmtp"
   },
   {
     "name": "David Goldsmith",
@@ -488,7 +488,7 @@
     "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
     "verifiedEmail": "wecare@careandwear.com",
     "source": "direct_probe",
-    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ecdb53asi15921794f8f.88 - gsmtp"
+    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ecdbf2bsi18773610f8f.138 - gsmtp"
   },
   {
     "name": "Madison Campbell",
@@ -544,7 +544,7 @@
     "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
     "verifiedEmail": "support@aspect-health.com",
     "source": "direct_probe",
-    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ecdb515si16300351f8f.135 - gsmtp"
+    "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3ece906asi19105112f8f.188 - gsmtp"
   },
   {
     "name": "Haran Jeyachandra",
@@ -1259,5 +1259,19 @@
     "verifiedEmail": "ldefrancisco@extraordinarybrands.com",
     "source": "direct_probe",
     "smtpResponse": "250 2.1.5 OK ffacd0b85a97d-48e3eb9c75bsi14816655f8f.37 - gsmtp"
+  },
+  {
+    "name": "Richard Jones",
+    "firstName": "Richard",
+    "title": "Chief clinical officer",
+    "company": "Youturn health",
+    "domain": "youturnhealth.com",
+    "category": "healthcare",
+    "country": "United States",
+    "problem": "Front desk staff cannot keep up with patient call volume so appointment requests and after-hours calls go to voicemail.",
+    "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
+    "verifiedEmail": "rjones@youturnhealth.com",
+    "source": "direct_probe",
+    "smtpResponse": "250 recipient <rjones@youturnhealth.com> OK"
   }
 ]
