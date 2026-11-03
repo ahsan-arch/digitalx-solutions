@@ -162,13 +162,14 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           </div>
 
           {hasLogoPermission ? (
-            <div className="relative h-14 w-32 shrink-0">
+            <div className="flex h-14 w-32 shrink-0 items-center">
               <Image
                 src={project.logoFile!}
                 alt={`${project.client} logo`}
-                fill
-                className="object-contain"
-                sizes="128px"
+                width={128}
+                height={56}
+                className="max-h-14 w-auto object-contain"
+                style={{ maxHeight: "56px", width: "auto" }}
               />
             </div>
           ) : (

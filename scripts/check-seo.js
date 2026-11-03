@@ -124,6 +124,11 @@ function auditHtmlFile(filePath) {
   }
 
   const html = fs.readFileSync(filePath, 'utf-8');
+  // Ignore dynamic 404 cache files
+  if (html.includes('404: This page could not be found') || html.includes('404 - This page could not be found') || html.includes('<title>404:')) {
+    return;
+  }
+
   const routeFailures = [];
 
   // 1. Title Check
