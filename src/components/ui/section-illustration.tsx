@@ -36,14 +36,16 @@ export function SectionIllustration({
 
   return (
     <div className={`relative w-full overflow-hidden rounded-2xl border border-border/70 bg-white/60 p-2 shadow-sm ${aspect}`}>
-      <div className="relative h-full w-full">
+      <div className="relative flex h-full w-full items-center justify-center">
         <Image
           src={src}
           alt={resolvedAlt}
-          fill
+          width={800}
+          height={600}
           priority={priority}
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-contain"
+          className="h-full w-full object-contain"
+          style={{ width: "100%", height: "auto", maxHeight: "480px" }}
         />
       </div>
     </div>

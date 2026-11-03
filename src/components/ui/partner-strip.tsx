@@ -141,14 +141,15 @@ export function PlatformIntegrationsStrip() {
             className="group flex flex-col items-center gap-1"
             title={`${platform.name} — ${platform.relationship}`}
           >
-            <div className="relative h-7 w-28">
+            <div className="flex h-7 w-28 items-center justify-center">
               <Image
                 src={platform.logo}
                 alt={`${platform.name} integration logo`}
-                fill
-                className="object-contain grayscale group-hover:grayscale-0 transition-colors"
+                width={100}
+                height={28}
+                className="max-h-7 w-auto object-contain grayscale transition-all group-hover:grayscale-0"
+                style={{ maxHeight: "28px", width: "auto" }}
                 loading="lazy"
-                sizes="112px"
               />
             </div>
             <span className="text-[11px] text-foreground/50 group-hover:text-foreground/75 transition-colors">

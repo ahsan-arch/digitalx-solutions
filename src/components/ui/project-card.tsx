@@ -31,13 +31,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="flex items-center justify-between gap-4 border-b border-border/60 pb-5">
           <div className="flex items-center gap-3">
             {hasLogoPermission ? (
-              <div className="relative h-10 w-24 shrink-0">
+              <div className="flex h-10 w-24 shrink-0 items-center">
                 <Image
                   src={project.logoFile!}
                   alt={`${project.client} verified client logo`}
-                  fill
-                  className="object-contain"
-                  sizes="96px"
+                  width={96}
+                  height={40}
+                  className="max-h-10 w-auto object-contain"
+                  style={{ maxHeight: "40px", width: "auto" }}
                 />
               </div>
             ) : (
@@ -110,13 +111,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   className="inline-flex items-center gap-1.5 rounded-lg border border-border/80 bg-surface-50 px-2.5 py-1 text-xs text-foreground/75"
                 >
                   {logo && (
-                    <span className="relative h-3.5 w-3.5 shrink-0">
+                    <span className="inline-flex h-4 w-4 shrink-0 items-center justify-center">
                       <Image
                         src={logo}
                         alt=""
-                        fill
-                        className="object-contain"
-                        sizes="14px"
+                        width={16}
+                        height={16}
+                        className="h-4 w-4 object-contain"
+                        style={{ width: "16px", height: "16px" }}
                       />
                     </span>
                   )}
