@@ -45,7 +45,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {footerColumns.map((column) => (
               <div key={column.title}>
-                <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-foreground/80">
+                <h3 className="mb-4 text-xs font-semibold text-foreground">
                   {column.title}
                 </h3>
                 <ul className="space-y-3">
@@ -72,7 +72,6 @@ export function Footer() {
           </p>
           <p>Casula NSW, Australia &amp; US Operations | Built for measurable revenue outcomes.</p>
         </div>
-        <div className="mt-3 h-px w-full bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
       </div>
     </footer>
   );

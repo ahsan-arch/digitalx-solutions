@@ -146,7 +146,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
 
         {industry.niches && industry.niches.length > 0 && (
           <div className="mt-6 flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-foreground/50">Core Niches:</span>
+            <span className="font-mono text-xs font-medium text-foreground/50">Core Niches:</span>
             {industry.niches.map((niche) => (
               <span
                 key={niche}
@@ -197,7 +197,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Inbound Architecture</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">Inbound Architecture</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
                 4-Step Intake & Dispatch Protocol
               </h2>
@@ -223,13 +223,13 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
 
             <div className="mt-6 grid gap-4 rounded-2xl border border-border/80 bg-surface-50/60 p-5 sm:grid-cols-2">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-rose-600">Urgency & Emergency Criteria</p>
+                <span className="font-mono text-xs font-medium text-rose-600">Urgency &amp; Emergency Criteria</span>
                 <p className="mt-1 text-xs leading-relaxed text-foreground/75">
                   {industry.intakeArchitecture.emergencyCriteria}
                 </p>
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand">Dispatch Escalation Protocol</p>
+                <span className="font-mono text-xs font-medium text-brand">Dispatch Escalation Protocol</span>
                 <p className="mt-1 text-xs leading-relaxed text-foreground/75">
                   {industry.intakeArchitecture.dispatchProtocol}
                 </p>
@@ -245,7 +245,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
               <DollarSign className="h-4 w-4 text-emerald-600" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Unit Economics & ROI</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">Unit Economics &amp; ROI</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Revenue Recovery Modeling for {industry.name}
@@ -294,7 +294,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
             <div className="flex items-center gap-2">
               <Server className="h-4 w-4 text-brand" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Software Ecosystem</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">Software Ecosystem</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Compatible Field Software & CRMs
@@ -305,7 +305,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
 
             <div className="mt-8 grid gap-5 md:grid-cols-3">
               <div className="rounded-2xl border border-border bg-surface-50 p-5">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-brand">Primary CRMs</h3>
+                <h3 className="font-mono text-xs font-medium text-brand">Primary CRMs</h3>
                 <ul className="mt-3 space-y-2 text-xs text-foreground/80">
                   {industry.softwareIntegrations.primaryCrms.map((crm) => (
                     <li key={crm} className="flex items-center gap-2">
@@ -316,7 +316,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
                 </ul>
               </div>
               <div className="rounded-2xl border border-border bg-surface-50 p-5">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-brand">Field & Practice Software</h3>
+                <h3 className="font-mono text-xs font-medium text-brand">Field &amp; Practice Software</h3>
                 <ul className="mt-3 space-y-2 text-xs text-foreground/80">
                   {industry.softwareIntegrations.fieldSoftware.map((software) => (
                     <li key={software} className="flex items-center gap-2">
@@ -327,7 +327,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
                 </ul>
               </div>
               <div className="rounded-2xl border border-border bg-surface-50 p-5">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-brand">Telephony & Forwarding</h3>
+                <h3 className="font-mono text-xs font-medium text-brand">Telephony &amp; Forwarding</h3>
                 <ul className="mt-3 space-y-2 text-xs text-foreground/80">
                   {industry.softwareIntegrations.telephony.map((tel) => (
                     <li key={tel} className="flex items-center gap-2">
@@ -348,7 +348,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-brand" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Regulatory Guardrails</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">Regulatory Guardrails</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Compliance & Data Privacy Standards
@@ -359,14 +359,14 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
 
             <div className="mt-8 grid gap-5 md:grid-cols-2">
               <div className="rounded-2xl border border-border bg-white p-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-foreground/50">United States</span>
+                <span className="font-mono text-xs font-medium text-foreground/60">United States</span>
                 <h3 className="mt-2 font-display text-base font-bold text-foreground">US Telecommunications & Privacy</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/70">
                   {industry.complianceAndStandards.usRegulations}
                 </p>
               </div>
               <div className="rounded-2xl border border-border bg-white p-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-foreground/50">Australia</span>
+                <span className="font-mono text-xs font-medium text-foreground/60">Australia</span>
                 <h3 className="mt-2 font-display text-base font-bold text-foreground">Australian Privacy Principles (APPs)</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/70">
                   {industry.complianceAndStandards.auRegulations}
@@ -385,7 +385,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {demoScript && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Interactive Voice Demo</p>
+            <span className="font-mono text-xs font-medium text-foreground/60">Interactive Voice Demo</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Listen to our AI Voice Agent handling {industry.name.toLowerCase()} calls
             </h2>
@@ -403,7 +403,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {industry.comparison && industry.comparison.length > 0 && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Overcoming Price &amp; Trust Objections</p>
+            <span className="font-mono text-xs font-medium text-brand">Overcoming Price &amp; Trust Objections</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Traditional Answering vs. DigitalX AI Automation
             </h2>
@@ -435,7 +435,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {industry.faqs && industry.faqs.length > 0 && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industry Guidance</p>
+            <span className="font-mono text-xs font-medium text-foreground/60">Industry Guidance</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Frequently Asked Questions for {industry.name}
             </h2>
@@ -461,9 +461,9 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}`}
-                  className="group rounded-xl border border-border bg-surface-50 p-5 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+                  className="group rounded-xl border border-border bg-surface-50 p-5 transition-colors hover:border-brand/40"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">{cs.industry}</p>
+                  <span className="font-mono text-xs font-medium text-foreground/60">{cs.industry}</span>
                   <h3 className="mt-2 font-display text-base font-bold text-foreground">{cs.client}</h3>
                   <p className="mt-3 text-xs leading-relaxed text-foreground/68">{cs.impact}</p>
                   <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand transition group-hover:text-brand-deep">
@@ -504,8 +504,8 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       <section className="container-shell mt-14">
         <div className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 md:p-10 shadow-sm lg:flex-row lg:items-center">
           <div className="max-w-2xl">
-            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse mr-2" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand">Custom Scoping</span>
+            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 mr-2" />
+            <span className="font-mono text-xs font-medium text-brand">Custom Scoping</span>
             <h2 className="mt-2 font-display text-2xl font-bold text-foreground md:text-3xl">
               Ready to automate intake for your {industry.name.toLowerCase()} business?
             </h2>

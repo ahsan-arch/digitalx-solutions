@@ -109,7 +109,9 @@ export default function ProcessPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Our Methodology</p>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-line-subtle bg-surface-sunken px-2.5 py-1 text-xs font-medium text-ink-secondary">
+              Deployment Methodology
+            </span>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               A 4 to 6 week launch, then a system that compounds.
             </h1>
@@ -157,7 +159,7 @@ export default function ProcessPage() {
               className="rounded-lg border border-line-subtle bg-surface-sunken p-6 md:p-8"
             >
               <div className="flex items-center gap-2">
-                <span className="rounded-pill bg-accent-soft px-3 py-1 font-mono text-xs font-semibold text-accent">
+                <span className="rounded-md bg-accent-soft px-2.5 py-0.5 font-mono text-xs font-medium text-accent">
                   {d.week}
                 </span>
               </div>
@@ -172,7 +174,7 @@ export default function ProcessPage() {
       <section className="container-shell mt-16">
         <div className="rounded-xl border border-line-subtle bg-surface-raised p-6 md:p-10">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Quality Assurance</p>
+            <span className="font-mono text-xs font-medium text-accent">Quality Assurance</span>
             <h2 className="mt-2 font-display text-display-sm text-ink-primary">
               Engineering Delivery Standards &amp; Rollout Safeguards
             </h2>
@@ -280,13 +282,13 @@ export default function ProcessPage() {
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
+            className="inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
           >
             Book a discovery call
           </Link>
           <Link
             href="/pricing"
-            className="inline-flex items-center rounded-pill border border-line-subtle bg-white/10 px-6 py-3 text-sm font-semibold text-ink-on-inverse transition hover:bg-white/20"
+            className="inline-flex items-center rounded-xl border border-line-subtle bg-white/10 px-6 py-3 text-sm font-semibold text-ink-on-inverse transition hover:bg-white/20"
           >
             Review pricing models
           </Link>

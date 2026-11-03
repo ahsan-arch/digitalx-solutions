@@ -1,6 +1,35 @@
 import nodemailer from "nodemailer";
 import fs from "fs";
 import path from "path";
+
+// Ensure .env.local is loaded
+if (typeof (process as any).loadEnvFile === "function") {
+  try {
+    const envPath = path.join(process.cwd(), ".env.local");
+    if (fs.existsSync(envPath)) {
+      (process as any).loadEnvFile(envPath);
+    }
+  } catch {}
+} else {
+  try {
+    const envPath = path.join(process.cwd(), ".env.local");
+    if (fs.existsSync(envPath)) {
+      const lines = fs.readFileSync(envPath, "utf8").split("\n");
+      lines.forEach((line) => {
+        const trimmed = line.trim();
+        if (trimmed && !trimmed.startsWith("#") && trimmed.includes("=")) {
+          const idx = trimmed.indexOf("=");
+          const key = trimmed.slice(0, idx).trim();
+          const val = trimmed.slice(idx + 1).trim();
+          if (!process.env[key]) {
+            process.env[key] = val;
+          }
+        }
+      });
+    }
+  } catch {}
+}
+
 import { scrapedLeads, ScrapedLead } from "./scraped-leads";
 import { verifyDomainMx, validateEmailSyntax } from "./validator";
 import { probeSmtpMailbox } from "./smtp-verifier";
@@ -20,14 +49,28 @@ function getRandomDelayMs(minSec: number, maxSec: number): number {
   return seconds * 1000;
 }
 
+function getCleanFirstName(lead: ScrapedLead): string {
+  let cleaned = (lead.firstName || "").replace(/[■\u25a0\u25a1\u25aa\u25ab]/g, "").trim();
+  if (!cleaned || !/^[a-zA-Z]+$/.test(cleaned)) {
+    const raw = (lead.name || "").replace(/[■\u25a0\u25a1\u25aa\u25ab]/g, "").trim();
+    const parts = raw.split(/\s+/);
+    const valid = parts.filter(
+      (p) => !/^(dr\.?|mr\.?|ms\.?|mrs\.?|md\.?|cvo|ceo|phd|facs)$/i.test(p) && /^[a-zA-Z]+$/.test(p)
+    );
+    cleaned = valid[0] || "";
+  }
+  return cleaned || "there";
+}
+
 export function generateHumanEmail(lead: ScrapedLead): { subject: string; body: string } {
   let subject = "";
   let body = "";
+  const firstName = getCleanFirstName(lead);
 
   switch (lead.category) {
     case "healthcare":
       subject = `patient phone inquiries at ${lead.company}`;
-      body = `Hi ${lead.firstName},
+      body = `Hi ${firstName},
 
 I saw your work at ${lead.company} and wanted to reach out directly.
 
@@ -48,7 +91,7 @@ PS: If you would prefer not to receive emails from me, just reply and let me kno
 
     case "veterinary":
       subject = `quick question about appointment calls at ${lead.company}`;
-      body = `Hi ${lead.firstName},
+      body = `Hi ${firstName},
 
 I came across your work at ${lead.company} and wanted to reach out.
 
@@ -69,7 +112,7 @@ PS: If you would prefer not to receive emails from me, just reply and let me kno
 
     case "beauty_wellness":
       subject = `booking inquiries at ${lead.company}`;
-      body = `Hi ${lead.firstName},
+      body = `Hi ${firstName},
 
 I saw what you are building at ${lead.company} and wanted to send a quick note.
 
@@ -90,7 +133,7 @@ PS: If you would prefer not to receive emails from me, just reply and let me kno
 
     default: // professional_services
       subject = `lead follow up workflow at ${lead.company}`;
-      body = `Hi ${lead.firstName},
+      body = `Hi ${firstName},
 
 I came across ${lead.company} and wanted to reach out directly.
 
@@ -125,13 +168,26 @@ export async function runScrapedOutreach(
 ) {
   const tracker = new OutreachTracker();
 
+  const emailUser = process.env.EMAIL_USER || "info@digitalx-solutions.com";
+  const emailPass = (process.env.EMAIL_PASS || "zworvxbmojkpqvtf").replace(/\s+/g, "");
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER || "info@digitalx-solutions.com",
-      pass: (process.env.EMAIL_PASS || "").replace(/\s+/g, ""),
+      user: emailUser,
+      pass: emailPass,
     },
   });
+
+  if (mode === "send") {
+    try {
+      await transporter.verify();
+      console.log(`✔ SMTP connection verified: Authenticated as ${emailUser}`);
+    } catch (err: any) {
+      console.error(`❌ SMTP Authentication failed: ${err.message}`);
+      return;
+    }
+  }
 
   const senderName = process.env.OUTREACH_SENDER_NAME || "Ahsan | DigitalX Solutions";
   const senderEmail = process.env.OUTREACH_FROM_EMAIL || process.env.EMAIL_USER || "info@digitalx-solutions.com";
@@ -183,24 +239,24 @@ export async function runScrapedOutreach(
   let sent = 0;
   let skipped = 0;
 
-  // Load verified leads first, followed by all extracted leads (deduplicated by domain)
+  // Load verified leads first, followed by all extracted leads (deduplicated by individual person)
   const verifiedPath = path.join(process.cwd(), "data", "verified-leads.json");
   const allLeadsPath = path.join(process.cwd(), "data", "all-extracted-leads.json");
   let leadsToProcess: ScrapedLead[] = [];
-  const seenDomains = new Set<string>();
+  const seenPeople = new Set<string>();
 
   if (fs.existsSync(verifiedPath)) {
     try {
       const parsed = JSON.parse(fs.readFileSync(verifiedPath, "utf8"));
       if (Array.isArray(parsed) && parsed.length > 0) {
         parsed.forEach((item: any) => {
-          const dom = (item.domain || "").toLowerCase();
-          if (dom && !seenDomains.has(dom)) {
+          const key = `${(item.name || "").toLowerCase().trim()}|${(item.domain || "").toLowerCase().trim()}`;
+          if (key && !seenPeople.has(key)) {
             leadsToProcess.push({
               ...item,
               email: item.verifiedEmail || item.email,
             });
-            seenDomains.add(dom);
+            seenPeople.add(key);
           }
         });
         console.log(`Loaded ${leadsToProcess.length} verified leads from data/verified-leads.json`);
@@ -213,10 +269,10 @@ export async function runScrapedOutreach(
       const allExtracted: ScrapedLead[] = JSON.parse(fs.readFileSync(allLeadsPath, "utf8"));
       let added = 0;
       for (const lead of allExtracted) {
-        const dom = (lead.domain || "").toLowerCase();
-        if (dom && !seenDomains.has(dom)) {
+        const key = `${(lead.name || "").toLowerCase().trim()}|${(lead.domain || "").toLowerCase().trim()}`;
+        if (key && !seenPeople.has(key)) {
           leadsToProcess.push(lead);
-          seenDomains.add(dom);
+          seenPeople.add(key);
           added++;
         }
       }
@@ -238,12 +294,27 @@ export async function runScrapedOutreach(
     console.log(`[${sent + 1}/${targetBatch}] ${lead.name} — ${lead.title} (${lead.company})`);
     console.log(`  Category: ${lead.category} | Domain: ${lead.domain}`);
 
+    // Early duplicate check: has this person or their company already received outreach?
+    if (tracker.isLeadAlreadyContacted(lead.name, lead.company)) {
+      console.log(`  ℹ Lead already contacted (${lead.name} at ${lead.company}). Skipping duplicate.`);
+      continue;
+    }
+
     // If lead has no email or placeholder, probe for verified email
     if (!lead.email || !validateEmailSyntax(lead.email).isValid) {
       process.stdout.write(`  Probing recipient mailbox for ${lead.company}... `);
       const res = await findVerifiedEmailForLead(lead);
       if (res && res.verifiedEmail) {
         lead.email = res.verifiedEmail;
+
+        // Persist newly discovered verified email to disk
+        try {
+          const vList = fs.existsSync(verifiedPath) ? JSON.parse(fs.readFileSync(verifiedPath, "utf8")) : [];
+          if (!vList.some((v: any) => v.verifiedEmail === res.verifiedEmail)) {
+            vList.push(res);
+            fs.writeFileSync(verifiedPath, JSON.stringify(vList, null, 2), "utf8");
+          }
+        } catch {}
       } else {
         console.log(`  ❌ Skipped: No accepted mailboxes found.`);
         skipped++;
@@ -251,7 +322,7 @@ export async function runScrapedOutreach(
       }
     }
 
-    // Duplicate check
+    // Duplicate check by target email
     if (tracker.isAlreadyContacted(lead.email)) {
       console.log(`  ℹ Already contacted within last 60 days (${lead.email}). Skipping duplicate.`);
       continue;

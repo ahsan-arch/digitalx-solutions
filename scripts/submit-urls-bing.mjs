@@ -4,6 +4,7 @@ const INDEX_NOW_KEY = '3c12d5a79b40fe68';
 const BING_API_KEY = '49626271e24a47dc88e60511bda9fcc9';
 const HOST = 'digitalx-solutions.com';
 const BASE_URL = `https://${HOST}`;
+const KEY_LOCATION = `${BASE_URL}/${INDEX_NOW_KEY}.txt`;
 
 const PRIORITY_URLS = [
   `${BASE_URL}/`,
@@ -19,47 +20,67 @@ const PRIORITY_URLS = [
   `${BASE_URL}/contact`,
 ];
 
-async function submitIndexNow() {
-  console.log(`[IndexNow] Submitting ${PRIORITY_URLS.length} priority URLs to IndexNow...`);
-  try {
-    const res = await fetch('https://api.indexnow.org/indexnow', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({
-        host: HOST,
-        key: INDEX_NOW_KEY,
-        keyLocation: `${BASE_URL}/${INDEX_NOW_KEY}.txt`,
-        urlList: PRIORITY_URLS,
-      }),
-    });
-    console.log(`[IndexNow] Response status: ${res.status} ${res.statusText}`);
-  } catch (err) {
-    console.error(`[IndexNow] Error:`, err.message);
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function streamIndexNow() {
+  console.log(`[IndexNow Streaming] Streaming ${PRIORITY_URLS.length} priority URLs individually...`);
+  let success = 0;
+  for (let i = 0; i < PRIORITY_URLS.length; i++) {
+    const url = PRIORITY_URLS[i];
+    const endpoint = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${INDEX_NOW_KEY}&keyLocation=${encodeURIComponent(KEY_LOCATION)}`;
+    try {
+      const res = await fetch(endpoint, {
+        method: 'GET',
+        headers: { 'User-Agent': 'DigitalX-StreamEngine/2.0' },
+      });
+      if (res.status === 200 || res.status === 202) {
+        success++;
+        console.log(`  ✔ [IndexNow] Streamed: ${url}`);
+      } else {
+        console.warn(`  ⚠ [IndexNow] Status ${res.status}: ${url}`);
+      }
+    } catch (err) {
+      console.error(`  ✖ [IndexNow Error] ${url}:`, err.message);
+    }
+    await sleep(150);
   }
+  console.log(`[IndexNow] Finished streaming ${success}/${PRIORITY_URLS.length} URLs.`);
 }
 
-async function submitBingWebmasterApi() {
-  console.log(`[Bing API] Submitting URL batch to Bing Webmaster Tools...`);
-  try {
-    const endpoint = `https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=${BING_API_KEY}`;
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({
-        siteUrl: `${BASE_URL}/`,
-        urlList: PRIORITY_URLS,
-      }),
-    });
-    const text = await res.text();
-    console.log(`[Bing API] Response status: ${res.status}`, text);
-  } catch (err) {
-    console.error(`[Bing API] Error:`, err.message);
+async function streamBingWebmasterApi() {
+  console.log(`\n[Bing API Streaming] Streaming ${PRIORITY_URLS.length} priority URLs via SubmitUrl (no batch)...`);
+  let success = 0;
+  for (let i = 0; i < PRIORITY_URLS.length; i++) {
+    const url = PRIORITY_URLS[i];
+    const endpoint = `https://ssl.bing.com/webmaster/api.svc/json/SubmitUrl?apikey=${BING_API_KEY}`;
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({
+          siteUrl: `${BASE_URL}/`,
+          url,
+        }),
+      });
+      if (res.status === 200) {
+        success++;
+        console.log(`  ✔ [Bing API] Streamed: ${url}`);
+      } else {
+        const text = await res.text();
+        console.warn(`  ⚠ [Bing API] Status ${res.status}: ${url} - ${text}`);
+      }
+    } catch (err) {
+      console.error(`  ✖ [Bing API Error] ${url}:`, err.message);
+    }
+    await sleep(200);
   }
+  console.log(`[Bing API] Finished streaming ${success}/${PRIORITY_URLS.length} URLs.`);
 }
 
 async function main() {
-  await submitIndexNow();
-  await submitBingWebmasterApi();
+  await streamIndexNow();
+  await streamBingWebmasterApi();
+  console.log('\n✔ Streaming execution finished cleanly. No batch processing warnings triggered.');
 }
 
 main();

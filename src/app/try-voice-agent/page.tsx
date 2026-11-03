@@ -67,7 +67,7 @@ export default function TryVoiceAgentPage() {
       {/* Hero Section */}
       <section className="container-shell">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+          <span className="inline-flex items-center gap-2 rounded-md border border-brand/20 bg-brand/5 px-3 py-1 text-xs font-medium text-brand">
             <Sparkles className="h-3.5 w-3.5" />
             Interactive Voice Demo
           </span>
@@ -92,7 +92,7 @@ export default function TryVoiceAgentPage() {
       <section className="container-shell mt-16">
         <div className="rounded-xl border border-line-subtle bg-surface-raised p-6 md:p-10">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Testing Ideas</p>
+            <span className="font-mono text-xs font-medium text-accent">Testing Ideas</span>
             <h2 className="mt-2 font-display text-display-sm text-ink-primary">
               Sample Scenarios to Test During Your Call
             </h2>
@@ -138,7 +138,7 @@ export default function TryVoiceAgentPage() {
 
           <div className="mt-6 overflow-x-auto">
             <table className="w-full text-left text-sm">
-              <thead className="border-b border-line-subtle bg-surface-raised text-xs font-semibold uppercase tracking-wider text-ink-tertiary">
+              <thead className="border-b border-line-subtle bg-surface-raised text-xs font-medium text-ink-tertiary">
                 <tr>
                   <th className="p-3">Capability</th>
                   <th className="p-3">In-Browser Demo</th>
@@ -206,9 +206,9 @@ export default function TryVoiceAgentPage() {
       {/* CTA Box */}
       <section className="container-shell mt-16">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-line-subtle bg-surface-sunken p-8 text-center md:p-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
+          <span className="font-mono text-xs font-medium text-accent">
             Ready for a production system?
-          </p>
+          </span>
           <h2 className="font-display text-3xl text-ink-primary md:text-4xl">
             We will wire this directly into your business phone line and CRM.
           </h2>
@@ -219,14 +219,14 @@ export default function TryVoiceAgentPage() {
           <div className="mt-2 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
+              className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
             >
               Book a strategy call
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/solutions/ai-voice-receptionists"
-              className="inline-flex items-center gap-2 rounded-full border border-line-subtle bg-surface-raised px-6 py-3 text-sm font-semibold text-ink-primary transition hover:bg-surface-sunken"
+              className="inline-flex items-center gap-2 rounded-xl border border-line-subtle bg-surface-raised px-6 py-3 text-sm font-semibold text-ink-primary transition hover:bg-surface-sunken"
             >
               Explore AI voice receptionists
             </Link>

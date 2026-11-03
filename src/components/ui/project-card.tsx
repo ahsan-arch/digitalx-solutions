@@ -55,7 +55,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </div>
 
-          <span className="shrink-0 rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700 border border-emerald-600/20">
+          <span className="shrink-0 rounded-md bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700 border border-emerald-600/20">
             Verified Case Study
           </span>
         </div>
@@ -63,7 +63,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {/* Problem & Solution */}
         <div className="mt-5 space-y-3">
           <div>
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/50">
+            <span className="font-mono text-[11px] font-medium text-foreground/60">
               Operational Challenge
             </span>
             <p className="mt-1 text-sm text-foreground/75 leading-relaxed">
@@ -72,7 +72,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           <div>
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/50">
+            <span className="font-mono text-[11px] font-medium text-foreground/60">
               System Deployed
             </span>
             <p className="mt-1 text-sm text-foreground/85 leading-relaxed font-medium">
@@ -86,7 +86,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">
+              <span className="font-mono text-[10px] font-medium text-emerald-800">
                 Verified Operational Result
               </span>
               <p className="mt-0.5 text-xs font-semibold text-emerald-950 leading-relaxed">
@@ -98,7 +98,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Tools Deployed */}
         <div className="mt-5">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/50">
+          <span className="font-mono text-[11px] font-medium text-foreground/60">
             Tools &amp; Infrastructure
           </span>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -136,7 +136,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <Link
           href={`/case-studies/${project.id}`}
-          className="inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3.5 py-1.5 text-xs font-semibold text-brand transition hover:bg-brand hover:text-white"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-50 px-3.5 py-1.5 text-xs font-medium text-foreground transition hover:border-brand/40 hover:text-brand"
         >
           View Case Study <ArrowRight className="h-3.5 w-3.5" />
         </Link>

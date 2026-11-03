@@ -173,7 +173,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     {/* Free AI Automation Audit CTA Box */}
                     <div className="my-14 overflow-hidden rounded-2xl border border-brand/40 bg-surface-50 p-8 shadow-sm md:p-10">
                         <div className="max-w-2xl">
-                            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
+                            <span className="inline-flex items-center gap-1.5 rounded-md border border-brand/20 bg-brand/5 px-2.5 py-1 font-mono text-xs font-medium text-brand">
                                 Free Telephony &amp; Lead Recovery Audit
                             </span>
                             <h3 className="mt-3 font-display text-2xl font-semibold text-foreground md:text-3xl">
@@ -208,7 +208,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                                     <Link
                                         key={s.href}
                                         href={s.href}
-                                        className="px-4 py-2 rounded-pill border border-accent/35 bg-accent-soft text-accent font-mono text-sm hover:bg-accent/15 transition-colors"
+                                        className="px-4 py-2 rounded-xl border border-accent/35 bg-accent-soft text-accent font-mono text-sm hover:bg-accent/15 transition-colors"
                                     >
                                         {s.label} →
                                     </Link>

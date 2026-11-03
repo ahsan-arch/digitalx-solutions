@@ -118,13 +118,20 @@ export default function MetaAdsPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Also available</p>
+            <span className="font-mono text-xs font-medium text-ink-tertiary">Also available</span>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Meta Ads engineering, not just &ldquo;ads management&rdquo;.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-              Most agencies still rely on the browser pixel. We engineer the full attribution loop &mdash; CAPI,
-              server side tagging, deduplication &mdash; so Meta can actually find your customers.
+              Most agencies still rely on the browser pixel. We engineer the full attribution loop &mdash; CAPI, server side tagging, deduplication &mdash; directly feeding into your{" "}
+              <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-accent hover:underline">
+                GoHighLevel CRM pipelines
+              </Link>{" "}
+              and{" "}
+              <Link href="/solutions/n8n-workflow-automation" className="font-semibold text-accent hover:underline">
+                n8n webhook automations
+              </Link>{" "}
+              so Meta can actually find your highest-LTV customers.
             </p>
           </div>
           <div className="relative">
@@ -210,7 +217,7 @@ export default function MetaAdsPage() {
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover"
+          className="mt-6 inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover transition"
         >
           Audit my Meta account
         </Link>

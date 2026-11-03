@@ -79,13 +79,26 @@ export default function AuPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Australia</p>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-line-subtle bg-surface-sunken px-2.5 py-1 text-xs font-medium text-ink-secondary">
+              Australia Delivery
+            </span>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Automation services for Australian service businesses.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-              Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. AI voice, Missed call recovery,
-              and CRM systems tuned for Australian customers and Australian Privacy Principles.
+              Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. Deploying{" "}
+              <Link href="/solutions/ai-voice-agents" className="font-semibold text-accent hover:underline">
+                Australian AI voice agents
+              </Link>
+              ,{" "}
+              <Link href="/solutions/missed-call-text-back" className="font-semibold text-accent hover:underline">
+                tradie missed-call text-back
+              </Link>
+              , and{" "}
+              <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-accent hover:underline">
+                GoHighLevel CRM systems
+              </Link>{" "}
+              tuned for Australian customers and Australian Privacy Principles.
             </p>
           </div>
           <div className="relative">
@@ -115,7 +128,7 @@ export default function AuPage() {
       <section className="container-shell mt-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Australian Capabilities</p>
+            <span className="font-mono text-xs font-medium text-ink-tertiary">Australian Capabilities</span>
             <h2 className="mt-2 font-display text-display-sm text-ink-primary">Core AI &amp; Revenue Automations for Australian Businesses</h2>
           </div>
           <Link href="/try-voice-agent" className="text-sm font-semibold text-accent hover:underline">
@@ -232,8 +245,8 @@ export default function AuPage() {
       <section className="container-shell mt-16">
         <div className="flex flex-col justify-between rounded-2xl border border-line-subtle bg-surface-raised p-6 md:p-8 sm:flex-row sm:items-center">
           <div>
-            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse mr-2" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-accent">Sydney HQ & Nationwide AU Delivery</span>
+            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 mr-2" />
+            <span className="font-mono text-xs font-medium text-accent">Sydney HQ &amp; Nationwide AU Delivery</span>
             <h2 className="mt-2 font-display text-title-lg text-ink-primary">
               Ready to automate your Australian service business?
             </h2>
@@ -252,7 +265,7 @@ export default function AuPage() {
           <div className="mt-6 sm:mt-0">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover shadow-sm"
+              className="inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover shadow-sm transition"
             >
               Book an AU Consultation
             </Link>

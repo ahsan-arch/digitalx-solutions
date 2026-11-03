@@ -1273,5 +1273,33 @@
     "verifiedEmail": "rjones@youturnhealth.com",
     "source": "direct_probe",
     "smtpResponse": "250 recipient <rjones@youturnhealth.com> OK"
+  },
+  {
+    "name": "Hamilton Baiden",
+    "firstName": "Hamilton",
+    "title": "Chief executive officer",
+    "company": "Youturn health",
+    "domain": "youturnhealth.com",
+    "category": "healthcare",
+    "country": "United States",
+    "problem": "Front desk staff cannot keep up with patient call volume so appointment requests and after-hours calls go to voicemail.",
+    "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
+    "verifiedEmail": "info@youturnhealth.com",
+    "source": "direct_probe",
+    "smtpResponse": "250 recipient <info@youturnhealth.com> OK"
+  },
+  {
+    "name": "Jeff Dorchester",
+    "firstName": "Jeff",
+    "title": "Chief technology officer",
+    "company": "Youturn health",
+    "domain": "youturnhealth.com",
+    "category": "healthcare",
+    "country": "United States",
+    "problem": "Front desk staff cannot keep up with patient call volume so appointment requests and after-hours calls go to voicemail.",
+    "solution": "An AI voice agent answers every call 24/7, books appointments straight into the calendar, and missed-call text-back engages callers instantly.",
+    "verifiedEmail": "jdorchester@youturnhealth.com",
+    "source": "direct_probe",
+    "smtpResponse": "250 recipient <jdorchester@youturnhealth.com> OK"
   }
 ]

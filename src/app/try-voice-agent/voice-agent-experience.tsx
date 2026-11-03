@@ -120,7 +120,7 @@ export function VoiceAgentExperience() {
       {stage === "picker" && survey && (
         <div className="space-y-6">
           <div className="rounded-2xl border border-border bg-surface-50 px-5 py-4 text-sm">
-            <p className="text-xs font-semibold uppercase tracking-wider text-foreground/55">
+            <p className="font-mono text-xs font-medium text-foreground/60">
               Your agent will know
             </p>
             <p className="mt-1 text-foreground/85">

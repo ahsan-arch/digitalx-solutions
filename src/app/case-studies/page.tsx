@@ -46,9 +46,9 @@ export default function CaseStudiesIndexPage() {
       {/* Hero Header */}
       <section className="container-shell">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
             Verified Engineering Outcomes
-          </p>
+          </span>
           <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
             Real automation deployments. Measurable revenue recovered.
           </h1>
@@ -93,9 +93,9 @@ export default function CaseStudiesIndexPage() {
       <section className="container-shell mt-20">
         <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-14">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+            <span className="font-mono text-xs font-medium text-brand">
               Our Measurement Framework
-            </p>
+            </span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-4xl">
               How we calculate and verify automation ROI
             </h2>
@@ -112,7 +112,7 @@ export default function CaseStudiesIndexPage() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl border border-border bg-white p-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand">Metric 01</span>
+              <span className="font-mono text-xs font-medium text-brand">Metric 01</span>
               <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                 Inbound Call Capture Rate
               </h3>
@@ -123,7 +123,7 @@ export default function CaseStudiesIndexPage() {
             </div>
 
             <div className="rounded-2xl border border-border bg-white p-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand">Metric 02</span>
+              <span className="font-mono text-xs font-medium text-brand">Metric 02</span>
               <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                 Speed-to-Lead &amp; Recovery
               </h3>
@@ -134,7 +134,7 @@ export default function CaseStudiesIndexPage() {
             </div>
 
             <div className="rounded-2xl border border-border bg-white p-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand">Metric 03</span>
+              <span className="font-mono text-xs font-medium text-brand">Metric 03</span>
               <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                 Closed-Won Pipeline Value
               </h3>

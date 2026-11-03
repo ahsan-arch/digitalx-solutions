@@ -58,7 +58,7 @@ export default function DevelopmentHubPage() {
       <main id="main" className="pb-24 pt-12">
         <section className="container-shell">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border bg-white px-3 py-1.5 text-xs font-medium text-brand">
               <Code className="h-3.5 w-3.5" />
               Software Engineering &amp; Custom Architecture
             </div>
@@ -81,11 +81,11 @@ export default function DevelopmentHubPage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-600/20">
+                    <span className="flex items-center gap-1 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-600/20">
                       <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
                       Production Architecture
                     </span>
-                    <span className="text-[11px] font-semibold text-foreground/50 uppercase tracking-wider">
+                    <span className="text-[11px] font-mono text-foreground/60">
                       Fixed-Scope Delivery
                     </span>
                   </div>
@@ -101,7 +101,7 @@ export default function DevelopmentHubPage() {
                   </p>
 
                   <div className="mt-5 border-t border-border/60 pt-4">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/50">
+                    <span className="text-[11px] font-mono text-foreground/60">
                       Core Stack Components
                     </span>
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -134,7 +134,7 @@ export default function DevelopmentHubPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-12">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Reliability First</p>
+              <span className="font-mono text-xs font-medium text-brand">Reliability First</span>
               <h2 className="mt-2 font-display text-2xl md:text-3xl font-semibold text-foreground">
                 Our Engineering Standards &amp; Principles
               </h2>
@@ -215,7 +215,7 @@ export default function DevelopmentHubPage() {
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-full bg-brand px-7 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
+                className="inline-flex items-center rounded-xl bg-brand px-7 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
               >
                 Schedule an Engineering Consultation
               </Link>

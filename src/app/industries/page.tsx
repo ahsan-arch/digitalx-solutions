@@ -39,7 +39,9 @@ export default function IndustriesHubPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Industries</p>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+              Vertical Specialization
+            </span>
             <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Sector playbooks adapted to real operational constraints.
             </h1>
@@ -53,7 +55,7 @@ export default function IndustriesHubPage() {
                 <a
                   key={category}
                   href={`#${category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                  className="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-foreground/70 transition hover:border-brand/40 hover:text-brand"
+                  className="rounded-md border border-border bg-white px-3 py-1.5 text-xs font-medium text-foreground/70 transition hover:border-brand/40 hover:text-brand"
                 >
                   {category}
                 </a>
@@ -79,11 +81,11 @@ export default function IndustriesHubPage() {
             <h2 className="mb-6 font-display text-2xl text-foreground md:text-3xl">{category}</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {categoryIndustries.map((industry) => (
-                <article key={industry.slug} className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm">
+                <article key={industry.slug} className="group rounded-2xl border border-border bg-surface-50 p-6 transition-colors hover:border-brand/40">
                   <h3 className="font-display text-xl text-foreground">{industry.name}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/72">{industry.summary}</p>
 
-                  <h4 className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Common blockers</h4>
+                  <h4 className="mt-4 font-mono text-xs font-medium text-foreground/60">Common blockers</h4>
                   <ul className="mt-2 space-y-1.5 text-sm text-foreground/68">
                     {industry.painPoints.slice(0, 2).map((point) => (
                       <li key={point}>• {point}</li>

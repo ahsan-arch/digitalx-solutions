@@ -38,7 +38,7 @@ export default function IntegrationsHubPage() {
       <main id="main" className="pb-24 pt-12">
         <section className="container-shell">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border bg-white px-3 py-1.5 font-mono text-xs font-medium text-brand">
               <Cpu className="h-3.5 w-3.5" />
               Ecosystem &amp; Architecture
             </div>
@@ -61,7 +61,7 @@ export default function IntegrationsHubPage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="rounded-full bg-surface-100 px-3 py-1 text-[11px] font-semibold text-foreground/70">
+                    <span className="rounded-md bg-surface-100 px-2.5 py-0.5 text-[11px] font-medium text-foreground/70">
                       {integration.category}
                     </span>
                     <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
@@ -81,7 +81,7 @@ export default function IntegrationsHubPage() {
                   </p>
 
                   <div className="mt-5 border-t border-border/60 pt-4">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-foreground/50">
+                    <span className="font-mono text-[11px] font-medium text-foreground/60">
                       Supported Tools
                     </span>
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -124,13 +124,13 @@ export default function IntegrationsHubPage() {
                 <div className="mt-6 flex flex-wrap gap-4">
                   <Link
                     href="/development/api-webhook-integrations"
-                    className="inline-flex items-center rounded-full bg-brand px-6 py-2.5 text-xs font-semibold text-white hover:bg-brand-deep transition-colors"
+                    className="inline-flex items-center rounded-xl bg-brand px-6 py-2.5 text-xs font-semibold text-white hover:bg-brand-deep transition-colors"
                   >
                     Custom API &amp; Webhook Engineering
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center rounded-full border border-border bg-white px-6 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition-colors"
+                    className="inline-flex items-center rounded-xl border border-border bg-white px-6 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition-colors"
                   >
                     Speak with a Solutions Engineer
                   </Link>
@@ -138,7 +138,7 @@ export default function IntegrationsHubPage() {
               </div>
 
               <div className="rounded-2xl border border-border/80 bg-white p-6">
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground/60 mb-3">
+                <h3 className="font-mono text-xs font-medium text-foreground/70 mb-3">
                   Integration Guarantees
                 </h3>
                 <ul className="space-y-2.5 text-xs text-foreground/80">

@@ -125,12 +125,12 @@ export default function HomePage() {
       <main id="main" className="pb-24">
         {/* SECTION 1: HERO */}
         <section className="container-shell pt-12 md:pt-16">
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-50 px-6 py-12 shadow-sm md:px-10 md:py-16">
+          <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-10 md:py-16">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
-                  <ShieldCheck className="h-3.5 w-3.5" />
-                  AI Automation Agency — Australia &amp; USA
+                <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border/70 bg-white px-3 py-1 text-xs font-medium text-foreground/80">
+                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                  <span>Voice telephony and workflow automation · Australia &amp; US</span>
                 </div>
                 <h1 className="font-display text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
                   AI Automation Agency for High-Growth Service Businesses
@@ -142,17 +142,17 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-deep"
                   >
-                    Book a Strategy Call
+                    Book a strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-sunken"
                   >
                     <PhoneCall className="h-4 w-4 text-brand" />
-                    Test Live Voice Demo
+                    Test live voice demo
                   </Link>
                 </div>
               </div>
@@ -165,8 +165,8 @@ export default function HomePage() {
             {/* Quick Metrics Bar */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {heroMetrics.map((metric) => (
-                <div key={metric.label} className="rounded-2xl border border-border/80 bg-white/80 p-4">
-                  <p className="text-2xl font-semibold text-foreground">{metric.value}</p>
+                <div key={metric.label} className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+                  <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">{metric.value}</p>
                   <p className="mt-1 text-sm text-foreground/75">{metric.label}</p>
                 </div>
               ))}
@@ -181,55 +181,71 @@ export default function HomePage() {
 
         {/* SECTION 3: WHY AUTOMATION MATTERS */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-border bg-white p-6 md:p-12">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
-                The Revenue Leak
+              <p className="text-xs font-medium text-brand">
+                The cost of missed inbound calls
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Why Manual Phone Handling &amp; Slow Follow-Ups Cost Real Revenue
               </h2>
               <p className="mt-4 text-base leading-relaxed text-foreground/75">
-                When a homeowner with a burst pipe or a patient with a toothache calls your business, they are not shopping around for fun. They need help immediately. If your phone rings out or goes to voicemail, they hang up and dial the next listing on Google within 45 seconds.
+                When a homeowner with a burst pipe or a patient with a toothache calls your business, they need help immediately. Deploying a{" "}
+                <Link href="/solutions/ai-voice-agents" className="font-semibold text-brand hover:underline">
+                  24/7 AI voice receptionist
+                </Link>{" "}
+                or an{" "}
+                <Link href="/solutions/missed-call-text-back" className="font-semibold text-brand hover:underline">
+                  automated missed-call text-back system
+                </Link>{" "}
+                captures those high-intent inquiries in under 30 seconds. Paired with scalable{" "}
+                <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-brand hover:underline">
+                  GoHighLevel CRM setups
+                </Link>{" "}
+                and{" "}
+                <Link href="/solutions/n8n-workflow-automation" className="font-semibold text-brand hover:underline">
+                  custom n8n automations
+                </Link>
+                , your leads are triaged, scheduled, and dispatched before they reach a competitor.
               </p>
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-red-600 font-bold">
-                  <PhoneCall className="h-5 w-5" />
+              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+                  <PhoneCall className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">62% Unanswered Calls</h3>
+                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">62% Unanswered Calls</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Small service businesses miss over half of all inbound calls during active jobs, lunch breaks, and evenings.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-700 font-bold">
-                  <Clock className="h-5 w-5" />
+              <div className="rounded-2xl border border-border/70 bg-surface-page p-6">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+                  <Clock className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">85% Hang-Up Rate</h3>
+                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">85% Hang-Up Rate</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Callers who hit voicemail hang up without leaving a message. Voicemail is where inbound deals go to die.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 font-bold">
-                  <Zap className="h-5 w-5" />
+              <div className="rounded-2xl border border-border/70 bg-surface-page p-6">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+                  <Zap className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">391% Lift via Speed</h3>
+                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">391% Lift via Speed</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Replying with a conversational two-way text under 60 seconds captures the lead before they reach competitor lines.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-700 font-bold">
-                  <Database className="h-5 w-5" />
+              <div className="rounded-2xl border border-border/70 bg-surface-page p-6">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+                  <Database className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">20 hrs Saved / Week</h3>
+                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">20 hrs Saved / Week</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Eliminating manual job logging, back-and-forth scheduling, and CRM updates frees up valuable operational hours.
                 </p>
@@ -242,7 +258,7 @@ export default function HomePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Core Capability Stacks</p>
+              <p className="text-xs font-medium text-brand">Production capability stacks</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Engineered Systems That Work in Production
               </h2>
@@ -257,9 +273,9 @@ export default function HomePage() {
               <TiltCard
                 key={solution.slug}
                 href={`/solutions/${solution.slug}`}
-                className="group block h-full rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-md"
+                className="group block h-full rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/70">{solution.tagline}</p>
+                <p className="text-xs font-medium text-foreground/60">{solution.tagline}</p>
                 <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">{solution.summary}</p>
                 <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
@@ -275,7 +291,7 @@ export default function HomePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Client Implementations</p>
+              <p className="text-xs font-medium text-brand">Verified deployments</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Recent Automation Deployments
               </h2>
@@ -294,9 +310,9 @@ export default function HomePage() {
 
         {/* SECTION 6: PROCESS */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Delivery Framework</p>
+              <p className="text-xs font-medium text-brand">14-day production roadmap</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">How We Take You Live in 14 Days</h2>
               <p className="mt-3 text-sm leading-relaxed text-foreground/75 md:text-base">
                 We do not sell pre-recorded tutorials or empty templates. We engineer, test, and maintain your telephony and CRM infrastructure so it works without ongoing friction.
@@ -305,8 +321,8 @@ export default function HomePage() {
 
             <div className="mt-8 grid gap-5 md:grid-cols-4">
               {processSteps.map((step, index) => (
-                <div key={step.title} className="rounded-2xl border border-border bg-surface-50 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Phase 0{index + 1}</p>
+                <div key={step.title} className="rounded-xl border border-border/70 bg-surface-page p-5">
+                  <p className="font-mono text-xs font-medium text-foreground/60">Phase 0{index + 1}</p>
                   <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/80">{step.description}</p>
                 </div>
@@ -319,7 +335,7 @@ export default function HomePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Vertical Playbooks</p>
+              <p className="text-xs font-medium text-brand">Industry architectures</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Tuned for Your Industry &amp; Operating Model
               </h2>
@@ -332,7 +348,7 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Link
               href="/industries/plumbers-hvac-trades"
-              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-xs"
+              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
             >
               <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                 Plumbers, HVAC &amp; Trades
@@ -347,7 +363,7 @@ export default function HomePage() {
 
             <Link
               href="/industries/medical-dental-clinics"
-              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-xs"
+              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
             >
               <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                 Medical &amp; Dental Clinics
@@ -362,7 +378,7 @@ export default function HomePage() {
 
             <Link
               href="/industries/automotive-workshops"
-              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-xs"
+              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
             >
               <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                 Automotive Workshops &amp; Mechanics
@@ -377,7 +393,7 @@ export default function HomePage() {
 
             <Link
               href="/industries/beauty-wellness"
-              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-xs"
+              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
             >
               <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                 Beauty, Salons &amp; Med Spas
@@ -392,7 +408,7 @@ export default function HomePage() {
 
             <Link
               href="/industries/professional-services"
-              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-xs"
+              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
             >
               <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                 Legal &amp; Professional Services
@@ -407,7 +423,7 @@ export default function HomePage() {
 
             <Link
               href="/industries/events-hospitality"
-              className="group rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/40 hover:shadow-xs"
+              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
             >
               <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                 Events, Venues &amp; Hospitality
@@ -424,9 +440,9 @@ export default function HomePage() {
 
         {/* SECTION 8: FAQ ACCORDION */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-border bg-white p-6 md:p-12">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Operator FAQ</p>
+              <p className="text-xs font-medium text-brand">Frequently asked questions</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Frequently Asked Implementation Questions
               </h2>
@@ -436,7 +452,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-8 space-y-4">
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
+              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   How fast does the AI answering agent answer incoming calls?
                 </h3>
@@ -445,7 +461,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
+              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   Does this AI integrate with existing CRMs?
                 </h3>
@@ -454,7 +470,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
+              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   Can the voice agents handle phone number forwarding?
                 </h3>
@@ -463,7 +479,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-surface-50 p-6">
+              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   How does the missed-call lead recovery work?
                 </h3>
@@ -477,7 +493,7 @@ export default function HomePage() {
 
         {/* SECTION 9: FINAL CTA */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-border bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="rounded-2xl border border-border bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight">
                 Stop Losing Jobs to Missed Calls and Slow Follow-Ups
@@ -488,17 +504,17 @@ export default function HomePage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-foreground hover:bg-surface-100 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-medium text-foreground hover:bg-surface-sunken transition-colors"
                 >
-                  Book a Strategy Call
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/try-voice-agent"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
                 >
                   <PhoneCall className="h-4 w-4" />
-                  Test Live AI Voice Agent
+                  Test live AI voice agent
                 </Link>
               </div>
             </div>

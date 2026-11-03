@@ -11,6 +11,10 @@ interface RunOptions {
   vertical?: "trades" | "dental" | "b2b" | "all";
   csvPath?: string;
   limit?: number;
+  batchSize?: number;
+  interval?: number;
+  initialDelay?: number;
+  force?: boolean;
 }
 
 function sleep(ms: number): Promise<void> {
@@ -106,6 +110,8 @@ export async function runOutreach(options: RunOptions) {
   const tracker = new OutreachTracker();
   const providerConfig = getProviderConfig();
   const dailyCap = options.limit || defaultOutreachConfig.dailyCap;
+  const todaySent = tracker.getTodaySentCount();
+  const remainingQuota = tracker.getRemainingDailyQuota(dailyCap);
 
   console.log("\n============================================================");
   console.log("       DIGITALX SOLUTIONS — AUTOMATED OUTREACH ENGINE        ");
@@ -124,14 +130,14 @@ export async function runOutreach(options: RunOptions) {
     return;
   }
 
-  const remainingQuota = tracker.getRemainingDailyQuota(dailyCap);
-  console.log(`Daily Quota: ${dailyCap} | Sent Today: ${tracker.getTodaySentCount()} | Available Today: ${remainingQuota}`);
+  console.log(`Daily Quota Cap: ${dailyCap} | Sent Today: ${todaySent} | Remaining Quota: ${remainingQuota}`);
   console.log(`Active Mode: ${options.mode.toUpperCase()}`);
   console.log(`Configured Sender: "${defaultOutreachConfig.senderName}" <${defaultOutreachConfig.senderEmail}>`);
   console.log(`Delivery Provider: ${providerConfig.provider.toUpperCase()}`);
 
-  if (remainingQuota <= 0 && options.mode === "send") {
-    console.log("\n⚠️ Daily quota of 50 emails has already been reached for today.");
+  const allowSend = options.force || options.batchSize !== undefined || remainingQuota > 0;
+  if (!allowSend && options.mode === "send") {
+    console.log(`\n⚠️ Daily quota of ${dailyCap} emails has already been reached for today.`);
     console.log("To protect domain sender reputation, no further emails will be sent until tomorrow 00:00:00.\n");
     return;
   }
@@ -151,13 +157,22 @@ export async function runOutreach(options: RunOptions) {
     console.log(`Filtered for vertical: "${options.vertical}" (${leads.length} available)`);
   }
 
-  let sentCount = 0;
-  let skippedCount = 0;
-  const targetBatchSize = Math.min(leads.length, remainingQuota);
+  const effectiveQuota = options.force || options.batchSize !== undefined
+    ? (options.batchSize || options.limit || leads.length)
+    : remainingQuota;
+  const targetBatchSize = Math.min(leads.length, effectiveQuota);
 
   console.log(`\nBeginning batch run of up to ${targetBatchSize} prospects...\n`);
 
-  for (let i = 0; i < leads.length && sentCount < remainingQuota; i++) {
+  if (options.initialDelay && options.initialDelay > 0 && options.mode === "send") {
+    console.log(`⏳ Initial countdown: waiting ${options.initialDelay}s (${(options.initialDelay / 60).toFixed(1)} minutes) before first send as requested...`);
+    await sleep(options.initialDelay * 1000);
+  }
+
+  let sentCount = 0;
+  let skippedCount = 0;
+
+  for (let i = 0; i < leads.length && sentCount < effectiveQuota; i++) {
     const lead = leads[i];
     console.log(`------------------------------------------------------------`);
     console.log(`[${sentCount + 1}/${targetBatchSize}] Processing: ${lead.name} (${lead.company})`);
@@ -279,11 +294,13 @@ export async function runOutreach(options: RunOptions) {
       skippedCount++;
     }
 
-    // Apply human jitter delay between sends (if more to send)
+    // Apply delay between sends (if more to send)
     if (sentCount < targetBatchSize && options.mode === "send") {
-      const delayMs = getRandomDelayMs(defaultOutreachConfig.minDelaySeconds, defaultOutreachConfig.maxDelaySeconds);
-      console.log(`  ⏳ Jitter delay: Waiting ${(delayMs / 1000).toFixed(0)}s before next send to protect domain...`);
-      await sleep(delayMs);
+      const delaySec = options.interval !== undefined
+        ? options.interval
+        : getRandomDelayMs(defaultOutreachConfig.minDelaySeconds, defaultOutreachConfig.maxDelaySeconds) / 1000;
+      console.log(`  ⏳ Delay interval: Waiting ${delaySec}s (${(delaySec / 60).toFixed(1)} min) before next send to protect domain...`);
+      await sleep(delaySec * 1000);
     }
   }
 
@@ -313,11 +330,26 @@ if (require.main === module) {
   const limitIdx = args.indexOf("--limit");
   const limit = limitIdx !== -1 ? parseInt(args[limitIdx + 1], 10) : 50;
 
+  const batchSizeIdx = args.indexOf("--batch-size");
+  const batchSize = batchSizeIdx !== -1 ? parseInt(args[batchSizeIdx + 1], 10) : undefined;
+
+  const intervalIdx = args.indexOf("--interval");
+  const interval = intervalIdx !== -1 ? parseInt(args[intervalIdx + 1], 10) : undefined;
+
+  const initialDelayIdx = args.indexOf("--initial-delay");
+  const initialDelay = initialDelayIdx !== -1 ? parseInt(args[initialDelayIdx + 1], 10) : undefined;
+
+  const force = args.includes("--force") || args.includes("--ignore-daily-cap");
+
   runOutreach({
     mode: isStats ? "stats" : isSend ? "send" : "dry_run",
     vertical,
     csvPath,
     limit,
+    batchSize,
+    interval,
+    initialDelay,
+    force,
   }).catch((err) => {
     console.error("Fatal outreach error:", err);
     process.exit(1);

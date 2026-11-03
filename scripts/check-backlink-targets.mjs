@@ -10,7 +10,7 @@ const TARGETS = [
   { name: 'UpCity', url: 'https://upcity.com/get-listed', priority: 'P2', tier: 'Tier 1' },
   { name: 'Sortlist', url: 'https://www.sortlist.com/join-agency', priority: 'P3', tier: 'Tier 1' },
   { name: 'n8n Creators', url: 'https://n8n.io/creators/', priority: 'P1', tier: 'Tier 2' },
-  { name: 'Bing Places', url: 'https://www.bing.com/places', priority: 'P1', tier: 'Tier 3' },
+  { name: 'Bing Places', url: 'https://www.bingplaces.com/', priority: 'P1', tier: 'Tier 3' },
   { name: 'Crunchbase', url: 'https://www.crunchbase.com/register', priority: 'P2', tier: 'Tier 3' },
   { name: 'Yellow Pages AU', url: 'https://www.yellowpages.com.au/', priority: 'P2', tier: 'Tier 3' },
   { name: 'Connectively (HARO)', url: 'https://www.connectively.us/', priority: 'P1', tier: 'Tier 4' },

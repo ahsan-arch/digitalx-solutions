@@ -63,7 +63,7 @@ Australia citations establish geo-relevance and confirm local legitimacy for Goo
 | # | Directory Platform | Target URL / Entry Point | Domain Rating (Ahrefs DR) | Verification Method | Category Taxonomies |
 | :-: | :--- | :--- | :-: | :--- | :--- |
 | **1** | **Google Business Profile (AU)** | `https://business.google.com` | DR 98 | Postcard / Phone / Video verification | Marketing Agency, Software Company |
-| **2** | **Bing Places for Business** | `https://www.bing.com/places` | DR 94 | Sync via Google Business Profile | Marketing Consultant, Computer Software |
+| **2** | **Bing Places for Business** | `https://www.bingplaces.com` | DR 94 | Sync via Google Business Profile | Marketing Consultant, Computer Software |
 | **3** | **Apple Business Connect** | `https://businessconnect.apple.com` | DR 96 | Business email & D-U-N-S verification | Professional Services, Internet Marketing |
 | **4** | **Yellow Pages Australia** | `https://www.yellowpages.com.au` | DR 78 | SMS / Phone OTP verification | Advertising & Marketing, Computer Software |
 | **5** | **True Local** | `https://www.truelocal.com.au` | DR 76 | Email confirmation & business verification | Marketing Consultants, Web Designers |
@@ -94,7 +94,7 @@ In the United States, DigitalX Solutions operates as a **Service Area Business (
 | # | US Citation Platform | Target URL / Entry Point | Domain Rating (DR) | Verification Method | Category Taxonomies |
 | :-: | :--- | :--- | :-: | :--- | :--- |
 | **1** | **Google Business Profile (US SAB)** | `https://business.google.com` | DR 98 | Video / Phone verification (Address hidden) | Marketing Agency, Software Company |
-| **2** | **Bing Places US** | `https://www.bing.com/places` | DR 94 | GBP API sync | Marketing Consultant |
+| **2** | **Bing Places US** | `https://www.bingplaces.com` | DR 94 | GBP API sync | Marketing Consultant |
 | **3** | **Apple Maps US** | `https://businessconnect.apple.com` | DR 96 | Corporate email verification | Professional Services |
 | **4** | **Yelp for Business** | `https://biz.yelp.com` | DR 94 | Phone call verification | Marketing, Web Design |
 | **5** | **Better Business Bureau (BBB)** | `https://www.bbb.org` | DR 92 | Online business registration | Marketing Consultants |

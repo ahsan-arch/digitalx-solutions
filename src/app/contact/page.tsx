@@ -83,7 +83,9 @@ export default function ContactPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Contact &amp; Scoping</p>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+              Engineering Scoping
+            </span>
             <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Share your goals. We will map the fastest path to measurable improvement.
             </h1>
@@ -140,21 +142,21 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-2xl border border-border bg-surface-50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Casula Office &amp; Coverage</p>
+            <p className="text-xs font-medium text-foreground/60">Casula Office &amp; Coverage</p>
             <p className="mt-2 text-sm text-foreground/72 leading-relaxed">
               16 Boldrewood Ave, Casula NSW 2170, Australia. Onshore Australian engineering team serving businesses across Sydney, Melbourne, Brisbane, and remote delivery nationwide in the US.
             </p>
           </div>
 
           <div className="rounded-2xl border border-border bg-surface-50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Direct Email</p>
+            <p className="text-xs font-medium text-foreground/60">Direct Email</p>
             <a href="mailto:info@digitalx-solutions.com" className="mt-2 inline-block text-sm font-medium text-brand hover:underline">
               info@digitalx-solutions.com
             </a>
           </div>
 
           <div className="rounded-2xl border border-border bg-surface-50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/55">Direct Phone &amp; WhatsApp</p>
+            <p className="text-xs font-medium text-foreground/60">Direct Phone &amp; WhatsApp</p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
               <a
                 href={`tel:${companyProfile.phoneE164}`}
@@ -189,21 +191,21 @@ export default function ContactPage() {
 
           <div className="mt-6 grid gap-6 sm:grid-cols-3 text-sm text-foreground/75">
             <div className="rounded-2xl border border-border bg-white p-5">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand">Phase 01</span>
+              <span className="font-mono text-xs font-medium text-brand">Phase 01</span>
               <h3 className="mt-2 font-display text-base font-semibold text-foreground">Intake Friction Audit</h3>
               <p className="mt-2 text-xs leading-relaxed">
                 We calculate your current missed call percentage, secret-shop your after-hours answering experience, and identify where customer inquiries drop off between your ads and CRM.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-white p-5">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand">Phase 02</span>
+              <span className="font-mono text-xs font-medium text-brand">Phase 02</span>
               <h3 className="mt-2 font-display text-base font-semibold text-foreground">Stack Feasibility Check</h3>
               <p className="mt-2 text-xs leading-relaxed">
                 We evaluate your existing software (ServiceTitan, Jobber, Cliniko, HubSpot, or GoHighLevel) to confirm webhook capabilities, two-way calendar sync, and telephony routing feasibility.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-white p-5">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand">Phase 03</span>
+              <span className="font-mono text-xs font-medium text-brand">Phase 03</span>
               <h3 className="mt-2 font-display text-base font-semibold text-foreground">Fixed-Scope Blueprint</h3>
               <p className="mt-2 text-xs leading-relaxed">
                 You receive a transparent engineering proposal outlining system architecture, prompt guardrails, telephony pass-through unit economics, and an agile 4-week launch schedule.
@@ -212,7 +214,7 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-8 border-t border-border pt-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
+            <h3 className="text-sm font-semibold text-foreground/80">
               Pre-Call Preparation Checklist for Business Owners
             </h3>
             <p className="mt-2 text-xs text-foreground/65 leading-relaxed">

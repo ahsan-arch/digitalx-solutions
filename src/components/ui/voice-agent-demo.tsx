@@ -280,7 +280,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
         <div ref={scrollRef} className="h-[340px] overflow-y-auto p-4" style={{ scrollbarWidth: "none" }}>
           {!isActive && visibleTurns === 0 && (
             <div className="flex h-full flex-col items-center justify-center text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand/10">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand/10">
                 <Volume2 className="h-7 w-7 text-brand" />
               </div>
               <p className="text-sm font-semibold text-foreground">
@@ -306,7 +306,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
                         : "rounded-bl-md border border-border bg-surface-50 text-foreground/85"
                     }`}
                   >
-                    <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-wider opacity-60">
+                    <p className="mb-0.5 font-mono text-[10px] font-medium opacity-60">
                       {turn.speaker === "caller" ? "Caller" : script.agentName}
                     </p>
                     {turn.text}
@@ -336,7 +336,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
           {!isActive ? (
             <button
               onClick={startDemo}
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-deep"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-deep"
             >
               <Phone className="h-4 w-4" />
               {visibleTurns > 0 ? "Replay demo call" : "Start demo call"}
@@ -348,7 +348,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
               </div>
               <button
                 onClick={endDemo}
-                className="inline-flex items-center gap-2 rounded-full bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-600"
+                className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-700"
               >
                 <PhoneOff className="h-4 w-4" />
                 End call

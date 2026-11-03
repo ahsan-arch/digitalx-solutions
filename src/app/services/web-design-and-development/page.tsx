@@ -116,13 +116,24 @@ export default function WebDesignDevelopmentPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Also available</p>
+            <span className="font-mono text-xs font-medium text-ink-tertiary">Also available</span>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Web design &amp; development for local service businesses.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-              We are an automation first agency. When clients also need a new site &mdash; one engineered to feed leads
-              straight into the automation stack &mdash; we build it ourselves on Next.js.
+              We are an automation first agency. When clients also need a new site &mdash; one engineered to feed leads straight into our{" "}
+              <Link href="/solutions/ai-voice-agents" className="font-semibold text-accent hover:underline">
+                24/7 AI voice receptionists
+              </Link>
+              ,{" "}
+              <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-accent hover:underline">
+                GoHighLevel CRM setups
+              </Link>
+              , and{" "}
+              <Link href="/solutions/n8n-workflow-automation" className="font-semibold text-accent hover:underline">
+                custom n8n workflows
+              </Link>{" "}
+              &mdash; we build it ourselves on Next.js.
             </p>
           </div>
           <div className="relative">
@@ -210,7 +221,7 @@ export default function WebDesignDevelopmentPage() {
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover"
+          className="mt-6 inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover transition"
         >
           Request a build quote
         </Link>

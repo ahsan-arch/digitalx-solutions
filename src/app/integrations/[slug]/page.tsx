@@ -109,7 +109,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
         {/* HERO SECTION */}
         <section className="container-shell">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border bg-white px-3 py-1.5 text-xs font-medium text-brand">
               <Cpu className="h-3.5 w-3.5" />
               {integration.category} Integration
             </div>
@@ -150,7 +150,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground/60 mr-2 self-center">
+              <span className="font-mono text-xs font-medium text-foreground/60 mr-2 self-center">
                 Stack Components:
               </span>
               {integration.toolsUsed.map((tool) => (
@@ -168,7 +168,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
         {/* WORKFLOW STEPS */}
         <section className="container-shell mt-14 md:mt-18">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+            <p className="font-mono text-xs font-medium text-brand">
               Engineering Architecture
             </p>
             <h2 className="mt-2 font-display text-3xl md:text-4xl font-semibold text-foreground">
@@ -200,7 +200,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
                 </div>
 
                 <div className="mt-4 rounded-xl bg-surface-50 p-3.5 border border-border/60">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand">
+                  <span className="font-mono text-[10px] font-medium text-brand">
                     Technical Mechanism:
                   </span>
                   <p className="mt-1 font-mono text-xs text-foreground/85 leading-relaxed">
@@ -260,7 +260,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
         {/* FAQS */}
         <section className="container-shell mt-14 md:mt-18">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+            <p className="font-mono text-xs font-medium text-brand">
               Common Questions
             </p>
             <h2 className="mt-2 font-display text-3xl font-semibold text-foreground">

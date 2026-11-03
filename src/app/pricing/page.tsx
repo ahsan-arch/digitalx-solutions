@@ -138,7 +138,9 @@ export default function PricingPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">Pricing</p>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-line-subtle bg-surface-sunken px-2.5 py-1 text-xs font-medium text-ink-secondary">
+              Predictable Unit Economics
+            </span>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Predictable monthly pricing. No agency retainers stacked on retainers.
             </h1>
@@ -170,12 +172,12 @@ export default function PricingPage() {
             <div className="flex items-baseline justify-between">
               <h2 className="font-display text-2xl text-ink-primary">{tier.name}</h2>
               {tier.highlight && (
-                <span className="rounded-pill bg-accent-soft px-3 py-1 text-overline text-accent">
+                <span className="rounded-md bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent">
                   Most picked
                 </span>
               )}
             </div>
-            <p className="mt-2 font-display text-display-sm text-ink-primary">{tier.price}</p>
+            <p className="mt-2 font-display text-display-sm tabular-nums text-ink-primary">{tier.price}</p>
             <p className="mt-3 text-body-sm text-ink-secondary">{tier.summary}</p>
 
             <ul className="mt-6 space-y-3 text-body-sm text-ink-secondary">
@@ -189,7 +191,7 @@ export default function PricingPage() {
 
             <Link
               href="/contact"
-              className={`mt-8 inline-flex w-full items-center justify-center rounded-pill px-5 py-3 text-sm font-semibold transition ${tier.highlight
+              className={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition ${tier.highlight
                 ? "bg-accent text-white hover:bg-accent-hover"
                 : "border border-ink-primary text-ink-primary hover:bg-ink-primary hover:text-ink-on-inverse"
                 }`}
@@ -223,7 +225,7 @@ export default function PricingPage() {
 
           <div className="mt-6 overflow-x-auto">
             <table className="w-full text-left text-sm">
-              <thead className="border-b border-line-subtle bg-surface-sunken text-xs font-semibold uppercase tracking-wider text-ink-tertiary">
+              <thead className="border-b border-line-subtle bg-surface-sunken text-xs font-medium text-ink-tertiary">
                 <tr>
                   <th className="p-3">Component</th>
                   <th className="p-3">Provider / Protocol</th>
@@ -352,13 +354,13 @@ export default function PricingPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
+              className="inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
             >
               Book a scoping call
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center rounded-pill border border-line-subtle bg-white/10 px-6 py-3 text-sm font-semibold text-ink-on-inverse transition hover:bg-white/20"
+              className="inline-flex items-center rounded-xl border border-line-subtle bg-white/10 px-6 py-3 text-sm font-semibold text-ink-on-inverse transition hover:bg-white/20"
             >
               Try live voice demo
             </Link>

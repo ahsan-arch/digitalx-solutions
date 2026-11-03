@@ -39,7 +39,9 @@ export default function SolutionsHubPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Solutions</p>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+              Capabilities Overview
+            </span>
             <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Three integrated capabilities. One growth system.
             </h1>
@@ -62,7 +64,7 @@ export default function SolutionsHubPage() {
         <div className="grid gap-5 md:grid-cols-3">
           {solutions.map((solution) => (
             <article key={solution.slug} className="rounded-2xl border border-border bg-surface-50 p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">{solution.tagline}</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">{solution.tagline}</span>
               <h2 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h2>
               <p className="mt-3 text-sm leading-relaxed text-foreground/70">{solution.summary}</p>
               <ul className="mt-4 space-y-2 text-sm text-foreground/70">
@@ -88,7 +90,7 @@ export default function SolutionsHubPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-4">
             {processSteps.map((step, index) => (
               <div key={step.title} className="rounded-2xl border border-border bg-surface-50 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand">0{index + 1}</p>
+                <span className="font-mono text-xs font-medium text-brand">0{index + 1}</span>
                 <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
                 <p className="mt-2 text-sm text-foreground/68">{step.description}</p>
               </div>

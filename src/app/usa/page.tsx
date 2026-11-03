@@ -77,13 +77,26 @@ export default function UsaPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">United States</p>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-line-subtle bg-surface-sunken px-2.5 py-1 text-xs font-medium text-ink-secondary">
+              United States Delivery
+            </span>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Automation services for US service businesses across all 50 states.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-              From Brooklyn brownstones to Austin med spas, we deploy AI voice, Missed call text back, and CRM
-              automation so you stop losing local revenue to missed calls and slow follow ups.
+              From Brooklyn brownstones to Austin med spas, we deploy{" "}
+              <Link href="/solutions/ai-voice-agents" className="font-semibold text-accent hover:underline">
+                24/7 AI voice receptionists
+              </Link>
+              ,{" "}
+              <Link href="/solutions/missed-call-text-back" className="font-semibold text-accent hover:underline">
+                missed-call text-back systems
+              </Link>
+              , and{" "}
+              <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-accent hover:underline">
+                GoHighLevel CRM setups
+              </Link>{" "}
+              so you stop losing local revenue to missed calls and slow follow-ups.
             </p>
           </div>
           <div className="relative">
@@ -113,7 +126,7 @@ export default function UsaPage() {
       <section className="container-shell mt-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-tertiary">US Capabilities</p>
+            <span className="font-mono text-xs font-medium text-ink-tertiary">US Capabilities</span>
             <h2 className="mt-2 font-display text-display-sm text-ink-primary">Core AI &amp; Revenue Automations for US Businesses</h2>
           </div>
           <Link href="/try-voice-agent" className="text-sm font-semibold text-accent hover:underline">
@@ -243,8 +256,8 @@ export default function UsaPage() {
       <section className="container-shell mt-16">
         <div className="flex flex-col justify-between rounded-2xl border border-line-subtle bg-surface-raised p-6 md:p-8 sm:flex-row sm:items-center">
           <div>
-            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse mr-2" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-accent">All 50 US States & Bilingual Delivery</span>
+            <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 mr-2" />
+            <span className="font-mono text-xs font-medium text-accent">All 50 US States &amp; Bilingual Delivery</span>
             <h2 className="mt-2 font-display text-title-lg text-ink-primary">
               Ready to automate your US service business?
             </h2>
@@ -263,7 +276,7 @@ export default function UsaPage() {
           <div className="mt-6 sm:mt-0">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover shadow-sm"
+              className="inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover shadow-sm transition"
             >
               Talk to an Automation Engineer
             </Link>

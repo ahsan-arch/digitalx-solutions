@@ -110,14 +110,14 @@ export default async function DevelopmentSlugPage(props: Props) {
           <section className="container-shell">
             <Link
               href="/development"
-              className="mb-6 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-foreground/60 transition hover:text-brand"
+              className="mb-6 inline-flex items-center font-mono text-xs font-medium text-foreground/60 transition hover:text-brand"
             >
               <ArrowLeft className="mr-1.5 h-3.5 w-3.5" />
               Back to Development Services
             </Link>
 
             <div className="max-w-3xl">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border bg-white px-3 py-1.5 font-mono text-xs font-medium text-brand">
                 <Code className="h-3.5 w-3.5" />
                 Custom Architecture Blueprint
               </div>
@@ -156,7 +156,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 {service.problemSolved}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
-                <span className="text-xs font-semibold uppercase tracking-wider text-foreground/60 mr-2 self-center">
+                <span className="font-mono text-xs font-medium text-foreground/60 mr-2 self-center">
                   Stack Technologies:
                 </span>
                 {service.architecturalComponents.map((comp) => (
@@ -174,7 +174,7 @@ export default async function DevelopmentSlugPage(props: Props) {
           {/* DELIVERABLES */}
           <section className="container-shell mt-14 md:mt-18">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+              <p className="font-mono text-xs font-medium text-brand">
                 Engineering Deliverables
               </p>
               <h2 className="mt-2 font-display text-3xl md:text-4xl font-semibold text-foreground">
@@ -203,7 +203,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                   </div>
 
                   <div className="mt-4 rounded-xl bg-surface-50 p-3.5 border border-border/60">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand">
+                    <span className="font-mono text-[10px] font-medium text-brand">
                       Technical Specification:
                     </span>
                     <p className="mt-1 font-mono text-xs text-foreground/85 leading-relaxed">
@@ -263,7 +263,7 @@ export default async function DevelopmentSlugPage(props: Props) {
           {/* FAQS */}
           <section className="container-shell mt-14 md:mt-18">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+              <p className="font-mono text-xs font-medium text-brand">
                 Direct Answers
               </p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-foreground">

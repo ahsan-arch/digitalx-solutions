@@ -37,7 +37,7 @@ export function ServiceAreaMap() {
                 />
             </svg>
 
-            <div className="absolute bottom-4 left-4 font-mono text-overline text-ink-secondary">
+            <div className="absolute bottom-4 left-4 font-mono text-xs text-ink-secondary">
                 Network active
             </div>
         </div>
@@ -53,11 +53,7 @@ function LocationNode({ x, y, label, delay }: { x: string; y: string; label: str
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay, duration: 0.4 }}
-                    className="w-3 h-3 bg-accent rounded-full relative z-10"
-                />
-                <div
-                    className="absolute inset-0 bg-accent rounded-full animate-ping opacity-40"
-                    style={{ animationDuration: "2.5s" }}
+                    className="w-2.5 h-2.5 bg-accent rounded-full relative z-10 ring-4 ring-accent/20"
                 />
                 <motion.span
                     initial={{ opacity: 0, x: 10 }}

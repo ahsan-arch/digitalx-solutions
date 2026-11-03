@@ -136,7 +136,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+            <span className="font-mono text-xs font-medium text-brand">
               {project.industry} Case Study
             </span>
             <span className="text-xs text-foreground/40">•</span>
@@ -180,7 +180,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
         {/* Executive Summary (< 100 words) */}
         <div className="mt-8">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground/50">
+          <h2 className="font-mono text-xs font-medium text-foreground/60">
             Executive Summary
           </h2>
           <p className="mt-2 max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
@@ -239,7 +239,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               without robotic delay, while conversational SMS triggers instantly capture dropped callers.
             </p>
             <div className="mt-6">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground/60">
+              <h3 className="font-mono text-xs font-medium text-foreground/70">
                 Technology Stack Deployed:
               </h3>
               <div className="mt-3 flex flex-wrap gap-2">
@@ -288,21 +288,21 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
           <div className="mt-6 grid gap-6 sm:grid-cols-3 text-xs text-foreground/75">
             <div className="rounded-xl border border-border bg-surface-50 p-4">
-              <span className="font-bold text-brand uppercase tracking-wider">Week 01-02</span>
+              <span className="font-mono text-xs font-medium text-brand">Week 01-02</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">Discovery &amp; Blueprint</h3>
               <p className="mt-2 leading-relaxed">
                 Audited historical call logs, documented frequent customer objections, and mapped out custom appointment booking availability rules.
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface-50 p-4">
-              <span className="font-bold text-brand uppercase tracking-wider">Week 03</span>
+              <span className="font-mono text-xs font-medium text-brand">Week 03</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">Prompt Tuning &amp; SIP Wiring</h3>
               <p className="mt-2 leading-relaxed">
                 Tuned conversational prompts on Deepgram and ElevenLabs, verified 10DLC SMS registration, and wired two-way webhooks to the CRM.
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface-50 p-4">
-              <span className="font-bold text-brand uppercase tracking-wider">Week 04</span>
+              <span className="font-mono text-xs font-medium text-brand">Week 04</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">50 Synthetic Calls &amp; Launch</h3>
               <p className="mt-2 leading-relaxed">
                 Ran 50 simulated calls testing background noise and regional accents. Conducted supervised live testing before full 24/7 cutover.

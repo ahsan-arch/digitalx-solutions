@@ -159,7 +159,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
                 <div className="flex items-center gap-2">
                   <span
                     className={cn(
-                      "flex h-9 w-9 items-center justify-center rounded-full",
+                      "flex h-9 w-9 items-center justify-center rounded-xl",
                       voice.kind === "premium"
                         ? "bg-brand/10 text-brand"
                         : "bg-foreground/5 text-foreground/60"
@@ -175,24 +175,24 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
                     <div className="flex items-center gap-1.5">
                       <p className="text-sm font-semibold text-foreground">{voice.label}</p>
                       {voice.badge && (
-                        <span className="inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-[9px] font-bold uppercase leading-none tracking-wider text-white shadow-sm">
+                        <span className="inline-flex items-center rounded-md bg-accent px-1.5 py-0.5 text-[9px] font-mono font-medium text-white">
                           {voice.badge}
                         </span>
                       )}
                     </div>
-                    <p className="text-[11px] uppercase tracking-wider text-foreground/50">
+                    <p className="font-mono text-[11px] text-foreground/50">
                       {voice.kind}
                     </p>
                   </div>
                 </div>
                 {selected && (
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-brand text-white">
                     <Check className="h-3.5 w-3.5" />
                   </span>
                 )}
               </div>
               <p className="text-xs text-foreground/65">{voice.description}</p>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-100 px-2.5 py-1 text-[11px] font-medium text-foreground/70">
+              <span className="inline-flex items-center gap-1.5 rounded-md bg-surface-100 px-2.5 py-1 text-[11px] font-medium text-foreground/70">
                 <Volume2 className={cn("h-3 w-3", playing && "animate-pulse text-brand")} />
                 {playing ? "Playing sample..." : "Click to hear sample"}
               </span>
@@ -212,7 +212,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white px-5 py-3 text-sm font-medium text-foreground/75 transition hover:text-foreground"
+          className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-5 py-3 text-sm font-medium text-foreground/75 transition hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           Edit survey
@@ -221,7 +221,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
           type="button"
           onClick={onStart}
           disabled={!selectedId}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-60"
         >
           Start live call
           <ArrowRight className="h-4 w-4" />

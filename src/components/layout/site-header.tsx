@@ -16,18 +16,18 @@ export function SiteHeader() {
   }, [pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 w-full max-w-[1200px] items-center justify-between px-4 md:px-8">
-        <Link href="/" className="group flex items-center gap-3" aria-label="DigitalX Solutions">
-          <span aria-hidden="true" className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface-100 text-brand">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-surface-page/90 backdrop-blur-md">
+      <div className="mx-auto flex h-18 w-full max-w-[1200px] items-center justify-between px-4 md:px-8">
+        <Link href="/" className="group flex items-center gap-2.5" aria-label="DigitalX Solutions">
+          <span aria-hidden="true" className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-white text-sm font-bold text-brand">
             DX
           </span>
-          <span className="text-lg font-semibold text-foreground/90">
+          <span className="text-base font-semibold text-foreground">
             {companyProfile.name}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 xl:flex 2xl:gap-7" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Primary navigation">
           {primaryNavigation.map((item) => {
             const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
@@ -36,7 +36,7 @@ export function SiteHeader() {
                 href={item.href}
                 className={cn(
                   "whitespace-nowrap text-sm font-medium transition-colors",
-                  isActive ? "text-foreground" : "text-foreground/65 hover:text-foreground"
+                  isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"
                 )}
               >
                 {item.label}
@@ -48,7 +48,7 @@ export function SiteHeader() {
         <div className="hidden xl:block">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-deep"
+            className="inline-flex items-center rounded-xl bg-brand px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-deep"
           >
             Book a strategy call
           </Link>
@@ -57,7 +57,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setMenuOpen((open) => !open)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground xl:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground xl:hidden"
           aria-expanded={menuOpen}
           aria-label="Toggle navigation"
         >
@@ -66,7 +66,7 @@ export function SiteHeader() {
       </div>
 
       {menuOpen ? (
-        <div className="border-t border-border/70 bg-background/95 px-4 pb-5 pt-3 xl:hidden">
+        <div className="border-t border-border/70 bg-surface-page px-4 pb-5 pt-3 xl:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
             {primaryNavigation.map((item) => {
               const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -77,8 +77,8 @@ export function SiteHeader() {
                   className={cn(
                     "rounded-lg px-3 py-2 text-sm font-medium",
                     isActive
-                      ? "bg-surface-100 text-foreground"
-                      : "text-foreground/70 hover:bg-surface-50 hover:text-foreground"
+                      ? "bg-surface-sunken text-foreground"
+                      : "text-foreground/70 hover:bg-white hover:text-foreground"
                   )}
                 >
                   {item.label}
@@ -87,7 +87,7 @@ export function SiteHeader() {
             })}
             <Link
               href="/contact"
-              className="mt-3 inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white"
+              className="mt-3 inline-flex items-center justify-center rounded-xl bg-brand px-4 py-2.5 text-sm font-medium text-white"
             >
               Book a strategy call
             </Link>

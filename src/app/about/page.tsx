@@ -88,7 +88,9 @@ export default function AboutPage() {
                 <section className="container-shell">
                     <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
                         <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">About</p>
+                            <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+                                Engineering &amp; Operations
+                            </span>
                             <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
                                 We build practical growth systems that your team can run after launch.
                             </h1>
@@ -103,13 +105,13 @@ export default function AboutPage() {
                             <div className="mt-8 flex flex-wrap gap-3">
                                 <Link
                                     href="/contact"
-                                    className="inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep"
+                                    className="inline-flex items-center rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition"
                                 >
                                     Book a strategy call
                                 </Link>
                                 <Link
                                     href="/case-studies"
-                                    className="inline-flex items-center rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100"
+                                    className="inline-flex items-center rounded-xl border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
                                 >
                                     View outcomes
                                 </Link>
@@ -158,10 +160,10 @@ export default function AboutPage() {
                     <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
                         <div className="flex flex-wrap items-center justify-between gap-4">
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">E-E-A-T Leadership & Verification</p>
+                                <p className="font-mono text-xs font-medium text-brand">E-E-A-T Leadership &amp; Verification</p>
                                 <h2 className="mt-1 font-display text-3xl text-foreground">Engineering Leadership</h2>
                             </div>
-                            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                            <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-600/20 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
                                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> Verified Australian Entity
                             </span>
                         </div>
@@ -185,7 +187,7 @@ export default function AboutPage() {
                                         href="https://www.linkedin.com/in/ahsan-architect"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition-colors"
+                                        className="inline-flex items-center gap-1.5 rounded-md border border-border bg-white px-3 py-1.5 text-xs font-medium text-foreground hover:bg-surface-100 transition-colors"
                                     >
                                         <UserCheck className="h-3.5 w-3.5 text-brand" /> LinkedIn Profile
                                         <ExternalLink className="h-3 w-3 text-foreground/50" />
@@ -213,7 +215,7 @@ export default function AboutPage() {
 
                         {/* Partner Certifications Ledger & Proof Links */}
                         <div className="mt-8 border-t border-border pt-6">
-                            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
+                            <h3 className="text-sm font-semibold text-foreground/80">
                                 Held Partner Certifications &amp; Verification Proof
                             </h3>
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
@@ -223,7 +225,7 @@ export default function AboutPage() {
                                         className="rounded-2xl border border-border bg-surface-50 p-4 flex flex-col justify-between"
                                     >
                                         <div>
-                                            <span className="text-xs font-bold text-brand uppercase tracking-wider">
+                                            <span className="font-mono text-xs font-medium text-brand">
                                                 {cert.platform}
                                             </span>
                                             <h4 className="mt-1 text-sm font-semibold text-foreground">
@@ -264,7 +266,7 @@ export default function AboutPage() {
                         <div className="mt-6 space-y-5">
                             {milestones.map((m) => (
                                 <div key={m.year} className="flex items-start gap-6 rounded-xl border border-border bg-surface-50 p-4">
-                                    <div className="min-w-[72px] text-sm font-semibold uppercase tracking-[0.12em] text-brand">
+                                    <div className="min-w-[72px] font-mono text-sm font-semibold text-brand">
                                         {m.year}
                                     </div>
                                     <div className="text-sm leading-relaxed text-foreground/72">
@@ -316,7 +318,7 @@ export default function AboutPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="mt-8 inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-foreground"
+                            className="mt-8 inline-flex items-center rounded-xl bg-white px-7 py-3 text-sm font-semibold text-foreground transition"
                         >
                             Start a conversation
                         </Link>

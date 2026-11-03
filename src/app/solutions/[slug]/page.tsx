@@ -112,7 +112,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Hero Header */}
       <section className="container-shell">
         <div className="flex flex-wrap items-center gap-3 text-xs text-foreground/60 mb-2">
-          <span className="font-semibold uppercase tracking-[0.14em] text-brand">Architecture Verified</span>
+          <span className="font-mono text-xs font-medium text-brand">Architecture Verified</span>
           <span>•</span>
           <span className="font-medium text-foreground/80">Last Updated: 25 October 2026</span>
           <span>•</span>
@@ -150,8 +150,8 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         <aside className="flex flex-col justify-between rounded-2xl border border-border bg-white p-6 md:p-8 shadow-sm">
           <div>
             <div className="flex items-center gap-2">
-              <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand">Direct Consultation</p>
+              <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="font-mono text-xs font-medium text-brand">Direct Consultation</span>
             </div>
             <h2 className="mt-2 text-xl font-bold text-foreground">Schedule a Strategy Call</h2>
             <p className="mt-2 text-sm leading-relaxed text-foreground/70">
@@ -211,7 +211,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">How It Works</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">How It Works</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
                 4-Step Intake & Operating Workflow
               </h2>
@@ -249,7 +249,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
               <Zap className="h-4 w-4 text-brand" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Engineering Architecture</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">Engineering Architecture</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Technical Specifications & Standards</h2>
 
@@ -270,7 +270,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {solution.comparison && solution.comparison.length > 0 && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Comparative Analysis</p>
+            <span className="font-mono text-xs font-medium text-foreground/60">Comparative Analysis</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               DigitalX Architecture vs Traditional Solutions
             </h2>
@@ -309,7 +309,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Transparent Investment</p>
+              <span className="font-mono text-xs font-medium text-foreground/60">Transparent Investment</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Implementation & Management Tiers</h2>
               <p className="mt-2 text-sm text-foreground/70">
                 Flat retainers with zero hidden task surcharges. Australian businesses can be billed in AUD; US businesses in USD.
@@ -371,7 +371,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {solution.faqs && solution.faqs.length > 0 && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Expert Guidance</p>
+            <span className="font-mono text-xs font-medium text-foreground/60">Expert Guidance</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Frequently Asked Questions</h2>
             <dl className="mt-6 space-y-6">
               {solution.faqs.map((faq) => (
@@ -395,9 +395,9 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}`}
-                  className="group rounded-xl border border-border bg-surface-50 p-5 transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+                  className="group rounded-xl border border-border bg-surface-50 p-5 transition-colors hover:border-brand/40"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">{cs.industry}</p>
+                  <span className="font-mono text-xs font-medium text-foreground/60">{cs.industry}</span>
                   <h3 className="mt-2 font-display text-base font-bold text-foreground">{cs.client}</h3>
                   <p className="mt-3 text-xs leading-relaxed text-foreground/68">{cs.impact}</p>
                   <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand transition group-hover:text-brand-deep">

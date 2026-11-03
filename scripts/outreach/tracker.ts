@@ -77,6 +77,24 @@ export class OutreachTracker {
     });
   }
 
+  public isLeadAlreadyContacted(name: string, company: string, daysWindow: number = 60): boolean {
+    const cleanName = name.toLowerCase().replace(/[■\u25a0\u25a1\s]+/g, " ").trim();
+    const cleanCompany = company.toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - daysWindow);
+
+    return this.history.some((record) => {
+      if (record.status !== "sent") return false;
+      const sentDate = new Date(record.sentAt);
+      if (sentDate < cutoffDate) return false;
+
+      const recName = (record.name || "").toLowerCase().replace(/[■\u25a0\u25a1\s]+/g, " ").trim();
+      const recCompany = (record.company || "").toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+
+      return (recName.includes(cleanName) || cleanName.includes(recName)) && recCompany === cleanCompany;
+    });
+  }
+
   public getTodaySentCount(): number {
     const now = new Date();
     const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();

@@ -71,7 +71,9 @@ export default function InsightsPage() {
             <section className="container-shell">
                 <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
                     <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/55">Insights</p>
+                        <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+                            Technical Field Notes
+                        </span>
                         <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
                             Practical notes on growth engineering and delivery systems.
                         </h1>
@@ -96,7 +98,7 @@ export default function InsightsPage() {
                         href={`/insights/${article.slug}`}
                         className="group block rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/45"
                     >
-                        <div className="mb-3 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.12em] text-foreground/55">
+                        <div className="mb-3 flex items-center gap-3 font-mono text-xs text-foreground/60">
                             <time dateTime={article.date}>
                                 {new Date(article.date).toLocaleDateString("en-US", {
                                     month: "long",
