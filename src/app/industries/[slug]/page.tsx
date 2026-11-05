@@ -34,16 +34,48 @@ export function generateStaticParams() {
   return industries.map((industry) => ({ slug: industry.slug }));
 }
 
+function buildIndustryMetaDescription(name: string, existing?: string): string {
+  if (existing && existing.length >= 150 && existing.length <= 160) {
+    return existing;
+  }
+
+  const cleanName = name.toLowerCase().replace(/ & mechanics/g, "");
+
+  const variations = [
+    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM booking workflows for ${cleanName} across the USA and Australia.`,
+    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM appointment booking workflows for ${cleanName} in the US and AU.`,
+    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and custom CRM appointment booking workflows for ${cleanName} in the US & Australia.`,
+    `Automate ${cleanName} with 24/7 AI voice receptionists, instant missed-call text-back, and custom CRM appointment booking workflows in the US & Australia.`,
+    `Automate ${cleanName} with 24/7 AI voice receptionists, instant missed-call text-back, and multi-step CRM booking pipelines across the US and Australia.`,
+    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM booking pipelines for ${cleanName} in the US and Australia.`,
+    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM booking workflows for ${cleanName} across the US & AU.`,
+    `Deploy 24/7 AI voice receptionists, missed-call text-back, and automated CRM booking workflows for ${cleanName} across the USA & Australia.`,
+  ];
+
+  for (const v of variations) {
+    if (v.length >= 150 && v.length <= 160) {
+      return v;
+    }
+  }
+
+  const valid = variations.filter((v) => v.length <= 160);
+  valid.sort((a, b) => Math.abs(155 - a.length) - Math.abs(155 - b.length));
+  return valid[0] || variations[0];
+}
+
 export async function generateMetadata({ params }: { params: Promise<PageParams> }): Promise<Metadata> {
   const { slug } = await params;
   const industry = getIndustryBySlug(slug);
 
   if (!industry) {
-    return { title: "Industry Not Found" };
+    return {
+      title: "Industry Not Found | DigitalX",
+      description:
+        "Explore 50+ industry automation playbooks featuring 24/7 AI voice receptionists, missed-call text-back, and custom CRM systems for US & Australian businesses.",
+    };
   }
 
-  const rawDesc = industry.metaDescription || `Automate ${industry.name.toLowerCase()} with 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows in the US & AU.`;
-  const description = rawDesc.length > 155 ? `${rawDesc.slice(0, 151).trim()}...` : rawDesc;
+  const description = buildIndustryMetaDescription(industry.name, industry.metaDescription);
 
   return generatePageMetadata(`/industries/${industry.slug}`, {
     title: industry.metaTitle || `${industry.name} AI Playbook`,

@@ -7,7 +7,7 @@
  * 1. Every content page must have >= 500 words of unique body copy.
  * 2. Exactly one <h1> per page.
  * 3. Title length <= 60 characters.
- * 4. Meta description length <= 155 characters.
+ * 4. Meta description length <= 160 characters (aim for 150-160).
  * 5. All <img> tags must have a valid alt attribute.
  * 6. All JSON-LD schemas must be valid parseable JSON.
  * 
@@ -156,10 +156,10 @@ function auditHtmlFile(filePath) {
     .replace(/&quot;/g, '"');
   if (!description) {
     routeFailures.push({ rule: 'Description Missing', message: 'Page has no meta description' });
-  } else if (description.length > 155) {
+  } else if (description.length > 160) {
     routeFailures.push({
-      rule: 'Description Over 155 Chars',
-      message: `Meta description is ${description.length} chars (exceeds 155 limit): "${description}"`,
+      rule: 'Description Over 160 Chars',
+      message: `Meta description is ${description.length} chars (exceeds 160 limit): "${description}"`,
     });
   }
 

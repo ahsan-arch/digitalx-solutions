@@ -31,22 +31,37 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = clientProjects.find((p) => p.slug === slug);
 
+  const caseStudyDescriptions: Record<string, string> = {
+    "riverstone-dental":
+      "See how a metropolitan dental practice captured after-hours patient calls and streamlined appointment bookings using DigitalX AI voice receptionist agents.",
+    "harbor-plumbing":
+      "See how a commercial plumbing contractor recovered after-hours emergency calls using 24/7 AI voice triage and automated missed-call text-back workflows.",
+    "atlas-consulting":
+      "Discover how an accounting and advisory practice automated client qualification, intake triage, and calendar bookings with custom GoHighLevel CRM workflows.",
+  };
+
   if (!project) {
-    return { title: "Case Study Not Found" };
+    return {
+      title: "Case Study Not Found | DigitalX Solutions",
+      description:
+        "Explore real-world automation deployments, AI voice receptionists, and GoHighLevel CRM architectures engineered for service businesses across the US & AU.",
+    };
   }
 
   const title = `${project.client} Automation Case Study`;
-  const description = `Discover how ${project.client} deployed automation systems, resulting in ${project.measurableResult}`;
+  const description =
+    caseStudyDescriptions[project.slug] ||
+    `Discover how ${project.client} deployed 24/7 voice automation and CRM systems, capturing inquiries with zero hold times across the USA and Australia.`;
 
   return {
     title,
-    description: description.slice(0, 155),
+    description,
     alternates: {
       canonical: `${siteConfig.domain}/case-studies/${project.slug}`,
     },
     openGraph: {
       title,
-      description: description.slice(0, 155),
+      description,
       url: `${siteConfig.domain}/case-studies/${project.slug}`,
       siteName: "DigitalX Solutions",
       type: "article",

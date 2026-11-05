@@ -29,7 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getDevelopmentServiceBySlug(slug);
 
   if (!service) {
-    return { title: "Service Not Found" };
+    return {
+      title: "Development Service Not Found | DigitalX",
+      description:
+        "Explore custom CRM development, resilient API and webhook integrations, AI agent development, and white-label CRM platforms engineered by DigitalX Solutions.",
+    };
   }
 
   return {
