@@ -114,7 +114,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     <span className="inline-flex h-4 w-4 shrink-0 items-center justify-center">
                       <Image
                         src={logo}
-                        alt=""
+                        alt={`${tool} logo`}
                         width={16}
                         height={16}
                         className="h-4 w-4 object-contain"
