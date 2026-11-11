@@ -93,7 +93,7 @@ export const integrationsData: Integration[] = [
     ],
     relatedSolutions: [
       { title: "GoHighLevel Implementation", href: "/solutions/gohighlevel-implementation" },
-      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-receptionists" },
+      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
       { title: "Missed-Call Text-Back", href: "/solutions/missed-call-text-back" }
     ],
     relatedInsights: [
@@ -308,7 +308,7 @@ export const integrationsData: Integration[] = [
       }
     ],
     relatedSolutions: [
-      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-receptionists" },
+      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
       { title: "Missed-Call Text-Back", href: "/solutions/missed-call-text-back" },
       { title: "GoHighLevel Implementation", href: "/solutions/gohighlevel-implementation" }
     ],
@@ -380,7 +380,7 @@ export const integrationsData: Integration[] = [
       }
     ],
     relatedSolutions: [
-      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-receptionists" },
+      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
       { title: "Missed-Call Text-Back", href: "/solutions/missed-call-text-back" },
       { title: "Plumbers & HVAC Trade Playbook", href: "/industries/plumbers-hvac-trades" }
     ],
@@ -452,7 +452,7 @@ export const integrationsData: Integration[] = [
       }
     ],
     relatedSolutions: [
-      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-receptionists" },
+      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
       { title: "Missed-Call Text-Back", href: "/solutions/missed-call-text-back" },
       { title: "Plumbers & HVAC Trade Playbook", href: "/industries/plumbers-hvac-trades" }
     ],
@@ -524,7 +524,7 @@ export const integrationsData: Integration[] = [
       }
     ],
     relatedSolutions: [
-      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-receptionists" },
+      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
       { title: "Medical & Dental Playbook", href: "/industries/medical-dental-clinics" },
       { title: "GoHighLevel Implementation", href: "/solutions/gohighlevel-implementation" }
     ],
@@ -596,7 +596,7 @@ export const integrationsData: Integration[] = [
       }
     ],
     relatedSolutions: [
-      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-receptionists" },
+      { title: "AI Voice Receptionists", href: "/solutions/ai-voice-agents" },
       { title: "GoHighLevel Implementation", href: "/solutions/gohighlevel-implementation" },
       { title: "Missed-Call Text-Back", href: "/solutions/missed-call-text-back" }
     ],

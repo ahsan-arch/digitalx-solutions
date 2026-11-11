@@ -204,8 +204,8 @@ export default function WebDesignDevelopmentPage() {
             utility tenders, then browse the rest of our development work.
           </p>
           <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold text-accent">
-            <Link href="/case-studies/hitech-expertise" className="hover:text-accent-hover">
-              Read the case study
+            <Link href="/case-studies" className="hover:text-accent-hover">
+              Read our case studies
             </Link>
             <Link href="/development" className="hover:text-accent-hover">
               See development projects

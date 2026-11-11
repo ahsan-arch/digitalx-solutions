@@ -2021,6 +2021,7 @@ export const footerColumns = [
       { label: "Process", href: "/process" },
       { label: "Case Studies", href: "/case-studies" },
       { label: "Development", href: "/development" },
+      { label: "Integrations", href: "/integrations" },
       { label: "Pricing", href: "/pricing" },
       { label: "Insights", href: "/insights" },
       { label: "Contact", href: "/contact" },

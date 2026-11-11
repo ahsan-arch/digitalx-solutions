@@ -518,7 +518,7 @@ Explore our transparent [pricing packages](/pricing) or [book a strategy call](/
         relatedServices: [
             { label: "AI Voice Agents", href: "/solutions/ai-voice-agents" },
             { label: "Dental Practice Automation", href: "/industries/dental-clinics" },
-            { label: "MediSync Case Study", href: "/development/medisync" },
+            { label: "Dental Practice Case Study", href: "/case-studies/riverstone-dental" },
         ],
         content: `
 ## Why US dental clinics need an AI receptionist
@@ -546,7 +546,7 @@ In our work with a [metropolitan dental practice](/case-studies/riverstone-denta
 - Automated practice management calendar synchronization (Cliniko / Dentrix).
 - Patient triage and immediate emergency call forwarding without hiring additional front-desk administrative headcount.
 
-Similarly, our custom [MediSync dental booking build](/development/medisync) automated patient calendar coordination across multi-chair operatories.
+Similarly, our custom [dental practice booking build](/case-studies/riverstone-dental) automated patient calendar coordination across multi-chair operatories.
 
 ## How to get started
 

@@ -10,7 +10,7 @@ import { industries } from "@/data/industries";
 export default function sitemap(): MetadataRoute.Sitemap {
     // Stable release timestamp so Googlebot respects <lastmod> instead of
     // treating it as dynamic spam on every crawl request.
-    const releaseDate = new Date("2026-04-15T00:00:00.000Z");
+    const releaseDate = new Date("2026-11-11T00:00:00.000Z");
 
     const geoAlternates = { languages: geoHreflangLanguages };
 

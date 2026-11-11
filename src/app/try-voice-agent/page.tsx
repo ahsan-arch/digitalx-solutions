@@ -225,7 +225,7 @@ export default function TryVoiceAgentPage() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/solutions/ai-voice-receptionists"
+              href="/solutions/ai-voice-agents"
               className="inline-flex items-center gap-2 rounded-xl border border-line-subtle bg-surface-raised px-6 py-3 text-sm font-semibold text-ink-primary transition hover:bg-surface-sunken"
             >
               Explore AI voice receptionists

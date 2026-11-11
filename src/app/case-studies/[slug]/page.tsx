@@ -349,7 +349,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         <div className="mt-14 border-t border-border pt-8 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/solutions/ai-voice-receptionists"
+              href="/solutions/ai-voice-agents"
               className="text-xs font-semibold text-brand hover:underline"
             >
               Explore AI Voice Receptionists →
