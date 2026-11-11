@@ -33,6 +33,7 @@ const PRIORITY_URLS = [
   `${BASE_URL}/insights/n8n-vs-zapier`,
   `${BASE_URL}/insights/how-plumbing-company-recovered-180k-ai-voice`,
   `${BASE_URL}/insights/how-automation-reduced-missed-calls`,
+  `${BASE_URL}/insights/how-we-built-self-hosted-30-second-speed-to-lead-pipeline-n8n-vapi`,
   `${BASE_URL}/usa`,
   `${BASE_URL}/au`,
   `${BASE_URL}/solutions`,

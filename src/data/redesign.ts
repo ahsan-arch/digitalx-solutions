@@ -71,6 +71,10 @@ export type Solution = {
   metaTitle?: string;
   tagline: string;
   summary: string;
+  definition?: {
+    question: string;
+    answer: string;
+  };
   outcomes: string[];
   capabilities: string[];
   bestFor: string;
@@ -91,6 +95,10 @@ export const solutions: Solution[] = [
     tagline: "Full GHL build out + snapshots + automations",
     summary:
       "We stand up GoHighLevel end-to-end: snapshots, workflows, calendars, and two-way SMS so every lead and job runs on one system instead of five tabs.",
+    definition: {
+      question: "What is a professional GoHighLevel implementation?",
+      answer: "A professional GoHighLevel implementation is the complete architectural buildout of an all-in-one CRM, telephony, and marketing operations platform. It unifies lead capture, 10DLC compliant two-way SMS, automated appointment booking calendars, and opportunity pipelines into a single system, replacing fragmented tools like Zapier, Calendly, and Mailchimp.",
+    },
     outcomes: [
       "One source of truth for leads, calls, SMS, bookings, and deals",
       "Industry tuned snapshots live in days, not months",
@@ -242,6 +250,10 @@ export const solutions: Solution[] = [
     tagline: "24/7 answering + qualification + booking",
     summary:
       "Human-sounding AI voice receptionists and real-time automation answer calls, qualify prospects, and book appointments 24/7 across the US & Australia.",
+    definition: {
+      question: "How do custom AI voice agents work?",
+      answer: "Custom AI voice agents work by orchestrating real-time streaming speech-to-text (Deepgram Nova-2), low-latency large language model reasoning, and neural text-to-speech synthesis (ElevenLabs) over carrier SIP trunks. The agent conducts bidirectional conversations, dynamically qualifies inbound leads, answers service questions, checks CRM databases, and books appointments under 500 milliseconds of latency.",
+    },
     outcomes: [
       "24/7 call answering coverage to capture after-hours inquiries",
       "Consistent qualification every time, not when staff are free",
@@ -393,6 +405,10 @@ export const solutions: Solution[] = [
     tagline: "Under a minute to every missed caller",
     summary:
       "Instant missed-call text-back and automated lead recovery for service businesses. Engage callers in under 30 seconds before they dial a competitor.",
+    definition: {
+      question: "What is missed-call text-back and how does it recover leads?",
+      answer: "Missed-call text-back is an automated telephony workflow that detects an unanswered or busy inbound phone call and instantly dispatches a personalized SMS to the caller within 60 seconds. It establishes two-way conversation before the prospect contacts a competitor, qualifying their requirements and scheduling an appointment automatically.",
+    },
     outcomes: [
       "Recover 30 to 50% of otherwise lost callers",
       "Start the conversation before the next business opens",
@@ -538,6 +554,10 @@ export const solutions: Solution[] = [
     tagline: "Multi step email + SMS sequences that close",
     summary:
       "Every new inquiry gets a tailored, multi touch follow up sequence so leads don't go cold while you run your business.",
+    definition: {
+      question: "What is automated B2B lead generation and nurturing?",
+      answer: "Automated B2B lead generation and nurturing is an integrated system combining targeted ad funnels, server-side tracking (Meta Conversions API), and multi-channel follow-up sequences. It continuously qualifies prospects via conversational SMS, email, and CRM stage triggers to advance opportunities without manual sales rep intervention.",
+    },
     outcomes: [
       "Recover no shows and ghosters with automated follow ups",
       "Shorten quote to close by staying top of mind",
@@ -683,6 +703,10 @@ export const solutions: Solution[] = [
     tagline: "AI that qualifies, books, and answers 24/7",
     summary:
       "Deploy AI chat on your website, WhatsApp, and SMS. Trained on your services, pricing, and FAQs, so it actually converts.",
+    definition: {
+      question: "How do custom AI chatbots and web agents differ from legacy bots?",
+      answer: "Custom AI agents differ from rule-based legacy bots by utilizing semantic language models, retrieval-augmented generation (RAG) over proprietary business data, and direct API function calling. Instead of rigid decision trees, they understand conversational context, query inventory or CRM records, and complete complex transactions directly within the chat window.",
+    },
     outcomes: [
       "Capture inquiries when your team is asleep",
       "Deflect price shoppers while qualifying serious buyers",
@@ -828,6 +852,10 @@ export const solutions: Solution[] = [
     tagline: "Custom automations that replace your manual ops",
     summary:
       "Custom n8n workflows connecting your CRM, forms, calendars, and AI into automated pipelines. Deploy self-hosted or cloud with zero per-task fees.",
+    definition: {
+      question: "What is a self-hosted automation pipeline?",
+      answer: "A self-hosted automation pipeline is an enterprise integration engine deployed on private, dedicated servers (via Docker or Kubernetes) using open-core platforms like n8n. It executes high-volume data transfers, webhook triggers, and API workflows without per-task subscription fees, offering total data sovereignty, unmetered throughput, and strict security compliance.",
+    },
     outcomes: [
       "Eliminate per-task SaaS fees and execute complex multi-system workflows",
       "Automate the 3 to 8 hours per week every team loses to copy/paste",
@@ -974,6 +1002,10 @@ export const solutions: Solution[] = [
     tagline: "GoHighLevel, n8n, and your existing stack, wired together",
     summary:
       "We connect your phone, chat, forms, ads, and calendar into one CRM so every lead is tracked, scored, and routed automatically.",
+    definition: {
+      question: "How does custom CRM integration eliminate manual work?",
+      answer: "Custom CRM integration eliminates manual work by establishing automated, bidirectional API bridges between your customer database, dispatch tools, payment processors (Stripe), and telephony systems. Changes in job status, bookings, or payments synchronize instantly across systems, eliminating copy-paste errors and reducing manual data entry by up to 80%.",
+    },
     outcomes: [
       "One pipeline, no more spreadsheets, sticky notes, or lost leads",
       "Automatic lead scoring and routing to the right closer",
@@ -1119,6 +1151,10 @@ export const solutions: Solution[] = [
     tagline: "Custom pipelines, webhooks, and AI sync for HubSpot",
     summary:
       "Certified HubSpot automation partner. We engineer automated lead routing, custom n8n webhooks, AI agent syncing, and sales pipelines for high-growth firms.",
+    definition: {
+      question: "What is custom HubSpot CRM automation?",
+      answer: "Custom HubSpot automation is the advanced engineering of webhook-driven workflows, custom coded actions (Node.js/Python), and bi-directional API synchronizations between HubSpot CRM and external operational backends, automating deal attribution, territory routing, and billing handoffs.",
+    },
     outcomes: [
       "Eliminate manual CRM hygiene with automated deal creation and stage changes",
       "Bridge HubSpot to AI voice receptionists and external tools via resilient webhooks",
@@ -1266,6 +1302,10 @@ export const solutions: Solution[] = [
     tagline: "Live pipeline + ROI dashboards for owners",
     summary:
       "Track bookings, revenue, ad spend, and pipeline conversion in one unified dashboard instead of logging into separate ad, CRM, and call tools.",
+    definition: {
+      question: "What is an executive revenue operations dashboard?",
+      answer: "An executive revenue operations dashboard is a centralized reporting interface that consolidates real-time data across ad networks, telephony carriers, CRMs, and payment gateways into a single view. It provides executive visibility into customer acquisition cost (CAC), speed-to-lead, pipeline velocity, and closed-won revenue without manual spreadsheet compilation.",
+    },
     outcomes: [
       "Know your true cost per booked job this week, not next quarter",
       "Spot channel drop offs before they blow up your month",

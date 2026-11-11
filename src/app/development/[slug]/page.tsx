@@ -94,6 +94,28 @@ export default async function DevelopmentSlugPage(props: Props) {
       })),
     };
 
+    const softwareSchema = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "@id": `${siteConfig.domain}/development/${service.slug}#software`,
+      name: service.name,
+      description: service.summary,
+      url: `${siteConfig.domain}/development/${service.slug}`,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Cloud, Web, Docker, Linux",
+      provider: {
+        "@type": "Organization",
+        name: "DigitalX Solutions",
+        url: siteConfig.domain,
+      },
+      offers: {
+        "@type": "Offer",
+        price: "2500.00",
+        priceCurrency: "USD",
+        url: `${siteConfig.domain}/pricing`,
+      },
+    };
+
     return (
       <>
         <script
@@ -103,6 +125,10 @@ export default async function DevelopmentSlugPage(props: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
         />
         <script
           type="application/ld+json"

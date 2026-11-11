@@ -5130,5 +5130,126 @@
     "status": "sent",
     "provider": "smtp",
     "messageId": "<adbf8049-5432-cd64-01d5-fb0ad386ac72@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@thedentalcompany.com.au",
+    "name": "The Dental Company",
+    "company": "The Dental Company",
+    "industry": "dental",
+    "subject": "patient booking overflow and cancellations at The Dental Company",
+    "sentAt": "2026-11-11T14:42:39.184Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<e37f1b80-407f-4081-3f2f-c3d78e6469ad@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@kewdentistry.com.au",
+    "name": "Kew Dentistry",
+    "company": "Kew Dentistry",
+    "industry": "dental",
+    "subject": "patient booking overflow and cancellations at Kew Dentistry",
+    "sentAt": "2026-11-11T14:47:42.768Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<0c6173fd-deb5-c77c-f7e5-c16c34e1bfd4@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@smileandco.com.au",
+    "name": "SMILE & Co.",
+    "company": "SMILE & Co.",
+    "industry": "dental",
+    "subject": "patient booking overflow and cancellations at SMILE & Co.",
+    "sentAt": "2026-11-11T14:52:45.467Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<19e2c9ef-d2be-b814-91cb-542954c227ba@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@sydneyphysioclinic.com.au",
+    "name": "Sydney Physio Clinic",
+    "company": "Sydney Physio Clinic",
+    "industry": "allied_health",
+    "subject": "patient intake and schedule overflow at Sydney Physio Clinic",
+    "sentAt": "2026-11-11T14:57:48.735Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<bc2102e6-b1e3-1cf0-5929-f9097899a3c8@digitalx-solutions.com>"
+  },
+  {
+    "email": "reception@sydneypelvicclinic.com.au",
+    "name": "Sydney Pelvic Clinic",
+    "company": "Sydney Pelvic Clinic",
+    "industry": "allied_health",
+    "subject": "patient intake and schedule overflow at Sydney Pelvic Clinic",
+    "sentAt": "2026-11-11T15:03:07.067Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<c18f039b-fe76-a095-074d-258d64a2da71@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@redohealth.com.au",
+    "name": "RedoHealth Physiotherapy",
+    "company": "RedoHealth Physiotherapy",
+    "industry": "allied_health",
+    "subject": "patient intake and schedule overflow at RedoHealth Physiotherapy",
+    "sentAt": "2026-11-11T15:08:10.746Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<75fbb981-d43c-abd9-10f2-f42446f08487@digitalx-solutions.com>"
+  },
+  {
+    "email": "reception@sydneyphysios.com.au",
+    "name": "Sydney Physios and Allied Health",
+    "company": "Sydney Physios and Allied Health",
+    "industry": "allied_health",
+    "subject": "patient intake and schedule overflow at Sydney Physios and Allied Health",
+    "sentAt": "2026-11-11T15:13:27.163Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<08747fb3-ad4b-88ff-f2d7-e331e63dcde6@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@taxgain.com.au",
+    "name": "Taxgain Accounting",
+    "company": "Taxgain Accounting",
+    "industry": "accounting",
+    "subject": "document collection and client onboarding at Taxgain Accounting",
+    "sentAt": "2026-11-11T15:18:37.224Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<156ff91f-3843-a0da-dbab-d493cd8c049f@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@adenix.com.au",
+    "name": "Adenix Accounting",
+    "company": "Adenix Accounting",
+    "industry": "accounting",
+    "subject": "document collection and client onboarding at Adenix Accounting",
+    "sentAt": "2026-11-11T15:23:40.845Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<dde22256-feeb-295c-2664-fa1e29ee157c@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@coolroofs.co",
+    "name": "Cool Roofs",
+    "company": "Cool Roofs",
+    "industry": "roofing",
+    "subject": "after-hours call overflow and bookings at Cool Roofs",
+    "sentAt": "2026-11-11T15:28:44.594Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<6bebe079-e260-ecc3-9936-26a9aac41528@digitalx-solutions.com>"
+  },
+  {
+    "email": "service@callhometherapist.com",
+    "name": "Home Therapist Heating & Cooling",
+    "company": "Home Therapist Heating & Cooling",
+    "industry": "hvac",
+    "subject": "after-hours call overflow and bookings at Home Therapist Heating & Cooling",
+    "sentAt": "2026-11-11T15:33:47.231Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<becdc0c3-8fce-05b8-9542-4cc6a8ba722c@digitalx-solutions.com>"
   }
 ]

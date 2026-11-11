@@ -537,6 +537,67 @@ export function generateServicePageSchema(service: {
     };
 }
 
+export function generateProductSchema(product: {
+    name: string;
+    description: string;
+    url: string;
+    brand?: string;
+    category?: string;
+    offers?: { price: string; currency: string; availability?: string };
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: product.name,
+        description: product.description,
+        url: product.url,
+        brand: {
+            "@type": "Brand",
+            name: product.brand || "DigitalX Solutions",
+        },
+        category: product.category || "Custom Software & AI Automation",
+        ...(product.offers && {
+            offers: {
+                "@type": "Offer",
+                price: product.offers.price,
+                priceCurrency: product.offers.currency,
+                availability: product.offers.availability || "https://schema.org/InStock",
+                url: product.url,
+            },
+        }),
+    };
+}
+
+export function generateSoftwareApplicationSchema(app: {
+    name: string;
+    description: string;
+    url: string;
+    applicationCategory: string;
+    operatingSystem?: string;
+    offers?: { price: string; currency: string };
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: app.name,
+        description: app.description,
+        url: app.url,
+        applicationCategory: app.applicationCategory,
+        operatingSystem: app.operatingSystem || "Web, Cloud, Self-Hosted (Docker)",
+        provider: {
+            "@id": `${siteConfig.domain}/#organization`,
+        },
+        ...(app.offers && {
+            offers: {
+                "@type": "Offer",
+                price: app.offers.price,
+                priceCurrency: app.offers.currency,
+                url: app.url,
+            },
+        }),
+    };
+}
+
 export function generateHowToSchema(howto: {
     name: string;
     description: string;

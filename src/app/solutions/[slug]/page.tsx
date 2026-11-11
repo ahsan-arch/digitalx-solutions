@@ -77,14 +77,25 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
     { name: solution.name, url: `${siteConfig.domain}/solutions/${solution.slug}` },
   ]);
 
+  const serviceOffers = solution.pricingTiers?.map((tier) => ({
+    name: tier.name,
+    price: tier.price.replace(/[^0-9.]/g, "") || "497",
+    currency: "USD",
+  }));
+
   const serviceSchema = generateServicePageSchema({
     name: solution.name,
     description: solution.summary,
     url: `${siteConfig.domain}/solutions/${solution.slug}`,
+    offers: serviceOffers,
   });
 
-  const faqSchema =
-    solution.faqs && solution.faqs.length > 0 ? generateFAQSchema(solution.faqs) : null;
+  const allFaqs = [
+    ...(solution.definition ? [{ question: solution.definition.question, answer: solution.definition.answer }] : []),
+    ...(solution.faqs || []),
+  ];
+
+  const faqSchema = allFaqs.length > 0 ? generateFAQSchema(allFaqs) : null;
 
   const howToSchema =
     solution.workflowSteps && solution.workflowSteps.length > 0
@@ -121,6 +132,24 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         <h1 className="mt-2 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">{solution.name}</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">{solution.summary}</p>
       </section>
+
+      {/* AEO Quick Answer / Direct Definition Box */}
+      {solution.definition && (
+        <section className="container-shell mt-8">
+          <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 md:p-8">
+            <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-brand">
+              <Zap className="h-4 w-4" />
+              <span>Direct Answer • Technical Definition</span>
+            </div>
+            <h2 className="mt-2 font-display text-xl font-bold text-foreground md:text-2xl">
+              {solution.definition.question}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-foreground/80 md:text-base">
+              {solution.definition.answer}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Overview & Fit with NAP Card */}
       <section className="container-shell mt-10 grid gap-5 lg:grid-cols-[1.4fr_1fr]">
