@@ -5031,5 +5031,104 @@
     "status": "sent",
     "provider": "smtp",
     "messageId": "<1be499af-7f2d-fb5b-2053-9598324c350b@digitalx-solutions.com>"
+  },
+  {
+    "email": "admin@elecqld.com.au",
+    "name": "Electrical Contracting Queensland",
+    "company": "Electrical Contracting Queensland",
+    "industry": "electrical",
+    "subject": "urgent call routing and estimate booking at Electrical Contracting Queensland",
+    "sentAt": "2026-11-11T13:57:03.234Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<4171a75d-29ac-4fd0-ef4a-66a6927c4227@digitalx-solutions.com>"
+  },
+  {
+    "email": "admin@ohmyelectrical.com.au",
+    "name": "OHMY Electrical Contractors",
+    "company": "OHMY Electrical Contractors",
+    "industry": "electrical",
+    "subject": "urgent call routing and estimate booking at OHMY Electrical Contractors",
+    "sentAt": "2026-11-11T14:02:06.886Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<05960f85-c89d-b493-81b7-a77cbf5f0610@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@connexelectrical.com.au",
+    "name": "Connex Electrical",
+    "company": "Connex Electrical",
+    "industry": "electrical",
+    "subject": "urgent call routing and estimate booking at Connex Electrical",
+    "sentAt": "2026-11-11T14:07:09.856Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<285fa701-f5a6-896f-b8e8-d0918e6010c6@digitalx-solutions.com>"
+  },
+  {
+    "email": "admin@elekt.com.au",
+    "name": "Elekt Electrical Contracting",
+    "company": "Elekt Electrical Contracting",
+    "industry": "electrical",
+    "subject": "urgent call routing and estimate booking at Elekt Electrical Contracting",
+    "sentAt": "2026-11-11T14:12:12.612Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<dc0e3196-777e-26c8-a784-3ef2d6738d0f@digitalx-solutions.com>"
+  },
+  {
+    "email": "admin@jcselectrical.com.au",
+    "name": "JCS Electrical Contractors",
+    "company": "JCS Electrical Contractors",
+    "industry": "electrical",
+    "subject": "urgent call routing and estimate booking at JCS Electrical Contractors",
+    "sentAt": "2026-11-11T14:17:17.901Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<5e5a640f-4dce-b2b3-f73e-e7e5818dc079@digitalx-solutions.com>"
+  },
+  {
+    "email": "admin@rlcelectrical.com.au",
+    "name": "RLC Electrical",
+    "company": "RLC Electrical",
+    "industry": "electrical",
+    "subject": "urgent call routing and estimate booking at RLC Electrical",
+    "sentAt": "2026-11-11T14:22:26.586Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<e81035c9-ec88-60de-0cad-8029deb7b225@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@springsmiles.com.au",
+    "name": "Spring Smiles Dental Clinic",
+    "company": "Spring Smiles Dental Clinic",
+    "industry": "dental",
+    "subject": "patient booking overflow and cancellations at Spring Smiles Dental Clinic",
+    "sentAt": "2026-11-11T14:27:29.721Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<f9c0d7bb-1c02-a240-f101-dae795a7c5f6@digitalx-solutions.com>"
+  },
+  {
+    "email": "reception@niddriedental.com.au",
+    "name": "Niddrie Dental Clinic",
+    "company": "Niddrie Dental Clinic",
+    "industry": "dental",
+    "subject": "patient booking overflow and cancellations at Niddrie Dental Clinic",
+    "sentAt": "2026-11-11T14:32:32.678Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<6762e6d8-6afb-842d-fe8d-79bc93f801e3@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@baystreetdentalgroup.com.au",
+    "name": "Bay Street Dental Group",
+    "company": "Bay Street Dental Group",
+    "industry": "dental",
+    "subject": "patient booking overflow and cancellations at Bay Street Dental Group",
+    "sentAt": "2026-11-11T14:37:35.744Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<adbf8049-5432-cd64-01d5-fb0ad386ac72@digitalx-solutions.com>"
   }
 ]

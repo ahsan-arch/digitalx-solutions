@@ -61,6 +61,27 @@ export default function SolutionsHubPage() {
       </section>
 
       <section className="container-shell mt-10">
+        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+          <div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold">
+              Enterprise B2B Architecture
+            </span>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mt-2">
+              Enterprise AI Voice Agents & Self-Hosted Automation
+            </h2>
+            <p className="text-sm text-foreground/70 mt-1 max-w-2xl">
+              Eliminate recurring per-task software fees and automate high-concurrency telephony with containerized n8n instances and sub-500ms voice agents.
+            </p>
+          </div>
+          <Link
+            href="/solutions/enterprise-ai-automation"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-all shrink-0 w-fit"
+          >
+            Explore Enterprise Stack
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
         <div className="grid gap-5 md:grid-cols-3">
           {solutions.map((solution) => (
             <article key={solution.slug} className="rounded-2xl border border-border bg-surface-50 p-6">

@@ -36,6 +36,7 @@ const PRIORITY_URLS = [
   `${BASE_URL}/usa`,
   `${BASE_URL}/au`,
   `${BASE_URL}/solutions`,
+  `${BASE_URL}/solutions/enterprise-ai-automation`,
   `${BASE_URL}/solutions/crm-integration`,
   `${BASE_URL}/solutions/ai-voice-agents`,
   `${BASE_URL}/solutions/missed-call-text-back`,

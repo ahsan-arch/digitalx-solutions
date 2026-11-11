@@ -2010,6 +2010,7 @@ export const footerColumns = [
   {
     title: "Also available",
     links: [
+      { label: "Enterprise AI Automation", href: "/solutions/enterprise-ai-automation" },
       { label: "Web Design & Development", href: "/services/web-design-and-development" },
       { label: "Meta Ads", href: "/services/meta-ads" },
     ],
