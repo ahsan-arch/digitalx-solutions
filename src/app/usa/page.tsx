@@ -138,7 +138,7 @@ export default function UsaPage() {
           <Link href="/solutions/ai-voice-agents" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
             <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">AI Voice Receptionists</h3>
             <p className="mt-2 text-body-sm text-ink-secondary">
-              24/7 real-time voice automation answering calls in under 500ms, qualifying leads, and syncing bookings to US calendars.
+              24/7 real-time voice automation answering calls with fast, natural responses, qualifying leads, and syncing bookings to US calendars.
             </p>
             <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore AI Voice &rarr;</span>
           </Link>
@@ -146,7 +146,7 @@ export default function UsaPage() {
           <Link href="/solutions/missed-call-text-back" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
             <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">Missed-Call Recovery</h3>
             <p className="mt-2 text-body-sm text-ink-secondary">
-              10DLC registered SMS text-back in under 30 seconds that recovers 30% to 50% of lost callers before they dial competitors.
+              10DLC registered SMS text-back in under 60 seconds that recovers lost callers before they dial competitors.
             </p>
             <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore Recovery &rarr;</span>
           </Link>

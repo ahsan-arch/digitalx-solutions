@@ -148,7 +148,7 @@ export default function DevelopmentHubPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand font-bold mb-4">
                   <Cpu className="h-5 w-5" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-foreground">Sub-500ms Execution</h3>
+                <h3 className="font-display text-lg font-semibold text-foreground">Low-Latency Execution</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/75">
                   We optimize webhook endpoints, neural speech models, and database queries for low latency so callers and users experience zero conversational lag.
                 </p>

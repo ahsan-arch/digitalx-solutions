@@ -118,7 +118,7 @@ export default function CaseStudiesIndexPage() {
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-foreground/70">
                 Tracking every unanswered call across business hours and after-hours shifts. We benchmark
-                instant sub-500ms AI pick-up against legacy voicemail abandonment rates.
+                instant 24/7 AI answering against legacy voicemail abandonment rates.
               </p>
             </div>
 
@@ -129,7 +129,7 @@ export default function CaseStudiesIndexPage() {
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-foreground/70">
                 Measuring conversational response times on paid Meta Ads and missed calls. Deploying
-                automated SMS text-back in under 30 seconds to lock leads before they dial competitors.
+                automated SMS text-back in under 60 seconds to lock leads before they dial competitors.
               </p>
             </div>
 

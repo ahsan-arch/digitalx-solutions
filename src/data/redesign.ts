@@ -17,7 +17,7 @@ export const primaryNavigation: NavItem[] = [
 export const heroMetrics = [
   { value: "24/7", label: "AI call coverage" },
   { value: "< 60s", label: "Missed call text back" },
-  { value: "< 500ms", label: "Neural voice response" },
+  { value: "Fast", label: "Natural voice response" },
   { value: "5-14 Days", label: "Production go-live turnaround" },
 ];
 
@@ -252,7 +252,7 @@ export const solutions: Solution[] = [
       "Human-sounding AI voice receptionists and real-time automation answer calls, qualify prospects, and book appointments 24/7 across the US & Australia.",
     definition: {
       question: "How do custom AI voice agents work?",
-      answer: "Custom AI voice agents work by orchestrating real-time streaming speech-to-text (Deepgram Nova-2), low-latency large language model reasoning, and neural text-to-speech synthesis (ElevenLabs) over carrier SIP trunks. The agent conducts bidirectional conversations with sub-500ms voice response latency, dynamically qualifies inbound leads, answers service questions, checks CRM databases, and books appointments directly into your calendar.",
+      answer: "Custom AI voice agents work by orchestrating real-time streaming speech-to-text (Deepgram Nova-2), low-latency large language model reasoning, and neural text-to-speech synthesis (ElevenLabs) over carrier SIP trunks. The agent conducts bidirectional conversations with fast, natural response pacing, dynamically qualifies inbound leads, answers service questions, checks CRM databases, and books appointments directly into your calendar.",
     },
     outcomes: [
       "24/7 call answering coverage to capture after-hours inquiries",
@@ -260,7 +260,7 @@ export const solutions: Solution[] = [
       "Bookings dropped directly into your calendar and CRM",
     ],
     capabilities: [
-      "Real-time voice automation with sub-500ms response latency",
+      "Real-time voice automation with fast, natural responses",
       "Industry tuned voice prompts (plumbers, clinics, contractors)",
       "Live call forwarding with intelligent intent detection",
       "Multi-language support (English, Spanish, Arabic)",
@@ -273,9 +273,9 @@ export const solutions: Solution[] = [
     group: "capture",
     workflowSteps: [
       {
-        name: "Sub-500ms Inbound Answering",
+        name: "Instant Inbound Answering",
         text: "Telephony stream connects instantly without robotic delay or unnatural pauses.",
-        detail: "Ultra-low latency streaming neural voice greets the caller in a natural, region-matched accent (US or Australian English).",
+        detail: "Streaming neural voice greets the caller in a natural, region-matched accent (US or Australian English).",
       },
       {
         name: "Natural Intent & Emergency Triage",
@@ -302,7 +302,7 @@ export const solutions: Solution[] = [
       },
       {
         feature: "Speed to Answer",
-        digitalx: "< 500ms streaming neural voice",
+        digitalx: "Instant, natural conversational pacing",
         traditional: "30-90 second hold times",
         manual: "Hours before callback",
       },
@@ -314,7 +314,7 @@ export const solutions: Solution[] = [
       },
       {
         feature: "Operating Cost",
-        digitalx: "Flat retainers ($1,200 - $2,800/mo)",
+        digitalx: "Predictable monthly tiers (see /pricing)",
         traditional: "$3,500 - $6,000/mo per full-time rep",
         manual: "Thousands lost to competing bidders",
       },
@@ -322,7 +322,7 @@ export const solutions: Solution[] = [
     technicalSpecs: [
       {
         label: "Voice Engine Latency",
-        value: "< 500ms Time-to-Speech",
+        value: "Fast & Natural Responses",
         description: "Real-time streaming neural speech engine with interruption & barge-in support",
       },
       {
@@ -402,12 +402,12 @@ export const solutions: Solution[] = [
     slug: "missed-call-text-back",
     name: "Missed Call text back",
     metaTitle: "Missed-Call Text-Back & Recovery",
-    tagline: "Within 30 seconds to every missed caller",
+    tagline: "Within 60 seconds to every missed caller",
     summary:
-      "Instant missed-call text-back and automated lead recovery for service businesses. Engage callers in under 30 seconds before they dial a competitor.",
+      "Instant missed-call text-back and automated lead recovery for service businesses. Engage callers in under 60 seconds before they dial a competitor.",
     definition: {
       question: "What is missed-call text-back and how does it recover leads?",
-      answer: "Missed-call text-back is an automated telephony workflow that detects an unanswered or busy inbound phone call and instantly dispatches a personalized SMS to the caller within 30 seconds. It establishes two-way conversation before the prospect contacts a competitor, qualifying their requirements and scheduling an appointment automatically.",
+      answer: "Missed-call text-back is an automated telephony workflow that detects an unanswered or busy inbound phone call and instantly dispatches a personalized SMS to the caller within 60 seconds. It establishes two-way conversation before the prospect contacts a competitor, qualifying their requirements and scheduling an appointment automatically.",
     },
     outcomes: [
       "Recover 30 to 50% of otherwise lost callers",
@@ -450,7 +450,7 @@ export const solutions: Solution[] = [
     comparison: [
       {
         feature: "Response Speed",
-        digitalx: "< 30 seconds automatic outreach",
+        digitalx: "< 60 seconds automatic outreach",
         traditional: "15-45 minutes manual text",
         manual: "Hours later or ignored",
       },
@@ -476,7 +476,7 @@ export const solutions: Solution[] = [
     technicalSpecs: [
       {
         label: "Trigger Response Time",
-        value: "< 30 Seconds",
+        value: "< 60 Seconds",
         description: "Dispatches SMS immediately when telephony carrier signals an unanswered call",
       },
       {
@@ -528,7 +528,7 @@ export const solutions: Solution[] = [
       {
         question: "How does missed-call text-back integrate with my existing business phone?",
         answer:
-          "We configure simple conditional call forwarding or carrier webhooks from your existing mobile, landline, or VoIP provider (Telstra, Optus, AT&T, Verizon, RingCentral). When a call is unanswered or busy, the carrier signals our system and triggers an instant SMS within 30 seconds.",
+          "We configure simple conditional call forwarding or carrier webhooks from your existing mobile, landline, or VoIP provider (Telstra, Optus, AT&T, Verizon, RingCentral). When a call is unanswered or busy, the carrier signals our system and triggers an instant SMS within 60 seconds.",
       },
       {
         question: "Does this comply with US TCPA and Australian Spam Act 2003 laws?",
@@ -677,7 +677,7 @@ export const solutions: Solution[] = [
       {
         question: "How quickly does the lead nurture sequence trigger after an inquiry?",
         answer:
-          "The initial touchpoint (SMS or email confirmation) triggers in under 60 seconds. Research shows responding within 5 minutes increases conversion rates by up to 391% compared to waiting an hour.",
+          "The initial touchpoint (SMS or email confirmation) triggers in under 60 seconds. Research confirms rapid lead response substantially increases conversion rates compared to delayed outreach.",
       },
       {
         question: "Will the automated messages stop sending if the customer replies?",
@@ -1831,7 +1831,7 @@ export const results: ResultCard[] = [
     ],
     metrics: [
       { label: "Call Coverage", value: "24/7/365" },
-      { label: "Voice Latency", value: "< 500ms" },
+      { label: "Voice Latency", value: "Fast & Natural" },
       { label: "Hold Times", value: "Zero" },
     ],
   },

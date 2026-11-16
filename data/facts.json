@@ -37,34 +37,34 @@
       "fullName": "Ahsan Architect",
       "preferredPublicName": "Ahsan Architect",
       "jobTitle": "Founder & Lead Solutions Engineer",
-      "bio": "Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and sub-500ms neural AI voice agents for enterprise and local service operators across the USA and Australia.",
+      "bio": "Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and low-latency neural AI voice agents for enterprise and local service operators across the USA and Australia.",
       "linkedinUrl": "https://www.linkedin.com/in/ahsan-architect",
-      "verifiedIdentity": "Verified Director & Solutions Architect"
+      "verifiedIdentity": "Solutions Architect & Director"
     },
     "teamSize": "2-9 employees"
   },
   "partnerCertifications": [
     {
       "platform": "GoHighLevel",
-      "credential": "GoHighLevel Certified Agency Partner",
-      "status": "Active Certified Partner",
-      "tier": "Certified Agency Partner",
+      "credential": "GoHighLevel Agency Partner",
+      "status": "Agency Partner",
+      "tier": "Agency Partner",
       "proofUrl": "https://www.gohighlevel.com",
       "dateCertified": "2023"
     },
     {
       "platform": "n8n",
-      "credential": "n8n Certified Workflow Partner",
-      "status": "Active Certified Partner",
+      "credential": "n8n Workflow Partner",
+      "status": "Workflow Partner",
       "tier": "Creator & Community Partner",
       "proofUrl": "https://n8n.io",
       "dateCertified": "2023"
     },
     {
       "platform": "HubSpot",
-      "credential": "HubSpot Certified Solutions Partner",
-      "status": "Active Certified Partner",
-      "tier": "Certified Solutions Partner",
+      "credential": "HubSpot Solutions Partner",
+      "status": "Solutions Partner",
+      "tier": "Solutions Partner",
       "proofUrl": "https://www.hubspot.com/partners",
       "dateCertified": "2023"
     }
@@ -108,8 +108,8 @@
   ],
   "performanceMetrics": {
     "callCoverage": "24/7/365",
-    "missedCallTextBackLatency": "< 30s",
-    "aiVoiceLatency": "< 500ms neural turnaround",
+    "missedCallTextBackLatency": "< 60s",
+    "aiVoiceLatency": "Fast, natural voice responses",
     "averageGoLiveTimeDays": "5-14 business days",
     "typicalLeadLift": "30% - 50% recovered bookings (benchmark estimate, subject to verified client audits)"
   },
@@ -122,7 +122,7 @@
       "monthlyRetainer": "$450 / month",
       "setupFeeRange": "$497 - $997 one-time",
       "features": [
-        "Instant missed-call text-back (<30s)",
+        "Instant missed-call text-back (< 60s)",
         "10DLC A2P brand registration",
         "Two-way SMS conversational triage",
         "Lead notification routing to staff",
@@ -183,7 +183,7 @@
         "Google Calendar"
       ],
       "measurableResult": "Deployed 24/7 AI voice receptionist integrated with practice calendar, capturing after-hours patient inquiries with zero hold times.",
-      "status": "Verified Client Deployment"
+      "status": "Case study"
     },
     {
       "id": "harbor-plumbing",
@@ -193,15 +193,15 @@
       "permissionToUseNameAndLogo": true,
       "logoFile": null,
       "problem": "Field technicians on jobsites unable to answer urgent inbound calls, causing after-hours emergency jobs to drop to competitors.",
-      "whatWasBuilt": "Missed-call text-back within 30 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
+      "whatWasBuilt": "Missed-call text-back within 60 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
       "toolsUsed": [
         "Missed-Call Text-Back",
         "AI Voice Agent",
         "Twilio",
         "GoHighLevel"
       ],
-      "measurableResult": "Deployed GHL automation and instant AI answering for a trade contractor, recovering missed leads within 30 seconds.",
-      "status": "Verified Client Deployment"
+      "measurableResult": "Deployed GHL automation and instant AI answering for a trade contractor, recovering missed leads within 60 seconds.",
+      "status": "Case study"
     },
     {
       "id": "atlas-consulting",
@@ -218,7 +218,7 @@
         "n8n Workflow Automation"
       ],
       "measurableResult": "Automated multi-step qualification and CRM pipeline intake, eliminating manual phone triage for advisory staff.",
-      "status": "Verified Client Deployment"
+      "status": "Case study"
     }
   ],
   "testimonials": [
@@ -230,7 +230,7 @@
       "company": "Harbor Plumbing & Heating",
       "isRealTestimonial": true,
       "permissionToDisplay": true,
-      "status": "Verified Client Review"
+      "status": "Client Review"
     },
     {
       "id": "testimonial-2",
@@ -240,7 +240,7 @@
       "company": "Riverstone Dental Care",
       "isRealTestimonial": true,
       "permissionToDisplay": true,
-      "status": "Verified Client Review"
+      "status": "Client Review"
     },
     {
       "id": "testimonial-3",
@@ -250,7 +250,7 @@
       "company": "Atlas Consulting Partners",
       "isRealTestimonial": true,
       "permissionToDisplay": true,
-      "status": "Verified Client Review"
+      "status": "Client Review"
     }
   ]
 }

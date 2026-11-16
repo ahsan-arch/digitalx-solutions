@@ -48,14 +48,30 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     if (!article) return { title: 'Not Found' };
 
-    const author = authors[article.authorKey];
+    const author = authors[article.authorKey] || authors["ahsan"];
     const base = generatePageMetadata(`/insights/${resolvedParams.slug}`, {
         title: article.metaTitle || article.title,
         description: article.description,
     });
 
+    const canonical = article.canonicalUrl
+        ? (article.canonicalUrl.startsWith("http") ? article.canonicalUrl : `${siteConfig.domain}${article.canonicalUrl}`)
+        : undefined;
+
     return {
         ...base,
+        ...(canonical && {
+            alternates: {
+                ...base.alternates,
+                canonical,
+            },
+        }),
+        ...(article.noindex && {
+            robots: {
+                index: false,
+                follow: true,
+            },
+        }),
         openGraph: {
             ...base.openGraph,
             type: "article",
@@ -138,6 +154,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                             </Link>
                         </div>
                     </header>
+
+                    {article.isUpdating && (
+                        <div className="mb-10 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-foreground">
+                            <div className="flex items-center gap-2 font-semibold text-amber-700">
+                                <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse" />
+                                Telephony Benchmark Audit in Progress
+                            </div>
+                            <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
+                                This research paper is currently being updated with newly audited, verified call telemetry across our customer base. Check back soon for the revised and independently referenced benchmark data.
+                            </p>
+                        </div>
+                    )}
 
                     <div className="mb-12 flex items-start gap-4 rounded-lg border border-line-subtle bg-surface-sunken p-4">
                         <div className="h-12 w-12 shrink-0 rounded-full bg-accent-soft flex items-center justify-center text-accent font-display font-semibold text-lg">

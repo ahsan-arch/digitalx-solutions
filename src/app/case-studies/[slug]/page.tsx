@@ -249,7 +249,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             </p>
             <p className="mt-3 text-sm leading-relaxed text-foreground/75">
               We engineered a production-grade integration layer that connects inbound telephony streams
-              directly to calendar scheduling logic and CRM records. Calls are answered in sub-500ms
+              directly to calendar scheduling logic and CRM records. Calls are answered with fast, natural responses
               without robotic delay, while conversational SMS triggers instantly capture dropped callers.
             </p>
             <div className="mt-6">

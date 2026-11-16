@@ -180,7 +180,7 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                                 <p className="mt-4 text-sm leading-relaxed text-foreground/75">
-                                    Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and sub-500ms neural AI voice agents for enterprise and local service operators across the USA and Australia.
+                                    Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and low-latency neural AI voice agents for enterprise and local service operators across the USA and Australia.
                                 </p>
                                 <div className="mt-5 flex flex-wrap items-center gap-3">
                                     <Link
@@ -219,10 +219,10 @@ export default function AboutPage() {
                             </div>
                         </div>
 
-                        {/* Partner Certifications Ledger & Proof Links */}
+                        {/* Partner Platform Ecosystem */}
                         <div className="mt-8 border-t border-border pt-6">
                             <h3 className="text-sm font-semibold text-foreground/80">
-                                Held Partner Certifications &amp; Accreditations
+                                Platform Partner Ecosystem
                             </h3>
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
                                 {factsData.partnerCertifications.map((cert) => (
@@ -235,10 +235,6 @@ export default function AboutPage() {
                                                 <span className="font-mono text-xs font-semibold text-brand">
                                                     {cert.platform}
                                                 </span>
-                                                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 border border-emerald-600/20">
-                                                    <ShieldCheck className="h-3 w-3 text-emerald-600" />
-                                                    Certified
-                                                </span>
                                             </div>
                                             <h4 className="mt-2 text-sm font-semibold text-foreground">
                                                 {cert.credential}
@@ -250,7 +246,7 @@ export default function AboutPage() {
 
                                         <div className="mt-4 pt-3 border-t border-border/70 text-xs flex items-center justify-between">
                                             <span className="text-[11px] font-medium text-foreground/70">
-                                                Active Certified Partner
+                                                Active Ecosystem Partner
                                             </span>
                                             {cert.proofUrl && cert.proofUrl.startsWith("http") && (
                                                 <a
@@ -259,7 +255,7 @@ export default function AboutPage() {
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center text-brand font-semibold hover:underline"
                                                 >
-                                                    Directory
+                                                    Platform
                                                     <ExternalLink className="ml-1 h-3 w-3" />
                                                 </a>
                                             )}

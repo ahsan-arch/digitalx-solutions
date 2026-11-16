@@ -79,7 +79,7 @@ export default function HomePage() {
             name: "How fast does the AI answering agent answer incoming calls?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Our AI Voice Receptionists feature sub-500ms voice response latency. Calling patients or customers receive immediate responses with no robotic pause or delay, 24/7.",
+              text: "Our AI Voice Receptionists deliver fast, natural responses with no robotic pause or delay, answering calls 24/7.",
             },
           },
           {
@@ -136,7 +136,7 @@ export default function HomePage() {
                   AI Automation Agency for High-Growth Service Businesses
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
-                  DigitalX Solutions builds and deploys 24/7 human-sounding AI voice receptionists, within-30-second missed-call text-back, GoHighLevel and HubSpot CRM architectures, and custom n8n workflow automations for trades, healthcare clinics, and professional services across Australia and the United States.
+                  DigitalX Solutions builds and deploys 24/7 human-sounding AI voice receptionists, under-60-second missed-call text-back, GoHighLevel and HubSpot CRM architectures, and custom n8n workflow automations for trades, healthcare clinics, and professional services across Australia and the United States.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -145,7 +145,7 @@ export default function HomePage() {
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-deep"
                   >
                     <PhoneCall className="h-4 w-4" />
-                    Hear the demo
+                    Hear a live AI call
                   </Link>
                   <Link
                     href="/contact"
@@ -208,7 +208,7 @@ export default function HomePage() {
                 <Link href="/solutions/missed-call-text-back" className="font-semibold text-brand hover:underline">
                   automated missed-call text-back system
                 </Link>{" "}
-                captures those high-intent inquiries in under 30 seconds. Paired with scalable{" "}
+                captures those high-intent inquiries in under 60 seconds. Paired with scalable{" "}
                 <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-brand hover:underline">
                   GoHighLevel CRM setups
                 </Link>{" "}
@@ -237,9 +237,9 @@ export default function HomePage() {
                   <Clock className="h-4 w-4" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Instant SMS Dispatch</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Under 30-Second Text-Back</span>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Under 60-Second Text-Back</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Dispatches a personalized conversational SMS within 30 seconds of an unanswered call to engage the prospect instantly.
+                  Dispatches a personalized conversational SMS within 60 seconds of an unanswered call to engage the prospect instantly.
                 </p>
               </div>
 
@@ -247,10 +247,10 @@ export default function HomePage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <Zap className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">391% Conversion Lift</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">HBR Lead Response Study</span>
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Rapid Lead Response</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Immediate Engagement</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Harvard Business Review research demonstrates responding within 60 seconds delivers dramatic conversion gains over 30-minute delays.
+                  Immediate two-way conversational outreach dramatically outperforms delayed follow-ups, securing high-intent prospects before competitors respond.
                 </p>
               </div>
 
@@ -471,7 +471,7 @@ export default function HomePage() {
                   How fast does the AI answering agent answer incoming calls?
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Our AI Voice Receptionists feature sub-500ms voice response latency. Calling patients or customers receive immediate responses with no robotic pause or delay, 24/7.
+                  Our AI Voice Receptionists deliver fast, natural responses with no robotic pause or delay, answering calls 24/7.
                 </p>
               </div>
 

@@ -68,7 +68,7 @@ export const integrationsData: Integration[] = [
     ],
     technicalSpecifications: [
       { label: "API Version", value: "HighLevel REST API v2 (OAuth 2.0 / Private App Token)" },
-      { label: "Turnaround Latency", value: "Sub-500ms neural voice turnaround" },
+      { label: "Turnaround Latency", value: "Fast, natural voice turnaround" },
       { label: "Calendar Conflict Handling", value: "Real-time slot lock with 15-minute hold buffers" },
       { label: "Error Fallback", value: "Automatic failover to SMS intake link if carrier packet drops" }
     ],
@@ -273,7 +273,7 @@ export const integrationsData: Integration[] = [
         step: "03",
         title: "Bi-Directional Audio WebSocket Stream",
         description: "Stream high-definition 8kHz/16kHz audio directly to neural speech recognition and LLM models.",
-        technicalDetail: "Utilizes Twilio `<Connect><Stream>` to achieve real-time full-duplex conversational audio streaming with sub-500ms latency."
+        technicalDetail: "Utilizes Twilio `<Connect><Stream>` to achieve real-time full-duplex conversational audio streaming with fast, natural conversational pacing."
       },
       {
         step: "04",
@@ -351,7 +351,7 @@ export const integrationsData: Integration[] = [
         step: "04",
         title: "Instant SMS Confirmation & Map Tracking Link",
         description: "Text the homeowner immediate booking confirmation and technician dispatch expectations.",
-        technicalDetail: "Sends immediate reassurance text-back under 30 seconds confirming job ticket number."
+        technicalDetail: "Sends immediate reassurance text-back under 60 seconds confirming job ticket number."
       }
     ],
     technicalSpecifications: [

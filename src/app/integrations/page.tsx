@@ -144,7 +144,7 @@ export default function IntegrationsHubPage() {
                 <ul className="space-y-2.5 text-xs text-foreground/80">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                    Sub-500ms voice turnaround latency
+                    Fast, natural voice turnaround latency
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />

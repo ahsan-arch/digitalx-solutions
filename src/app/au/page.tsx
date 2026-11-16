@@ -148,7 +148,7 @@ export default function AuPage() {
           <Link href="/solutions/missed-call-text-back" className="group rounded-lg border border-line-subtle bg-surface-raised p-6 transition hover:border-accent">
             <h3 className="font-display text-title-lg text-ink-primary group-hover:text-accent">Tradie Missed-Call Text-Back</h3>
             <p className="mt-2 text-body-sm text-ink-secondary">
-              Instant SMS text-back in under 30 seconds compliant with Spam Act 2003, recovering 30% to 50% of after-hours tradie leads.
+              Instant SMS text-back in under 60 seconds compliant with Spam Act 2003, recovering after-hours tradie leads.
             </p>
             <span className="mt-4 inline-flex items-center text-xs font-semibold text-accent">Explore Recovery &rarr;</span>
           </Link>

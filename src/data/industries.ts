@@ -79,12 +79,12 @@ export const industries: Industry[] = [
     "name": "Plumbers, HVAC & Trade Businesses",
     "metaTitle": "24/7 AI Answering & Dispatch for Plumbers & HVAC | DigitalX",
     "h1": "24/7 AI Answering & Dispatch Automation for Plumbers, HVAC, and Trades",
-    "subheadline": "Never miss another $300+ emergency dispatch call. Capture after-hours leads, schedule jobs directly into your dispatch software, and recover missed calls within 30 seconds—all without paying for a traditional call center.",
+    "subheadline": "Never miss another $300+ emergency dispatch call. Capture after-hours leads, schedule jobs directly into your dispatch software, and recover missed calls within 60 seconds—all without paying for a traditional call center.",
     "trustBanner": "Trusted by residential & commercial trade contractors across Australia & the USA to handle 24/7 client booking.",
     "metaDescription": "Stop losing high-value after-hours calls. We deploy 24/7 AI answering, emergency dispatch, and GoHighLevel CRM setups for trade businesses in the US & AU.",
     "category": "Home Services & Contractors",
     "headline": "You're under a sink or up a ladder when the phone rings. We make sure the job lands in your diary, not a competitor's.",
-    "summary": "Trade customers call in a crisis and ring until someone answers. DigitalX equips trade businesses with an AI receptionist that answers every call in under 500ms, screens emergencies, collects job addresses, and syncs directly with ServiceTitan, Jobber, or Google Calendar.",
+    "summary": "Trade customers call in a crisis and ring until someone answers. DigitalX equips trade businesses with an AI receptionist that answers every call with fast, natural voice responses, screens emergencies, collects job addresses, and syncs directly with ServiceTitan, Jobber, or Google Calendar.",
     "niches": [
       "Emergency Plumbing & Drainage",
       "Residential & Commercial HVAC",
@@ -99,11 +99,11 @@ export const industries: Industry[] = [
       "Double-booking or missed technician dispatch details due to handwritten carbon notes in the van"
     ],
     "playbook": [
-      "Sub-500ms streaming neural voice answers inbound calls in an authentic Aussie or US trade tone",
+      "Streaming neural voice with fast, natural responses answers inbound calls in an authentic Aussie or US trade tone",
       "Intelligent emergency triage: active flooding or gas leaks escalate instantly to the on-call technician",
       "Automated address, job scope, and gate code capture with instant SMS upload link for job photos",
       "Direct calendar and dispatch sync into Jobber, ServiceTitan, Housecall Pro, or GoHighLevel",
-      "Instant missed-call text-back triggers in under 30 seconds for any dropped or busy call"
+      "Instant missed-call text-back triggers in under 60 seconds for any dropped or busy call"
     ],
     "relatedSolutionSlugs": [
       "ai-voice-agents",
@@ -116,7 +116,7 @@ export const industries: Industry[] = [
       "dispatchProtocol": "Immediate ring-group transfer to on-call duty plumber mobile. If unanswered within 18 seconds, sends high-priority SMS alert with caller audio, transcription, and GPS address pin.",
       "intakeSteps": [
         {
-          "name": "Instant Sub-500ms Telephony Pickup",
+          "name": "Instant 24/7 Telephony Pickup",
           "text": "Call connects immediately without robotic hold chimes. AI greets caller with company name and confirms service location."
         },
         {
@@ -173,7 +173,7 @@ export const industries: Industry[] = [
       {
         "feature": "Pickup Speed",
         "traditional": "Missed during busy rushes or on hold 1-2 mins",
-        "digitalx": "Under 500ms latency, zero hold times 24/7/365"
+        "digitalx": "Fast, natural responses, zero hold times 24/7/365"
       },
       {
         "feature": "Accuracy",
@@ -239,7 +239,7 @@ export const industries: Industry[] = [
       "Clinical triage: distinguishes acute severe toothaches or post-op complications from routine cleanings",
       "Direct calendar integration into Cliniko, Dentrix, or practice booking systems",
       "Automated pre-appointment SMS confirmations and new patient digital intake forms",
-      "Two-way SMS text-back recovering missed calls within 30 seconds"
+      "Two-way SMS text-back recovering missed calls within 60 seconds"
     ],
     "relatedSolutionSlugs": [
       "ai-voice-agents",
@@ -310,7 +310,7 @@ export const industries: Industry[] = [
       {
         "feature": "Response Time",
         "traditional": "Patients often experience holds during peak times",
-        "digitalx": "Answers under 500ms latency, zero hold times 24/7/365"
+        "digitalx": "Answers with fast, natural responses, zero hold times 24/7/365"
       },
       {
         "feature": "Integrations",
@@ -349,7 +349,7 @@ export const industries: Industry[] = [
     "metaDescription": "Automate auto repair bookings, rego lookups, and missed-call recovery. Hands-free AI phone answering for mechanical workshops and body shops.",
     "category": "Automotive",
     "headline": "Technicians under hoists with grease on their hands can't grab ringing phones. We capture every mechanic booking automatically.",
-    "summary": "Independent mechanical workshops and auto repair centers lose valuable logbook services, brake repairs, and diagnostic jobs when phones ring unanswered. DigitalX installs AI receptionists that capture vehicle details, explain diagnostic check-in procedures, reserve bay time, and text customers back under 30 seconds.",
+    "summary": "Independent mechanical workshops and auto repair centers lose valuable logbook services, brake repairs, and diagnostic jobs when phones ring unanswered. DigitalX installs AI receptionists that capture vehicle details, explain diagnostic check-in procedures, reserve bay time, and text customers back under 60 seconds.",
     "niches": [
       "Independent Mechanical Workshops",
       "Auto Body & Smash Repairs",
@@ -364,7 +364,7 @@ export const industries: Industry[] = [
       "Unclear diagnostic expectations causing disputes when customers drop off vehicles"
     ],
     "playbook": [
-      "Conversational voice agent answers workshop calls in under 500ms without background hold music",
+      "Conversational voice agent answers workshop calls with fast, natural responses without background hold music",
       "Vehicle intake screening: automatically captures registration, year, make, model, and engine issue description",
       "Diagnostic fee disclosure upfront, setting clear payment expectations before the car arrives at the workshop",
       "Calendar and bay booking into Workshop Software, MechanicDesk, or Google Calendar",
@@ -578,7 +578,7 @@ export const industries: Industry[] = [
       "Manual data entry of caller details into practice management systems causing intake lag"
     ],
     "playbook": [
-      "Discreet, authoritative conversational voice model answers in under 500ms with complete professionalism",
+      "Discreet, authoritative conversational voice model answers with fast, natural responses and complete professionalism",
       "Practice area qualification: confirms matter type (e.g. family law, estate planning, corporate restructuring)",
       "Conflict of interest pre-screening: collects opposing party names before scheduling consultation calls",
       "Direct calendar sync into Clio, PracticePanther, HubSpot, or Google Calendar",
@@ -806,7 +806,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for hvac companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for hvac companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -856,7 +856,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for HVAC Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Complete furnace failure in freezing weather, AC condenser blowout in heatwave (>95°F / 35...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Complete furnace failure in freezing weather, AC condenser blowout in heatwave (>95°F / 35...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing HVAC Companies software stack?",
@@ -864,7 +864,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for HVAC Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In hvac companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In hvac companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -904,7 +904,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for roofing companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for roofing companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -954,7 +954,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Roofing Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Active storm water penetration, missing shingles after severe wind event, fallen tree dama...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Active storm water penetration, missing shingles after severe wind event, fallen tree dama...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Roofing Companies software stack?",
@@ -962,7 +962,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Roofing Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In roofing companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In roofing companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1004,7 +1004,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for plumbing companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for plumbing companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1054,7 +1054,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Plumbing Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Burst water supply line, main sewer line backup into home, failed water heater flooding ga...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Burst water supply line, main sewer line backup into home, failed water heater flooding ga...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Plumbing Companies software stack?",
@@ -1062,7 +1062,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Plumbing Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In plumbing companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In plumbing companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1101,7 +1101,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for electricians."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for electricians."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1151,7 +1151,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Electricians?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Sparking breaker panel, total blackout in occupied dwelling, exposed live wiring, commerci...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Sparking breaker panel, total blackout in occupied dwelling, exposed live wiring, commerci...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Electricians software stack?",
@@ -1159,7 +1159,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Electricians?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In electricians, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In electricians, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1197,7 +1197,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for pest control companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for pest control companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1247,7 +1247,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Pest Control Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Termite swarming inside living quarters, rodent infestation in food handling area, aggress...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Termite swarming inside living quarters, rodent infestation in food handling area, aggress...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Pest Control Companies software stack?",
@@ -1255,7 +1255,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Pest Control Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In pest control companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In pest control companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1293,7 +1293,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for landscaping businesses."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for landscaping businesses."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1343,7 +1343,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Landscaping Businesses?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Fallen tree blocking driveway or road, irrigation mainline burst flooding lawn, hazardous ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Fallen tree blocking driveway or road, irrigation mainline burst flooding lawn, hazardous ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Landscaping Businesses software stack?",
@@ -1351,7 +1351,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Landscaping Businesses?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In landscaping businesses, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In landscaping businesses, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1389,7 +1389,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for pool service companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for pool service companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1439,7 +1439,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Pool Service Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Pool pump motor failure causing green water algae bloom, filtration leak flooding equipmen...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Pool pump motor failure causing green water algae bloom, filtration leak flooding equipmen...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Pool Service Companies software stack?",
@@ -1447,7 +1447,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Pool Service Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In pool service companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In pool service companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1485,7 +1485,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for moving companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for moving companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1535,7 +1535,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Moving Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Last-minute mover cancellation, emergency same-day relocation, lease expiration deadline....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Last-minute mover cancellation, emergency same-day relocation, lease expiration deadline....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Moving Companies software stack?",
@@ -1543,7 +1543,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Moving Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In moving companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In moving companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1581,7 +1581,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for flooring contractors."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for flooring contractors."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1631,7 +1631,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Flooring Contractors?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Water damage subfloor failure, urgent commercial floor installation before grand opening, ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Water damage subfloor failure, urgent commercial floor installation before grand opening, ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Flooring Contractors software stack?",
@@ -1639,7 +1639,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Flooring Contractors?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In flooring contractors, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In flooring contractors, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1677,7 +1677,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for window & door companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for window & door companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1727,7 +1727,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Window & Door Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Broken patio glass door compromising home security, commercial storefront glass shatter, d...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Broken patio glass door compromising home security, commercial storefront glass shatter, d...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Window & Door Companies software stack?",
@@ -1735,7 +1735,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Window & Door Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In window & door companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In window & door companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1775,7 +1775,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for solar installers."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for solar installers."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1825,7 +1825,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Solar Installers?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Inverter failure tripping main breaker, solar battery storage disconnect, roof penetration...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Inverter failure tripping main breaker, solar battery storage disconnect, roof penetration...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Solar Installers software stack?",
@@ -1833,7 +1833,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Solar Installers?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In solar installers, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In solar installers, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1871,7 +1871,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for home remodeling companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for home remodeling companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -1921,7 +1921,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Home Remodeling Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Structural load-bearing wall issue, burst pipe during kitchen demolition, mold discovery d...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Structural load-bearing wall issue, burst pipe during kitchen demolition, mold discovery d...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Home Remodeling Companies software stack?",
@@ -1929,7 +1929,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Home Remodeling Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In home remodeling companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In home remodeling companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -1967,7 +1967,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for painting contractors."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for painting contractors."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2017,7 +2017,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Painting Contractors?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Commercial tenant move-out turnover deadline, exterior weather window closing before rain ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Commercial tenant move-out turnover deadline, exterior weather window closing before rain ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Painting Contractors software stack?",
@@ -2025,7 +2025,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Painting Contractors?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In painting contractors, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In painting contractors, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2063,7 +2063,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for cleaning services."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for cleaning services."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2113,7 +2113,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Cleaning Services?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Emergency post-flood sanitization, end-of-lease bond inspection turnover, urgent biohazard...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Emergency post-flood sanitization, end-of-lease bond inspection turnover, urgent biohazard...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Cleaning Services software stack?",
@@ -2121,7 +2121,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Cleaning Services?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In cleaning services, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In cleaning services, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2160,7 +2160,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for dental clinics."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for dental clinics."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2208,7 +2208,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Dental Clinics?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Severe toothache, knocked-out permanent tooth, broken crown, post-extraction uncontrolled ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Severe toothache, knocked-out permanent tooth, broken crown, post-extraction uncontrolled ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Dental Clinics software stack?",
@@ -2216,7 +2216,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Dental Clinics?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In dental clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In dental clinics, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2255,7 +2255,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for med spas."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for med spas."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2303,7 +2303,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Med Spas?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Adverse dermal filler reaction, vascular occlusion concern, intense post-laser burning sen...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Adverse dermal filler reaction, vascular occlusion concern, intense post-laser burning sen...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Med Spas software stack?",
@@ -2311,7 +2311,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Med Spas?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In med spas, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In med spas, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2349,7 +2349,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for chiropractic offices."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for chiropractic offices."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2397,7 +2397,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Chiropractic Offices?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Acute low back spasms leaving patient unable to walk, recent motor vehicle whiplash trauma...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Acute low back spasms leaving patient unable to walk, recent motor vehicle whiplash trauma...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Chiropractic Offices software stack?",
@@ -2405,7 +2405,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Chiropractic Offices?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In chiropractic offices, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In chiropractic offices, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2443,7 +2443,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for plastic surgery centers."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for plastic surgery centers."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2491,7 +2491,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Plastic Surgery Centers?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Post-operative hematoma, high fever following surgery, incision separation or wound draina...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Post-operative hematoma, high fever following surgery, incision separation or wound draina...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Plastic Surgery Centers software stack?",
@@ -2499,7 +2499,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Plastic Surgery Centers?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In plastic surgery centers, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In plastic surgery centers, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2537,7 +2537,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for physical therapy clinics."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for physical therapy clinics."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2585,7 +2585,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Physical Therapy Clinics?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Post-surgical rehabilitation delay, acute sports injury needing functional evaluation befo...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Post-surgical rehabilitation delay, acute sports injury needing functional evaluation befo...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Physical Therapy Clinics software stack?",
@@ -2593,7 +2593,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Physical Therapy Clinics?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In physical therapy clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In physical therapy clinics, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2631,7 +2631,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for urgent care clinics."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for urgent care clinics."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2679,7 +2679,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Urgent Care Clinics?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Deep lacerations requiring sutures, suspected bone fracture, moderate asthma attack, high ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Deep lacerations requiring sutures, suspected bone fracture, moderate asthma attack, high ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Urgent Care Clinics software stack?",
@@ -2687,7 +2687,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Urgent Care Clinics?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In urgent care clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In urgent care clinics, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2725,7 +2725,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for optometry offices."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for optometry offices."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2773,7 +2773,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Optometry Offices?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Sudden vision loss, chemical splash in eye, foreign metal object in cornea, retinal detach...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Sudden vision loss, chemical splash in eye, foreign metal object in cornea, retinal detach...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Optometry Offices software stack?",
@@ -2781,7 +2781,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Optometry Offices?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In optometry offices, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In optometry offices, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2819,7 +2819,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for pharmacy chains."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for pharmacy chains."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2867,7 +2867,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Pharmacy Chains?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Critical medication stockout for life-saving prescription, urgent drug interaction inquiry...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Critical medication stockout for life-saving prescription, urgent drug interaction inquiry...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Pharmacy Chains software stack?",
@@ -2875,7 +2875,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Pharmacy Chains?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In pharmacy chains, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In pharmacy chains, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -2913,7 +2913,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for orthodontic offices."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for orthodontic offices."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -2961,7 +2961,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Orthodontic Offices?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Poking archwire puncturing cheek, swallowed bracket, broken palate expander preventing eat...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Poking archwire puncturing cheek, swallowed bracket, broken palate expander preventing eat...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Orthodontic Offices software stack?",
@@ -2969,7 +2969,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Orthodontic Offices?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In orthodontic offices, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In orthodontic offices, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3007,7 +3007,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for law firms."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for law firms."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3057,7 +3057,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Law Firms?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Arrest or police detention, execution of search warrant, urgent temporary restraining orde...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Arrest or police detention, execution of search warrant, urgent temporary restraining orde...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Law Firms software stack?",
@@ -3065,7 +3065,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Law Firms?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In law firms, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In law firms, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3103,7 +3103,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for real estate agencies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for real estate agencies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3153,7 +3153,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Real Estate Agencies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Multiple offer deadline expiring on listing, buyer inspection contingency objection, aucti...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Multiple offer deadline expiring on listing, buyer inspection contingency objection, aucti...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Real Estate Agencies software stack?",
@@ -3161,7 +3161,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Real Estate Agencies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In real estate agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In real estate agencies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3199,7 +3199,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for mortgage brokers."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for mortgage brokers."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3249,7 +3249,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Mortgage Brokers?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Rate lock expiration deadline, pre-approval letter needed for weekend property open house ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Rate lock expiration deadline, pre-approval letter needed for weekend property open house ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Mortgage Brokers software stack?",
@@ -3257,7 +3257,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Mortgage Brokers?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In mortgage brokers, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In mortgage brokers, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3295,7 +3295,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for insurance agencies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for insurance agencies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3345,7 +3345,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Insurance Agencies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Major house fire or total vehicle loss claim, lapse of coverage notification before drivin...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Major house fire or total vehicle loss claim, lapse of coverage notification before drivin...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Insurance Agencies software stack?",
@@ -3353,7 +3353,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Insurance Agencies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In insurance agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In insurance agencies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3391,7 +3391,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for accounting firms."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for accounting firms."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3441,7 +3441,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Accounting Firms?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (IRS or ATO audit notice with 10-day deadline, payroll tax levy, impending quarterly tax fi...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (IRS or ATO audit notice with 10-day deadline, payroll tax levy, impending quarterly tax fi...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Accounting Firms software stack?",
@@ -3449,7 +3449,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Accounting Firms?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In accounting firms, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In accounting firms, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3487,7 +3487,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for tax preparation firms."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for tax preparation firms."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3537,7 +3537,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Tax Preparation Firms?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Unfiled back taxes facing wage garnishment, tax extension filing deadline, identity theft ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Unfiled back taxes facing wage garnishment, tax extension filing deadline, identity theft ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Tax Preparation Firms software stack?",
@@ -3545,7 +3545,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Tax Preparation Firms?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In tax preparation firms, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In tax preparation firms, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3585,7 +3585,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for title companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for title companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3635,7 +3635,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Title Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Closing day wire instruction verification, title defect discovered 24 hours before settlem...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Closing day wire instruction verification, title defect discovered 24 hours before settlem...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Title Companies software stack?",
@@ -3643,7 +3643,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Title Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In title companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In title companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3681,7 +3681,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for staffing agencies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for staffing agencies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3731,7 +3731,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Staffing Agencies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Warehouse shift no-show requiring 10 immediate temp replacements, urgent healthcare facili...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Warehouse shift no-show requiring 10 immediate temp replacements, urgent healthcare facili...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Staffing Agencies software stack?",
@@ -3739,7 +3739,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Staffing Agencies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In staffing agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In staffing agencies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3778,7 +3778,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for nail salons."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for nail salons."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3826,7 +3826,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Nail Salons?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Urgent bridal party cancellation refill, acrylic nail repair before photo shoot....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Urgent bridal party cancellation refill, acrylic nail repair before photo shoot....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Nail Salons software stack?",
@@ -3834,7 +3834,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Nail Salons?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In nail salons, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In nail salons, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3872,7 +3872,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for hair salons."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for hair salons."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -3920,7 +3920,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Hair Salons?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Color correction emergency after home dye disaster, last-minute event blowout appointment....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Color correction emergency after home dye disaster, last-minute event blowout appointment....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Hair Salons software stack?",
@@ -3928,7 +3928,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Hair Salons?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In hair salons, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In hair salons, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -3968,7 +3968,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for tattoo studios."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for tattoo studios."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4016,7 +4016,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Tattoo Studios?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Guest artist cancellation filling, infected tattoo inquiry, touch-up before major event....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Guest artist cancellation filling, infected tattoo inquiry, touch-up before major event....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Tattoo Studios software stack?",
@@ -4024,7 +4024,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Tattoo Studios?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In tattoo studios, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In tattoo studios, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4062,7 +4062,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for gyms & fitness studios."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for gyms & fitness studios."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4110,7 +4110,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Gyms & Fitness Studios?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Equipment malfunction causing member injury, urgent membership freeze/cancellation dispute...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Equipment malfunction causing member injury, urgent membership freeze/cancellation dispute...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Gyms & Fitness Studios software stack?",
@@ -4118,7 +4118,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Gyms & Fitness Studios?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In gyms & fitness studios, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In gyms & fitness studios, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4156,7 +4156,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for spa & wellness centers."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for spa & wellness centers."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4204,7 +4204,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Spa & Wellness Centers?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Full-day luxury package cancellation backfill, couple's massage anniversary request....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Full-day luxury package cancellation backfill, couple's massage anniversary request....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Spa & Wellness Centers software stack?",
@@ -4212,7 +4212,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Spa & Wellness Centers?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In spa & wellness centers, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In spa & wellness centers, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4250,7 +4250,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for restaurants."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for restaurants."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4298,7 +4298,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Restaurants?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (VIP private dining room request for tonight, food allergen emergency inquiry from patron....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (VIP private dining room request for tonight, food allergen emergency inquiry from patron....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Restaurants software stack?",
@@ -4306,7 +4306,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Restaurants?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In restaurants, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In restaurants, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4344,7 +4344,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for wedding planners."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for wedding planners."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4392,7 +4392,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Wedding Planners?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Venue cancellation 30 days before wedding, florist or caterer bankruptcy emergency....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Venue cancellation 30 days before wedding, florist or caterer bankruptcy emergency....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Wedding Planners software stack?",
@@ -4400,7 +4400,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Wedding Planners?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In wedding planners, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In wedding planners, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4438,7 +4438,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for photography studios."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for photography studios."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4486,7 +4486,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Photography Studios?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Wedding photographer emergency substitution, newborn session window closing (<14 days old)...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Wedding photographer emergency substitution, newborn session window closing (<14 days old)...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Photography Studios software stack?",
@@ -4494,7 +4494,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Photography Studios?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In photography studios, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In photography studios, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4532,7 +4532,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for event venues."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for event venues."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4580,7 +4580,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Event Venues?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Corporate event cancellation re-booking, wedding date double-booking resolution....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Corporate event cancellation re-booking, wedding date double-booking resolution....), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Event Venues software stack?",
@@ -4588,7 +4588,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Event Venues?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In event venues, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In event venues, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4626,7 +4626,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for catering companies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for catering companies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4674,7 +4674,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Catering Companies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Corporate breakfast order for 100 people needed tomorrow morning, wedding tasting reschedu...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Corporate breakfast order for 100 people needed tomorrow morning, wedding tasting reschedu...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Catering Companies software stack?",
@@ -4682,7 +4682,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Catering Companies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In catering companies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In catering companies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4720,7 +4720,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for auto dealerships."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for auto dealerships."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4769,7 +4769,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Auto Dealerships?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Customer holding cash wanting to test drive specific VIN on lot right now, trade-in apprai...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Customer holding cash wanting to test drive specific VIN on lot right now, trade-in apprai...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Auto Dealerships software stack?",
@@ -4777,7 +4777,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Auto Dealerships?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In auto dealerships, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In auto dealerships, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4817,7 +4817,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for car rental agencies."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for car rental agencies."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4866,7 +4866,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Car Rental Agencies?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Flight delay stranded traveler needing rental at 2am, insurance replacement vehicle needed...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Flight delay stranded traveler needing rental at 2am, insurance replacement vehicle needed...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Car Rental Agencies software stack?",
@@ -4874,7 +4874,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Car Rental Agencies?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In car rental agencies, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In car rental agencies, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -4912,7 +4912,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for auto body shops."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for auto body shops."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -4961,7 +4961,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Auto Body Shops?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Towed vehicle arriving from accident scene, non-drivable car blocking roadway, insurance c...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Towed vehicle arriving from accident scene, non-drivable car blocking roadway, insurance c...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Auto Body Shops software stack?",
@@ -4969,7 +4969,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Auto Body Shops?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In auto body shops, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In auto body shops, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -5007,7 +5007,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for veterinary clinics."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for veterinary clinics."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -5056,7 +5056,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Veterinary Clinics?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Pet ingested chocolate or rat poison, bloated abdomen, hit by car trauma, difficulty breat...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Pet ingested chocolate or rat poison, bloated abdomen, hit by car trauma, difficulty breat...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Veterinary Clinics software stack?",
@@ -5064,7 +5064,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Veterinary Clinics?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In veterinary clinics, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In veterinary clinics, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -5103,7 +5103,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for tutoring centers."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for tutoring centers."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -5152,7 +5152,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Tutoring Centers?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Failing grade before final exam, SAT/ACT test in 10 days, urgent IEP advocacy consultation...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Failing grade before final exam, SAT/ACT test in 10 days, urgent IEP advocacy consultation...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Tutoring Centers software stack?",
@@ -5160,7 +5160,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Tutoring Centers?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In tutoring centers, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In tutoring centers, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -5199,7 +5199,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for daycare centers."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for daycare centers."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -5248,7 +5248,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Daycare Centers?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Emergency child pickup authorization change, unexpected facility closure notification, urg...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Emergency child pickup authorization change, unexpected facility closure notification, urg...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Daycare Centers software stack?",
@@ -5256,7 +5256,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Daycare Centers?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In daycare centers, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In daycare centers, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -5294,7 +5294,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for senior care facilities."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for senior care facilities."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -5343,7 +5343,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Senior Care Facilities?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Hospital discharge needing immediate assisted living placement, sudden dementia wandering ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Hospital discharge needing immediate assisted living placement, sudden dementia wandering ...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Senior Care Facilities software stack?",
@@ -5351,7 +5351,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Senior Care Facilities?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In senior care facilities, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In senior care facilities, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -5389,7 +5389,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for dog grooming & boarding."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for dog grooming & boarding."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -5438,7 +5438,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Dog Grooming & Boarding?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Last-minute holiday boarding request, dog skunked or severely matted requiring emergency b...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Last-minute holiday boarding request, dog skunked or severely matted requiring emergency b...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Dog Grooming & Boarding software stack?",
@@ -5446,7 +5446,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Dog Grooming & Boarding?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In dog grooming & boarding, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In dog grooming & boarding, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   },
@@ -5484,7 +5484,7 @@ export const industries: Industry[] = [
       "intakeSteps": [
         {
           "name": "Instant Telephony & Message Ingestion",
-          "text": "Voice and chat streams connect in under 500ms without robotic ringing or hold delays for funeral homes."
+          "text": "Voice and chat streams connect with fast, natural responses without robotic hold delays for funeral homes."
         },
         {
           "name": "Vertical Triage & Need Qualification",
@@ -5533,7 +5533,7 @@ export const industries: Industry[] = [
     "faqs": [
       {
         "question": "How does the AI voice receptionist handle after-hours inquiries for Funeral Homes?",
-        "answer": "Our AI voice agent answers 24/7/365 in under 500ms using natural, regional accents (US or Australian). It qualifies caller urgency (Death has occurred at home or hospice; immediate transfer and transport coordination requi...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
+        "answer": "Our AI voice agent answers 24/7/365 with fast, natural voice responses using regional accents (US or Australian). It qualifies caller urgency (Death has occurred at home or hospice; immediate transfer and transport coordination requi...), books appointments into your calendar, and dispatches immediate text notifications to on-call staff."
       },
       {
         "question": "Does this system integrate directly with our existing Funeral Homes software stack?",
@@ -5541,7 +5541,7 @@ export const industries: Industry[] = [
       },
       {
         "question": "How does missed-call text-back increase booked revenue for Funeral Homes?",
-        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 30 seconds. In funeral homes, this captures between 30% and 50% of prospects before they dial a competitor."
+        "answer": "When a customer calls while your team is on a job or after hours, our system sends an automated conversational SMS in under 60 seconds. In funeral homes, this captures between 30% and 50% of prospects before they dial a competitor."
       }
     ]
   }

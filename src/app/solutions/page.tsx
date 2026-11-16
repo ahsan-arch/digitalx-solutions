@@ -70,7 +70,7 @@ export default function SolutionsHubPage() {
               Enterprise AI Voice Agents & Self-Hosted Automation
             </h2>
             <p className="text-sm text-foreground/70 mt-1 max-w-2xl">
-              Eliminate recurring per-task software fees and automate high-concurrency telephony with containerized n8n instances and sub-500ms voice agents.
+              Eliminate recurring per-task software fees and automate high-concurrency telephony with containerized n8n instances and low-latency voice agents.
             </p>
           </div>
           <Link

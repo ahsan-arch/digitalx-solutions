@@ -6,7 +6,7 @@ import { generatePageMetadata, siteConfig } from "@/lib/seo";
 export const metadata: Metadata = generatePageMetadata("/solutions/enterprise-ai-automation", {
   title: "B2B AI Voice Agents & Custom Automation | DigitalX",
   description:
-    "DigitalX Solutions engineers self-hosted n8n pipelines, sub-500ms AI voice agents, and CRM systems to eliminate SaaS bloat for high-ticket B2B firms.",
+    "DigitalX Solutions engineers self-hosted n8n pipelines, low-latency AI voice agents, and CRM systems to eliminate SaaS bloat for high-ticket B2B firms.",
 });
 
 export default function EnterpriseAIAutomationPage() {
@@ -88,7 +88,7 @@ export default function EnterpriseAIAutomationPage() {
             "name": "How do custom AI voice agents qualify high-ticket B2B leads?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations within 500 milliseconds of speech delivery. The agent asks dynamic qualifying questions—such as company size, budget, urgency, and technical stack—evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar."
+              "text": "Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations with fast, natural voice responses. The agent asks dynamic qualifying questions—such as company size, budget, urgency, and technical stack—evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar."
             }
           },
           {
@@ -112,7 +112,7 @@ export default function EnterpriseAIAutomationPage() {
             "name": "What latency is required for natural B2B voice conversations?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Natural human phone conversation requires a total roundtrip voice latency below 600 milliseconds. DigitalX Solutions achieves sub-500ms conversational response times by pairing streaming speech-to-text (Deepgram Nova-2), ultra-low-latency LLM inference, and streaming neural text-to-speech (ElevenLabs Turbo v2.5) over high-performance WebRTC and SIP telephony backbones."
+              "text": "Natural human phone conversation requires conversational pacing without unnatural pauses. DigitalX Solutions achieves fast, natural conversational response times by pairing streaming speech-to-text (Deepgram Nova-2), ultra-low-latency LLM inference, and streaming neural text-to-speech (ElevenLabs Turbo v2.5) over high-performance WebRTC and SIP telephony backbones."
             }
           },
           {
@@ -155,7 +155,7 @@ export default function EnterpriseAIAutomationPage() {
             Enterprise AI Voice Agents & Self-Hosted Automation Pipelines
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-            DigitalX Solutions engineers sub-500ms neural conversational voice agents, containerized{" "}
+            DigitalX Solutions engineers fast, natural conversational voice agents, containerized{" "}
             <Link href="/integrations/n8n" className="text-primary underline hover:text-primary/80">
               n8n workflow engines
             </Link>
@@ -186,7 +186,7 @@ export default function EnterpriseAIAutomationPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-border">
             <div className="flex items-center gap-2.5">
               <Zap className="w-4 h-4 text-primary shrink-0" />
-              <span className="text-xs font-medium text-muted-foreground">&lt; 500ms Neural Turnaround</span>
+              <span className="text-xs font-medium text-muted-foreground">Fast, Natural Turnaround</span>
             </div>
             <div className="flex items-center gap-2.5">
               <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
@@ -200,6 +200,18 @@ export default function EnterpriseAIAutomationPage() {
               <Lock className="w-4 h-4 text-primary shrink-0" />
               <span className="text-xs font-medium text-muted-foreground">Private Docker Deployment</span>
             </div>
+          </div>
+
+          {/* AI Voice & Call Recording Regulatory Disclosure */}
+          <div className="mt-6 flex items-center gap-2 rounded-lg border border-border/80 bg-muted/40 px-4 py-3 text-xs text-muted-foreground">
+            <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
+            <span>
+              <strong>Compliance Disclosure:</strong> Inbound call recording and AI voice handling comply with Australian Privacy Principles (Privacy Act 1988) and US two-party/one-party consent telecommunications laws. Read our{" "}
+              <Link href="/insights/ai-call-recording-laws-australia-us" className="text-primary underline hover:text-primary/80">
+                AI Call Recording Compliance Guide
+              </Link>
+              .
+            </span>
           </div>
         </header>
 
@@ -221,7 +233,7 @@ export default function EnterpriseAIAutomationPage() {
                     <Zap className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">
-                    Sub-500ms B2B AI Voice Agents
+                    Low-Latency B2B AI Voice Agents
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Autonomous conversational telephony systems conducting human-parity phone triage, qualifying prospective leads, and syncing bookings directly to your calendar with zero hold times. Powered by Vapi, Deepgram Nova-2, and Twilio.
@@ -323,7 +335,7 @@ export default function EnterpriseAIAutomationPage() {
                 <ul className="space-y-2 text-xs text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
-                    <span>Sub-500ms conversational turn turnaround for human-grade phone flow</span>
+                    <span>Fast, natural conversational turn turnaround for human-grade phone flow</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
@@ -365,7 +377,7 @@ export default function EnterpriseAIAutomationPage() {
                   <tr>
                     <td className="py-4 px-6 font-medium">Speech-to-Speech Turnaround</td>
                     <td className="py-4 px-6 text-muted-foreground">1,800ms – 3,200ms (robotic lag)</td>
-                    <td className="py-4 px-6 font-semibold text-foreground">&lt; 500ms (human-parity pacing)</td>
+                    <td className="py-4 px-6 font-semibold text-foreground">Fast &amp; natural pacing</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-6 font-medium">Speed-to-Lead (Web & Missed Call)</td>
@@ -475,7 +487,7 @@ export default function EnterpriseAIAutomationPage() {
                   How do custom AI voice agents qualify high-ticket B2B leads?
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations within 500 milliseconds of speech delivery. The agent asks dynamic qualifying questions—such as company size, budget, urgency, and technical stack—evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar.
+                  Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations with fast, natural voice responses. The agent asks dynamic qualifying questions—such as company size, budget, urgency, and technical stack—evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar.
                 </p>
               </div>
 
@@ -502,7 +514,7 @@ export default function EnterpriseAIAutomationPage() {
                   What latency is required for natural B2B voice conversations?
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Natural human phone conversation requires a total roundtrip voice latency below 600 milliseconds. DigitalX Solutions achieves sub-500ms conversational response times by pairing streaming speech-to-text (Deepgram Nova-2), ultra-low-latency LLM inference, and streaming neural text-to-speech (ElevenLabs Turbo v2.5) over high-performance WebRTC and SIP telephony backbones.
+                  Natural human phone conversation requires conversational pacing without unnatural pauses. DigitalX Solutions achieves fast, natural conversational response times by pairing streaming speech-to-text (Deepgram Nova-2), ultra-low-latency LLM inference, and streaming neural text-to-speech (ElevenLabs Turbo v2.5) over high-performance WebRTC and SIP telephony backbones.
                 </p>
               </div>
 

@@ -73,7 +73,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.75,
     }));
 
-    const articleEntries: MetadataRoute.Sitemap = Object.entries(articlesData).map(([slug, article]) => ({
+    const articleEntries: MetadataRoute.Sitemap = Object.entries(articlesData)
+        .filter(([, article]) => !article.noindex)
+        .map(([slug, article]) => ({
         url: `${siteConfig.domain}/insights/${slug}`,
         lastModified: new Date(article.dateModified || article.date),
         changeFrequency: "monthly",

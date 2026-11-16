@@ -15,8 +15,7 @@ export const metadata: Metadata = generatePageMetadata("/insights", {
     description: "Practical guides on AI voice receptionists, missed-call text-back, GoHighLevel setup, and workflow automation for US and Australian service businesses.",
 });
 
-const articles = Object.entries(articlesData)
-    .map(([slug, a]) => ({
+const articles = Object.entries(articlesData).filter(([, a]) => !a.noindex).map(([slug, a]) => ({
         slug,
         title: a.title,
         description: a.description,
@@ -119,3 +118,4 @@ export default function InsightsPage() {
         </main>
     );
 }
+
