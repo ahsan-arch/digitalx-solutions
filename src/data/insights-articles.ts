@@ -34,7 +34,7 @@ export const articlesData: Record<string, ArticleRecord> = {
     "how-much-does-a-missed-call-cost-a-business": {
         title: "How Much Does a Missed Call Cost a Service Business?",
         metaTitle: "Cost of Missed Calls for Service Businesses",
-        description: "Calculate the true financial cost of missed calls. See the math on lost revenue, ad spend waste, and how automated missed-call text-back recovers thousands.",
+        description: "Calculate the true financial cost of missed calls. See the math on lost revenue, ad waste, and how automated missed-call text-back recovers thousands.",
         date: "2026-07-02",
         dateModified: "2026-10-24",
         authorKey: "ahsan",
@@ -58,7 +58,7 @@ export const articlesData: Record<string, ArticleRecord> = {
     "ai-receptionist-vs-call-centre": {
         title: "AI Receptionist vs Traditional Call Centre: Cost & Quality Comparison",
         metaTitle: "AI Receptionist vs Call Centre: Comparison Guide",
-        description: "Compare AI voice receptionists against traditional human call centres. Detailed side-by-side cost per minute, response latency, CRM syncing, and error rates.",
+        description: "Compare AI voice receptionists against human call centres. Detailed side-by-side cost per minute, response latency, CRM syncing, and error rates.",
         date: "2026-07-16",
         dateModified: "2026-10-25",
         authorKey: "ahsan",
@@ -170,7 +170,7 @@ Turnkey implementation takes between 5 and 14 business days, including phone car
     "ai-voice-agent-pricing": {
         title: "AI Voice Agent Pricing: Transparent Setup & Per-Minute Breakdown",
         metaTitle: "AI Voice Agent Pricing: Cost Breakdown (2026)",
-        description: "How much does an AI voice agent cost? Full breakdown of setup fees, monthly retainers, telephony usage rates, and agency managed pricing across Australia & US.",
+        description: "How much does an AI voice agent cost? Full breakdown of setup fees, monthly retainers, telephony usage rates, and agency pricing across Australia & US.",
         date: "2026-07-30",
         dateModified: "2026-10-24",
         authorKey: "ahsan",
@@ -194,7 +194,7 @@ Turnkey implementation takes between 5 and 14 business days, including phone car
     "missed-call-text-back-compliance": {
         title: "Missed-Call Text-Back Compliance: TCPA, 10DLC & Australian Spam Act",
         metaTitle: "Missed-Call Text-Back Compliance",
-        description: "How to run missed-call text-back legally. Complete guide to A2P 10DLC registration, Australian Spam Act compliance, opt-out keywords, and carrier safeguards.",
+        description: "How to run missed-call text-back legally. Guide to A2P 10DLC registration, Australian Spam Act compliance, opt-out keywords, and carrier safeguards.",
         date: "2026-08-13",
         dateModified: "2026-10-24",
         authorKey: "ahsan",
@@ -218,7 +218,7 @@ Turnkey implementation takes between 5 and 14 business days, including phone car
     "ai-agent-vs-chatbot": {
         title: "AI Agent vs Chatbot: Key Differences, Architecture & ROI",
         metaTitle: "AI Agent vs Chatbot: Key Differences & ROI",
-        description: "Understand the core differences between AI agents and traditional chatbots. See how autonomous tool execution and CRM write access drive higher conversions.",
+        description: "Understand differences between AI agents and traditional chatbots. See how autonomous tool execution and CRM write access drive higher conversions.",
         date: "2026-08-27",
         dateModified: "2026-10-24",
         authorKey: "ahsan",
@@ -230,7 +230,7 @@ Turnkey implementation takes between 5 and 14 business days, including phone car
     "n8n-vs-zapier-vs-make": {
         title: "n8n vs Zapier vs Make: Workflow Automation Agency Comparison",
         metaTitle: "n8n vs Zapier vs Make Comparison",
-        description: "Compare n8n, Zapier, and Make for enterprise workflow automation. In-depth analysis of task costs, self-hosting data privacy, AI agents, and scaling limits.",
+        description: "Compare n8n, Zapier, and Make for workflow automation. In-depth analysis of task costs, self-hosting data privacy, AI agents, and scaling limits.",
         date: "2026-09-03",
         dateModified: "2026-10-25",
         authorKey: "ahsan",

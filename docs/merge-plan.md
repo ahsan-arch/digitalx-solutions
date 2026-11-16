@@ -30,3 +30,4 @@ For all live canonical URLs:
 3. **Structured Extraction (AEO):** A direct 2-4 sentence definition or answer block immediately beneath top-level headers.
 4. **Data Presentation:** At least one comparative table, technical specification list, or architectural step-by-step workflow.
 5. **FAQ Schema:** Question-and-answer pairs matching on-page copy verbatim, wrapped in JSON-LD `FAQPage` schema.
+

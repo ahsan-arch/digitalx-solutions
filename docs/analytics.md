@@ -51,3 +51,4 @@ In Google Tag Manager:
    - DataLayer Variable `form_name` $\rightarrow$ maps to GA4 Event Parameter `form_name`.
 3. **GA4 Event Tags:**
    - Fire GA4 Event Tags with Measurement ID `G-XXXXXXXXXX` on matching triggers. Mark `form_submit` and `phone_tap` as Key Events (Conversions) in Google Analytics 4.
+

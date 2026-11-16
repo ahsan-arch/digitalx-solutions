@@ -30,6 +30,9 @@ const teamMembers: Record<string, TeamMember> = {
       "Ahsan Architect is the founder and lead systems architect at DigitalX Solutions. With over eight years of hands-on experience in telecommunications infrastructure, enterprise CRM customization, and autonomous voice orchestration, Ahsan designs and audits mission-critical intake pipelines for service contractors, healthcare clinics, and advisory practices across Australia and North America.",
       "His technical expertise centers on bridging legacy telephony interfaces (PSTN, SIP trunks, carrier forwarding) with low-latency neural intelligence layers. By orchestrating Deepgram Nova-2 speech-to-text models, ultra-low latency large language model reasoning, and ElevenLabs streaming synthesis over WebRTC pipelines, he builds conversational intake engines that reliably achieve sub-500 millisecond voice turnaround latencies.",
       "Prior to establishing DigitalX Solutions in Casula, NSW, Ahsan architected automated sales pipelines, webhook routing middleware, and custom GoHighLevel CRM snapshots for high-growth commercial service providers. He advocates strictly for transparent operational metrics, zero vendor lock-in, and self-hosted automation infrastructure (utilizing n8n and PostgreSQL) to eliminate recurring software tax.",
+      "In his day-to-day engineering leadership, Ahsan focuses on deterministic latency profiling across global carrier routes. Every telephony deployment undergoes rigorous jitter buffer testing, acoustic echo cancellation tuning, and carrier-grade SIP trunk failover simulations. This disciplined approach guarantees that inbound callers experience natural conversational cadence without audible packet degradation or conversational collisions, even during sudden regional peak call spikes.",
+      "Under his architectural direction, DigitalX Solutions rejects black-box automation dependencies. Ahsan prioritizes composable event-driven architectures where client data ownership is paramount. By enforcing strict separation between conversational intelligence layers and core business records, every client deployment maintains localized cryptographic key isolation, automated database rollbacks, and tamper-resistant transaction logging compliant with modern Australian and North American enterprise regulatory frameworks.",
+      "His evaluation framework for automation readiness balances engineering feasibility against demonstrable unit economics. Rather than deploying artificial intelligence for its own sake, Ahsan mandates that every voice agent, webhook middleware bridge, and CRM snapshot addresses a quantified operational bottleneck—such as uncaptured after-hours emergency calls or repetitive manual calendar dispatching—ensuring that clients capture measurable operational velocity from day one.",
       "At DigitalX Solutions, Ahsan directly oversees technical architecture reviews, telephony compliance auditing under Australian and US telecommunications law, and the continuous quality assurance of production conversational agents."
     ],
     linkedin: factsData.leadership.founder.linkedinUrl,
@@ -198,6 +201,42 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
               ))}
             </div>
 
+            {/* Architecture Standards */}
+            <div className="mt-10 border-t border-border/60 pt-8">
+              <h2 className="font-display text-lg font-bold text-foreground">
+                Telephony Architecture &amp; Auditing Standards
+              </h2>
+              <p className="mt-1 text-xs text-foreground/60">
+                Core technical design principles enforced across all voice agent and CRM infrastructure builds.
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                <div className="rounded-2xl border border-border/80 bg-surface-50 p-4">
+                  <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-brand">
+                    Sub-500ms Turnaround
+                  </h3>
+                  <p className="mt-1.5 text-xs text-foreground/75">
+                    Rigorous acoustic pipeline profiling across WebRTC audio transport, streaming speech recognition, and token synthesis to ensure natural conversational pacing.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border/80 bg-surface-50 p-4">
+                  <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-brand">
+                    Zero Data Loss Queues
+                  </h3>
+                  <p className="mt-1.5 text-xs text-foreground/75">
+                    High-throughput webhook buffering using Redis queues, exponential backoff retries, and strict schema validation to prevent missing inbound leads.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border/80 bg-surface-50 p-4">
+                  <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-brand">
+                    Multi-Jurisdiction Compliance
+                  </h3>
+                  <p className="mt-1.5 text-xs text-foreground/75">
+                    Architectural pre-call synthetic disclosures, two-party recording consent routing, and 10DLC carrier registrations for complete legal compliance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Core Technical Capabilities */}
             <div className="mt-10 border-t border-border/60 pt-8">
               <h2 className="flex items-center gap-2 font-display text-lg font-bold text-foreground">
@@ -281,3 +320,4 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
     </>
   );
 }
+

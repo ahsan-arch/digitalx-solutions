@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "harbor-plumbing":
       "See how a commercial plumbing contractor recovered after-hours emergency calls using 24/7 AI voice triage and automated missed-call text-back workflows.",
     "atlas-consulting":
-      "Discover how an accounting and advisory practice automated client qualification, intake triage, and calendar bookings with custom GoHighLevel CRM workflows.",
+      "See how an accounting and advisory practice automated client qualification, intake triage, and calendar bookings with custom GoHighLevel CRM workflows.",
   };
 
   if (!project) {

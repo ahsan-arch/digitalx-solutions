@@ -5,7 +5,8 @@
   "description": "DigitalX Solutions — AI-powered automation for local service businesses.",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/check-seo.js",
+    "build": "next build && node scripts/check-site.js",
+    "check-site": "node scripts/check-site.js",
     "check-seo": "node scripts/check-seo.js",
     "start": "next start",
     "lint": "next lint --dir src",

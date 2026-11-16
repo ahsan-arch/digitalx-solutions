@@ -35,32 +35,39 @@ export function generateStaticParams() {
 }
 
 function buildIndustryMetaDescription(name: string, existing?: string): string {
-  if (existing && existing.length >= 150 && existing.length <= 160) {
+  if (existing && existing.length >= 130 && existing.length <= 155) {
     return existing;
   }
 
   const cleanName = name.toLowerCase().replace(/ & mechanics/g, "");
 
   const variations = [
-    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM booking workflows for ${cleanName} across the USA and Australia.`,
-    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM appointment booking workflows for ${cleanName} in the US and AU.`,
-    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and custom CRM appointment booking workflows for ${cleanName} in the US & Australia.`,
-    `Automate ${cleanName} with 24/7 AI voice receptionists, instant missed-call text-back, and custom CRM appointment booking workflows in the US & Australia.`,
-    `Automate ${cleanName} with 24/7 AI voice receptionists, instant missed-call text-back, and multi-step CRM booking pipelines across the US and Australia.`,
-    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM booking pipelines for ${cleanName} in the US and Australia.`,
-    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM booking workflows for ${cleanName} across the US & AU.`,
-    `Deploy 24/7 AI voice receptionists, missed-call text-back, and automated CRM booking workflows for ${cleanName} across the USA & Australia.`,
+    `Deploy 24/7 AI voice receptionists, missed-call text-back, and automated CRM booking workflows for ${cleanName} across the US and AU.`,
+    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and automated CRM booking workflows for ${cleanName} in the US.`,
+    `Deploy 24/7 AI voice receptionists, instant missed-call text-back, and CRM booking workflows for ${cleanName} in the US and AU.`,
+    `Automate ${cleanName} with 24/7 AI voice receptionists, missed-call text-back, and multi-step CRM booking pipelines in the US and AU.`,
+    `Automate ${cleanName} with 24/7 AI voice receptionists, missed-call text-back, and CRM booking workflows across the US and AU.`,
+    `Deploy 24/7 AI voice receptionists, missed-call text-back, and CRM booking pipelines for ${cleanName} across the US and AU.`,
+    `Deploy 24/7 AI voice receptionists, missed-call text-back, and custom CRM booking workflows for ${cleanName} in the US & AU.`,
+    `Deploy 24/7 AI voice receptionists and automated CRM booking pipelines for ${cleanName} across the US and Australia.`,
+    `Deploy 24/7 AI voice receptionists and automated CRM booking pipelines for ${cleanName} across the US and AU.`,
+    `Deploy 24/7 AI voice receptionists and custom CRM booking workflows for ${cleanName} across US and AU teams.`,
   ];
 
   for (const v of variations) {
-    if (v.length >= 150 && v.length <= 160) {
+    if (v.length >= 130 && v.length <= 155) {
       return v;
     }
   }
 
-  const valid = variations.filter((v) => v.length <= 160);
-  valid.sort((a, b) => Math.abs(155 - a.length) - Math.abs(155 - b.length));
-  return valid[0] || variations[0];
+  const valid = variations.filter((v) => v.length <= 155);
+  valid.sort((a, b) => b.length - a.length);
+  if (valid[0]) {
+    return valid[0];
+  }
+
+  const fallback = `Deploy 24/7 AI voice receptionists, missed-call text-back, and CRM booking workflows for ${cleanName}.`;
+  return fallback.length <= 155 ? fallback : fallback.slice(0, 152) + "...";
 }
 
 export async function generateMetadata({ params }: { params: Promise<PageParams> }): Promise<Metadata> {

@@ -48,3 +48,4 @@ The following items are flagged for the site owner in `/docs/missing-info.md`. U
 2. **n8n Creator / Partner Proof URL:** Public profile URL on n8n.io creators directory.
 3. **HubSpot Certification ID / Link:** HubSpot Academy certificate URL.
 4. **Client Logos:** Permission status set to `false` in `facts.json` until written release forms are signed. All client case studies remain labelled as *"Client name withheld"*.
+

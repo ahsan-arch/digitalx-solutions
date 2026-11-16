@@ -6,7 +6,7 @@ import { generatePageMetadata, siteConfig } from "@/lib/seo";
 export const metadata: Metadata = generatePageMetadata("/solutions/enterprise-ai-automation", {
   title: "B2B AI Voice Agents & Custom Automation | DigitalX",
   description:
-    "DigitalX Solutions engineers self-hosted n8n pipelines, sub-500ms AI voice agents, and custom CRM systems to eliminate SaaS bloat for high-ticket B2B firms.",
+    "DigitalX Solutions engineers self-hosted n8n pipelines, sub-500ms AI voice agents, and CRM systems to eliminate SaaS bloat for high-ticket B2B firms.",
 });
 
 export default function EnterpriseAIAutomationPage() {

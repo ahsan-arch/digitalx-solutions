@@ -7,7 +7,7 @@ import { developmentServices } from "@/data/development-services";
 export const metadata: Metadata = {
   title: "Custom AI & Automation Development | DigitalX",
   description:
-    "Explore custom CRM development, resilient API and webhook integrations, AI agent development, and white-label CRM platforms engineered by DigitalX Solutions.",
+    "Custom CRM development, resilient API & webhook integrations, AI agent engineering, and white-label CRM platforms built by DigitalX Solutions.",
   alternates: {
     canonical: `${siteConfig.domain}/development`,
   },

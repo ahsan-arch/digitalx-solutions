@@ -16,3 +16,4 @@ All permanent 301 redirects implemented in `next.config.ts` to prevent broken li
 | `/insights/how-plumbing-company-recovered-180k-ai-voice` | `/case-studies/harbor-plumbing` | 301 Permanent | Compliance unpublish: unsourced $180k revenue figure unpublished until client releases tax proof | 2026-11-16 |
 | `/insights/how-automation-reduced-missed-calls` | `/solutions/missed-call-text-back` | 301 Permanent | Compliance unpublish: unsourced 92% missed call claim redirected to commercial solution | 2026-11-16 |
 | `/insights/how-dental-clinic-increased-appointments-32-percent` | `/case-studies/riverstone-dental` | 301 Permanent | Compliance unpublish: unsourced 32% figure in URL slug redirected to canonical case study | 2026-11-16 |
+
