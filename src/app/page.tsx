@@ -225,10 +225,10 @@ export default function HomePage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <PhoneCall className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">62% Call Loss</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Industry Telecom Benchmark</span>
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Zero Call Abandonment</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">24/7 Voice Answering</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Small service businesses miss over half of all inbound calls during active jobs, lunch breaks, and evenings.
+                  Answers every inbound call immediately, preventing prospective clients from dropping to competitors while you are on jobs.
                 </p>
               </div>
 
@@ -236,10 +236,10 @@ export default function HomePage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <Clock className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">85% Hang-Up Rate</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Consumer Behavior Survey</span>
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Instant SMS Dispatch</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Under 30-Second Text-Back</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Callers who hit voicemail hang up without leaving a message. Voicemail is where inbound deals go to die.
+                  Dispatches a personalized conversational SMS within 30 seconds of an unanswered call to engage the prospect instantly.
                 </p>
               </div>
 
@@ -248,9 +248,9 @@ export default function HomePage() {
                   <Zap className="h-4 w-4" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">391% Conversion Lift</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">HBR Speed-to-Lead Study</span>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">HBR Lead Response Study</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Replying with a conversational two-way text under 60 seconds captures the lead before they reach competitor lines.
+                  Harvard Business Review research demonstrates responding within 60 seconds delivers dramatic conversion gains over 30-minute delays.
                 </p>
               </div>
 
@@ -258,10 +258,10 @@ export default function HomePage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <Database className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">80% Less Data Entry</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Automated CRM Benchmark</span>
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Direct Calendar Booking</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Two-Way CRM Integration</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Eliminating manual job logging, back-and-forth scheduling, and CRM updates frees up valuable operational hours.
+                  Qualifies job requirements and writes confirmed appointments straight into your calendar and CRM without phone tag.
                 </p>
               </div>
             </div>

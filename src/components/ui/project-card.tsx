@@ -56,8 +56,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </div>
 
-          <span className="shrink-0 rounded-md bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700 border border-emerald-600/20">
-            Client Case Study
+          <span className="shrink-0 rounded-md bg-surface-100 px-2.5 py-1 text-[11px] font-medium text-foreground/75 border border-border">
+            {hasLogoPermission ? "Client Case Study" : "Client name withheld"}
           </span>
         </div>
 

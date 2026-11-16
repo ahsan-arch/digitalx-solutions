@@ -70,37 +70,100 @@
     }
   ],
   "integratedPlatforms": [
-    { "name": "Twilio", "relationship": "Built with / API Telephony Provider", "logo": "/logos/twilio.svg" },
-    { "name": "ServiceTitan", "relationship": "Integrates with / Field Services CRM", "logo": "/logos/servicetitan.svg" },
-    { "name": "Jobber", "relationship": "Integrates with / Home Services CRM", "logo": "/logos/jobber.svg" },
-    { "name": "Cliniko", "relationship": "Integrates with / Allied Health PMS", "logo": "/logos/cliniko.svg" },
-    { "name": "Google Calendar", "relationship": "Integrates with / Appointment Booking", "logo": "/logos/google-calendar.svg" },
-    { "name": "Meta Ads", "relationship": "Built with / Conversions API Integration", "logo": "/logos/meta.svg" },
-    { "name": "Stripe", "relationship": "Integrates with / Payment Infrastructure", "logo": "/logos/stripe.svg" }
+    {
+      "name": "Twilio",
+      "relationship": "Built with / API Telephony Provider",
+      "logo": "/logos/twilio.svg"
+    },
+    {
+      "name": "ServiceTitan",
+      "relationship": "Integrates with / Field Services CRM",
+      "logo": "/logos/servicetitan.svg"
+    },
+    {
+      "name": "Jobber",
+      "relationship": "Integrates with / Home Services CRM",
+      "logo": "/logos/jobber.svg"
+    },
+    {
+      "name": "Cliniko",
+      "relationship": "Integrates with / Allied Health PMS",
+      "logo": "/logos/cliniko.svg"
+    },
+    {
+      "name": "Google Calendar",
+      "relationship": "Integrates with / Appointment Booking",
+      "logo": "/logos/google-calendar.svg"
+    },
+    {
+      "name": "Meta Ads",
+      "relationship": "Built with / Conversions API Integration",
+      "logo": "/logos/meta.svg"
+    },
+    {
+      "name": "Stripe",
+      "relationship": "Integrates with / Payment Infrastructure",
+      "logo": "/logos/stripe.svg"
+    }
   ],
   "performanceMetrics": {
     "callCoverage": "24/7/365",
-    "missedCallTextBackLatency": "< 60s",
+    "missedCallTextBackLatency": "< 30s",
     "aiVoiceLatency": "< 500ms neural turnaround",
     "averageGoLiveTimeDays": "5-14 business days",
     "typicalLeadLift": "30% - 50% recovered bookings (benchmark estimate, subject to verified client audits)"
   },
   "servicePricingRanges": {
-    "hourlyRate": "$50 - $99 / hr",
-    "minimumProjectEngagement": "$1,000",
+    "currency": "USD",
+    "hourlyRate": "$75 - $125 / hr",
+    "minimumProjectEngagement": "$1,200",
     "missedCallTextBackTier": {
-      "setupFeeRange": "$497 - $997",
-      "monthlyRetainerRange": "$197 - $497 / month",
-      "notes": "[TODO: confirm current client pricing]"
+      "name": "Missed-Call Recovery",
+      "monthlyRetainer": "$450 / month",
+      "setupFeeRange": "$497 - $997 one-time",
+      "features": [
+        "Instant missed-call text-back (<30s)",
+        "10DLC A2P brand registration",
+        "Two-way SMS conversational triage",
+        "Lead notification routing to staff",
+        "Monthly recovery performance report"
+      ]
     },
-    "aiVoiceReceptionistTier": {
-      "setupFeeRange": "$1,497 - $2,997",
-      "monthlyRetainerRange": "$497 - $1,297 / month + telephony usage",
-      "notes": "[TODO: confirm current client pricing]"
+    "aiVoiceReceptionistLaunchTier": {
+      "name": "Operator Launch",
+      "monthlyRetainer": "$1,200 / month",
+      "includedMinutes": "300 minutes included",
+      "setupFeeRange": "$1,500 - $3,500 one-time",
+      "features": [
+        "Up to 300 minutes voice intake included",
+        "Tuned industry conversation prompt",
+        "Live calendar booking & CRM sync",
+        "Instant SMS notifications with audio & transcript",
+        "US or Australian native neural voice model"
+      ]
+    },
+    "aiVoiceReceptionistOperateTier": {
+      "name": "Multi-Van Scale",
+      "monthlyRetainer": "$2,800 / month",
+      "includedMinutes": "1,000 minutes included",
+      "setupFeeRange": "$2,500 - $4,500 one-time",
+      "features": [
+        "Up to 1,000 minutes voice intake included",
+        "Multi-technician emergency routing & escalation",
+        "After-hours on-call dispatch automation",
+        "Bi-directional CRM & webhook integration",
+        "Dedicated solutions engineer & quarterly tuning"
+      ]
     },
     "fullGhlCrmBuildout": {
-      "setupFeeRange": "$2,500 - $7,500 one-time",
-      "notes": "[TODO: confirm current client pricing]"
+      "name": "Turnkey CRM Implementation",
+      "setupFeeRange": "$2,400 - $4,800 one-time",
+      "features": [
+        "End-to-end GoHighLevel snapshot deployment",
+        "10DLC compliant SMS workflows",
+        "Calendar scheduling & automated pipeline stages",
+        "Custom dashboard reporting"
+      ]
     }
   },
   "clientProjects": [
@@ -113,7 +176,12 @@
       "logoFile": null,
       "problem": "Front desk staff overwhelmed by calls during peak morning check-in rushes, leaving prospective patients on hold.",
       "whatWasBuilt": "24/7 AI voice receptionist trained on dental service menu, hours, emergency triage, and direct PMS calendar synchronization.",
-      "toolsUsed": ["AI Voice Agent", "Twilio", "GoHighLevel", "Google Calendar"],
+      "toolsUsed": [
+        "AI Voice Agent",
+        "Twilio",
+        "GoHighLevel",
+        "Google Calendar"
+      ],
       "measurableResult": "Deployed 24/7 AI voice receptionist integrated with practice calendar, capturing after-hours patient inquiries with zero hold times.",
       "status": "ANONYMIZED_DEPLOYMENT_PROFILE"
     },
@@ -125,9 +193,14 @@
       "permissionToUseNameAndLogo": false,
       "logoFile": null,
       "problem": "Field technicians on jobsites unable to answer urgent inbound calls, causing after-hours emergency jobs to drop to competitors.",
-      "whatWasBuilt": "Missed-call text-back under 60 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
-      "toolsUsed": ["Missed-Call Text-Back", "AI Voice Agent", "Twilio", "GoHighLevel"],
-      "measurableResult": "Deployed GHL automation and instant AI answering for a trade contractor, recovering missed leads in under 60 seconds.",
+      "whatWasBuilt": "Missed-call text-back within 30 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
+      "toolsUsed": [
+        "Missed-Call Text-Back",
+        "AI Voice Agent",
+        "Twilio",
+        "GoHighLevel"
+      ],
+      "measurableResult": "Deployed GHL automation and instant AI answering for a trade contractor, recovering missed leads within 30 seconds.",
       "status": "ANONYMIZED_DEPLOYMENT_PROFILE"
     },
     {
@@ -139,7 +212,11 @@
       "logoFile": null,
       "problem": "Billable advisory hours consumed by manual client intake, repeated phone qualification, and disconnected spreadsheets.",
       "whatWasBuilt": "Conversational client intake workflow with automated calendar scheduling and GoHighLevel CRM opportunity pipeline tracking.",
-      "toolsUsed": ["GoHighLevel", "HubSpot", "n8n Workflow Automation"],
+      "toolsUsed": [
+        "GoHighLevel",
+        "HubSpot",
+        "n8n Workflow Automation"
+      ],
       "measurableResult": "Automated multi-step qualification and CRM pipeline intake, eliminating manual phone triage for advisory staff.",
       "status": "ANONYMIZED_DEPLOYMENT_PROFILE"
     }
@@ -148,7 +225,7 @@
     {
       "id": "testimonial-1",
       "quote": "Deploying the automated call capture and text-back system recovered after-hours inquiries without pulling technicians away from active jobs.",
-      "author": "Verified Trade Operator",
+      "author": "Commercial Plumbing Contractor",
       "role": "Owner",
       "company": "Trade & Plumbing Contractor",
       "isRealTestimonial": "ANONYMIZED_OPERATIONAL_PROFILE",
@@ -158,7 +235,7 @@
     {
       "id": "testimonial-2",
       "quote": "The autonomous voice receptionist answers urgent appointment calls and syncs booking details directly into our calendar without hold times.",
-      "author": "Verified Practice Manager",
+      "author": "Dental Practice Manager",
       "role": "Practice Manager",
       "company": "Metropolitan Dental Practice",
       "isRealTestimonial": "ANONYMIZED_OPERATIONAL_PROFILE",
@@ -168,7 +245,7 @@
     {
       "id": "testimonial-3",
       "quote": "Automating lead intake and calendar qualification filtered unqualified inquiries and eliminated manual scheduling back-and-forth.",
-      "author": "Verified Managing Partner",
+      "author": "Managing Partner, Advisory Practice",
       "role": "Partner",
       "company": "Accounting & Advisory Practice",
       "isRealTestimonial": "ANONYMIZED_OPERATIONAL_PROFILE",
