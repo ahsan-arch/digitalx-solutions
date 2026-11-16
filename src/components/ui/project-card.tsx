@@ -34,7 +34,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <div className="flex h-10 w-24 shrink-0 items-center">
                 <Image
                   src={project.logoFile!}
-                  alt={`${project.client} verified client logo`}
+                  alt={`${project.client} client logo`}
                   width={96}
                   height={40}
                   className="max-h-10 w-auto object-contain"
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           <span className="shrink-0 rounded-md bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700 border border-emerald-600/20">
-            Verified Case Study
+            Client Case Study
           </span>
         </div>
 
@@ -82,13 +82,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* Verified Measurable Result */}
+        {/* Measured Operational Result */}
         <div className="mt-5 rounded-2xl border border-emerald-200/70 bg-emerald-50/60 p-4">
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
             <div>
               <span className="font-mono text-[10px] font-medium text-emerald-800">
-                Verified Operational Result
+                Measured Operational Result
               </span>
               <p className="mt-0.5 text-xs font-semibold text-emerald-950 leading-relaxed">
                 {project.measurableResult}

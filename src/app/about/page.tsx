@@ -164,7 +164,7 @@ export default function AboutPage() {
                                 <h2 className="mt-1 font-display text-3xl text-foreground">Engineering Leadership</h2>
                             </div>
                             <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-600/20 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> Verified Australian Entity
+                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> Registered Australian Entity (ABN 34 683 241 189)
                             </span>
                         </div>
 

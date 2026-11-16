@@ -79,7 +79,7 @@ export const industries: Industry[] = [
     "name": "Plumbers, HVAC & Trade Businesses",
     "metaTitle": "24/7 AI Answering & Dispatch for Plumbers & HVAC | DigitalX",
     "h1": "24/7 AI Answering & Dispatch Automation for Plumbers, HVAC, and Trades",
-    "subheadline": "Never miss another $300+ emergency dispatch call. Capture after-hours leads, schedule jobs directly into your dispatch software, and recover missed calls in under 60 seconds—all without paying for a traditional call center.",
+    "subheadline": "Never miss another $300+ emergency dispatch call. Capture after-hours leads, schedule jobs directly into your dispatch software, and recover missed calls within 30 seconds—all without paying for a traditional call center.",
     "trustBanner": "Trusted by residential & commercial trade contractors across Australia & the USA to handle 24/7 client booking.",
     "metaDescription": "Stop losing high-value after-hours calls. We deploy 24/7 AI answering, emergency dispatch, and GoHighLevel CRM setups for trade businesses in the US & AU.",
     "category": "Home Services & Contractors",
@@ -183,7 +183,7 @@ export const industries: Industry[] = [
       {
         "feature": "Missed Call Backup",
         "traditional": "None (if line is busy, client goes to voicemail)",
-        "digitalx": "Automated SMS text-back in under 60s"
+        "digitalx": "Automated SMS text-back in under 30s"
       },
       {
         "feature": "Software Integration",

@@ -26,6 +26,13 @@ const nextConfig: NextConfig = {
       { source: "/solutions/ai-voice-receptionists", destination: "/solutions/ai-voice-agents", permanent: true },
       { source: "/solutions/chatbots", destination: "/solutions/ai-agents-chatbots", permanent: true },
       { source: "/solutions/automated-lead-nurturing", destination: "/solutions/lead-generation", permanent: true },
+      // Content consolidation redirects (resolves keyword cannibalization & duplicate explainers)
+      { source: "/insights/ai-voice-receptionist-cost", destination: "/insights/ai-voice-agent-pricing", permanent: true },
+      { source: "/insights/n8n-vs-zapier", destination: "/insights/n8n-vs-zapier-vs-make", permanent: true },
+      { source: "/insights/ai-voice-receptionists-guide", destination: "/insights/what-is-an-ai-voice-agent", permanent: true },
+      { source: "/insights/ai-receptionist-vs-human-receptionist", destination: "/insights/ai-receptionist-vs-call-centre", permanent: true },
+      { source: "/insights/missed-call-text-back-guide", destination: "/solutions/missed-call-text-back", permanent: true },
+      { source: "/riverstone-dental-group", destination: "/case-studies/riverstone-dental", permanent: true },
       // Integration slug aliases
       { source: "/integrations/gohighlevel-ai-voice-agent", destination: "/integrations/gohighlevel", permanent: true },
       { source: "/integrations/n8n-workflows-for-business", destination: "/integrations/n8n", permanent: true },

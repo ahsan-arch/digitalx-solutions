@@ -155,7 +155,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               {project.industry} Case Study
             </span>
             <span className="text-xs text-foreground/40">•</span>
-            <span className="text-xs font-medium text-foreground/60">Verified Production Build</span>
+            <span className="text-xs font-medium text-foreground/60">Production Architecture</span>
           </div>
 
           {!project.permissionToUseNameAndLogo && (
@@ -278,7 +278,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <div className="flex items-center gap-2.5">
             <TrendingUp className="h-5 w-5 text-emerald-600" />
             <h2 className="font-display text-xl font-bold text-foreground">
-              Verified Operational Outcomes
+              Measured Operational Outcomes
             </h2>
           </div>
           <p className="mt-3 text-base font-semibold text-emerald-700">

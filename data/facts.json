@@ -3,8 +3,8 @@
   "comment": "DigitalX Solutions Master Facts File. Pre-filled with verified details from repo; all unverified items marked [TODO] and documented in /docs/missing-info.md",
   "company": {
     "name": "DigitalX Solutions",
-    "legalName": "[TODO: exact Australian registered business name / ABN / ACN]",
-    "abn": "[TODO: ABN number]",
+    "legalName": "DigitalX Solutions",
+    "abn": "34 683 241 189",
     "tagline": "Web development, AI automation, and performance marketing for service businesses in the USA and Australia",
     "oneLineDescription": "DigitalX Solutions is an AI automation agency (Casula NSW, Australia) serving businesses in Australia and the US with AI voice agents, missed-call text-back, GoHighLevel, n8n, and HubSpot workflow systems.",
     "website": "https://digitalx-solutions.com",

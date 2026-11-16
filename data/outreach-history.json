@@ -5251,5 +5251,82 @@
     "status": "sent",
     "provider": "smtp",
     "messageId": "<becdc0c3-8fce-05b8-9542-4cc6a8ba722c@digitalx-solutions.com>"
+  },
+  {
+    "email": "enquiries@sydneywidepartyhire.com.au",
+    "name": "Sydneywide Party Hire",
+    "company": "Sydneywide Party Hire",
+    "industry": "b2b",
+    "subject": "after-hours quote inquiries and equipment bookings at Sydneywide Party Hire",
+    "sentAt": "2026-11-13T10:53:51.976Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<c4e2eea1-d7d6-44d1-0005-f0697060d7aa@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@ayershouse.com.au",
+    "name": "Ayers House",
+    "company": "Ayers House",
+    "industry": "b2b",
+    "subject": "capturing private tour inquiries and date checks at Ayers House",
+    "sentAt": "2026-11-13T10:58:55.136Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<1f8a4c7a-ea7e-d238-c10b-fe45167abc66@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@expertmovers.au",
+    "name": "Expert Movers",
+    "company": "Expert Movers",
+    "industry": "b2b",
+    "subject": "speed-to-lead and instant move estimates at Expert Movers",
+    "sentAt": "2026-11-13T11:03:57.902Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<71b45dab-0178-b1ec-9b97-52b4c1e57c9b@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@zoomremovals.com.au",
+    "name": "ZOOM Removals",
+    "company": "ZOOM Removals",
+    "industry": "b2b",
+    "subject": "moving quote overflow and booking automation at ZOOM Removals",
+    "sentAt": "2026-11-13T11:09:00.570Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<0e9e3760-3b7a-bb45-bf09-6f328a7b291d@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@dialupplumbing.com.au",
+    "name": "Dial Up Plumbing",
+    "company": "Dial Up Plumbing",
+    "industry": "trades",
+    "subject": "after-hours emergency calls and booking intake at Dial Up Plumbing",
+    "sentAt": "2026-11-13T14:39:54.620Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<c303fdd4-6d91-bb9d-4b2f-a98a89565865@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@stsplumbing.com.au",
+    "name": "STS Plumbing",
+    "company": "STS Plumbing",
+    "industry": "trades",
+    "subject": "after-hours call overflow and quote bookings at STS Plumbing",
+    "sentAt": "2026-11-13T14:44:58.296Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<9c9b2098-1234-e7cc-73ea-a1ad8863e9c6@digitalx-solutions.com>"
+  },
+  {
+    "email": "office@collisbrosplumbing.com.au",
+    "name": "Collis Bros Plumbing",
+    "company": "Collis Bros Plumbing",
+    "industry": "trades",
+    "subject": "speed-to-lead and quote booking intake at Collis Bros Plumbing",
+    "sentAt": "2026-11-13T14:50:06.323Z",
+    "status": "sent",
+    "provider": "smtp",
+    "messageId": "<c936a170-f00e-be11-49c6-60ef616f8228@digitalx-solutions.com>"
   }
 ]

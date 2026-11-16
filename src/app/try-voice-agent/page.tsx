@@ -85,6 +85,16 @@ export default function TryVoiceAgentPage() {
       <section className="container-shell mt-10">
         <div className="mx-auto max-w-3xl">
           <VoiceAgentExperience />
+          {/* Compliance & AI Disclosure Banner */}
+          <div className="mt-4 rounded-lg border border-border/70 bg-surface-50 p-3.5 text-center text-xs text-foreground/75">
+            <p>
+              <strong>Notice &amp; AI Disclosure:</strong> This interactive demo uses synthetic conversational speech powered by artificial intelligence models. Audio sessions may be logged for quality, safety, and latency benchmarking. Review our guide on{" "}
+              <Link href="/insights/ai-call-recording-laws-australia-us" className="text-brand underline hover:text-brand-deep">
+                AI call recording laws in Australia &amp; the United States
+              </Link>{" "}
+              for full telephony compliance details.
+            </p>
+          </div>
         </div>
       </section>
 

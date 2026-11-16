@@ -123,11 +123,11 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Hero Header */}
       <section className="container-shell">
         <div className="flex flex-wrap items-center gap-3 text-xs text-foreground/60 mb-2">
-          <span className="font-mono text-xs font-medium text-brand">Architecture Verified</span>
+          <span className="font-mono text-xs font-medium text-brand">Engineering Architecture</span>
           <span>•</span>
           <span className="font-medium text-foreground/80">Last Updated: 25 October 2026</span>
           <span>•</span>
-          <span>Reviewed by Ahsan Architect</span>
+          <Link href="/about" className="hover:text-brand transition-colors">Reviewed by Ahsan Architect (Lead Solutions Engineer)</Link>
         </div>
         <h1 className="mt-2 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">{solution.name}</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">{solution.summary}</p>
@@ -207,7 +207,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
               <div className="flex items-start gap-2">
                 <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" />
                 <div>
-                  <span className="font-semibold text-foreground">Verified Office: </span>
+                  <span className="font-semibold text-foreground">Registered Office: </span>
                   <span>16 Boldrewood Ave, Casula NSW 2170, Australia</span>
                 </div>
               </div>
@@ -391,6 +391,28 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                   </Link>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Telephony Compliance Note */}
+      {solution.slug === "ai-voice-agents" && (
+        <section className="container-shell mt-10">
+          <div className="rounded-2xl border border-border/80 bg-surface-50 p-6 text-xs text-foreground/80 flex items-start gap-3">
+            <ShieldCheck className="h-5 w-5 text-brand shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-foreground">Telephony &amp; AI Compliance Architecture</p>
+              <p className="mt-1 leading-relaxed">
+                All voice telephony deployments engineered by DigitalX Solutions include configurable AI synthetic voice disclosures, two-party consent recording prompts, and carrier-grade 10DLC A2P brand registration across Australia and the United States. Read our comprehensive guide on{" "}
+                <Link href="/insights/ai-call-recording-laws-australia-us" className="text-brand underline hover:text-brand-deep">
+                  AI Call Recording Laws in Australia &amp; the US
+                </Link>{" "}
+                and{" "}
+                <Link href="/insights/missed-call-text-back-compliance" className="text-brand underline hover:text-brand-deep">
+                  Missed-Call Text-Back Compliance
+                </Link>.
+              </p>
             </div>
           </div>
         </section>

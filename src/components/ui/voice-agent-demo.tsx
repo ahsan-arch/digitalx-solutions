@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { trackDemoStart } from "@/lib/analytics";
 import { Phone, PhoneOff, Mic, Volume2, VolumeX } from "lucide-react";
 
 // 40-byte silent WAV. Played once inside the click handler so mobile
@@ -159,6 +160,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
     cleanup();
     isCancelledRef.current = false;
     setIsActive(true);
+    trackDemoStart(script.businessName);
     setVisibleTurns(0);
     setCallDuration(0);
     setIsTyping(false);

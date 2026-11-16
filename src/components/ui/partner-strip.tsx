@@ -116,7 +116,7 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
 
               <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-emerald-700">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-                <span>Verified architecture</span>
+                <span>Production-tested architecture</span>
               </div>
             </div>
           ))}

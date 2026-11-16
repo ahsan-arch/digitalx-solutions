@@ -47,7 +47,7 @@ export default function CaseStudiesIndexPage() {
       <section className="container-shell">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
-            Verified Engineering Outcomes
+            Client Engineering Outcomes
           </span>
           <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
             Real automation deployments. Measurable revenue recovered.
@@ -72,7 +72,7 @@ export default function CaseStudiesIndexPage() {
               Featured Client Deployments
             </h2>
             <p className="mt-1 text-sm text-foreground/70">
-              Detailed problem audits, technical architectures, and verified operational results.
+              Detailed problem audits, technical architectures, and measured operational results.
             </p>
           </div>
         </div>

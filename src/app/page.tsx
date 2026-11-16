@@ -136,24 +136,34 @@ export default function HomePage() {
                   AI Automation Agency for High-Growth Service Businesses
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
-                  DigitalX Solutions builds and deploys 24/7 human-sounding AI voice receptionists, under-60-second missed-call text-back, GoHighLevel and HubSpot CRM architectures, and custom n8n workflow automations for trades, healthcare clinics, and professional services across Australia and the United States.
+                  DigitalX Solutions builds and deploys 24/7 human-sounding AI voice receptionists, within-30-second missed-call text-back, GoHighLevel and HubSpot CRM architectures, and custom n8n workflow automations for trades, healthcare clinics, and professional services across Australia and the United States.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
+                    href="/try-voice-agent"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-deep"
+                  >
+                    <PhoneCall className="h-4 w-4" />
+                    Test live voice demo
+                  </Link>
+                  <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-deep"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-sunken"
                   >
                     Book a strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <Link
-                    href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-sunken"
-                  >
-                    <PhoneCall className="h-4 w-4 text-brand" />
-                    Test live voice demo
-                  </Link>
+                </div>
+
+                <div className="mt-5 flex flex-wrap items-center gap-3 rounded-xl border border-border/70 bg-surface-50/80 px-3.5 py-2.5 text-xs text-foreground/80">
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="font-medium text-foreground">Sample 20s AI trade intake call:</span>
+                  </div>
+                  <audio controls preload="none" className="h-7 w-48 max-w-full text-xs" src="/demos/plumbing-companies/turn-0.mp3">
+                    Your browser does not support audio playback.
+                  </audio>
                 </div>
               </div>
 
@@ -215,7 +225,8 @@ export default function HomePage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <PhoneCall className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">62% Unanswered Calls</h3>
+                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">62% Call Loss</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Industry Telecom Benchmark</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Small service businesses miss over half of all inbound calls during active jobs, lunch breaks, and evenings.
                 </p>
@@ -226,6 +237,7 @@ export default function HomePage() {
                   <Clock className="h-4 w-4" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">85% Hang-Up Rate</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Consumer Behavior Survey</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Callers who hit voicemail hang up without leaving a message. Voicemail is where inbound deals go to die.
                 </p>
@@ -235,7 +247,8 @@ export default function HomePage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <Zap className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">391% Lift via Speed</h3>
+                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">391% Conversion Lift</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">HBR Speed-to-Lead Study</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Replying with a conversational two-way text under 60 seconds captures the lead before they reach competitor lines.
                 </p>
@@ -245,7 +258,8 @@ export default function HomePage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <Database className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">20 hrs Saved / Week</h3>
+                <h3 className="mt-4 font-display text-xl font-semibold tabular-nums text-foreground">80% Less Data Entry</h3>
+                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Automated CRM Benchmark</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Eliminating manual job logging, back-and-forth scheduling, and CRM updates frees up valuable operational hours.
                 </p>

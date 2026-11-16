@@ -252,7 +252,7 @@ export const solutions: Solution[] = [
       "Human-sounding AI voice receptionists and real-time automation answer calls, qualify prospects, and book appointments 24/7 across the US & Australia.",
     definition: {
       question: "How do custom AI voice agents work?",
-      answer: "Custom AI voice agents work by orchestrating real-time streaming speech-to-text (Deepgram Nova-2), low-latency large language model reasoning, and neural text-to-speech synthesis (ElevenLabs) over carrier SIP trunks. The agent conducts bidirectional conversations, dynamically qualifies inbound leads, answers service questions, checks CRM databases, and books appointments under 500 milliseconds of latency.",
+      answer: "Custom AI voice agents work by orchestrating real-time streaming speech-to-text (Deepgram Nova-2), low-latency large language model reasoning, and neural text-to-speech synthesis (ElevenLabs) over carrier SIP trunks. The agent conducts bidirectional conversations with sub-500ms voice response latency, dynamically qualifies inbound leads, answers service questions, checks CRM databases, and books appointments directly into your calendar.",
     },
     outcomes: [
       "24/7 call answering coverage to capture after-hours inquiries",
@@ -336,9 +336,9 @@ export const solutions: Solution[] = [
         description: "Direct integration into GoHighLevel, Google Calendar, HubSpot, and ServiceTitan",
       },
       {
-        label: "Uptime SLA",
-        value: "99.9% Telephony Redundancy",
-        description: "Geo-distributed carrier gateways across US East/West and Australia East",
+        label: "Telephony Infrastructure",
+        value: "Carrier-Grade Telephony Redundancy",
+        description: "Enterprise Twilio SIP trunking and WebRTC audio gateways across Australia and the US",
       },
     ],
     pricingTiers: [
@@ -379,7 +379,7 @@ export const solutions: Solution[] = [
       {
         question: "How much does an AI voice receptionist cost?",
         answer:
-          "Pricing varies with call volume and complexity. Self serve tools start around USD 50 to 150 per month for low volume. Custom agents tuned to a specific industry and integrated with your CRM and calendar typically run USD 300 to 1,500 per month, with measurable ROI for any business losing more than a couple of after hours calls per week.",
+          "DigitalX Solutions AI voice packages start at $1,200/mo (USD) for our Launch tier (covering single-number AI voice intake, calendar booking, and CRM sync), with multi-location or high-volume teams at $2,800/mo. A one-time setup fee ($1,500 to $4,500) covers prompt engineering, telephony integration, and custom CRM workflows. Standalone missed-call text-back is available from $450/mo.",
       },
       {
         question: "Can an AI voice agent book appointments directly into my calendar?",
@@ -394,7 +394,7 @@ export const solutions: Solution[] = [
       {
         question: "Will the AI voice agent sound robotic?",
         answer:
-          "Modern voice agents use streaming neural voices that handle interruptions, pauses, and casual phrasing. Most callers cannot tell they are speaking to an AI in the first 30 seconds. We tune prompts, pacing, and accent for each market (US English, Australian English, bilingual Spanish where needed).",
+          "Modern voice agents use streaming neural voices that handle natural cadence, interruptions, and casual phrasing with professional clarity. We tune prompts, pacing, and accent for each market (US English, Australian English, bilingual Spanish where needed), ensuring an engaging, professional experience for every caller.",
       },
     ],
   },
@@ -402,12 +402,12 @@ export const solutions: Solution[] = [
     slug: "missed-call-text-back",
     name: "Missed Call text back",
     metaTitle: "Missed-Call Text-Back & Recovery",
-    tagline: "Under a minute to every missed caller",
+    tagline: "Within 30 seconds to every missed caller",
     summary:
       "Instant missed-call text-back and automated lead recovery for service businesses. Engage callers in under 30 seconds before they dial a competitor.",
     definition: {
       question: "What is missed-call text-back and how does it recover leads?",
-      answer: "Missed-call text-back is an automated telephony workflow that detects an unanswered or busy inbound phone call and instantly dispatches a personalized SMS to the caller within 60 seconds. It establishes two-way conversation before the prospect contacts a competitor, qualifying their requirements and scheduling an appointment automatically.",
+      answer: "Missed-call text-back is an automated telephony workflow that detects an unanswered or busy inbound phone call and instantly dispatches a personalized SMS to the caller within 30 seconds. It establishes two-way conversation before the prospect contacts a competitor, qualifying their requirements and scheduling an appointment automatically.",
     },
     outcomes: [
       "Recover 30 to 50% of otherwise lost callers",
@@ -1815,7 +1815,7 @@ export type ResultCard = {
 
 export const results: ResultCard[] = [
   {
-    slug: "riverstone-dental-group",
+    slug: "riverstone-dental",
     client: "Metropolitan Dental Practice",
     industry: "Dental Clinics",
     industrySlug: "dental-clinics",
@@ -1987,19 +1987,19 @@ export const testimonials = [
   {
     quote:
       "Deploying the automated call capture and text-back system recovered after-hours inquiries without pulling technicians away from active jobs.",
-    author: "Verified Trade Operator",
+    author: "Commercial Plumbing Contractor",
     role: "Commercial Plumbing & Trade Services, Sydney NSW",
   },
   {
     quote:
       "The autonomous voice receptionist answers urgent appointment calls and syncs booking details directly into our calendar without hold times.",
-    author: "Verified Practice Manager",
+    author: "Dental Practice Manager",
     role: "Allied Health & Dental Practice, Melbourne VIC",
   },
   {
     quote:
       "Automating lead intake and calendar qualification filtered unqualified inquiries and eliminated manual scheduling back-and-forth.",
-    author: "Verified Managing Partner",
+    author: "Managing Partner, Advisory Practice",
     role: "Accounting & Advisory Practice, Brisbane QLD",
   },
 ];
