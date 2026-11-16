@@ -379,7 +379,7 @@ export const solutions: Solution[] = [
       {
         question: "How much does an AI voice receptionist cost?",
         answer:
-          "DigitalX Solutions AI voice packages start at $1,200/mo (USD) for our Launch tier (covering single-number AI voice intake, calendar booking, and CRM sync), with multi-location or high-volume teams at $2,800/mo. A one-time setup fee ($1,500 to $4,500) covers prompt engineering, telephony integration, and custom CRM workflows. Standalone missed-call text-back is available from $450/mo.",
+          "DigitalX Solutions provides transparent, tiered monthly retainers and custom setup packages based on inbound call volume and CRM complexity. Review all current packages, inclusions, and setup fee breakdowns on our dedicated pricing page (/pricing).",
       },
       {
         question: "Can an AI voice agent book appointments directly into my calendar?",
