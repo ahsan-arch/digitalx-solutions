@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, HelpCircle, PhoneCall, ShieldCheck, Zap } from "lucide-react";
 import { SectionIllustration } from "@/components/ui";
+import { PricingTracker } from "@/components/analytics/pricing-tracker";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -131,6 +132,7 @@ export default function PricingPage() {
 
   return (
     <main className="pb-20 pt-12">
+      <PricingTracker />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

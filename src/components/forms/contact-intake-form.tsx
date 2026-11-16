@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const timelineOptions = ["1-3 Months", "3-6 Months", "ASAP"] as const;
 
@@ -60,6 +61,7 @@ export function ContactIntakeForm() {
         throw new Error("Request failed");
       }
 
+      trackFormSubmit("strategy_call_intake", true);
       setSubmitState("success");
       setMessage("Thanks, your request is in. We will respond within one business day.");
       setName("");
@@ -68,6 +70,7 @@ export function ContactIntakeForm() {
       setDetails("");
       setAttachment(null);
     } catch {
+      trackFormSubmit("strategy_call_intake", false);
       setSubmitState("error");
       setMessage("Something went wrong. Please email info@digitalx-solutions.com directly.");
     }
