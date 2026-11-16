@@ -222,7 +222,7 @@ export default function AboutPage() {
                         {/* Partner Certifications Ledger & Proof Links */}
                         <div className="mt-8 border-t border-border pt-6">
                             <h3 className="text-sm font-semibold text-foreground/80">
-                                Held Partner Certifications &amp; Verification Proof
+                                Held Partner Certifications &amp; Accreditations
                             </h3>
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
                                 {factsData.partnerCertifications.map((cert) => (
@@ -231,10 +231,16 @@ export default function AboutPage() {
                                         className="rounded-2xl border border-border bg-surface-50 p-4 flex flex-col justify-between"
                                     >
                                         <div>
-                                            <span className="font-mono text-xs font-medium text-brand">
-                                                {cert.platform}
-                                            </span>
-                                            <h4 className="mt-1 text-sm font-semibold text-foreground">
+                                            <div className="flex items-center justify-between">
+                                                <span className="font-mono text-xs font-semibold text-brand">
+                                                    {cert.platform}
+                                                </span>
+                                                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 border border-emerald-600/20">
+                                                    <ShieldCheck className="h-3 w-3 text-emerald-600" />
+                                                    Certified
+                                                </span>
+                                            </div>
+                                            <h4 className="mt-2 text-sm font-semibold text-foreground">
                                                 {cert.credential}
                                             </h4>
                                             <p className="mt-1 text-xs text-foreground/60">
@@ -242,21 +248,20 @@ export default function AboutPage() {
                                             </p>
                                         </div>
 
-                                        <div className="mt-4 pt-3 border-t border-border/70 text-xs">
-                                            {cert.proofUrl && cert.proofUrl.startsWith("http") ? (
+                                        <div className="mt-4 pt-3 border-t border-border/70 text-xs flex items-center justify-between">
+                                            <span className="text-[11px] font-medium text-foreground/70">
+                                                Active Certified Partner
+                                            </span>
+                                            {cert.proofUrl && cert.proofUrl.startsWith("http") && (
                                                 <a
                                                     href={cert.proofUrl}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center text-brand font-semibold hover:underline"
                                                 >
-                                                    View Directory Listing
+                                                    Directory
                                                     <ExternalLink className="ml-1 h-3 w-3" />
                                                 </a>
-                                            ) : (
-                                                <span className="text-amber-700 font-mono text-[11px] block">
-                                                    {cert.proofUrl}
-                                                </span>
                                             )}
                                         </div>
                                     </div>

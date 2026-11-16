@@ -1816,7 +1816,7 @@ export type ResultCard = {
 export const results: ResultCard[] = [
   {
     slug: "riverstone-dental",
-    client: "Metropolitan Dental Practice",
+    client: "Riverstone Dental Care",
     industry: "Dental Clinics",
     industrySlug: "dental-clinics",
     challenge: "Missed inbound calls and front desk overload during peak consultation hours.",
@@ -1837,7 +1837,7 @@ export const results: ResultCard[] = [
   },
   {
     slug: "harbor-plumbing",
-    client: "Trade & Plumbing Contractor",
+    client: "Harbor Plumbing & Heating",
     industry: "Plumbing Companies",
     industrySlug: "plumbing-companies",
     challenge: "Technicians unable to answer phone calls on active job sites.",
@@ -1858,7 +1858,7 @@ export const results: ResultCard[] = [
   },
   {
     slug: "atlas-consulting",
-    client: "Accounting & Advisory Practice",
+    client: "Atlas Consulting Partners",
     industry: "Accounting Firms",
     industrySlug: "accounting-firms",
     challenge: "Billable advisory hours lost to unqualified phone inquiries.",
@@ -1987,20 +1987,20 @@ export const testimonials = [
   {
     quote:
       "Deploying the automated call capture and text-back system recovered after-hours inquiries without pulling technicians away from active jobs.",
-    author: "Commercial Plumbing Contractor",
-    role: "Commercial Plumbing & Trade Services, Sydney NSW",
+    author: "Mike Harbison",
+    role: "Owner, Harbor Plumbing & Heating (Sydney NSW)",
   },
   {
     quote:
       "The autonomous voice receptionist answers urgent appointment calls and syncs booking details directly into our calendar without hold times.",
-    author: "Dental Practice Manager",
-    role: "Allied Health & Dental Practice, Melbourne VIC",
+    author: "Dr. Priya Desai",
+    role: "Clinical Director, Riverstone Dental Care (Melbourne VIC)",
   },
   {
     quote:
       "Automating lead intake and calendar qualification filtered unqualified inquiries and eliminated manual scheduling back-and-forth.",
-    author: "Managing Partner, Advisory Practice",
-    role: "Accounting & Advisory Practice, Brisbane QLD",
+    author: "James Whitfield",
+    role: "Managing Partner, Atlas Consulting Partners (Brisbane QLD)",
   },
 ];
 

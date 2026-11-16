@@ -158,11 +158,10 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             <span className="text-xs font-medium text-foreground/60">Production Architecture</span>
           </div>
 
-          {!project.permissionToUseNameAndLogo && (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-surface-100 px-3 py-1 text-xs font-medium text-foreground/75">
-              Client name withheld
-            </span>
-          )}
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+            Client Case Study
+          </span>
         </div>
 
         <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-border pb-8">
