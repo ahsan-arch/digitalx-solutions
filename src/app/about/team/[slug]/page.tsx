@@ -46,8 +46,8 @@ const teamMembers: Record<string, TeamMember> = {
       "RESTful API & High-Throughput Webhook Architecture"
     ],
     certifications: [
-      "GoHighLevel Certified Agency Partner (Platform Architecture)",
-      "n8n Certified Workflow Partner & Community Creator",
+      "GoHighLevel Agency Partner (Platform Architecture)",
+      "n8n Workflow Partner & Community Creator",
       "HubSpot Solutions Partner Ecosystem Member",
       "Twilio Communications & SIP Trunking Engineering Specialist"
     ],
