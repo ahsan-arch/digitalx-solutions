@@ -378,7 +378,7 @@ Learn more on our dedicated [Dental Clinic Automation Playbook](/industries/dent
         metaTitle: "GoHighLevel Setup Cost in Australia",
         description: "What Australian service businesses pay and how long it takes to deploy GoHighLevel for lead capture, automation, and CRM, delivered by a certified team.",
         date: "2026-09-18",
-        dateModified: "2026-06-04",
+        dateModified: "2026-10-24",
         authorKey: "digitalx",
         readTime: "5 min read",
         relatedSlugs: ["n8n-vs-zapier-vs-make"],
