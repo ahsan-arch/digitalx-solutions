@@ -4,9 +4,9 @@ import { siteConfig } from "@/lib/seo";
 export const authors: Record<string, { name: string; role: string; bio: string; url: string }> = {
     "ahsan": {
         name: "Ahsan Architect",
-        role: "Founder & Lead Engineer",
-        bio: "Full stack engineer with 8+ years building high-performance web apps. Expert in Next.js, n8n automation, and server side tracking architecture.",
-        url: `${siteConfig.domain}/about`,
+        role: "Founder & Lead Solutions Engineer",
+        bio: "Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and sub-500ms neural AI voice agents for enterprise and local service operators across the USA and Australia.",
+        url: `${siteConfig.domain}/about/team/ahsan-architect`,
     },
     "digitalx": {
         name: "DigitalX Engineering",

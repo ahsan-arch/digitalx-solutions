@@ -182,7 +182,13 @@ export default function AboutPage() {
                                 <p className="mt-4 text-sm leading-relaxed text-foreground/75">
                                     Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and sub-500ms neural AI voice agents for enterprise and local service operators across the USA and Australia.
                                 </p>
-                                <div className="mt-5 flex items-center gap-3">
+                                <div className="mt-5 flex flex-wrap items-center gap-3">
+                                    <Link
+                                        href="/about/team/ahsan-architect"
+                                        className="inline-flex items-center gap-1.5 rounded-md border border-brand bg-brand px-3 py-1.5 text-xs font-semibold text-white hover:bg-brand-deep transition-colors"
+                                    >
+                                        <UserCheck className="h-3.5 w-3.5" /> Full Profile &amp; Credentials
+                                    </Link>
                                     <a
                                         href="https://www.linkedin.com/in/ahsan-architect"
                                         target="_blank"

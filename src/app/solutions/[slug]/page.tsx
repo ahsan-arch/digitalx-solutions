@@ -127,7 +127,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
           <span>•</span>
           <span className="font-medium text-foreground/80">Last Updated: 25 October 2026</span>
           <span>•</span>
-          <Link href="/about" className="hover:text-brand transition-colors">Reviewed by Ahsan Architect (Lead Solutions Engineer)</Link>
+          <Link href="/about/team/ahsan-architect" className="hover:text-brand transition-colors font-medium text-foreground/80">Reviewed by Ahsan Architect (Lead Solutions Engineer)</Link>
         </div>
         <h1 className="mt-2 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">{solution.name}</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">{solution.summary}</p>

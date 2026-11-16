@@ -133,7 +133,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                             <span className="w-1 h-1 rounded-full bg-ink-tertiary/50" />
                             <span>{article.readTime}</span>
                             <span className="w-1 h-1 rounded-full bg-ink-tertiary/50" />
-                            <span>By {author.name}</span>
+                            <Link href={author.url} className="hover:text-accent transition-colors font-semibold">
+                                By {author.name}
+                            </Link>
                         </div>
                     </header>
 
@@ -142,7 +144,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                             {author.name.charAt(0)}
                         </div>
                         <div>
-                            <div className="text-ink-primary font-display font-semibold text-sm">{author.name}</div>
+                            <Link href={author.url} className="text-ink-primary font-display font-semibold text-sm hover:text-accent transition-colors">
+                                {author.name}
+                            </Link>
                             <div className="text-accent font-mono text-xs mb-1">{author.role}</div>
                             <p className="text-ink-secondary text-xs leading-relaxed">{author.bio}</p>
                         </div>
