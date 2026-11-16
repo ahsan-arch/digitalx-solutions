@@ -42,14 +42,17 @@ const BANNED_PATTERNS = [
   { pattern: /85%\s*Hang-Up\s*Rate/i, reason: "Unsourced 85% hang-up survey claim" },
   { pattern: /80\s*trade\s*businesses/i, reason: "Unpublished 80-business call study" },
   { pattern: /100,000\+\s*inbound\s*calls/i, reason: "Unpublished 100k calls benchmark study" },
-  { pattern: /recover(?:ed)?\s*\$180k/i, reason: "Unverified $180k revenue claim" },
-  { pattern: /cut\s*missed\s*calls\s*by\s*92%/i, reason: "Unverified 92% missed calls reduction" },
+  { pattern: /\$180k/i, reason: "Unverified $180k revenue claim" },
+  { pattern: /92%/i, reason: "Unverified 92% missed calls reduction" },
+  { pattern: /391%/i, reason: "Unsourced 391% conversion claim" },
   { pattern: /32%\s*more\s*appointments/i, reason: "Unverified 32% appointments claim" },
-  { pattern: /99\.9%\s*(?:uptime|telephony\s*redundancy)/i, reason: "Unsubstantiated 99.9% uptime/SLA guarantee" },
+  { pattern: /99\.9%/i, reason: "Unsubstantiated 99.9% uptime/SLA guarantee" },
   { pattern: /geo-distributed\s*carrier\s*gateways/i, reason: "Unproven geo-distributed claim" },
   { pattern: /callers\s*cannot\s*tell\s*it(?:'s|\s+is)\s*ai/i, reason: "Subjective unproven human-pass claim" },
+  { pattern: /sub-500ms|under\s*500\s*m(?:illi)?s/i, reason: "Unproven sub-500ms latency claim" },
   { pattern: /books?\s*(?:appointments\s*)?under\s*500\s*m(?:illi)?s/i, reason: "Erroneous 500ms booking latency claim" },
-  { pattern: /Verified\s*(?:Case\s*Study|Operational\s*Result)/i, reason: "Banned 'Verified' label on unaccredited result" }
+  { pattern: /Verified\s*(?:Case\s*Study|Operational\s*Result)/i, reason: "Banned 'Verified' label on unaccredited result" },
+  { pattern: /\[TODO:/i, reason: "Unresolved visible TODO placeholder in production HTML" },
 ];
 
 const failures = [];
