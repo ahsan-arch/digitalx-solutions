@@ -145,7 +145,7 @@ export default function HomePage() {
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-deep"
                   >
                     <PhoneCall className="h-4 w-4" />
-                    Test live voice demo
+                    Hear the demo
                   </Link>
                   <Link
                     href="/contact"
