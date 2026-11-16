@@ -1,33 +1,54 @@
-# DigitalX Solutions — Content Consolidation & Cannibalization Resolution Plan
+# DigitalX Solutions — Content Merge Plan & Canonical Consolidation (Prompt v2)
 
 **Generated:** 2026-11-16  
-**Auditor:** Senior Technical SEO & Information Architect  
-**Objective:** Eliminate keyword cannibalization, consolidate split backlinks and search engine authority, and establish unambiguous topical pillars.
+**Review Window:** 30 Days (Monitoring: Nov 16, 2026 – Dec 16, 2026)  
+**Scheduled Review Date:** December 16, 2026  
+**Branch:** `fix/trust-seo`  
 
 ---
 
-## 1. Consolidation Clusters & Recommendations
+## 1. Strategy & Reversible Implementation
 
-| Topic / Cluster | Primary Live Page (Keep) | Merged / Redirected URL | Recommendation & Strategic Intent | Owner Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **AI Voice Pricing** | `/pricing` (Commercial)<br>`/insights/ai-voice-agent-pricing` (Informational) | `/insights/ai-voice-receptionist-cost` | Keep `/pricing` for high-intent buyers searching service costs; keep `/insights/ai-voice-agent-pricing` as the comprehensive informational pillar. 301 redirect the redundant cost guide. | **Approved & Implemented** |
-| **n8n Workflow Comparison** | `/insights/n8n-vs-zapier-vs-make` | `/insights/n8n-vs-zapier` | Retain the comprehensive 3-way architectural comparison (includes Docker compose, concurrency limits, and enterprise calculations). 301 redirect the 2-way post. | **Approved & Implemented** |
-| **What is an AI Voice Agent** | `/insights/what-is-an-ai-voice-agent` | `/insights/ai-voice-receptionists-guide` | Consolidate telephony pipeline definitions, latency benchmarks, and PMS integration examples into the technical pillar. 301 redirect the secondary guide. | **Approved & Implemented** |
-| **Receptionist vs Call Centre** | `/insights/ai-receptionist-vs-call-centre` | `/insights/ai-receptionist-vs-human-receptionist` | Consolidate comparative cost, after-hours coverage, and latency breakdowns against both offshore call centers and in-house staff into a single high-authority guide. 301 redirect. | **Approved & Implemented** |
-| **Missed-Call Text-Back** | `/solutions/missed-call-text-back` | `/insights/missed-call-text-back-guide` | Retain the commercial solution landing page for searchers seeking missed-call text-back services. 301 redirect the informational guide to avoid query cannibalization. | **Approved & Implemented** |
-| **Trade Industry Architecture** | `/industries/plumbers-hvac-trades` (Hub) | Sub-pages retain distinct targeting: `hvac-companies`, `plumbing-companies`, `electricians` | Category hub targets broad queries (*trade automation agency*); individual sub-pages target specific trade keywords with distinct dispatch software, emergency triage logic, and unit economics. | **Approved & Implemented** |
-| **Medical & Dental Architecture** | `/industries/medical-dental-clinics` (Hub) | Dedicated niche page: `dental-clinics` | Category hub targets multi-modality clinics; `dental-clinics` page targets practice managers with specialized Cliniko/PMS workflows and emergency cosmetic triage. | **Approved & Implemented** |
-| **Professional Services Architecture** | `/industries/professional-services` (Hub) | Dedicated niche page: `law-firms` | Category hub targets business consultancies; `law-firms` page targets retainer billing, intake questionnaires, and confidential client screening. | **Approved & Implemented** |
-| **Riverstone Dental Slug Normalization** | `/case-studies/riverstone-dental` | `/case-studies/riverstone-dental-group`<br>`/riverstone-dental-group` | Normalized all internal references, redesign data, and routes to canonical `/case-studies/riverstone-dental`. 301 redirect all legacy variations. | **Approved & Implemented** |
+To protect existing search rankings, organic impressions, and external referral traffic while resolving keyword cannibalization:
+
+1. **Reversible First:** In accordance with Prompt v2 safety rules, secondary duplicate pages are **NOT** immediately 301-redirected. They remain live, indexable, and accessible via their URLs.
+2. **Canonical Consolidation:** Every secondary page has its `<link rel="canonical">` tag configured to point directly to its primary pillar page. Search engine crawlers (Google, Bing) attribute PageRank and indexing signals to the primary pillar without breaking inbound links.
+3. **30-Day Monitoring:** Traffic, organic impressions, and ranking stability will be monitored for 30 days. On December 16, 2026, the site owner reviews performance before turning on permanent 301 redirects in `next.config.ts`.
 
 ---
 
-## 2. Technical Quality & Content Integrity Standards
+## 2. Duplicate Pairs & Canonical Mapping Ledger
 
-For all live canonical URLs:
-1. **Length:** Minimum 500+ words of unique, non-commodity body copy.
-2. **Structure:** Exactly one `<h1>` per page, semantic `<h2>`/`<h3>` headings formulated around user search queries.
-3. **Structured Extraction (AEO):** A direct 2-4 sentence definition or answer block immediately beneath top-level headers.
-4. **Data Presentation:** At least one comparative table, technical specification list, or architectural step-by-step workflow.
-5. **FAQ Schema:** Question-and-answer pairs matching on-page copy verbatim, wrapped in JSON-LD `FAQPage` schema.
+| Secondary Page URL | Primary Target URL | Topic Overlap & Rationale | Current Technical Status | Recommended Action After 30 Days | Review Date | Owner Approval |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `/insights/ai-voice-receptionist-cost` | `/pricing` (Commercial)<br>`/insights/ai-voice-agent-pricing` (Info) | Pricing breakdown overlaps with core `/pricing` packages and comprehensive pricing explainer. | Live 200 with `rel=canonical` $\rightarrow$ `/pricing` | 301 redirect to `/pricing` once Google indexes the canonical consolidation. | 2026-12-16 | Pending Owner Review |
+| `/insights/n8n-vs-zapier` | `/insights/n8n-vs-zapier-vs-make` | Two-way comparison is subsumed by the 3-way guide (which covers self-hosting, Docker, and enterprise concurrency). | Live 200 with `rel=canonical` $\rightarrow$ `/insights/n8n-vs-zapier-vs-make` | 301 redirect to `/insights/n8n-vs-zapier-vs-make`. | 2026-12-16 | Pending Owner Review |
+| `/insights/ai-voice-receptionists-guide` | `/insights/what-is-an-ai-voice-agent` | Foundational explainer overlaps with the main technical architecture pillar. | Live 200 with `rel=canonical` $\rightarrow$ `/insights/what-is-an-ai-voice-agent` | 301 redirect to `/insights/what-is-an-ai-voice-agent`. | 2026-12-16 | Pending Owner Review |
+| `/insights/ai-receptionist-vs-human-receptionist` | `/insights/ai-receptionist-vs-call-centre` | Human receptionist comparison is covered within the comprehensive call center comparison pillar. | Live 200 with `rel=canonical` $\rightarrow$ `/insights/ai-receptionist-vs-call-centre` | 301 redirect to `/insights/ai-receptionist-vs-call-centre`. | 2026-12-16 | Pending Owner Review |
+| `/insights/missed-call-text-back-guide` | `/solutions/missed-call-text-back` | Informational guide splits commercial intent from the core solution landing page. | Live 200 with `rel=canonical` $\rightarrow$ `/solutions/missed-call-text-back` | 301 redirect to `/solutions/missed-call-text-back`. | 2026-12-16 | Pending Owner Review |
 
+---
+
+## 3. Case-Study Slugs Normalization
+
+| Legacy URL | Canonical Target | Action Taken | Rationale |
+| :--- | :--- | :--- | :--- |
+| `/insights/how-dental-clinic-increased-appointments-32-percent` | `/insights/how-dental-clinic-increased-appointments-ai-voice` | Permanent 301 Redirect | Removed unverified "32 percent" statistic from the URL slug while retaining organic referral equity. |
+| `/case-studies/riverstone-dental-group` | `/case-studies/riverstone-dental` | Permanent 301 Redirect | Slug normalization between "riverstone-dental-group" and "riverstone-dental". |
+| `/riverstone-dental-group` | `/case-studies/riverstone-dental` | Permanent 301 Redirect | Legacy direct root alias redirect. |
+
+---
+
+## 4. Implementation Steps to Execute 301 Redirects (Post-Approval)
+
+When the owner approves turning on the 301 redirects on December 16, 2026:
+1. Add the 5 redirect rules to `async redirects()` in `next.config.ts`:
+   ```ts
+   { source: "/insights/ai-voice-receptionist-cost", destination: "/pricing", permanent: true },
+   { source: "/insights/n8n-vs-zapier", destination: "/insights/n8n-vs-zapier-vs-make", permanent: true },
+   { source: "/insights/ai-voice-receptionists-guide", destination: "/insights/what-is-an-ai-voice-agent", permanent: true },
+   { source: "/insights/ai-receptionist-vs-human-receptionist", destination: "/insights/ai-receptionist-vs-call-centre", permanent: true },
+   { source: "/insights/missed-call-text-back-guide", destination: "/solutions/missed-call-text-back", permanent: true },
+   ```
+2. Remove their records from `articlesData` in `src/data/insights-articles.ts`.
+3. Update `/docs/redirects.md` with execution timestamp.

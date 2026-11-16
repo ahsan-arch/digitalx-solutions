@@ -1,19 +1,53 @@
-# DigitalX Solutions — Canonical 301 Redirect Registry
+# DigitalX Solutions — Active Redirect & Canonical Mapping Registry (Prompt v2)
 
-All permanent 301 redirects implemented in `next.config.ts` to prevent broken links, eliminate keyword cannibalization, and consolidate topical authority.
+**Generated:** 2026-11-16  
+**Branch:** `fix/trust-seo`  
+**Purpose:** Master registry of permanent 301 redirects implemented in `next.config.ts` and `rel=canonical` tags implemented in page metadata.
 
-| Source URL | Target URL (Canonical) | Redirect Type | Reason for Redirect | Date Added |
-| :--- | :--- | :--- | :--- | :--- |
-| `/insights/ai-voice-receptionist-cost` | `/insights/ai-voice-agent-pricing` | 301 Permanent | Content consolidation: merged overlapping pricing articles | 2026-11-16 |
-| `/insights/n8n-vs-zapier` | `/insights/n8n-vs-zapier-vs-make` | 301 Permanent | Content consolidation: merged 2-way comparison into 3-way guide | 2026-11-16 |
-| `/insights/ai-voice-receptionists-guide` | `/insights/what-is-an-ai-voice-agent` | 301 Permanent | Content consolidation: merged definition explainer into main guide | 2026-11-16 |
-| `/insights/ai-receptionist-vs-human-receptionist` | `/insights/ai-receptionist-vs-call-centre` | 301 Permanent | Content consolidation: merged human receptionist comparison into call centre guide | 2026-11-16 |
-| `/insights/missed-call-text-back-guide` | `/solutions/missed-call-text-back` | 301 Permanent | Content consolidation: merged informational guide into commercial solution page | 2026-11-16 |
-| `/case-studies/riverstone-dental-group` | `/case-studies/riverstone-dental` | 301 Permanent | URL normalization: fixed slug mismatch between group vs dental | 2026-11-16 |
-| `/riverstone-dental-group` | `/case-studies/riverstone-dental` | 301 Permanent | URL normalization: legacy direct path redirect | 2026-11-16 |
-| `/insights/after-hours-answer-rate-study` | `/solutions/missed-call-text-back` | 301 Permanent | Compliance unpublish: unsourced 80-business study unpublished until owner supplies call log | 2026-11-16 |
-| `/insights/ai-voice-receptionist-benchmark-2026` | `/insights/ai-voice-agent-pricing` | 301 Permanent | Compliance unpublish: unsourced 100k-call study unpublished until owner supplies telemetry | 2026-11-16 |
-| `/insights/how-plumbing-company-recovered-180k-ai-voice` | `/case-studies/harbor-plumbing` | 301 Permanent | Compliance unpublish: unsourced $180k revenue figure unpublished until client releases tax proof | 2026-11-16 |
-| `/insights/how-automation-reduced-missed-calls` | `/solutions/missed-call-text-back` | 301 Permanent | Compliance unpublish: unsourced 92% missed call claim redirected to commercial solution | 2026-11-16 |
-| `/insights/how-dental-clinic-increased-appointments-32-percent` | `/case-studies/riverstone-dental` | 301 Permanent | Compliance unpublish: unsourced 32% figure in URL slug redirected to canonical case study | 2026-11-16 |
+---
 
+## 1. Active Permanent 301 Redirects (`next.config.ts`)
+
+| Source URL | Destination Target | Redirect Type | Strategic Rationale |
+| :--- | :--- | :--- | :--- |
+| `/services/web-dev` | `/services/web-design-and-development` | 301 Permanent | Canonical slug consolidation |
+| `/services/nextjs-development` | `/services/web-design-and-development` | 301 Permanent | Service consolidation |
+| `/services/meta-ads-engineering` | `/services/meta-ads` | 301 Permanent | Canonical slug consolidation |
+| `/services/ai-voice-receptionists` | `/solutions/ai-voice-agents` | 301 Permanent | Migrated service page to canonical solution pillar |
+| `/services/conversational-ai` | `/solutions/ai-agents-chatbots` | 301 Permanent | Migrated service page to canonical solution pillar |
+| `/services/revenue-operations` | `/solutions/hubspot-automation` | 301 Permanent | Migrated service page to canonical solution pillar |
+| `/solutions/ai-voice-receptionists` | `/solutions/ai-voice-agents` | 301 Permanent | Solution alias normalization |
+| `/solutions/chatbots` | `/solutions/ai-agents-chatbots` | 301 Permanent | Solution alias normalization |
+| `/solutions/automated-lead-nurturing` | `/solutions/lead-generation` | 301 Permanent | Solution alias normalization |
+| `/riverstone-dental-group` | `/case-studies/riverstone-dental` | 301 Permanent | Legacy root alias |
+| `/case-studies/riverstone-dental-group` | `/case-studies/riverstone-dental` | 301 Permanent | Slug normalization |
+| `/insights/how-dental-clinic-increased-appointments-32-percent` | `/insights/how-dental-clinic-increased-appointments-ai-voice` | 301 Permanent | Compliance normalization (removed unproven "32-percent" from slug) |
+| `/integrations/gohighlevel-ai-voice-agent` | `/integrations/gohighlevel` | 301 Permanent | Integration slug alias |
+| `/integrations/n8n-workflows-for-business` | `/integrations/n8n` | 301 Permanent | Integration slug alias |
+| `/integrations/hubspot-workflow-automation` | `/integrations/hubspot` | 301 Permanent | Integration slug alias |
+| `/services` | `/solutions` | 301 Permanent | Services index redirected to Solutions hub |
+| `/locations/usa` | `/usa` | 301 Permanent | Location URL promotion to top-level geo page |
+| `/locations/australia` | `/au` | 301 Permanent | Location URL promotion to top-level geo page |
+| `/locations` | `/` | 301 Permanent | Legacy location hub redirected to homepage |
+
+---
+
+## 2. Active Canonical Tags for Duplicate / Thin Content Clusters (`rel=canonical`)
+
+In accordance with Prompt v2, secondary duplicate pages are currently kept live with direct `<link rel="canonical">` tags pointing to their primary authority pillars:
+
+| Secondary URL (Live 200) | Canonical Target (`rel=canonical`) | Monitoring Window | Action Scheduled in Merge Plan |
+| :--- | :--- | :--- | :--- |
+| `/insights/ai-voice-receptionist-cost` | `https://digitalx-solutions.com/pricing` | 30 Days (Nov 16 – Dec 16) | 301 redirect pending owner sign-off |
+| `/insights/n8n-vs-zapier` | `https://digitalx-solutions.com/insights/n8n-vs-zapier-vs-make` | 30 Days (Nov 16 – Dec 16) | 301 redirect pending owner sign-off |
+| `/insights/ai-voice-receptionists-guide` | `https://digitalx-solutions.com/insights/what-is-an-ai-voice-agent` | 30 Days (Nov 16 – Dec 16) | 301 redirect pending owner sign-off |
+| `/insights/ai-receptionist-vs-human-receptionist` | `https://digitalx-solutions.com/insights/ai-receptionist-vs-call-centre` | 30 Days (Nov 16 – Dec 16) | 301 redirect pending owner sign-off |
+| `/insights/missed-call-text-back-guide` | `https://digitalx-solutions.com/solutions/missed-call-text-back` | 30 Days (Nov 16 – Dec 16) | 301 redirect pending owner sign-off |
+
+---
+
+## 3. Temporary `noindex` Telephony Research Pages
+
+The following research pages serve 200 HTTP status with `robots: noindex, follow`, are excluded from `sitemap.ts` and the `/insights` listing page, and display a visible update notice until the owner supplies verified call logs:
+- `/insights/after-hours-answer-rate-study`
+- `/insights/ai-voice-receptionist-benchmark-2026`
