@@ -61,21 +61,21 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
   const partners = [
     {
       platform: "GoHighLevel",
-      badge: "Agency partner",
+      badge: "Integrates with",
       logo: <GhlPartnerLogo />,
       specialty: "Snapshots, AI voice agents & two-way SMS",
       tierColor: "text-blue-700 bg-blue-50/80 border-blue-200/80",
     },
     {
       platform: "n8n",
-      badge: "Workflow partner",
+      badge: "Integrates with",
       logo: <N8nPartnerLogo />,
       specialty: "Custom webhook & API data orchestration",
       tierColor: "text-rose-700 bg-rose-50/80 border-rose-200/80",
     },
     {
       platform: "HubSpot",
-      badge: "Solutions partner",
+      badge: "Integrates with",
       logo: <HubSpotPartnerLogo />,
       specialty: "Pipeline synchronization & revenue operations",
       tierColor: "text-orange-700 bg-orange-50/80 border-orange-200/80",
@@ -87,7 +87,7 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
       <div className="flex flex-col items-center text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-border/70 bg-white px-3.5 py-1 text-xs font-medium text-foreground/80 shadow-xs">
           <ShieldCheck className="h-4 w-4 text-emerald-600" />
-          <span>Partner ecosystem</span>
+          <span>Platform integrations</span>
         </div>
 
         <div className="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">

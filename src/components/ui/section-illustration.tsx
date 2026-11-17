@@ -21,7 +21,7 @@ function getDefaultAlt(src: string): string {
     "web-dev": "Modern high-performance Next.js web application architecture and design",
     solutions: "Comprehensive AI voice agents, CRM integrations, and n8n workflow automations",
     usa: "DigitalX Solutions United States service area map for AI automation and CAPI tracking",
-    work: "Enterprise client case studies, verified ROI metrics, and automation results",
+    work: "Enterprise client case studies, client ROI metrics, and automation results",
   };
   return map[slug] || `DigitalX Solutions ${slug.replace(/-/g, " ")} architectural diagram`;
 }

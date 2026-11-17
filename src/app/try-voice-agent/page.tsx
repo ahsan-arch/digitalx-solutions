@@ -163,8 +163,8 @@ export default function TryVoiceAgentPage() {
                 </tr>
                 <tr>
                   <td className="p-3 font-medium text-ink-primary">Voice Latency</td>
-                  <td className="p-3">~800ms &ndash; 1,100ms</td>
-                  <td className="p-3 font-semibold text-emerald-600">Sub-700ms ultra-low jitter streaming with natural conversational interruption</td>
+                  <td className="p-3">Noticeable delay (awkward pauses)</td>
+                  <td className="p-3 font-semibold text-emerald-600">Fast, natural conversational responses with streaming interruption</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium text-ink-primary">Calendar Integration</td>

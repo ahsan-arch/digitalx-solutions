@@ -183,7 +183,7 @@ export const industries: Industry[] = [
       {
         "feature": "Missed Call Backup",
         "traditional": "None (if line is busy, client goes to voicemail)",
-        "digitalx": "Automated SMS text-back in under 30s"
+        "digitalx": "Automated SMS text-back in under 60 seconds"
       },
       {
         "feature": "Software Integration",

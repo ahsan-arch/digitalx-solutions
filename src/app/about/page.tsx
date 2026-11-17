@@ -17,22 +17,6 @@ export const metadata: Metadata = generatePageMetadata("/about", {
         "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.",
 });
 
-const milestones = [
-    { year: "2022", event: "DigitalX Solutions launched in Sydney, Australia" },
-    {
-        year: "2023",
-        event: "Expanded delivery to the United States and scaled cross region operations",
-    },
-    {
-        year: "2024",
-        event: "Integrated automation and paid media programs into a single execution model",
-    },
-    {
-        year: "Today",
-        event: "Partnering with teams that prioritize measurable revenue outcomes over vanity metrics",
-    },
-];
-
 export default function AboutPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([
         { name: "Home", url: siteConfig.domain },
@@ -160,11 +144,12 @@ export default function AboutPage() {
                     <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
                         <div className="flex flex-wrap items-center justify-between gap-4">
                             <div>
-                                <p className="font-mono text-xs font-medium text-brand">E-E-A-T Leadership &amp; Verification</p>
+                                <p className="font-mono text-xs font-medium text-brand">Engineering Leadership &amp; Standards</p>
                                 <h2 className="mt-1 font-display text-3xl text-foreground">Engineering Leadership</h2>
                             </div>
                             <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-600/20 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> Registered Australian Entity (ABN 34 683 241 189)
+                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                                {factsData.company?.abn ? `Registered Entity (ABN ${factsData.company.abn})` : "[TODO: ABN]"}
                             </span>
                         </div>
 
@@ -175,12 +160,16 @@ export default function AboutPage() {
                                         AA
                                     </div>
                                     <div>
-                                        <h3 className="font-display text-xl font-semibold text-foreground">Ahsan Architect</h3>
-                                        <p className="text-xs font-medium text-brand">Founder &amp; Lead Solutions Engineer</p>
+                                        <h3 className="font-display text-xl font-semibold text-foreground">
+                                            {factsData.leadership?.founder?.fullName || "[TODO: Founder name]"}
+                                        </h3>
+                                        <p className="text-xs font-medium text-brand">
+                                            {factsData.leadership?.founder?.jobTitle || "[TODO: Job title]"}
+                                        </p>
                                     </div>
                                 </div>
                                 <p className="mt-4 text-sm leading-relaxed text-foreground/75">
-                                    Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and low-latency neural AI voice agents for enterprise and local service operators across the USA and Australia.
+                                    {factsData.leadership?.founder?.bio || "[TODO: Founder bio]"}
                                 </p>
                                 <div className="mt-5 flex flex-wrap items-center gap-3">
                                     <Link
@@ -189,15 +178,19 @@ export default function AboutPage() {
                                     >
                                         <UserCheck className="h-3.5 w-3.5" /> Full Profile &amp; Credentials
                                     </Link>
-                                    <a
-                                        href="https://www.linkedin.com/in/ahsan-architect"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 rounded-md border border-border bg-white px-3 py-1.5 text-xs font-medium text-foreground hover:bg-surface-100 transition-colors"
-                                    >
-                                        <UserCheck className="h-3.5 w-3.5 text-brand" /> LinkedIn Profile
-                                        <ExternalLink className="h-3 w-3 text-foreground/50" />
-                                    </a>
+                                    {factsData.leadership?.founder?.linkedinUrl ? (
+                                        <a
+                                            href={factsData.leadership.founder.linkedinUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 rounded-md border border-border bg-white px-3 py-1.5 text-xs font-medium text-foreground hover:bg-surface-100 transition-colors"
+                                        >
+                                            <UserCheck className="h-3.5 w-3.5 text-brand" /> LinkedIn Profile
+                                            <ExternalLink className="h-3 w-3 text-foreground/50" />
+                                        </a>
+                                    ) : (
+                                        <span className="text-xs font-mono text-amber-800">[TODO: LinkedIn link]</span>
+                                    )}
                                 </div>
                             </div>
 
@@ -213,16 +206,19 @@ export default function AboutPage() {
                                         <strong className="text-foreground">Global Delivery Model:</strong> Sydney-registered legal entity with a distributed global remote engineering team providing 24/7 technical operations across US Eastern/Pacific and Australian Eastern/Western time zones.
                                     </p>
                                     <p>
-                                        <strong className="text-foreground">Compliance:</strong> Australian Privacy Principles (Privacy Act 1988), US 10DLC A2P Carrier Compliance, and GDPR/CCPA data handling standards.
+                                        <strong className="text-foreground">Compliance:</strong>{" "}
+                                        <span className="font-mono text-xs text-amber-800">
+                                            [TODO: Add verified statutory compliance certifications and data policies]
+                                        </span>
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Partner Platform Ecosystem */}
+                        {/* Platform Integrations */}
                         <div className="mt-8 border-t border-border pt-6">
                             <h3 className="text-sm font-semibold text-foreground/80">
-                                Platform Partner Ecosystem
+                                Platform Integrations
                             </h3>
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
                                 {factsData.partnerCertifications.map((cert) => (
@@ -246,7 +242,7 @@ export default function AboutPage() {
 
                                         <div className="mt-4 pt-3 border-t border-border/70 text-xs flex items-center justify-between">
                                             <span className="text-[11px] font-medium text-foreground/70">
-                                                Active Ecosystem Partner
+                                                Integrates with {cert.platform}
                                             </span>
                                             {cert.proofUrl && cert.proofUrl.startsWith("http") && (
                                                 <a
@@ -270,17 +266,10 @@ export default function AboutPage() {
                 <section className="container-shell mt-12">
                     <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
                         <h2 className="font-display text-3xl text-foreground">Journey so far</h2>
-                        <div className="mt-6 space-y-5">
-                            {milestones.map((m) => (
-                                <div key={m.year} className="flex items-start gap-6 rounded-xl border border-border bg-surface-50 p-4">
-                                    <div className="min-w-[72px] font-mono text-sm font-semibold text-brand">
-                                        {m.year}
-                                    </div>
-                                    <div className="text-sm leading-relaxed text-foreground/72">
-                                        {m.event}
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="mt-6 rounded-xl border border-dashed border-border bg-surface-50 p-6 text-sm text-foreground/75">
+                            <p className="font-mono text-xs text-amber-800 font-medium">
+                                [TODO: Add verified company milestones timeline]
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -291,25 +280,25 @@ export default function AboutPage() {
                             Our Operating Principles &amp; Delivery Standards
                         </h2>
                         <p className="mt-2 text-sm text-foreground/70 max-w-2xl">
-                            We built DigitalX Solutions to provide honest, high-leverage technical execution without agency fluff or vanity metrics.
+                            We built DigitalX Solutions to provide honest, high-leverage technical execution without agency fluff or vanity metrics. Every system is engineered for resilient uptime, bi-directional database synchronization, and complete operational transparency.
                         </p>
                         <div className="mt-6 grid gap-6 sm:grid-cols-3 text-sm text-foreground/75">
                             <div className="rounded-2xl border border-border bg-white p-5">
                                 <h3 className="font-semibold text-foreground">1. You Own 100% of the Assets</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
-                                    All CRM setups, Twilio SIP numbers, n8n workflows, and custom Next.js code are built directly in your cloud accounts. If you ever stop working with us, your operational infrastructure stays fully intact.
+                                    All CRM setups, Twilio SIP numbers, n8n workflows, and custom Next.js code are built directly in your cloud accounts. If you ever stop working with us, your operational infrastructure stays fully intact with complete administrative access and source repositories.
                                 </p>
                             </div>
                             <div className="rounded-2xl border border-border bg-white p-5">
-                                <h3 className="font-semibold text-foreground">2. Concrete Telephony Latency Budgets</h3>
+                                <h3 className="font-semibold text-foreground">2. Natural Conversational Latency Pacing</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
-                                    We benchmark conversational AI response times under 800ms. An AI voice receptionist that pauses awkwardly frustrates callers; our systems respond with natural conversational timing.
+                                    We engineer fast, natural conversational responses. An AI voice receptionist that pauses awkwardly frustrates callers; our systems prioritize low-latency streaming to maintain natural timing, rapid turn-taking, and instant interruption handling.
                                 </p>
                             </div>
                             <div className="rounded-2xl border border-border bg-white p-5">
                                 <h3 className="font-semibold text-foreground">3. Zero Hallucination Guardrails</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
-                                    Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside verified parameters, it gracefully routes to your on-call team.
+                                    Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside verified parameters, it gracefully routes to your on-call team with complete caller context and audio transcripts.
                                 </p>
                             </div>
                         </div>

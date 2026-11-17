@@ -245,7 +245,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                 4-Step Intake & Operating Workflow
               </h2>
               <p className="mt-2 text-sm text-foreground/70">
-                Engineered for maximum reliability, sub-second latency, and seamless CRM synchronization.
+                Engineered for maximum reliability, fast, natural conversational responses, and seamless CRM synchronization.
               </p>
             </div>
 

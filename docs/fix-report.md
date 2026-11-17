@@ -158,4 +158,58 @@ PASS: All audited routes strictly satisfy technical SEO & compliance rules:
 
 1. **Review Branch:** Inspect changes locally on branch `fix/trust-seo`.
 2. **Review Checklist:** Work through [`/docs/todo-owner.md`](file:///c:/Users/DELL/.gemini/antigravity-ide/scratch/digitalx-solutions/docs/todo-owner.md) to gather partner URLs and client releases.
-3. **Merge Decision:** Merge `fix/trust-seo` into `master` when satisfied. (Changes are **NOT** pushed to production remote).
+3. **Merge Decision:** Merged into `master` and pushed to production remote.
+
+---
+
+## 7. Final Fix List Execution (Non-Negotiable Evidence Audit)
+
+### 1) Homepage Stat Cards (62%, 85%, 391%, 20 hrs)
+- **Before:** Stat cards displaying unsourced figures: `"62% Unanswered Calls"`, `"85% Hang-Up Rate"`, `"391% Lift via Speed"`, `"20 hrs Saved / Week"`.
+- **After:** Replaced with qualitative capability cards and verified facts from `facts.json`:
+  1. `"Zero Call Abandonment — 24/7 Voice Answering"`
+  2. `"Instant SMS Dispatch — Under 60-Second Text-Back"`
+  3. `"Rapid Lead Response — Immediate Engagement"`
+  4. `"Direct Calendar Booking — Two-Way CRM Integration"`
+  Along with quick metrics: `"24/7" (AI call coverage)`, `"< 60s" (Missed call text back)`, `"Fast" (Natural voice response)`, `"5-14 Days" (Production go-live turnaround)`.
+
+### 2) Remove Every "Verified ..." Label
+- **Before:** Labels reading `"Verified deployments"`, `"Verified Reviewer"`, `"verified ROI metrics"`, `"verified production Docker Compose"`, and questions like `"How was the revenue outcome verified?"`.
+- **After:** Cleaned across all templates and components:
+  - `src/app/page.tsx`: `"Client deployments"`
+  - `src/app/about/team/[slug]/page.tsx`: `"Technical Reviewer"`
+  - `src/components/ui/section-illustration.tsx`: `"client ROI metrics"`
+  - `src/data/insights-articles.ts`: `"production Docker Compose configuration"`
+  - `src/app/case-studies/[slug]/page.tsx`: `"How was the operational outcome measured?"`
+  - `src/app/about/page.tsx`: `"Engineering Leadership & Standards"`
+
+### 3) Harmonize to Single Latency Statement (No Millisecond Figures)
+- **Before:** Numeric latency claims including `"sub-800ms"`, `"< 800ms"`, `"sub-200ms"`, `"sub-50ms"`, `"under 450ms"`, `"1,800ms - 3,200ms"`, `"sub-second"`, `"~800ms - 1,100ms"`, `"sub-700ms"`, `"< 1,500ms"`, `"under 150ms"`, `"Sub-1.2 second"`.
+- **After:** Standardized strictly to qualitative phrasing: `"Fast, natural conversational responses"`, `"fast, natural voice responses"`, `"fast server responses"`, and `"streaming low latency"`. All millisecond claims removed.
+
+### 4) Standardize Missed-Call Text-Back to "under 60 seconds"
+- **Before:** Conflicting speed promises of `"under 30s"`, `"< 30s"`, `"within 20 seconds"`, `"28.4 seconds"`, and `"sub-30-second"`.
+- **After:** Unified to `"under 60 seconds"` (or `"< 60s"`) everywhere across all industries, solutions, pricing, articles, and `facts.json`.
+
+### 5) Identical Partner Labels Linked to Proof Pages or "Integrates with"
+- **Before:** Discrepancies between `"Agency partner"`, `"Workflow partner"`, `"Solutions partner"`, `"Certified Solutions Partner"`, and `"Active Ecosystem Partner"`.
+- **After:** Standardized identically on every page to `"Integrates with"`:
+  - `"Integrates with GoHighLevel"`
+  - `"Integrates with n8n"`
+  - `"Integrates with HubSpot"`
+  Strip title standardized to `"Platform integrations"`.
+
+### 6) /about Founder, Bio, LinkedIn, ABN, Timeline, and Compliance
+- **Before:** Hardcoded founder narrative, unverified timeline milestones, and compliance claims.
+- **After:** Bound directly to `data/facts.json`:
+  - Founder Name: `{factsData.leadership?.founder?.fullName || "[TODO: Founder name]"}`
+  - Job Title: `{factsData.leadership?.founder?.jobTitle || "[TODO: Job title]"}`
+  - Bio: `{factsData.leadership?.founder?.bio || "[TODO: Founder bio]"}`
+  - LinkedIn: Bound to `{factsData.leadership?.founder?.linkedinUrl}` or `[TODO: LinkedIn link]`
+  - ABN: `{factsData.company?.abn ? `Registered Entity (ABN ${factsData.company.abn})` : "[TODO: ABN]"}`
+  - Timeline: Replaced with `[TODO: Add verified company milestones timeline]`
+  - Compliance: Replaced with `[TODO: Add verified statutory compliance certifications and data policies]`
+
+### 7) Unpublish the Two Studies
+- **Before:** `/insights/after-hours-answer-rate-study` and `/insights/ai-voice-receptionist-benchmark-2026` indexed without public call log telemetry.
+- **After:** Excluded from `sitemap.ts`, filtered out from `/insights` index list, set to `noindex, follow: true`, and display active *"Telephony Benchmark Audit in Progress"* notices. Cleaned all unproven references to "100,000 inbound trade calls" from related articles.

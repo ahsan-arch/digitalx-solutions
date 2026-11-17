@@ -162,7 +162,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                                 Telephony Benchmark Audit in Progress
                             </div>
                             <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
-                                This research paper is currently being updated with newly audited, verified call telemetry across our customer base. Check back soon for the revised and independently referenced benchmark data.
+                                This research paper is currently being updated with newly audited call telemetry across our customer base. Check back soon for the revised and independently referenced benchmark data.
                             </p>
                         </div>
                     )}

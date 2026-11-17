@@ -305,7 +305,7 @@ export default function HomePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-medium text-brand">Verified deployments</p>
+              <p className="text-xs font-medium text-brand">Client deployments</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Recent Automation Deployments
               </h2>

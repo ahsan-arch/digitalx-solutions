@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = generatePageMetadata("/services/web-design-and-development", {
   title: "Next.js Web Design & Development",
   description:
-    "Fast, conversion-focused Next.js websites for service teams. Sub-200ms load times, SEO architecture, and CRM booking integrations for US and AU firms.",
+    "Fast, conversion-focused Next.js websites for service teams. Fast server responses, SEO architecture, and CRM booking integrations for US and AU firms.",
 });
 
 const faqs = [
@@ -55,7 +55,7 @@ const faqs = [
 const capabilities = [
   "Next.js 15 + App Router architecture",
   "Headless CMS or hand-built content layers",
-  "Sub-200ms server response, 95+ Lighthouse",
+  "Fast server response, 95+ Lighthouse",
   "Booking + intake forms wired to your CRM",
   "Server side analytics and ad attribution",
   "Hosting on Vercel or Cloudflare with edge caching",

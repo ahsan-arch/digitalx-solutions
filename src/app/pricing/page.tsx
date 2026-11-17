@@ -23,7 +23,7 @@ const tiers = [
     price: "$450/mo",
     summary: "For local operators looking to recover missed calls via instant SMS text-back.",
     includes: [
-      "Instant missed-call text-back (<30s)",
+      "Instant missed-call text-back (under 60 seconds)",
       "10DLC A2P brand registration assistance",
       "Two-way SMS conversational triage",
       "Lead notification routing to staff",

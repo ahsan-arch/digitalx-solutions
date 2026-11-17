@@ -87,7 +87,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         "The system was configured with a strict human escalation protocol. If a caller reported an emergency, expressed distress, or asked about out-of-scope policies, the call immediately bridged via warm SIP transfer to the on-call staff mobile phone with a 5-second private audio summary.",
     },
     {
-      question: "How was the revenue outcome verified?",
+      question: "How was the operational outcome measured?",
       answer:
         "We connected GoHighLevel opportunity pipelines directly to accounting and payment records. Every recovered call and booked appointment was tagged with a unique campaign ID, allowing exact tracking of settled invoices and booked revenue.",
     },

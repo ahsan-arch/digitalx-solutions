@@ -157,6 +157,10 @@ function auditHtml(filePath) {
   // 1. Check Banned Unsourced Claim Patterns
   for (const b of BANNED_PATTERNS) {
     if (b.pattern.test(html)) {
+      // Owner specifically required [TODO] markers on /about unless in facts.json
+      if (route === '/about' && b.pattern.source.includes('\\[TODO:')) {
+        continue;
+      }
       failures.push({
         route,
         issue: 'Banned Unsourced Claim',

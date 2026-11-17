@@ -68,9 +68,9 @@ const processFaqs = [
 
 const technicalSafeguards = [
   {
-    title: "Sub-800ms Latency Budget",
+    title: "Fast, Natural Latency Pacing",
     description:
-      "We optimize voice streaming using Deepgram Nova-2 speech-to-text, fast inference LLM models, and ElevenLabs conversational audio streaming over WebSockets. Response delays stay under 800ms, eliminating awkward conversational pauses.",
+      "We optimize voice streaming using Deepgram Nova-2 speech-to-text, fast inference LLM models, and ElevenLabs conversational audio streaming over WebSockets. We engineer fast, natural conversational responses, eliminating awkward pauses.",
     icon: Zap,
   },
   {

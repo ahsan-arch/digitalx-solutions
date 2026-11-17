@@ -22,7 +22,7 @@ export const seoCopy = {
     webDev: {
         title: "Next.js Web Development Agency",
         description:
-            "Custom web development with sub-200ms load times and Next.js architecture. Fast, SEO-optimized websites for US and Australian service companies.",
+            "Custom web development with high-performance load times and Next.js architecture. Fast, SEO-optimized websites for US and Australian service companies.",
     },
     metaAds: {
         title: "Meta Ads & Server-Side CAPI Agency",
@@ -317,7 +317,7 @@ export function generateOrganizationSchema() {
                 knowsAbout: [
                     "n8n Workflow Automation, Building custom open source automation pipelines as a Zapier alternative",
                     "GoHighLevel (GHL), Custom CRM, pipeline, and marketing automation architecture for agencies",
-                    "Next.js Development Agency, Sub-200ms high-performance websites with SEO-baked architecture",
+                    "Next.js Development Agency, High-performance websites with SEO-baked architecture",
                     "Meta Ads Engineering, Server side CAPI tracking to bypass iOS14+ signal loss",
                     "Conversational AI, 24/7 AI voice receptionists and WhatsApp chatbots for local businesses",
                     "AI Voice Receptionists, Automated phone answering for dental clinics, salons, and gyms",

@@ -108,7 +108,7 @@ export const developmentServices: DevelopmentService[] = [
       {
         title: "Cryptographic Webhook Ingestion Gateways",
         description: "Verify incoming webhooks via HMAC-SHA256 signatures to block forged or spoofed requests.",
-        deliverableDetails: "Sub-50ms ingestion endpoints with immediate HTTP 200 acknowledgment to prevent carrier retries."
+        deliverableDetails: "Fast ingestion endpoints with immediate HTTP 200 acknowledgment to prevent carrier retries."
       },
       {
         title: "Queue-Based Asynchronous Worker Pipeline",
@@ -197,7 +197,7 @@ export const developmentServices: DevelopmentService[] = [
       { label: "Core Foundation Models", value: "GPT-4o, Claude 3.5 Sonnet, DeepSeek, and Local Llama 3" },
       { label: "Execution Framework", value: "LangGraph deterministic state machines with checkpoints" },
       { label: "Output Validation", value: "Strict Pydantic / Zod schema enforcement on every tool call" },
-      { label: "Latency", value: "Streaming token generation with initial time-to-first-token under 450ms" }
+      { label: "Latency", value: "Fast, natural conversational responses with streaming token generation" }
     ],
     mistakesToAvoid: [
       "Granting an LLM unrestricted database write access without strict Pydantic/Zod schema validation, risking database corruption.",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "comment": "DigitalX Solutions Master Facts File. Verified operational details, partner certifications, and client deployment architectures.",
+  "comment": "DigitalX Solutions Master Facts File. Operational details, platform integrations, and client deployment architectures.",
   "company": {
     "name": "DigitalX Solutions",
     "legalName": "DigitalX Solutions",
@@ -39,32 +39,32 @@
       "jobTitle": "Founder & Lead Solutions Engineer",
       "bio": "Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and low-latency neural AI voice agents for enterprise and local service operators across the USA and Australia.",
       "linkedinUrl": "https://www.linkedin.com/in/ahsan-architect",
-      "verifiedIdentity": "Solutions Architect & Director"
+      "role": "Solutions Architect & Director"
     },
     "teamSize": "2-9 employees"
   },
   "partnerCertifications": [
     {
       "platform": "GoHighLevel",
-      "credential": "GoHighLevel Agency Partner",
-      "status": "Agency Partner",
-      "tier": "Agency Partner",
+      "credential": "GoHighLevel Implementation",
+      "status": "Integrates with",
+      "tier": "Platform Integration",
       "proofUrl": "https://www.gohighlevel.com",
       "dateCertified": "2023"
     },
     {
       "platform": "n8n",
-      "credential": "n8n Workflow Partner",
-      "status": "Workflow Partner",
-      "tier": "Creator & Community Partner",
+      "credential": "n8n Workflow Automation",
+      "status": "Integrates with",
+      "tier": "Platform Integration",
       "proofUrl": "https://n8n.io",
       "dateCertified": "2023"
     },
     {
       "platform": "HubSpot",
-      "credential": "HubSpot Solutions Partner",
-      "status": "Solutions Partner",
-      "tier": "Solutions Partner",
+      "credential": "HubSpot Integration & Sync",
+      "status": "Integrates with",
+      "tier": "Platform Integration",
       "proofUrl": "https://www.hubspot.com/partners",
       "dateCertified": "2023"
     }
@@ -108,10 +108,10 @@
   ],
   "performanceMetrics": {
     "callCoverage": "24/7/365",
-    "missedCallTextBackLatency": "< 60s",
+    "missedCallTextBackLatency": "under 60 seconds",
     "aiVoiceLatency": "Fast, natural voice responses",
     "averageGoLiveTimeDays": "5-14 business days",
-    "typicalLeadLift": "30% - 50% recovered bookings (benchmark estimate, subject to verified client audits)"
+    "typicalLeadLift": "30% - 50% recovered bookings (benchmark estimate, subject to client audits)"
   },
   "servicePricingRanges": {
     "currency": "USD",
@@ -122,7 +122,7 @@
       "monthlyRetainer": "$450 / month",
       "setupFeeRange": "$497 - $997 one-time",
       "features": [
-        "Instant missed-call text-back (< 60s)",
+        "Instant missed-call text-back (under 60 seconds)",
         "10DLC A2P brand registration",
         "Two-way SMS conversational triage",
         "Lead notification routing to staff",

@@ -45,7 +45,7 @@ export const integrationsData: Integration[] = [
         step: "01",
         title: "Telephony Webhook & Inbound SIP Route",
         description: "Configure inbound SIP trunking from your business phone number to the voice AI server.",
-        technicalDetail: "We provision a dedicated Twilio trunk that passes caller ID, call SID, and geographical metadata to the webhook endpoint in under 150ms."
+        technicalDetail: "We provision a dedicated Twilio trunk that passes caller ID, call SID, and geographical metadata to the webhook endpoint immediately."
       },
       {
         step: "02",
@@ -285,7 +285,7 @@ export const integrationsData: Integration[] = [
     technicalSpecifications: [
       { label: "Audio Protocol", value: "Real-Time WebSocket Full-Duplex PCM Audio Streaming" },
       { label: "Carrier Compliance", value: "US A2P 10DLC Vetted / Australian ACMA Spam Act Compliant" },
-      { label: "Transfer Latency", value: "Sub-1.2 second live bridge to staff cell phones" },
+      { label: "Transfer Latency", value: "Fast live bridge to staff cell phones" },
       { label: "Uptime SLA", value: "99.95% backed by Twilio global carrier network redundancy" }
     ],
     commonMistakesToAvoid: [

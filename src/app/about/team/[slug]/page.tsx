@@ -181,7 +181,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
                 </a>
                 <span className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-600/20 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
                   <ShieldCheck className="h-4 w-4 text-emerald-600" />
-                  <span>Verified Reviewer</span>
+                  <span>Technical Reviewer</span>
                 </span>
               </div>
             </div>

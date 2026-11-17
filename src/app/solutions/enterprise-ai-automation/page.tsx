@@ -376,8 +376,8 @@ export default function EnterpriseAIAutomationPage() {
                   </tr>
                   <tr>
                     <td className="py-4 px-6 font-medium">Speech-to-Speech Turnaround</td>
-                    <td className="py-4 px-6 text-muted-foreground">1,800ms – 3,200ms (robotic lag)</td>
-                    <td className="py-4 px-6 font-semibold text-foreground">Fast &amp; natural pacing</td>
+                    <td className="py-4 px-6 text-muted-foreground">Noticeable robotic delay</td>
+                    <td className="py-4 px-6 font-semibold text-foreground">Fast, natural conversational responses</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-6 font-medium">Speed-to-Lead (Web & Missed Call)</td>

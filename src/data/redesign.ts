@@ -502,7 +502,7 @@ export const solutions: Solution[] = [
         cadence: "billed monthly",
         description: "Essential missed-call protection for solo contractors and local shops",
         features: [
-          "Instant missed-call text-back (<30s)",
+          "Instant missed-call text-back (under 60 seconds)",
           "10DLC brand registration assistance",
           "Customized business greeting templates",
           "Mobile app for team two-way messaging",
@@ -774,8 +774,8 @@ export const solutions: Solution[] = [
     technicalSpecs: [
       {
         label: "Inference Latency",
-        value: "< 800ms Token Streaming",
-        description: "Instant conversational responses using optimized cloud LLM inference",
+        value: "Fast, natural voice responses",
+        description: "Conversational responses using optimized streaming LLM inference",
       },
       {
         label: "Guardrail Architecture",
@@ -1150,7 +1150,7 @@ export const solutions: Solution[] = [
     metaTitle: "HubSpot Automation Partner & Workflows",
     tagline: "Custom pipelines, webhooks, and AI sync for HubSpot",
     summary:
-      "Certified HubSpot automation partner. We engineer automated lead routing, custom n8n webhooks, AI agent syncing, and sales pipelines for high-growth firms.",
+      "HubSpot automation solutions. We engineer automated lead routing, custom n8n webhooks, AI agent syncing, and sales pipelines for high-growth firms.",
     definition: {
       question: "What is custom HubSpot CRM automation?",
       answer: "Custom HubSpot automation is the advanced engineering of webhook-driven workflows, custom coded actions (Node.js/Python), and bi-directional API synchronizations between HubSpot CRM and external operational backends, automating deal attribution, territory routing, and billing handoffs.",
@@ -1166,7 +1166,7 @@ export const solutions: Solution[] = [
       "Bi-directional n8n workflow integration for complex multi-platform data sync",
       "Telephony and AI voice receptionist integration with automated call recording logs",
       "Lead scoring, round-robin rep assignment, and automated SLA breach notifications",
-      "Certified partner consulting to audit existing workflow bloat and trigger loops",
+      "Specialized partner consulting to audit existing workflow bloat and trigger loops",
     ],
     bestFor:
       "Mid-market service companies and B2B operators on HubSpot who need advanced automated routing without paying $10k/month agency retainers.",
@@ -1197,7 +1197,7 @@ export const solutions: Solution[] = [
     comparison: [
       {
         feature: "Data Synchronization",
-        digitalx: "Sub-second webhook & n8n bi-directional sync",
+        digitalx: "Fast webhook & n8n bi-directional sync",
         traditional: "Batch sync or standard Zapier connectors",
         manual: "Manual CSV exports and fragmented spreadsheets",
       },
@@ -1233,13 +1233,13 @@ export const solutions: Solution[] = [
       },
       {
         label: "Sync Propagation",
-        value: "< 1,500ms Webhook Execution",
+        value: "Fast automated webhook execution",
         description: "Instant deal creation and contact enrichment as soon as forms or calls trigger",
       },
       {
-        label: "Partner Status",
-        value: "Certified Solutions Partner",
-        description: "Vetted HubSpot implementation specialists adhering to HubSpot architectural best practices",
+        label: "Platform Integration",
+        value: "Integrates with HubSpot",
+        description: "Specialized HubSpot implementation adhering to HubSpot architectural best practices",
       },
     ],
     pricingTiers: [
