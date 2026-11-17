@@ -4,7 +4,7 @@
   "company": {
     "name": "DigitalX Solutions",
     "legalName": "DigitalX Solutions",
-    "abn": "34 683 241 189",
+    "abn": "[TODO: ABN]",
     "tagline": "Web development, AI automation, and performance marketing for service businesses in the USA and Australia",
     "oneLineDescription": "DigitalX Solutions is an AI automation agency (Casula NSW, Australia) serving businesses in Australia and the US with AI voice agents, missed-call text-back, GoHighLevel, n8n, and HubSpot workflow systems.",
     "website": "https://digitalx-solutions.com",
@@ -34,12 +34,12 @@
   },
   "leadership": {
     "founder": {
-      "fullName": "Ahsan Architect",
-      "preferredPublicName": "Ahsan Architect",
-      "jobTitle": "Founder & Lead Solutions Engineer",
-      "bio": "Full-stack systems architect with 8+ years experience designing high-concurrency telephony backends, automated CRM pipelines, and low-latency neural AI voice agents for enterprise and local service operators across the USA and Australia.",
-      "linkedinUrl": "https://www.linkedin.com/in/ahsan-architect",
-      "role": "Solutions Architect & Director"
+      "fullName": "[TODO: Founder name]",
+      "preferredPublicName": "[TODO: Founder name]",
+      "jobTitle": "[TODO: Job title]",
+      "bio": "[TODO: Founder bio]",
+      "linkedinUrl": "",
+      "role": "[TODO: Role]"
     },
     "teamSize": "2-9 employees"
   },
@@ -168,11 +168,12 @@
   },
   "clientProjects": [
     {
-      "id": "riverstone-dental",
-      "client": "Riverstone Dental Care",
+      "id": "dental-clinic",
+      "client": "Dental Clinic",
       "industry": "Healthcare & Dental Clinics",
       "isRealClient": true,
-      "permissionToUseNameAndLogo": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
       "logoFile": null,
       "problem": "Front desk staff overwhelmed by calls during peak morning check-in rushes, leaving prospective patients on hold.",
       "whatWasBuilt": "24/7 AI voice receptionist trained on dental service menu, hours, emergency triage, and direct PMS calendar synchronization.",
@@ -186,11 +187,12 @@
       "status": "Case study"
     },
     {
-      "id": "harbor-plumbing",
-      "client": "Harbor Plumbing & Heating",
+      "id": "plumbing-contractor",
+      "client": "Plumbing Contractor",
       "industry": "Plumbing & Trade Services",
       "isRealClient": true,
-      "permissionToUseNameAndLogo": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
       "logoFile": null,
       "problem": "Field technicians on jobsites unable to answer urgent inbound calls, causing after-hours emergency jobs to drop to competitors.",
       "whatWasBuilt": "Missed-call text-back within 60 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
@@ -204,11 +206,12 @@
       "status": "Case study"
     },
     {
-      "id": "atlas-consulting",
-      "client": "Atlas Consulting Partners",
+      "id": "advisory-practice",
+      "client": "Advisory Practice",
       "industry": "Accounting & Professional Services",
       "isRealClient": true,
-      "permissionToUseNameAndLogo": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
       "logoFile": null,
       "problem": "Billable advisory hours consumed by manual client intake, repeated phone qualification, and disconnected spreadsheets.",
       "whatWasBuilt": "Conversational client intake workflow with automated calendar scheduling and GoHighLevel CRM opportunity pipeline tracking.",

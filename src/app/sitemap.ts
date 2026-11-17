@@ -27,7 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${siteConfig.domain}/pricing`, changeFrequency: "monthly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/process`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/about`, changeFrequency: "monthly" as const, priority: 0.7 },
-        { url: `${siteConfig.domain}/about/team/ahsan-architect`, changeFrequency: "monthly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/contact`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/insights`, changeFrequency: "weekly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/try-voice-agent`, changeFrequency: "weekly" as const, priority: 0.9 },

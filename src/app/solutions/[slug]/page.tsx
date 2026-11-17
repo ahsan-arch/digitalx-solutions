@@ -42,8 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
   const formattedTitle =
     solution.metaTitle ||
     (solution.name.toLowerCase().endsWith("implementation") ||
-    solution.name.toLowerCase().endsWith("automation") ||
-    solution.name.toLowerCase().endsWith("dashboards")
+      solution.name.toLowerCase().endsWith("automation") ||
+      solution.name.toLowerCase().endsWith("dashboards")
       ? solution.name
       : `${solution.name} Solutions`);
 
@@ -100,13 +100,13 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
   const howToSchema =
     solution.workflowSteps && solution.workflowSteps.length > 0
       ? generateHowToSchema({
-          name: `${solution.name} Deployment & Operating Workflow`,
-          description: `Step-by-step engineering and deployment methodology for ${solution.name} at DigitalX Solutions.`,
-          steps: solution.workflowSteps.map((step) => ({
-            name: step.name,
-            text: `${step.text} ${step.detail}`,
-          })),
-        })
+        name: `${solution.name} Deployment & Operating Workflow`,
+        description: `Step-by-step engineering and deployment methodology for ${solution.name} at DigitalX Solutions.`,
+        steps: solution.workflowSteps.map((step) => ({
+          name: step.name,
+          text: `${step.text} ${step.detail}`,
+        })),
+      })
       : null;
 
   return (
@@ -127,7 +127,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
           <span>•</span>
           <span className="font-medium text-foreground/80">Last Updated: 25 October 2026</span>
           <span>•</span>
-          <Link href="/about/team/ahsan-architect" className="hover:text-brand transition-colors font-medium text-foreground/80">Reviewed by Ahsan Architect (Lead Solutions Engineer)</Link>
+          <Link href="/about" className="hover:text-brand transition-colors font-medium text-foreground/80">Reviewed by Technical Solutions Team</Link>
         </div>
         <h1 className="mt-2 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">{solution.name}</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">{solution.summary}</p>
@@ -349,9 +349,8 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
               {solution.pricingTiers.map((tier) => (
                 <div
                   key={tier.name}
-                  className={`flex flex-col justify-between rounded-2xl border p-6 md:p-8 bg-white ${
-                    tier.highlight ? "border-brand shadow-md ring-1 ring-brand/30" : "border-border"
-                  }`}
+                  className={`flex flex-col justify-between rounded-2xl border p-6 md:p-8 bg-white ${tier.highlight ? "border-brand shadow-md ring-1 ring-brand/30" : "border-border"
+                    }`}
                 >
                   <div>
                     <div className="flex items-center justify-between">
@@ -380,11 +379,10 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
 
                   <Link
                     href="/contact"
-                    className={`mt-8 inline-flex items-center justify-center rounded-full py-2.5 px-5 text-xs font-semibold transition ${
-                      tier.highlight
-                        ? "bg-brand text-white hover:bg-brand-deep"
-                        : "border border-border bg-surface-50 text-foreground hover:bg-surface-100"
-                    }`}
+                    className={`mt-8 inline-flex items-center justify-center rounded-full py-2.5 px-5 text-xs font-semibold transition ${tier.highlight
+                      ? "bg-brand text-white hover:bg-brand-deep"
+                      : "border border-border bg-surface-50 text-foreground hover:bg-surface-100"
+                      }`}
                   >
                     Select {tier.name}
                     <ArrowRight className="ml-1.5 h-3.5 w-3.5" />

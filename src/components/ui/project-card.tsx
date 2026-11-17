@@ -9,10 +9,9 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  // Map tools to their SVG logo paths
+  // Map tools to their SVG logo paths (only third-party vendor platforms)
   const toolLogos: Record<string, string> = {
     "AI Voice Agent": "/logos/elevenlabs.svg",
-    "Missed-Call Text-Back": "/logos/twilio.svg",
     Twilio: "/logos/twilio.svg",
     GoHighLevel: "/logos/gohighlevel.svg",
     "Google Calendar": "/logos/google-calendar.svg",

@@ -32,11 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = clientProjects.find((p) => p.slug === slug);
 
   const caseStudyDescriptions: Record<string, string> = {
-    "riverstone-dental":
+    "dental-clinic":
       "See how a metropolitan dental practice captured after-hours patient calls and streamlined appointment bookings using DigitalX AI voice receptionist agents.",
-    "harbor-plumbing":
+    "plumbing-contractor":
       "See how a commercial plumbing contractor recovered after-hours emergency calls using 24/7 AI voice triage and automated missed-call text-back workflows.",
-    "atlas-consulting":
+    "advisory-practice":
       "See how an accounting and advisory practice automated client qualification, intake triage, and calendar bookings with custom GoHighLevel CRM workflows.",
   };
 
@@ -48,10 +48,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `${project.client} Automation Case Study`;
+  const isAuthorized = (project as { permission?: boolean }).permission === true;
+  const caseStudyTitles: Record<string, string> = {
+    "dental-clinic": "Dental Clinic AI Case Study",
+    "plumbing-contractor": "Plumbing Contractor AI Case Study",
+    "advisory-practice": "Advisory Practice AI Case Study",
+  };
+  const title = caseStudyTitles[project.slug] || `${project.client} Case Study`;
   const description =
     caseStudyDescriptions[project.slug] ||
-    `Discover how ${project.client} deployed 24/7 voice automation and CRM systems, capturing inquiries with zero hold times across the USA and Australia.`;
+    `Discover how this ${project.industry.toLowerCase()} deployed 24/7 voice automation and CRM systems, capturing inquiries with zero hold times across the USA and Australia.`;
 
   return {
     title,
@@ -167,7 +173,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-border pb-8">
           <div>
             <h1 className="font-display text-3xl text-foreground md:text-5xl font-bold">
-              {project.client}
+              {hasLogoPermission ? project.client : `${project.industry} Case Study (Client name withheld)`}
             </h1>
             <p className="mt-3 text-lg font-medium text-brand">
               {project.measurableResult}
@@ -198,7 +204,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             Executive Summary
           </h2>
           <p className="mt-2 max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
-            When {project.client} partnered with DigitalX Solutions, they faced operational friction
+            When the operator partnered with DigitalX Solutions, they faced operational friction
             in {project.industry.toLowerCase()}: {project.problem.toLowerCase()} We deployed a tailored
             telephony and CRM architecture featuring {project.toolsUsed.join(", ")}, producing{" "}
             {project.measurableResult.toLowerCase()}

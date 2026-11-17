@@ -50,17 +50,13 @@ export default function CaseStudiesIndexPage() {
             Client Engineering Outcomes
           </span>
           <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
-            Real automation deployments. Measurable revenue recovered.
+            Real automation deployments. Documented operational outcomes.
           </h1>
           <p className="mt-4 text-base leading-relaxed text-foreground/75 md:text-lg">
             We don&apos;t pitch hypothetical AI theories. Below are real-world operational builds
             engineered for trade contractors, healthcare practices, and professional service operators
             across Australia and the United States.
           </p>
-          <div className="mt-6 flex items-center gap-2 text-xs font-medium text-foreground/60">
-            <ShieldCheck className="h-4 w-4 text-emerald-600" />
-            <span>Strict Client Verification Policy: Zero invented metrics, testimonials, or unauthorized logos.</span>
-          </div>
         </div>
       </section>
 

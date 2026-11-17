@@ -1815,8 +1815,8 @@ export type ResultCard = {
 
 export const results: ResultCard[] = [
   {
-    slug: "riverstone-dental",
-    client: "Riverstone Dental Care",
+    slug: "dental-clinic",
+    client: "Dental Clinic (Client name withheld)",
     industry: "Dental Clinics",
     industrySlug: "dental-clinics",
     challenge: "Missed inbound calls and front desk overload during peak consultation hours.",
@@ -1836,8 +1836,8 @@ export const results: ResultCard[] = [
     ],
   },
   {
-    slug: "harbor-plumbing",
-    client: "Harbor Plumbing & Heating",
+    slug: "plumbing-contractor",
+    client: "Plumbing Contractor (Client name withheld)",
     industry: "Plumbing Companies",
     industrySlug: "plumbing-companies",
     challenge: "Technicians unable to answer phone calls on active job sites.",
@@ -1857,8 +1857,8 @@ export const results: ResultCard[] = [
     ],
   },
   {
-    slug: "atlas-consulting",
-    client: "Atlas Consulting Partners",
+    slug: "advisory-practice",
+    client: "Advisory Practice (Client name withheld)",
     industry: "Accounting Firms",
     industrySlug: "accounting-firms",
     challenge: "Billable advisory hours lost to unqualified phone inquiries.",

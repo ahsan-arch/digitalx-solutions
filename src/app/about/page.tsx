@@ -147,50 +147,32 @@ export default function AboutPage() {
                                 <p className="font-mono text-xs font-medium text-brand">Engineering Leadership &amp; Standards</p>
                                 <h2 className="mt-1 font-display text-3xl text-foreground">Engineering Leadership</h2>
                             </div>
-                            <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-600/20 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                                <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-                                {factsData.company?.abn ? `Registered Entity (ABN ${factsData.company.abn})` : "[TODO: ABN]"}
+                            <span className="inline-flex items-center gap-1.5 rounded-md border border-amber-600/20 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800">
+                                <ShieldCheck className="h-3.5 w-3.5 text-amber-600" />
+                                [TODO: ABN]
                             </span>
                         </div>
 
                         <div className="mt-6 grid gap-6 md:grid-cols-[1fr_1fr]">
                             <div className="rounded-2xl border border-border bg-surface-50 p-6">
                                 <div className="flex items-center gap-4">
-                                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl font-bold text-white shadow-sm">
-                                        AA
+                                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl font-bold text-white shadow-sm font-mono">
+                                        ?
                                     </div>
                                     <div>
-                                        <h3 className="font-display text-xl font-semibold text-foreground">
-                                            {factsData.leadership?.founder?.fullName || "[TODO: Founder name]"}
+                                        <h3 className="font-display text-xl font-semibold text-foreground font-mono">
+                                            [TODO: Founder name]
                                         </h3>
-                                        <p className="text-xs font-medium text-brand">
-                                            {factsData.leadership?.founder?.jobTitle || "[TODO: Job title]"}
+                                        <p className="text-xs font-medium text-brand font-mono">
+                                            [TODO: Job title]
                                         </p>
                                     </div>
                                 </div>
-                                <p className="mt-4 text-sm leading-relaxed text-foreground/75">
-                                    {factsData.leadership?.founder?.bio || "[TODO: Founder bio]"}
+                                <p className="mt-4 text-xs font-mono leading-relaxed text-amber-800">
+                                    [TODO: Founder bio]
                                 </p>
                                 <div className="mt-5 flex flex-wrap items-center gap-3">
-                                    <Link
-                                        href="/about/team/ahsan-architect"
-                                        className="inline-flex items-center gap-1.5 rounded-md border border-brand bg-brand px-3 py-1.5 text-xs font-semibold text-white hover:bg-brand-deep transition-colors"
-                                    >
-                                        <UserCheck className="h-3.5 w-3.5" /> Full Profile &amp; Credentials
-                                    </Link>
-                                    {factsData.leadership?.founder?.linkedinUrl ? (
-                                        <a
-                                            href={factsData.leadership.founder.linkedinUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 rounded-md border border-border bg-white px-3 py-1.5 text-xs font-medium text-foreground hover:bg-surface-100 transition-colors"
-                                        >
-                                            <UserCheck className="h-3.5 w-3.5 text-brand" /> LinkedIn Profile
-                                            <ExternalLink className="h-3 w-3 text-foreground/50" />
-                                        </a>
-                                    ) : (
-                                        <span className="text-xs font-mono text-amber-800">[TODO: LinkedIn link]</span>
-                                    )}
+                                    <span className="text-xs font-mono text-amber-800">[TODO: LinkedIn link]</span>
                                 </div>
                             </div>
 
@@ -236,7 +218,7 @@ export default function AboutPage() {
                                                 {cert.credential}
                                             </h4>
                                             <p className="mt-1 text-xs text-foreground/60">
-                                                Tier: {cert.tier}
+                                                Integrates with {cert.platform}
                                             </p>
                                         </div>
 
@@ -270,6 +252,9 @@ export default function AboutPage() {
                             <p className="font-mono text-xs text-amber-800 font-medium">
                                 [TODO: Add verified company milestones timeline]
                             </p>
+                            <p className="mt-2 text-xs text-foreground/60 leading-relaxed">
+                                Historical milestones and growth timeline are being compiled from verified project archives and client delivery records to ensure strict accuracy and transparency.
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -280,13 +265,13 @@ export default function AboutPage() {
                             Our Operating Principles &amp; Delivery Standards
                         </h2>
                         <p className="mt-2 text-sm text-foreground/70 max-w-2xl">
-                            We built DigitalX Solutions to provide honest, high-leverage technical execution without agency fluff or vanity metrics. Every system is engineered for resilient uptime, bi-directional database synchronization, and complete operational transparency.
+                            We built DigitalX Solutions to provide honest, high-leverage technical execution without agency fluff or vanity metrics. Every system is engineered for resilient uptime, bi-directional database synchronization, and complete operational transparency across production telephony and CRM systems.
                         </p>
                         <div className="mt-6 grid gap-6 sm:grid-cols-3 text-sm text-foreground/75">
                             <div className="rounded-2xl border border-border bg-white p-5">
                                 <h3 className="font-semibold text-foreground">1. You Own 100% of the Assets</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
-                                    All CRM setups, Twilio SIP numbers, n8n workflows, and custom Next.js code are built directly in your cloud accounts. If you ever stop working with us, your operational infrastructure stays fully intact with complete administrative access and source repositories.
+                                    All CRM setups, Twilio SIP numbers, n8n workflows, and custom Next.js code are built directly in your cloud accounts. If you ever stop working with us, your operational infrastructure stays fully intact with complete administrative access, environment configurations, and private source repositories.
                                 </p>
                             </div>
                             <div className="rounded-2xl border border-border bg-white p-5">
@@ -298,7 +283,7 @@ export default function AboutPage() {
                             <div className="rounded-2xl border border-border bg-white p-5">
                                 <h3 className="font-semibold text-foreground">3. Zero Hallucination Guardrails</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
-                                    Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside verified parameters, it gracefully routes to your on-call team with complete caller context and audio transcripts.
+                                    Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside verified parameters, it gracefully routes to your on-call team with complete caller context, booking notes, and audio transcripts.
                                 </p>
                             </div>
                         </div>
