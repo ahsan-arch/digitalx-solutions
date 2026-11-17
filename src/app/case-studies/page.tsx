@@ -72,7 +72,7 @@ export default function CaseStudiesIndexPage() {
               Featured Client Deployments
             </h2>
             <p className="mt-1 text-sm text-foreground/70">
-              Detailed problem audits, technical architectures, and measured operational results.
+              Detailed problem audits, technical architectures, and documented outcomes.
             </p>
           </div>
         </div>

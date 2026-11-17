@@ -30,6 +30,8 @@ const nextConfig: NextConfig = {
       { source: "/riverstone-dental-group", destination: "/case-studies/riverstone-dental", permanent: true },
       { source: "/case-studies/riverstone-dental-group", destination: "/case-studies/riverstone-dental", permanent: true },
       { source: "/insights/how-dental-clinic-increased-appointments-32-percent", destination: "/insights/how-dental-clinic-increased-appointments-ai-voice", permanent: true },
+      { source: "/insights/how-plumbing-company-recovered-180k-ai-voice", destination: "/insights/plumbing-ai-voice-dispatch-case-study", permanent: true },
+      { source: "/insights/how-we-built-self-hosted-30-second-speed-to-lead-pipeline-n8n-vapi", destination: "/insights/how-we-built-self-hosted-speed-to-lead-pipeline-n8n-vapi", permanent: true },
       // Integration slug aliases
       { source: "/integrations/gohighlevel-ai-voice-agent", destination: "/integrations/gohighlevel", permanent: true },
       { source: "/integrations/n8n-workflows-for-business", destination: "/integrations/n8n", permanent: true },

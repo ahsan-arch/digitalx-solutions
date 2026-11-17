@@ -22,7 +22,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
     Stripe: "/logos/stripe.svg",
   };
 
-  const hasLogoPermission = project.permissionToUseNameAndLogo && project.logoFile;
+  const isAuthorized = (project as { permission?: boolean }).permission === true;
+  const clientDisplayName = isAuthorized ? project.client : "Client name withheld";
+  const hasLogoPermission = isAuthorized && !!project.logoFile;
 
   return (
     <article className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all">
@@ -34,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <div className="flex h-10 w-24 shrink-0 items-center">
                 <Image
                   src={project.logoFile!}
-                  alt={`${project.client} client logo`}
+                  alt={`${clientDisplayName} client logo`}
                   width={96}
                   height={40}
                   className="max-h-10 w-auto object-contain"
@@ -48,7 +50,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             )}
             <div>
               <h3 className="font-display text-lg font-semibold text-foreground">
-                {project.client}
+                {clientDisplayName}
               </h3>
               <span className="text-xs font-medium text-foreground/60">
                 {project.industry}
@@ -83,13 +85,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* Measured Operational Result */}
+        {/* Outcome */}
         <div className="mt-5 rounded-2xl border border-emerald-200/70 bg-emerald-50/60 p-4">
           <div className="flex items-start gap-2.5">
             <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
             <div>
               <span className="font-mono text-[10px] font-medium text-emerald-800">
-                Measured Operational Result
+                Outcome
               </span>
               <p className="mt-0.5 text-xs font-semibold text-emerald-950 leading-relaxed">
                 {project.measurableResult}

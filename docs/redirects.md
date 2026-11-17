@@ -22,6 +22,8 @@
 | `/riverstone-dental-group` | `/case-studies/riverstone-dental` | 301 Permanent | Legacy root alias |
 | `/case-studies/riverstone-dental-group` | `/case-studies/riverstone-dental` | 301 Permanent | Slug normalization |
 | `/insights/how-dental-clinic-increased-appointments-32-percent` | `/insights/how-dental-clinic-increased-appointments-ai-voice` | 301 Permanent | Compliance normalization (removed unproven "32-percent" from slug) |
+| `/insights/how-plumbing-company-recovered-180k-ai-voice` | `/insights/plumbing-ai-voice-dispatch-case-study` | 301 Permanent | Compliance normalization (removed unproven "180k" revenue figure from slug to neutral slug) |
+| `/insights/how-we-built-self-hosted-30-second-speed-to-lead-pipeline-n8n-vapi` | `/insights/how-we-built-self-hosted-speed-to-lead-pipeline-n8n-vapi` | 301 Permanent | Latency normalization (removed "30-second" latency figure from slug to neutral slug) |
 | `/integrations/gohighlevel-ai-voice-agent` | `/integrations/gohighlevel` | 301 Permanent | Integration slug alias |
 | `/integrations/n8n-workflows-for-business` | `/integrations/n8n` | 301 Permanent | Integration slug alias |
 | `/integrations/hubspot-workflow-automation` | `/integrations/hubspot` | 301 Permanent | Integration slug alias |
