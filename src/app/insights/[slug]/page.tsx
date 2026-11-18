@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     if (!article) return { title: 'Not Found' };
 
-    const author = authors[article.authorKey] || authors["ahsan"];
+    const author = authors[article.authorKey] || authors["jazib"];
     const base = generatePageMetadata(`/insights/${resolvedParams.slug}`, {
         title: article.metaTitle || article.title,
         description: article.description,
@@ -90,7 +90,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         notFound();
     }
 
-    const author = authors[article.authorKey];
+    const author = authors[article.authorKey] || authors["jazib"];
     const url = `${siteConfig.domain}/insights/${resolvedParams.slug}`;
 
     const breadcrumbSchema = generateBreadcrumbSchema([

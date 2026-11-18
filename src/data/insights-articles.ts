@@ -1,11 +1,17 @@
 import { siteConfig } from "@/lib/seo";
 
-// ── Author data for E-E-A-T ──
+// ── Author data for Engineering Leadership & Entity Verification ──
 export const authors: Record<string, { name: string; role: string; bio: string; url: string }> = {
+    "jazib": {
+        name: "Jazib Shahid",
+        role: "Founder & Lead Automation Architect",
+        bio: "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States.",
+        url: `${siteConfig.domain}/about`,
+    },
     "ahsan": {
-        name: "Technical Solutions Team",
-        role: "Solutions Engineering",
-        bio: "Full-stack systems architects designing high-concurrency telephony backends, automated CRM pipelines, and low-latency neural AI voice agents for enterprise and service operators.",
+        name: "Ahsan Masood",
+        role: "Senior CRM & Telephony Engineer",
+        bio: "Oversees GoHighLevel multi-location snapshots, Australian and US carrier SIP routing, 10DLC/Sender ID compliance, and dispatch software integrations across trade, medical, and professional service accounts.",
         url: `${siteConfig.domain}/about`,
     },
     "digitalx": {
