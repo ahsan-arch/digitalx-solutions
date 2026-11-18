@@ -69,10 +69,8 @@
     }
 
     .dx-calc-tagline {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: 12px;
+      font-weight: 600;
       color: var(--dx-brand);
       margin-bottom: 6px;
       display: flex;
@@ -284,10 +282,8 @@
     }
 
     .dx-calc-highlight-label {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-size: 13px;
+      font-weight: 600;
       color: var(--dx-rose);
     }
 
@@ -355,10 +351,8 @@
     }
 
     .dx-calc-breakdown-title {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      font-size: 13px;
+      font-weight: 600;
       color: var(--dx-text-main);
     }
 
@@ -641,7 +635,7 @@
         <div class="dx-calc-group">
           <div class="dx-calc-label-row">
             <label for="weeklyCallsRange" class="dx-calc-label">Weekly Inbound Calls</label>
-            <span class="dx-calc-badge" id="monthlyCallsLabel">~282 calls / mo</span>
+            <span class="dx-calc-badge" id="monthlyCallsLabel">282 calls per month</span>
           </div>
           <div class="dx-calc-input-row">
             <input type="range" id="weeklyCallsRange" class="dx-calc-range" min="5" max="500" step="5" value="65">
@@ -866,7 +860,7 @@
         const unrecoveredRevenue = Math.max(0, monthlyLostRevenue - aiRecoverableRevenue);
 
         // Update DOM displays
-        monthlyCallsLabel.textContent = `~${Math.round(monthlyInboundCalls)} calls / mo`;
+        monthlyCallsLabel.textContent = `${Math.round(monthlyInboundCalls)} calls per month`;
         lostMonthlyVal.textContent = fmt(monthlyLostRevenue);
         lostAnnualSub.textContent = `That's ${fmt(annualizedLostRevenue)} leaked annually to competing providers`;
         missedCallsVal.textContent = `${monthlyMissedCalls} calls`;

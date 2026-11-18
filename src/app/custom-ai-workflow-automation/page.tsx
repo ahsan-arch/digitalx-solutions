@@ -80,8 +80,8 @@ export default function CustomAiWorkflowAutomationPage() {
         <section className="container-shell">
           <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-12 md:py-16">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Open-Source Infrastructure &middot; n8n &amp; Make Engineering
+              <p className="text-xs font-medium text-brand">
+                Open-source infrastructure, n8n and Make engineering
               </p>
               <h1 className="mt-3 font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
                 Custom n8n and Make Workflow Automation That Connects Your Entire Tech Stack
@@ -115,22 +115,22 @@ export default function CustomAiWorkflowAutomationPage() {
             {/* Quick Metrics Bar */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Infrastructure</span>
+                <span className="text-xs font-semibold text-brand">Infrastructure</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Self-Hosted n8n</p>
                 <p className="mt-1 text-xs text-foreground/75">Unlimited executions with 100% data privacy.</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Cost Efficiency</span>
+                <span className="text-xs font-semibold text-brand">Cost Efficiency</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Zero Per-Task Fees</p>
                 <p className="mt-1 text-xs text-foreground/75">Eliminates exponential SaaS task bill spikes.</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Reliability</span>
+                <span className="text-xs font-semibold text-brand">Reliability</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Automated Retries</p>
                 <p className="mt-1 text-xs text-foreground/75">Exponential backoff &amp; instant Slack error alerts.</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Code Ownership</span>
+                <span className="text-xs font-semibold text-brand">Code Ownership</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">100% Client Owned</p>
                 <p className="mt-1 text-xs text-foreground/75">Zero vendor lock-in with full JSON exports.</p>
               </div>
@@ -142,8 +142,8 @@ export default function CustomAiWorkflowAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Operational Friction
+              <p className="text-xs font-medium text-brand">
+                Operational friction
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Disconnected Software Silently Drains Your Margin
@@ -162,7 +162,7 @@ export default function CustomAiWorkflowAutomationPage() {
                   Runaway Per-Task SaaS Costs
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Basic automation platforms penalize your growth—scaling lead volume or syncing complex records pushes monthly subscription bills into the thousands.
+                  Basic automation platforms penalize your growth; scaling lead volume or syncing complex records pushes monthly subscription bills into the thousands.
                 </p>
               </div>
 
@@ -197,8 +197,8 @@ export default function CustomAiWorkflowAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Technical Capabilities
+              <p className="text-xs font-medium text-brand">
+                Technical capabilities
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Enterprise-Grade Backend Automation Built for Reliability
@@ -210,20 +210,20 @@ export default function CustomAiWorkflowAutomationPage() {
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Capability 01
+                <span className="text-xs font-semibold text-brand">
+                  Self-Hosted Infrastructure
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   Self-Hosted n8n &amp; Zapier Migrations
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  We deploy, secure, and configure private n8n instances on your cloud infrastructure—giving you unlimited workflow executions, full data privacy, and major monthly cost savings over Zapier.
+                  We deploy, secure, and configure private n8n instances on your cloud infrastructure, giving you unlimited workflow executions, full data privacy, and major monthly cost savings over Zapier.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Capability 02
+                <span className="text-xs font-semibold text-brand">
+                  Custom API Integrations
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   Custom REST API &amp; Webhooks
@@ -234,20 +234,20 @@ export default function CustomAiWorkflowAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Capability 03
+                <span className="text-xs font-semibold text-brand">
+                  AI Data Pipelines
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   AI Agent &amp; LLM Data Pipelines
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  We embed structured AI steps directly inside your operations—automatically parsing incoming PDFs, enriching B2B leads, scoring inquiries, and drafting tailored responses before routing to staff.
+                  We embed structured AI steps directly inside your operations, automatically parsing incoming PDFs, enriching B2B leads, scoring inquiries, and drafting tailored responses before routing to staff.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Capability 04
+                <span className="text-xs font-semibold text-brand">
+                  Lead-to-Cash Automation
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   End-to-End Lead-to-Cash Sync
@@ -258,8 +258,8 @@ export default function CustomAiWorkflowAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6 lg:col-span-2">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Capability 05
+                <span className="text-xs font-semibold text-brand">
+                  Error Handling and Alerts
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   Built-In Error Handling &amp; Live Alerting
@@ -276,8 +276,8 @@ export default function CustomAiWorkflowAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Delivery Methodology
+              <p className="text-xs font-medium text-brand">
+                Delivery methodology
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Engineered, Stress-Tested, and Documented
@@ -289,8 +289,8 @@ export default function CustomAiWorkflowAutomationPage() {
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Phase 01 &middot; Architecture
+                <p className="text-xs font-semibold text-brand">
+                  Phase 1: Architecture
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   System Architecture &amp; Bottleneck Audit
@@ -301,8 +301,8 @@ export default function CustomAiWorkflowAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Phase 02 &middot; Engineering
+                <p className="text-xs font-semibold text-brand">
+                  Phase 2: Engineering
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Custom Node Engineering &amp; Sandbox Testing
@@ -313,14 +313,14 @@ export default function CustomAiWorkflowAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Phase 03 &middot; Handover
+                <p className="text-xs font-semibold text-brand">
+                  Phase 3: Production Handover
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Production Launch &amp; Full Ownership
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  We deploy to production, monitor initial live runs, and hand over technical documentation and workflow backups—you retain 100% code and infrastructure ownership.
+                  We deploy to production, monitor initial live runs, and hand over technical documentation and workflow backups so you retain 100% code and infrastructure ownership.
                 </p>
               </div>
             </div>
@@ -331,8 +331,8 @@ export default function CustomAiWorkflowAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Operational Blueprints
+              <p className="text-xs font-medium text-brand">
+                Operational blueprints
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 High-Impact Workflows We Build Every Week
@@ -345,7 +345,7 @@ export default function CustomAiWorkflowAutomationPage() {
 
           <div className="grid gap-6 md:grid-cols-3">
             <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
-              <span className="font-mono text-xs text-brand uppercase tracking-wider">Pattern A</span>
+              <span className="text-xs font-semibold text-brand">Lead Automation</span>
               <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                 Automated B2B Lead Enrichment &amp; Routing
               </h3>
@@ -355,7 +355,7 @@ export default function CustomAiWorkflowAutomationPage() {
             </div>
 
             <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
-              <span className="font-mono text-xs text-brand uppercase tracking-wider">Pattern B</span>
+              <span className="text-xs font-semibold text-brand">Finance Operations</span>
               <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                 Zero-Touch Accounting &amp; Invoicing Sync
               </h3>
@@ -365,7 +365,7 @@ export default function CustomAiWorkflowAutomationPage() {
             </div>
 
             <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
-              <span className="font-mono text-xs text-brand uppercase tracking-wider">Pattern C</span>
+              <span className="text-xs font-semibold text-brand">Document Processing</span>
               <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                 AI Document &amp; Inbox Triage
               </h3>
@@ -380,7 +380,7 @@ export default function CustomAiWorkflowAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+              <p className="text-xs font-medium text-brand">
                 Buyer FAQ
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">

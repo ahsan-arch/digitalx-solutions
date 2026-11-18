@@ -106,13 +106,13 @@ export function AudioCallPreview({
 
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
               <span className="text-xs font-semibold text-foreground">
                 {title}
               </span>
             </div>
             <p className="text-xs text-foreground/70">
-              {scenario} &middot; <span className="text-foreground/85 font-medium">{callerLabel}</span>
+              {scenario}: <span className="text-foreground/85 font-medium">{callerLabel}</span>
             </p>
           </div>
         </div>
@@ -129,7 +129,7 @@ export function AudioCallPreview({
                 className={cn(
                   "w-1 rounded-full transition-all duration-200",
                   isPlaying
-                    ? "bg-brand animate-pulse"
+                    ? "bg-brand"
                     : "bg-border/80"
                 )}
                 style={{

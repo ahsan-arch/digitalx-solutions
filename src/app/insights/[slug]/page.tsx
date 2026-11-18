@@ -158,7 +158,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     {article.isUpdating && (
                         <div className="mb-10 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-foreground">
                             <div className="flex items-center gap-2 font-semibold text-amber-700">
-                                <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse" />
+                                <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500" />
                                 Telephony Benchmark Audit in Progress
                             </div>
                             <p className="mt-2 text-sm text-foreground/80 leading-relaxed">

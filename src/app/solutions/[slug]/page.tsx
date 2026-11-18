@@ -137,9 +137,9 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {solution.definition && (
         <section className="container-shell mt-8">
           <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 md:p-8">
-            <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-brand">
+            <div className="flex items-center gap-2 text-xs font-semibold text-brand">
               <Zap className="h-4 w-4" />
-              <span>Direct Answer • Technical Definition</span>
+              <span>Technical Definition</span>
             </div>
             <h2 className="mt-2 font-display text-xl font-bold text-foreground md:text-2xl">
               {solution.definition.question}

@@ -82,7 +82,7 @@ const pricingFaqs = [
   {
     question: "How does DigitalX Solutions pricing work?",
     answer:
-      "We charge a transparent monthly retainer per package (Standalone Missed-Call Recovery from $450, Launch AI Voice from $1,200, Operate $2,800, Scale Custom — all prices in USD) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
+      "We charge a transparent monthly retainer per package (Standalone Missed-Call Recovery from $450, Launch AI Voice from $1,200, Operate $2,800, Scale Custom, all prices in USD) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
   },
   {
     question: "Do you offer custom pricing for high-volume teams?",
@@ -140,15 +140,14 @@ export default function PricingPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+            <p className="text-xs font-medium text-brand">
               Predictable Unit Economics
             </p>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Predictable monthly pricing. No agency retainers stacked on retainers.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-              Pick the package that fits your stage. Every tier ships with the systems and reporting we use ourselves &mdash;
-              no upsell games, no &ldquo;ask for a quote&rdquo; on the basics.
+              Pick the package that fits your stage. Every tier ships with the systems and reporting we use ourselves, with no upsell games and no &ldquo;ask for a quote&rdquo; on the basics.
             </p>
           </div>
           <div className="relative">

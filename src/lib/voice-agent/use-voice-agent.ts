@@ -347,7 +347,7 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
       {
         role: "user",
         content:
-          "Hi — this is a live test call. Please greet me and start the conversation.",
+          "Hi, this is a live test call. Please greet me and start the conversation.",
       },
     ];
     setTranscript([]);

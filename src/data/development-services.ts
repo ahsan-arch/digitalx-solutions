@@ -140,7 +140,7 @@ export const developmentServices: DevelopmentService[] = [
     faqs: [
       {
         question: "What is an idempotency key and why is it essential?",
-        answer: "An idempotency key is a unique token generated per transaction. If a network blip causes a webhook to send the same event twice, your system checks the key, recognizes that the transaction was already processed, and skips duplicate execution—preventing double charges or duplicated leads."
+        answer: "An idempotency key is a unique token generated per transaction. If a network blip causes a webhook to send the same event twice, your system checks the key, recognizes that the transaction was already processed, and skips duplicate execution, preventing double charges or duplicated leads."
       },
       {
         question: "Can you connect an older legacy on-premise system to modern cloud apps?",

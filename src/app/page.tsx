@@ -125,8 +125,8 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-10 md:py-16">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand">
-                  Voice Telephony &amp; Workflow Automation · Australia &amp; US
+                <p className="mb-3 text-xs font-medium text-brand">
+                  Voice telephony and workflow automation across Australia and the US
                 </p>
                 <h1 className="font-display text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
                   AI Automation Agency for High-Growth Service Businesses
@@ -180,20 +180,20 @@ export default function HomePage() {
             {/* GEO / AEO System Definition & Architecture Anchor */}
             <div className="mt-8 rounded-xl border border-border/70 bg-surface-50/70 p-6 md:p-8">
               <div className="max-w-3xl">
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                  System Architecture &amp; Definition
+                <p className="text-xs font-medium text-brand">
+                  System architecture and definition
                 </p>
                 <h2 className="mt-2 font-display text-2xl font-semibold text-foreground md:text-3xl">
                   What is an Enterprise AI Voice Receptionist?
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-foreground/80">
-                  An AI voice receptionist is a real-time conversational telephony agent engineered to answer inbound phone calls 24/7, converse naturally with zero robotic delay, qualify customer requirements, and execute operational workflows—including direct CRM calendar booking, emergency triage dispatch, and automated under-60-second missed-call SMS recovery.
+                  An AI voice receptionist is a real-time conversational telephony agent engineered to answer inbound phone calls 24/7, converse naturally with zero robotic delay, qualify customer requirements, and execute operational workflows, including direct CRM calendar booking, emergency triage dispatch, and automated under-60-second missed-call SMS recovery.
                 </p>
               </div>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-lg border border-border/60 bg-white p-4">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">01 · Telephony Layer</p>
+                  <p className="text-xs font-semibold text-brand">Telephony Layer</p>
                   <p className="mt-1 font-display text-base font-semibold text-foreground">Natural Spoken Intake</p>
                   <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
                     Powered by low-latency SIP trunks and Deepgram Nova-2 speech recognition for crystal-clear transcription across Australian and US accents.
@@ -201,7 +201,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="rounded-lg border border-border/60 bg-white p-4">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">02 · Action Engine</p>
+                  <p className="text-xs font-semibold text-brand">Action Engine</p>
                   <p className="mt-1 font-display text-base font-semibold text-foreground">Live Calendar &amp; CRM Sync</p>
                   <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
                     Checks real-time staff availability, books confirmed slots, writes customer notes, and executes warm live transfers for urgent callers.
@@ -209,7 +209,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="rounded-lg border border-border/60 bg-white p-4">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">03 · Lead Safeguard</p>
+                  <p className="text-xs font-semibold text-brand">Lead Recovery Safeguard</p>
                   <p className="mt-1 font-display text-base font-semibold text-foreground">Under-60s Text-Back</p>
                   <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
                     When lines are occupied, automated two-way SMS engages callers in under 60 seconds to lock in quotes before they reach competitors.
@@ -262,7 +262,7 @@ export default function HomePage() {
                   <PhoneCall className="h-4 w-4" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Zero Call Abandonment</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">24/7 Voice Answering</span>
+                <span className="text-xs font-semibold text-brand">24/7 Voice Answering</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Answers every inbound call immediately, preventing prospective clients from dropping to competitors while you are on jobs.
                 </p>
@@ -273,7 +273,7 @@ export default function HomePage() {
                   <Clock className="h-4 w-4" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Instant SMS Dispatch</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Under 60-Second Text-Back</span>
+                <span className="text-xs font-semibold text-brand">Under 60-Second Text-Back</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Dispatches a personalized conversational SMS within 60 seconds of an unanswered call to engage the prospect instantly.
                 </p>
@@ -284,7 +284,7 @@ export default function HomePage() {
                   <Zap className="h-4 w-4" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Rapid Lead Response</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Immediate Engagement</span>
+                <span className="text-xs font-semibold text-brand">Immediate Engagement</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Immediate two-way conversational outreach dramatically outperforms delayed follow-ups, securing high-intent prospects before competitors respond.
                 </p>
@@ -295,7 +295,7 @@ export default function HomePage() {
                   <Database className="h-4 w-4" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Direct Calendar Booking</h3>
-                <span className="font-mono text-[11px] text-brand uppercase tracking-wider">Two-Way CRM Integration</span>
+                <span className="text-xs font-semibold text-brand">Two-Way CRM Integration</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Qualifies job requirements and writes confirmed appointments straight into your calendar and CRM without phone tag.
                 </p>
@@ -372,7 +372,7 @@ export default function HomePage() {
             <div className="mt-8 grid gap-5 md:grid-cols-4">
               {processSteps.map((step, index) => (
                 <div key={step.title} className="rounded-xl border border-border/70 bg-surface-page p-5">
-                  <p className="font-mono text-xs font-medium text-foreground/60">Phase 0{index + 1}</p>
+                  <p className="font-mono text-xs font-medium text-foreground/60">Phase {index + 1}</p>
                   <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/80">{step.description}</p>
                 </div>
@@ -492,7 +492,7 @@ export default function HomePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+              <p className="text-xs font-medium text-brand">
                 Frequently asked questions
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
@@ -517,7 +517,7 @@ export default function HomePage() {
                 Stop Losing Jobs to Missed Calls and Slow Follow-Ups
               </h2>
               <p className="mt-4 text-base leading-relaxed text-white/80 md:text-lg">
-                Let us audit your current call volume and map a bespoke automation pipeline. No pushy sales pitch—just a practical architectural plan with fixed pricing.
+                Let us audit your current call volume and map a bespoke automation pipeline. No pushy sales pitch, just a practical architectural plan with fixed pricing.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link

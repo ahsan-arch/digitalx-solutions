@@ -63,7 +63,7 @@ export default function SolutionsHubPage() {
       <section className="container-shell mt-10">
         <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+            <p className="text-xs font-medium text-brand">
               Enterprise B2B Architecture
             </p>
             <h2 className="text-xl md:text-2xl font-bold text-foreground mt-2">

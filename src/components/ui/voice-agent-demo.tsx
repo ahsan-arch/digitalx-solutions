@@ -289,7 +289,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
                 Hear how our AI handles calls for {script.businessName}
               </p>
               <p className="mt-1.5 max-w-xs text-xs text-foreground/60">
-                Press play to listen to a live demo conversation — our AI voice agent answering, qualifying, and booking.
+                Press play to listen to a live demo conversation of our AI voice agent answering, qualifying, and booking.
               </p>
             </div>
           )}

@@ -80,8 +80,8 @@ export default function AiVoiceReceptionistServicePage() {
         <section className="container-shell">
           <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-12 md:py-16">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Autonomous Inbound Voice Telephony &middot; Australia &amp; US
+              <p className="text-xs font-medium text-brand">
+                Autonomous inbound voice telephony across Australia and the US
               </p>
               <h1 className="mt-3 font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
                 24/7 AI Voice Receptionist That Answers, Qualifies, and Books Appointments Automatically
@@ -128,8 +128,8 @@ export default function AiVoiceReceptionistServicePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Operational Diagnosis
+              <p className="text-xs font-medium text-brand">
+                Operational diagnosis
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Every Missed Call Is a Paying Customer Calling Your Competitor
@@ -188,8 +188,8 @@ export default function AiVoiceReceptionistServicePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Audio Benchmarking
+              <p className="text-xs font-medium text-brand">
+                Audio benchmarks
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Hear Our AI Voice Agents in Action
@@ -202,8 +202,8 @@ export default function AiVoiceReceptionistServicePage() {
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <div className="flex flex-col justify-between rounded-xl border border-border/70 bg-surface-page p-5">
                 <div>
-                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                    Scenario 01 &middot; Home Services
+                  <span className="text-xs font-semibold text-brand">
+                    Home Services
                   </span>
                   <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                     After-Hours Emergency Dispatch
@@ -224,8 +224,8 @@ export default function AiVoiceReceptionistServicePage() {
 
               <div className="flex flex-col justify-between rounded-xl border border-border/70 bg-surface-page p-5">
                 <div>
-                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                    Scenario 02 &middot; Healthcare
+                  <span className="text-xs font-semibold text-brand">
+                    Healthcare
                   </span>
                   <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                     Clinic Intake &amp; Rescheduling
@@ -246,8 +246,8 @@ export default function AiVoiceReceptionistServicePage() {
 
               <div className="flex flex-col justify-between rounded-xl border border-border/70 bg-surface-page p-5">
                 <div>
-                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                    Scenario 03 &middot; Professional Services
+                  <span className="text-xs font-semibold text-brand">
+                    Professional Services
                   </span>
                   <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                     Outbound Speed-to-Lead Callback
@@ -273,8 +273,8 @@ export default function AiVoiceReceptionistServicePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Turnkey Deployment Framework
+              <p className="text-xs font-medium text-brand">
+                Turnkey deployment framework
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 From Concept to Live Phone Agent in 7 Days
@@ -286,8 +286,8 @@ export default function AiVoiceReceptionistServicePage() {
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Step 01 &middot; Days 1-2
+                <p className="text-xs font-semibold text-brand">
+                  Days 1 to 2
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Call Flow &amp; Knowledge Mapping
@@ -298,8 +298,8 @@ export default function AiVoiceReceptionistServicePage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Step 02 &middot; Days 3-5
+                <p className="text-xs font-semibold text-brand">
+                  Days 3 to 5
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Custom Voice Build &amp; CRM Integration
@@ -310,14 +310,14 @@ export default function AiVoiceReceptionistServicePage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Step 03 &middot; Days 6-7
+                <p className="text-xs font-semibold text-brand">
+                  Days 6 to 7
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Stress-Testing &amp; Live Launch
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  We run dozens of simulated calls—testing regional accents, acoustic background noise, interruptions, and warm human transfers—before safely routing live inbound traffic.
+                  We run dozens of simulated calls, testing regional accents, acoustic background noise, interruptions, and warm human transfers, before safely routing live inbound traffic.
                 </p>
               </div>
             </div>
@@ -328,7 +328,7 @@ export default function AiVoiceReceptionistServicePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+              <p className="text-xs font-medium text-brand">
                 Sector Playbooks
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
@@ -345,7 +345,7 @@ export default function AiVoiceReceptionistServicePage() {
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Home Services &amp; Trades
               </h3>
-              <p className="mt-1 font-mono text-xs text-brand uppercase tracking-wider">
+              <p className="mt-1 text-xs font-medium text-brand">
                 HVAC, Plumbing &amp; Roofing
               </p>
               <p className="mt-3 text-sm leading-relaxed text-foreground/75">
@@ -357,7 +357,7 @@ export default function AiVoiceReceptionistServicePage() {
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Medical &amp; Dental Clinics
               </h3>
-              <p className="mt-1 font-mono text-xs text-brand uppercase tracking-wider">
+              <p className="mt-1 text-xs font-medium text-brand">
                 Dental, Allied Health &amp; Med Spas
               </p>
               <p className="mt-3 text-sm leading-relaxed text-foreground/75">
@@ -369,7 +369,7 @@ export default function AiVoiceReceptionistServicePage() {
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Real Estate &amp; Advisory
               </h3>
-              <p className="mt-1 font-mono text-xs text-brand uppercase tracking-wider">
+              <p className="mt-1 text-xs font-medium text-brand">
                 Property &amp; Consultancies
               </p>
               <p className="mt-3 text-sm leading-relaxed text-foreground/75">
@@ -381,7 +381,7 @@ export default function AiVoiceReceptionistServicePage() {
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Marketing &amp; Agencies
               </h3>
-              <p className="mt-1 font-mono text-xs text-brand uppercase tracking-wider">
+              <p className="mt-1 text-xs font-medium text-brand">
                 Lead-Gen &amp; Media Teams
               </p>
               <p className="mt-3 text-sm leading-relaxed text-foreground/75">
@@ -395,7 +395,7 @@ export default function AiVoiceReceptionistServicePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+              <p className="text-xs font-medium text-brand">
                 Architectural Standards
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
@@ -408,7 +408,7 @@ export default function AiVoiceReceptionistServicePage() {
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-lg border border-border/60 bg-surface-page p-5">
-                <span className="font-mono text-xs text-brand uppercase tracking-wider">Speech Engine</span>
+                <span className="text-xs font-semibold text-brand">Speech Engine</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Deepgram Nova-2</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
                   Real-time streaming speech-to-text with advanced acoustic filtering for background vehicle, road, and jobsite noise.
@@ -416,7 +416,7 @@ export default function AiVoiceReceptionistServicePage() {
               </div>
 
               <div className="rounded-lg border border-border/60 bg-surface-page p-5">
-                <span className="font-mono text-xs text-brand uppercase tracking-wider">Voice Latency</span>
+                <span className="text-xs font-semibold text-brand">Voice Latency</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Natural Human Turn-Taking</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
                   Fast response pacing engineered to support natural interruptions, pauses, and barge-in without audio overlapping.
@@ -424,7 +424,7 @@ export default function AiVoiceReceptionistServicePage() {
               </div>
 
               <div className="rounded-lg border border-border/60 bg-surface-page p-5">
-                <span className="font-mono text-xs text-brand uppercase tracking-wider">Integration Layer</span>
+                <span className="text-xs font-semibold text-brand">Integration Layer</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Bi-Directional Webhooks</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
                   Direct live synchronization with GoHighLevel, HubSpot, ServiceTitan, Jobber, and custom n8n data pipelines.
@@ -432,7 +432,7 @@ export default function AiVoiceReceptionistServicePage() {
               </div>
 
               <div className="rounded-lg border border-border/60 bg-surface-page p-5">
-                <span className="font-mono text-xs text-brand uppercase tracking-wider">Telephony Security</span>
+                <span className="text-xs font-semibold text-brand">Telephony Security</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Carrier SIP Forwarding</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
                   Works seamlessly with existing Australian and US phone carriers via conditional call forwarding or SIP trunk routing.
@@ -456,7 +456,7 @@ export default function AiVoiceReceptionistServicePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+              <p className="text-xs font-medium text-brand">
                 Buyer FAQ
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">

@@ -91,7 +91,7 @@ export default function EnterpriseAIAutomationPage() {
             "name": "How do custom AI voice agents qualify high-ticket B2B leads?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations with fast, natural voice responses. The agent asks dynamic qualifying questions—such as company size, budget, urgency, and technical stack—evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar."
+              "text": "Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations with fast, natural voice responses. The agent asks dynamic qualifying questions (such as company size, budget, urgency, and technical stack), evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar."
             }
           },
           {
@@ -150,8 +150,8 @@ export default function EnterpriseAIAutomationPage() {
 
         {/* Hero Section */}
         <header className="max-w-4xl mb-16">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-brand">
-            Enterprise B2B Architecture • Zero SaaS Bloat
+          <p className="mb-4 text-xs font-medium text-brand">
+            Enterprise B2B Architecture with Zero SaaS Bloat
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.15] mb-6">
             Enterprise AI Voice Agents & Self-Hosted Automation Pipelines
@@ -489,7 +489,7 @@ export default function EnterpriseAIAutomationPage() {
                   How do custom AI voice agents qualify high-ticket B2B leads?
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations with fast, natural voice responses. The agent asks dynamic qualifying questions—such as company size, budget, urgency, and technical stack—evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar.
+                  Custom AI voice agents qualify leads by conducting natural, bidirectional phone conversations with fast, natural voice responses. The agent asks dynamic qualifying questions (such as company size, budget, urgency, and technical stack), evaluates responses against your criteria, and automatically books vetted prospects directly onto your calendar.
                 </p>
               </div>
 

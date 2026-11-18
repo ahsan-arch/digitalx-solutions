@@ -86,7 +86,7 @@ export function MissedCallCalculator({
     >
       {/* Header */}
       <div className="border-b border-border/70 bg-gradient-to-b from-white to-surface-50/70 p-6 sm:p-8">
-        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand">
+        <p className="flex items-center gap-2 text-xs font-semibold text-brand">
           <Calculator className="h-3.5 w-3.5" />
           Revenue Leak Benchmark
         </p>
@@ -109,7 +109,7 @@ export function MissedCallCalculator({
                 Weekly Inbound Calls
               </label>
               <span className="rounded-md bg-brand/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-brand">
-                ~{Math.round(monthlyInboundCalls)} calls / mo
+                {Math.round(monthlyInboundCalls)} calls per month
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -259,7 +259,7 @@ export function MissedCallCalculator({
         <div className="flex flex-col justify-between gap-6 p-6 sm:p-8 bg-surface-50/50">
           {/* Main Lost Revenue Card */}
           <div className="rounded-2xl border border-rose-200 bg-rose-50/70 p-5 text-center">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-rose-700">
+            <span className="text-xs font-semibold text-rose-800">
               Estimated Monthly Lost Revenue
             </span>
             <div className="mt-1 font-display text-4xl font-extrabold tracking-tight text-rose-950 sm:text-5xl">
@@ -301,7 +301,7 @@ export function MissedCallCalculator({
           {/* Segmented Pipeline Breakdown */}
           <div className="rounded-2xl border border-border bg-white p-4">
             <div className="flex items-center justify-between text-xs mb-2.5">
-              <span className="font-semibold uppercase tracking-wider text-foreground/80">
+              <span className="font-medium text-foreground/80">
                 Opportunity Distribution
               </span>
               <span className="font-mono text-foreground/60">

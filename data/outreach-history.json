@@ -5823,5 +5823,60 @@
     "status": "sent",
     "provider": "smtp_followup",
     "messageId": "<1dcc810a-8f9a-4c24-d2f9-709f1db645b4@digitalx-solutions.com>"
+  },
+  {
+    "email": "austin@ancestralsupplements.com",
+    "name": "Austin Woodward",
+    "company": "Ancestral supplements",
+    "industry": "b2b",
+    "subject": "following up regarding operations at Ancestral supplements",
+    "sentAt": "2026-11-18T09:02:01.745Z",
+    "status": "sent",
+    "provider": "smtp_followup",
+    "messageId": "<acf6dce0-0d25-8084-3413-bf587f5f59b8@digitalx-solutions.com>"
+  },
+  {
+    "email": "info@greenimaging.net",
+    "name": "Lee Ann Sullivan Moore",
+    "company": "Green imaging",
+    "industry": "b2b",
+    "subject": "following up regarding operations at Green imaging",
+    "sentAt": "2026-11-18T09:07:05.036Z",
+    "status": "sent",
+    "provider": "smtp_followup",
+    "messageId": "<bcc10b35-048c-749a-b733-ca22bdebe8b2@digitalx-solutions.com>"
+  },
+  {
+    "email": "privacy@floreovr.com",
+    "name": "Denise Giraldez Garcia",
+    "company": "Floreo",
+    "industry": "b2b",
+    "subject": "following up regarding operations at Floreo",
+    "sentAt": "2026-11-18T09:12:15.066Z",
+    "status": "sent",
+    "provider": "smtp_followup",
+    "messageId": "<fc697eba-e4f3-3068-363c-dedf2800f40c@digitalx-solutions.com>"
+  },
+  {
+    "email": "alex@ultiself.com",
+    "name": "Alex Nekritin",
+    "company": "Ultiself",
+    "industry": "b2b",
+    "subject": "following up regarding operations at Ultiself",
+    "sentAt": "2026-11-18T09:17:17.844Z",
+    "status": "sent",
+    "provider": "smtp_followup",
+    "messageId": "<234e0bb5-0129-693e-0d5b-951cd89b5954@digitalx-solutions.com>"
+  },
+  {
+    "email": "brian@supermush.com",
+    "name": "Brian Friedman",
+    "company": "Supermush",
+    "industry": "b2b",
+    "subject": "following up regarding operations at Supermush",
+    "sentAt": "2026-11-18T09:22:20.482Z",
+    "status": "sent",
+    "provider": "smtp_followup",
+    "messageId": "<4a21d360-07fa-8264-2155-fd72e56c684e@digitalx-solutions.com>"
   }
 ]

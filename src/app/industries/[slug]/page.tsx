@@ -146,11 +146,9 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {/* Hero Header */}
       <section className="container-shell">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-brand">
-            {industry.category}
+          <span className="text-xs font-semibold text-brand">
+            {industry.category} Playbook
           </span>
-          <span className="text-xs text-foreground/50">•</span>
-          <span className="text-xs font-medium text-foreground/60">Production Playbook</span>
         </div>
         <h1 className="mt-3 max-w-4xl font-display text-4xl leading-tight text-foreground md:text-6xl">
           {industry.h1 || industry.metaTitle || `${industry.name} Automation Playbook`}
@@ -424,7 +422,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {demoScript && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand">Call Audio Preview</span>
+            <span className="text-xs font-medium text-brand">Call Audio Preview</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Listen to our AI Voice Agent handling {industry.name.toLowerCase()} calls
             </h2>

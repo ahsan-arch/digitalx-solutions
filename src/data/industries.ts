@@ -79,7 +79,7 @@ export const industries: Industry[] = [
     "name": "Plumbers, HVAC & Trade Businesses",
     "metaTitle": "24/7 AI Answering & Dispatch for Plumbers & HVAC | DigitalX",
     "h1": "24/7 AI Answering & Dispatch Automation for Plumbers, HVAC, and Trades",
-    "subheadline": "Never miss another $300+ emergency dispatch call. Capture after-hours leads, schedule jobs directly into your dispatch software, and recover missed calls within 60 seconds—all without paying for a traditional call center.",
+    "subheadline": "Never miss another $300+ emergency dispatch call. Capture after-hours leads, schedule jobs directly into your dispatch software, and recover missed calls within 60 seconds, all without paying for a traditional call center.",
     "trustBanner": "Trusted by residential & commercial trade contractors across Australia & the USA to handle 24/7 client booking.",
     "metaDescription": "Stop losing high-value after-hours calls. We deploy 24/7 AI answering, emergency dispatch, and GoHighLevel CRM setups for trade businesses in the US & AU.",
     "category": "Home Services & Contractors",
@@ -215,7 +215,7 @@ export const industries: Industry[] = [
     "name": "Medical & Dental Clinics",
     "metaTitle": "24/7 AI Medical Receptionist & Patient Booking | DigitalX",
     "h1": "24/7 AI Medical Receptionists & Appointment Booking for Healthcare & Dental Clinics",
-    "subheadline": "Keep your practice running smoothly without overloading your front desk. Capture 100% of patient inquiries, book appointments directly into your practice calendar 24/7, and automatically follow up with patient inquiries in seconds—fully secure and automated.",
+    "subheadline": "Keep your practice running smoothly without overloading your front desk. Capture 100% of patient inquiries, book appointments directly into your practice calendar 24/7, and automatically follow up with patient inquiries in seconds, fully secure and automated.",
     "trustBanner": "Deployed across medical, dental, and wellness practices in Australia & the USA to guarantee zero missed patient calls.",
     "metaDescription": "Stop losing new patients to voicemail. We deploy 24/7 AI medical receptionists, automated appointment booking, and GHL CRM systems for clinics in the US & AU.",
     "category": "Healthcare & Medical",
@@ -320,7 +320,7 @@ export const industries: Industry[] = [
       {
         "feature": "Handling Capacity",
         "traditional": "Limited by staff count (can only take one call at a time)",
-        "digitalx": "Unlimited concurrent calls—never busy, never on hold"
+        "digitalx": "Unlimited concurrent calls: never busy, never on hold"
       }
     ],
     "faqs": [

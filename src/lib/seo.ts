@@ -133,7 +133,7 @@ export const geoHreflangLanguages = {
 /**
  * Generate hreflang alternates.
  * Only the geo-targeted routes (homepage, /usa, /au) emit en-US/en-AU
- * alternates — pointing two locales at one URL on country-agnostic pages
+ * alternates, pointing two locales at one URL on country-agnostic pages
  * (services, solutions, insights, …) is invalid, so those get a self-canonical only.
  */
 function generateHreflangAlternates(route: string) {

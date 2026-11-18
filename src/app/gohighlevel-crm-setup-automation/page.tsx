@@ -75,8 +75,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
         <section className="container-shell">
           <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-12 md:py-16">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Production CRM Engineering &middot; Australia &amp; US
+              <p className="text-xs font-medium text-brand">
+                Production CRM engineering across Australia and the US
               </p>
               <h1 className="mt-3 font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
                 GoHighLevel Setup and CRM Automation Built to Capture, Nurture, and Close Every Lead
@@ -110,22 +110,22 @@ export default function GoHighLevelCrmSetupAutomationPage() {
             {/* Platform Integration Highlights */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Telephony &middot; A2P 10DLC</span>
+                <span className="text-xs font-semibold text-brand">A2P 10DLC Telephony</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Carrier-Approved SMS</p>
                 <p className="mt-1 text-xs text-foreground/75">Full brand registration preventing carrier spam filtering.</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Speed &middot; Automation</span>
+                <span className="text-xs font-semibold text-brand">Speed to Lead Automation</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">&lt; 60s Text-Back</p>
                 <p className="mt-1 text-xs text-foreground/75">Instant conversational recovery on missed phone calls.</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Calendar &middot; Synced</span>
+                <span className="text-xs font-semibold text-brand">Synced Calendars</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Automated Bookings</p>
                 <p className="mt-1 text-xs text-foreground/75">Round-robin calendar sync with zero double-bookings.</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">Turnaround &middot; Fast</span>
+                <span className="text-xs font-semibold text-brand">Fast Turnaround</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">7 Business Days</p>
                 <p className="mt-1 text-xs text-foreground/75">Turnkey configuration, testing, and team handover.</p>
               </div>
@@ -137,14 +137,14 @@ export default function GoHighLevelCrmSetupAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Systemic Bottlenecks
+              <p className="text-xs font-medium text-brand">
+                Systemic bottlenecks
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Why Most GoHighLevel Accounts Fail to Generate ROI
               </h2>
               <p className="mt-4 text-base leading-relaxed text-foreground/75">
-                Buying the software is easy—configuring the backend logic so leads never slip through the cracks is where teams get stuck.
+                Buying the software is easy; configuring the backend logic so leads never slip through the cracks is where teams get stuck.
               </p>
             </div>
 
@@ -192,8 +192,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Comprehensive Implementation
+              <p className="text-xs font-medium text-brand">
+                Comprehensive implementation
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 End-to-End CRM Architecture Done for You
@@ -205,8 +205,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Architecture 01
+                <span className="text-xs font-semibold text-brand">
+                  Sales Pipelines
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   Custom Sales Pipelines &amp; Lead Routing
@@ -217,8 +217,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Architecture 02
+                <span className="text-xs font-semibold text-brand">
+                  Speed to Lead
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   Speed-to-Lead &amp; Missed-Call Text-Back
@@ -229,8 +229,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Architecture 03
+                <span className="text-xs font-semibold text-brand">
+                  A2P 10DLC and Phone Setup
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   LC Phone &amp; A2P 10DLC Compliance
@@ -241,8 +241,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Architecture 04
+                <span className="text-xs font-semibold text-brand">
+                  Conversation AI and Booking
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   Conversation AI &amp; Smart Booking
@@ -253,8 +253,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6 lg:col-span-2">
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Architecture 05
+                <span className="text-xs font-semibold text-brand">
+                  Snapshots and External APIs
                 </span>
                 <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                   Custom Agency Snapshots &amp; Integrations
@@ -271,8 +271,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                Implementation Roadmap
+              <p className="text-xs font-medium text-brand">
+                Implementation roadmap
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Live, Tested, and Documented in 7 Business Days
@@ -284,8 +284,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Step 01 &middot; Days 1-2
+                <p className="text-xs font-semibold text-brand">
+                  Days 1 to 2
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Funnel &amp; Pipeline Blueprint
@@ -296,20 +296,20 @@ export default function GoHighLevelCrmSetupAutomationPage() {
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Step 02 &middot; Days 3-5
+                <p className="text-xs font-semibold text-brand">
+                  Days 3 to 5
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Custom Build &amp; Data Migration
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  We configure your pipelines, workflows, calendars, forms, and A2P registration—and migrate your existing contacts cleanly from HubSpot, Pipedrive, or spreadsheets.
+                  We configure your pipelines, workflows, calendars, forms, and A2P registration, and migrate your existing contacts cleanly from HubSpot, Pipedrive, or spreadsheets.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
-                  Step 03 &middot; Days 6-7
+                <p className="text-xs font-semibold text-brand">
+                  Days 6 to 7
                 </p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                   Live Testing &amp; Team Handover
@@ -326,7 +326,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+              <p className="text-xs font-medium text-brand">
                 Buyer FAQ
               </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">

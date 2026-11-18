@@ -26,7 +26,7 @@ export default function CaseStudiesIndexPage() {
   const itemListSchema = generateItemListSchema(
     "DigitalX Solutions Case Studies & Engineering Outcomes",
     clientProjects.map((p) => ({
-      name: `${p.client} — ${p.industry}`,
+      name: `${p.client}: ${p.industry}`,
       url: `${siteConfig.domain}/case-studies/${p.slug}`,
       description: p.measurableResult,
     }))
@@ -46,7 +46,7 @@ export default function CaseStudiesIndexPage() {
       {/* Hero Header */}
       <section className="container-shell">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+          <p className="text-xs font-medium text-brand">
             Client Engineering Outcomes
           </p>
           <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">

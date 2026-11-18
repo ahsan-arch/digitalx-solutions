@@ -307,21 +307,21 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
           <div className="mt-6 grid gap-6 sm:grid-cols-3 text-xs text-foreground/75">
             <div className="rounded-xl border border-border bg-surface-50 p-4">
-              <span className="font-mono text-xs font-medium text-brand">Week 01-02</span>
+              <span className="text-xs font-semibold text-brand">Weeks 1 to 2</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">Discovery &amp; Blueprint</h3>
               <p className="mt-2 leading-relaxed">
                 Audited historical call logs, documented frequent customer objections, and mapped out custom appointment booking availability rules.
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface-50 p-4">
-              <span className="font-mono text-xs font-medium text-brand">Week 03</span>
+              <span className="text-xs font-semibold text-brand">Week 3</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">Prompt Tuning &amp; SIP Wiring</h3>
               <p className="mt-2 leading-relaxed">
                 Tuned conversational prompts on Deepgram and ElevenLabs, verified 10DLC SMS registration, and wired two-way webhooks to the CRM.
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface-50 p-4">
-              <span className="font-mono text-xs font-medium text-brand">Week 04</span>
+              <span className="text-xs font-semibold text-brand">Week 4</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">50 Synthetic Calls &amp; Launch</h3>
               <p className="mt-2 leading-relaxed">
                 Ran 50 simulated calls testing background noise and regional accents. Conducted supervised live testing before full 24/7 cutover.

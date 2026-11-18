@@ -58,7 +58,7 @@ export default function DevelopmentHubPage() {
       <main id="main" className="pb-24 pt-12">
         <section className="container-shell">
           <div className="max-w-3xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand">Software Engineering &amp; Custom Architecture</p>
+            <p className="mb-3 text-xs font-medium text-brand">Software Engineering &amp; Custom Architecture</p>
             <h1 className="font-display text-4xl text-foreground md:text-5xl lg:text-6xl font-semibold leading-tight">
               Custom AI &amp; Automation Development Services
             </h1>

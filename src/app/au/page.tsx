@@ -79,7 +79,7 @@ export default function AuPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-brand">Australia Delivery</p>
+            <p className="text-xs font-medium text-brand">Australia Delivery</p>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Automation services for Australian service businesses.
             </h1>
