@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${siteConfig.domain}/solutions`, changeFrequency: "monthly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/solutions/enterprise-ai-automation`, changeFrequency: "weekly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/ai-voice-receptionist-service`, changeFrequency: "weekly" as const, priority: 0.9 },
+        { url: `${siteConfig.domain}/gohighlevel-crm-setup-automation`, changeFrequency: "weekly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/industries`, changeFrequency: "weekly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/integrations`, changeFrequency: "weekly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/development`, changeFrequency: "monthly" as const, priority: 0.85 },

@@ -48,10 +48,11 @@ console.log("=================================================");
 console.log("   DIGITALX SOLUTIONS — AUTOMATED SEO QA SUITE   ");
 console.log("=================================================\n");
 
-// ── 1. Static Pages (20 routes) ──
+// ── 1. Static Pages (21 routes) ──
 checkMetadata("/", "AI Automation Agency Australia & USA | DigitalX", "DigitalX Solutions is an AI automation agency deploying AI voice agents, missed-call text-back, and GoHighLevel CRM workflows across Australia and the US.");
 checkMetadata("/solutions", "AI Voice, Automation & CRM Solutions", "Explore AI voice receptionists, missed-call text-back, GoHighLevel systems, and n8n workflow automations engineered to scale revenue.");
 checkMetadata("/ai-voice-receptionist-service", "24/7 AI Voice Receptionist | DigitalX Solutions", "Never miss another inbound lead. Deploy a custom-trained 24/7 AI voice receptionist integrated directly with your CRM and calendar in 7 days.");
+checkMetadata("/gohighlevel-crm-setup-automation", "GoHighLevel Setup & CRM Automation | DigitalX", "Turn GoHighLevel into an automated acquisition engine: custom pipelines, A2P 10DLC compliance, missed-call text-back, and AI workflows built in 7 days.");
 checkMetadata("/industries", "Industry AI & Automation Solutions", "Specialized AI voice receptionists and CRM workflows for trades, healthcare, legal, real estate, and local service businesses across the US and Australia.");
 checkMetadata("/integrations", "Platform Integrations & Automation Ecosystem", "Explore enterprise integrations for GoHighLevel, n8n, HubSpot, Twilio, Cliniko, ServiceTitan, Jobber, and Google Calendar by DigitalX Solutions.");
 checkMetadata("/development", "Custom AI & Automation Development | DigitalX", "Explore custom CRM development, API and webhook integrations, AI agent development, and white-label CRM platforms engineered by DigitalX Solutions.");
