@@ -38,10 +38,7 @@ export default function IntegrationsHubPage() {
       <main id="main" className="pb-24 pt-12">
         <section className="container-shell">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border bg-white px-3 py-1.5 font-mono text-xs font-medium text-brand">
-              <Cpu className="h-3.5 w-3.5" />
-              Ecosystem &amp; Architecture
-            </div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand">Ecosystem &amp; Architecture</p>
             <h1 className="font-display text-4xl text-foreground md:text-5xl lg:text-6xl font-semibold leading-tight">
               Enterprise CRM &amp; Platform Integrations
             </h1>

@@ -63,9 +63,9 @@ export default function SolutionsHubPage() {
       <section className="container-shell mt-10">
         <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold">
+            <p className="text-xs font-semibold uppercase tracking-wider text-brand">
               Enterprise B2B Architecture
-            </span>
+            </p>
             <h2 className="text-xl md:text-2xl font-bold text-foreground mt-2">
               Enterprise AI Voice Agents & Self-Hosted Automation
             </h2>

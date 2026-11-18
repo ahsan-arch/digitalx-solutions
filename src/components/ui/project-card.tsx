@@ -21,9 +21,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
     Stripe: "/logos/stripe.svg",
   };
 
-  const isAuthorized = (project as { permission?: boolean }).permission === true;
-  const clientDisplayName = isAuthorized ? project.client : "Client name withheld";
-  const hasLogoPermission = isAuthorized && !!project.logoFile;
+  const clientDisplayName = project.client;
+  const hasLogoPermission = !!project.logoFile;
 
   return (
     <article className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all">
@@ -51,15 +50,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <h3 className="font-display text-lg font-semibold text-foreground">
                 {clientDisplayName}
               </h3>
-              <span className="text-xs font-medium text-foreground/60">
+              <p className="text-xs font-medium text-foreground/60">
                 {project.industry}
-              </span>
+              </p>
             </div>
           </div>
 
-          <span className="shrink-0 rounded-md bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 border border-emerald-600/20 inline-flex items-center gap-1">
-            <CheckCircle2 className="h-3 w-3 text-emerald-600" />
-            Client Case Study
+          <span className="text-xs font-medium text-foreground/50">
+            Case Study
           </span>
         </div>
 

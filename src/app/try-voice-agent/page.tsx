@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Cpu, HelpCircle, PhoneCall, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Cpu, HelpCircle, PhoneCall, Zap } from "lucide-react";
 import { VoiceAgentExperience } from "./voice-agent-experience";
 import {
   generateBreadcrumbSchema,
@@ -67,11 +67,7 @@ export default function TryVoiceAgentPage() {
       {/* Hero Section */}
       <section className="container-shell">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-md border border-brand/20 bg-brand/5 px-3 py-1 text-xs font-medium text-brand">
-            <Sparkles className="h-3.5 w-3.5" />
-            Interactive Voice Demo
-          </span>
-          <h1 className="mt-4 font-display text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
             Try an AI voice agent trained on your business.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">

@@ -85,10 +85,9 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
   return (
     <div className={cn("w-full py-6 md:py-8", className)}>
       <div className="flex flex-col items-center text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-border/70 bg-white px-3.5 py-1 text-xs font-medium text-foreground/80 shadow-xs">
-          <ShieldCheck className="h-4 w-4 text-emerald-600" />
-          <span>Platform integrations</span>
-        </div>
+        <p className="mb-6 text-xs font-semibold uppercase tracking-wider text-foreground/60">
+          Platform Integrations &amp; Workflows
+        </p>
 
         <div className="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
           {partners.map((partner) => (
@@ -99,14 +98,9 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
               <div className="mb-4">{partner.logo}</div>
 
               <div className="text-center">
-                <span
-                  className={cn(
-                    "inline-flex items-center gap-1 rounded-md border px-2.5 py-0.5 text-xs font-medium",
-                    partner.tierColor
-                  )}
-                >
-                  {partner.badge}
-                </span>
+                <p className="text-xs font-semibold text-foreground/80">
+                  {partner.badge} {partner.platform}
+                </p>
 
                 <p className="mt-2 text-xs text-foreground/75 leading-relaxed">
                   {partner.specialty}

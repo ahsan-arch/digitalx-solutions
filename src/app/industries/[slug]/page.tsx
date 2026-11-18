@@ -146,7 +146,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {/* Hero Header */}
       <section className="container-shell">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand">
             {industry.category}
           </span>
           <span className="text-xs text-foreground/50">•</span>
@@ -189,7 +189,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
             {industry.niches.map((niche) => (
               <span
                 key={niche}
-                className="rounded-full border border-border bg-surface-50 px-3 py-1 text-xs text-foreground/75"
+                className="rounded-md border border-border/80 bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/75"
               >
                 {niche}
               </span>
@@ -424,7 +424,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {demoScript && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <span className="font-mono text-xs font-medium text-foreground/60">Interactive Voice Demo</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand">Call Audio Preview</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Listen to our AI Voice Agent handling {industry.name.toLowerCase()} calls
             </h2>

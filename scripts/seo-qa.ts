@@ -69,11 +69,13 @@ checkMetadata("/legal/privacy", "Privacy Policy", "How DigitalX Solutions collec
 checkMetadata("/legal/terms", "Terms of Service", "Terms governing use of digitalx-solutions.com, our contact forms, and engagements with DigitalX Solutions automation services.");
 checkMetadata("/legal/cookies", "Cookie Policy", "What cookies digitalx-solutions.com uses, why we use them, and how you can control or block them in your browser.");
 
-// ── 2. Solutions (7 routes) ──
+// ── 2. Solutions (dynamic + standalone routes) ──
 for (const s of solutions) {
   const formattedTitle = s.metaTitle || s.name;
   checkMetadata(`/solutions/${s.slug}`, formattedTitle, s.summary);
 }
+// Standalone enterprise page (not in the solutions array but has its own route and sitemap entry)
+checkMetadata("/solutions/enterprise-ai-automation", "B2B AI Voice Agents & Custom Automation | DigitalX", "DigitalX Solutions engineers self-hosted n8n pipelines, low-latency AI voice agents, and CRM systems to eliminate SaaS bloat for high-ticket B2B firms.");
 
 // ── 3. Industries (56 routes) ──
 for (const ind of industries) {
@@ -100,8 +102,9 @@ for (const p of clientProjects) {
   checkMetadata(`/case-studies/${p.slug}`, title, desc);
 }
 
-// ── 7. Insights Articles (24 routes) ──
+// ── 7. Insights Articles (indexed articles only — matches sitemap filter) ──
 for (const [slug, art] of Object.entries(articlesData)) {
+  if (art.noindex) continue;
   const title = art.metaTitle || art.title;
   checkMetadata(`/insights/${slug}`, title, art.description);
 }

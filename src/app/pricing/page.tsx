@@ -140,9 +140,9 @@ export default function PricingPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-line-subtle bg-surface-sunken px-2.5 py-1 text-xs font-medium text-ink-secondary">
+            <p className="text-xs font-semibold uppercase tracking-wider text-brand">
               Predictable Unit Economics
-            </span>
+            </p>
             <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
               Predictable monthly pricing. No agency retainers stacked on retainers.
             </h1>

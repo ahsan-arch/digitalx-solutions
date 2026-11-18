@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import factsData from "../../data/facts.json";
 
 export const siteConfig = {
     domain: "https://digitalx-solutions.com",
@@ -241,12 +242,14 @@ export function generateOrganizationSchema() {
                     "https://www.producthunt.com/@digitalx_solutions",
                 ],
                 foundingDate: "2022",
-                founder: {
-                    "@type": "Person",
-                    name: "Ahsan Architect",
-                    jobTitle: "Founder & Lead Automation Engineer",
-                    url: `${siteConfig.domain}/about`,
-                },
+                ...(factsData.leadership.founder.fullName.startsWith("[TODO") ? {} : {
+                    founder: {
+                        "@type": "Person",
+                        name: factsData.leadership.founder.fullName,
+                        jobTitle: factsData.leadership.founder.jobTitle,
+                        url: `${siteConfig.domain}/about`,
+                    },
+                }),
                 numberOfEmployees: {
                     "@type": "QuantitativeValue",
                     value: "10",

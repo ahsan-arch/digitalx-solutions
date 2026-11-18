@@ -35,13 +35,13 @@ export default function AboutPage() {
             "@type": "Organization",
             name: "DigitalX Solutions",
             url: siteConfig.domain,
-            founder: {
-                "@type": "Person",
-                name: "Ahsan Architect",
-                jobTitle: "Founder & Lead Solutions Engineer",
-                url: "https://www.linkedin.com/in/ahsan-architect",
-                sameAs: ["https://www.linkedin.com/in/ahsan-architect"],
-            },
+            ...(factsData.leadership.founder.fullName.startsWith("[TODO") ? {} : {
+                founder: {
+                    "@type": "Person",
+                    name: factsData.leadership.founder.fullName,
+                    jobTitle: factsData.leadership.founder.jobTitle,
+                },
+            }),
             address: {
                 "@type": "PostalAddress",
                 streetAddress: "16 Boldrewood Ave",
@@ -72,9 +72,9 @@ export default function AboutPage() {
                 <section className="container-shell">
                     <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
                         <div>
-                            <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+                            <p className="text-xs font-semibold uppercase tracking-wider text-brand">
                                 Engineering &amp; Operations
-                            </span>
+                            </p>
                             <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
                                 We build practical growth systems that your team can run after launch.
                             </h1>

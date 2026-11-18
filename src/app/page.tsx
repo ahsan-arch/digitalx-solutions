@@ -128,10 +128,9 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-10 md:py-16">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border/70 bg-white px-3 py-1 text-xs font-medium text-foreground/80">
-                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-                  <span>Voice telephony and workflow automation · Australia &amp; US</span>
-                </div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand">
+                  Voice Telephony &amp; Workflow Automation · Australia &amp; US
+                </p>
                 <h1 className="font-display text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
                   AI Automation Agency for High-Growth Service Businesses
                 </h1>

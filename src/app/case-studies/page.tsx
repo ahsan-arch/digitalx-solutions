@@ -46,9 +46,9 @@ export default function CaseStudiesIndexPage() {
       {/* Hero Header */}
       <section className="container-shell">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+          <p className="text-xs font-semibold uppercase tracking-wider text-brand">
             Client Engineering Outcomes
-          </span>
+          </p>
           <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
             Real automation deployments. Documented operational outcomes.
           </h1>

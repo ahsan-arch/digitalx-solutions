@@ -356,7 +356,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                     <div className="flex items-center justify-between">
                       <h3 className="font-display text-xl font-bold text-foreground">{tier.name}</h3>
                       {tier.highlight && (
-                        <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
+                        <span className="rounded-md border border-brand/30 bg-brand/5 px-2.5 py-0.5 text-xs font-semibold text-brand">
                           Recommended
                         </span>
                       )}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Cpu, Database, Network, ShieldCheck, Zap, Lock, Terminal, Activity, Server, PhoneCall } from "lucide-react";
 import { generatePageMetadata, siteConfig } from "@/lib/seo";
+import factsData from "../../../../data/facts.json";
 
 export const metadata: Metadata = generatePageMetadata("/solutions/enterprise-ai-automation", {
   title: "B2B AI Voice Agents & Custom Automation | DigitalX",
@@ -19,11 +20,13 @@ export default function EnterpriseAIAutomationPage() {
         "name": "DigitalX Solutions",
         "url": siteConfig.domain,
         "logo": `${siteConfig.domain}/logo.png`,
-        "founder": {
-          "@type": "Person",
-          "name": "Ahsan Architect",
-          "jobTitle": "Founder & Lead Solutions Engineer"
-        },
+        ...(factsData.leadership.founder.fullName.startsWith("[TODO") ? {} : {
+          "founder": {
+            "@type": "Person",
+            "name": factsData.leadership.founder.fullName,
+            "jobTitle": factsData.leadership.founder.jobTitle
+          },
+        }),
         "knowsAbout": [
           "Conversational AI Voice Agents",
           "Self-Hosted n8n Workflow Automation",
@@ -147,10 +150,9 @@ export default function EnterpriseAIAutomationPage() {
 
         {/* Hero Section */}
         <header className="max-w-4xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-6">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>Enterprise B2B Architecture • Zero SaaS Bloat</span>
-          </div>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-brand">
+            Enterprise B2B Architecture • Zero SaaS Bloat
+          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.15] mb-6">
             Enterprise AI Voice Agents & Self-Hosted Automation Pipelines
           </h1>
