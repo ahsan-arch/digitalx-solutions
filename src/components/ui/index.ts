@@ -6,3 +6,5 @@ export { HeroIllustration } from "./hero-illustration";
 export { SectionIllustration } from "./section-illustration";
 export { CertifiedPartnerStrip, PlatformIntegrationsStrip } from "./partner-strip";
 export { ProjectCard } from "./project-card";
+export { AudioCallPreview } from "./audio-call-preview";
+export { FAQAccordion } from "./faq-accordion";

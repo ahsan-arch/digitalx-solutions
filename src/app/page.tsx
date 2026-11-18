@@ -1,10 +1,33 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, PhoneCall, MessageSquare, Zap, Database, Clock, ShieldCheck, ChevronRight } from "lucide-react";
 import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
-import { HeroIllustration, TiltCard, CertifiedPartnerStrip, ProjectCard } from "@/components/ui";
+import { HeroIllustration, TiltCard, CertifiedPartnerStrip, ProjectCard, AudioCallPreview, FAQAccordion } from "@/components/ui";
 import { heroMetrics, processSteps, solutions } from "@/data/redesign";
 import { industryCategories } from "@/data/industries";
 import factsData from "@/data/facts";
+
+const homeFaqs = [
+  {
+    question: "How fast does the AI answering agent answer incoming calls?",
+    answer:
+      "Our AI Voice Receptionists deliver fast, natural responses with no robotic pause or delay, answering calls 24/7.",
+  },
+  {
+    question: "Does this AI integrate with existing CRMs?",
+    answer:
+      "Yes. We specialize in custom GoHighLevel CRM setup and integrate directly with ServiceTitan, HubSpot, and Google Calendar via webhooks and API. Client records, appointment bookings, and full transcripts update automatically.",
+  },
+  {
+    question: "Can the voice agents handle phone number forwarding?",
+    answer:
+      "Yes, through carriers and Twilio, we connect existing US and Australian numbers, meaning your business can use our services without needing any complex forwarding steps.",
+  },
+  {
+    question: "How does the missed-call lead recovery work?",
+    answer:
+      "If you are busy on the line, our automated missed-call text back system sends an instant text to the missed caller in under 60 seconds to triage, recover, and schedule the lead.",
+  },
+];
 
 export default function HomePage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -73,40 +96,14 @@ export default function HomePage() {
       },
       {
         "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "How fast does the AI answering agent answer incoming calls?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Our AI Voice Receptionists deliver fast, natural responses with no robotic pause or delay, answering calls 24/7.",
-            },
+        mainEntity: homeFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
           },
-          {
-            "@type": "Question",
-            name: "Does this AI integrate with existing CRMs?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. We specialize in custom GoHighLevel CRM setup and integrate directly with ServiceTitan, HubSpot, and Google Calendar via webhooks and API. Client records, appointment bookings, and full transcripts update automatically.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Can the voice agents handle phone number forwarding?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes, through carriers and Twilio, we connect existing US and Australian numbers, meaning your business can use our services without needing any complex forwarding steps.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How does the missed-call lead recovery work?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "If you are busy on the line, our automated missed-call text back system sends an instant text to the missed caller in under 60 seconds to triage, recover, and schedule the lead.",
-            },
-          },
-        ],
+        })),
       },
     ],
   };
@@ -155,14 +152,13 @@ export default function HomePage() {
                   </Link>
                 </div>
 
-                <div className="mt-5 flex flex-wrap items-center gap-3 rounded-xl border border-border/70 bg-surface-50/80 px-3.5 py-2.5 text-xs text-foreground/80">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="font-medium text-foreground">Sample 20s AI trade intake call:</span>
-                  </div>
-                  <audio controls preload="none" className="h-7 w-48 max-w-full text-xs" src="/demos/plumbing-companies/turn-0.mp3">
-                    Your browser does not support audio playback.
-                  </audio>
+                <div className="mt-6">
+                  <AudioCallPreview
+                    src="/demos/plumbing-companies/turn-0.mp3"
+                    title="Live 20s AI Trade Intake Preview"
+                    scenario="Emergency Plumbing Dispatch"
+                    callerLabel="Burst Pipe Triage &amp; Booking"
+                  />
                 </div>
               </div>
 
@@ -179,6 +175,47 @@ export default function HomePage() {
                   <p className="mt-1 text-sm text-foreground/75">{metric.label}</p>
                 </div>
               ))}
+            </div>
+
+            {/* GEO / AEO System Definition & Architecture Anchor */}
+            <div className="mt-8 rounded-xl border border-border/70 bg-surface-50/70 p-6 md:p-8">
+              <div className="max-w-3xl">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+                  System Architecture &amp; Definition
+                </p>
+                <h2 className="mt-2 font-display text-2xl font-semibold text-foreground md:text-3xl">
+                  What is an Enterprise AI Voice Receptionist?
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-foreground/80">
+                  An AI voice receptionist is a real-time conversational telephony agent engineered to answer inbound phone calls 24/7, converse naturally with zero robotic delay, qualify customer requirements, and execute operational workflows—including direct CRM calendar booking, emergency triage dispatch, and automated under-60-second missed-call SMS recovery.
+                </p>
+              </div>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-lg border border-border/60 bg-white p-4">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">01 · Telephony Layer</p>
+                  <p className="mt-1 font-display text-base font-semibold text-foreground">Natural Spoken Intake</p>
+                  <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
+                    Powered by low-latency SIP trunks and Deepgram Nova-2 speech recognition for crystal-clear transcription across Australian and US accents.
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-white p-4">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">02 · Action Engine</p>
+                  <p className="mt-1 font-display text-base font-semibold text-foreground">Live Calendar &amp; CRM Sync</p>
+                  <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
+                    Checks real-time staff availability, books confirmed slots, writes customer notes, and executes warm live transfers for urgent callers.
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-white p-4">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">03 · Lead Safeguard</p>
+                  <p className="mt-1 font-display text-base font-semibold text-foreground">Under-60s Text-Back</p>
+                  <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
+                    When lines are occupied, automated two-way SMS engages callers in under 60 seconds to lock in quotes before they reach competitors.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -455,7 +492,9 @@ export default function HomePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
-              <p className="text-xs font-medium text-brand">Frequently asked questions</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand">
+                Frequently asked questions
+              </p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Frequently Asked Implementation Questions
               </h2>
@@ -464,42 +503,8 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="mt-8 space-y-4">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <h3 className="font-display text-lg font-semibold text-foreground">
-                  How fast does the AI answering agent answer incoming calls?
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Our AI Voice Receptionists deliver fast, natural responses with no robotic pause or delay, answering calls 24/7.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <h3 className="font-display text-lg font-semibold text-foreground">
-                  Does this AI integrate with existing CRMs?
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Yes. We specialize in custom GoHighLevel CRM setup and integrate directly with ServiceTitan, HubSpot, and Google Calendar via webhooks and API. Client records, appointment bookings, and full transcripts update automatically.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <h3 className="font-display text-lg font-semibold text-foreground">
-                  Can the voice agents handle phone number forwarding?
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Yes, through carriers and Twilio, we connect existing US and Australian numbers, meaning your business can use our services without needing any complex forwarding steps.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <h3 className="font-display text-lg font-semibold text-foreground">
-                  How does the missed-call lead recovery work?
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  If you are busy on the line, our automated missed-call text back system sends an instant text to the missed caller in under 60 seconds to triage, recover, and schedule the lead.
-                </p>
-              </div>
+            <div className="mt-8">
+              <FAQAccordion items={homeFaqs} defaultOpenIndex={0} />
             </div>
           </div>
         </section>
