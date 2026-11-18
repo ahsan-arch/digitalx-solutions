@@ -7,7 +7,7 @@ import {
   generateServicePageSchema,
   siteConfig,
 } from "@/lib/seo";
-import { AudioCallPreview, FAQAccordion } from "@/components/ui";
+import { AudioCallPreview, FAQAccordion, MissedCallCalculator } from "@/components/ui";
 
 const pageTitle = "24/7 AI Voice Receptionist | DigitalX Solutions";
 const pageDescription =
@@ -175,6 +175,11 @@ export default function AiVoiceReceptionistServicePage() {
                   Receptionists and office managers spend hours answering repetitive pricing, location, and availability questions instead of focusing on high-margin operations.
                 </p>
               </div>
+            </div>
+
+            {/* Interactive Revenue Leak Calculator */}
+            <div className="mt-10">
+              <MissedCallCalculator defaultBookingUrl="/contact" />
             </div>
           </div>
         </section>

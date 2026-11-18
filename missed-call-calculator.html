@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missed-Call Revenue Leak Calculator | DigitalX Solutions</title>
+  <meta name="description" content="Calculate how much monthly and annual revenue your service business loses to unanswered phone calls, and see how much an automated system recovers.">
+  <style>
+    /* Scoped CSS for DigitalX Missed-Call Calculator */
+    :root {
+      --dx-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --dx-bg-page: #fbfbfa;
+      --dx-bg-card: #ffffff;
+      --dx-bg-sunken: #f4f3f0;
+      --dx-border: #e6e3dd;
+      --dx-border-focus: #c44e16;
+      --dx-text-main: #18181b;
+      --dx-text-muted: #71717a;
+      --dx-text-subtle: #a1a1aa;
+      --dx-brand: #c44e16;
+      --dx-brand-hover: #ae4412;
+      --dx-brand-soft: #fbe4d5;
+      --dx-emerald: #059669;
+      --dx-emerald-soft: #ecfdf5;
+      --dx-amber: #d97706;
+      --dx-amber-soft: #fffbeb;
+      --dx-rose: #dc2626;
+      --dx-rose-soft: #fef2f2;
+      --dx-radius-lg: 20px;
+      --dx-radius-md: 12px;
+      --dx-radius-sm: 8px;
+      --dx-shadow: 0 4px 20px -2px rgba(24, 24, 27, 0.05), 0 2px 6px -1px rgba(24, 24, 27, 0.03);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--dx-font);
+      background-color: var(--dx-bg-page);
+      color: var(--dx-text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .dx-calc-container {
+      width: 100%;
+      max-width: 960px;
+      background: var(--dx-bg-card);
+      border: 1px solid var(--dx-border);
+      border-radius: var(--dx-radius-lg);
+      box-shadow: var(--dx-shadow);
+      overflow: hidden;
+    }
+
+    /* Header */
+    .dx-calc-header {
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--dx-border);
+      background: linear-gradient(180deg, #ffffff 0%, var(--dx-bg-page) 100%);
+    }
+
+    .dx-calc-tagline {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--dx-brand);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dx-calc-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dx-text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .dx-calc-subtitle {
+      font-size: 14px;
+      color: var(--dx-text-muted);
+      margin-top: 4px;
+      max-width: 680px;
+    }
+
+    /* Main Grid */
+    .dx-calc-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 0;
+    }
+
+    @media (max-width: 820px) {
+      .dx-calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left: Inputs Column */
+    .dx-calc-inputs {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      border-right: 1px solid var(--dx-border);
+    }
+
+    @media (max-width: 820px) {
+      .dx-calc-inputs {
+        border-right: none;
+        border-bottom: 1px solid var(--dx-border);
+        padding: 24px 20px;
+      }
+    }
+
+    .dx-calc-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dx-calc-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .dx-calc-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dx-text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dx-calc-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: var(--dx-brand-soft);
+      color: var(--dx-brand);
+      letter-spacing: -0.01em;
+    }
+
+    .dx-calc-input-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Numeric Display Input */
+    .dx-calc-num-input {
+      width: 96px;
+      padding: 8px 10px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--dx-text-main);
+      background: var(--dx-bg-sunken);
+      border: 1px solid var(--dx-border);
+      border-radius: var(--dx-radius-sm);
+      text-align: right;
+      transition: all 0.15s ease;
+    }
+
+    .dx-calc-num-input:focus {
+      outline: none;
+      border-color: var(--dx-brand);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(196, 78, 22, 0.12);
+    }
+
+    /* Range Sliders */
+    .dx-calc-range {
+      flex: 1;
+      height: 6px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #e4e2dd;
+      border-radius: 999px;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .dx-calc-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--dx-brand);
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+      cursor: grab;
+      transition: transform 0.1s ease, background-color 0.15s ease;
+    }
+
+    .dx-calc-range::-webkit-slider-thumb:active {
+      cursor: grabbing;
+      transform: scale(1.15);
+      background: var(--dx-brand-hover);
+    }
+
+    .dx-calc-range::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--dx-brand);
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+      cursor: grab;
+    }
+
+    /* Quick Pills */
+    .dx-calc-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .dx-calc-pill {
+      border: 1px solid var(--dx-border);
+      background: var(--dx-bg-sunken);
+      color: var(--dx-text-muted);
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .dx-calc-pill:hover {
+      background: #ffffff;
+      border-color: var(--dx-text-muted);
+      color: var(--dx-text-main);
+    }
+
+    .dx-calc-pill.active {
+      background: var(--dx-brand);
+      border-color: var(--dx-brand);
+      color: #ffffff;
+    }
+
+    /* Right: Results Dashboard */
+    .dx-calc-results {
+      padding: 32px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--dx-bg-sunken) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    @media (max-width: 820px) {
+      .dx-calc-results {
+        padding: 24px 20px;
+      }
+    }
+
+    /* Highlight Card */
+    .dx-calc-highlight-card {
+      background: var(--dx-rose-soft);
+      border: 1px solid #fecaca;
+      border-radius: var(--dx-radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dx-calc-highlight-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--dx-rose);
+    }
+
+    .dx-calc-highlight-val {
+      font-size: 38px;
+      font-weight: 800;
+      color: #991b1b;
+      letter-spacing: -0.03em;
+      margin: 4px 0 2px;
+      line-height: 1.1;
+    }
+
+    .dx-calc-highlight-sub {
+      font-size: 13px;
+      color: #7f1d1d;
+    }
+
+    /* Metric Mini-Cards */
+    .dx-calc-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 500px) {
+      .dx-calc-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dx-calc-mini-card {
+      background: #ffffff;
+      border: 1px solid var(--dx-border);
+      border-radius: var(--dx-radius-sm);
+      padding: 12px 14px;
+    }
+
+    .dx-calc-mini-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--dx-text-muted);
+      line-height: 1.3;
+    }
+
+    .dx-calc-mini-val {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dx-text-main);
+      margin-top: 4px;
+    }
+
+    /* Breakdown Progress Bar */
+    .dx-calc-breakdown-box {
+      background: #ffffff;
+      border: 1px solid var(--dx-border);
+      border-radius: var(--dx-radius-md);
+      padding: 16px;
+    }
+
+    .dx-calc-breakdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .dx-calc-breakdown-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--dx-text-main);
+    }
+
+    .dx-calc-breakdown-total {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dx-text-muted);
+    }
+
+    .dx-calc-bar-track {
+      width: 100%;
+      height: 14px;
+      background: #e5e5e5;
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .dx-calc-bar-seg {
+      height: 100%;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .dx-calc-bar-captured {
+      background: var(--dx-emerald);
+    }
+
+    .dx-calc-bar-recoverable {
+      background: var(--dx-brand);
+    }
+
+    .dx-calc-bar-lost {
+      background: #fca5a5;
+    }
+
+    /* Breakdown Legend */
+    .dx-calc-legend {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #f4f4f5;
+    }
+
+    @media (max-width: 500px) {
+      .dx-calc-legend {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dx-calc-legend-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .dx-calc-legend-dot-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--dx-text-muted);
+      font-weight: 500;
+    }
+
+    .dx-calc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dx-calc-legend-val {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dx-text-main);
+      padding-left: 14px;
+    }
+
+    /* Action Buttons */
+    .dx-calc-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 500px) {
+      .dx-calc-actions {
+        flex-direction: column;
+      }
+    }
+
+    .dx-calc-btn-primary {
+      flex: 1.3;
+      background: var(--dx-brand);
+      color: #ffffff;
+      padding: 13px 18px;
+      border-radius: var(--dx-radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .dx-calc-btn-primary:hover {
+      background: var(--dx-brand-hover);
+    }
+
+    .dx-calc-btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .dx-calc-btn-secondary {
+      flex: 1;
+      background: #ffffff;
+      color: var(--dx-text-main);
+      padding: 13px 16px;
+      border-radius: var(--dx-radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      border: 1px solid var(--dx-border);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .dx-calc-btn-secondary:hover {
+      border-color: var(--dx-text-muted);
+      background: var(--dx-bg-sunken);
+    }
+
+    /* Embed Modal */
+    .dx-calc-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 99999;
+      padding: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dx-calc-modal-backdrop.open {
+      display: flex;
+    }
+
+    .dx-calc-modal {
+      width: 100%;
+      max-width: 520px;
+      background: #ffffff;
+      border: 1px solid var(--dx-border);
+      border-radius: var(--dx-radius-md);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      padding: 24px;
+      position: relative;
+    }
+
+    .dx-calc-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .dx-calc-modal-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--dx-text-main);
+    }
+
+    .dx-calc-close-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: var(--dx-text-muted);
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+    }
+
+    .dx-calc-modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dx-calc-modal-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dx-text-main);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .dx-calc-modal-input {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 13px;
+      border: 1px solid var(--dx-border);
+      border-radius: var(--dx-radius-sm);
+      background: var(--dx-bg-sunken);
+      color: var(--dx-text-main);
+      font-family: inherit;
+    }
+
+    .dx-calc-modal-input:focus {
+      outline: none;
+      border-color: var(--dx-brand);
+      background: #ffffff;
+    }
+
+    .dx-calc-code-box {
+      width: 100%;
+      height: 110px;
+      background: #18181b;
+      color: #f4f4f5;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      padding: 10px 12px;
+      border-radius: var(--dx-radius-sm);
+      border: 1px solid #27272a;
+      resize: none;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .dx-calc-copy-btn {
+      background: var(--dx-brand);
+      color: #ffffff;
+      padding: 11px 16px;
+      border-radius: var(--dx-radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .dx-calc-copy-btn:hover {
+      background: var(--dx-brand-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dx-calc-container">
+    <!-- Header -->
+    <header class="dx-calc-header">
+      <div class="dx-calc-tagline">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Revenue Leak Benchmark
+      </div>
+      <h1 class="dx-calc-title">Missed-Call Revenue Leak Calculator</h1>
+      <p class="dx-calc-subtitle">
+        Quantify how much unearned revenue drops to competitors when calls go unanswered during peak hours, jobsites, or after 5 PM.
+      </p>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="dx-calc-grid">
+      <!-- Input Column -->
+      <div class="dx-calc-inputs">
+        <!-- 1. Weekly Calls -->
+        <div class="dx-calc-group">
+          <div class="dx-calc-label-row">
+            <label for="weeklyCallsRange" class="dx-calc-label">Weekly Inbound Calls</label>
+            <span class="dx-calc-badge" id="monthlyCallsLabel">~282 calls / mo</span>
+          </div>
+          <div class="dx-calc-input-row">
+            <input type="range" id="weeklyCallsRange" class="dx-calc-range" min="5" max="500" step="5" value="65">
+            <input type="number" id="weeklyCallsNum" class="dx-calc-num-input" min="5" max="500" value="65">
+          </div>
+        </div>
+
+        <!-- 2. Missed Call Rate -->
+        <div class="dx-calc-group">
+          <div class="dx-calc-label-row">
+            <label for="missedRateRange" class="dx-calc-label">
+              Missed Call Rate
+            </label>
+            <span class="dx-calc-badge">Industry Avg: 28%</span>
+          </div>
+          <div class="dx-calc-input-row">
+            <input type="range" id="missedRateRange" class="dx-calc-range" min="5" max="85" step="1" value="28">
+            <input type="number" id="missedRateNum" class="dx-calc-num-input" min="5" max="85" value="28">
+          </div>
+        </div>
+
+        <!-- 3. Average Customer / Job Value -->
+        <div class="dx-calc-group">
+          <div class="dx-calc-label-row">
+            <label for="jobValueNum" class="dx-calc-label">Average Job / Client Value ($)</label>
+          </div>
+          <div class="dx-calc-input-row">
+            <input type="range" id="jobValueRange" class="dx-calc-range" min="50" max="10000" step="50" value="650">
+            <input type="number" id="jobValueNum" class="dx-calc-num-input" min="50" max="50000" value="650">
+          </div>
+          <!-- Quick Select Pills -->
+          <div class="dx-calc-pills">
+            <button type="button" class="dx-calc-pill" data-val="250">$250 (Routine)</button>
+            <button type="button" class="dx-calc-pill active" data-val="650">$650 (Trade Repair)</button>
+            <button type="button" class="dx-calc-pill" data-val="1500">$1,500 (Dental / HVAC)</button>
+            <button type="button" class="dx-calc-pill" data-val="3000">$3,000 (Commercial)</button>
+          </div>
+        </div>
+
+        <!-- 4. Estimated Close Rate -->
+        <div class="dx-calc-group">
+          <div class="dx-calc-label-row">
+            <label for="closeRateRange" class="dx-calc-label">Estimated Close / Booking Rate</label>
+            <span class="dx-calc-badge">Qualified Leads</span>
+          </div>
+          <div class="dx-calc-input-row">
+            <input type="range" id="closeRateRange" class="dx-calc-range" min="10" max="80" step="1" value="35">
+            <input type="number" id="closeRateNum" class="dx-calc-num-input" min="10" max="80" value="35">
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Column -->
+      <div class="dx-calc-results">
+        <!-- Monthly Lost Highlight Card -->
+        <div class="dx-calc-highlight-card">
+          <div class="dx-calc-highlight-label">Monthly Lost Revenue</div>
+          <div class="dx-calc-highlight-val" id="lostMonthlyVal">$18,200</div>
+          <div class="dx-calc-highlight-sub" id="lostAnnualSub">That's $218,400 leaked annually to competing providers</div>
+        </div>
+
+        <!-- Metric Mini Cards -->
+        <div class="dx-calc-metrics-grid">
+          <div class="dx-calc-mini-card">
+            <div class="dx-calc-mini-label">Missed Calls / Month</div>
+            <div class="dx-calc-mini-val" id="missedCallsVal">79 calls</div>
+          </div>
+          <div class="dx-calc-mini-card">
+            <div class="dx-calc-mini-label">Lost Jobs / Month</div>
+            <div class="dx-calc-mini-val" id="lostJobsVal">28 jobs</div>
+          </div>
+          <div class="dx-calc-mini-card">
+            <div class="dx-calc-mini-label">AI Recoverable</div>
+            <div class="dx-calc-mini-val" style="color: var(--dx-brand);" id="aiRecoverableVal">$11,830</div>
+          </div>
+        </div>
+
+        <!-- Horizontal Segmented Pipeline Breakdown -->
+        <div class="dx-calc-breakdown-box">
+          <div class="dx-calc-breakdown-header">
+            <span class="dx-calc-breakdown-title">Pipeline Opportunity Breakdown</span>
+            <span class="dx-calc-breakdown-total" id="totalPipelineVal">$64,350 total potential</span>
+          </div>
+          
+          <div class="dx-calc-bar-track" aria-label="Visual revenue distribution">
+            <div class="dx-calc-bar-seg dx-calc-bar-captured" id="barCaptured" style="width: 71.7%;" title="Captured Revenue"></div>
+            <div class="dx-calc-bar-seg dx-calc-bar-recoverable" id="barRecoverable" style="width: 18.4%;" title="AI Recoverable (65%)"></div>
+            <div class="dx-calc-bar-seg dx-calc-bar-lost" id="barLost" style="width: 9.9%;" title="Unrecovered Leak"></div>
+          </div>
+
+          <div class="dx-calc-legend">
+            <div class="dx-calc-legend-item">
+              <div class="dx-calc-legend-dot-label">
+                <span class="dx-calc-dot" style="background: var(--dx-emerald);"></span>
+                Captured Now
+              </div>
+              <div class="dx-calc-legend-val" id="legendCaptured">$46,150</div>
+            </div>
+            <div class="dx-calc-legend-item">
+              <div class="dx-calc-legend-dot-label">
+                <span class="dx-calc-dot" style="background: var(--dx-brand);"></span>
+                AI Recoverable (65%)
+              </div>
+              <div class="dx-calc-legend-val" id="legendRecoverable">$11,830</div>
+            </div>
+            <div class="dx-calc-legend-item">
+              <div class="dx-calc-legend-dot-label">
+                <span class="dx-calc-dot" style="background: #fca5a5;"></span>
+                Unrecovered Leak
+              </div>
+              <div class="dx-calc-legend-val" id="legendLost">$6,370</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="dx-calc-actions">
+          <a href="https://digitalx-solutions.com/contact" id="bookingCtaBtn" class="dx-calc-btn-primary" target="_blank" rel="noopener noreferrer">
+            Book a 15-Minute Audit
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <button type="button" id="openEmbedModalBtn" class="dx-calc-btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Copy Embed Code
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Embed Code Modal -->
+  <div class="dx-calc-modal-backdrop" id="embedModalBackdrop">
+    <div class="dx-calc-modal">
+      <div class="dx-calc-modal-header">
+        <h3 class="dx-calc-modal-title">Embed Calculator on Your Website</h3>
+        <button type="button" class="dx-calc-close-btn" id="closeModalBtn" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="dx-calc-modal-body">
+        <div>
+          <label class="dx-calc-modal-label" for="customBookingUrlInput">Your Booking / Audit URL (GHL or Calendly):</label>
+          <input type="url" id="customBookingUrlInput" class="dx-calc-modal-input" value="https://digitalx-solutions.com/contact" placeholder="https://your-crm.com/booking-calendar">
+        </div>
+        <div>
+          <label class="dx-calc-modal-label" for="embedCodeSnippet">Copy Responsive iFrame Snippet:</label>
+          <textarea id="embedCodeSnippet" class="dx-calc-code-box" readonly></textarea>
+        </div>
+        <button type="button" id="copyCodeBtn" class="dx-calc-copy-btn">Copy Embed Code</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // DOM Elements
+      const weeklyCallsRange = document.getElementById("weeklyCallsRange");
+      const weeklyCallsNum = document.getElementById("weeklyCallsNum");
+      const monthlyCallsLabel = document.getElementById("monthlyCallsLabel");
+
+      const missedRateRange = document.getElementById("missedRateRange");
+      const missedRateNum = document.getElementById("missedRateNum");
+
+      const jobValueRange = document.getElementById("jobValueRange");
+      const jobValueNum = document.getElementById("jobValueNum");
+      const pills = document.querySelectorAll(".dx-calc-pill");
+
+      const closeRateRange = document.getElementById("closeRateRange");
+      const closeRateNum = document.getElementById("closeRateNum");
+
+      // Results Elements
+      const lostMonthlyVal = document.getElementById("lostMonthlyVal");
+      const lostAnnualSub = document.getElementById("lostAnnualSub");
+      const missedCallsVal = document.getElementById("missedCallsVal");
+      const lostJobsVal = document.getElementById("lostJobsVal");
+      const aiRecoverableVal = document.getElementById("aiRecoverableVal");
+      const totalPipelineVal = document.getElementById("totalPipelineVal");
+
+      // Breakdown Bars
+      const barCaptured = document.getElementById("barCaptured");
+      const barRecoverable = document.getElementById("barRecoverable");
+      const barLost = document.getElementById("barLost");
+
+      // Legends
+      const legendCaptured = document.getElementById("legendCaptured");
+      const legendRecoverable = document.getElementById("legendRecoverable");
+      const legendLost = document.getElementById("legendLost");
+
+      // Modal Elements
+      const openEmbedModalBtn = document.getElementById("openEmbedModalBtn");
+      const embedModalBackdrop = document.getElementById("embedModalBackdrop");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+      const customBookingUrlInput = document.getElementById("customBookingUrlInput");
+      const embedCodeSnippet = document.getElementById("embedCodeSnippet");
+      const copyCodeBtn = document.getElementById("copyCodeBtn");
+      const bookingCtaBtn = document.getElementById("bookingCtaBtn");
+
+      // Format currency
+      function fmt(num) {
+        return "$" + Math.round(num).toLocaleString("en-US");
+      }
+
+      // Main calculation engine
+      function updateCalculator() {
+        const weeklyCalls = parseFloat(weeklyCallsRange.value) || 0;
+        const missedRate = parseFloat(missedRateRange.value) || 0;
+        const jobValue = parseFloat(jobValueNum.value) || 0;
+        const closeRate = parseFloat(closeRateRange.value) || 0;
+
+        const weeksPerMonth = 52 / 12; // ~4.333
+        const monthlyInboundCalls = weeklyCalls * weeksPerMonth;
+        const monthlyMissedCalls = Math.round(monthlyInboundCalls * (missedRate / 100));
+        const monthlyLostJobs = Math.round(monthlyMissedCalls * (closeRate / 100));
+        const monthlyLostRevenue = monthlyLostJobs * jobValue;
+        const annualizedLostRevenue = monthlyLostRevenue * 12;
+
+        // Potential and breakdown
+        const totalPotentialJobs = Math.round(monthlyInboundCalls * (closeRate / 100));
+        const totalPotentialRevenue = Math.max(totalPotentialJobs * jobValue, monthlyLostRevenue);
+        const capturedRevenue = Math.max(0, totalPotentialRevenue - monthlyLostRevenue);
+
+        const recoverableRate = 0.65; // 65% benchmark
+        const aiRecoverableRevenue = Math.round(monthlyLostRevenue * recoverableRate);
+        const unrecoveredRevenue = Math.max(0, monthlyLostRevenue - aiRecoverableRevenue);
+
+        // Update DOM displays
+        monthlyCallsLabel.textContent = `~${Math.round(monthlyInboundCalls)} calls / mo`;
+        lostMonthlyVal.textContent = fmt(monthlyLostRevenue);
+        lostAnnualSub.textContent = `That's ${fmt(annualizedLostRevenue)} leaked annually to competing providers`;
+        missedCallsVal.textContent = `${monthlyMissedCalls} calls`;
+        lostJobsVal.textContent = `${monthlyLostJobs} jobs`;
+        aiRecoverableVal.textContent = fmt(aiRecoverableRevenue);
+        totalPipelineVal.textContent = `${fmt(totalPotentialRevenue)} total potential`;
+
+        // Update Breakdown Bars
+        const capturedPct = totalPotentialRevenue > 0 ? (capturedRevenue / totalPotentialRevenue) * 100 : 0;
+        const recoverablePct = totalPotentialRevenue > 0 ? (aiRecoverableRevenue / totalPotentialRevenue) * 100 : 0;
+        const lostPct = totalPotentialRevenue > 0 ? (unrecoveredRevenue / totalPotentialRevenue) * 100 : 0;
+
+        barCaptured.style.width = capturedPct.toFixed(1) + "%";
+        barRecoverable.style.width = recoverablePct.toFixed(1) + "%";
+        barLost.style.width = lostPct.toFixed(1) + "%";
+
+        legendCaptured.textContent = fmt(capturedRevenue);
+        legendRecoverable.textContent = fmt(aiRecoverableRevenue);
+        legendLost.textContent = fmt(unrecoveredRevenue);
+
+        // Update active state on job value pills
+        pills.forEach((p) => {
+          if (parseInt(p.getAttribute("data-val"), 10) === jobValue) {
+            p.classList.add("active");
+          } else {
+            p.classList.remove("active");
+          }
+        });
+      }
+
+      // Two-way bindings helper
+      function bindInputs(range, num, clampMin, clampMax) {
+        range.addEventListener("input", function () {
+          num.value = range.value;
+          updateCalculator();
+        });
+        num.addEventListener("input", function () {
+          let v = parseFloat(num.value);
+          if (isNaN(v)) return;
+          if (v < clampMin) v = clampMin;
+          if (v > clampMax) v = clampMax;
+          range.value = v;
+          updateCalculator();
+        });
+      }
+
+      bindInputs(weeklyCallsRange, weeklyCallsNum, 5, 500);
+      bindInputs(missedRateRange, missedRateNum, 5, 85);
+      bindInputs(jobValueRange, jobValueNum, 50, 50000);
+      bindInputs(closeRateRange, closeRateNum, 10, 80);
+
+      // Pill clicks
+      pills.forEach((pill) => {
+        pill.addEventListener("click", function () {
+          const val = this.getAttribute("data-val");
+          jobValueRange.value = val;
+          jobValueNum.value = val;
+          updateCalculator();
+        });
+      });
+
+      // Embed Code Generator
+      function generateEmbedSnippet() {
+        const rawUrl = customBookingUrlInput.value.trim() || "https://digitalx-solutions.com/contact";
+        const currentOrigin = window.location.origin || "https://digitalx-solutions.com";
+        const calcUrl = currentOrigin + "/missed-call-calculator.html?booking=" + encodeURIComponent(rawUrl);
+
+        return '<iframe src="' + calcUrl + '" width="100%" height="800" frameborder="0" style="border:none;border-radius:16px;max-width:960px;width:100%;display:block;margin:0 auto;box-shadow:0 4px 20px rgba(0,0,0,0.06);" title="Missed-Call Revenue Leak Calculator" loading="lazy"></iframe>';
+      }
+
+      // URL parameter check for custom booking link
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookingParam = urlParams.get("booking");
+      if (bookingParam) {
+        bookingCtaBtn.href = decodeURIComponent(bookingParam);
+        customBookingUrlInput.value = decodeURIComponent(bookingParam);
+      }
+
+      customBookingUrlInput.addEventListener("input", function () {
+        bookingCtaBtn.href = this.value.trim() || "https://digitalx-solutions.com/contact";
+        embedCodeSnippet.value = generateEmbedSnippet();
+      });
+
+      openEmbedModalBtn.addEventListener("click", function () {
+        embedCodeSnippet.value = generateEmbedSnippet();
+        embedModalBackdrop.classList.add("open");
+      });
+
+      closeModalBtn.addEventListener("click", function () {
+        embedModalBackdrop.classList.remove("open");
+      });
+
+      embedModalBackdrop.addEventListener("click", function (e) {
+        if (e.target === embedModalBackdrop) {
+          embedModalBackdrop.classList.remove("open");
+        }
+      });
+
+      copyCodeBtn.addEventListener("click", function () {
+        embedCodeSnippet.select();
+        navigator.clipboard.writeText(embedCodeSnippet.value).then(function () {
+          const originalText = copyCodeBtn.textContent;
+          copyCodeBtn.textContent = "Copied to Clipboard!";
+          copyCodeBtn.style.background = "#059669";
+          setTimeout(function () {
+            copyCodeBtn.textContent = originalText;
+            copyCodeBtn.style.background = "";
+          }, 2000);
+        });
+      });
+
+      // Initial run
+      updateCalculator();
+    })();
+  </script>
+</body>
+</html>

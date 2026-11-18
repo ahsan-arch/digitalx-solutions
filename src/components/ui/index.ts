@@ -8,3 +8,4 @@ export { CertifiedPartnerStrip, PlatformIntegrationsStrip } from "./partner-stri
 export { ProjectCard } from "./project-card";
 export { AudioCallPreview } from "./audio-call-preview";
 export { FAQAccordion } from "./faq-accordion";
+export { MissedCallCalculator } from "./missed-call-calculator";

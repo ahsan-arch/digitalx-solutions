@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, HelpCircle, PhoneCall, ShieldCheck, Zap } from "lucide-react";
-import { SectionIllustration } from "@/components/ui";
+import { SectionIllustration, MissedCallCalculator } from "@/components/ui";
 import { PricingTracker } from "@/components/analytics/pricing-tracker";
 import {
   generateBreadcrumbSchema,
@@ -207,6 +207,11 @@ export default function PricingPage() {
       <p className="container-shell mt-5 text-center text-sm text-ink-tertiary">
         All prices shown in USD. Australian clients can be invoiced in AUD with GST-compliant documentation &mdash; just ask.
       </p>
+
+      {/* Interactive Revenue Leak Calculator */}
+      <section className="container-shell mt-16">
+        <MissedCallCalculator defaultBookingUrl="/contact" />
+      </section>
 
       {/* Telephony Economics & Pass-Through Costs Breakdown */}
       <section className="container-shell mt-16">
