@@ -263,7 +263,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
                 </span>
-                <span className="text-xs font-medium text-foreground/60">
+                <span className="text-xs font-medium text-foreground/75">
                   {formatTime(callDuration)}
                 </span>
               </>
@@ -288,7 +288,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
               <p className="text-sm font-semibold text-foreground">
                 Hear how our AI handles calls for {script.businessName}
               </p>
-              <p className="mt-1.5 max-w-xs text-xs text-foreground/60">
+              <p className="mt-1.5 max-w-xs text-xs text-foreground/75">
                 Press play to listen to a live demo conversation of our AI voice agent answering, qualifying, and booking.
               </p>
             </div>

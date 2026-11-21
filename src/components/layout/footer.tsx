@@ -2,6 +2,7 @@ import Link from "next/link";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { companyProfile, footerColumns } from "@/data/redesign";
 import { PlatformIntegrationsStrip } from "@/components/ui";
+import { ObfuscatedEmail } from "./obfuscated-email";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,21 +12,21 @@ export function Footer() {
       <div className="container-shell">
         <div className="grid gap-10 lg:grid-cols-[1.6fr_2fr]">
           <div>
-            <Link href="/" className="text-2xl font-semibold tracking-tight text-foreground">
+            <Link href="/" className="text-2xl font-semibold tracking-tight text-foreground" aria-label="DigitalX Solutions Homepage">
               {companyProfile.name}
             </Link>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/80">{companyProfile.tagline}</p>
             <p className="mt-4 text-sm text-foreground/75">{companyProfile.location}</p>
-            <a
-              href={`mailto:${companyProfile.email}`}
-              className="mt-2 inline-block text-sm font-medium text-brand transition-colors hover:text-brand-deep"
-            >
-              {companyProfile.email}
-            </a>
-            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+
+            <div className="mt-3">
+              <ObfuscatedEmail />
+            </div>
+
+            <div className="mt-2 flex flex-wrap items-center gap-3 text-sm">
               <a
                 href={`tel:${companyProfile.phoneE164}`}
-                className="font-medium text-brand transition-colors hover:text-brand-deep"
+                aria-label={`Call DigitalX Solutions at ${companyProfile.phone}`}
+                className="inline-flex min-h-[44px] min-w-[44px] items-center rounded-lg border border-border/80 bg-white px-3.5 py-2 font-medium text-brand transition-colors hover:bg-surface-100 hover:text-brand-deep"
               >
                 {companyProfile.phone}
               </a>
@@ -34,7 +35,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message us on WhatsApp"
-                className="inline-flex items-center gap-1.5 font-medium text-brand transition-colors hover:text-brand-deep"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center gap-2 rounded-lg border border-border/80 bg-white px-3.5 py-2 font-medium text-brand transition-colors hover:bg-surface-100 hover:text-brand-deep"
               >
                 <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp
@@ -48,10 +49,13 @@ export function Footer() {
                 <h3 className="mb-4 text-xs font-semibold text-foreground">
                   {column.title}
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-1">
                   {column.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-sm text-foreground/80 transition-colors hover:text-foreground">
+                      <Link
+                        href={link.href}
+                        className="inline-flex min-h-[38px] items-center py-1 text-sm text-foreground/80 transition-colors hover:text-foreground"
+                      >
                         {link.label}
                       </Link>
                     </li>

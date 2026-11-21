@@ -47,11 +47,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </div>
             )}
             <div>
-              <h3 className="font-display text-lg font-semibold text-foreground">
-                {clientDisplayName}
-              </h3>
-              <p className="text-xs font-medium text-foreground/60">
+              <h3 className="font-display text-base font-semibold text-foreground">
                 {project.industry}
+              </h3>
+              <p className="text-xs font-medium text-foreground/75">
+                {clientDisplayName}
               </p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {/* Problem & Solution */}
         <div className="mt-5 space-y-3">
           <div>
-            <span className="font-mono text-[11px] font-medium text-foreground/60">
+            <span className="font-mono text-[11px] font-medium text-foreground/75">
               Operational Challenge
             </span>
             <p className="mt-1 text-sm text-foreground/75 leading-relaxed">
@@ -73,7 +73,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           <div>
-            <span className="font-mono text-[11px] font-medium text-foreground/60">
+            <span className="font-mono text-[11px] font-medium text-foreground/75">
               System Deployed
             </span>
             <p className="mt-1 text-sm text-foreground/85 leading-relaxed font-medium">
@@ -99,7 +99,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Tools Deployed */}
         <div className="mt-5">
-          <span className="font-mono text-[11px] font-medium text-foreground/60">
+          <span className="font-mono text-[11px] font-medium text-foreground/75">
             Tools &amp; Infrastructure
           </span>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -132,7 +132,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Footer Result & CTA */}
       <div className="mt-6 border-t border-border/60 pt-4 flex items-center justify-between">
-        <span className="text-xs font-medium text-foreground/60">
+        <span className="text-xs font-medium text-foreground/75">
           Full technical architecture
         </span>
 
@@ -140,7 +140,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           href={`/case-studies/${project.id}`}
           className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-50 px-3.5 py-1.5 text-xs font-medium text-foreground transition hover:border-brand/40 hover:text-brand"
         >
-          View Case Study <ArrowRight className="h-3.5 w-3.5" />
+          Read {project.industry.split(/[,&]/)[0].trim()} Study <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
     </article>

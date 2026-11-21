@@ -128,7 +128,7 @@ export function VoiceAgentLive({
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
               </span>
-              <span className="text-xs font-medium text-foreground/60">
+              <span className="text-xs font-medium text-foreground/75">
                 {formatTime(duration)}
               </span>
             </>
@@ -152,7 +152,7 @@ export function VoiceAgentLive({
             <p className="text-sm font-semibold text-foreground">
               Ready to talk to {agentName}?
             </p>
-            <p className="mt-1.5 max-w-xs text-xs text-foreground/60">
+            <p className="mt-1.5 max-w-xs text-xs text-foreground/75">
               You will hear the agent greet you, then it will listen for your reply. Speak
               naturally - it will respond in {voice.label}&apos;s voice.
             </p>

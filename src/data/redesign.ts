@@ -344,8 +344,8 @@ export const solutions: Solution[] = [
     pricingTiers: [
       {
         name: "Operator Launch",
-        price: "$1,200/mo",
-        cadence: "billed monthly (AUD/USD)",
+        price: "$1,200",
+        cadence: "per month (AUD/USD)",
         description: "For solo trades and single-van service businesses",
         features: [
           "Up to 300 minutes voice intake included",
@@ -357,8 +357,8 @@ export const solutions: Solution[] = [
       },
       {
         name: "Multi-Van Scale",
-        price: "$2,800/mo",
-        cadence: "billed monthly (AUD/USD)",
+        price: "$2,800",
+        cadence: "per month (AUD/USD)",
         description: "For busy clinics, multi-truck contractors, and high-volume operations",
         highlight: true,
         features: [
@@ -498,8 +498,8 @@ export const solutions: Solution[] = [
     pricingTiers: [
       {
         name: "Essential Recovery",
-        price: "$450/mo",
-        cadence: "billed monthly",
+        price: "$450",
+        cadence: "per month",
         description: "Essential missed-call protection for solo contractors and local shops",
         features: [
           "Instant missed-call text-back (under 60 seconds)",
@@ -511,8 +511,8 @@ export const solutions: Solution[] = [
       },
       {
         name: "Conversational Growth",
-        price: "$950/mo",
-        cadence: "billed monthly",
+        price: "$950",
+        cadence: "per month",
         description: "Two-way AI text triage and automated calendar scheduling",
         highlight: true,
         features: [
@@ -647,8 +647,8 @@ export const solutions: Solution[] = [
     pricingTiers: [
       {
         name: "Nurture Launch",
-        price: "$950/mo",
-        cadence: "billed monthly",
+        price: "$950",
+        cadence: "per month",
         description: "Turnkey follow-up automation for active quote pipelines",
         features: [
           "Up to 3 multi-channel nurture workflows",
@@ -660,8 +660,8 @@ export const solutions: Solution[] = [
       },
       {
         name: "Full Lifecycle Engine",
-        price: "$1,800/mo",
-        cadence: "billed monthly",
+        price: "$1,800",
+        cadence: "per month",
         description: "End-to-end customer lifecycle, reactivation, and VIP retention",
         highlight: true,
         features: [
@@ -796,8 +796,8 @@ export const solutions: Solution[] = [
     pricingTiers: [
       {
         name: "Web Conversion Bot",
-        price: "$650/mo",
-        cadence: "billed monthly",
+        price: "$650",
+        cadence: "per month",
         description: "24/7 website chat qualification and appointment booking",
         features: [
           "Custom website chat widget styled to your brand",
@@ -809,8 +809,8 @@ export const solutions: Solution[] = [
       },
       {
         name: "Omnichannel Suite",
-        price: "$1,450/mo",
-        cadence: "billed monthly",
+        price: "$1,450",
+        cadence: "per month",
         description: "Comprehensive web, WhatsApp Business, and SMS conversational AI",
         highlight: true,
         features: [
@@ -959,8 +959,8 @@ export const solutions: Solution[] = [
       },
       {
         name: "Managed Automation Retainer",
-        price: "$1,200/mo",
-        cadence: "billed monthly",
+        price: "$1,200",
+        cadence: "per month",
         description: "Continuous automation engineering, monitoring, and workflow expansion",
         highlight: true,
         features: [
@@ -1816,7 +1816,7 @@ export type ResultCard = {
 export const results: ResultCard[] = [
   {
     slug: "dental-clinic",
-    client: "Riverstone Dental Care",
+    client: "Client name withheld",
     industry: "Dental Clinics",
     industrySlug: "dental-clinics",
     challenge: "Missed inbound calls and front desk overload during peak consultation hours.",
@@ -1837,7 +1837,7 @@ export const results: ResultCard[] = [
   },
   {
     slug: "plumbing-contractor",
-    client: "Harbor Plumbing & Heating",
+    client: "Client name withheld",
     industry: "Plumbing Companies",
     industrySlug: "plumbing-companies",
     challenge: "Technicians unable to answer phone calls on active job sites.",
@@ -1858,7 +1858,7 @@ export const results: ResultCard[] = [
   },
   {
     slug: "advisory-practice",
-    client: "Atlas Consulting Partners",
+    client: "Client name withheld",
     industry: "Accounting Firms",
     industrySlug: "accounting-firms",
     challenge: "Billable advisory hours lost to unqualified phone inquiries.",
@@ -1983,26 +1983,7 @@ export function getResultBySlug(slug: string): ResultCard | undefined {
   return results.find((r) => r.slug === slug);
 }
 
-export const testimonials = [
-  {
-    quote:
-      "Deploying the automated call capture and text-back system recovered after-hours inquiries without pulling technicians away from active jobs.",
-    author: "Mike Harbison",
-    role: "Owner, Harbor Plumbing & Heating (Sydney NSW)",
-  },
-  {
-    quote:
-      "The autonomous voice receptionist answers urgent appointment calls and syncs booking details directly into our calendar without hold times.",
-    author: "Dr. Priya Desai",
-    role: "Clinical Director, Riverstone Dental Care (Melbourne VIC)",
-  },
-  {
-    quote:
-      "Automating lead intake and calendar qualification filtered unqualified inquiries and eliminated manual scheduling back-and-forth.",
-    author: "James Whitfield",
-    role: "Managing Partner, Atlas Consulting Partners (Brisbane QLD)",
-  },
-];
+export const testimonials: { quote: string; author: string; role: string }[] = [];
 
 export const aboutPrinciples = [
   {

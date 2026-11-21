@@ -273,7 +273,7 @@ export function MissedCallCalculator({
           {/* 3 Mini Metrics */}
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl border border-border bg-white p-3.5">
-              <span className="block text-[11px] font-medium text-foreground/60 leading-tight">
+              <span className="block text-[11px] font-medium text-foreground/75 leading-tight">
                 Missed Calls
               </span>
               <span className="mt-1 block font-mono text-base font-bold text-foreground">
@@ -281,7 +281,7 @@ export function MissedCallCalculator({
               </span>
             </div>
             <div className="rounded-xl border border-border bg-white p-3.5">
-              <span className="block text-[11px] font-medium text-foreground/60 leading-tight">
+              <span className="block text-[11px] font-medium text-foreground/75 leading-tight">
                 Lost Bookings
               </span>
               <span className="mt-1 block font-mono text-base font-bold text-foreground">
@@ -304,7 +304,7 @@ export function MissedCallCalculator({
               <span className="font-medium text-foreground/80">
                 Opportunity Distribution
               </span>
-              <span className="font-mono text-foreground/60">
+              <span className="font-mono text-foreground/75">
                 {fmt(totalPotentialRevenue)} potential
               </span>
             </div>
@@ -374,7 +374,7 @@ export function MissedCallCalculator({
               onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-foreground transition-all hover:bg-surface-100"
             >
-              <Copy className="h-4 w-4 text-foreground/60" />
+              <Copy className="h-4 w-4 text-foreground/75" />
               Copy Embed Code
             </button>
           </div>

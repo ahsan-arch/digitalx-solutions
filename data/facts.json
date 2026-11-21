@@ -4,7 +4,7 @@
   "company": {
     "name": "DigitalX Solutions",
     "legalName": "DigitalX Solutions",
-    "abn": "Casula, NSW 2170, Australia",
+    "abn": "",
     "tagline": "Web development, AI automation, and performance marketing for service businesses in the USA and Australia",
     "oneLineDescription": "DigitalX Solutions is an AI automation agency (Casula NSW, Australia) serving businesses in Australia and the US with AI voice agents, missed-call text-back, GoHighLevel, n8n, and HubSpot workflow systems.",
     "website": "https://digitalx-solutions.com",
@@ -12,7 +12,7 @@
     "phoneAU": "+61 451 413 786",
     "phoneUS": "+61 451 413 786",
     "whatsappUrl": "https://wa.me/61451413786",
-    "yearFounded": 2022,
+    "yearFounded": 2020,
     "headquarters": {
       "streetAddress": "16 Boldrewood Ave",
       "addressLocality": "Casula",
@@ -28,7 +28,6 @@
       "linkedin": "https://www.linkedin.com/company/digitalx-solutions-aus",
       "instagram": "https://www.instagram.com/digitalx_solutions",
       "facebook": "https://www.facebook.com/people/Digitalx-solutions/61588252343955",
-      "x": "https://x.com/digitalx_solutions",
       "github": "https://github.com/ahsan-arch"
     }
   },
@@ -36,17 +35,17 @@
     "founder": {
       "fullName": "Jazib Shahid",
       "preferredPublicName": "Jazib Shahid",
-      "jobTitle": "Founder & Lead Automation Architect",
-      "bio": "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, sub-500ms latency tuning, and zero-hallucination guardrail testing across all client deployments.",
-      "linkedinUrl": "https://www.linkedin.com/company/digitalx-solutions-aus",
-      "role": "Founder & Lead Automation Architect"
+      "jobTitle": "Founder & CEO",
+      "bio": "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and strict operational guardrails across all client deployments.",
+      "linkedinUrl": "",
+      "role": "Founder & CEO"
     },
     "technicalLead": {
       "fullName": "Ahsan Masood",
       "preferredPublicName": "Ahsan Masood",
       "jobTitle": "Senior CRM & Telephony Engineer",
       "bio": "Specializes in GoHighLevel multi-location snapshot engineering, bi-directional webhook synchronization, carrier compliance (A2P 10DLC and Australian ACMA SMS standards), and automated lead-routing logic. Ensures clean data hygiene, CRM custom field mapping, and zero lead leakage across multi-step agency and contractor accounts.",
-      "linkedinUrl": "https://www.linkedin.com/company/digitalx-solutions-aus",
+      "linkedinUrl": "",
       "role": "Senior CRM & Telephony Engineer"
     },
     "teamSize": "2-9 employees"
@@ -54,35 +53,35 @@
   "partnerCertifications": [
     {
       "platform": "GoHighLevel",
-      "credential": "Agency Partner & CRM Systems Integrator",
-      "role": "Agency Partner & CRM Systems Integrator",
-      "status": "Agency Partner",
+      "credential": "We build on GoHighLevel",
+      "role": "Systems Integrator",
+      "status": "Systems Integrator",
       "tier": "Production-Tested Architecture",
       "deploymentScope": "Multi-location Snapshots, sub-account architectures, custom webhook actions, LC Phone carrier routing, and Conversation AI training.",
       "verificationStandard": "Production deployments across live service contractors with sub-minute speed-to-lead benchmarks.",
-      "proofUrl": "https://www.gohighlevel.com",
+      "proofUrl": "",
       "dateCertified": "2023"
     },
     {
       "platform": "n8n Workflow Automation",
-      "credential": "Workflow Automation & API Orchestration Specialist",
-      "role": "Workflow Automation & API Orchestration Specialist",
+      "credential": "Built with n8n",
+      "role": "Workflow Automation & API Orchestration",
       "status": "Workflow Specialist",
       "tier": "Production-Tested Architecture",
       "deploymentScope": "Self-hosted Docker/VPS instances, queue-mode worker scaling, multi-branch webhook pipelines, and secure PostgreSQL/REST API synchronization.",
-      "verificationStandard": "Zero-data-loss execution across 50,000+ monthly task executions with automated error alerts.",
-      "proofUrl": "https://n8n.io",
+      "verificationStandard": "Documented execution logs with automated error notifications.",
+      "proofUrl": "",
       "dateCertified": "2023"
     },
     {
       "platform": "HubSpot",
-      "credential": "CRM Integration & RevOps Engineering",
-      "role": "CRM Integration & RevOps Engineering",
+      "credential": "Integrates with HubSpot",
+      "role": "CRM Integration & RevOps",
       "status": "RevOps Integrator",
       "tier": "Production-Tested Architecture",
       "deploymentScope": "Bi-directional sync between custom web apps, GoHighLevel, and HubSpot CRM; deal stage automation; custom properties; and contact attribution pipelines.",
       "verificationStandard": "Fully documented REST API endpoints, OAuth 2.0 token handshakes, and field-level validation schemas.",
-      "proofUrl": "https://www.hubspot.com",
+      "proofUrl": "",
       "dateCertified": "2023"
     }
   ],
@@ -186,11 +185,11 @@
   "clientProjects": [
     {
       "id": "dental-clinic",
-      "client": "Riverstone Dental Care",
+      "client": "Client name withheld",
       "industry": "Healthcare & Dental Clinics",
       "isRealClient": true,
-      "permissionToUseNameAndLogo": true,
-      "permission": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
       "logoFile": null,
       "problem": "Front desk staff overwhelmed by calls during peak morning check-in rushes, leaving prospective patients on hold.",
       "whatWasBuilt": "24/7 AI voice receptionist trained on dental service menu, hours, emergency triage, and direct PMS calendar synchronization.",
@@ -205,11 +204,11 @@
     },
     {
       "id": "plumbing-contractor",
-      "client": "Harbor Plumbing & Heating",
+      "client": "Client name withheld",
       "industry": "Plumbing & Trade Services",
       "isRealClient": true,
-      "permissionToUseNameAndLogo": true,
-      "permission": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
       "logoFile": null,
       "problem": "Field technicians on jobsites unable to answer urgent inbound calls, causing after-hours emergency jobs to drop to competitors.",
       "whatWasBuilt": "Missed-call text-back within 60 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
@@ -224,11 +223,11 @@
     },
     {
       "id": "advisory-practice",
-      "client": "Atlas Consulting Partners",
+      "client": "Client name withheld",
       "industry": "Accounting & Professional Services",
       "isRealClient": true,
-      "permissionToUseNameAndLogo": true,
-      "permission": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
       "logoFile": null,
       "problem": "Billable advisory hours consumed by manual client intake, repeated phone qualification, and disconnected spreadsheets.",
       "whatWasBuilt": "Conversational client intake workflow with automated calendar scheduling and GoHighLevel CRM opportunity pipeline tracking.",
@@ -241,36 +240,5 @@
       "status": "Case study"
     }
   ],
-  "testimonials": [
-    {
-      "id": "testimonial-1",
-      "quote": "Deploying the automated call capture and text-back system recovered after-hours inquiries without pulling technicians away from active jobs.",
-      "author": "Mike Harbison",
-      "role": "Owner & Managing Director",
-      "company": "Harbor Plumbing & Heating",
-      "isRealTestimonial": true,
-      "permissionToDisplay": true,
-      "status": "Client Review"
-    },
-    {
-      "id": "testimonial-2",
-      "quote": "The autonomous voice receptionist answers urgent appointment calls and syncs booking details directly into our calendar without hold times.",
-      "author": "Dr. Priya Desai",
-      "role": "Clinical Director",
-      "company": "Riverstone Dental Care",
-      "isRealTestimonial": true,
-      "permissionToDisplay": true,
-      "status": "Client Review"
-    },
-    {
-      "id": "testimonial-3",
-      "quote": "Automating lead intake and calendar qualification filtered unqualified inquiries and eliminated manual scheduling back-and-forth.",
-      "author": "James Whitfield",
-      "role": "Managing Partner",
-      "company": "Atlas Consulting Partners",
-      "isRealTestimonial": true,
-      "permissionToDisplay": true,
-      "status": "Client Review"
-    }
-  ]
+  "testimonials": []
 }

@@ -85,7 +85,7 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
   return (
     <div className={cn("w-full py-6 md:py-8", className)}>
       <div className="flex flex-col items-center text-center">
-        <p className="mb-6 text-xs font-medium text-foreground/60">
+        <p className="mb-6 text-xs font-medium text-foreground/75">
           Platform Integrations &amp; Workflows
         </p>
 
@@ -124,7 +124,7 @@ export function PlatformIntegrationsStrip() {
 
   return (
     <div className="border-t border-border/60 pt-8">
-      <p className="mb-6 text-center text-xs font-medium text-foreground/60">
+      <p className="mb-6 text-center text-xs font-medium text-foreground/75">
         Enterprise systems and platforms we integrate with
       </p>
       <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-80 hover:opacity-100 transition-opacity">

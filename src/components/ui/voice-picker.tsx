@@ -162,7 +162,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
                       "flex h-9 w-9 items-center justify-center rounded-xl",
                       voice.kind === "premium"
                         ? "bg-brand/10 text-brand"
-                        : "bg-foreground/5 text-foreground/60"
+                        : "bg-foreground/5 text-foreground/75"
                     )}
                   >
                     {voice.kind === "premium" ? (

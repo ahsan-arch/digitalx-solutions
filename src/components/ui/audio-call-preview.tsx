@@ -142,7 +142,7 @@ export function AudioCallPreview({
             ))}
           </div>
 
-          <span className="font-mono text-xs tabular-nums text-foreground/60 w-16 text-right">
+          <span className="font-mono text-xs tabular-nums text-foreground/75 w-16 text-right">
             {formatTime(currentTime)} / {formatTime(duration || 21)}
           </span>
         </div>
