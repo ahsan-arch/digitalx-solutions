@@ -36,7 +36,7 @@
       "fullName": "Jazib Shahid",
       "preferredPublicName": "Jazib Shahid",
       "jobTitle": "Founder & CEO",
-      "bio": "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and strict operational guardrails across all client deployments.",
+      "bio": "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and operational guardrails across all client deployments.",
       "linkedinUrl": "",
       "role": "Founder & CEO"
     },
@@ -58,9 +58,8 @@
       "status": "Systems Integrator",
       "tier": "Production-Tested Architecture",
       "deploymentScope": "Multi-location Snapshots, sub-account architectures, custom webhook actions, LC Phone carrier routing, and Conversation AI training.",
-      "verificationStandard": "Production deployments across live service contractors with sub-minute speed-to-lead benchmarks.",
-      "proofUrl": "",
-      "dateCertified": "2023"
+      "deliveryStandard": "Production deployments across live service contractors with sub-minute speed-to-lead benchmarks.",
+      "proofUrl": ""
     },
     {
       "platform": "n8n Workflow Automation",
@@ -69,9 +68,8 @@
       "status": "Workflow Specialist",
       "tier": "Production-Tested Architecture",
       "deploymentScope": "Self-hosted Docker/VPS instances, queue-mode worker scaling, multi-branch webhook pipelines, and secure PostgreSQL/REST API synchronization.",
-      "verificationStandard": "Documented execution logs with automated error notifications.",
-      "proofUrl": "",
-      "dateCertified": "2023"
+      "deliveryStandard": "Documented execution logs with automated error notifications.",
+      "proofUrl": ""
     },
     {
       "platform": "HubSpot",
@@ -80,9 +78,8 @@
       "status": "RevOps Integrator",
       "tier": "Production-Tested Architecture",
       "deploymentScope": "Bi-directional sync between custom web apps, GoHighLevel, and HubSpot CRM; deal stage automation; custom properties; and contact attribution pipelines.",
-      "verificationStandard": "Fully documented REST API endpoints, OAuth 2.0 token handshakes, and field-level validation schemas.",
-      "proofUrl": "",
-      "dateCertified": "2023"
+      "deliveryStandard": "Fully documented REST API endpoints, OAuth 2.0 token handshakes, and field-level validation schemas.",
+      "proofUrl": ""
     }
   ],
   "integratedPlatforms": [

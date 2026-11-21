@@ -8,14 +8,26 @@ import {
 } from "@/data/redesign";
 import { SectionIllustration } from "@/components/ui";
 import { CertifiedPartnerStrip } from "@/components/ui/partner-strip";
+import { ObfuscatedEmail } from "@/components/layout/obfuscated-email";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 import factsData from "../../../data/facts.json";
 
-export const metadata: Metadata = generatePageMetadata("/about", {
-    title: "About Our AI & Automation Team",
-    description:
-        "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.",
-});
+export const metadata: Metadata = {
+    ...generatePageMetadata("/about", {
+        title: "About Our AI & Automation Team",
+        description:
+            "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.",
+    }),
+    twitter: {
+        card: "summary_large_image",
+        title: "About Our AI & Automation Team | DigitalX",
+        description:
+            "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.",
+        images: ["/api/og?title=About+Our+AI+%26+Automation+Team&subtitle=DigitalX+Solutions"],
+        site: undefined,
+        creator: undefined,
+    },
+};
 
 export default function AboutPage() {
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -46,6 +58,7 @@ export default function AboutPage() {
                 logo: `${siteConfig.domain}/assets/logo.png`,
                 telephone: "+61 451 413 786",
                 email: "info@digitalx-solutions.com",
+                foundingDate: "2020",
                 address: {
                     "@type": "PostalAddress",
                     streetAddress: "16 Boldrewood Ave",
@@ -70,7 +83,7 @@ export default function AboutPage() {
                 name: "Jazib Shahid",
                 jobTitle: "Founder & CEO",
                 description:
-                    "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and strict operational guardrails across all client deployments.",
+                    "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and operational guardrails across all client deployments.",
                 worksFor: {
                     "@id": `${siteConfig.domain}/#organization`,
                 },
@@ -207,7 +220,7 @@ export default function AboutPage() {
                                         </div>
                                     </div>
                                     <p className="mt-4 text-xs leading-relaxed text-foreground/80">
-                                        Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and strict operational guardrails across all client deployments.
+                                        Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and operational guardrails across all client deployments.
                                     </p>
                                     <div className="mt-4">
                                         <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
@@ -222,13 +235,26 @@ export default function AboutPage() {
                                 </div>
                                 <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
                                     <span className="text-xs text-foreground/75">Leadership</span>
-                                    <Link
-                                        href="/about/team/jazib-shahid"
-                                        className="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
-                                    >
-                                        View Profile
-                                        <ExternalLink className="h-3 w-3" />
-                                    </Link>
+                                    <div className="flex items-center gap-3">
+                                        {factsData.leadership?.founder?.linkedinUrl && factsData.leadership.founder.linkedinUrl.startsWith("http") && (
+                                            <a
+                                                href={factsData.leadership.founder.linkedinUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex min-h-[44px] items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                                            >
+                                                LinkedIn
+                                                <ExternalLink className="h-3 w-3" />
+                                            </a>
+                                        )}
+                                        <Link
+                                            href="/about/team/jazib-shahid"
+                                            className="inline-flex min-h-[44px] items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                                        >
+                                            View Profile
+                                            <ExternalLink className="h-3 w-3" />
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
 
@@ -264,12 +290,24 @@ export default function AboutPage() {
                                 </div>
                                 <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
                                     <span className="text-xs text-foreground/75">Delivery Engineering</span>
-                                    <span className="text-xs text-foreground/50">Systems Specialist</span>
+                                    {factsData.leadership?.technicalLead?.linkedinUrl && factsData.leadership.technicalLead.linkedinUrl.startsWith("http") ? (
+                                        <a
+                                            href={factsData.leadership.technicalLead.linkedinUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex min-h-[44px] items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                                        >
+                                            LinkedIn
+                                            <ExternalLink className="h-3 w-3" />
+                                        </a>
+                                    ) : (
+                                        <span className="text-xs text-foreground/50">Systems Specialist</span>
+                                    )}
                                 </div>
                             </div>
                         </div>
 
-                        {/* Registered Entity & Operational Compliance Block */}
+                        {/* Registered Entity Block */}
                         <div className="mt-8 rounded-2xl border border-border bg-surface-50 p-6">
                             <div className="flex items-center gap-2 text-foreground font-semibold">
                                 <ShieldCheck className="h-4 w-4 text-brand" />
@@ -281,19 +319,22 @@ export default function AboutPage() {
                                         <strong className="text-foreground">Registered Office:</strong> 16 Boldrewood Ave, Casula NSW 2170, Australia.
                                     </p>
                                     <p>
-                                        <strong className="text-foreground">Coverage:</strong> Seamless operational support and monitoring across Australian Eastern Standard Time (AEST) and US Eastern/Pacific (EST/PST) business hours.
+                                        <strong className="text-foreground">Coverage:</strong> Operational support and monitoring across Australian Eastern Standard Time (AEST) and US Eastern/Pacific (EST/PST) business hours.
                                     </p>
                                 </div>
                                 <div className="space-y-2">
-                                    <p>
-                                        <strong className="text-foreground">Privacy &amp; Messaging Standards:</strong> Designed with privacy and messaging rules in mind, including Australian Privacy Principles, ACMA spam standards, and US CTIA/A2P 10DLC messaging compliance.
-                                    </p>
-                                    <p>
-                                        <strong className="text-foreground">Direct Contact:</strong> Direct executive communication available via{" "}
-                                        <a href="mailto:info@digitalx-solutions.com" className="text-brand font-medium hover:underline">info@digitalx-solutions.com</a>
-                                        {" "}or{" "}
-                                        <a href="tel:+61451413786" className="text-brand font-medium hover:underline">+61 451 413 786</a>.
-                                    </p>
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        <strong className="text-foreground">Direct Contact:</strong>
+                                        <span>Direct communication via</span>
+                                        <ObfuscatedEmail className="text-xs" />
+                                        <span>or</span>
+                                        <a
+                                            href="tel:+61451413786"
+                                            className="inline-flex min-h-[44px] items-center text-brand font-medium hover:underline"
+                                        >
+                                            +61 451 413 786
+                                        </a>.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -328,7 +369,7 @@ export default function AboutPage() {
                                                 </p>
                                                 <p>
                                                     <strong className="text-foreground/90">Delivery Standard:</strong>{" "}
-                                                    {cert.verificationStandard}
+                                                    {cert.deliveryStandard || (cert as Record<string, unknown>).verificationStandard as string}
                                                 </p>
                                             </div>
                                         </div>
@@ -391,9 +432,9 @@ export default function AboutPage() {
                                 </p>
                             </div>
                             <div className="rounded-2xl border border-border bg-white p-5">
-                                <h3 className="font-semibold text-foreground">3. Strict Operational Guardrails</h3>
+                                <h3 className="font-semibold text-foreground">3. Operational Guardrails</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
-                                    Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside verified parameters, it gracefully routes to your on-call team with complete caller context, booking notes, and audio transcripts.
+                                    Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside predefined parameters, it gracefully routes to your on-call team with complete caller context, booking notes, and audio transcripts.
                                 </p>
                             </div>
                         </div>

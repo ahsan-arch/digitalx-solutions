@@ -3,9 +3,7 @@ import factsData from "../../data/facts.json";
 
 export const siteConfig = {
     domain: "https://digitalx-solutions.com",
-    social: {
-        twitter: "@digitalx_solutions",
-    },
+    social: {},
 };
 
 // ── Geo-Targeted, Keyword-Rich SEO Copy ──
