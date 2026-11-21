@@ -150,7 +150,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="font-mono text-xs font-medium text-foreground/60 mr-2 self-center">
+              <span className="font-mono text-xs font-medium text-foreground/75 mr-2 self-center">
                 Stack Components:
               </span>
               {integration.toolsUsed.map((tool) => (

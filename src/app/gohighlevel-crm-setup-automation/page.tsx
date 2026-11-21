@@ -102,7 +102,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </Link>
               </div>
 
-              <p className="mt-4 text-xs text-foreground/60">
+              <p className="mt-4 text-xs text-foreground/75">
                 Already on GoHighLevel? We audit and rebuild messy sub-accounts without breaking your live campaigns.
               </p>
             </div>

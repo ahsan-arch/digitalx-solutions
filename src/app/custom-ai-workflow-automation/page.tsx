@@ -107,7 +107,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </Link>
               </div>
 
-              <p className="mt-4 text-xs text-foreground/60">
+              <p className="mt-4 text-xs text-foreground/75">
                 Have brittle Zapier workflows eating your budget? We migrate and optimize your existing automations onto self-hosted n8n.
               </p>
             </div>

@@ -78,7 +78,7 @@ export default function IntegrationsHubPage() {
                   </p>
 
                   <div className="mt-5 border-t border-border/60 pt-4">
-                    <span className="font-mono text-[11px] font-medium text-foreground/60">
+                    <span className="font-mono text-[11px] font-medium text-foreground/75">
                       Supported Tools
                     </span>
                     <div className="mt-2 flex flex-wrap gap-1.5">

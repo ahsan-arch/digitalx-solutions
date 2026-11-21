@@ -107,7 +107,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </Link>
               </div>
 
-              <p className="mt-4 text-xs text-foreground/60">
+              <p className="mt-4 text-xs text-foreground/75">
                 Experience natural, low-latency conversational turn-taking with zero credit card required.
               </p>
             </div>
