@@ -24,7 +24,7 @@
 | `/case-studies/riverstone-dental` | `/case-studies/dental-clinic` | 301 Permanent | Anonymized case-study slug normalization |
 | `/case-studies/harbor-plumbing` | `/case-studies/plumbing-contractor` | 301 Permanent | Anonymized case-study slug normalization |
 | `/case-studies/atlas-consulting` | `/case-studies/advisory-practice` | 301 Permanent | Anonymized case-study slug normalization |
-| `/about/team/:slug*` | `/about` | 301 Permanent | Consolidated unverified individual team profile to /about hub |
+| `/about/team/ahsan-architect` | `/about` | 301 Permanent | Retired unverified alias; founder profile served at `/about/team/jazib-shahid` |
 | `/insights/how-dental-clinic-increased-appointments-32-percent` | `/insights/how-dental-clinic-increased-appointments-ai-voice` | 301 Permanent | Compliance normalization (removed unproven "32-percent" from slug) |
 | `/insights/how-plumbing-company-recovered-180k-ai-voice` | `/insights/plumbing-ai-voice-dispatch-case-study` | 301 Permanent | Compliance normalization (removed unproven "180k" revenue figure from slug to neutral slug) |
 | `/insights/how-we-built-self-hosted-30-second-speed-to-lead-pipeline-n8n-vapi` | `/insights/how-we-built-self-hosted-speed-to-lead-pipeline-n8n-vapi` | 301 Permanent | Latency normalization (removed "30-second" latency figure from slug to neutral slug) |
