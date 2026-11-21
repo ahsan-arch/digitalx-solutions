@@ -192,11 +192,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy-Report-Only",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://assets.apollo.io",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self' data:",
-              "connect-src 'self' data: blob: https: wss:",
+              "connect-src 'self' data: blob: https: wss: https://*.apollo.io",
               "media-src 'self' blob: data:",
               "frame-src 'self' https://www.googletagmanager.com https://calendar.google.com https://calendar.app.google",
               "object-src 'none'",

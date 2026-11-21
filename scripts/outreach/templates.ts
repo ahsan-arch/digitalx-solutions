@@ -61,7 +61,7 @@ Saw the work ${company} is doing${city}. Quick question: ${painQuestion}
 In a benchmark test we ran calling trade businesses after-hours, over 60% went straight to voicemail—and over 80% of property owners hang up and immediately call the next contractor on Google.
 
 We deploy autonomous AI voice receptionists trained specifically for ${contractorLabel} that:
-- Answer in under 500 milliseconds with an authentic local voice (sounds 100% human)
+- Answer with low-latency conversational pacing and an authentic local voice
 - Triage ${emergencyExample}
 - Dispatch emergency jobs directly to your on-call technician via SMS
 - Book standard jobs directly into ${software}
@@ -87,7 +87,7 @@ ${defaultOutreachConfig.companyAddress}`;
   <p>In a benchmark test we ran calling trade businesses after-hours, <strong>over 60% went straight to voicemail</strong>—and over 80% of property owners hang up and immediately call the next contractor on Google.</p>
   <p>We deploy autonomous AI voice receptionists trained specifically for ${contractorLabel} that:</p>
   <ul>
-    <li>Answer in under 500 milliseconds with an authentic local voice (sounds 100% human)</li>
+    <li>Answer with low-latency conversational pacing and an authentic local voice</li>
     <li>Triage ${emergencyExample}</li>
     <li>Dispatch emergency jobs directly to your on-call technician via SMS</li>
     <li>Book standard jobs directly into ${software}</li>
@@ -182,7 +182,7 @@ Many growing service and advisory businesses hit a scaling wall where Zapier exe
 
 At DigitalX Solutions, we engineer private self-hosted n8n instances and GoHighLevel CRM pipelines:
 - Unlimited workflow executions for a flat ~$20/mo server cost (80%+ software savings)
-- Strict local data sovereignty (HIPAA and SOC2 compliant)
+- Private, dedicated data sovereignty on your own self-hosted infrastructure
 - Native AI agent nodes connected directly to your CRM and databases
 
 Would you be open to a 10-minute workflow review to see if migrating your pipelines makes sense this quarter?
@@ -207,7 +207,7 @@ ${defaultOutreachConfig.companyAddress}`;
   <p>At DigitalX Solutions, we engineer private self-hosted n8n instances and GoHighLevel CRM pipelines:</p>
   <ul>
     <li>Unlimited workflow executions for a flat ~$20/mo server cost (80%+ software savings)</li>
-    <li>Strict local data sovereignty (HIPAA and SOC2 compliant)</li>
+    <li>Private, dedicated data sovereignty on your own self-hosted infrastructure</li>
     <li>Native AI agent nodes connected directly to your CRM and databases</li>
   </ul>
   <p>Would you be open to a 10-minute workflow review to see if migrating your pipelines makes sense this quarter?</p>
@@ -238,7 +238,7 @@ I hope this finds you well. I came across ${company} and wanted to reach out wit
 When new client inquiries call your business while your team is on another line or after-hours, how quickly are they followed up?
 
 We help service businesses capture 100% of inbound calls by deploying:
-1. Sub-500ms AI voice receptionists that answer 24/7 and book appointments
+1. Low-latency AI voice receptionists that answer 24/7 and book appointments
 2. Under-60-second missed-call text-back that instantly engages prospective clients before they call a competitor
 
 Would you be open to a quick 5-minute call or testing our voice agent demo directly in your browser?
@@ -262,7 +262,7 @@ ${defaultOutreachConfig.companyAddress}`;
   <p>When new client inquiries call your business while your team is on another line or after-hours, how quickly are they followed up?</p>
   <p>We help service businesses capture 100% of inbound calls by deploying:</p>
   <ol>
-    <li>Sub-500ms AI voice receptionists that answer 24/7 and book appointments</li>
+    <li>Low-latency AI voice receptionists that answer 24/7 and book appointments</li>
     <li>Under-60-second missed-call text-back that instantly engages prospective clients before they call a competitor</li>
   </ol>
   <p>Would you be open to a quick 5-minute call or testing our voice agent demo directly in your browser at <a href="https://digitalx-solutions.com/try-voice-agent" style="color: #0f766e;">digitalx-solutions.com/try-voice-agent</a>?</p>
