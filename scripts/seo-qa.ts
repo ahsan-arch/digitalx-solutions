@@ -19,11 +19,11 @@ let totalRoutesChecked = 0;
 
 function checkMetadata(route: string, title: string, description: string) {
   totalRoutesChecked++;
-  
+
   // Clean HTML entities if any
   const cleanTitle = title.replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"').trim();
   const cleanDesc = description.replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"').trim();
-  
+
   if (cleanTitle.length > 60) {
     failures.push({
       route,
@@ -32,7 +32,7 @@ function checkMetadata(route: string, title: string, description: string) {
       reason: "Exceeds 60 characters max limit for Google SERP display",
     });
   }
-  
+
   // Meta description length check (<= 155 chars)
   if (cleanDesc.length < 50 || cleanDesc.length > 155) {
     failures.push({
@@ -63,6 +63,8 @@ checkMetadata("/services/meta-ads", "Meta Ads & Server-Side CAPI Agency", "Full-
 checkMetadata("/pricing", "Transparent AI Automation Pricing", "Transparent pricing for AI voice receptionists, missed-call text-back, and GoHighLevel CRM workflows for businesses across the United States and Australia.");
 checkMetadata("/process", "Our 4-Week AI Deployment Process", "From discovery intake to live production, see how we launch custom AI voice agents and GoHighLevel CRM pipelines within an agile 4 to 6 week roadmap.");
 checkMetadata("/about", "About Our AI & Automation Team", "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.");
+checkMetadata("/about/team/jazib-shahid", "Jazib Shahid – Founder & CEO | DigitalX Solutions", "Jazib Shahid is Founder & CEO of DigitalX Solutions (founded 2020), specializing in AI voice receptionists, GoHighLevel systems, and n8n automations.");
+checkMetadata("/products/digitalx-crm", "DigitalX CRM – Service Operations & Intake Platform", "Custom service CRM and automated intake software engineered for high-volume trade contractors and clinics. Currently in private engineering preview.");
 checkMetadata("/contact", "Book a Strategy Call", "Share your growth goals with DigitalX Solutions. We respond with a practical engineering plan for AI voice agents, CRM automation, and revenue operations.");
 checkMetadata("/insights", "AI Voice & Automation Insights", "Practical playbooks on AI voice receptionists, missed-call text-back, GoHighLevel implementation, and workflow automation for service businesses.");
 checkMetadata("/try-voice-agent", seoCopy.tryVoiceAgent.title, seoCopy.tryVoiceAgent.description);
@@ -153,6 +155,77 @@ for (const col of footerColumns) {
       });
     }
   }
+}
+
+// ── 11. Article Depth & Word Count Verification ──
+for (const [slug, art] of Object.entries(articlesData)) {
+  if (art.noindex) continue;
+  const wordCount = art.content.split(/\s+/).filter(Boolean).length;
+  if (wordCount < 500) {
+    failures.push({
+      route: `/insights/${slug}`,
+      field: "Article Word Count",
+      value: `${wordCount} words`,
+      reason: "Article must have at least 500 words of comprehensive technical content",
+    });
+  }
+}
+
+// ── 12. Banned Marketing Claims & Compliance Checks ──
+import fs from "fs";
+import path from "path";
+
+const bannedPatterns = [
+  { term: "391%", reason: "Unverified percentage claim banned by claims review" },
+  { term: "99.9%", reason: "Unverified uptime SLA percentage claim banned by claims review" },
+  { term: "sub-500ms", reason: "Unmeasured latency claim banned; use 'fast, natural responses'" },
+  { term: "$180k", reason: "Unverified case-study revenue claim banned" },
+  { term: "$180,000", reason: "Unverified case-study revenue claim banned" },
+  { term: "50,000+", reason: "Unverified task execution claim banned" },
+  { term: "Certified Partner", reason: "Certification claim banned until proof URL exists in facts.json" },
+  { term: "Registered Partner", reason: "Registration claim banned until proof URL exists in facts.json" },
+  { term: "100,000 inbound", reason: "Unverified telemetry benchmark figure banned" },
+  { term: "Riverstone Dental Care", reason: "Unsigned client identity must remain withheld" },
+  { term: "Harbor Plumbing & Heating", reason: "Unsigned client identity must remain withheld" },
+  { term: "Atlas Consulting Partners", reason: "Unsigned client identity must remain withheld" },
+];
+
+function scanForBannedClaims(dir: string) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name !== "node_modules" && entry.name !== ".next" && entry.name !== ".git") {
+        scanForBannedClaims(fullPath);
+      }
+    } else if (entry.isFile() && (entry.name.endsWith(".ts") || entry.name.endsWith(".tsx"))) {
+      if (fullPath.includes("seo-qa.ts") || fullPath.includes("voice-demos.ts") || fullPath.includes("scan-banned.js") || fullPath.includes("temp-list.js")) continue;
+      const content = fs.readFileSync(fullPath, "utf8");
+      for (const { term, reason } of bannedPatterns) {
+        if (content.toLowerCase().includes(term.toLowerCase())) {
+          failures.push({
+            route: fullPath.replace(/\\/g, "/"),
+            field: "Banned Claim Found",
+            value: term,
+            reason,
+          });
+        }
+      }
+    }
+  }
+}
+
+scanForBannedClaims(path.resolve(__dirname, "../src"));
+
+// ── 13. WCAG AA Contrast Compliance Gate ──
+const globalsCss = fs.readFileSync(path.resolve(__dirname, "../src/app/globals.css"), "utf8");
+if (globalsCss.includes("--accent-primary: 196 78 22;")) {
+  failures.push({
+    route: "src/app/globals.css",
+    field: "Color Contrast Failure",
+    value: "196 78 22 (4.45:1 contrast)",
+    reason: "WCAG AA requires >= 4.5:1 contrast on light backgrounds. Use calibrated 188 72 18.",
+  });
 }
 
 // ── QA Report Output ──
