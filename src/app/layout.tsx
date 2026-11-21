@@ -57,6 +57,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: geoHreflangLanguages,
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   authors: [{ name: "DigitalX Solutions", url: siteConfig.domain }],
   creator: "DigitalX Solutions",
@@ -85,8 +99,6 @@ export const metadata: Metadata = {
     title: seoCopy.home.title,
     description: seoCopy.home.description,
     images: ["/api/og"],
-    site: siteConfig.social.twitter,
-    creator: siteConfig.social.twitter,
   },
   robots:
     process.env.VERCEL_ENV === "preview"
@@ -127,8 +139,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://assets.apollo.io" />
-        <link rel="dns-prefetch" href="https://assets.apollo.io" />
         <GoogleTagManager />
         <ApolloTracker />
         <script

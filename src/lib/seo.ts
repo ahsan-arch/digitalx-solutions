@@ -189,8 +189,6 @@ export function generatePageMetadata(
             title: `${cleanTitle} | DigitalX`,
             description: copy.description,
             images: [`/api/og?${ogParams.toString()}`],
-            site: siteConfig.social.twitter,
-            creator: siteConfig.social.twitter,
         },
     };
 }
@@ -202,7 +200,7 @@ export function generateOrganizationSchema() {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": ["ProfessionalService", "LocalBusiness"],
+                "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 alternateName: ["DigitalX", "Digital X Solutions"],
@@ -231,7 +229,6 @@ export function generateOrganizationSchema() {
                 telephone: "+61 451 413 786",
                 sameAs: [
                     "https://www.linkedin.com/company/digitalx-solutions-aus/",
-                    "https://x.com/digitalx_solutions",
                     "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
                     "https://www.instagram.com/digitalx_solutions/",
                     "https://github.com/digitalx-solutions",
@@ -241,18 +238,18 @@ export function generateOrganizationSchema() {
                     "https://community.n8n.io/u/digitalx_solutions",
                     "https://www.producthunt.com/@digitalx_solutions",
                 ],
-                foundingDate: "2022",
+                foundingDate: "2020",
                 ...(factsData.leadership.founder.fullName.startsWith("[TODO") ? {} : {
                     founder: {
                         "@type": "Person",
                         name: factsData.leadership.founder.fullName,
                         jobTitle: factsData.leadership.founder.jobTitle,
-                        url: `${siteConfig.domain}/about`,
+                        url: `${siteConfig.domain}/about/team/jazib-shahid`,
                     },
                 }),
                 numberOfEmployees: {
                     "@type": "QuantitativeValue",
-                    value: "10",
+                    value: "2-9",
                 },
                 contactPoint: {
                     "@type": "ContactPoint",

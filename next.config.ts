@@ -32,7 +32,6 @@ const nextConfig: NextConfig = {
       { source: "/case-studies/riverstone-dental", destination: "/case-studies/dental-clinic", permanent: true },
       { source: "/case-studies/harbor-plumbing", destination: "/case-studies/plumbing-contractor", permanent: true },
       { source: "/case-studies/atlas-consulting", destination: "/case-studies/advisory-practice", permanent: true },
-      { source: "/about/team/:slug*", destination: "/about", permanent: true },
       { source: "/insights/how-dental-clinic-increased-appointments-32-percent", destination: "/insights/how-dental-clinic-increased-appointments-ai-voice", permanent: true },
       { source: "/insights/how-plumbing-company-recovered-180k-ai-voice", destination: "/insights/plumbing-ai-voice-dispatch-case-study", permanent: true },
       { source: "/insights/how-we-built-self-hosted-30-second-speed-to-lead-pipeline-n8n-vapi", destination: "/insights/how-we-built-self-hosted-speed-to-lead-pipeline-n8n-vapi", permanent: true },
@@ -211,6 +210,26 @@ const nextConfig: NextConfig = {
       {
         // Cache static files (images, icons, fonts) aggressively for 1 year
         source: "/:path*.(svg|png|jpg|jpeg|webp|avif|ico|woff|woff2)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache demo audio files aggressively for 1 year
+        source: "/demos/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache all audio files
+        source: "/:path*.(mp3|wav|ogg|m4a)",
         headers: [
           {
             key: "Cache-Control",
