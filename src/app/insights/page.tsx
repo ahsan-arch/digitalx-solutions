@@ -97,7 +97,7 @@ export default function InsightsPage() {
                         href={`/insights/${article.slug}`}
                         className="group block rounded-2xl border border-border bg-surface-50 p-6 transition hover:border-brand/45"
                     >
-                        <div className="mb-3 flex items-center gap-3 font-mono text-xs text-foreground/60">
+                        <div className="mb-3 flex items-center gap-3 font-mono text-xs text-foreground/75">
                             <time dateTime={article.date}>
                                 {new Date(article.date).toLocaleDateString("en-US", {
                                     month: "long",

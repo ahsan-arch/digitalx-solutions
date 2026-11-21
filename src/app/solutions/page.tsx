@@ -85,7 +85,7 @@ export default function SolutionsHubPage() {
         <div className="grid gap-5 md:grid-cols-3">
           {solutions.map((solution) => (
             <article key={solution.slug} className="rounded-2xl border border-border bg-surface-50 p-6">
-              <span className="font-mono text-xs font-medium text-foreground/60">{solution.tagline}</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">{solution.tagline}</span>
               <h2 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h2>
               <p className="mt-3 text-sm leading-relaxed text-foreground/70">{solution.summary}</p>
               <ul className="mt-4 space-y-2 text-sm text-foreground/70">

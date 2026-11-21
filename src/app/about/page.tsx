@@ -59,7 +59,6 @@ export default function AboutPage() {
                 },
                 sameAs: [
                     "https://www.linkedin.com/company/digitalx-solutions-aus/",
-                    "https://x.com/digitalx_solutions",
                     "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
                     "https://www.instagram.com/digitalx_solutions/",
                     "https://github.com/digitalx-solutions",
@@ -69,17 +68,13 @@ export default function AboutPage() {
                 "@type": "Person",
                 "@id": `${siteConfig.domain}/about#jazib-shahid`,
                 name: "Jazib Shahid",
-                jobTitle: "Founder & Lead Automation Architect",
+                jobTitle: "Founder & CEO",
                 description:
-                    "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, sub-500ms latency tuning, and zero-hallucination guardrail testing across all client deployments.",
+                    "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and strict operational guardrails across all client deployments.",
                 worksFor: {
                     "@id": `${siteConfig.domain}/#organization`,
                 },
-                url: `${siteConfig.domain}/about`,
-                sameAs: [
-                    "https://www.linkedin.com/company/digitalx-solutions-aus",
-                    "https://github.com/ahsan-arch",
-                ],
+                url: `${siteConfig.domain}/about/team/jazib-shahid`,
             },
             {
                 "@type": "Person",
@@ -92,9 +87,6 @@ export default function AboutPage() {
                     "@id": `${siteConfig.domain}/#organization`,
                 },
                 url: `${siteConfig.domain}/about`,
-                sameAs: [
-                    "https://www.linkedin.com/company/digitalx-solutions-aus",
-                ],
             },
         ],
     };
@@ -166,7 +158,7 @@ export default function AboutPage() {
                         {heroMetrics.map((stat) => (
                             <div key={stat.label} className="rounded-2xl border border-border bg-surface-50 p-5 text-center">
                                 <div className="text-3xl font-semibold text-foreground">{stat.value}</div>
-                                <div className="mt-1 text-sm text-foreground/60">{stat.label}</div>
+                                <div className="mt-1 text-sm text-foreground/75">{stat.label}</div>
                             </div>
                         ))}
                     </div>
@@ -189,7 +181,7 @@ export default function AboutPage() {
                 <section className="container-shell mt-12">
                     <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
                         <div>
-                            <p className="text-xs font-semibold text-brand">Engineering Leadership &amp; Entity Verification</p>
+                            <p className="text-xs font-semibold text-brand">Engineering Leadership</p>
                             <h2 className="mt-1 font-display text-3xl text-foreground">Built by Systems Engineers, Not Account Managers</h2>
                             <p className="mt-2 text-sm leading-relaxed text-foreground/70 max-w-3xl">
                                 Every telephony stream, CRM pipeline, and n8n workflow at DigitalX Solutions is architected and stress-tested by our core engineering leadership, never outsourced to junior template installers.
@@ -210,15 +202,15 @@ export default function AboutPage() {
                                                 Jazib Shahid
                                             </h3>
                                             <p className="text-xs font-semibold text-brand">
-                                                Founder &amp; Lead Automation Architect
+                                                Founder &amp; CEO
                                             </p>
                                         </div>
                                     </div>
                                     <p className="mt-4 text-xs leading-relaxed text-foreground/80">
-                                        Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, sub-500ms latency tuning, and zero-hallucination guardrail testing across all client deployments.
+                                        Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and strict operational guardrails across all client deployments.
                                     </p>
                                     <div className="mt-4">
-                                        <span className="text-[11px] font-medium text-foreground/60">Core Stack</span>
+                                        <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
                                         <div className="mt-1.5 flex flex-wrap gap-1.5">
                                             {["GoHighLevel", "n8n (Self-Hosted & Cloud)", "Twilio SIP", "Vapi", "HubSpot API"].map((tech) => (
                                                 <span key={tech} className="rounded-md border border-border bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
@@ -229,16 +221,14 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                                 <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
-                                    <span className="text-xs text-foreground/60">Verified Leadership</span>
-                                    <a
-                                        href="https://www.linkedin.com/company/digitalx-solutions-aus"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <span className="text-xs text-foreground/75">Leadership</span>
+                                    <Link
+                                        href="/about/team/jazib-shahid"
                                         className="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
                                     >
-                                        Connect on LinkedIn
+                                        View Profile
                                         <ExternalLink className="h-3 w-3" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -262,7 +252,7 @@ export default function AboutPage() {
                                         Specializes in GoHighLevel multi-location snapshot engineering, bi-directional webhook synchronization, carrier compliance (A2P 10DLC and Australian ACMA SMS standards), and automated lead-routing logic. Ensures clean data hygiene, CRM custom field mapping, and zero lead leakage across multi-step agency and contractor accounts.
                                     </p>
                                     <div className="mt-4">
-                                        <span className="text-[11px] font-medium text-foreground/60">Core Stack</span>
+                                        <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
                                         <div className="mt-1.5 flex flex-wrap gap-1.5">
                                             {["GoHighLevel Snapshots", "SIP Trunking", "10DLC & ACMA Compliance", "CRM Webhooks"].map((tech) => (
                                                 <span key={tech} className="rounded-md border border-border bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
@@ -273,16 +263,8 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                                 <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
-                                    <span className="text-xs text-foreground/60">Verified Delivery</span>
-                                    <a
-                                        href="https://www.linkedin.com/company/digitalx-solutions-aus"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
-                                    >
-                                        Connect on LinkedIn
-                                        <ExternalLink className="h-3 w-3" />
-                                    </a>
+                                    <span className="text-xs text-foreground/75">Delivery Engineering</span>
+                                    <span className="text-xs text-foreground/50">Systems Specialist</span>
                                 </div>
                             </div>
                         </div>
@@ -304,10 +286,10 @@ export default function AboutPage() {
                                 </div>
                                 <div className="space-y-2">
                                     <p>
-                                        <strong className="text-foreground">Statutory Compliance:</strong> Built in strict accordance with the Australian Privacy Principles (APPs, Privacy Act 1988), Australian Communications and Media Authority (ACMA) spam regulations, and US CTIA/A2P 10DLC messaging compliance.
+                                        <strong className="text-foreground">Privacy &amp; Messaging Standards:</strong> Designed with privacy and messaging rules in mind, including Australian Privacy Principles, ACMA spam standards, and US CTIA/A2P 10DLC messaging compliance.
                                     </p>
                                     <p>
-                                        <strong className="text-foreground">Direct Verification:</strong> Direct executive communication available via{" "}
+                                        <strong className="text-foreground">Direct Contact:</strong> Direct executive communication available via{" "}
                                         <a href="mailto:info@digitalx-solutions.com" className="text-brand font-medium hover:underline">info@digitalx-solutions.com</a>
                                         {" "}or{" "}
                                         <a href="tel:+61451413786" className="text-brand font-medium hover:underline">+61 451 413 786</a>.
@@ -319,10 +301,10 @@ export default function AboutPage() {
                         {/* Partner Ecosystem & Technical Credentials */}
                         <div className="mt-8 border-t border-border pt-6">
                             <h3 className="text-base font-semibold text-foreground">
-                                Partner Ecosystem &amp; Technical Credentials
+                                Platform Integrations &amp; Technical Stacks
                             </h3>
                             <p className="mt-1 text-xs text-foreground/70">
-                                Verified production integrations and partner standards deployed across client accounts.
+                                Production integrations and delivery standards deployed across client accounts.
                             </p>
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
                                 {factsData.partnerCertifications.map((cert) => (
@@ -345,7 +327,7 @@ export default function AboutPage() {
                                                     {cert.deploymentScope}
                                                 </p>
                                                 <p>
-                                                    <strong className="text-foreground/90">Verification Standard:</strong>{" "}
+                                                    <strong className="text-foreground/90">Delivery Standard:</strong>{" "}
                                                     {cert.verificationStandard}
                                                 </p>
                                             </div>
@@ -353,7 +335,7 @@ export default function AboutPage() {
 
                                         <div className="mt-4 pt-3 border-t border-border/70 text-xs flex items-center justify-between">
                                             <span className="text-[11px] font-medium text-foreground/70">
-                                                Verified Integration
+                                                Integration Architecture
                                             </span>
                                             {cert.proofUrl && cert.proofUrl.startsWith("http") && (
                                                 <a
@@ -377,28 +359,12 @@ export default function AboutPage() {
                 <section className="container-shell mt-12">
                     <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
                         <h2 className="font-display text-3xl text-foreground">Journey so far</h2>
-                        <div className="mt-6 grid gap-4 md:grid-cols-3">
-                            <div className="rounded-2xl border border-border bg-surface-50 p-5">
-                                <span className="font-mono text-xs font-semibold text-brand">2022</span>
-                                <h3 className="mt-2 text-base font-semibold text-foreground">Foundation</h3>
-                                <p className="mt-2 text-xs leading-relaxed text-foreground/70">
-                                    Founded with a focus on custom workflow automation and CRM integrations for service businesses, establishing clean data architecture standards from day one.
-                                </p>
-                            </div>
-                            <div className="rounded-2xl border border-border bg-surface-50 p-5">
-                                <span className="font-mono text-xs font-semibold text-brand">2023</span>
-                                <h3 className="mt-2 text-base font-semibold text-foreground">Orchestration &amp; Snapshots</h3>
-                                <p className="mt-2 text-xs leading-relaxed text-foreground/70">
-                                    Expanded into production-grade self-hosted n8n infrastructure and multi-location GoHighLevel snapshots, delivering enterprise-tier automation without per-task bloat.
-                                </p>
-                            </div>
-                            <div className="rounded-2xl border border-border bg-surface-50 p-5">
-                                <span className="font-mono text-xs font-semibold text-brand">2024 to Present</span>
-                                <h3 className="mt-2 text-base font-semibold text-foreground">Voice AI &amp; Telephony</h3>
-                                <p className="mt-2 text-xs leading-relaxed text-foreground/70">
-                                    Scaled low-latency AI voice receptionist architectures, ultra-fast speed-to-lead pipelines, and carrier-compliant telephony for Australian and US operators.
-                                </p>
-                            </div>
+                        <div className="mt-6 rounded-2xl border border-border bg-surface-50 p-6">
+                            <span className="font-mono text-xs font-semibold text-brand">Founded 2020</span>
+                            <h3 className="mt-2 text-lg font-semibold text-foreground">Engineering Dependable Systems Since 2020</h3>
+                            <p className="mt-3 text-sm leading-relaxed text-foreground/75 max-w-3xl">
+                                DigitalX Solutions was founded in 2020 to build resilient, production-grade automation systems and web software for service businesses. Over the years, we expanded from custom CRM and webhook architectures to self-hosted n8n data pipelines and low-latency AI voice receptionists across Australia and the United States.
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -425,7 +391,7 @@ export default function AboutPage() {
                                 </p>
                             </div>
                             <div className="rounded-2xl border border-border bg-white p-5">
-                                <h3 className="font-semibold text-foreground">3. Zero Hallucination Guardrails</h3>
+                                <h3 className="font-semibold text-foreground">3. Strict Operational Guardrails</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
                                     Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside verified parameters, it gracefully routes to your on-call team with complete caller context, booking notes, and audio transcripts.
                                 </p>

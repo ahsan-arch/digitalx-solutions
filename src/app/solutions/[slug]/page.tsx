@@ -122,7 +122,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
 
       {/* Hero Header */}
       <section className="container-shell">
-        <div className="flex flex-wrap items-center gap-3 text-xs text-foreground/60 mb-2">
+        <div className="flex flex-wrap items-center gap-3 text-xs text-foreground/75 mb-2">
           <span className="font-mono text-xs font-medium text-brand">Engineering Architecture</span>
           <span>•</span>
           <span className="font-medium text-foreground/80">Last Updated: 25 October 2026</span>
@@ -240,7 +240,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
             <div className="max-w-2xl">
-              <span className="font-mono text-xs font-medium text-foreground/60">How It Works</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">How It Works</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
                 4-Step Intake & Operating Workflow
               </h2>
@@ -262,7 +262,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                     <h3 className="mt-3 font-display text-base font-semibold text-foreground">{step.name}</h3>
                     <p className="mt-2 text-xs leading-relaxed text-foreground/70">{step.text}</p>
                   </div>
-                  <p className="mt-4 border-t border-border/80 pt-3 text-[11px] leading-relaxed text-foreground/60 italic">
+                  <p className="mt-4 border-t border-border/80 pt-3 text-[11px] leading-relaxed text-foreground/75 italic">
                     {step.detail}
                   </p>
                 </div>
@@ -278,7 +278,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
               <Zap className="h-4 w-4 text-brand" />
-              <span className="font-mono text-xs font-medium text-foreground/60">Engineering Architecture</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">Engineering Architecture</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Technical Specifications & Standards</h2>
 
@@ -299,7 +299,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {solution.comparison && solution.comparison.length > 0 && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <span className="font-mono text-xs font-medium text-foreground/60">Comparative Analysis</span>
+            <span className="font-mono text-xs font-medium text-foreground/75">Comparative Analysis</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               DigitalX Architecture vs Traditional Solutions
             </h2>
@@ -338,7 +338,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="max-w-2xl">
-              <span className="font-mono text-xs font-medium text-foreground/60">Transparent Investment</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">Transparent Investment</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Implementation & Management Tiers</h2>
               <p className="mt-2 text-sm text-foreground/70">
                 Flat retainers with zero hidden task surcharges. Australian businesses can be billed in AUD; US businesses in USD.
@@ -363,7 +363,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                     </div>
                     <div className="mt-4 flex items-baseline gap-1.5">
                       <span className="font-display text-3xl font-extrabold text-foreground md:text-4xl">{tier.price}</span>
-                      <span className="text-xs font-medium text-foreground/60">{tier.cadence}</span>
+                      <span className="text-xs font-medium text-foreground/75">{tier.cadence}</span>
                     </div>
                     <p className="mt-3 text-xs leading-relaxed text-foreground/70">{tier.description}</p>
 
@@ -420,7 +420,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {solution.faqs && solution.faqs.length > 0 && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <span className="font-mono text-xs font-medium text-foreground/60">Expert Guidance</span>
+            <span className="font-mono text-xs font-medium text-foreground/75">Expert Guidance</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Frequently Asked Questions</h2>
             <dl className="mt-6 space-y-6">
               {solution.faqs.map((faq) => (
@@ -446,7 +446,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                   href={`/case-studies/${cs.slug}`}
                   className="group rounded-xl border border-border bg-surface-50 p-5 transition-colors hover:border-brand/40"
                 >
-                  <span className="font-mono text-xs font-medium text-foreground/60">{cs.industry}</span>
+                  <span className="font-mono text-xs font-medium text-foreground/75">{cs.industry}</span>
                   <h3 className="mt-2 font-display text-base font-bold text-foreground">{cs.client}</h3>
                   <p className="mt-3 text-xs leading-relaxed text-foreground/68">{cs.impact}</p>
                   <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand transition group-hover:text-brand-deep">

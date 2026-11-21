@@ -142,21 +142,21 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-2xl border border-border bg-surface-50 p-4">
-            <p className="text-xs font-medium text-foreground/60">Casula Office &amp; Coverage</p>
+            <p className="text-xs font-medium text-foreground/75">Casula Office &amp; Coverage</p>
             <p className="mt-2 text-sm text-foreground/72 leading-relaxed">
               16 Boldrewood Ave, Casula NSW 2170, Australia. Onshore Australian engineering team serving businesses across Sydney, Melbourne, Brisbane, and remote delivery nationwide in the US.
             </p>
           </div>
 
           <div className="rounded-2xl border border-border bg-surface-50 p-4">
-            <p className="text-xs font-medium text-foreground/60">Direct Email</p>
+            <p className="text-xs font-medium text-foreground/75">Direct Email</p>
             <a href="mailto:info@digitalx-solutions.com" className="mt-2 inline-block text-sm font-medium text-brand hover:underline">
               info@digitalx-solutions.com
             </a>
           </div>
 
           <div className="rounded-2xl border border-border bg-surface-50 p-4">
-            <p className="text-xs font-medium text-foreground/60">Direct Phone &amp; WhatsApp</p>
+            <p className="text-xs font-medium text-foreground/75">Direct Phone &amp; WhatsApp</p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
               <a
                 href={`tel:${companyProfile.phoneE164}`}
@@ -253,7 +253,7 @@ export default function ContactPage() {
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
                 Frequently Asked Consultation Questions
               </h2>
-              <p className="text-xs text-foreground/60">
+              <p className="text-xs text-foreground/75">
                 Clear answers before you book a strategy session with our engineering team.
               </p>
             </div>

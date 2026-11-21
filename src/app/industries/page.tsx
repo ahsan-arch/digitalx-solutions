@@ -83,7 +83,7 @@ export default function IndustriesHubPage() {
                   <h3 className="font-display text-xl text-foreground">{industry.name}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/72">{industry.summary}</p>
 
-                  <h4 className="mt-4 font-mono text-xs font-medium text-foreground/60">Common blockers</h4>
+                  <h4 className="mt-4 font-mono text-xs font-medium text-foreground/75">Common blockers</h4>
                   <ul className="mt-2 space-y-1.5 text-sm text-foreground/68">
                     {industry.painPoints.slice(0, 2).map((point) => (
                       <li key={point}>• {point}</li>

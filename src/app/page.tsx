@@ -38,7 +38,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
         "@id": `${siteConfig.domain}/#organization`,
         name: "DigitalX Solutions",
         url: siteConfig.domain,
@@ -83,7 +83,6 @@ export default function HomePage() {
         ],
         sameAs: [
           "https://www.linkedin.com/company/digitalx-solutions-aus/",
-          "https://x.com/digitalx_solutions",
           "https://www.facebook.com/people/Digitalx-solutions/61588252343955/",
           "https://www.instagram.com/digitalx_solutions/",
           "https://github.com/digitalx-solutions",
@@ -220,7 +219,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 2: CERTIFIED PARTNER STRIP */}
+        {/* SECTION 2: PLATFORM INTEGRATIONS STRIP */}
         <section className="container-shell mt-8 md:mt-12">
           <CertifiedPartnerStrip />
         </section>
@@ -325,11 +324,11 @@ export default function HomePage() {
                 href={`/solutions/${solution.slug}`}
                 className="group block h-full rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
               >
-                <p className="text-xs font-medium text-foreground/60">{solution.tagline}</p>
+                <p className="text-xs font-medium text-foreground/75">{solution.tagline}</p>
                 <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">{solution.summary}</p>
                 <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
-                  Explore system specs
+                  Explore {solution.name}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </span>
               </TiltCard>
@@ -372,7 +371,7 @@ export default function HomePage() {
             <div className="mt-8 grid gap-5 md:grid-cols-4">
               {processSteps.map((step, index) => (
                 <div key={step.title} className="rounded-xl border border-border/70 bg-surface-page p-5">
-                  <p className="font-mono text-xs font-medium text-foreground/60">Phase {index + 1}</p>
+                  <p className="font-mono text-xs font-medium text-foreground/75">Phase {index + 1}</p>
                   <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/80">{step.description}</p>
                 </div>

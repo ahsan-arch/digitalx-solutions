@@ -48,13 +48,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const isAuthorized = (project as { permission?: boolean }).permission === true;
   const caseStudyTitles: Record<string, string> = {
-    "dental-clinic": "Riverstone Dental Care AI Case Study",
-    "plumbing-contractor": "Harbor Plumbing & Heating AI Case Study",
-    "advisory-practice": "Atlas Consulting Partners AI Case Study",
+    "dental-clinic": "Dental Clinic AI Voice Receptionist Case Study",
+    "plumbing-contractor": "Plumbing Contractor Emergency Call & Text-Back Case Study",
+    "advisory-practice": "Advisory Practice CRM & Intake Automation Case Study",
   };
-  const title = caseStudyTitles[project.slug] || `${project.client} Case Study`;
+  const title = caseStudyTitles[project.slug] || `${project.industry} Case Study`;
   const description =
     caseStudyDescriptions[project.slug] ||
     `Discover how this ${project.industry.toLowerCase()} deployed 24/7 voice automation and CRM systems, capturing inquiries with zero hold times across the USA and Australia.`;
@@ -81,9 +80,15 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
   if (!project) notFound();
 
+  const caseStudyTitles: Record<string, string> = {
+    "dental-clinic": "Dental Clinic AI Voice Receptionist Case Study",
+    "plumbing-contractor": "Plumbing Contractor Emergency Call & Text-Back Case Study",
+    "advisory-practice": "Advisory Practice CRM & Intake Automation Case Study",
+  };
+
   const caseStudyFaqs = [
     {
-      question: `How long did it take to build and deploy the automation system for ${project.client}?`,
+      question: "How long did it take to build and deploy this automation system?",
       answer:
         "The complete engagement from initial intake discovery to full production cutover was delivered in 4 weeks. This included conversational prompt engineering, telephony SIP configuration, calendar booking logic, and comprehensive synthetic stress testing.",
     },
@@ -147,7 +152,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
       <Link
         href="/case-studies"
-        className="mb-8 inline-flex items-center text-sm font-medium text-foreground/60 transition hover:text-foreground"
+        className="mb-8 inline-flex items-center text-sm font-medium text-foreground/75 transition hover:text-foreground"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back to all case studies
@@ -161,19 +166,22 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               {project.industry} Case Study
             </span>
             <span className="text-xs text-foreground/40">•</span>
-            <span className="text-xs font-medium text-foreground/60">Production Architecture</span>
+            <span className="text-xs font-medium text-foreground/75">Production Architecture</span>
           </div>
 
           <span className="text-xs font-medium text-foreground/50">
-            Verified Deployment
+            Case Study
           </span>
         </div>
 
         <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-border pb-8">
           <div>
             <h1 className="font-display text-3xl text-foreground md:text-5xl font-bold">
-              {project.client}
+              {caseStudyTitles[project.slug] || `${project.industry} Case Study`}
             </h1>
+            <p className="mt-2 text-sm text-foreground/75">
+              {project.client} &mdash; {project.industry}
+            </p>
             <p className="mt-3 text-lg font-medium text-brand">
               {project.measurableResult}
             </p>
@@ -199,7 +207,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
         {/* Executive Summary (< 100 words) */}
         <div className="mt-8">
-          <h2 className="font-mono text-xs font-medium text-foreground/60">
+          <h2 className="font-mono text-xs font-medium text-foreground/75">
             Executive Summary
           </h2>
           <p className="mt-2 max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">

@@ -82,7 +82,7 @@ export default function DevelopmentHubPage() {
                       <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
                       Production Architecture
                     </span>
-                    <span className="text-[11px] font-mono text-foreground/60">
+                    <span className="text-[11px] font-mono text-foreground/75">
                       Fixed-Scope Delivery
                     </span>
                   </div>
@@ -98,7 +98,7 @@ export default function DevelopmentHubPage() {
                   </p>
 
                   <div className="mt-5 border-t border-border/60 pt-4">
-                    <span className="text-[11px] font-mono text-foreground/60">
+                    <span className="text-[11px] font-mono text-foreground/75">
                       Core Stack Components
                     </span>
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -185,7 +185,7 @@ export default function DevelopmentHubPage() {
                 <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
                   Frequently Asked Questions About Custom Development
                 </h2>
-                <p className="text-xs text-foreground/60">
+                <p className="text-xs text-foreground/75">
                   Engineering timelines, technology choices, and intellectual property ownership.
                 </p>
               </div>

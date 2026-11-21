@@ -140,7 +140,7 @@ export default async function DevelopmentSlugPage(props: Props) {
           <section className="container-shell">
             <Link
               href="/development"
-              className="mb-6 inline-flex items-center font-mono text-xs font-medium text-foreground/60 transition hover:text-brand"
+              className="mb-6 inline-flex items-center font-mono text-xs font-medium text-foreground/75 transition hover:text-brand"
             >
               <ArrowLeft className="mr-1.5 h-3.5 w-3.5" />
               Back to Development Services
@@ -186,7 +186,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 {service.problemSolved}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
-                <span className="font-mono text-xs font-medium text-foreground/60 mr-2 self-center">
+                <span className="font-mono text-xs font-medium text-foreground/75 mr-2 self-center">
                   Stack Technologies:
                 </span>
                 {service.architecturalComponents.map((comp) => (

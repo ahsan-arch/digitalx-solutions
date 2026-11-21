@@ -176,7 +176,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
         </div>
 
         {industry.trustBanner && (
-          <p className="mt-4 text-xs font-medium text-foreground/60 italic">
+          <p className="mt-4 text-xs font-medium text-foreground/75 italic">
             &ldquo;{industry.trustBanner}&rdquo;
           </p>
         )}
@@ -234,7 +234,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
             <div className="max-w-2xl">
-              <span className="font-mono text-xs font-medium text-foreground/60">Inbound Architecture</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">Inbound Architecture</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
                 4-Step Intake & Dispatch Protocol
               </h2>
@@ -282,7 +282,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
               <DollarSign className="h-4 w-4 text-emerald-600" />
-              <span className="font-mono text-xs font-medium text-foreground/60">Unit Economics &amp; ROI</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">Unit Economics &amp; ROI</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Revenue Recovery Modeling for {industry.name}
@@ -297,28 +297,28 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
                 <p className="mt-1 font-display text-xl font-bold text-foreground">
                   {industry.unitEconomics.averageJobValue}
                 </p>
-                <p className="mt-2 text-xs text-foreground/60">Median ticket across active operators</p>
+                <p className="mt-2 text-xs text-foreground/75">Median ticket across active operators</p>
               </div>
               <div className="rounded-2xl border border-border bg-white p-5">
                 <p className="text-xs font-medium text-foreground/55">Monthly Missed Calls</p>
                 <p className="mt-1 font-display text-xl font-bold text-foreground">
                   {industry.unitEconomics.monthlyMissedCallsEst}
                 </p>
-                <p className="mt-2 text-xs text-foreground/60">Typical uncaptured call volume</p>
+                <p className="mt-2 text-xs text-foreground/75">Typical uncaptured call volume</p>
               </div>
               <div className="rounded-2xl border border-border bg-white p-5">
                 <p className="text-xs font-medium text-foreground/55">Recovered Revenue Model</p>
                 <p className="mt-1 font-display text-sm font-bold text-emerald-600">
                   {industry.unitEconomics.recoveredRevenueModel.slice(0, 32)}...
                 </p>
-                <p className="mt-2 text-xs text-foreground/60">{industry.unitEconomics.recoveredRevenueModel}</p>
+                <p className="mt-2 text-xs text-foreground/75">{industry.unitEconomics.recoveredRevenueModel}</p>
               </div>
               <div className="rounded-2xl border border-border bg-white p-5">
                 <p className="text-xs font-medium text-foreground/55">Projected ROI Multiple</p>
                 <p className="mt-1 font-display text-xl font-bold text-brand">
                   {industry.unitEconomics.roiMultiple}
                 </p>
-                <p className="mt-2 text-xs text-foreground/60">Compared to monthly software retainer</p>
+                <p className="mt-2 text-xs text-foreground/75">Compared to monthly software retainer</p>
               </div>
             </div>
           </div>
@@ -331,7 +331,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
             <div className="flex items-center gap-2">
               <Server className="h-4 w-4 text-brand" />
-              <span className="font-mono text-xs font-medium text-foreground/60">Software Ecosystem</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">Software Ecosystem</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Compatible Field Software & CRMs
@@ -385,7 +385,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-brand" />
-              <span className="font-mono text-xs font-medium text-foreground/60">Regulatory Guardrails</span>
+              <span className="font-mono text-xs font-medium text-foreground/75">Regulatory Guardrails</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Compliance & Data Privacy Standards
@@ -396,14 +396,14 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
 
             <div className="mt-8 grid gap-5 md:grid-cols-2">
               <div className="rounded-2xl border border-border bg-white p-6">
-                <span className="font-mono text-xs font-medium text-foreground/60">United States</span>
+                <span className="font-mono text-xs font-medium text-foreground/75">United States</span>
                 <h3 className="mt-2 font-display text-base font-bold text-foreground">US Telecommunications & Privacy</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/70">
                   {industry.complianceAndStandards.usRegulations}
                 </p>
               </div>
               <div className="rounded-2xl border border-border bg-white p-6">
-                <span className="font-mono text-xs font-medium text-foreground/60">Australia</span>
+                <span className="font-mono text-xs font-medium text-foreground/75">Australia</span>
                 <h3 className="mt-2 font-display text-base font-bold text-foreground">Australian Privacy Principles (APPs)</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/70">
                   {industry.complianceAndStandards.auRegulations}
@@ -449,7 +449,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
                 <thead>
                   <tr className="border-b border-border bg-surface-50 text-foreground">
                     <th className="p-4 font-display font-semibold">Feature</th>
-                    <th className="p-4 font-display font-semibold text-foreground/60">Traditional Call Centers / Front Desk</th>
+                    <th className="p-4 font-display font-semibold text-foreground/75">Traditional Call Centers / Front Desk</th>
                     <th className="p-4 font-display font-semibold text-brand">DigitalX AI Automation (AU &amp; US)</th>
                   </tr>
                 </thead>
@@ -472,7 +472,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       {industry.faqs && industry.faqs.length > 0 && (
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
-            <span className="font-mono text-xs font-medium text-foreground/60">Industry Guidance</span>
+            <span className="font-mono text-xs font-medium text-foreground/75">Industry Guidance</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               Frequently Asked Questions for {industry.name}
             </h2>
@@ -500,7 +500,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
                   href={`/case-studies/${cs.slug}`}
                   className="group rounded-xl border border-border bg-surface-50 p-5 transition-colors hover:border-brand/40"
                 >
-                  <span className="font-mono text-xs font-medium text-foreground/60">{cs.industry}</span>
+                  <span className="font-mono text-xs font-medium text-foreground/75">{cs.industry}</span>
                   <h3 className="mt-2 font-display text-base font-bold text-foreground">{cs.client}</h3>
                   <p className="mt-3 text-xs leading-relaxed text-foreground/68">{cs.impact}</p>
                   <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand transition group-hover:text-brand-deep">
