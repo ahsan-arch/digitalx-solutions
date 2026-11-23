@@ -12,7 +12,7 @@ export const metadata: Metadata = generatePageMetadata("/about/team/jazib-shahid
 
 export default function JazibShahidPage() {
   const { founder } = factsData.leadership;
-  const coreFocus = ["GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP", "Vapi", "HubSpot API"];
+  const coreFocus = ["GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP", "HubSpot", "Google Calendar"];
 
   const personSchema = {
     "@context": "https://schema.org",

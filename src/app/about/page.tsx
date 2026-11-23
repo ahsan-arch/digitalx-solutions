@@ -225,7 +225,7 @@ export default function AboutPage() {
                                     <div className="mt-4">
                                         <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
                                         <div className="mt-1.5 flex flex-wrap gap-1.5">
-                                            {["GoHighLevel", "n8n (Self-Hosted & Cloud)", "Twilio SIP", "Vapi", "HubSpot API"].map((tech) => (
+                                            {["GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP", "HubSpot", "Google Calendar"].map((tech) => (
                                                 <span key={tech} className="rounded-md border border-border bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
                                                     {tech}
                                                 </span>

@@ -96,6 +96,11 @@ export function MissedCallCalculator({
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground/75">
           {subtitle}
         </p>
+        <div className="mt-3">
+          <span className="inline-flex items-center rounded-md border border-border bg-surface-100 px-2.5 py-1 text-xs font-medium text-foreground/75">
+            Default values shown below are an illustrative example. Adjust inputs to reflect your business.
+          </span>
+        </div>
       </div>
 
       {/* Grid */}
@@ -121,14 +126,17 @@ export function MissedCallCalculator({
                 step="5"
                 value={weeklyCalls}
                 onChange={(e) => setWeeklyCalls(Number(e.target.value))}
+                aria-label="Weekly Inbound Calls slider"
                 className="h-2 w-full appearance-none rounded-full bg-surface-200 accent-brand cursor-pointer"
               />
               <input
+                id={`${weeklyCallsId}-number`}
                 type="number"
                 min="5"
                 max="500"
                 value={weeklyCalls}
                 onChange={(e) => setWeeklyCalls(Math.max(5, Math.min(500, Number(e.target.value))))}
+                aria-label="Weekly Inbound Calls numeric input"
                 className="w-20 rounded-lg border border-border bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none"
               />
             </div>
@@ -153,15 +161,18 @@ export function MissedCallCalculator({
                 step="1"
                 value={missedRate}
                 onChange={(e) => setMissedRate(Number(e.target.value))}
+                aria-label="Missed Call Rate slider"
                 className="h-2 w-full appearance-none rounded-full bg-surface-200 accent-brand cursor-pointer"
               />
               <div className="relative">
                 <input
+                  id={`${missedRateId}-number`}
                   type="number"
                   min="5"
                   max="85"
                   value={missedRate}
                   onChange={(e) => setMissedRate(Math.max(5, Math.min(85, Number(e.target.value))))}
+                  aria-label="Missed Call Rate percentage input"
                   className="w-20 rounded-lg border border-border bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none pr-6"
                 />
                 <span className="absolute right-2 top-2 text-xs font-bold text-foreground/40">%</span>
@@ -185,15 +196,18 @@ export function MissedCallCalculator({
                 step="50"
                 value={jobValue}
                 onChange={(e) => setJobValue(Number(e.target.value))}
+                aria-label="Average Job Value slider"
                 className="h-2 w-full appearance-none rounded-full bg-surface-200 accent-brand cursor-pointer"
               />
               <div className="relative">
                 <input
+                  id={`${jobValueId}-number`}
                   type="number"
                   min="50"
                   max="50000"
                   value={jobValue}
                   onChange={(e) => setJobValue(Math.max(50, Number(e.target.value)))}
+                  aria-label="Average Job Value dollar input"
                   className="w-24 rounded-lg border border-border bg-surface-50 pl-5 pr-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none"
                 />
                 <span className="absolute left-2 top-2 text-xs font-bold text-foreground/40">$</span>
@@ -238,15 +252,18 @@ export function MissedCallCalculator({
                 step="1"
                 value={closeRate}
                 onChange={(e) => setCloseRate(Number(e.target.value))}
+                aria-label="Estimated Close Rate slider"
                 className="h-2 w-full appearance-none rounded-full bg-surface-200 accent-brand cursor-pointer"
               />
               <div className="relative">
                 <input
+                  id={`${closeRateId}-number`}
                   type="number"
                   min="10"
                   max="80"
                   value={closeRate}
                   onChange={(e) => setCloseRate(Math.max(10, Math.min(80, Number(e.target.value))))}
+                  aria-label="Estimated Close Rate percentage input"
                   className="w-20 rounded-lg border border-border bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none pr-6"
                 />
                 <span className="absolute right-2 top-2 text-xs font-bold text-foreground/40">%</span>

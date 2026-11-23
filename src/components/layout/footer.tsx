@@ -74,7 +74,7 @@ export function Footer() {
           <p>
             (c) {currentYear} {companyProfile.name}. All rights reserved.
           </p>
-          <p>Casula NSW, Australia &amp; US Operations | Built for measurable revenue outcomes.</p>
+          <p>Casula NSW, Australia | Serving businesses across Australia and the United States.</p>
         </div>
       </div>
     </footer>

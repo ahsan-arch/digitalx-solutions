@@ -99,6 +99,8 @@ export const metadata: Metadata = {
     title: seoCopy.home.title,
     description: seoCopy.home.description,
     images: ["/api/og"],
+    site: undefined,
+    creator: undefined,
   },
   robots:
     process.env.VERCEL_ENV === "preview"

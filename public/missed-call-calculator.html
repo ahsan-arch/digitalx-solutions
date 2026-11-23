@@ -625,6 +625,11 @@
       <p class="dx-calc-subtitle">
         Quantify how much unearned revenue drops to competitors when calls go unanswered during peak hours, jobsites, or after 5 PM.
       </p>
+      <div style="margin-top: 10px;">
+        <span style="display: inline-block; font-size: 12px; color: var(--dx-text-muted); background: var(--dx-bg-sunken); border: 1px solid var(--dx-border); padding: 3px 8px; border-radius: 6px;">
+          Default values shown below are an illustrative example. Adjust inputs to reflect your business.
+        </span>
+      </div>
     </header>
 
     <!-- Main Grid -->
@@ -638,8 +643,8 @@
             <span class="dx-calc-badge" id="monthlyCallsLabel">282 calls per month</span>
           </div>
           <div class="dx-calc-input-row">
-            <input type="range" id="weeklyCallsRange" class="dx-calc-range" min="5" max="500" step="5" value="65">
-            <input type="number" id="weeklyCallsNum" class="dx-calc-num-input" min="5" max="500" value="65">
+            <input type="range" id="weeklyCallsRange" class="dx-calc-range" min="5" max="500" step="5" value="65" aria-label="Weekly Inbound Calls range slider">
+            <input type="number" id="weeklyCallsNum" class="dx-calc-num-input" min="5" max="500" value="65" aria-label="Weekly Inbound Calls numeric input">
           </div>
         </div>
 
@@ -652,8 +657,8 @@
             <span class="dx-calc-badge">Industry Avg: 28%</span>
           </div>
           <div class="dx-calc-input-row">
-            <input type="range" id="missedRateRange" class="dx-calc-range" min="5" max="85" step="1" value="28">
-            <input type="number" id="missedRateNum" class="dx-calc-num-input" min="5" max="85" value="28">
+            <input type="range" id="missedRateRange" class="dx-calc-range" min="5" max="85" step="1" value="28" aria-label="Missed Call Rate range slider">
+            <input type="number" id="missedRateNum" class="dx-calc-num-input" min="5" max="85" value="28" aria-label="Missed Call Rate percentage input">
           </div>
         </div>
 
@@ -663,8 +668,8 @@
             <label for="jobValueNum" class="dx-calc-label">Average Job / Client Value ($)</label>
           </div>
           <div class="dx-calc-input-row">
-            <input type="range" id="jobValueRange" class="dx-calc-range" min="50" max="10000" step="50" value="650">
-            <input type="number" id="jobValueNum" class="dx-calc-num-input" min="50" max="50000" value="650">
+            <input type="range" id="jobValueRange" class="dx-calc-range" min="50" max="10000" step="50" value="650" aria-label="Average Job Value range slider">
+            <input type="number" id="jobValueNum" class="dx-calc-num-input" min="50" max="50000" value="650" aria-label="Average Job Value dollar input">
           </div>
           <!-- Quick Select Pills -->
           <div class="dx-calc-pills">
@@ -682,8 +687,8 @@
             <span class="dx-calc-badge">Qualified Leads</span>
           </div>
           <div class="dx-calc-input-row">
-            <input type="range" id="closeRateRange" class="dx-calc-range" min="10" max="80" step="1" value="35">
-            <input type="number" id="closeRateNum" class="dx-calc-num-input" min="10" max="80" value="35">
+            <input type="range" id="closeRateRange" class="dx-calc-range" min="10" max="80" step="1" value="35" aria-label="Estimated Close Rate range slider">
+            <input type="number" id="closeRateNum" class="dx-calc-num-input" min="10" max="80" value="35" aria-label="Estimated Close Rate percentage input">
           </div>
         </div>
       </div>

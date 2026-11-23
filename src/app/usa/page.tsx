@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionIllustration, ServiceAreaMap } from "@/components/ui";
+import { ObfuscatedEmail } from "@/components/layout/obfuscated-email";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -263,9 +264,7 @@ export default function UsaPage() {
               Coverage across ET, CT, MT, and PT time zones | English & Spanish AI Voice Models
             </p>
             <div className="mt-3 flex items-center gap-4 text-body-sm">
-              <a href="mailto:info@digitalx-solutions.com" className="font-semibold text-accent hover:underline">
-                info@digitalx-solutions.com
-              </a>
+              <ObfuscatedEmail className="font-semibold text-accent" />
               <a href="tel:+61451413786" className="text-ink-secondary hover:text-accent">
                 +61 451 413 786 (Direct)
               </a>

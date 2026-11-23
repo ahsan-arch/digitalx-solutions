@@ -187,6 +187,8 @@ export function generatePageMetadata(
             title: `${cleanTitle} | DigitalX`,
             description: copy.description,
             images: [`/api/og?${ogParams.toString()}`],
+            site: undefined,
+            creator: undefined,
         },
     };
 }

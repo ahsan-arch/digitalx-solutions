@@ -102,7 +102,7 @@ const pricingFaqs = [
   {
     question: "How do telephony and carrier charges work?",
     answer:
-      "Telephony charges (Twilio or Telnyx SIP minutes and outbound SMS carrier fees) are billed at raw carrier pass-through rates directly to your own account, or transparently through GoHighLevel LC Phone. We do not mark up your SMS segments or inbound voice call minutes.",
+      "Telephony charges (Twilio SIP minutes and outbound SMS carrier fees) are billed at raw carrier pass-through rates directly to your own account, or transparently through GoHighLevel LC Phone. We do not mark up your SMS segments or inbound voice call minutes.",
   },
   {
     question: "Can Australian businesses pay in AUD?",
@@ -243,14 +243,14 @@ export default function PricingPage() {
               <tbody className="divide-y divide-line-subtle text-ink-secondary">
                 <tr>
                   <td className="p-3 font-medium text-ink-primary">Inbound Phone Number</td>
-                  <td className="p-3">Twilio / Telnyx Local DID</td>
+                  <td className="p-3">Twilio Local DID</td>
                   <td className="p-3">$1.15 &ndash; $2.50 / month</td>
                   <td className="p-3 font-semibold text-emerald-600">0% (Pass-through)</td>
                   <td className="p-3">$2 / line</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium text-ink-primary">AI Voice Inbound Minutes</td>
-                  <td className="p-3">Telnyx SIP + Deepgram + ElevenLabs</td>
+                  <td className="p-3">Twilio SIP / AI Voice Infrastructure</td>
                   <td className="p-3">~$0.07 &ndash; $0.11 / min</td>
                   <td className="p-3 font-semibold text-emerald-600">Included in Tier</td>
                   <td className="p-3">Covered under fair-use</td>
@@ -274,7 +274,7 @@ export default function PricingPage() {
           </div>
 
           <p className="mt-4 text-xs text-ink-tertiary">
-            Unlike traditional call answering services that charge $1.75 to $3.50 per live receptionist minute with 3-minute minimums, 
+            Unlike traditional call answering services that charge $1.75 to $3.50 per live receptionist minute with 3-minute minimums,
             our AI systems answer immediately with zero queue times and flat monthly software support.
           </p>
         </div>
