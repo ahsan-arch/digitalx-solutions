@@ -43,7 +43,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <h3 className="mb-4 text-xs font-semibold text-foreground">

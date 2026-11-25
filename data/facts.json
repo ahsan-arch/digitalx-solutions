@@ -191,6 +191,132 @@
   },
   "clientProjects": [
     {
+      "id": "smart-property-buying",
+      "client": "Smart Property Buying",
+      "industry": "Property Intelligence & Buyer's Agency",
+      "isRealClient": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": true,
+      "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/smart-property-buying.webp",
+      "source": "Production repository (spb-ai-property-research-agent)",
+      "calculationInputs": "Observed codebase metrics: E-Agent (14 builder portals) plus direct developer portals, 57 of 143 image-only price PDFs handled via RapidOCR and PyMuPDF fallback, 100-point buyer-brief scoring model with 11 hard rejection gates, PropTrack/CoreLogic comparable inputs, and Kommo CRM pipeline sync.",
+      "problem": "Buyer's agents were manually logging into 14+ builder portals, opening image-only price PDFs, cross-checking suburb comparables in spreadsheets, and copying stock updates into Kommo CRM by hand.",
+      "whatWasBuilt": "Automated Python property research and benchmarking engine pairing Playwright portal harvesting with RapidOCR/PyMuPDF extraction, a 100-point buyer-brief scoring and risk engine, PropTrack comparable benchmarking, Kommo CRM sync, and interactive HTML/Excel/CSV client reports.",
+      "toolsUsed": [
+        "Python",
+        "Playwright",
+        "RapidOCR",
+        "PropTrack",
+        "Kommo CRM",
+        "HTML/Excel Reports"
+      ],
+      "measurableResult": "Automated 14+ builder stock feeds, OCR extraction across image-only price lists, and 100-point buyer-brief scoring with interactive HTML and Excel client deliverables.",
+      "beforeStack": [
+        "Manual Logins Across 14+ Builder Portals",
+        "Unreadable Image-Only PDF Price Sheets",
+        "Spreadsheet Comparable Lookups",
+        "Manual Kommo CRM Deal Entry"
+      ],
+      "afterStack": [
+        "Playwright + OS-Vault Session Harvesters",
+        "RapidOCR + PyMuPDF Automated Extraction",
+        "100-Pt Scoring Engine & PropTrack Comps",
+        "Automated Kommo Sync & HTML Client Reports"
+      ],
+      "roiStats": [
+        { "label": "Builder Portals Automated", "value": "14+" },
+        { "label": "OCR Image Price Lists Solved", "value": "57 / 143" },
+        { "label": "Rejection & Risk Gates", "value": "11 Rules" }
+      ],
+      "status": "Production build"
+    },
+    {
+      "id": "digitalx-custom-crm",
+      "client": "DigitalX Custom CRM",
+      "industry": "B2B Revenue & Service Operations SaaS",
+      "isRealClient": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": true,
+      "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/digitalx-custom-crm.webp",
+      "source": "Production repository (digitalx-custom-crm)",
+      "calculationInputs": "Observed codebase metrics: 20 operational UI modules, 12 Prisma relational models (Tenant, User, Lead, Client, Project, Task, Proposal, Invoice, Activity, TimeLog, AuditLog, WebhookLog, CallRecord), 4 role tiers, and 4 REST ingestion webhook endpoints.",
+      "problem": "Agencies and service operators accumulate compounding per-seat software fees across disconnected tools for lead pipelines, client retainers, margin calculation, time tracking, e-signature proposals, and webhooks.",
+      "whatWasBuilt": "Bespoke Next.js App Router, TypeScript, Tailwind CSS, Prisma, and PostgreSQL/Supabase CRM uniting a Command Centre dashboard, AU/US lead pipelines, client health & margin scoring, multi-tenant RBAC, e-signature proposals, Cmd+K global search, audit logging, and live REST webhook endpoints.",
+      "toolsUsed": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Recharts"
+      ],
+      "measurableResult": "Consolidated 20 agency operations, RBAC, margin calculation, and webhook ingestion modules into a zero-per-seat custom CRM platform.",
+      "beforeStack": [
+        "Fragmented Pipeline, Billing & Time Tools",
+        "No Client-Level Labor Margin Visibility",
+        "Recurring Per-Seat SaaS Licensing",
+        "Manual Ad & Webhook Lead Routing"
+      ],
+      "afterStack": [
+        "20 Unified Next.js App Router Modules",
+        "Prisma + PostgreSQL Multi-Tenant Schema",
+        "4 Native Webhook APIs (GHL/Apollo/Meta/n8n)",
+        "RBAC + Audit Log + Cmd+K Global Search"
+      ],
+      "roiStats": [
+        { "label": "Integrated Operations Modules", "value": "20" },
+        { "label": "REST Webhook Endpoints", "value": "4 APIs" },
+        { "label": "Per-Seat Software Fees", "value": "$0 / user" }
+      ],
+      "status": "Proprietary build"
+    },
+    {
+      "id": "links-2000-lims",
+      "client": "Links 2000",
+      "industry": "ISO/IEC 17025 Calibration LIMS & Metrology",
+      "isRealClient": true,
+      "permissionToUseNameAndLogo": false,
+      "permission": true,
+      "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/links-2000-lims.webp",
+      "source": "Production repository (links2000)",
+      "calculationInputs": "Observed codebase metrics: 3-tier routing (Supabase Cloud PostgreSQL with RLS -> Django REST Framework API -> resilient local fallback), 8 accredited ISO/IEC 17025 certificate classes, JCGM 100:2008 GUM uncertainty compliance, and legacy VB6/SQL Server schema migration.",
+      "problem": "Accredited metrology laboratories relied on legacy desktop VB6 database software for equipment catalogs, job contracts, and ISO/IEC 17025 certificate issuance, blocking multi-user cloud access and modern auditability.",
+      "whatWasBuilt": "Enterprise 3-tier calibration Laboratory Information Management System built with React 19, Vite, TypeScript, TanStack Query, Django REST Framework, and Supabase PostgreSQL RLS covering job orders, proposals, customer directories, liquid charts, and 8 accredited certificate workflows.",
+      "toolsUsed": [
+        "React 19",
+        "TypeScript",
+        "Django REST",
+        "Supabase PostgreSQL",
+        "Tailwind CSS",
+        "TanStack Query"
+      ],
+      "measurableResult": "Migrated legacy calibration workflows to a cloud-first React 19, Django REST, and Supabase RLS architecture built for ISO/IEC 17025:2017 traceability.",
+      "beforeStack": [
+        "Legacy Single-Workstation VB6 Application",
+        "Manual Job Contract & Certificate Filing",
+        "No Row-Level Cloud Security or Failover",
+        "Siloed Calibration & Equipment Records"
+      ],
+      "afterStack": [
+        "React 19 + Vite + TanStack Query UI",
+        "Supabase Cloud RLS + Django REST Fallback",
+        "8 Accredited ISO 17025 Certificate Flows",
+        "JCGM 100:2008 Uncertainty & Audit Records"
+      ],
+      "roiStats": [
+        { "label": "Resilient Data Routing", "value": "3-Tier" },
+        { "label": "Calibration Cert Classes", "value": "8 Types" },
+        { "label": "Compliance Standard", "value": "ISO 17025" }
+      ],
+      "status": "Production build"
+    },
+    {
       "id": "dental-clinic",
       "client": "Client name withheld",
       "industry": "Healthcare & Dental Clinics",

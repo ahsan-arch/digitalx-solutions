@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Cpu, Layers, MessageSquare, PhoneCall, Shield, Terminal } from "lucide-react";
+import { ArrowRight, CheckCircle2, Cpu, Layers, Lock, MessageSquare, PhoneCall, Search, Terminal } from "lucide-react";
+import { ArchitecturalProductPreview } from "@/components/projects/featured-builds-showcase";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/products/digitalx-crm", {
@@ -40,28 +41,28 @@ export default function DigitalXCrmPage() {
 
   const features = [
     {
-      icon: <PhoneCall className="h-5 w-5 text-brand" />,
-      title: "Carrier-Native Telephony Logs",
-      description:
-        "Direct SIP trunk connectivity logging incoming caller IDs, call durations, and audio recordings directly against customer records.",
-    },
-    {
-      icon: <MessageSquare className="h-5 w-5 text-brand" />,
-      title: "Automated SMS Lead Triage",
-      description:
-        "Instant conversational text-back under 60 seconds whenever a call goes unanswered, capturing caller intent and address details.",
-    },
-    {
       icon: <Layers className="h-5 w-5 text-brand" />,
-      title: "Zero Per-Seat Licensing Bloat",
+      title: "20 Integrated Agency & Ops Modules",
       description:
-        "Architected for businesses with field technicians and office staff who need access without paying $90–$150/month per user seat.",
+        "Command Centre KPIs, AU/US lead pipelines, active/churned client retainers, proposals with e-signatures, project boards, and time tracking.",
+    },
+    {
+      icon: <Lock className="h-5 w-5 text-brand" />,
+      title: "Role-Based Access & Margin Control",
+      description:
+        "Interactive RBAC roles (Admin, Manager, Member, Client) keep revenue figures, MRR/ARR, and $75/hr labor-margin analytics restricted to leadership.",
     },
     {
       icon: <Terminal className="h-5 w-5 text-brand" />,
-      title: "Webhook & n8n Native Architecture",
+      title: "Native REST Webhook Hub (4 Endpoints)",
       description:
-        "Raw HTTP webhook triggers and structured JSON event pipelines for direct synchronization with accounting, ERP, and inventory software.",
+        "Built-in ingestion routes for GoHighLevel (/api/webhooks/ghl), Apollo (/apollo), Meta Ads (/meta-ads), and n8n (/n8n) with live payload logs.",
+    },
+    {
+      icon: <Search className="h-5 w-5 text-brand" />,
+      title: "Global Search, Call Logs & Audit Trail",
+      description:
+        "Cmd+K search across leads, clients, projects, and invoices, paired with call records, security audit logs, and zero per-seat fees.",
     },
   ];
 
@@ -77,32 +78,45 @@ export default function DigitalXCrmPage() {
       />
 
       <main id="main" className="pb-24 pt-12">
-        <div className="container-shell max-w-4xl">
+        <div className="container-shell max-w-5xl">
           {/* Header */}
           <div className="text-center">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-brand/20 bg-brand/5 px-2.5 py-1 font-mono text-xs font-medium text-brand">
               <Cpu className="h-3.5 w-3.5" />
-              Proprietary Software &bull; Private Preview
+              Proprietary Next.js &amp; Prisma CRM
             </span>
-            <h1 className="mt-4 font-display text-4xl font-bold text-foreground md:text-5xl">
+            <h1 className="mt-4 font-display text-4xl font-semibold text-foreground md:text-5xl">
               DigitalX CRM
             </h1>
             <p className="mt-3 text-lg text-brand font-medium">
-              Custom Service Operations &amp; Inbound Intake Platform
+              Custom Agency &amp; Service Operations CRM with Zero Per-Seat Licensing
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/80 md:text-base">
-              A streamlined, telephony-native CRM platform built specifically for trade contractors, field services, and healthcare clinics who have outgrown generic spreadsheets but do not want complex per-seat enterprise software.
+              Built on Next.js App Router, TypeScript, Prisma, and PostgreSQL/Supabase. Unites AU/US lead pipelines, client health and labor-margin analytics, e-signature proposals, and native REST webhook ingestion into one client-owned system.
             </p>
           </div>
 
+          {/* Live Interactive Preview */}
+          <div className="mt-10">
+            <ArchitecturalProductPreview slug="digitalx-custom-crm" />
+          </div>
+
           {/* Development Status Banner */}
-          <div className="mt-10 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-foreground">
-            <div className="flex items-center gap-2 font-semibold text-amber-800">
-              <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500" />
-              Current Engineering Status: Private Client Preview
+          <div className="mt-8 rounded-2xl border border-border bg-surface-50 p-6 text-foreground">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2 font-semibold text-foreground">
+                <span className="inline-block h-2 w-2 rounded-full bg-emerald-600" />
+                <span>Architecture Stack: Next.js &middot; Prisma &middot; PostgreSQL / Supabase &middot; Recharts</span>
+              </div>
+              <Link
+                href="/case-studies/digitalx-custom-crm"
+                className="text-xs font-semibold text-brand hover:underline"
+              >
+                Inspect full engineering case study &rarr;
+              </Link>
             </div>
-            <p className="mt-2 text-xs md:text-sm text-foreground/80 leading-relaxed">
-              DigitalX CRM is currently undergoing private architectural pilot deployments with select service clients. We are rigorously testing sub-second database indexing, SIP trunking failover, and automated SMS compliance before open commercial availability.
+            <p className="mt-2 text-xs md:text-sm text-foreground/75 leading-relaxed">
+              Engineered from the ground up with 12 relational Prisma models, 4 role tiers (Admin, Manager, Member, Client), CSV/PDF executive reporting, and instant webhook listeners for GoHighLevel, Apollo, Meta Ads, and n8n.
             </p>
           </div>
 

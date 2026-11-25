@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { clientProjects } from "@/data/facts";
 import { CaseStudyUiVisual } from "@/components/case-studies/case-study-ui-visual";
+import type { FeaturedBuildSlug } from "@/components/projects/featured-builds-showcase";
 import { generateBreadcrumbSchema, generateFAQSchema, siteConfig } from "@/lib/seo";
 
 interface Props {
@@ -33,6 +34,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = clientProjects.find((p) => p.slug === slug);
 
   const caseStudyDescriptions: Record<string, string> = {
+    "smart-property-buying":
+      "How Smart Property Buying automated 14+ Australian builder portals, RapidOCR PDF parsing, PropTrack benchmarking, and Kommo CRM sync.",
+    "digitalx-custom-crm":
+      "Inside DigitalX Custom CRM: 20 agency operations modules, Prisma PostgreSQL schema, RBAC controls, and REST webhook endpoints.",
+    "links-2000-lims":
+      "How Links 2000 migrated legacy VB6 calibration databases to a 3-tier React 19, Django REST, and Supabase RLS ISO 17025 LIMS.",
     "dental-clinic":
       "See how a metropolitan dental practice captured after-hours patient calls and streamlined appointment bookings using DigitalX AI voice receptionist agents.",
     "plumbing-contractor":
@@ -54,6 +61,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const caseStudyTitles: Record<string, string> = {
+    "smart-property-buying": "Smart Property Buying AI Engine Case Study",
+    "digitalx-custom-crm": "DigitalX Custom CRM Architecture Case Study",
+    "links-2000-lims": "Links 2000 ISO 17025 LIMS Case Study",
     "dental-clinic": "Dental Clinic AI Voice Receptionist Case Study",
     "plumbing-contractor": "Plumbing Contractor Emergency Call & Text-Back Case Study",
     "advisory-practice": "Advisory Practice CRM & Intake Automation Case Study",
@@ -99,6 +109,9 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   if (!project) notFound();
 
   const caseStudyTitles: Record<string, string> = {
+    "smart-property-buying": "Smart Property Buying AI Engine Case Study",
+    "digitalx-custom-crm": "DigitalX Custom CRM Architecture Case Study",
+    "links-2000-lims": "Links 2000 ISO 17025 LIMS Case Study",
     "dental-clinic": "Dental Clinic AI Voice Receptionist Case Study",
     "plumbing-contractor": "Plumbing Contractor Emergency Call & Text-Back Case Study",
     "advisory-practice": "Advisory Practice CRM & Intake Automation Case Study",
@@ -106,23 +119,52 @@ export default async function CaseStudyDetailPage({ params }: Props) {
     "healthcare-patient-portal-crm": "Healthcare Custom CRM & Patient Portal Case Study",
   };
 
-  const caseStudyFaqs = [
-    {
-      question: "How long did it take to build and deploy this automation system?",
-      answer:
-        "The complete engagement from initial intake discovery to full production cutover was delivered in 4 weeks. This included conversational prompt engineering, telephony SIP configuration, calendar booking logic, and comprehensive synthetic stress testing.",
-    },
-    {
-      question: "What happened when a customer had an emergency or complex question?",
-      answer:
-        "The system was configured with a strict human escalation protocol. If a caller reported an emergency, expressed distress, or asked about out-of-scope policies, the call immediately bridged via warm SIP transfer to the on-call staff mobile phone with a 5-second private audio summary.",
-    },
-    {
-      question: "How was the operational outcome measured?",
-      answer:
-        "We connected GoHighLevel opportunity pipelines directly to accounting and payment records. Every recovered call and booked appointment was tagged with a unique campaign ID, allowing exact tracking of settled invoices and booked revenue.",
-    },
-  ];
+  const featuredPreviewMap: Record<string, FeaturedBuildSlug> = {
+    "smart-property-buying": "smart-property-buying",
+    "digitalx-custom-crm": "digitalx-custom-crm",
+    "links-2000-lims": "links-2000-lims",
+  };
+  const previewSlug = featuredPreviewMap[project.slug];
+  const isSoftwareBuild =
+    Boolean(previewSlug) ||
+    project.slug === "hybrid-field-service-crm" ||
+    project.slug === "healthcare-patient-portal-crm";
+
+  const caseStudyFaqs = isSoftwareBuild
+    ? [
+        {
+          question: "Who owns the source code and underlying database?",
+          answer:
+            "Every custom software, CRM, or data pipeline build is deployed directly into your own repository and cloud PostgreSQL or Django infrastructure with 100% client IP ownership and zero recurring per-seat licensing fees.",
+        },
+        {
+          question: "How does this integrate with legacy databases or external APIs?",
+          answer:
+            "We preserve existing historical data through structured migration scripts, E.164 or composite key deduplication, and resilient webhook/REST endpoints so live operations continue uninterrupted during cutover.",
+        },
+        {
+          question: "How are access control and production reliability enforced?",
+          answer:
+            "Builds enforce Role-Based Access Control (RBAC), Row-Level Security policies where PostgreSQL/Supabase is used, automated regression tests, and fallback data routing so field and office teams stay productive.",
+        },
+      ]
+    : [
+        {
+          question: "How long did it take to build and deploy this automation system?",
+          answer:
+            "The complete engagement from initial intake discovery to full production cutover was delivered in 4 weeks. This included conversational prompt engineering, telephony SIP configuration, calendar booking logic, and comprehensive synthetic stress testing.",
+        },
+        {
+          question: "What happened when a customer had an emergency or complex question?",
+          answer:
+            "The system was configured with a strict human escalation protocol. If a caller reported an emergency, expressed distress, or asked about out-of-scope policies, the call immediately bridged via warm SIP transfer to the on-call staff mobile phone with a 5-second private audio summary.",
+        },
+        {
+          question: "How was the operational outcome measured?",
+          answer:
+            "We connected GoHighLevel opportunity pipelines directly to accounting and payment records. Every recovered call and booked appointment was tagged with a unique campaign ID, allowing exact tracking of settled invoices and booked revenue.",
+        },
+      ];
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },
@@ -191,14 +233,14 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             <span className="text-xs font-medium text-foreground/75">Production Architecture</span>
           </div>
 
-          <span className="text-xs font-medium text-foreground/50">
-            Case Study
+          <span className="text-xs font-medium text-foreground/75">
+            {project.status || "Case Study"}
           </span>
         </div>
 
         <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-border pb-8">
           <div>
-            <h1 className="font-display text-3xl text-foreground md:text-5xl font-bold">
+            <h1 className="font-display text-3xl text-foreground md:text-5xl font-semibold">
               {caseStudyTitles[project.slug] || `${project.industry} Case Study`}
             </h1>
             <p className="mt-2 text-sm text-foreground/75">
@@ -244,7 +286,8 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         {"roiStats" in project && project.roiStats && "beforeStack" in project && project.beforeStack && "afterStack" in project && project.afterStack && (
           <div className="mt-10">
             <CaseStudyUiVisual
-              title={`${project.industry} — Architecture Overview`}
+              title={`${project.client} — System Architecture`}
+              previewSlug={previewSlug}
               mediaPath={"mediaPath" in project ? (project.mediaPath as string) : ""}
               expectedAssetPath={
                 (project as { expectedAssetPath?: string }).expectedAssetPath ||
@@ -271,23 +314,34 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               {project.problem}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-foreground/75">
-              Before implementation, prospective callers were frequently routed to voicemail during peak
-              operational windows or after standard trading hours. In service businesses, over 80% of
-              callers who reach voicemail hang up immediately and phone a competing provider. This
-              silent leak generated massive customer acquisition waste and eroded margins.
+              {isSoftwareBuild
+                ? "Legacy desktop databases, off-the-shelf SaaS seat limits, and manual spreadsheet reconciliation force teams to re-key operational data and restrict custom reporting. Replacing manual workarounds with bespoke schemas eliminates ongoing per-seat tax."
+                : "Before implementation, prospective callers were frequently routed to voicemail during peak operational windows or after standard trading hours. In service businesses, over 80% of callers who reach voicemail hang up immediately and phone a competing provider."}
             </p>
-            <ul className="mt-6 space-y-2.5 text-xs text-foreground/70">
+            <ul className="mt-6 space-y-2.5 text-xs text-foreground/75">
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
-                <span>Unanswered inbound inquiries during busy operational windows</span>
+                <span>
+                  {isSoftwareBuild
+                    ? "Manual multi-portal lookups and disconnected CSV or PDF records"
+                    : "Unanswered inbound inquiries during busy operational windows"}
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
-                <span>Zero automated follow-up on dropped or missed calls</span>
+                <span>
+                  {isSoftwareBuild
+                    ? "Lack of granular role permissions, audit trails, or automated validation"
+                    : "Zero automated follow-up on dropped or missed calls"}
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
-                <span>Manual, fragmented data entry between telephone and CRM systems</span>
+                <span>
+                  {isSoftwareBuild
+                    ? "Fragile data synchronization between field systems and core records"
+                    : "Manual, fragmented data entry between telephone and CRM systems"}
+                </span>
               </li>
             </ul>
           </div>
@@ -302,9 +356,9 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               {project.whatWasBuilt}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-foreground/75">
-              We engineered a production-grade integration layer that connects inbound telephony streams
-              directly to calendar scheduling logic and CRM records. Calls are answered with fast, natural responses
-              without robotic delay, while conversational SMS triggers instantly capture dropped callers.
+              {isSoftwareBuild
+                ? "We designed relational database schemas, automated ingestion parsers, RBAC boundaries, and client-facing interfaces engineered to run reliably in your own cloud environment with clean source-code handover."
+                : "We engineered a production-grade integration layer that connects inbound telephony streams directly to calendar scheduling logic and CRM records. Calls are answered with fast, natural responses without robotic delay, while conversational SMS triggers instantly capture dropped callers."}
             </p>
             <div className="mt-6">
               <h3 className="font-mono text-xs font-medium text-foreground/70">
@@ -371,23 +425,35 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <div className="mt-6 grid gap-6 sm:grid-cols-3 text-xs text-foreground/75">
             <div className="rounded-xl border border-border bg-surface-50 p-4">
               <span className="text-xs font-semibold text-brand">Weeks 1 to 2</span>
-              <h3 className="mt-1 font-semibold text-foreground text-sm">Discovery &amp; Blueprint</h3>
+              <h3 className="mt-1 font-semibold text-foreground text-sm">
+                {isSoftwareBuild ? "Schema & System Blueprint" : "Discovery & Blueprint"}
+              </h3>
               <p className="mt-2 leading-relaxed">
-                Audited historical call logs, documented frequent customer objections, and mapped out custom appointment booking availability rules.
+                {isSoftwareBuild
+                  ? "Audited legacy tables, API contracts, and operational workflows to finalize data models, RBAC roles, and acceptance criteria."
+                  : "Audited historical call logs, documented frequent customer objections, and mapped out custom appointment booking availability rules."}
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface-50 p-4">
               <span className="text-xs font-semibold text-brand">Week 3</span>
-              <h3 className="mt-1 font-semibold text-foreground text-sm">Prompt Tuning &amp; SIP Wiring</h3>
+              <h3 className="mt-1 font-semibold text-foreground text-sm">
+                {isSoftwareBuild ? "Core Engine & Integrations" : "Prompt Tuning & SIP Wiring"}
+              </h3>
               <p className="mt-2 leading-relaxed">
-                Tuned conversational prompts on Deepgram and ElevenLabs, verified 10DLC SMS registration, and wired two-way webhooks to the CRM.
+                {isSoftwareBuild
+                  ? "Built database schemas, parser/ingestion workers, REST webhook handlers, and modular frontend workflows with automated test suites."
+                  : "Tuned conversational prompts on Deepgram and ElevenLabs, verified 10DLC SMS registration, and wired two-way webhooks to the CRM."}
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface-50 p-4">
               <span className="text-xs font-semibold text-brand">Week 4</span>
-              <h3 className="mt-1 font-semibold text-foreground text-sm">50 Synthetic Calls &amp; Launch</h3>
+              <h3 className="mt-1 font-semibold text-foreground text-sm">
+                {isSoftwareBuild ? "Verification & Production Cutover" : "50 Synthetic Calls & Launch"}
+              </h3>
               <p className="mt-2 leading-relaxed">
-                Ran 50 simulated calls testing background noise and regional accents. Conducted supervised live testing before full 24/7 cutover.
+                {isSoftwareBuild
+                  ? "Executed end-to-end validation checks, failover dry runs, staff training, and zero-downtime deployment into the client environment."
+                  : "Ran 50 simulated calls testing background noise and regional accents. Conducted supervised live testing before full 24/7 cutover."}
               </p>
             </div>
           </div>

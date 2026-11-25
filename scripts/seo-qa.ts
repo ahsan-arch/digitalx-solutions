@@ -101,9 +101,16 @@ for (const int of integrations) {
   checkMetadata(`/integrations/${int.slug}`, int.metaTitle, int.metaDescription);
 }
 
-// ── 6. Case Studies (3 routes) ──
+// ── 6. Case Studies ──
+const caseStudyTitleMap: Record<string, string> = {
+  "smart-property-buying": "Smart Property Buying AI Engine Case Study",
+  "digitalx-custom-crm": "DigitalX Custom CRM Architecture Case Study",
+  "links-2000-lims": "Links 2000 ISO 17025 LIMS Case Study",
+  "hybrid-field-service-crm": "Hybrid Custom CRM Case Study: Trade & Field Services",
+  "healthcare-patient-portal-crm": "Healthcare Custom CRM & Patient Portal Case Study",
+};
 for (const p of clientProjects) {
-  const title = `${p.id.startsWith("hybrid") ? "Hybrid Custom CRM Case Study: Trade & Field Services" : p.id.startsWith("healthcare") ? "Healthcare Custom CRM & Patient Portal Case Study" : `${p.client} Automation Case Study`}`;
+  const title = caseStudyTitleMap[p.id] || `${p.client} Automation Case Study`;
   const desc = `Discover how ${p.client} deployed automation systems, resulting in ${p.measurableResult}`.slice(0, 155);
   checkMetadata(`/case-studies/${p.slug}`, title, desc);
 }

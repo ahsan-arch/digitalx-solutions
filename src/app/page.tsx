@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, PhoneCall, MessageSquare, Database, Clock, ChevronRight } from "lucide-react";
 import { generateBreadcrumbSchema, geoHreflangLanguages, siteConfig } from "@/lib/seo";
 import { HeroPreviewTabs, TiltCard, CertifiedPartnerStrip, ProjectCard, AudioCallPreview, FAQAccordion } from "@/components/ui";
+import { FeaturedBuildsShowcase } from "@/components/projects/featured-builds-showcase";
 import { heroMetrics, processSteps, solutions } from "@/data/redesign";
 import { industryCategories } from "@/data/industries";
 import factsData from "@/data/facts";
@@ -380,9 +381,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 5: PROJECTS WITH REAL CLIENT DATA */}
+        {/* SECTION 5: PROJECTS & SHIPPED SOFTWARE */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <FeaturedBuildsShowcase />
+
+          <div className="mt-14 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">Client deployments &amp; architectural models</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
@@ -398,11 +401,9 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {[
-              ...factsData.clientProjects.slice(3, 5),
-              factsData.clientProjects[0],
-            ]
-              .filter(Boolean)
+            {["dental-clinic", "plumbing-contractor", "hybrid-field-service-crm"]
+              .map((id) => factsData.clientProjects.find((p) => p.id === id))
+              .filter((project): project is NonNullable<typeof project> => Boolean(project))
               .map((project) => (
                 <div key={project.id} className="h-full transition-transform duration-200 [@media(hover:hover)]:hover:-translate-y-1">
                   <ProjectCard project={project} />

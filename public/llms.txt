@@ -37,6 +37,11 @@ DigitalX Solutions is a custom CRM engineering, AI voice telephony, and workflow
 - **GoHighLevel System Builds**: Master snapshots, 10DLC A2P brand registration, automated dispatch synchronization, and staff training.
 - **HubSpot RevOps**: Custom object modeling, bi-directional pipeline sync, and lifecycle stage automation.
 
+## Shipped Software & Flagship Builds
+- **Smart Property Buying AI Research Engine** (https://digitalx-solutions.com/case-studies/smart-property-buying): Automated Australian property stocklist harvesting across 14+ builder portals, Playwright session automation, RapidOCR + PyMuPDF parsing for image-only price PDFs, PropTrack benchmarking, 100-point buyer-brief scoring, and Kommo CRM sync.
+- **DigitalX Custom CRM** (https://digitalx-solutions.com/case-studies/digitalx-custom-crm, product overview at https://digitalx-solutions.com/products/digitalx-crm): Proprietary Next.js App Router, Prisma, and PostgreSQL/Supabase CRM with 20 operational modules, AU/US lead pipelines, RBAC role controls, labor-margin analytics, and 4 REST webhook ingestion endpoints (/api/webhooks/ghl, /apollo, /meta-ads, /n8n).
+- **Links 2000 Calibration LIMS** (https://digitalx-solutions.com/case-studies/links-2000-lims): Enterprise ISO/IEC 17025:2017 calibration LIMS migrated from legacy VB6/SQL Server to React 19, Vite, Django REST Framework, and Supabase PostgreSQL with Row-Level Security.
+
 ## Key Canonical URLs
 - Homepage: https://digitalx-solutions.com
 - Custom CRM Development: https://digitalx-solutions.com/development/custom-crm-development

@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { Database, ShieldCheck, FileImage, Info } from "lucide-react";
+import {
+  ArchitecturalProductPreview,
+  type FeaturedBuildSlug,
+} from "@/components/projects/featured-builds-showcase";
 
 /**
  * TODO — ASSETS REQUIRED FROM YOU FOR REAL CASE STUDY PROOF:
@@ -16,6 +20,7 @@ import { Database, ShieldCheck, FileImage, Info } from "lucide-react";
 
 interface CaseStudyUiVisualProps {
   title: string;
+  previewSlug?: FeaturedBuildSlug;
   mediaPath?: string;
   mediaType?: "image" | "video";
   mediaAlt?: string;
@@ -29,6 +34,7 @@ interface CaseStudyUiVisualProps {
 
 export function CaseStudyUiVisual({
   title,
+  previewSlug,
   mediaPath,
   mediaType = "image",
   mediaAlt,
@@ -76,6 +82,8 @@ export function CaseStudyUiVisual({
               />
             </div>
           )
+        ) : previewSlug ? (
+          <ArchitecturalProductPreview slug={previewSlug} />
         ) : (
           <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-border-strong bg-white px-5 py-8 text-center">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-100 text-foreground/60 mb-3">
@@ -104,7 +112,7 @@ export function CaseStudyUiVisual({
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {stats.map((stat) => (
               <div key={stat.label} className="rounded-lg bg-surface-50 p-3 border border-border/60">
-                <span className="block font-display text-base md:text-lg font-bold text-foreground">
+                <span className="block font-display text-base md:text-lg font-semibold text-foreground">
                   {stat.value}
                 </span>
                 <span className="block text-[11px] text-foreground/70 leading-snug mt-0.5">

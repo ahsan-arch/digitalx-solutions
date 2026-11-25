@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { clientProjects } from "@/data/facts";
+import { FeaturedBuildsShowcase } from "@/components/projects/featured-builds-showcase";
 import { ProjectCard } from "@/components/ui/project-card";
 import { CertifiedPartnerStrip } from "@/components/ui/partner-strip";
 import {
@@ -60,12 +61,17 @@ export default function CaseStudiesIndexPage() {
         </div>
       </section>
 
-      {/* Project Cards Grid */}
+      {/* Flagship Software Showcase */}
       <section className="container-shell mt-12">
+        <FeaturedBuildsShowcase />
+      </section>
+
+      {/* Project Cards Grid */}
+      <section className="container-shell mt-16">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="font-display text-2xl text-foreground md:text-3xl">
-              Featured Client Deployments
+              All Deployments &amp; Architectural Case Studies
             </h2>
             <p className="mt-1 text-sm text-foreground/70">
               Detailed problem audits, technical architectures, and documented outcomes.
