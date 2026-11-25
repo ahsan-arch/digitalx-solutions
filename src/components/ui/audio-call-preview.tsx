@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Play, Pause, Volume2, RotateCcw } from "lucide-react";
+import { m } from "framer-motion";
+import { MotionProvider } from "@/components/motion/motion-provider";
+import { Play, Pause } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface AudioCallPreviewProps {
@@ -80,6 +82,7 @@ export function AudioCallPreview({
   const barHeights = [40, 75, 30, 90, 60, 100, 45, 80, 50, 95, 65, 85, 35, 70, 55, 40];
 
   return (
+    <MotionProvider>
     <div
       className={cn(
         "rounded-2xl border border-border/80 bg-white p-4 sm:p-5 shadow-xs transition-colors hover:border-brand/40",
@@ -94,8 +97,9 @@ export function AudioCallPreview({
           <button
             type="button"
             onClick={togglePlay}
+            aria-pressed={isPlaying}
             aria-label={isPlaying ? "Pause audio call preview" : "Play audio call preview"}
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white shadow-xs transition-transform active:scale-95 hover:bg-brand-deep focus:outline-none focus:ring-2 focus:ring-brand/30"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white shadow-xs transition-transform active:scale-95 hover:bg-brand-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
           >
             {isPlaying ? (
               <Pause className="h-5 w-5 fill-current" />
@@ -123,23 +127,34 @@ export function AudioCallPreview({
             className="flex h-8 items-center gap-1 px-2 py-1"
             aria-hidden="true"
           >
-            {barHeights.map((h, i) => (
-              <span
-                key={i}
-                className={cn(
-                  "w-1 rounded-full transition-all duration-200",
-                  isPlaying
-                    ? "bg-brand"
-                    : "bg-border/80"
-                )}
-                style={{
-                  height: isPlaying
-                    ? `${Math.max(20, (h * (0.6 + Math.sin((currentTime * 5) + i) * 0.4)))}%`
-                    : `${h * 0.35}%`,
-                  animationDelay: `${i * 60}ms`,
-                }}
-              />
-            ))}
+            {barHeights.map((h, i) => {
+              const targetScale = isPlaying
+                ? Math.max(0.25, (h / 100) * (0.65 + Math.sin(currentTime * 6 + i) * 0.35))
+                : Math.max(0.2, (h / 100) * 0.35);
+
+              return (
+                <m.span
+                  key={i}
+                  animate={{
+                    scaleY: isPlaying ? [targetScale, Math.min(1, targetScale * 1.35), Math.max(0.25, targetScale * 0.7), targetScale] : targetScale,
+                  }}
+                  transition={
+                    isPlaying
+                      ? {
+                          duration: 0.45 + (i % 4) * 0.1,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }
+                      : { duration: 0.25, ease: "easeOut" }
+                  }
+                  style={{ height: "100%", originY: 0.5 }}
+                  className={cn(
+                    "w-1 rounded-full transition-colors duration-200",
+                    isPlaying ? "bg-brand" : "bg-border/80"
+                  )}
+                />
+              );
+            })}
           </div>
 
           <span className="font-mono text-xs tabular-nums text-foreground/75 w-16 text-right">
@@ -159,10 +174,12 @@ export function AudioCallPreview({
             value={currentTime}
             onChange={handleSeek}
             aria-label="Seek audio timeline"
-            className="w-full h-1.5 bg-surface-sunken rounded-lg appearance-none cursor-pointer accent-brand focus:outline-none"
+            aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration || 21)}`}
+            className="w-full h-1.5 bg-surface-sunken rounded-lg appearance-none cursor-pointer accent-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
           />
         </div>
       </div>
     </div>
+    </MotionProvider>
   );
 }

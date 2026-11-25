@@ -4,14 +4,12 @@ export type NavItem = {
 };
 
 export const primaryNavigation: NavItem[] = [
-  { label: "Solutions", href: "/solutions" },
-  { label: "Development", href: "/development" },
+  { label: "Custom CRMs", href: "/development/custom-crm-development" },
+  { label: "Services", href: "/solutions" },
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
-  { label: "Insights", href: "/insights" },
-  { label: "Voice Demo", href: "/try-voice-agent" },
 ];
 
 export const heroMetrics = [
@@ -1977,6 +1975,46 @@ export const results: ResultCard[] = [
       { label: "Tracking", value: "Server side" },
     ],
   },
+  {
+    slug: "hybrid-field-service-crm",
+    client: "Illustrative CRM Scenario — Trade & Field Services",
+    industry: "Multi-Location Trade & Field Services",
+    challenge: "Illustrative scenario: A 22-person field service operator paying ~$2,640/mo in per-seat SaaS CRM licenses across disconnected spreadsheets and dispatch tools.",
+    impact: "Illustrative estimate: Up to $31,680/yr in recurring seat fees avoided, 42,400 modeled records normalized, and ~18 hrs/wk admin entry reduced.",
+    metaDescription: "Illustrative hybrid Next.js & PostgreSQL custom CRM architecture replacing per-seat SaaS licenses with GoHighLevel API and Twilio SIP sync.",
+    services: ["Custom CRM Development", "GoHighLevel Implementation", "n8n Workflow Automation"],
+    solutionsUsed: ["gohighlevel-implementation", "n8n-workflow-automation", "crm-integration"],
+    narrative: [
+      "Illustrative scenario: A growing 22-person multi-location trade operator faces ~$2,640/mo ($120/seat × 22 users) in per-seat SaaS licensing while still relying on manual dispatch spreadsheets.",
+      "Our Hybrid Custom CRM architecture pairs Next.js 15 and PostgreSQL with Role-Based Access Control (RBAC) across Admin HQ, Field Technicians, and Customer portals synced bi-directionally with GoHighLevel and Twilio SIP.",
+      "Calculation inputs (Illustrative estimate): 22 seats × $120/mo × 12 months = $31,680/yr modeled licensing cost replaced; 42,400 modeled CSV/SQL contact rows deduplicated via E.164 normalization; ~50 min/wk saved per user across 22 staff = ~18+ admin hours/week."
+    ],
+    metrics: [
+      { label: "Modeled Seat Costs (Illustrative)", value: "$31,680/yr" },
+      { label: "Modeled Records Normalized", value: "42,400" },
+      { label: "Est. Hours Saved / Week", value: "18+ hrs" },
+    ],
+  },
+  {
+    slug: "healthcare-patient-portal-crm",
+    client: "Illustrative CRM Scenario — Allied Health Group",
+    industry: "Multi-Clinic Allied Health Group",
+    challenge: "Illustrative scenario: A 4-clinic allied health operator spending ~$1,950/mo on rigid enterprise CRM tiers lacking practitioner RBAC boundaries and clean Cliniko synchronization.",
+    impact: "Illustrative estimate: ~$23,400/yr modeled CRM overhead avoided, 28,000+ modeled patient profiles consolidated, and ~14 reception hrs/wk saved.",
+    metaDescription: "Illustrative proprietary Next.js, PostgreSQL, and Cliniko two-way CRM portal architecture designed to cut enterprise per-seat CRM licensing fees.",
+    services: ["Custom CRM Development", "n8n Workflow Automation"],
+    solutionsUsed: ["crm-integration", "n8n-workflow-automation"],
+    narrative: [
+      "Illustrative scenario: A 4-clinic allied health group paying ~$1,950/month for legacy enterprise CRM plans struggles to separate clinical practitioner notes from billing staff permissions or prevent duplicate Cliniko records.",
+      "Our proprietary PostgreSQL + Next.js portal implements Role-Based Access Control (RBAC), bi-directional Cliniko webhooks, and automated n8n referral orchestration.",
+      "Calculation inputs (Illustrative estimate): $1,950/mo × 12 months = $23,400/yr modeled enterprise software fee; 28,000+ modeled multi-clinic patient rows consolidated; ~14 hrs/wk of manual re-entry eliminated across 4 front-desk teams."
+    ],
+    metrics: [
+      { label: "Modeled Licensing (Illustrative)", value: "$23,400/yr" },
+      { label: "Modeled Profiles Unified", value: "28,000+" },
+      { label: "Est. Reception Hrs / Wk", value: "14+ hrs" },
+    ],
+  },
 ];
 
 export function getResultBySlug(slug: string): ResultCard | undefined {
@@ -2003,8 +2041,8 @@ export const aboutPrinciples = [
 export const companyProfile = {
   name: "DigitalX Solutions",
   email: "info@digitalx-solutions.com",
-  location: "16 Boldrewood Ave, Casula, NSW 2170, Australia | Serving USA + Australia",
-  tagline: "Stop losing revenue to missed calls and slow follow ups.",
+  location: "Serving Australian and US businesses",
+  tagline: "Custom CRMs and AI automation engineered for measurable revenue operations.",
   phone: "+61 451 413 786",
   phoneE164: "+61451413786",
   whatsappUrl: "https://wa.me/61451413786",
@@ -2040,6 +2078,7 @@ export const footerColumns = [
     title: "Company",
     links: [
       { label: "About", href: "/about" },
+      { label: "Company Facts", href: "/facts" },
       { label: "Process", href: "/process" },
       { label: "Case Studies", href: "/case-studies" },
       { label: "Development", href: "/development" },

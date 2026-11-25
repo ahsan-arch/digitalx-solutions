@@ -1,98 +1,56 @@
 # DigitalX Solutions
 
-> AI Automation & Web Development Agency — USA & Australia
+> Custom CRM Development & AI Automation Engineering — Australia & United States
 
-## About
-DigitalX Solutions is a premium AI automation and web development agency serving businesses in the United States and Australia. We specialize in building custom n8n workflows, GoHighLevel (GHL) systems, conversational AI agents, high-performance Next.js websites, and Meta Ads engineering with server-side CAPI tracking.
+## About & Company Facts
+DigitalX Solutions is a custom CRM engineering, AI voice telephony, and workflow automation consultancy founded in 2020, serving Australian and US businesses. We engineer hybrid Next.js and PostgreSQL CRM portals, self-hosted n8n workflows, GoHighLevel systems, and low-latency AI voice telephony.
 
-## Core Services
-- **n8n Workflow Automation**: Custom n8n workflow development for complex multi-step business process automation. We build what Zapier and Make.com cannot handle.
-- **GoHighLevel (GHL) Systems**: Full GoHighLevel architecture design, CRM setup, pipeline automation, and custom integrations for agencies and local businesses.
-- **Conversational AI & Voice Agents**: 24/7 AI voice receptionists and WhatsApp chatbots for dental clinics, salons, gyms, medical practices, and service businesses. Built with Vapi, Twilio, and custom NLP pipelines.
-- **High-Performance Web Development**: Sub-200ms Next.js websites with SEO-baked architecture, headless CMS integration, and 98+ Lighthouse scores.
-- **Meta Ads Engineering**: Full-funnel Meta (Facebook/Instagram) ad systems with server-side CAPI tracking to bypass iOS14+ signal loss. Average 4.2x ROAS.
-- **Performance Creative**: UGC and motion graphics optimized for 3-second hook rates and direct response conversion.
+- **Entity**: DigitalX Solutions (Founded 2020)
+- **Leadership**: Jazib Shahid, Founder & Lead Solutions Architect
+- **Service Area**: Serving Australian and US businesses
+- **Phone**: +61 451 413 786
+- **Email**: info@digitalx-solutions.com
+- **Website**: https://digitalx-solutions.com
+- **Structured Facts Page**: https://digitalx-solutions.com/facts
 
-## Key Facts
-- Based in: Casula, NSW, Australia (serving USA & Australia remotely)
-- Contact: info@digitalx-solutions.com
-- Phone: +61 451 413 786
-- Website: https://digitalx-solutions.com
-- Founded: 2022
-- Projects shipped: 47+
-- Revenue generated for clients: $18M+
-- Average ROAS: 4.6x across Meta Ads accounts
-- Tech stack: n8n, GoHighLevel, Next.js, Node.js, Vapi, Twilio, Meta CAPI
+## Core Value Proposition & Positioning
+- **Proprietary & Hybrid CRM Engineering**: Eliminating recurring per-seat SaaS taxes ($0 seat fees) with 100% source code and database ownership.
+- **Modern Full-Stack Architecture**: Next.js 15, React, Node.js, and PostgreSQL/Supabase paired with carrier-grade telephony (Twilio SIP, Vapi) and workflow backends (self-hosted n8n).
+- **Illustrative 3-Year TCO Model**: Modeled 60%+ lower 3-year total cost of ownership ($12,100–$24,000 vs. $77,000–$123,000+ illustrative estimate for a 20-user team at $100–$150/seat/mo + onboarding over 36 months).
+- **Zero Carrier Markup**: Direct SIP trunking and carrier pass-through pricing with 0% markup on Twilio telephony rates.
 
-## Target Industries
-- Dental clinics and medical practices
-- Hair salons and beauty studios
-- Gyms and fitness centers
-- Real estate agencies
-- E-commerce brands
-- SaaS startups (pre-seed to Series B)
-- Digital marketing agencies needing white-label automation
+## Core Services & Capabilities
 
-## Service Areas
-DigitalX Solutions works with service businesses across the United States and Australia.
-- United States: New York, Los Angeles, Chicago, Houston, Miami, Phoenix, Austin, and all 50 states remotely
-- Australia: Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra, and nationwide remotely
+### 1. Custom CRM Development & Architecture
+- **CRM Setup & Integration** ($2,200 one-time, 2–3 weeks): Full GoHighLevel or HubSpot setup, bidirectional calendar and dispatch sync, custom webhook routing, 100% client-owned accounts.
+- **Hybrid Custom CRM Build** ($8,500 one-time, 3–6 weeks): Bespoke Next.js/React portal + PostgreSQL database combined with GHL/HubSpot CRM APIs, role-based access control (RBAC), legacy data migration, and live telephony sync. 100% source code ownership.
+- **Proprietary / White-Label CRM** ($15,000+ custom scope, 6–10 weeks): Multi-tenant SaaS architecture, Stripe usage and subscription billing, dedicated cloud infrastructure, executive analytics, and CI/CD pipelines.
 
-## Pricing
-- Launch package: $1,200/mo (solo operators)
-- Operate package: $2,800/mo (multi-location teams)
-- Scale package: Custom (growth teams with paid ads)
-- One-time setup: $1,500–$4,500
-- Web development projects: Starting at $15,000
-- Custom automation projects: Quoted per scope
+### 2. AI Voice & Workflow Automation Retainers
+- **Starter Pod** ($1,200/mo): Solo operators & boutique practices. Inbound voice agent, missed-call text-back, CRM pipeline sync, up to 500 included call minutes.
+- **Professional Pod** ($2,800/mo): Multi-location & high-volume service businesses. Inbound + outbound agents, custom tool calling, calendar booking, up to 1,500 call minutes.
+- **Custom Growth Pod** ($4,500/mo+): Scaling companies with dedicated pipelines, custom webhook orchestration, multi-location snapshots, up to 3,500 minutes.
+- **Dedicated Pod** ($7,500/mo): Enterprise operations with custom Next.js/PostgreSQL portal maintenance, priority SLA (<1hr response), up to 7,500 minutes.
 
-## Frequently Asked Questions
-- What does DigitalX Solutions do: We build AI voice agents, automated lead capture and nurture, GoHighLevel and CRM systems, high performance websites, and Meta Ads tracking for service businesses.
-- Who is it for: Local and service businesses in the United States and Australia, including home services, medical and dental clinics, salons, gyms, law firms, and real estate teams.
-- Where does it operate: Across the United States and Australia, working remotely with clients in every time zone.
-- What makes it different: One team that combines web development, AI automation, and performance marketing so strategy and delivery stay aligned.
-- How to get started: Book a strategy call at https://digitalx-solutions.com/contact
+### 3. Workflow Automation & Integration
+- **Self-Hosted & Cloud n8n**: Complex, multi-step business process orchestration with zero per-task execution fees.
+- **GoHighLevel System Builds**: Master snapshots, 10DLC A2P brand registration, automated dispatch synchronization, and staff training.
+- **HubSpot RevOps**: Custom object modeling, bi-directional pipeline sync, and lifecycle stage automation.
 
-## Primary Pages
+## Key Canonical URLs
 - Homepage: https://digitalx-solutions.com
-- Solutions hub: https://digitalx-solutions.com/solutions
-- Industries: https://digitalx-solutions.com/industries
-- Pricing: https://digitalx-solutions.com/pricing
-- Process: https://digitalx-solutions.com/process
-- Case studies: https://digitalx-solutions.com/work
-- About: https://digitalx-solutions.com/about
-- Contact: https://digitalx-solutions.com/contact
-- Engineering insights: https://digitalx-solutions.com/insights
-- Live voice agent demo: https://digitalx-solutions.com/try-voice-agent
-
-## Geo Landing Pages
-- USA: https://digitalx-solutions.com/usa
-- Australia: https://digitalx-solutions.com/au
-
-## Service Pages
-- Web Design & Development: https://digitalx-solutions.com/services/web-design-and-development
-- Meta Ads: https://digitalx-solutions.com/services/meta-ads
-
-## Solution Pages
-- GoHighLevel Implementation: https://digitalx-solutions.com/solutions/gohighlevel-implementation
+- Custom CRM Development: https://digitalx-solutions.com/development/custom-crm-development
+- Pricing & TCO: https://digitalx-solutions.com/pricing
 - AI Voice Agents: https://digitalx-solutions.com/solutions/ai-voice-agents
-- Missed Call Text Back: https://digitalx-solutions.com/solutions/missed-call-text-back
-- Lead Generation & Nurturing: https://digitalx-solutions.com/solutions/lead-generation
-- AI Agents & Chatbots: https://digitalx-solutions.com/solutions/ai-agents-chatbots
+- GoHighLevel Implementation: https://digitalx-solutions.com/solutions/gohighlevel-implementation
 - n8n Workflow Automation: https://digitalx-solutions.com/solutions/n8n-workflow-automation
-- HubSpot Automation: https://digitalx-solutions.com/solutions/hubspot-automation
-- CRM Integration: https://digitalx-solutions.com/solutions/crm-integration
-- Analytics Dashboards: https://digitalx-solutions.com/solutions/analytics-dashboards
-
-## Blog Articles
-- [n8n vs Zapier in 2026: Complete Comparison](https://digitalx-solutions.com/insights/n8n-vs-zapier): Detailed comparison of n8n and Zapier for business automation — pricing, features, scalability, and which tool fits your needs.
-- [AI Voice Receptionists: Complete Guide](https://digitalx-solutions.com/insights/ai-voice-receptionists-guide): How AI voice receptionists automate phone answering and appointment booking for dental clinics, salons, and medical practices.
-- [Why Meta CAPI is Mandatory for Scale](https://digitalx-solutions.com/insights/server-side-tracking-meta-ads): Why relying solely on the Meta Pixel destroys ROI and how the Conversions API ensures accurate attribution.
-
-## Social
-- Instagram: https://www.instagram.com/digitalx_solutions/
-- Facebook: https://www.facebook.com/people/Digitalx-solutions/61588252343955/
-- LinkedIn: https://www.linkedin.com/company/digitalx-solutions-aus/
+- Solutions Overview: https://digitalx-solutions.com/solutions
+- Industries: https://digitalx-solutions.com/industries
+- Case Studies: https://digitalx-solutions.com/case-studies
+- Company Facts: https://digitalx-solutions.com/facts
+- About Us: https://digitalx-solutions.com/about
+- Contact & Architecture Consultation: https://digitalx-solutions.com/contact
+- Try Voice Agent: https://digitalx-solutions.com/try-voice-agent
 
 ## Sitemap
-- XML sitemap: https://digitalx-solutions.com/sitemap.xml
+- XML Sitemap: https://digitalx-solutions.com/sitemap.xml

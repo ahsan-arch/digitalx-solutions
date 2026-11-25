@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink, ShieldCheck } from "lucide-react";
@@ -6,7 +8,7 @@ import {
     companyProfile,
     heroMetrics,
 } from "@/data/redesign";
-import { SectionIllustration } from "@/components/ui";
+import { SectionIllustration, AvatarSlot } from "@/components/ui";
 import { CertifiedPartnerStrip } from "@/components/ui/partner-strip";
 import { ObfuscatedEmail } from "@/components/layout/obfuscated-email";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
@@ -14,16 +16,16 @@ import factsData from "../../../data/facts.json";
 
 export const metadata: Metadata = {
     ...generatePageMetadata("/about", {
-        title: "About Our AI & Automation Team",
+        title: "About Our Custom CRM & AI Engineering Team",
         description:
-            "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.",
+            "Meet the systems engineers behind custom Next.js CRM portals, GoHighLevel systems, and low-latency AI voice telephony across Australia and the USA.",
     }),
     twitter: {
         card: "summary_large_image",
-        title: "About Our AI & Automation Team | DigitalX",
+        title: "About Our Custom CRM & AI Engineering Team | DigitalX",
         description:
-            "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.",
-        images: ["/api/og?title=About+Our+AI+%26+Automation+Team&subtitle=DigitalX+Solutions"],
+            "Meet the systems engineers behind custom Next.js CRM portals, GoHighLevel systems, and low-latency AI voice telephony across Australia and the USA.",
+        images: ["/api/og?title=About+Our+Custom+CRM+%26+AI+Engineering+Team&subtitle=DigitalX+Solutions"],
         site: undefined,
         creator: undefined,
     },
@@ -50,7 +52,7 @@ export default function AboutPage() {
                 },
             },
             {
-                "@type": "Organization",
+                "@type": ["Organization", "ProfessionalService"],
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 legalName: "DigitalX Solutions",
@@ -59,14 +61,10 @@ export default function AboutPage() {
                 telephone: "+61 451 413 786",
                 email: "info@digitalx-solutions.com",
                 foundingDate: "2020",
-                address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "16 Boldrewood Ave",
-                    addressLocality: "Casula",
-                    addressRegion: "NSW",
-                    postalCode: "2170",
-                    addressCountry: "AU",
-                },
+                areaServed: [
+                    { "@type": "Country", name: "Australia" },
+                    { "@type": "Country", name: "United States" },
+                ],
                 founder: {
                     "@id": `${siteConfig.domain}/about#jazib-shahid`,
                 },
@@ -81,12 +79,20 @@ export default function AboutPage() {
                 "@type": "Person",
                 "@id": `${siteConfig.domain}/about#jazib-shahid`,
                 name: "Jazib Shahid",
-                jobTitle: "Founder & CEO",
+                jobTitle: "Founder & Lead Solutions Architect",
                 description:
-                    "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and operational guardrails across all client deployments.",
+                    "Full-stack automation and CRM architect specializing in custom Next.js and PostgreSQL portals, self-hosted n8n orchestration, GoHighLevel CRM systems, and low-latency AI voice telephony. Jazib leads system architecture and production delivery for service businesses, healthcare clinics, and B2B operators across Australia and the United States.",
                 worksFor: {
                     "@id": `${siteConfig.domain}/#organization`,
                 },
+                knowsAbout: [
+                    "Custom CRM Development",
+                    "Next.js",
+                    "PostgreSQL",
+                    "GoHighLevel",
+                    "n8n",
+                    "AI Voice Agents",
+                ],
                 url: `${siteConfig.domain}/about/team/jazib-shahid`,
             },
             {
@@ -194,7 +200,7 @@ export default function AboutPage() {
                 <section className="container-shell mt-12">
                     <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
                         <div>
-                            <p className="text-xs font-semibold text-brand">Engineering Leadership</p>
+                            <p className="text-xs font-semibold text-brand">Leadership &amp; Company Verification</p>
                             <h2 className="mt-1 font-display text-3xl text-foreground">Built by Systems Engineers, Not Account Managers</h2>
                             <p className="mt-2 text-sm leading-relaxed text-foreground/70 max-w-3xl">
                                 Every telephony stream, CRM pipeline, and n8n workflow at DigitalX Solutions is architected and stress-tested by our core engineering leadership, never outsourced to junior template installers.
@@ -204,28 +210,33 @@ export default function AboutPage() {
                         {/* Leadership Cards */}
                         <div className="mt-8 grid gap-6 md:grid-cols-2">
                             {/* Card 1: Jazib Shahid */}
-                            <div className="flex flex-col justify-between rounded-2xl border border-border bg-surface-50 p-6">
+                            <div className="h-full rounded-2xl border border-border bg-surface-50 p-6 transition-colors hover:border-brand/40">
+                            <div className="flex h-full flex-col justify-between">
                                 <div>
                                     <div className="flex items-center gap-4">
-                                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl font-bold text-white shadow-sm">
-                                            JS
-                                        </div>
+                                        <AvatarSlot
+                                            src={fs.existsSync(path.join(process.cwd(), "public/images/jazib-shahid.jpg")) ? "/images/jazib-shahid.jpg" : ""}
+                                            alt="Jazib Shahid"
+                                            fallbackText="JS"
+                                            className="h-14 w-14"
+                                            showRing
+                                        />
                                         <div>
                                             <h3 className="font-display text-xl font-semibold text-foreground">
                                                 Jazib Shahid
                                             </h3>
                                             <p className="text-xs font-semibold text-brand">
-                                                Founder &amp; CEO
+                                                Founder &amp; Lead Solutions Architect
                                             </p>
                                         </div>
                                     </div>
                                     <p className="mt-4 text-xs leading-relaxed text-foreground/80">
-                                        Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and operational guardrails across all client deployments.
+                                        Full-stack automation and CRM architect specializing in custom Next.js and PostgreSQL portals, self-hosted n8n orchestration, GoHighLevel CRM systems, and low-latency AI voice telephony. Jazib leads system architecture and production delivery for service businesses, healthcare clinics, and B2B operators across Australia and the United States.
                                     </p>
                                     <div className="mt-4">
                                         <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
                                         <div className="mt-1.5 flex flex-wrap gap-1.5">
-                                            {["GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP", "HubSpot", "Google Calendar"].map((tech) => (
+                                            {["Custom Next.js Portals", "PostgreSQL & Supabase", "GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP"].map((tech) => (
                                                 <span key={tech} className="rounded-md border border-border bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
                                                     {tech}
                                                 </span>
@@ -257,9 +268,11 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                             </div>
+                            </div>
 
                             {/* Card 2: Ahsan Masood */}
-                            <div className="flex flex-col justify-between rounded-2xl border border-border bg-surface-50 p-6">
+                            <div className="h-full rounded-2xl border border-border bg-surface-50 p-6 transition-colors hover:border-brand/40">
+                            <div className="flex h-full flex-col justify-between">
                                 <div>
                                     <div className="flex items-center gap-4">
                                         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand text-xl font-bold text-white shadow-sm">
@@ -301,25 +314,26 @@ export default function AboutPage() {
                                             <ExternalLink className="h-3 w-3" />
                                         </a>
                                     ) : (
-                                        <span className="text-xs text-foreground/50">Systems Specialist</span>
+                                        <span className="text-xs text-foreground/75">Systems Specialist</span>
                                     )}
                                 </div>
                             </div>
+                            </div>
                         </div>
 
-                        {/* Registered Entity Block */}
+                        {/* Service Coverage & Contact Block */}
                         <div className="mt-8 rounded-2xl border border-border bg-surface-50 p-6">
                             <div className="flex items-center gap-2 text-foreground font-semibold">
                                 <ShieldCheck className="h-4 w-4 text-brand" />
-                                <span>Registered Australian Business &amp; Global Operations</span>
+                                <span>Serving Australian and US Businesses</span>
                             </div>
                             <div className="mt-4 grid gap-4 md:grid-cols-2 text-xs leading-relaxed text-foreground/75">
                                 <div className="space-y-2">
                                     <p>
-                                        <strong className="text-foreground">Registered Office:</strong> 16 Boldrewood Ave, Casula NSW 2170, Australia.
+                                        <strong className="text-foreground">Service Coverage:</strong> Serving Australian and US businesses across AEST/AEDT, AWST, and US Eastern/Pacific (EST/PST) operating hours.
                                     </p>
                                     <p>
-                                        <strong className="text-foreground">Coverage:</strong> Operational support and monitoring across Australian Eastern Standard Time (AEST) and US Eastern/Pacific (EST/PST) business hours.
+                                        <strong className="text-foreground">Delivery Model:</strong> Remote engineering team with direct calendar &amp; live Slack/WhatsApp support channels.
                                     </p>
                                 </div>
                                 <div className="space-y-2">
@@ -339,20 +353,23 @@ export default function AboutPage() {
                             </div>
                         </div>
 
-                        {/* Partner Ecosystem & Technical Credentials */}
+                        {/* Partner Ecosystem & Technical Capabilities */}
                         <div className="mt-8 border-t border-border pt-6">
                             <h3 className="text-base font-semibold text-foreground">
-                                Platform Integrations &amp; Technical Stacks
+                                Platform &amp; Engineering Capabilities
                             </h3>
                             <p className="mt-1 text-xs text-foreground/70">
-                                Production integrations and delivery standards deployed across client accounts.
+                                We build on battle-tested web, CRM, and workflow orchestration stacks with full client account and code ownership.
                             </p>
-                            <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                                {factsData.partnerCertifications.map((cert) => (
+                            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                                {factsData.partnerCertifications.map((cert) => {
+                                    const hasProof = Boolean(cert.proofUrl && cert.proofUrl.startsWith("http"));
+                                    return (
                                     <div
                                         key={cert.platform}
-                                        className="rounded-2xl border border-border bg-surface-50 p-5 flex flex-col justify-between"
+                                        className="h-full rounded-2xl border border-border bg-surface-50 p-5 transition-all hover:border-brand/40 [@media(hover:hover)]:hover:-translate-y-0.5"
                                     >
+                                    <div className="flex h-full flex-col justify-between">
                                         <div>
                                             <div className="flex items-center justify-between">
                                                 <span className="font-mono text-xs font-semibold text-brand">
@@ -376,22 +393,24 @@ export default function AboutPage() {
 
                                         <div className="mt-4 pt-3 border-t border-border/70 text-xs flex items-center justify-between">
                                             <span className="text-[11px] font-medium text-foreground/70">
-                                                Integration Architecture
+                                                {hasProof ? "Certified" : cert.status}
                                             </span>
-                                            {cert.proofUrl && cert.proofUrl.startsWith("http") && (
+                                            {hasProof && (
                                                 <a
                                                     href={cert.proofUrl}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center text-brand font-semibold hover:underline"
                                                 >
-                                                    Platform
+                                                    View Proof
                                                     <ExternalLink className="ml-1 h-3 w-3" />
                                                 </a>
                                             )}
                                         </div>
                                     </div>
-                                ))}
+                                    </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
@@ -428,7 +447,7 @@ export default function AboutPage() {
                             <div className="rounded-2xl border border-border bg-white p-5">
                                 <h3 className="font-semibold text-foreground">2. Natural Conversational Latency Pacing</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
-                                    We engineer fast, natural conversational responses. An AI voice receptionist that pauses awkwardly frustrates callers; our systems prioritize low-latency streaming to maintain natural timing, rapid turn-taking, and instant interruption handling.
+                                    We engineer fast, natural conversational responses under 800ms. An AI voice receptionist that pauses awkwardly frustrates callers; our systems prioritize low-latency streaming to maintain natural timing, rapid turn-taking, and instant interruption handling.
                                 </p>
                             </div>
                             <div className="rounded-2xl border border-border bg-white p-5">

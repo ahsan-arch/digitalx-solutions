@@ -63,6 +63,7 @@ checkMetadata("/services/meta-ads", "Meta Ads & Server-Side CAPI Agency", "Full-
 checkMetadata("/pricing", "Transparent AI Automation Pricing", "Transparent pricing for AI voice receptionists, missed-call text-back, and GoHighLevel CRM workflows for businesses across the United States and Australia.");
 checkMetadata("/process", "Our 4-Week AI Deployment Process", "From discovery intake to live production, see how we launch custom AI voice agents and GoHighLevel CRM pipelines within an agile 4 to 6 week roadmap.");
 checkMetadata("/about", "About Our AI & Automation Team", "Meet the engineering team behind AI voice receptionists, GoHighLevel setups, and workflow automations for growing businesses across the USA and Australia.");
+checkMetadata("/facts", "Company Facts & Technical Architecture Summary", "Company facts for DigitalX Solutions (founded 2020): services, Australian & US coverage, pricing ranges in USD/AUD, and illustrative model sources.");
 checkMetadata("/about/team/jazib-shahid", "Jazib Shahid – Founder & CEO | DigitalX Solutions", "Jazib Shahid is Founder & CEO of DigitalX Solutions (founded 2020), specializing in AI voice receptionists, GoHighLevel systems, and n8n automations.");
 checkMetadata("/products/digitalx-crm", "DigitalX CRM – Service Operations & Intake Platform", "Custom service CRM and automated intake software engineered for high-volume trade contractors and clinics. Currently in private engineering preview.");
 checkMetadata("/contact", "Book a Strategy Call", "Share your growth goals with DigitalX Solutions. We respond with a practical engineering plan for AI voice agents, CRM automation, and revenue operations.");
@@ -102,7 +103,7 @@ for (const int of integrations) {
 
 // ── 6. Case Studies (3 routes) ──
 for (const p of clientProjects) {
-  const title = `${p.client} Automation Case Study`;
+  const title = `${p.id.startsWith("hybrid") ? "Hybrid Custom CRM Case Study: Trade & Field Services" : p.id.startsWith("healthcare") ? "Healthcare Custom CRM & Patient Portal Case Study" : `${p.client} Automation Case Study`}`;
   const desc = `Discover how ${p.client} deployed automation systems, resulting in ${p.measurableResult}`.slice(0, 155);
   checkMetadata(`/case-studies/${p.slug}`, title, desc);
 }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -17,26 +17,11 @@ import {
   siteConfig,
 } from "@/lib/seo";
 
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-roboto",
-});
-
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-// Mono is only used in niche accents (none above the fold), so keep it out of
-// the initial preload set — it still loads on demand when a font-mono element renders.
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   preload: false,
-  variable: "--font-jetbrains-mono",
+  variable: "--font-inter",
 });
 
 export const viewport: Viewport = {
@@ -155,7 +140,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body
-        className={`${roboto.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
+        className={`${inter.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
       >
         <GoogleTagManagerNoscript />
         <SiteHeader />

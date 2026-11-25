@@ -16,6 +16,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     GoHighLevel: "/logos/gohighlevel.svg",
     "Google Calendar": "/logos/google-calendar.svg",
     HubSpot: "/logos/hubspot.svg",
+    Cliniko: "/logos/cliniko.svg",
     "n8n Workflow Automation": "/logos/n8n.svg",
     "Meta CAPI": "/logos/meta.svg",
     Stripe: "/logos/stripe.svg",
@@ -56,8 +57,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </div>
 
-          <span className="text-xs font-medium text-foreground/50">
-            Case Study
+          <span className="text-xs font-medium text-foreground/75">
+            {project.status || "Case Study"}
           </span>
         </div>
 
@@ -88,7 +89,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
             <div>
               <span className="font-mono text-[10px] font-medium text-emerald-800">
-                Outcome
+                {"source" in project && project.source ? project.source : "Outcome"}
               </span>
               <p className="mt-0.5 text-xs font-semibold text-emerald-950 leading-relaxed">
                 {project.measurableResult}

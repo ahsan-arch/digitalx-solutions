@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Mic, Sparkles, Volume2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Mic, Volume2 } from "lucide-react";
 import { voices, type Voice } from "@/lib/voice-agent/voices";
 import {
   assignBrowserVoices,
@@ -165,11 +165,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
                         : "bg-foreground/5 text-foreground/75"
                     )}
                   >
-                    {voice.kind === "premium" ? (
-                      <Sparkles className="h-4 w-4" />
-                    ) : (
-                      <Mic className="h-4 w-4" />
-                    )}
+                    <Mic className="h-4 w-4" />
                   </span>
                   <div>
                     <div className="flex items-center gap-1.5">

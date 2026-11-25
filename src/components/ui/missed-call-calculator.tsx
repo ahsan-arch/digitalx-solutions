@@ -2,7 +2,7 @@
 
 import React, { useState, useId } from "react";
 import Link from "next/link";
-import { ArrowRight, Calculator, Check, Copy, PhoneCall, Sparkles, X } from "lucide-react";
+import { ArrowRight, Calculator, Check, Copy, PhoneCall, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface MissedCallCalculatorProps {
@@ -279,7 +279,7 @@ export function MissedCallCalculator({
             <span className="text-xs font-semibold text-rose-800">
               Estimated Monthly Lost Revenue
             </span>
-            <div className="mt-1 font-display text-4xl font-extrabold tracking-tight text-rose-950 sm:text-5xl">
+            <div className="mt-1 font-display text-4xl font-semibold tracking-tight text-rose-950 sm:text-5xl">
               {fmt(monthlyLostRevenue)}
             </div>
             <p className="mt-1 text-xs font-medium text-rose-900/80">

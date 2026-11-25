@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, PhoneCall, Clock, ShieldCheck, Database, Zap, Cpu, HelpCircle, Layers, Activity } from "lucide-react";
+import { ArrowRight, CheckCircle2, PhoneCall, Clock, ShieldCheck, Database, MessageSquare, Cpu, HelpCircle, Layers, Activity } from "lucide-react";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -166,7 +166,7 @@ export default function AiVoiceReceptionistServicePage() {
 
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
-                  <Zap className="h-5 w-5 text-brand" />
+                  <MessageSquare className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
                   Manual Intake Bottlenecks

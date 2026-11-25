@@ -13,6 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         "*",
         "Googlebot",
         "Bingbot",
+        "Applebot",           // Apple Search & Siri Suggestions
         "GPTBot",             // OpenAI model training
         "OAI-SearchBot",      // OpenAI ChatGPT Search citations & grounding
         "ChatGPT-User",       // OpenAI ChatGPT Browse user sessions

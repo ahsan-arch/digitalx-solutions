@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
+import { MotionProvider } from "@/components/motion/motion-provider";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +17,10 @@ interface FAQAccordionProps {
   className?: string;
 }
 
+/**
+ * Accessible FAQ accordion where every answer stays permanently mounted in the
+ * initial server-rendered HTML DOM for AEO/SEO crawlers, animating height/opacity cleanly.
+ */
 export function FAQAccordion({
   items,
   defaultOpenIndex = 0,
@@ -28,6 +33,7 @@ export function FAQAccordion({
   };
 
   return (
+    <MotionProvider>
     <div className={cn("space-y-3", className)}>
       {items.map((item, index) => {
         const isOpen = openIndex === index;
@@ -66,27 +72,27 @@ export function FAQAccordion({
               </div>
             </button>
 
-            <AnimatePresence initial={false}>
-              {isOpen && (
-                <motion.div
-                  id={contentId}
-                  role="region"
-                  aria-labelledby={itemId}
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.22, ease: [0.2, 0.8, 0.2, 1] }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-5 pb-6 pt-1 sm:px-6 text-sm leading-relaxed text-foreground/80 border-t border-border/40">
-                    {item.answer}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <m.div
+              id={contentId}
+              role="region"
+              aria-labelledby={itemId}
+              aria-hidden={!isOpen}
+              initial={false}
+              animate={{
+                height: isOpen ? "auto" : 0,
+                opacity: isOpen ? 1 : 0,
+              }}
+              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden"
+            >
+              <div className="px-5 pb-6 pt-1 sm:px-6 text-sm leading-relaxed text-foreground/80 border-t border-border/40">
+                {item.answer}
+              </div>
+            </m.div>
           </div>
         );
       })}
     </div>
+    </MotionProvider>
   );
 }

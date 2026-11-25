@@ -1,15 +1,16 @@
 import { ContactIntakeForm } from "@/components/forms/contact-intake-form";
+import { LazyCalendarEmbed } from "@/components/contact/lazy-calendar-embed";
 import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
 import { SectionIllustration } from "@/components/ui";
 import { companyProfile } from "@/data/redesign";
 import { generateBreadcrumbSchema, generateFAQSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
-import { HelpCircle, MapPin, PhoneCall, ShieldCheck, Zap } from "lucide-react";
+import { HelpCircle, PhoneCall, ShieldCheck, Clock } from "lucide-react";
 import { ObfuscatedEmail } from "@/components/layout/obfuscated-email";
 
 export const metadata = generatePageMetadata("/contact", {
-  title: "Book a Strategy Call",
+  title: "Book a Custom CRM Architecture Call | DigitalX Solutions",
   description:
-    "Share your growth goals with DigitalX Solutions. We respond with a practical engineering plan for AI voice agents, CRM automation, and revenue operations.",
+    "Schedule a technical consultation for custom CRM development, AI voice receptionists, or workflow automation. Fixed milestone roadmaps within 24 hours.",
 });
 
 const consultationFaqs = [
@@ -31,7 +32,7 @@ const consultationFaqs = [
   {
     question: "How quickly do you reply to contact inquiries?",
     answer:
-      "Our solutions engineering team in Casula NSW reviews every submission and responds within one business day with practical scheduling options or initial architectural feedback.",
+      "Our solutions engineering team serving Australian and US businesses reviews every submission and responds within one business day with practical scheduling options or initial architectural feedback.",
   },
   {
     question: "Do you work with businesses outside Australia and the United States?",
@@ -107,20 +108,18 @@ export default function ContactPage() {
 
       <section className="container-shell mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="flex flex-col gap-8">
-          <div className="rounded-3xl border border-border bg-white overflow-hidden shadow-sm" style={{ minHeight: '650px' }}>
-            <iframe
-              src="https://calendar.app.google/3uYnBF2GrdyswwV59"
-              style={{ border: 0, width: '100%', height: '100%', minHeight: '650px' }}
-              frameBorder="0"
-              title="Book a Strategy Call"
-              loading="lazy"
-            ></iframe>
-          </div>
-
           <div>
-            <h2 className="text-2xl font-semibold mb-6">Or send us a project inquiry</h2>
+            <h2 className="text-2xl font-semibold mb-4">Quick Strategy Request</h2>
+            <p className="text-sm text-foreground/75 mb-5">
+              Share your name, email or phone, and what you need below—or message us directly via WhatsApp or request an instant callback.
+            </p>
             <ContactIntakeForm />
           </div>
+
+          <LazyCalendarEmbed
+            src="https://calendar.app.google/3uYnBF2GrdyswwV59"
+            title="Book a Strategy Call"
+          />
         </div>
 
         <aside className="rounded-3xl border border-border bg-white p-6 md:p-8 h-fit space-y-6">
@@ -132,7 +131,7 @@ export default function ContactPage() {
                 <span>Direct consultation with an experienced solutions engineer, never a script-reading salesperson.</span>
               </li>
               <li className="flex items-start gap-2">
-                <Zap className="h-4 w-4 mt-1 text-brand shrink-0" />
+                <Clock className="h-4 w-4 mt-1 text-brand shrink-0" />
                 <span>Written response within one business day with phased implementation options.</span>
               </li>
               <li className="flex items-start gap-2">
@@ -143,9 +142,9 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-2xl border border-border bg-surface-50 p-4">
-            <p className="text-xs font-medium text-foreground/60">Casula Office &amp; Coverage</p>
+            <p className="text-xs font-medium text-foreground/60">Service Area &amp; Coverage</p>
             <p className="mt-2 text-sm text-foreground/72 leading-relaxed">
-              16 Boldrewood Ave, Casula NSW 2170, Australia. Onshore Australian engineering team serving businesses across Sydney, Melbourne, Brisbane, and remote delivery nationwide in the US.
+              Serving Australian and US businesses across Sydney, Melbourne, Brisbane, Perth, New York, Los Angeles, and nationwide remotely.
             </p>
           </div>
 

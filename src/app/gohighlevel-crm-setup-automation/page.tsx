@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Database, Clock, Layers, MessageSquare, PhoneCall, Workflow, Users, Settings } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Database, Clock, Layers, MessageSquare, PhoneCall, Workflow, Users, Settings } from "lucide-react";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,

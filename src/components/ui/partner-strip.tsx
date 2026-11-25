@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ShieldCheck, Award, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ExternalLink } from "lucide-react";
 import factsData from "@/data/facts";
 import { cn } from "@/lib/utils";
 
@@ -8,7 +8,6 @@ interface CertifiedPartnerStripProps {
   className?: string;
 }
 
-// Crisp, dedicated partner badge icons that never get blocked by ad blockers
 function GhlPartnerLogo() {
   return (
     <div className="flex items-center gap-2">
@@ -57,28 +56,33 @@ function HubSpotPartnerLogo() {
   );
 }
 
+/**
+ * Displays supported platform integrations. Certification badges or proof links are
+ * strictly conditional on a real `proofUrl` existing in `data/facts.json`.
+ */
 export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps) {
-  const partners = [
+  const proofLookup = new Map(
+    factsData.partnerCertifications.map((c) => [c.platform.toLowerCase(), c.proofUrl])
+  );
+
+  const platforms = [
     {
       platform: "GoHighLevel",
-      badge: "Integrates with",
       logo: <GhlPartnerLogo />,
       specialty: "Snapshots, AI voice agents & two-way SMS",
-      tierColor: "text-blue-700 bg-blue-50/80 border-blue-200/80",
+      proofUrl: proofLookup.get("gohighlevel") || "",
     },
     {
       platform: "n8n",
-      badge: "Integrates with",
       logo: <N8nPartnerLogo />,
       specialty: "Custom webhook & API data orchestration",
-      tierColor: "text-rose-700 bg-rose-50/80 border-rose-200/80",
+      proofUrl: proofLookup.get("n8n workflow automation") || "",
     },
     {
       platform: "HubSpot",
-      badge: "Integrates with",
       logo: <HubSpotPartnerLogo />,
       specialty: "Pipeline synchronization & revenue operations",
-      tierColor: "text-orange-700 bg-orange-50/80 border-orange-200/80",
+      proofUrl: proofLookup.get("hubspot") || "",
     },
   ];
 
@@ -86,33 +90,47 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
     <div className={cn("w-full py-6 md:py-8", className)}>
       <div className="flex flex-col items-center text-center">
         <p className="mb-6 text-xs font-medium text-foreground/75">
-          Platform Integrations &amp; Workflows
+          Supported CRM &amp; Workflow Platforms
         </p>
 
         <div className="grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
-          {partners.map((partner) => (
-            <div
-              key={partner.platform}
-              className="flex flex-col items-center justify-between rounded-xl border border-border/80 bg-white p-6 shadow-xs"
-            >
-              <div className="mb-4">{partner.logo}</div>
+          {platforms.map((item) => {
+            const hasProof = Boolean(item.proofUrl && item.proofUrl.startsWith("http"));
+            return (
+              <div
+                key={item.platform}
+                className="flex flex-col items-center justify-between rounded-xl border border-border/80 bg-white p-6 shadow-xs"
+              >
+                <div className="mb-4">{item.logo}</div>
 
-              <div className="text-center">
-                <p className="text-xs font-semibold text-foreground/80">
-                  {partner.badge} {partner.platform}
-                </p>
+                <div className="text-center">
+                  <p className="text-xs font-semibold text-foreground/80">
+                    Integrates with {item.platform}
+                  </p>
+                  <p className="mt-2 text-xs text-foreground/75 leading-relaxed">
+                    {item.specialty}
+                  </p>
+                </div>
 
-                <p className="mt-2 text-xs text-foreground/75 leading-relaxed">
-                  {partner.specialty}
-                </p>
+                {hasProof ? (
+                  <a
+                    href={item.proofUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:underline"
+                  >
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+                    <span>View Credential</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                ) : (
+                  <span className="mt-4 text-[11px] font-medium text-foreground/60">
+                    Client-owned account setup
+                  </span>
+                )}
               </div>
-
-              <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-emerald-700">
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-                <span>Production-tested architecture</span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
@@ -127,7 +145,7 @@ export function PlatformIntegrationsStrip() {
       <p className="mb-6 text-center text-xs font-medium text-foreground/75">
         Enterprise systems and platforms we integrate with
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-80 hover:opacity-100 transition-opacity">
+      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
         {integratedPlatforms.map((platform) => (
           <div
             key={platform.name}
@@ -145,7 +163,7 @@ export function PlatformIntegrationsStrip() {
                 loading="lazy"
               />
             </div>
-            <span className="text-[11px] text-foreground/50 group-hover:text-foreground/75 transition-colors">
+            <span className="text-[11px] text-foreground/75 transition-colors">
               {platform.relationship.split("/")[0].trim()}
             </span>
           </div>

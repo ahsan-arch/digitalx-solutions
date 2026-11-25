@@ -12,9 +12,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/case-studies", {
-  title: "AI Voice & CRM Automation Case Studies",
+  title: "Client Case Studies & CRM Deployments | DigitalX Solutions",
   description:
-    "Explore real client case studies and revenue outcomes across AI voice receptionists, GoHighLevel setups, and workflow automations in the US and Australia.",
+    "Explore production case studies: Custom CRM architectures, 24/7 AI voice receptionists, and automated dispatch workflows deployed across live businesses.",
 });
 
 export default function CaseStudiesIndexPage() {
@@ -93,7 +93,7 @@ export default function CaseStudiesIndexPage() {
               Our Measurement Framework
             </span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-4xl">
-              How we calculate and verify automation ROI
+              How we model and measure automation outcomes
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-foreground/75 md:text-base">
               Every client engagement begins with a telemetry audit before any workflow or telephony

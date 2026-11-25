@@ -27,9 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${siteConfig.domain}/case-studies`, changeFrequency: "monthly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/services/web-design-and-development`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/services/meta-ads`, changeFrequency: "monthly" as const, priority: 0.7 },
-        { url: `${siteConfig.domain}/pricing`, changeFrequency: "monthly" as const, priority: 0.8 },
+        { url: `${siteConfig.domain}/pricing`, changeFrequency: "monthly" as const, priority: 0.9 },
         { url: `${siteConfig.domain}/process`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/about`, changeFrequency: "monthly" as const, priority: 0.7 },
+        { url: `${siteConfig.domain}/facts`, changeFrequency: "monthly" as const, priority: 0.7 },
         { url: `${siteConfig.domain}/about/team/jazib-shahid`, changeFrequency: "monthly" as const, priority: 0.75 },
         { url: `${siteConfig.domain}/products/digitalx-crm`, changeFrequency: "monthly" as const, priority: 0.8 },
         { url: `${siteConfig.domain}/contact`, changeFrequency: "monthly" as const, priority: 0.7 },
@@ -60,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${siteConfig.domain}/development/${s.slug}`,
         lastModified: releaseDate,
         changeFrequency: "monthly",
-        priority: 0.85,
+        priority: s.slug === "custom-crm-development" ? 0.9 : 0.85,
     }));
 
     const integrationEntries: MetadataRoute.Sitemap = integrations.map((i) => ({

@@ -1,50 +1,40 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "comment": "DigitalX Solutions Master Facts File. Operational details, platform integrations, and client deployment architectures.",
+  "comment": "DigitalX Solutions Master Facts File. Operational details, platform integrations, and illustrative/client project architectures. Do not list unverified certifications without a proofUrl or hard numeric claims without a source.",
   "company": {
     "name": "DigitalX Solutions",
     "legalName": "DigitalX Solutions",
     "abn": "",
-    "tagline": "Web development, AI automation, and performance marketing for service businesses in the USA and Australia",
-    "oneLineDescription": "DigitalX Solutions is an AI automation agency (Casula NSW, Australia) serving businesses in Australia and the US with AI voice agents, missed-call text-back, GoHighLevel, n8n, and HubSpot workflow systems.",
+    "tagline": "Custom CRMs and AI automation engineered for Australian and US service businesses.",
+    "oneLineDescription": "DigitalX Solutions is a custom CRM and AI automation consultancy serving Australian and US businesses with custom Next.js portals, AI voice agents, missed-call text-back, GoHighLevel, n8n, and HubSpot workflow systems.",
     "website": "https://digitalx-solutions.com",
     "primaryEmail": "info@digitalx-solutions.com",
     "phoneAU": "+61 451 413 786",
     "phoneUS": "+61 451 413 786",
     "whatsappUrl": "https://wa.me/61451413786",
     "yearFounded": 2020,
-    "headquarters": {
-      "streetAddress": "16 Boldrewood Ave",
-      "addressLocality": "Casula",
-      "addressRegion": "NSW",
-      "postalCode": "2170",
-      "addressCountry": "AU",
-      "geoCoordinates": {
-        "latitude": -33.9518,
-        "longitude": 150.9044
-      }
-    },
-    "socialLinks": {
-      "linkedin": "https://www.linkedin.com/company/digitalx-solutions-aus",
-      "instagram": "https://www.instagram.com/digitalx_solutions",
-      "facebook": "https://www.facebook.com/people/Digitalx-solutions/61588252343955",
-      "github": "https://github.com/ahsan-arch"
-    }
+    "serviceAreaSummary": "Serving Australian and US businesses"
+  },
+  "socialLinks": {
+    "linkedin": "https://www.linkedin.com/company/digitalx-solutions-aus",
+    "instagram": "https://www.instagram.com/digitalx_solutions",
+    "facebook": "https://www.facebook.com/people/Digitalx-solutions/61588252343955",
+    "github": "https://github.com/ahsan-arch"
   },
   "leadership": {
     "founder": {
       "fullName": "Jazib Shahid",
       "preferredPublicName": "Jazib Shahid",
-      "jobTitle": "Founder & CEO",
-      "bio": "Specializes in end-to-end AI voice receptionists, GoHighLevel CRM architectures, self-hosted n8n workflow orchestration, and Twilio/SIP telephony integrations for high-volume service operators across Australia and the United States. Leads system architecture, fast and natural conversational tuning, and operational guardrails across all client deployments.",
+      "jobTitle": "Founder & Lead Solutions Architect",
+      "bio": "Full-stack automation and CRM architect specializing in custom Next.js and PostgreSQL portals, self-hosted n8n orchestration, GoHighLevel CRM systems, and low-latency AI voice telephony. Jazib leads system architecture and delivery for businesses across Australia and the United States.",
       "linkedinUrl": "",
-      "role": "Founder & CEO"
+      "role": "Founder & Lead Solutions Architect"
     },
     "technicalLead": {
       "fullName": "Ahsan Masood",
       "preferredPublicName": "Ahsan Masood",
       "jobTitle": "Senior CRM & Telephony Engineer",
-      "bio": "Specializes in GoHighLevel multi-location snapshot engineering, bi-directional webhook synchronization, carrier compliance (A2P 10DLC and Australian ACMA SMS standards), and automated lead-routing logic. Ensures clean data hygiene, CRM custom field mapping, and zero lead leakage across multi-step agency and contractor accounts.",
+      "bio": "Specializes in GoHighLevel multi-location snapshot engineering, bi-directional webhook synchronization, carrier compliance (A2P 10DLC and Australian ACMA SMS standards), and automated lead-routing logic.",
       "linkedinUrl": "",
       "role": "Senior CRM & Telephony Engineer"
     },
@@ -53,32 +43,42 @@
   "partnerCertifications": [
     {
       "platform": "GoHighLevel",
-      "credential": "We build on GoHighLevel",
-      "role": "Systems Integrator",
-      "status": "Systems Integrator",
-      "tier": "Production-Tested Architecture",
-      "deploymentScope": "Multi-location Snapshots, sub-account architectures, custom webhook actions, LC Phone carrier routing, and Conversation AI training.",
+      "credential": "Implementation & CRM Architecture",
+      "role": "Systems Integration",
+      "status": "Supported Platform",
+      "tier": "Core Stack",
+      "deploymentScope": "End-to-end CRM setups, custom snapshots, two-way SMS/telephony pipelines, and API extensions for multi-location service businesses.",
       "deliveryStandard": "Documented snapshot configurations, custom webhook actions, and CRM workflows.",
       "proofUrl": ""
     },
     {
       "platform": "n8n Workflow Automation",
-      "credential": "Built with n8n",
-      "role": "Workflow Automation & API Orchestration",
-      "status": "Workflow Specialist",
-      "tier": "Production-Tested Architecture",
-      "deploymentScope": "Self-hosted Docker/VPS instances, queue-mode worker scaling, multi-branch webhook pipelines, and secure PostgreSQL/REST API synchronization.",
+      "credential": "Workflow Orchestration & APIs",
+      "role": "Workflow Automation & API Integration",
+      "status": "Supported Platform",
+      "tier": "Core Stack",
+      "deploymentScope": "Self-hosted and cloud webhook orchestration, legacy database migrations, and API integrations without per-task SaaS markups.",
       "deliveryStandard": "Documented execution logs with automated error notifications.",
       "proofUrl": ""
     },
     {
       "platform": "HubSpot",
-      "credential": "Integrates with HubSpot",
+      "credential": "CRM & Revenue Operations",
       "role": "CRM Integration & RevOps",
-      "status": "RevOps Integrator",
-      "tier": "Production-Tested Architecture",
-      "deploymentScope": "Bi-directional sync between custom web apps, GoHighLevel, and HubSpot CRM; deal stage automation; custom properties; and contact attribution pipelines.",
-      "deliveryStandard": "Fully documented REST API endpoints, OAuth 2.0 token handshakes, and field-level validation schemas.",
+      "status": "Supported Platform",
+      "tier": "Core Stack",
+      "deploymentScope": "Custom object modeling, bi-directional pipeline synchronization, and automated lifecycle reporting.",
+      "deliveryStandard": "Documented REST API endpoints, OAuth 2.0 token handshakes, and field-level validation schemas.",
+      "proofUrl": ""
+    },
+    {
+      "platform": "Modern Full-Stack Engineering",
+      "credential": "Next.js, PostgreSQL & AI Workflows",
+      "role": "Custom Web & Database Architecture",
+      "status": "Core Engineering Stack",
+      "tier": "Core Stack",
+      "deploymentScope": "Custom web portals, role-based access control (RBAC), legacy data migration, and automated test pipelines.",
+      "deliveryStandard": "CI/CD pipelines, TypeScript type checking, and full source code repository handover.",
       "proofUrl": ""
     }
   ],
@@ -119,15 +119,25 @@
       "logo": "/logos/stripe.svg"
     }
   ],
+  "tcoModel": {
+    "source": "Illustrative estimate",
+    "legacy3YearTotal": "$77,000 – $123,000+",
+    "digitalx3YearTotal": "$12,100 – $24,000",
+    "savingsEstimate": "60%+",
+    "calculationInputs": "Modeled for a 20-user team over 36 months: Enterprise SaaS seats at $100–$150/user/mo ($72,000–$108,000) + $5,000–$15,000 implementation ($77,000–$123,000+) vs. DigitalX Hybrid Custom CRM build ($8,500–$15,000 fixed scope) + $100–$250/mo cloud/API hosting ($3,600–$9,000) = $12,100–$24,000 (60%+ illustrative savings)."
+  },
   "performanceMetrics": {
     "callCoverage": "24/7/365",
     "missedCallTextBackLatency": "under 60 seconds",
-    "aiVoiceLatency": "Fast, natural voice responses",
+    "aiVoiceLatency": "Under 800ms target pacing",
     "averageGoLiveTimeDays": "5-14 business days",
-    "typicalLeadLift": "30% - 50% recovered bookings (benchmark estimate, subject to client audits)"
+    "typicalLeadLift": "30% - 50% recovered bookings (Illustrative estimate, depends on call volume and follow-up speed)",
+    "source": "Illustrative estimate / engineering target"
   },
   "servicePricingRanges": {
     "currency": "USD",
+    "audExchangeRateNote": "AUD pricing approximated at 1 USD ≈ 1.54 AUD (illustrative rate; invoiced in USD or AUD at current bank rate)",
+    "audRateMultiplier": 1.54,
     "hourlyRate": "$75 - $125 / hr",
     "minimumProjectEngagement": "$1,200",
     "missedCallTextBackTier": {
@@ -170,7 +180,7 @@
     },
     "fullGhlCrmBuildout": {
       "name": "Turnkey CRM Implementation",
-      "setupFeeRange": "$2,400 - $4,800 one-time",
+      "setupFeeRange": "$2,200 - $4,800 one-time",
       "features": [
         "End-to-end GoHighLevel snapshot deployment",
         "10DLC compliant SMS workflows",
@@ -188,6 +198,10 @@
       "permissionToUseNameAndLogo": false,
       "permission": false,
       "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/dental-clinic.webp",
+      "source": "Internal deployment record (client anonymized)",
+      "calculationInputs": "Configured for 24/7 after-hours overflow coverage replacing manual voicemail callbacks.",
       "problem": "Front desk staff overwhelmed by calls during peak morning check-in rushes, leaving prospective patients on hold.",
       "whatWasBuilt": "24/7 AI voice receptionist trained on dental service menu, hours, emergency triage, and direct PMS calendar synchronization.",
       "toolsUsed": [
@@ -196,7 +210,7 @@
         "GoHighLevel",
         "Google Calendar"
       ],
-      "measurableResult": "Deployed 24/7 AI voice receptionist integrated with practice calendar, capturing after-hours patient inquiries with zero hold times.",
+      "measurableResult": "Deployed 24/7 AI voice receptionist integrated with practice calendar to answer after-hours patient inquiries without hold queues.",
       "status": "Case study"
     },
     {
@@ -207,6 +221,10 @@
       "permissionToUseNameAndLogo": false,
       "permission": false,
       "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/plumbing-contractor.webp",
+      "source": "Internal deployment record (client anonymized)",
+      "calculationInputs": "Missed-call SMS trigger configured for under-60-second carrier dispatch on unanswered inbound rings.",
       "problem": "Field technicians on jobsites unable to answer urgent inbound calls, causing after-hours emergency jobs to drop to competitors.",
       "whatWasBuilt": "Missed-call text-back within 60 seconds paired with 24/7 AI voice agent triaging emergency repairs and syncing directly to dispatch software.",
       "toolsUsed": [
@@ -215,7 +233,7 @@
         "Twilio",
         "GoHighLevel"
       ],
-      "measurableResult": "Deployed GHL automation and instant AI answering for a trade contractor, recovering missed leads within 60 seconds.",
+      "measurableResult": "Deployed GHL automation and instant AI answering for a trade contractor, engaging missed callers via SMS within 60 seconds.",
       "status": "Case study"
     },
     {
@@ -226,6 +244,10 @@
       "permissionToUseNameAndLogo": false,
       "permission": false,
       "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/advisory-practice.webp",
+      "source": "Internal deployment record (client anonymized)",
+      "calculationInputs": "Multi-step web intake and qualification rules replacing manual phone discovery calls.",
       "problem": "Billable advisory hours consumed by manual client intake, repeated phone qualification, and disconnected spreadsheets.",
       "whatWasBuilt": "Conversational client intake workflow with automated calendar scheduling and GoHighLevel CRM opportunity pipeline tracking.",
       "toolsUsed": [
@@ -233,8 +255,90 @@
         "HubSpot",
         "n8n Workflow Automation"
       ],
-      "measurableResult": "Automated multi-step qualification and CRM pipeline intake, eliminating manual phone triage for advisory staff.",
+      "measurableResult": "Automated multi-step qualification and CRM pipeline intake to reduce manual phone triage for advisory staff.",
       "status": "Case study"
+    },
+    {
+      "id": "hybrid-field-service-crm",
+      "client": "Illustrative CRM Scenario — Trade & Field Services",
+      "industry": "Multi-Location Trade & Field Services",
+      "isRealClient": false,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
+      "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/hybrid-field-service-crm.webp",
+      "source": "Illustrative estimate",
+      "calculationInputs": "Illustrative model: 22 staff seats × $120/mo per-seat SaaS CRM ($2,640/mo × 12 = $31,680/yr modeled seat cost) replaced by a Hybrid Next.js/PostgreSQL CRM; 42,400 modeled legacy contact/CSV rows; ~18 hrs/wk modeled admin entry across 22 team members (~50 min/wk each).",
+      "problem": "A 22-person field service operator paying ~$2,640/mo in recurring SaaS seat licenses while managing customer records across disconnected spreadsheets and dispatch tools.",
+      "whatWasBuilt": "Hybrid Custom CRM architecture on Next.js 15 and PostgreSQL with Role-Based Access Control (RBAC), E.164 phone deduplication, self-hosted n8n workflows, and GoHighLevel API & Twilio SIP call recording sync.",
+      "toolsUsed": [
+        "Next.js 15",
+        "PostgreSQL",
+        "GoHighLevel",
+        "n8n Workflow Automation",
+        "Twilio"
+      ],
+      "measurableResult": "Illustrative estimate: Up to $31,680/yr SaaS seat fees eliminated, 42,400 modeled records normalized, and ~18 hrs/wk admin entry reduced.",
+      "beforeStack": [
+        "~$2,640/mo Per-Seat CRM (22 users)",
+        "Disconnected Dispatch Sheets",
+        "Manual Call & Quote Logging",
+        "Zero Client Self-Service Portal"
+      ],
+      "afterStack": [
+        "Next.js 15 Operator & Client Portal",
+        "PostgreSQL + E.164 Deduplication",
+        "Bi-Directional GHL & Twilio Sync",
+        "$0 Recurring Per-Seat Fees"
+      ],
+      "roiStats": [
+        { "label": "Modeled Seat Costs Saved", "value": "$31,680/yr" },
+        { "label": "Modeled Records Normalized", "value": "42,400" },
+        { "label": "Est. Hours Saved / Week", "value": "18+ hrs" }
+      ],
+      "status": "Illustrative architecture"
+    },
+    {
+      "id": "healthcare-patient-portal-crm",
+      "client": "Illustrative CRM Scenario — Allied Health Group",
+      "industry": "Multi-Clinic Allied Health Group",
+      "isRealClient": false,
+      "permissionToUseNameAndLogo": false,
+      "permission": false,
+      "logoFile": null,
+      "mediaPath": "",
+      "expectedAssetPath": "public/images/case-studies/healthcare-patient-portal-crm.webp",
+      "source": "Illustrative estimate",
+      "calculationInputs": "Illustrative model: 4-clinic group paying $1,950/mo enterprise CRM tier × 12 ($23,400/yr modeled software cost); 28,000+ modeled patient profiles across 4 locations; ~14 hrs/wk modeled manual Cliniko re-entry.",
+      "problem": "A 4-clinic allied health operator locked into $1,950/mo enterprise CRM tiers lacking practitioner-level vs. billing RBAC boundaries or clean Cliniko synchronization.",
+      "whatWasBuilt": "Proprietary PostgreSQL + Next.js clinician and patient intake portal synced bi-directionally with Cliniko, automated SMS appointment reminders, n8n referral pipelines, and audit-logged RBAC permissions.",
+      "toolsUsed": [
+        "Next.js 15",
+        "PostgreSQL",
+        "Cliniko",
+        "HubSpot",
+        "n8n Workflow Automation"
+      ],
+      "measurableResult": "Illustrative estimate: ~$23,400/yr modeled CRM overhead avoided, 28,000+ modeled patient profiles deduplicated, and ~14 reception hrs/wk saved.",
+      "beforeStack": [
+        "~$1,950/mo Enterprise CRM",
+        "Duplicate Patient Records",
+        "Manual Cliniko Data Re-Entry",
+        "Coarse Staff Access Controls"
+      ],
+      "afterStack": [
+        "Proprietary Next.js + PostgreSQL",
+        "Cliniko Two-Way Webhook Sync",
+        "Role-Based Access Control (RBAC)",
+        "100% Owned Infrastructure"
+      ],
+      "roiStats": [
+        { "label": "Modeled Licensing Saved", "value": "$23,400/yr" },
+        { "label": "Modeled Profiles Unified", "value": "28,000+" },
+        { "label": "Est. Reception Hrs / Wk", "value": "14+ hrs" }
+      ],
+      "status": "Illustrative architecture"
     }
   ],
   "testimonials": []

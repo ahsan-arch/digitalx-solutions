@@ -9,9 +9,9 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ['var(--font-inter)', "sans-serif"],
-      display: ['var(--font-roboto)', "sans-serif"],
-      mono: ['var(--font-jetbrains-mono)', "monospace"],
+      sans: ['var(--font-inter)', "system-ui", "sans-serif"],
+      display: ['var(--font-inter)', "system-ui", "sans-serif"],
+      mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
     },
     fontSize: {
       // Display (Fraunces)

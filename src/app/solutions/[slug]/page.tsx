@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CheckCircle2, Clock, MessageSquare, Phone, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, MessageSquare, Phone, ShieldCheck, Code } from "lucide-react";
 import { getSolutionBySlug, results, solutionLegacyAliases, solutions } from "@/data/redesign";
 import { industries } from "@/data/industries";
 import {
@@ -137,8 +137,8 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {solution.definition && (
         <section className="container-shell mt-8">
           <div className="rounded-2xl border border-brand/25 bg-brand/5 p-6 md:p-8">
-            <div className="flex items-center gap-2 text-xs font-semibold text-brand">
-              <Zap className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-xs font-semibold text-brand-deep">
+              <Code className="h-4 w-4" />
               <span>Technical Definition</span>
             </div>
             <h2 className="mt-2 font-display text-xl font-bold text-foreground md:text-2xl">
@@ -207,8 +207,8 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
               <div className="flex items-start gap-2">
                 <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" />
                 <div>
-                  <span className="font-semibold text-foreground">Registered Office: </span>
-                  <span>16 Boldrewood Ave, Casula NSW 2170, Australia</span>
+                  <span className="font-semibold text-foreground">Service Area: </span>
+                  <span>Serving Australian and US businesses</span>
                 </div>
               </div>
             </div>
@@ -277,7 +277,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         <section className="container-shell mt-14">
           <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-brand" />
+              <Code className="h-4 w-4 text-brand" />
               <span className="font-mono text-xs font-medium text-foreground/75">Engineering Architecture</span>
             </div>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Technical Specifications & Standards</h2>
@@ -430,6 +430,32 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                 </div>
               ))}
             </dl>
+          </div>
+        </section>
+      )}
+
+      {/* Cross-Link to Custom CRM Architecture when relevant */}
+      {(solution.slug === "crm-integration" || solution.slug === "gohighlevel-implementation") && (
+        <section className="container-shell mt-10">
+          <div className="rounded-2xl border border-brand/20 bg-brand/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="space-y-1">
+              <span className="font-mono text-xs font-semibold text-brand uppercase tracking-wider">Enterprise Scalability</span>
+              <h3 className="font-display text-lg font-bold text-foreground">Need a Bespoke Portal or 100% Data Sovereignty?</h3>
+              <p className="text-xs md:text-sm text-foreground/75 max-w-2xl">
+                If your business has outgrown standard SaaS configurations, explore our{" "}
+                <Link href="/development/custom-crm-development" className="font-semibold text-brand underline hover:text-brand-deep">
+                  custom CRM architecture
+                </Link>{" "}
+                and hybrid Next.js/PostgreSQL builds to eliminate recurring per-seat fees entirely.
+              </p>
+            </div>
+            <Link
+              href="/development/custom-crm-development"
+              className="inline-flex shrink-0 items-center justify-center rounded-xl bg-brand px-5 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-brand-deep transition"
+            >
+              Explore Custom CRM Builds
+              <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+            </Link>
           </div>
         </section>
       )}

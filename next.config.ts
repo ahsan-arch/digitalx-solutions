@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["framer-motion", "lucide-react"],
+    inlineCss: true,
   },
   // msedge-tts + ws need runtime loading (not Webpack bundling) so the native
   // WebSocket frame-mask helper resolves correctly on serverless.

@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, PhoneCall, MessageSquare } from "lucide-react";
+import { PhoneCall, MessageSquare, Calendar } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { trackPhoneTap, trackStrategyCallClick, trackWhatsAppClick } from "@/lib/analytics";
+import { trackStrategyCallClick, trackWhatsAppClick } from "@/lib/analytics";
 import factsData from "@/data/facts";
 
+/**
+ * Sticky mobile conversion CTA bar matching global CTA hierarchy:
+ * Primary CTA ("Book a strategy call") + Secondary ("Hear demo" / WhatsApp).
+ */
 export function MobileBookCall() {
   const pathname = usePathname();
 
@@ -13,20 +17,29 @@ export function MobileBookCall() {
     return null;
   }
 
-  const phoneTel = factsData.company.phoneAU.replace(/\s+/g, "");
-
   return (
-    <div className="fixed inset-x-0 bottom-4 z-40 px-3 md:hidden">
-      <div className="mx-auto flex max-w-sm items-center gap-2">
-        <a
-          href={`tel:${phoneTel}`}
-          onClick={() => trackPhoneTap(factsData.company.phoneAU)}
-          aria-label={`Tap to call DigitalX Solutions at ${factsData.company.phoneAU}`}
-          className="flex h-12 min-w-[76px] items-center justify-center gap-1.5 rounded-full border border-border/80 bg-white px-3 text-xs font-semibold text-foreground shadow-lg active:scale-95 transition-transform"
+    <nav
+      aria-label="Mobile sticky action bar"
+      className="fixed inset-x-0 bottom-3 z-40 px-3 md:hidden"
+    >
+      <div className="mx-auto flex max-w-md items-center gap-2 rounded-2xl border border-border bg-white/95 p-1.5 shadow-lg backdrop-blur-md">
+        <Link
+          href="/contact"
+          onClick={() => trackStrategyCallClick("mobile_sticky_book")}
+          className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-brand px-3 text-xs font-semibold text-white shadow-xs active:scale-[0.98] transition-transform"
         >
-          <Phone className="h-4 w-4 text-emerald-600" />
-          <span>Call</span>
-        </a>
+          <Calendar className="h-3.5 w-3.5 shrink-0" />
+          <span className="truncate">Book a strategy call</span>
+        </Link>
+
+        <Link
+          href="/try-voice-agent"
+          onClick={() => trackStrategyCallClick("mobile_sticky_demo")}
+          className="flex h-11 items-center justify-center gap-1.5 rounded-xl border border-border bg-surface-50 px-3 text-xs font-semibold text-foreground active:scale-[0.98] transition-transform"
+        >
+          <PhoneCall className="h-3.5 w-3.5 text-brand shrink-0" />
+          <span>Hear demo</span>
+        </Link>
 
         <a
           href={factsData.company.whatsappUrl}
@@ -34,21 +47,11 @@ export function MobileBookCall() {
           rel="noopener noreferrer"
           onClick={() => trackWhatsAppClick("mobile_sticky")}
           aria-label="Chat with DigitalX Solutions on WhatsApp"
-          className="flex h-12 min-w-[96px] items-center justify-center gap-1.5 rounded-full border border-emerald-600/30 bg-emerald-50 px-3 text-xs font-semibold text-emerald-700 shadow-lg active:scale-95 transition-transform"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-600/30 bg-emerald-50 text-emerald-700 active:scale-[0.98] transition-transform"
         >
-          <MessageSquare className="h-4 w-4 text-emerald-600" />
-          <span>WhatsApp</span>
+          <MessageSquare className="h-4 w-4" />
         </a>
-
-        <Link
-          href="/try-voice-agent"
-          onClick={() => trackStrategyCallClick("mobile_sticky_demo")}
-          className="flex h-12 flex-1 items-center justify-center gap-1.5 rounded-full bg-brand px-3 text-xs font-semibold text-white shadow-lg shadow-brand/25 active:scale-95 transition-transform"
-        >
-          <PhoneCall className="h-4 w-4 shrink-0" />
-          <span className="truncate">Hear Live Call</span>
-        </Link>
       </div>
-    </div>
+    </nav>
   );
 }

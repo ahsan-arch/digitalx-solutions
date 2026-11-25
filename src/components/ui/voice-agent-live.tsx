@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Mic, Phone, PhoneOff, Send, Sparkles, Volume2 } from "lucide-react";
+import { Mic, Phone, PhoneOff, Send, Volume2 } from "lucide-react";
 import { useVoiceAgent } from "@/lib/voice-agent/use-voice-agent";
 import type { Voice } from "@/lib/voice-agent/voices";
 import { cn } from "@/lib/utils";
@@ -111,10 +111,7 @@ export function VoiceAgentLive({
           </div>
           <div>
             <p className="text-sm font-semibold text-foreground">
-              {agentName}{" "}
-              {voice.kind === "premium" && (
-                <Sparkles className="ml-1 inline h-3 w-3 text-brand" aria-hidden />
-              )}
+              {agentName}
             </p>
             <p className="text-xs text-foreground/55">
               AI Voice Agent for {businessName} - voice: {voice.label}

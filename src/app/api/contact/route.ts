@@ -17,9 +17,10 @@ export async function POST(req: Request) {
       );
     }
 
-    const { name, email, timeline, details, attachment } = result.data;
+    const { name, email, contact, phone, need, callbackRequested, timeline, details, attachment } = result.data;
+    const contactDisplay = email || contact || phone || "Not provided";
+    const resolvedEmail = email && email.includes("@") ? email : contact && contact.includes("@") ? contact : "";
 
-    // Create a transporter using Gmail
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -28,26 +29,29 @@ export async function POST(req: Request) {
       },
     });
 
-    // Prepare email content
-    const mailOptions: any = {
-      from: `"${name}" <${process.env.EMAIL_USER}>`, // Send AS the app email, but with user's name
-      replyTo: email, // Reply to the user's email
+    const mailOptions: Record<string, unknown> = {
+      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      ...(resolvedEmail ? { replyTo: resolvedEmail } : {}),
       to: "info@digitalx-solutions.com",
-      subject: `New Lead: ${name}, Digital X Solutions`,
+      subject: `New Lead: ${name}${need ? ` (${need})` : ""}, DigitalX Solutions`,
       text: `
         New Lead Submission
         -------------------
-        Name:     ${name}
-        Email:    ${email}
-        Timeline: ${timeline}
+        Name:               ${name}
+        Email / Phone:      ${contactDisplay}
+        Need / Focus:       ${need || "General"}
+        Callback Requested: ${callbackRequested ? "Yes" : "No"}
+        Timeline:           ${timeline}
         
-        Project Details:
+        Details:
         ${details}
       `,
       html: `
         <h2>New Lead Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email / Phone:</strong> ${contactDisplay}</p>
+        <p><strong>Need / Focus:</strong> ${need || "General"}</p>
+        <p><strong>Callback Requested:</strong> ${callbackRequested ? "Yes" : "No"}</p>
         <p><strong>Timeline:</strong> ${timeline}</p>
         <br/>
         <h3>Project Details:</h3>
@@ -55,7 +59,6 @@ export async function POST(req: Request) {
       `,
     };
 
-    // Add attachment if present
     if (attachment) {
       mailOptions.attachments = [
         {
@@ -67,27 +70,25 @@ export async function POST(req: Request) {
       ];
     }
 
-    // Send the email to admin
     await transporter.sendMail(mailOptions);
-    console.log("Email sent successfully to info@digitalx-solutions.com");
 
-    // Send thank you email to the customer
-    await transporter.sendMail({
-      from: `"Digital X Solutions" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: `We've received your request, ${name}!`,
-      html: `
-        <div style="font-family: sans-serif; color: #333;">
-          <h2>Thank you for reaching out, ${name}!</h2>
-          <p>We have received your project request and our team is already reviewing the details.</p>
-          <p>We will get back to you within <strong>24 hours</strong> to discuss the next steps.</p>
-          <br/>
-          <p>Best regards,</p>
-          <p><strong>The Digital X Solutions Team</strong></p>
-        </div>
-      `,
-    });
-    console.log("Thank you email sent to", email);
+    if (resolvedEmail) {
+      await transporter.sendMail({
+        from: `"DigitalX Solutions" <${process.env.EMAIL_USER}>`,
+        to: resolvedEmail,
+        subject: `We've received your request, ${name}!`,
+        html: `
+          <div style="font-family: sans-serif; color: #333;">
+            <h2>Thank you for reaching out, ${name}!</h2>
+            <p>We have received your request and our solutions engineering team is reviewing the details.</p>
+            <p>We will get back to you within <strong>one business day</strong>.</p>
+            <br/>
+            <p>Best regards,</p>
+            <p><strong>DigitalX Solutions</strong></p>
+          </div>
+        `,
+      });
+    }
 
     return NextResponse.json({ success: true, message: "Message sent successfully." });
   } catch (error) {

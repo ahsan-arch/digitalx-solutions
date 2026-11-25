@@ -56,7 +56,7 @@ export default function PrivacyPage() {
 
           <h2>Contact</h2>
           <p>
-            DigitalX Solutions, Casula NSW Australia. Email{" "}
+            DigitalX Solutions — Serving Australian and US businesses. Email{" "}
             <a href="mailto:info@digitalx-solutions.com">info@digitalx-solutions.com</a>.
           </p>
         </div>

@@ -17,21 +17,12 @@ export const metadata: Metadata = generatePageMetadata("/au", {
 
 const auLocalBusiness = generateLocalBusinessSchema({
   pathname: "/au",
-  name: "DigitalX Solutions, Australia",
+  name: "DigitalX Solutions — Serving Australian and US Businesses",
   description:
-    "AI voice agents, Missed call text back, CRM automation, and growth dashboards for Australian local service businesses across Sydney, Melbourne, Brisbane, Perth, Adelaide.",
+    "AI voice agents, Missed call text back, CRM automation, and custom CRM development serving Australian and US businesses.",
   addressCountry: "AU",
-  addressLocality: "Casula",
-  addressRegion: "NSW",
-  geo: { latitude: -33.9519, longitude: 150.9054 },
   areaServed: [
     { type: "Country", name: "Australia" },
-    { type: "City", name: "Sydney" },
-    { type: "City", name: "Melbourne" },
-    { type: "City", name: "Brisbane" },
-    { type: "City", name: "Perth" },
-    { type: "City", name: "Adelaide" },
-    { type: "City", name: "Canberra" },
   ],
 });
 
@@ -84,7 +75,7 @@ export default function AuPage() {
               Automation services for Australian service businesses.
             </h1>
             <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-              Built in Casula, deployed across Sydney, Melbourne, Brisbane, and Perth. Deploying{" "}
+              Serving Australian and US businesses remotely across Sydney, Melbourne, Brisbane, and Perth. Deploying{" "}
               <Link href="/solutions/ai-voice-agents" className="font-semibold text-accent hover:underline">
                 Australian AI voice agents
               </Link>
@@ -172,15 +163,14 @@ export default function AuPage() {
       <section className="container-shell mt-16">
         <h2 className="font-display text-display-sm text-ink-primary">Cities we serve across Australia</h2>
         <p className="mt-3 max-w-2xl text-body text-ink-secondary">
-          Engineered in Casula, NSW, deployed for service businesses across every Australian capital. We work
-          remotely with on site visits scheduled when scope demands it.
+          Serving Australian and US businesses remotely across every Australian capital and regional hub.
         </p>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <article className="rounded-lg border border-line-subtle bg-surface-raised p-6">
-            <h3 className="font-display text-title-lg text-ink-primary">Automation agency Sydney</h3>
+            <h3 className="font-display text-title-lg text-ink-primary">Automation for Sydney businesses</h3>
             <p className="mt-2 text-body-sm text-ink-secondary">
-              Most of our AU client base is in Greater Sydney, from Parramatta tradies to North Shore clinics.
+              Serving Australian and US businesses including Greater Sydney tradies, dental clinics, and service operators.
               GoHighLevel, AI voice, and Missed call text back deployed across NSW based home services, healthcare,
               and professional services.
             </p>
@@ -244,12 +234,12 @@ export default function AuPage() {
         <div className="flex flex-col justify-between rounded-2xl border border-line-subtle bg-surface-raised p-6 md:p-8 sm:flex-row sm:items-center">
           <div>
             <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500 mr-2" />
-            <span className="font-mono text-xs font-medium text-accent">Sydney HQ &amp; Nationwide AU Delivery</span>
+            <span className="font-mono text-xs font-medium text-accent">Serving Australian and US Businesses</span>
             <h2 className="mt-2 font-display text-title-lg text-ink-primary">
               Ready to automate your Australian service business?
             </h2>
             <p className="mt-2 text-body-sm text-ink-secondary">
-              16 Boldrewood Ave, Casula NSW 2170 | Mon–Fri 8am–6pm AEDT
+              Serving Australian and US businesses | Mon–Fri 8am–6pm AEDT
             </p>
             <div className="mt-3 flex items-center gap-4 text-body-sm">
               <a href="tel:+61451413786" className="font-semibold text-accent hover:underline">

@@ -5,6 +5,7 @@ import {
   generateBreadcrumbSchema,
   generateFAQSchema,
   generatePageMetadata,
+  generateServicePageSchema,
   siteConfig,
 } from "@/lib/seo";
 
@@ -108,9 +109,17 @@ export default function WebDesignDevelopmentPage() {
     },
   ]);
 
+  const serviceSchema = generateServicePageSchema({
+    name: "Next.js Web Design & Development",
+    description:
+      "Fast, conversion-focused Next.js websites with SEO architecture and CRM booking integrations serving Australian and US businesses.",
+    url: `${siteConfig.domain}/services/web-design-and-development`,
+  });
+
   return (
     <main className="pb-20 pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }} />
 
       <section className="container-shell">

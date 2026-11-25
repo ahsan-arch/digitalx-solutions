@@ -31,8 +31,8 @@ export const developmentServices: DevelopmentService[] = [
     slug: "custom-crm-development",
     name: "Custom CRM Development & Architecture",
     primaryKeyword: "custom CRM development",
-    metaTitle: "Custom CRM Development Agency | DigitalX",
-    metaDescription: "Bespoke CRM development and systems integration. Build resilient data pipelines on top of GoHighLevel and HubSpot APIs without starting from scratch.",
+    metaTitle: "Custom CRM Development & Architecture | DigitalX Solutions",
+    metaDescription: "Bespoke custom CRM development & hybrid software engineering. Build Next.js and PostgreSQL portals on GoHighLevel & HubSpot with zero per-seat fees.",
     tagline: "High-performance customer data architecture built for your exact operational model",
     summary: "Off-the-shelf software packages force your team to adapt your operations to their rigid constraints, while building a CRM completely from scratch burns hundreds of thousands of dollars in technical debt. DigitalX Solutions delivers a high-leverage hybrid model: custom CRM development built on top of battle-tested enterprise frameworks (like GoHighLevel and HubSpot APIs). We engineer bespoke client portals, automated pipeline stage triggers, customized database schemas, and bi-directional telephony synchronization that mirrors your company's actual revenue operations.",
     problemSolved: "Outgrowing generic SaaS tools without taking on the immense cost, maintenance, and compliance overhead of building a proprietary CRM from the ground up.",
@@ -72,16 +72,24 @@ export const developmentServices: DevelopmentService[] = [
     ],
     faqs: [
       {
+        question: "What is a hybrid custom CRM?",
+        answer: "A hybrid custom CRM pairs a bespoke, high-performance web interface (built with Next.js and PostgreSQL) with battle-tested enterprise backend APIs like GoHighLevel or HubSpot. This architecture delivers custom data schemas, role-based access control, and 100% IP ownership while eliminating per-seat SaaS licensing taxes and avoiding the high risk of building a CRM entirely from scratch."
+      },
+      {
+        question: "How much does custom CRM development cost?",
+        answer: "Custom CRM development at DigitalX Solutions starts at $2,200 for turnkey API setup and webhook integration, $8,500 for a production hybrid custom CRM with bespoke client portals and role-based permissions, and $15,000+ for proprietary multi-tenant white-label platforms. Every project is scoped with fixed milestones and zero recurring seat fees."
+      },
+      {
+        question: "How long does it take to build a custom CRM?",
+        answer: "A production-grade hybrid custom CRM typically ships in 3 to 6 weeks. Simple API integrations and workflow configurations deploy in 2 to 3 weeks, while complex proprietary or multi-tenant white-label architectures with custom billing and multi-region telephony take 6 to 10 weeks from architectural discovery to production launch."
+      },
+      {
         question: "Why should we build a hybrid CRM rather than using Salesforce or Zoho?",
         answer: "Salesforce and Zoho require massive implementation fees, continuous consultant retainers, and slow, clunky interfaces. Our hybrid approach pairs the speed of modern Next.js interfaces with the cost-efficiency of modern API backends, saving 60% or more in total cost of ownership."
       },
       {
         question: "Can our existing team manage the CRM without writing code?",
         answer: "Yes. We build intuitive admin dashboards and link standard operational controls into visual workflow builders (like GoHighLevel or n8n) so non-technical team members can adjust copy, templates, and stages anytime."
-      },
-      {
-        question: "How long does a custom CRM development project take to ship?",
-        answer: "Standard production deployments ship within 3 to 6 weeks, structured across phased sprints with early staging access for user acceptance testing."
       }
     ],
     relatedSolutions: [
@@ -235,7 +243,7 @@ export const developmentServices: DevelopmentService[] = [
     metaTitle: "White-Label CRM Platform Setup | DigitalX",
     metaDescription: "Deploy a branded white-label CRM platform. Automate agency sub-account onboarding, automated Stripe usage rebilling, snapshots, and customer support.",
     tagline: "Turn your service expertise into a scalable, high-margin monthly SaaS revenue engine",
-    summary: "Marketing agencies, industry consultants, and enterprise franchisors can unlock predictable recurring revenue by providing their clients with a dedicated, custom-branded CRM platform. DigitalX Solutions architects and deploys turnkey white-label CRM ecosystems powered by GoHighLevel SaaS Pro and custom Next.js wrappers. We set up automated client provisioning, custom domain SSL routing, automated Stripe subscription billing, industry-specific master snapshots, and branded client onboarding portals.",
+    summary: "Marketing agencies, industry consultants, and enterprise franchisors can unlock predictable recurring revenue by providing their clients with a dedicated, custom-branded CRM platform. DigitalX Solutions architects and deploys turnkey white-label CRM ecosystems powered by GoHighLevel SaaS Pro and custom Next.js wrappers. For businesses requiring proprietary data sovereignty or custom database modeling, explore our bespoke hybrid custom CRM engineering. We set up automated client provisioning, custom domain SSL routing, automated Stripe subscription billing, industry-specific master snapshots, and branded client onboarding portals.",
     problemSolved: "Agencies stuck on the client churn treadmill that want to build recurring monthly software revenue (SaaS) without hiring a 10-person software development team.",
     architecturalComponents: ["GoHighLevel SaaS Pro Engine", "Custom Domain CNAME DNS", "Stripe Billing Connect", "Automated Snapshot Provisioning"],
     deliverables: [

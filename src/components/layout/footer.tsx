@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container-shell">
         <div className="grid gap-10 lg:grid-cols-[1.6fr_2fr]">
           <div>
-            <Link href="/" className="text-2xl font-semibold tracking-tight text-foreground" aria-label="DigitalX Solutions Homepage">
+            <Link href="/" className="text-2xl font-semibold tracking-tight text-foreground">
               {companyProfile.name}
             </Link>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/80">{companyProfile.tagline}</p>
@@ -74,7 +74,7 @@ export function Footer() {
           <p>
             (c) {currentYear} {companyProfile.name}. All rights reserved.
           </p>
-          <p>Casula NSW, Australia | Serving businesses across Australia and the United States.</p>
+          <p>Serving Australian and US businesses.</p>
         </div>
       </div>
     </footer>

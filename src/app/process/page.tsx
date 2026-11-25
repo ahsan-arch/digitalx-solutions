@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, ChevronRight, Cpu, Layers, ShieldCheck, Zap } from "lucide-react";
+import { CheckCircle2, ChevronRight, Cpu, Layers, ShieldCheck, Clock } from "lucide-react";
 import { processSteps } from "@/data/redesign";
 import { SectionIllustration } from "@/components/ui";
 import {
@@ -71,7 +71,7 @@ const technicalSafeguards = [
     title: "Fast, Natural Latency Pacing",
     description:
       "We optimize voice streaming using Deepgram Nova-2 speech-to-text, fast inference LLM models, and ElevenLabs conversational audio streaming over WebSockets. We engineer fast, natural conversational responses, eliminating awkward pauses.",
-    icon: Zap,
+    icon: Clock,
   },
   {
     title: "10DLC Carrier Verification",

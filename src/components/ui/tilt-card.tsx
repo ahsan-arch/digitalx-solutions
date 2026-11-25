@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { SpotlightCard } from "@/components/motion/spotlight-card";
 
 type TiltCardProps = {
   href: string;
@@ -8,16 +9,18 @@ type TiltCardProps = {
 };
 
 /**
- * Card link with a clean surface highlight transition.
- * Replaced bouncy translateY shifts with deliberate border and background transitions.
+ * Elevated interactive card link with subtle hover lift and spotlight sheen.
+ * Hover lift is disabled on touch devices via @media(hover:hover).
  */
 export function TiltCard({ href, className, children }: TiltCardProps) {
   return (
-    <Link
-      href={href}
-      className={`group block transition-colors duration-150 ease-out ${className ?? ""}`}
-    >
-      {children}
-    </Link>
+    <SpotlightCard className={`h-full rounded-2xl transition-all duration-200 ease-out [@media(hover:hover)]:hover:-translate-y-1 [@media(hover:hover)]:hover:shadow-md ${className ?? ""}`}>
+      <Link
+        href={href}
+        className="group block h-full"
+      >
+        {children}
+      </Link>
+    </SpotlightCard>
   );
 }

@@ -1,20 +1,26 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Check, HelpCircle, PhoneCall, ShieldCheck, Zap } from "lucide-react";
-import { SectionIllustration, MissedCallCalculator } from "@/components/ui";
+import { HelpCircle, PhoneCall, ShieldCheck } from "lucide-react";
+import { SectionIllustration, FAQAccordion } from "@/components/ui";
+
+const MissedCallCalculator = dynamic(
+  () => import("@/components/ui/missed-call-calculator").then((m) => m.MissedCallCalculator),
+  { loading: () => <div className="h-[420px] rounded-2xl border border-border bg-surface-50" /> }
+);
 import { PricingTracker } from "@/components/analytics/pricing-tracker";
+import { PricingTabs } from "@/components/pricing/pricing-tabs";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
   generatePageMetadata,
-  generatePricingSchema,
   siteConfig,
 } from "@/lib/seo";
 
 export const metadata: Metadata = generatePageMetadata("/pricing", {
-  title: "Transparent AI Automation Pricing",
+  title: "Custom CRM & AI Automation Pricing",
   description:
-    "Transparent pricing for AI voice receptionists, missed-call text-back, and GoHighLevel CRM workflows for businesses across the United States and Australia.",
+    "Fixed-scope custom CRM development tiers and AI automation retainers. 100% IP ownership, zero per-seat fees, and transparent carrier pass-through rates.",
 });
 
 const tiers = [
@@ -38,7 +44,7 @@ const tiers = [
     summary: "For solo operators ready to deploy an AI voice receptionist.",
     includes: [
       "AI voice agent (single number)",
-      "Missed call text back & recovery",
+      "Missed call text back & recovery (under 60s)",
       "GoHighLevel CRM setup & pipelines",
       "Booking calendar integration",
       "Monthly performance review",
@@ -80,9 +86,24 @@ const tiers = [
 
 const pricingFaqs = [
   {
+    question: "What is a hybrid custom CRM?",
+    answer:
+      "A hybrid custom CRM pairs a bespoke, high-performance web interface (built with Next.js and PostgreSQL) with battle-tested enterprise backend APIs like GoHighLevel or HubSpot. This architecture delivers custom data schemas, role-based access control, and 100% IP ownership while eliminating per-seat SaaS licensing taxes and avoiding the high risk of building a CRM entirely from scratch.",
+  },
+  {
+    question: "How much does custom CRM development cost?",
+    answer:
+      "Custom CRM development at DigitalX Solutions starts at $2,200 for turnkey API setup and webhook integration, $8,500 for a production hybrid custom CRM with bespoke client portals and role-based permissions, and $15,000+ for proprietary multi-tenant white-label platforms. Every project is scoped with fixed milestones and zero recurring seat fees.",
+  },
+  {
+    question: "How long does it take to build a custom CRM?",
+    answer:
+      "A production-grade hybrid custom CRM typically ships in 3 to 6 weeks. Simple API integrations and workflow configurations deploy in 2 to 3 weeks, while complex proprietary or multi-tenant white-label architectures with custom billing and multi-region telephony take 6 to 10 weeks from architectural discovery to production launch.",
+  },
+  {
     question: "How does DigitalX Solutions pricing work?",
     answer:
-      "We charge a transparent monthly retainer per package (Standalone Missed-Call Recovery from $450, Launch AI Voice from $1,200, Operate $2,800, Scale Custom, all prices in USD) plus a one-time setup fee of $1,500 to $4,500 depending on integrations and scope. There are no per-seat fees, no surprise overages, and no usage-based billing on AI minutes inside fair-use limits.",
+      "We offer two models: fixed-scope milestone pricing for Custom CRM builds (starting at $2,200), and transparent monthly retainers for AI Voice & Telephony operations (from $450 to $2,800/mo, all prices in USD). There are zero per-seat software fees and zero markup on raw carrier telephony minutes.",
   },
   {
     question: "Do you offer custom pricing for high-volume teams?",
@@ -92,7 +113,7 @@ const pricingFaqs = [
   {
     question: "Is there a minimum contract length?",
     answer:
-      "Operate and Scale packages have a 3-month minimum so we have enough runway to build, deploy, and optimize. After that, billing is month-to-month. Launch is fully month-to-month from day one.",
+      "Custom CRM builds are fixed-scope with milestone delivery and no recurring software contracts. AI Voice Operate and Scale packages have a 3-month onboarding minimum to build, test, and tune models before switching to month-to-month. Launch is month-to-month from day one.",
   },
   {
     question: "What is included in the setup fee?",
@@ -117,18 +138,122 @@ export default function PricingPage() {
     { name: "Pricing", url: `${siteConfig.domain}/pricing` },
   ]);
 
-  const pricingSchema = generatePricingSchema(
-    tiers.map((tier) => ({
-      name: `${tier.name} Package`,
-      description: tier.summary,
-      price: tier.price === "Custom" ? "Custom" : tier.price,
-      priceCurrency: "USD",
-      billingPeriod: "MONTH",
-      url: `${siteConfig.domain}/pricing#${tier.name.toLowerCase()}`,
-    })),
-  );
+  const pricingSchema = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "@id": `${siteConfig.domain}/pricing#catalog`,
+    name: "DigitalX Solutions Custom CRM & AI Automation Pricing",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        name: "CRM Setup & Integration",
+        price: "2200",
+        priceCurrency: "USD",
+        description: "GoHighLevel or HubSpot CRM setup, custom n8n webhook integrations, calendar/dispatch sync, and SOP handover.",
+        url: `${siteConfig.domain}/pricing#crm-setup`,
+      },
+      {
+        "@type": "Offer",
+        name: "Hybrid Custom CRM Build",
+        price: "8500",
+        priceCurrency: "USD",
+        description: "Bespoke Next.js/React portals, PostgreSQL/Supabase backend, RBAC, legacy migration, and telephony sync.",
+        url: `${siteConfig.domain}/pricing#hybrid-crm`,
+      },
+      {
+        "@type": "Offer",
+        name: "Proprietary / White-Label CRM",
+        price: "15000",
+        priceCurrency: "USD",
+        description: "Multi-tenant SaaS architecture, white-label branding, Stripe billing, executive analytics, and CI/CD pipelines.",
+        url: `${siteConfig.domain}/pricing#white-label-crm`,
+      },
+      ...tiers.map((tier) => ({
+        "@type": "Offer",
+        name: `${tier.name} Retainer`,
+        description: tier.summary,
+        price: tier.price.replace(/[^0-9]/g, "") || "1200",
+        priceCurrency: "USD",
+        billingDuration: "P1M",
+        url: `${siteConfig.domain}/pricing#${tier.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`,
+      })),
+    ],
+  };
 
   const faqSchema = generateFAQSchema(pricingFaqs);
+
+  const carrierTableNode = (
+    <div className="rounded-2xl border border-border bg-white p-6 md:p-10 shadow-xs">
+      <div className="flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
+          <PhoneCall className="h-5 w-5" />
+        </div>
+        <div>
+          <h3 className="font-display text-2xl font-bold text-foreground">
+            Carrier Pass-Through &amp; Telephony Unit Economics
+          </h3>
+          <p className="text-xs md:text-sm text-foreground/75">
+            We believe in total billing transparency. Here is exactly what carrier infrastructure costs.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 overflow-x-auto">
+        <table className="w-full text-left text-sm border-collapse">
+          <thead>
+            <tr className="border-b border-border bg-surface-50 text-xs font-semibold text-foreground">
+              <th scope="col" className="p-3.5">Component</th>
+              <th scope="col" className="p-3.5">Provider / Protocol</th>
+              <th scope="col" className="p-3.5">Direct Carrier Cost</th>
+              <th scope="col" className="p-3.5">DigitalX Markup</th>
+              <th scope="col" className="p-3.5">Typical Monthly Impact</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border text-foreground/80">
+            <tr className="hover:bg-surface-50/50">
+              <td className="p-3.5 font-medium text-foreground">Inbound Phone Number</td>
+              <td className="p-3.5 font-mono text-xs">Twilio Local DID</td>
+              <td className="p-3.5 font-mono text-xs">$1.15 &ndash; $2.50 / month</td>
+              <td className="p-3.5 font-semibold text-emerald-600">0% (Pass-through)</td>
+              <td className="p-3.5 font-mono text-xs">$2 / line</td>
+            </tr>
+            <tr className="hover:bg-surface-50/50">
+              <td className="p-3.5 font-medium text-foreground">AI Voice Inbound Minutes</td>
+              <td className="p-3.5 font-mono text-xs">Twilio SIP / AI Voice Infrastructure</td>
+              <td className="p-3.5 font-mono text-xs">~$0.07 &ndash; $0.11 / min</td>
+              <td className="p-3.5 font-semibold text-emerald-600">Included in Tier</td>
+              <td className="p-3.5 font-mono text-xs">Covered under fair-use</td>
+            </tr>
+            <tr className="hover:bg-surface-50/50">
+              <td className="p-3.5 font-medium text-foreground">Two-Way SMS Segments</td>
+              <td className="p-3.5 font-mono text-xs">Twilio / GoHighLevel LC Phone</td>
+              <td className="p-3.5 font-mono text-xs">$0.0079 &ndash; $0.012 / segment</td>
+              <td className="p-3.5 font-semibold text-emerald-600">0% (Pass-through)</td>
+              <td className="p-3.5 font-mono text-xs">$15 &ndash; $45 / mo (500-2,000 texts)</td>
+            </tr>
+            <tr className="hover:bg-surface-50/50">
+              <td className="p-3.5 font-medium text-foreground">10DLC Brand &amp; Campaign</td>
+              <td className="p-3.5 font-mono text-xs">The Campaign Registry (US)</td>
+              <td className="p-3.5 font-mono text-xs">$4 one-time + $1.50&ndash;$10/mo</td>
+              <td className="p-3.5 font-semibold text-emerald-600">0% (We file for you)</td>
+              <td className="p-3.5 font-mono text-xs">Direct registry fee</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p className="mt-4 text-xs text-foreground/65">
+        Unlike traditional call answering services that charge $1.75 to $3.50 per live receptionist minute with 3-minute minimums,
+        our AI systems answer immediately with zero queue times and flat monthly software support.
+      </p>
+    </div>
+  );
+
+  const calculatorNode = (
+    <div>
+      <MissedCallCalculator defaultBookingUrl="/contact" />
+    </div>
+  );
 
   return (
     <main className="pb-20 pt-12">
@@ -140,235 +265,119 @@ export default function PricingPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="text-xs font-medium text-brand">
-              Predictable Unit Economics
+            <p className="text-xs font-medium text-brand-deep">
+              Predictable unit economics and zero per-seat fees
             </p>
-            <h1 className="mt-3 font-display text-display-md leading-tight text-ink-primary md:text-display-lg">
-              Predictable monthly pricing. No agency retainers stacked on retainers.
+            <h1 className="mt-3 font-display text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+              Custom CRM Builds &amp; AI Automation Pricing
             </h1>
-            <p className="mt-4 max-w-2xl text-body-lg text-ink-secondary">
-              Pick the package that fits your stage. Every tier ships with the systems and reporting we use ourselves, with no upsell games and no &ldquo;ask for a quote&rdquo; on the basics.
+            <p className="mt-4 max-w-2xl text-base md:text-lg leading-relaxed text-foreground/75">
+              Pick the model that fits your operational stage. Fixed-scope milestones for custom Next.js CRM portals, or predictable monthly retainers for 24/7 AI voice receptionists with transparent carrier billing.
             </p>
           </div>
           <div className="relative">
             <SectionIllustration
               src="/illustrations/pricing.svg"
-              alt="Transparent pricing breakdown for AI voice receptionists, GoHighLevel setup, and n8n automations"
+              alt="Transparent pricing breakdown for custom CRM development, AI voice receptionists, and workflow automation"
               priority
             />
           </div>
         </div>
       </section>
 
-      {/* Tier Cards */}
-      <section className="container-shell mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {tiers.map((tier) => (
-          <article
-            key={tier.name}
-            className={`rounded-lg border p-6 md:p-8 ${tier.highlight
-              ? "border-accent bg-surface-raised shadow-md"
-              : "border-line-subtle bg-surface-raised"
-              }`}
-          >
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-display text-2xl text-ink-primary">{tier.name}</h2>
-              {tier.highlight && (
-                <span className="rounded-md bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent">
-                  Most picked
-                </span>
-              )}
-            </div>
-            <p className="mt-2 font-display text-display-sm tabular-nums text-ink-primary">{tier.price}</p>
-            <p className="mt-3 text-body-sm text-ink-secondary">{tier.summary}</p>
-
-            <ul className="mt-6 space-y-3 text-body-sm text-ink-secondary">
-              {tier.includes.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-secondary" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href="/contact"
-              className={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition ${tier.highlight
-                ? "bg-accent text-white hover:bg-accent-hover"
-                : "border border-ink-primary text-ink-primary hover:bg-ink-primary hover:text-ink-on-inverse"
-                }`}
-            >
-              {tier.cta}
-            </Link>
-          </article>
-        ))}
-      </section>
-
-      <p className="container-shell mt-5 text-center text-sm text-ink-tertiary">
-        All prices shown in USD. Australian clients can be invoiced in AUD with GST-compliant documentation &mdash; just ask.
-      </p>
-
-      {/* Interactive Revenue Leak Calculator */}
-      <section className="container-shell mt-16">
-        <MissedCallCalculator defaultBookingUrl="/contact" />
-      </section>
-
-      {/* Telephony Economics & Pass-Through Costs Breakdown */}
-      <section className="container-shell mt-16">
-        <div className="rounded-xl border border-line-subtle bg-surface-raised p-6 md:p-10">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-soft text-accent">
-              <PhoneCall className="h-5 w-5" />
-            </div>
-            <div>
-              <h2 className="font-display text-display-sm text-ink-primary">
-                Carrier Pass-Through &amp; Telephony Unit Economics
-              </h2>
-              <p className="text-body-sm text-ink-secondary">
-                We believe in total billing transparency. Here is exactly what carrier infrastructure costs.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-6 overflow-x-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="border-b border-line-subtle bg-surface-sunken text-xs font-medium text-ink-tertiary">
-                <tr>
-                  <th className="p-3">Component</th>
-                  <th className="p-3">Provider / Protocol</th>
-                  <th className="p-3">Direct Carrier Cost</th>
-                  <th className="p-3">DigitalX Markup</th>
-                  <th className="p-3">Typical Monthly Impact</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-line-subtle text-ink-secondary">
-                <tr>
-                  <td className="p-3 font-medium text-ink-primary">Inbound Phone Number</td>
-                  <td className="p-3">Twilio Local DID</td>
-                  <td className="p-3">$1.15 &ndash; $2.50 / month</td>
-                  <td className="p-3 font-semibold text-emerald-600">0% (Pass-through)</td>
-                  <td className="p-3">$2 / line</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium text-ink-primary">AI Voice Inbound Minutes</td>
-                  <td className="p-3">Twilio SIP / AI Voice Infrastructure</td>
-                  <td className="p-3">~$0.07 &ndash; $0.11 / min</td>
-                  <td className="p-3 font-semibold text-emerald-600">Included in Tier</td>
-                  <td className="p-3">Covered under fair-use</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium text-ink-primary">Two-Way SMS Segments</td>
-                  <td className="p-3">Twilio / GoHighLevel LC Phone</td>
-                  <td className="p-3">$0.0079 &ndash; $0.012 / segment</td>
-                  <td className="p-3 font-semibold text-emerald-600">0% (Pass-through)</td>
-                  <td className="p-3">$15 &ndash; $45 / mo (500-2,000 texts)</td>
-                </tr>
-                <tr>
-                  <td className="p-3 font-medium text-ink-primary">10DLC Brand &amp; Campaign</td>
-                  <td className="p-3">The Campaign Registry (US)</td>
-                  <td className="p-3">$4 one-time + $1.50&ndash;$10/mo</td>
-                  <td className="p-3 font-semibold text-emerald-600">0% (We file for you)</td>
-                  <td className="p-3">Direct registry fee</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-4 text-xs text-ink-tertiary">
-            Unlike traditional call answering services that charge $1.75 to $3.50 per live receptionist minute with 3-minute minimums,
-            our AI systems answer immediately with zero queue times and flat monthly software support.
-          </p>
-        </div>
+      {/* Interactive Tabs: Custom CRM Builds vs. AI Voice Retainers */}
+      <section className="container-shell mt-14">
+        <PricingTabs
+          retainerTiers={tiers}
+          carrierTable={carrierTableNode}
+          calculatorNode={calculatorNode}
+        />
       </section>
 
       {/* Setup & Onboarding Scope */}
-      <section className="container-shell mt-12">
-        <div className="rounded-xl border border-line-subtle bg-surface-sunken p-6 md:p-10">
+      <section className="container-shell mt-16">
+        <div className="rounded-2xl border border-border bg-surface-50 p-6 md:p-10 shadow-xs">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="font-display text-display-sm text-ink-primary">Setup &amp; Onboarding Scope</h2>
-              <p className="text-body-sm text-ink-secondary">
-                Every system is custom-engineered to your exact operations, not deployed from generic templates.
+              <h2 className="font-display text-2xl font-bold text-foreground">Setup &amp; Onboarding Scope</h2>
+              <p className="mt-1 text-xs md:text-sm text-foreground/75 max-w-2xl leading-relaxed">
+                Every onboarding engagement follows three structured engineering phases: auditing inbound bottlenecks and CRM data schemas, configuring clean pipelines or Next.js portals with webhook routing, and running 50+ synthetic stress tests across regional accents and edge cases before production launch.
               </p>
             </div>
           </div>
 
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm text-ink-secondary">
-            <div className="rounded-lg border border-line-subtle bg-surface-raised p-5">
-              <h3 className="font-display text-base font-semibold text-ink-primary">1. Operational Discovery</h3>
-              <p className="mt-2 text-xs leading-relaxed">
-                We audit call recordings, map booking friction, analyze customer objection patterns, and document staff dispatch workflows to blueprint the voice prompts.
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm text-foreground/80">
+            <div className="rounded-xl border border-border bg-white p-5 shadow-xs">
+              <h3 className="font-display text-base font-semibold text-foreground">1. Operational Discovery</h3>
+              <p className="mt-2 text-xs leading-relaxed text-foreground/75">
+                We audit call recordings, map booking friction, analyze customer objection patterns, and document staff dispatch workflows to blueprint data models and prompts.
               </p>
             </div>
-            <div className="rounded-lg border border-line-subtle bg-surface-raised p-5">
-              <h3 className="font-display text-base font-semibold text-ink-primary">2. Architecture &amp; CRM Build</h3>
-              <p className="mt-2 text-xs leading-relaxed">
-                Clean GoHighLevel or HubSpot pipeline configuration, calendar availability rule setup, custom fields, and two-way webhook integrations with dispatch software.
+            <div className="rounded-xl border border-border bg-white p-5 shadow-xs">
+              <h3 className="font-display text-base font-semibold text-foreground">2. Architecture &amp; CRM Build</h3>
+              <p className="mt-2 text-xs leading-relaxed text-foreground/75">
+                Clean GoHighLevel or HubSpot pipeline configuration, Next.js portal scaffolding, calendar availability rules, custom fields, and two-way webhook integrations.
               </p>
             </div>
-            <div className="rounded-lg border border-line-subtle bg-surface-raised p-5">
-              <h3 className="font-display text-base font-semibold text-ink-primary">3. Synthetic Stress Testing</h3>
-              <p className="mt-2 text-xs leading-relaxed">
-                We run 50+ scripted test calls covering background trade noise, heavy regional accents, interruption handling, and warm transfers before going live.
+            <div className="rounded-xl border border-border bg-white p-5 shadow-xs">
+              <h3 className="font-display text-base font-semibold text-foreground">3. Synthetic Stress Testing</h3>
+              <p className="mt-2 text-xs leading-relaxed text-foreground/75">
+                We run 50+ scripted test calls and simulated webhook payloads covering edge cases, regional accents, interruption handling, and warm transfers before going live.
               </p>
             </div>
           </div>
 
-          <p className="mt-6 text-sm text-ink-secondary">
-            One-time setup fees typically range between $1,500 and $4,500 depending on CRM complexity, multi-location requirements, and custom legacy database connections.
+          <p className="mt-6 text-xs text-foreground/70">
+            GHL &amp; AI Voice Launch: 5–14 Days | Custom CRM Builds: 3–6 Weeks. One-time setup fees typically range between $1,500 and $4,500 depending on CRM complexity, multi-location requirements, and custom legacy database connections.
           </p>
         </div>
       </section>
 
       {/* Frequently Asked Questions */}
       <section className="container-shell mt-16">
-        <div className="rounded-xl border border-line-subtle bg-surface-raised p-6 md:p-10">
+        <div className="rounded-2xl border border-border bg-white p-6 md:p-10 shadow-xs">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-soft text-accent">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
               <HelpCircle className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="font-display text-display-sm text-ink-primary">Frequently Asked Questions</h2>
-              <p className="text-body-sm text-ink-secondary">
-                Straightforward answers about our billing models, usage limits, and commitments.
+              <h2 className="font-display text-2xl font-bold text-foreground">Frequently Asked Questions</h2>
+              <p className="mt-1 text-xs md:text-sm text-foreground/75 max-w-2xl leading-relaxed">
+                Clear answers covering fixed-scope Custom CRM builds ($2,200 to $15,000+), monthly AI voice retainers ($450 to $2,800/mo), USD/AUD currency billing, transparent carrier pass-through rates with 0% markup, and source-code IP ownership terms.
               </p>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {pricingFaqs.map((faq) => (
-              <div key={faq.question} className="rounded-lg border border-line-subtle bg-surface-sunken p-5">
-                <h3 className="font-display text-base font-semibold text-ink-primary">{faq.question}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-secondary">{faq.answer}</p>
-              </div>
-            ))}
+          <div className="mt-8">
+            <FAQAccordion items={pricingFaqs} />
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="container-shell mt-16">
-        <div className="rounded-xl bg-surface-inverse p-8 text-center md:p-12">
-          <h2 className="font-display text-display-sm text-ink-on-inverse">
-            Want a fixed quote for your exact call volume?
+        <div className="rounded-2xl bg-foreground p-8 text-center md:p-12 text-white">
+          <h2 className="font-display text-3xl md:text-4xl font-bold">
+            Want a fixed quote for your custom CRM or call volume?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-body text-ink-on-inverse/80">
-            Book a 20-minute discovery call with our engineering team in Casula NSW. We will audit your current intake workflow and provide a clear, line-item proposal.
+          <p className="mx-auto mt-3 max-w-xl text-sm md:text-base text-white/80 leading-relaxed">
+            Book a 20-minute discovery call with our engineering leadership. Serving Australian and US businesses with clear, line-item milestone proposals.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
+              className="inline-flex items-center rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-xs"
             >
-              Book a scoping call
+              Book a strategy call
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center rounded-xl border border-line-subtle bg-white/10 px-6 py-3 text-sm font-semibold text-ink-on-inverse transition hover:bg-white/20"
+              className="inline-flex items-center rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
             >
-              Try live voice demo
+              Hear a live AI demo
             </Link>
           </div>
         </div>

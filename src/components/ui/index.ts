@@ -9,3 +9,5 @@ export { ProjectCard } from "./project-card";
 export { AudioCallPreview } from "./audio-call-preview";
 export { FAQAccordion } from "./faq-accordion";
 export { MissedCallCalculator } from "./missed-call-calculator";
+export { HeroPreviewTabs } from "./hero-preview-tabs";
+export { AvatarSlot } from "./avatar-slot";

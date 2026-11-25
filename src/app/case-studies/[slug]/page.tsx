@@ -17,6 +17,7 @@ import {
   Clock,
 } from "lucide-react";
 import { clientProjects } from "@/data/facts";
+import { CaseStudyUiVisual } from "@/components/case-studies/case-study-ui-visual";
 import { generateBreadcrumbSchema, generateFAQSchema, siteConfig } from "@/lib/seo";
 
 interface Props {
@@ -38,6 +39,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "See how a commercial plumbing contractor recovered after-hours emergency calls using 24/7 AI voice triage and automated missed-call text-back workflows.",
     "advisory-practice":
       "See how an accounting and advisory practice automated client qualification, intake triage, and calendar bookings with custom GoHighLevel CRM workflows.",
+    "hybrid-field-service-crm":
+      "Illustrative Next.js & PostgreSQL custom CRM architecture replacing per-seat SaaS CRM licenses with GoHighLevel API and Twilio SIP sync.",
+    "healthcare-patient-portal-crm":
+      "Illustrative Next.js, PostgreSQL, and Cliniko two-way CRM portal architecture modeling licensing reduction and clean multi-clinic RBAC.",
   };
 
   if (!project) {
@@ -52,11 +57,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "dental-clinic": "Dental Clinic AI Voice Receptionist Case Study",
     "plumbing-contractor": "Plumbing Contractor Emergency Call & Text-Back Case Study",
     "advisory-practice": "Advisory Practice CRM & Intake Automation Case Study",
+    "hybrid-field-service-crm": "Hybrid Custom CRM Case Study: Trade & Field Services",
+    "healthcare-patient-portal-crm": "Healthcare Custom CRM & Patient Portal Case Study",
   };
   const title = caseStudyTitles[project.slug] || `${project.industry} Case Study`;
   const description =
     caseStudyDescriptions[project.slug] ||
-    `Discover how this ${project.industry.toLowerCase()} deployed 24/7 voice automation and CRM systems, capturing inquiries with zero hold times across the USA and Australia.`;
+    `Discover how this ${project.industry.toLowerCase()} deployed 24/7 voice automation and CRM systems across Australia and the US.`;
+
+  const ogUrl = `/api/og?${new URLSearchParams({ title }).toString()}`;
 
   return {
     title,
@@ -70,6 +79,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${siteConfig.domain}/case-studies/${project.slug}`,
       siteName: "DigitalX Solutions",
       type: "article",
+      images: [
+        {
+          url: ogUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: "image/png",
+        },
+      ],
     },
   };
 }
@@ -84,6 +102,8 @@ export default async function CaseStudyDetailPage({ params }: Props) {
     "dental-clinic": "Dental Clinic AI Voice Receptionist Case Study",
     "plumbing-contractor": "Plumbing Contractor Emergency Call & Text-Back Case Study",
     "advisory-practice": "Advisory Practice CRM & Intake Automation Case Study",
+    "hybrid-field-service-crm": "Hybrid Custom CRM Case Study: Trade & Field Services",
+    "healthcare-patient-portal-crm": "Healthcare Custom CRM & Patient Portal Case Study",
   };
 
   const caseStudyFaqs = [
@@ -113,8 +133,10 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${project.client} Automation Architecture & Case Study`,
+    headline: caseStudyTitles[project.slug] || `${project.industry} Case Study`,
     description: project.measurableResult,
+    datePublished: "2026-11-11T00:00:00.000Z",
+    dateModified: "2026-11-25T00:00:00.000Z",
     author: {
       "@type": "Organization",
       name: "DigitalX Solutions",
@@ -213,10 +235,29 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <p className="mt-2 max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
             When the operator partnered with DigitalX Solutions, they faced operational friction
             in {project.industry.toLowerCase()}: {project.problem.toLowerCase()} We deployed a tailored
-            telephony and CRM architecture featuring {project.toolsUsed.join(", ")}, producing{" "}
+            architecture featuring {project.toolsUsed.join(", ")}, producing{" "}
             {project.measurableResult.toLowerCase()}
           </p>
         </div>
+
+        {/* Dedicated UI Visual & Before/After Architecture when available */}
+        {"roiStats" in project && project.roiStats && "beforeStack" in project && project.beforeStack && "afterStack" in project && project.afterStack && (
+          <div className="mt-10">
+            <CaseStudyUiVisual
+              title={`${project.industry} — Architecture Overview`}
+              mediaPath={"mediaPath" in project ? (project.mediaPath as string) : ""}
+              expectedAssetPath={
+                (project as { expectedAssetPath?: string }).expectedAssetPath ||
+                `public/images/case-studies/${project.slug}.webp`
+              }
+              sourceLabel={"source" in project ? (project.source as string) : "Illustrative estimate"}
+              calculationInputs={"calculationInputs" in project ? (project.calculationInputs as string) : undefined}
+              beforeStack={project.beforeStack as string[]}
+              afterStack={project.afterStack as string[]}
+              stats={project.roiStats as { label: string; value: string }[]}
+            />
+          </div>
+        )}
 
         {/* Core Narrative Grid */}
         <div className="mt-12 grid gap-10 md:grid-cols-2">
@@ -289,16 +330,30 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <div className="flex items-center gap-2.5">
             <TrendingUp className="h-5 w-5 text-emerald-600" />
             <h2 className="font-display text-xl font-bold text-foreground">
-              Measured Operational Outcomes
+              Modeled &amp; Operational Outcomes
             </h2>
           </div>
           <p className="mt-3 text-base font-semibold text-emerald-700">
             {project.measurableResult}
           </p>
-          <p className="mt-2 max-w-2xl text-xs leading-relaxed text-foreground/70">
-            Performance metrics are continuously logged via executive telemetry dashboards, cross-referencing
-            telephony provider call detail records (CDRs) against closed opportunity stages in GoHighLevel.
+          <p className="mt-2 max-w-2xl text-xs leading-relaxed text-foreground/75">
+            Every workflow tracks call detail records, missed-call SMS recovery latency, and opportunity stage updates cleanly inside client-owned CRM databases. Explore our live demo or book an engineering review to model exact scope for your team.
           </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-xs font-semibold text-white hover:bg-brand-deep transition"
+            >
+              Book a strategy call
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            <Link
+              href="/try-voice-agent"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-5 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition"
+            >
+              Hear a live AI demo
+            </Link>
+          </div>
         </div>
 
         {/* Delivery Timeline & Safeguards */}

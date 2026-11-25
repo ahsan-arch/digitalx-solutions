@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Cpu, Database, Network, ShieldCheck, Zap, Lock, Terminal, Activity, Server, PhoneCall } from "lucide-react";
+import { ArrowRight, CheckCircle2, Cpu, Database, Network, ShieldCheck, Lock, Terminal, Activity, Server, PhoneCall } from "lucide-react";
 import { generatePageMetadata, siteConfig } from "@/lib/seo";
 import factsData from "../../../../data/facts.json";
 
@@ -37,14 +37,10 @@ export default function EnterpriseAIAutomationPage() {
           "Deepgram Nova-2 Speech Recognition",
           "ElevenLabs Neural Voice Synthesis"
         ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "16 Boldrewood Ave",
-          "addressLocality": "Casula",
-          "addressRegion": "NSW",
-          "postalCode": "2170",
-          "addressCountry": "AU"
-        },
+        "areaServed": [
+          { "@type": "Country", "name": "Australia" },
+          { "@type": "Country", "name": "United States" }
+        ],
         "sameAs": [
           "https://www.linkedin.com/company/digitalx-solutions-aus/",
           "https://x.com/digitalx_solutions"
@@ -187,7 +183,7 @@ export default function EnterpriseAIAutomationPage() {
           {/* Trust Badges */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-border">
             <div className="flex items-center gap-2.5">
-              <Zap className="w-4 h-4 text-primary shrink-0" />
+              <PhoneCall className="w-4 h-4 text-primary shrink-0" />
               <span className="text-xs font-medium text-muted-foreground">Fast, Natural Turnaround</span>
             </div>
             <div className="flex items-center gap-2.5">
@@ -232,7 +228,7 @@ export default function EnterpriseAIAutomationPage() {
               <div className="rounded-xl border border-border bg-card p-6 flex flex-col justify-between">
                 <div>
                   <div className="p-2.5 w-fit rounded-lg bg-primary/10 text-primary mb-5">
-                    <Zap className="w-5 h-5" />
+                    <PhoneCall className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">
                     Low-Latency B2B AI Voice Agents

@@ -13,7 +13,6 @@ import {
   Server,
   ShieldCheck,
   TrendingUp,
-  Zap,
 } from "lucide-react";
 import { getIndustryBySlug, industries } from "@/data/industries";
 import { getSolutionBySlug, results } from "@/data/redesign";
@@ -558,7 +557,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
               </span>
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="h-3.5 w-3.5 text-brand" />
-                <span>16 Boldrewood Ave, Casula NSW 2170, Australia</span>
+                <span>Serving Australian and US businesses</span>
               </span>
             </div>
           </div>

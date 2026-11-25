@@ -1,10 +1,37 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, PhoneCall, MessageSquare, Zap, Database, Clock, ShieldCheck, ChevronRight } from "lucide-react";
-import { generateBreadcrumbSchema, siteConfig } from "@/lib/seo";
-import { HeroIllustration, TiltCard, CertifiedPartnerStrip, ProjectCard, AudioCallPreview, FAQAccordion } from "@/components/ui";
+import { ArrowRight, PhoneCall, MessageSquare, Database, Clock, ChevronRight } from "lucide-react";
+import { generateBreadcrumbSchema, geoHreflangLanguages, siteConfig } from "@/lib/seo";
+import { HeroPreviewTabs, TiltCard, CertifiedPartnerStrip, ProjectCard, AudioCallPreview, FAQAccordion } from "@/components/ui";
 import { heroMetrics, processSteps, solutions } from "@/data/redesign";
 import { industryCategories } from "@/data/industries";
 import factsData from "@/data/facts";
+
+export const metadata = {
+  title: "Custom CRM Development & AI Automation | DigitalX Solutions",
+  description:
+    "Custom CRM development, Next.js web portals, and 24/7 AI voice receptionists serving Australian and US businesses with zero per-seat fees.",
+  alternates: {
+    canonical: siteConfig.domain,
+    languages: geoHreflangLanguages,
+  },
+  openGraph: {
+    title: "Custom CRM Development & AI Automation | DigitalX Solutions",
+    description:
+      "Custom CRM development, Next.js web portals, and 24/7 AI voice receptionists serving Australian and US businesses with zero per-seat fees.",
+    url: siteConfig.domain,
+    siteName: "DigitalX Solutions",
+    type: "website",
+    images: [
+      {
+        url: "/api/og?title=Custom+CRM+Development+%26+AI+Automation",
+        width: 1200,
+        height: 630,
+        alt: "Custom CRM Development & AI Automation | DigitalX Solutions",
+        type: "image/png",
+      },
+    ],
+  },
+};
 
 const homeFaqs = [
   {
@@ -38,7 +65,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+        "@type": ["Organization", "ProfessionalService"],
         "@id": `${siteConfig.domain}/#organization`,
         name: "DigitalX Solutions",
         url: siteConfig.domain,
@@ -46,19 +73,6 @@ export default function HomePage() {
         image: `${siteConfig.domain}/assets/og-home-image.jpg`,
         telephone: "+61 451 413 786",
         email: "info@digitalx-solutions.com",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "16 Boldrewood Ave",
-          addressLocality: "Casula",
-          addressRegion: "NSW",
-          postalCode: "2170",
-          addressCountry: "AU",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: -33.9519,
-          longitude: 150.9054,
-        },
         openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: [
@@ -124,56 +138,57 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-10 md:py-16">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <p className="mb-3 text-xs font-medium text-brand">
-                  Voice telephony and workflow automation across Australia and the US
+                <p className="mb-3 text-xs font-medium text-brand-deep">
+                  Custom software, voice telephony, and workflow automation
                 </p>
-                <h1 className="font-display text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
-                  AI Automation Agency for High-Growth Service Businesses
+                <h1 className="font-display text-4xl leading-tight tracking-tight text-foreground md:text-5xl font-semibold">
+                  Custom CRM Development &amp; AI Revenue Operations
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
-                  DigitalX Solutions builds and deploys 24/7 human-sounding AI voice receptionists, under-60-second missed-call text-back, GoHighLevel and HubSpot CRM architectures, and custom n8n workflow automations for trades, healthcare clinics, and professional services across Australia and the United States.
+                  DigitalX Solutions architects bespoke Next.js and PostgreSQL custom CRM systems with 100% IP ownership and zero per-seat fees. We engineer 24/7 AI voice receptionists, under-60-second missed-call recovery, and self-hosted n8n workflow pipelines directly into your core operational database across Australia and the United States.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-deep"
-                  >
-                    <PhoneCall className="h-4 w-4" />
-                    Hear a live AI call
-                  </Link>
-                  <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-sunken"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-deep"
                   >
                     Book a strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                </div>
-
-                <div className="mt-6">
-                  <AudioCallPreview
-                    src="/demos/plumbing-companies/turn-0.mp3"
-                    title="Live 20s AI Trade Intake Preview"
-                    scenario="Emergency Plumbing Dispatch"
-                    callerLabel="Burst Pipe Triage &amp; Booking"
-                  />
+                  <Link
+                    href="/try-voice-agent"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-sunken"
+                  >
+                    <PhoneCall className="h-4 w-4" />
+                    Hear a live AI demo
+                  </Link>
                 </div>
               </div>
 
               <div className="relative">
-                <HeroIllustration />
+                <HeroPreviewTabs />
               </div>
             </div>
 
             {/* Quick Metrics Bar */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {heroMetrics.map((metric) => (
-                <div key={metric.label} className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                  <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">{metric.value}</p>
-                  <p className="mt-1 text-sm text-foreground/75">{metric.label}</p>
-                </div>
-              ))}
+              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">100% Owned IP</p>
+                <p className="mt-1 text-sm text-foreground/75">Zero per-seat software fees</p>
+              </div>
+              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">&lt; 60s</p>
+                <p className="mt-1 text-sm text-foreground/75">Missed-call SMS lead recovery</p>
+              </div>
+              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">3–6 Weeks</p>
+                <p className="mt-1 text-sm text-foreground/75">Custom CRM builds delivery</p>
+              </div>
+              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">5–14 Days</p>
+                <p className="mt-1 text-sm text-foreground/75">GHL &amp; AI voice launch</p>
+              </div>
             </div>
 
             {/* GEO / AEO System Definition & Architecture Anchor */}
@@ -278,12 +293,12 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
-                  <Zap className="h-4 w-4" />
+              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/75">
+                  <MessageSquare className="h-4 w-4" />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Rapid Lead Response</h3>
-                <span className="text-xs font-semibold text-brand">Immediate Engagement</span>
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Immediate Conversational Engagement</h3>
+                <span className="text-xs font-medium text-brand-deep">Fast SMS &amp; Voice Follow-Up</span>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/75">
                   Immediate two-way conversational outreach dramatically outperforms delayed follow-ups, securing high-intent prospects before competitors respond.
                 </p>
@@ -305,55 +320,112 @@ export default function HomePage() {
 
         {/* SECTION 4: SERVICES OVERVIEW */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
+          <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">Production capability stacks</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Engineered Systems That Work in Production
               </h2>
+              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+                Our core stack combines Next.js and PostgreSQL custom CRM portals with GoHighLevel pipelines, self-hosted n8n webhooks, and 24/7 AI voice intake. Every system deploys directly inside client-owned infrastructure to eliminate recurring seat bloat and connect inbound calls, SMS follow-ups, and calendar bookings.
+              </p>
             </div>
-            <Link href="/solutions" className="text-sm font-semibold text-brand hover:text-brand-deep">
+            <Link href="/solutions" className="text-sm font-semibold text-brand hover:text-brand-deep shrink-0">
               View all solutions
             </Link>
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
-            {solutions.slice(0, 6).map((solution) => (
+            {/* Flagship Card: Custom CRM Development */}
+            <div className="h-full">
               <TiltCard
-                key={solution.slug}
-                href={`/solutions/${solution.slug}`}
-                className="group block h-full rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
+                href="/development/custom-crm-development"
+                className="rounded-2xl border border-brand/40 bg-white p-6 shadow-xs hover:border-brand"
               >
-                <p className="text-xs font-medium text-foreground/75">{solution.tagline}</p>
-                <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/80">{solution.summary}</p>
+                <div className="flex items-center justify-between">
+                  <span className="rounded-md bg-brand px-2 py-0.5 font-mono text-[11px] font-semibold text-white">
+                    Flagship Capability
+                  </span>
+                  <span className="font-mono text-xs font-semibold text-brand">3–6 Wks</span>
+                </div>
+                <h3 className="mt-3 font-display text-2xl font-semibold text-foreground">
+                  Custom CRM Development &amp; Architecture
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/80">
+                  Bespoke Next.js &amp; PostgreSQL portals built on top of enterprise APIs with 100% IP ownership and zero per-seat fees.
+                </p>
                 <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
-                  Explore {solution.name}
+                  Explore Custom CRM Blueprint
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </span>
               </TiltCard>
+            </div>
+
+            {solutions.slice(0, 5).map((solution) => (
+              <div key={solution.slug} className="h-full">
+                <TiltCard
+                  href={`/solutions/${solution.slug}`}
+                  className="rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
+                >
+                  <p className="text-xs font-medium text-foreground/75">{solution.tagline}</p>
+                  <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/80">{solution.summary}</p>
+                  <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                    Explore {solution.name}
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </span>
+                </TiltCard>
+              </div>
             ))}
           </div>
         </section>
 
         {/* SECTION 5: PROJECTS WITH REAL CLIENT DATA */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-medium text-brand">Client deployments</p>
+          <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <p className="text-xs font-medium text-brand">Client deployments &amp; architectural models</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Recent Automation Deployments
               </h2>
+              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+                Each deployment or illustrative architectural model below pairs specific operational bottlenecks with client-owned infrastructure across trades, clinics, and advisory groups. Any modeled ROI or seat-cost figures are labeled transparently with calculation inputs so leadership can inspect assumptions before scoping.
+              </p>
             </div>
-            <Link href="/case-studies" className="text-sm font-semibold text-brand hover:text-brand-deep">
+            <Link href="/case-studies" className="text-sm font-semibold text-brand hover:text-brand-deep shrink-0">
               See all case studies
             </Link>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {factsData.clientProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+            {[
+              ...factsData.clientProjects.slice(3, 5),
+              factsData.clientProjects[0],
+            ]
+              .filter(Boolean)
+              .map((project) => (
+                <div key={project.id} className="h-full transition-transform duration-200 [@media(hover:hover)]:hover:-translate-y-1">
+                  <ProjectCard project={project} />
+                </div>
+              ))}
+          </div>
+
+          {/* Dual CTA after Proof Section */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition"
+            >
+              Book a strategy call
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/try-voice-agent"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
+            >
+              <PhoneCall className="h-4 w-4 text-brand" />
+              Hear a live AI demo
+            </Link>
           </div>
         </section>
 
@@ -370,7 +442,7 @@ export default function HomePage() {
 
             <div className="mt-8 grid gap-5 md:grid-cols-4">
               {processSteps.map((step, index) => (
-                <div key={step.title} className="rounded-xl border border-border/70 bg-surface-page p-5">
+                <div key={step.title} className="h-full rounded-xl border border-border/70 bg-surface-page p-5 transition-colors hover:border-brand/35">
                   <p className="font-mono text-xs font-medium text-foreground/75">Phase {index + 1}</p>
                   <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/80">{step.description}</p>
@@ -382,14 +454,17 @@ export default function HomePage() {
 
         {/* SECTION 7: INDUSTRIES & CITY COVERAGE */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
+          <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">Industry architectures</p>
               <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
                 Tuned for Your Industry &amp; Operating Model
               </h2>
+              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+                Serving Australian and US businesses, each industry playbook adapts call triage scripts, CRM pipeline stages, and direct dispatch webhooks to your vertical software. From ServiceTitan and Jobber in trades to Cliniko in allied health, intake rules match how your team books work.
+              </p>
             </div>
-            <Link href="/industries" className="text-sm font-semibold text-brand hover:text-brand-deep">
+            <Link href="/industries" className="text-sm font-semibold text-brand hover:text-brand-deep shrink-0">
               View all industry playbooks
             </Link>
           </div>
@@ -531,7 +606,7 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
                 >
                   <PhoneCall className="h-4 w-4" />
-                  Test live AI voice agent
+                  Hear a live AI demo
                 </Link>
               </div>
             </div>

@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
+import { MotionProvider } from "@/components/motion/motion-provider";
 
 export function ServiceAreaMap() {
     return (
+        <MotionProvider>
         <div
             className="relative w-full aspect-square md:aspect-[4/3] bg-surface-sunken rounded-lg overflow-hidden border border-line-subtle"
             style={{ contain: "content" }}
@@ -24,7 +26,7 @@ export function ServiceAreaMap() {
 
             {/* Connection line */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                <motion.path
+                <m.path
                     d="M224,210 Q450,150 680,168"
                     fill="none"
                     stroke="rgb(var(--accent-primary))"
@@ -41,6 +43,7 @@ export function ServiceAreaMap() {
                 Network active
             </div>
         </div>
+        </MotionProvider>
     );
 }
 
@@ -48,14 +51,14 @@ function LocationNode({ x, y, label, delay }: { x: string; y: string; label: str
     return (
         <div className="absolute" style={{ left: x, top: y }}>
             <div className="relative">
-                <motion.div
+                <m.div
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay, duration: 0.4 }}
                     className="w-2.5 h-2.5 bg-accent rounded-full relative z-10 ring-4 ring-accent/20"
                 />
-                <motion.span
+                <m.span
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -63,7 +66,7 @@ function LocationNode({ x, y, label, delay }: { x: string; y: string; label: str
                     className="absolute left-6 top-1/2 -translate-y-1/2 font-mono text-caption text-ink-primary font-semibold"
                 >
                     {label}
-                </motion.span>
+                </m.span>
             </div>
         </div>
     );

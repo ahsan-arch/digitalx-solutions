@@ -1,18 +1,18 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, Shield, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Shield } from "lucide-react";
 import { generateBreadcrumbSchema, generatePageMetadata, siteConfig } from "@/lib/seo";
 import factsData from "@/data/facts";
 import { articlesData } from "@/data/insights-articles";
 
 export const metadata: Metadata = generatePageMetadata("/about/team/jazib-shahid", {
-  title: "Jazib Shahid – Founder & CEO | DigitalX Solutions",
-  description: "Jazib Shahid is Founder & CEO of DigitalX Solutions (founded 2020), specializing in AI voice receptionists, GoHighLevel systems, and n8n automations.",
+  title: "Jazib Shahid – Founder & Lead Solutions Architect | DigitalX Solutions",
+  description: "Jazib Shahid is Founder & Lead Solutions Architect at DigitalX Solutions (founded 2020), specializing in Custom CRM Development, Next.js portals, GoHighLevel systems, and n8n automations.",
 });
 
 export default function JazibShahidPage() {
   const { founder } = factsData.leadership;
-  const coreFocus = ["GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP", "HubSpot", "Google Calendar"];
+  const coreFocus = ["Custom Next.js Portals", "PostgreSQL & Supabase", "GoHighLevel CRM", "n8n (Self-Hosted)", "Twilio SIP Telephony"];
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -28,7 +28,9 @@ export default function JazibShahidPage() {
     url: `${siteConfig.domain}/about/team/jazib-shahid`,
     description: founder.bio,
     knowsAbout: [
-      "AI Voice Receptionists",
+      "Custom CRM Development",
+      "Next.js & React Web Portals",
+      "PostgreSQL & Supabase Architecture",
       "GoHighLevel CRM Architecture",
       "Self-Hosted n8n Workflow Automation",
       "Twilio & SIP Telephony",

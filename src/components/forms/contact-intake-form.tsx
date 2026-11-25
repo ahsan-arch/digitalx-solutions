@@ -1,31 +1,27 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { trackFormSubmit } from "@/lib/analytics";
+import { Phone, ArrowRight } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp-icon";
+import { companyProfile } from "@/data/redesign";
+import { trackFormSubmit, trackWhatsAppClick, trackPhoneTap } from "@/lib/analytics";
 
-const timelineOptions = ["1-3 Months", "3-6 Months", "ASAP"] as const;
+const needOptions = [
+  "Custom CRM Development ($2,200 – $15,000+)",
+  "Hybrid CRM + GoHighLevel Integration",
+  "24/7 AI Voice Receptionist",
+  "n8n Workflow Automation",
+  "Full Audit & TCO Estimate",
+] as const;
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
-function fileToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const result = String(reader.result ?? "");
-      const base64 = result.includes(",") ? result.split(",")[1] : result;
-      resolve(base64);
-    };
-    reader.onerror = () => reject(reader.error);
-    reader.readAsDataURL(file);
-  });
-}
-
 export function ContactIntakeForm() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [timeline, setTimeline] = useState<(typeof timelineOptions)[number]>("1-3 Months");
+  const [contact, setContact] = useState("");
+  const [need, setNeed] = useState<(typeof needOptions)[number]>(needOptions[0]);
   const [details, setDetails] = useState("");
-  const [attachment, setAttachment] = useState<File | null>(null);
+  const [callbackRequested, setCallbackRequested] = useState(false);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
 
@@ -34,15 +30,10 @@ export function ContactIntakeForm() {
     setSubmitState("submitting");
     setMessage("");
 
-    try {
-      const attachmentPayload = attachment
-        ? {
-            name: attachment.name,
-            type: attachment.type || "application/octet-stream",
-            content: await fileToBase64(attachment),
-          }
-        : null;
+    const trimmedContact = contact.trim();
+    const isEmail = trimmedContact.includes("@");
 
+    try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -50,10 +41,12 @@ export function ContactIntakeForm() {
         },
         body: JSON.stringify({
           name,
-          email,
-          timeline,
-          details,
-          attachment: attachmentPayload,
+          contact: trimmedContact,
+          ...(isEmail ? { email: trimmedContact } : { phone: trimmedContact }),
+          need,
+          callbackRequested,
+          timeline: "ASAP",
+          details: details.trim() || `Interested in: ${need}`,
         }),
       });
 
@@ -63,112 +56,140 @@ export function ContactIntakeForm() {
 
       trackFormSubmit("strategy_call_intake", true);
       setSubmitState("success");
-      setMessage("Thanks, your request is in. We will respond within one business day.");
+      setMessage("Thanks, your request is received. We will reply within one business day.");
       setName("");
-      setEmail("");
-      setTimeline("1-3 Months");
+      setContact("");
+      setNeed(needOptions[0]);
       setDetails("");
-      setAttachment(null);
+      setCallbackRequested(false);
     } catch {
       trackFormSubmit("strategy_call_intake", false);
       setSubmitState("error");
-      setMessage("Something went wrong. Please email info@digitalx-solutions.com directly.");
+      setMessage("Something went wrong. Please email info@digitalx-solutions.com or message us on WhatsApp.");
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-border bg-surface-50 p-6 md:p-8">
-      <div>
-        <label htmlFor="contact name" className="mb-2 block text-sm font-medium text-foreground/75">
-          Name
+    <div className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-border bg-surface-50 p-6 md:p-8">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="contact-name" className="mb-1.5 block text-sm font-medium text-foreground/80">
+              Name
+            </label>
+            <input
+              id="contact-name"
+              name="name"
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="contact-info" className="mb-1.5 block text-sm font-medium text-foreground/80">
+              Email or Phone
+            </label>
+            <input
+              id="contact-info"
+              name="contact"
+              required
+              value={contact}
+              onChange={(event) => setContact(event.target.value)}
+              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+              placeholder="name@company.com or +61 / +1..."
+            />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="contact-need" className="mb-1.5 block text-sm font-medium text-foreground/80">
+            What do you need?
+          </label>
+          <select
+            id="contact-need"
+            name="need"
+            value={need}
+            onChange={(event) => setNeed(event.target.value as (typeof needOptions)[number])}
+            className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+          >
+            {needOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="contact-details" className="mb-1.5 block text-sm font-medium text-foreground/80">
+            Brief context
+          </label>
+          <textarea
+            id="contact-details"
+            name="details"
+            required
+            minLength={5}
+            value={details}
+            onChange={(event) => setDetails(event.target.value)}
+            rows={3}
+            className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+            placeholder="Share your current stack, user count, or bottleneck."
+          />
+        </div>
+
+        <label className="flex items-center gap-2.5 text-xs sm:text-sm text-foreground/80 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={callbackRequested}
+            onChange={(e) => setCallbackRequested(e.target.checked)}
+            className="h-4 w-4 rounded border-border text-brand focus:ring-brand"
+          />
+          <span>Request a quick phone or WhatsApp callback</span>
         </label>
-        <input
-          id="contact name"
-          name="name"
-          required
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
-          placeholder="Your full name"
-        />
-      </div>
 
-      <div>
-        <label htmlFor="contact-email" className="mb-2 block text-sm font-medium text-foreground/75">
-          Work email
-        </label>
-        <input
-          id="contact-email"
-          name="email"
-          type="email"
-          required
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
-          placeholder="name@company.com"
-        />
-      </div>
+        <div className="flex flex-wrap items-center gap-3 pt-1">
+          <button
+            type="submit"
+            disabled={submitState === "submitting"}
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+          >
+            <span>{submitState === "submitting" ? "Sending..." : "Book a strategy call"}</span>
+            <ArrowRight className="h-4 w-4" />
+          </button>
 
-      <div>
-        <label htmlFor="contact-timeline" className="mb-2 block text-sm font-medium text-foreground/75">
-          Preferred timeline
-        </label>
-        <select
-          id="contact-timeline"
-          name="timeline"
-          value={timeline}
-          onChange={(event) => setTimeline(event.target.value as (typeof timelineOptions)[number])}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
-        >
-          {timelineOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </div>
+          <a
+            href={companyProfile.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick("contact_form")}
+            className="inline-flex items-center gap-2 rounded-xl border border-emerald-600/30 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800 hover:bg-emerald-100 transition"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            <span>WhatsApp Chat</span>
+          </a>
 
-      <div>
-        <label htmlFor="contact-details" className="mb-2 block text-sm font-medium text-foreground/75">
-          Project context
-        </label>
-        <textarea
-          id="contact-details"
-          name="details"
-          required
-          minLength={10}
-          value={details}
-          onChange={(event) => setDetails(event.target.value)}
-          rows={6}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
-          placeholder="Tell us about goals, current blockers, and desired outcomes."
-        />
-      </div>
+          <a
+            href={`tel:${companyProfile.phoneE164}`}
+            onClick={() => trackPhoneTap(companyProfile.phone)}
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
+          >
+            <Phone className="h-4 w-4 text-brand" />
+            <span>Direct Callback</span>
+          </a>
+        </div>
 
-      <div>
-        <label htmlFor="contact-attachment" className="mb-2 block text-sm font-medium text-foreground/75">
-          Optional attachment
-        </label>
-        <input
-          id="contact-attachment"
-          type="file"
-          onChange={(event) => setAttachment(event.target.files?.[0] ?? null)}
-          className="w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground"
-          accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
-        />
-      </div>
-
-      <button
-        type="submit"
-        disabled={submitState === "submitting"}
-        className="inline-flex w-full items-center justify-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-70"
-      >
-        {submitState === "submitting" ? "Sending..." : "Send project request"}
-      </button>
-
-      {message ? (
-        <p className={submitState === "error" ? "text-sm text-red-600" : "text-sm text-emerald-700"}>{message}</p>
-      ) : null}
-    </form>
+        {message && (
+          <p
+            role="status"
+            className={`text-sm font-medium ${submitState === "error" ? "text-red-600" : "text-emerald-700"}`}
+          >
+            {message}
+          </p>
+        )}
+      </form>
+    </div>
   );
 }

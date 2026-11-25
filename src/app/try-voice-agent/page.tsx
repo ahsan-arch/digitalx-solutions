@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Cpu, HelpCircle, PhoneCall, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Cpu, HelpCircle, PhoneCall } from "lucide-react";
 import { VoiceAgentExperience } from "./voice-agent-experience";
 import {
   generateBreadcrumbSchema,

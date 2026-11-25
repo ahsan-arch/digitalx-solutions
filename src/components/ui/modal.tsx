@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
+import { MotionProvider } from "@/components/motion/motion-provider";
 import { X } from "lucide-react";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -36,10 +37,11 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
     if (!isOpen) return null;
 
     return createPortal(
+        <MotionProvider>
         <AnimatePresence>
             {isOpen && (
                 <>
-                    <motion.div
+                    <m.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -47,7 +49,7 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                         onClick={onClose}
                         className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
                     >
-                        <motion.div
+                        <m.div
                             initial={{ opacity: 0, scale: 0.92, y: 30 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.92, y: 30 }}
@@ -64,17 +66,19 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                                 <h3 className="text-xl font-display text-white">{title}</h3>
                                 <button
                                     onClick={onClose}
+                                    aria-label="Close modal"
                                     className="text-white/40 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
                                 >
                                     <X size={20} />
                                 </button>
                             </div>
                             <div className="p-6">{children}</div>
-                        </motion.div>
-                    </motion.div>
+                        </m.div>
+                    </m.div>
                 </>
             )}
-        </AnimatePresence>,
+        </AnimatePresence>
+        </MotionProvider>,
         document.body
     );
 }

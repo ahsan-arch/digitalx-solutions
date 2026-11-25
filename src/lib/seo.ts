@@ -200,32 +200,19 @@ export function generateOrganizationSchema() {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+                "@type": ["Organization", "ProfessionalService"],
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 alternateName: ["DigitalX", "Digital X Solutions"],
                 description:
-                    "DigitalX Solutions is a web development, AI automation, and performance marketing agency serving service businesses in the United States and Australia. We build websites, AI voice agents, GoHighLevel and CRM systems, and Meta Ads tracking.",
+                    "DigitalX Solutions is a custom CRM development, AI automation, and web engineering consultancy serving Australian and US businesses.",
                 disambiguatingDescription:
-                    "DigitalX Solutions is an automation and web development agency for service businesses in the United States and Australia. Not affiliated with DigitalX Limited (ASX: DCC) cryptocurrency funds or medical imaging and radiology providers.",
+                    "DigitalX Solutions is an automation and web development consultancy serving Australian and US businesses. Not affiliated with DigitalX Limited (ASX: DCC) cryptocurrency funds or medical imaging and radiology providers.",
                 url: siteConfig.domain,
                 email: "info@digitalx-solutions.com",
                 logo: `${siteConfig.domain}/logo.png`,
                 image: `${siteConfig.domain}/api/og`,
                 priceRange: "$$$",
-                address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "16 Boldrewood Ave",
-                    addressLocality: "Casula",
-                    addressRegion: "NSW",
-                    postalCode: "2170",
-                    addressCountry: "AU",
-                },
-                geo: {
-                    "@type": "GeoCoordinates",
-                    latitude: -33.9519,
-                    longitude: 150.9054,
-                },
                 telephone: "+61 451 413 786",
                 sameAs: [
                     "https://www.linkedin.com/company/digitalx-solutions-aus/",
@@ -283,48 +270,18 @@ export function generateOrganizationSchema() {
                         "@type": "Country",
                         name: "Australia",
                     },
-                    {
-                        "@type": "City",
-                        name: "Sydney",
-                        containedInPlace: { "@type": "Country", name: "Australia" },
-                    },
-                    {
-                        "@type": "City",
-                        name: "New York",
-                        containedInPlace: { "@type": "Country", name: "United States" },
-                    },
-                    {
-                        "@type": "City",
-                        name: "Los Angeles",
-                        containedInPlace: { "@type": "Country", name: "United States" },
-                    },
-                    {
-                        "@type": "City",
-                        name: "Chicago",
-                        containedInPlace: { "@type": "Country", name: "United States" },
-                    },
-                    {
-                        "@type": "City",
-                        name: "Miami",
-                        containedInPlace: { "@type": "Country", name: "United States" },
-                    },
-                    {
-                        "@type": "City",
-                        name: "Melbourne",
-                        containedInPlace: { "@type": "Country", name: "Australia" },
-                    },
                 ],
                 knowsAbout: [
+                    "Custom CRM Development, Next.js and PostgreSQL business portals with zero recurring per-seat fees",
                     "n8n Workflow Automation, Building custom open source automation pipelines as a Zapier alternative",
                     "GoHighLevel (GHL), Custom CRM, pipeline, and marketing automation architecture for agencies",
-                    "Next.js Development Agency, High-performance websites with SEO-baked architecture",
+                    "Next.js Development, High-performance websites with SEO-baked architecture",
                     "Meta Ads Engineering, Server side CAPI tracking to bypass iOS14+ signal loss",
                     "Conversational AI, 24/7 AI voice receptionists and WhatsApp chatbots for local businesses",
                     "AI Voice Receptionists, Automated phone answering for dental clinics, salons, and gyms",
-                    "Revenue Operations (RevOps), End to-end automation of lead capture, nurture, and conversion",
+                    "Revenue Operations (RevOps), End-to-end automation of lead capture, nurture, and conversion",
                     "Business Process Automation, Replacing manual workflows with intelligent n8n pipelines",
                     "White-Label Automation for Agencies, Building automation systems agencies can resell",
-                    "Digital Marketing Sydney and USA, Full service digital growth for Australian and American businesses",
                 ],
             },
             {
@@ -816,24 +773,9 @@ export function generateLocalBusinessSchema(opts: {
             "https://www.crunchbase.com/organization/digitalx-solutions",
             "https://www.trustpilot.com/review/digitalx-solutions.com",
         ],
-        ...(opts.addressLocality || opts.addressRegion
-            ? {
-                  address: {
-                      "@type": "PostalAddress",
-                      ...(opts.addressLocality && { addressLocality: opts.addressLocality }),
-                      ...(opts.addressRegion && { addressRegion: opts.addressRegion }),
-                      addressCountry: opts.addressCountry,
-                  },
-              }
-            : {}),
-        ...(opts.geo && {
-            geo: {
-                "@type": "GeoCoordinates",
-                latitude: opts.geo.latitude,
-                longitude: opts.geo.longitude,
-            },
-        }),
-        areaServed: opts.areaServed.map((a) => ({ "@type": a.type, name: a.name })),
+        areaServed: opts.areaServed
+            .filter((a) => a.type === "Country")
+            .map((a) => ({ "@type": a.type, name: a.name })),
     };
 }
 

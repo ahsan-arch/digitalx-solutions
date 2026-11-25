@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Database, Clock, Workflow, Terminal, Server, FileText, AlertTriangle, Cpu, Layers } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Database, Clock, Workflow, Terminal, Server, FileText, AlertTriangle, Cpu, Layers } from "lucide-react";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -156,7 +156,7 @@ export default function CustomAiWorkflowAutomationPage() {
             <div className="mt-10 grid gap-6 sm:grid-cols-3">
               <div className="rounded-xl border border-border/70 bg-surface-page p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
-                  <Zap className="h-5 w-5 text-brand" />
+                  <Server className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
                   Runaway Per-Task SaaS Costs
