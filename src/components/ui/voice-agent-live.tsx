@@ -103,7 +103,7 @@ export function VoiceAgentLive({
         <div className="flex items-center gap-3">
           <div
             className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full",
+              "flex h-9 w-9 items-center justify-center rounded-lg",
               isActive ? "bg-green-100 text-green-600" : "bg-brand/10 text-brand"
             )}
           >
@@ -272,7 +272,7 @@ export function VoiceAgentLive({
           </button>
         ) : (
           <>
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
               <Mic
                 className={cn(
                   "h-4 w-4",
@@ -287,12 +287,12 @@ export function VoiceAgentLive({
             <button
               type="button"
               onClick={handleEnd}
-              className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-700"
+              className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-700"
             >
               <PhoneOff className="h-4 w-4" />
               End call
             </button>
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
               <Volume2
                 className={cn(
                   "h-4 w-4",

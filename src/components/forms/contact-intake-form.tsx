@@ -154,7 +154,7 @@ export function ContactIntakeForm() {
           <button
             type="submit"
             disabled={submitState === "submitting"}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
           >
             <span>{submitState === "submitting" ? "Sending..." : "Book a strategy call"}</span>
             <ArrowRight className="h-4 w-4" />

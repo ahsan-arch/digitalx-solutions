@@ -240,7 +240,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
         <div className="flex items-center justify-between border-b border-white/10 bg-surface-50 px-5 py-3">
           <div className="flex items-center gap-3">
             <div
-              className={`flex h-9 w-9 items-center justify-center rounded-full ${
+              className={`flex h-9 w-9 items-center justify-center rounded-lg ${
                 isActive ? "bg-green-100 text-green-600" : "bg-brand/10 text-brand"
               }`}
             >
@@ -270,7 +270,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
             )}
             <button
               onClick={() => setMuted((m) => !m)}
-              className="ml-1 rounded-full p-1.5 text-foreground/40 transition hover:bg-white/5 hover:text-foreground/70"
+              className="ml-1 rounded-lg p-1.5 text-foreground/40 transition hover:bg-white/5 hover:text-foreground/70"
               title={muted ? "Unmute voice" : "Mute voice"}
             >
               {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
@@ -345,17 +345,17 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
             </button>
           ) : (
             <>
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
                 <Mic className="h-4 w-4 text-foreground/40" />
               </div>
               <button
                 onClick={endDemo}
-                className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-700"
+                className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-700"
               >
                 <PhoneOff className="h-4 w-4" />
                 End call
               </button>
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
                 <Volume2 className="h-4 w-4 text-foreground/40" />
               </div>
             </>

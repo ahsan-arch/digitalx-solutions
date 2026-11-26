@@ -203,14 +203,14 @@ export default async function DevelopmentSlugPage(props: Props) {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
                 >
                   Schedule Engineering Consultation
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-[#0d1421]/85 px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#0d1421]/85 px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
                 >
                   Browse Complementary Solutions
                 </Link>
@@ -661,14 +661,14 @@ export default async function DevelopmentSlugPage(props: Props) {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0d1421]/85 px-7 py-3.5 text-sm font-semibold text-foreground hover:bg-surface-100 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
                   >
                     Book a strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-7 py-3.5 text-sm font-semibold text-white/90 transition hover:bg-white/10"
                   >
                     Hear a live AI demo
                   </Link>

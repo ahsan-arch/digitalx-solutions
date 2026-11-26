@@ -274,7 +274,7 @@ export function SiteHeader() {
         <div className="hidden xl:block">
           <Link
             href="/contact"
-            className="group/cta relative inline-flex items-center gap-1.5 overflow-hidden rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-2xs transition-colors hover:bg-brand-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
+            className="group/cta relative inline-flex items-center gap-1.5 overflow-hidden rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-2xs transition-colors hover:bg-brand-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
           >
             <span
               aria-hidden="true"

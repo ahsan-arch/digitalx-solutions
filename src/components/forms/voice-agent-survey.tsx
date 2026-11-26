@@ -178,7 +178,7 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep"
       >
         Continue to voice picker
         <ArrowRight className="h-4 w-4" />

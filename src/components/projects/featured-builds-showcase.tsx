@@ -566,7 +566,7 @@ export function FeaturedBuildsShowcase({
                   aria-controls={`build-panel-${build.slug}`}
                   onClick={() => setActiveSlug(build.slug)}
                   className={cn(
-                    "inline-flex items-center gap-2 rounded-xl border px-3.5 py-2 text-xs font-semibold transition-colors",
+                    "inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-xs font-semibold transition-colors",
                     selected
                       ? "border-cyan-400/40 bg-brand text-white"
                       : "border-white/10 bg-[#070a11]/80 text-slate-300 hover:border-white/25 hover:text-white"

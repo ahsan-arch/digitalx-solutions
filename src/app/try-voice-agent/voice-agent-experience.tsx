@@ -79,7 +79,7 @@ export function VoiceAgentExperience() {
             <li key={s.id} className="flex items-center gap-2 sm:gap-3">
               <span
                 className={cn(
-                  "flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-semibold",
+                  "flex h-7 w-7 items-center justify-center rounded-lg text-[11px] font-semibold",
                   isActive && "bg-brand text-white",
                   isDone && "bg-brand/15 text-brand",
                   !isActive && !isDone && "bg-white/5 text-foreground/55"

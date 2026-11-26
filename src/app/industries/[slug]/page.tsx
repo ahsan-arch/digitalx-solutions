@@ -160,14 +160,14 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-sm"
+            className="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-sm"
           >
             Book a Strategy Call
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <Link
             href="/try-voice-agent"
-            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-surface-50 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
+            className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-surface-50 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
           >
             <Phone className="mr-2 h-4 w-4 text-brand" />
             Hear a Demo (2 Min)
@@ -248,7 +248,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
                   key={step.name}
                   className="rounded-2xl border border-white/10 bg-surface-50 p-5 transition hover:border-brand/40"
                 >
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-brand/10 text-xs font-bold text-brand">
                     0{idx + 1}
                   </span>
                   <h3 className="mt-3 font-display text-sm font-semibold text-foreground">{step.name}</h3>
@@ -565,7 +565,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
           <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-0">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-sm"
+              className="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-sm"
             >
               Book a Strategy Call
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -574,7 +574,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
               href="https://wa.me/61451413786"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-surface-50 px-5 py-3 text-xs font-semibold text-foreground transition hover:bg-surface-100"
+              className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-surface-50 px-5 py-3 text-xs font-semibold text-foreground transition hover:bg-surface-100"
             >
               <MessageSquare className="mr-1.5 h-3.5 w-3.5 text-emerald-400" />
               WhatsApp

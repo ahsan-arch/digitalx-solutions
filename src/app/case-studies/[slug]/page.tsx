@@ -502,7 +502,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-xs font-semibold text-white shadow-xs hover:bg-brand-deep transition"
+            className="inline-flex items-center rounded-lg bg-brand px-5 py-2.5 text-xs font-semibold text-white shadow-xs hover:bg-brand-deep transition"
           >
             Deploy This Architecture for Your Business
             <ArrowRight className="ml-1.5 h-3.5 w-3.5" />

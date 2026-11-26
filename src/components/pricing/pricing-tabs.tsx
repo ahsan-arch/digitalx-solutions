@@ -197,7 +197,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
           <div
             role="tablist"
             aria-label="Pricing Categories"
-            className="relative inline-flex flex-wrap justify-center gap-1 rounded-2xl border border-white/10 bg-[#0d1421] p-1.5 shadow-xs"
+            className="relative inline-flex flex-wrap justify-center gap-1 rounded-xl border border-white/10 bg-[#0d1421] p-1.5 shadow-xs"
           >
             <button
               role="tab"
@@ -207,7 +207,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               onClick={() => setActiveTab("crm")}
               type="button"
               className={cn(
-                "relative z-10 flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
+                "relative z-10 flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
                 activeTab === "crm"
                   ? "text-white"
                   : "text-slate-300 hover:text-white"
@@ -217,7 +217,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                 <m.span
                   layoutId="pricing-tab-pill"
                   transition={PILL_SPRING}
-                  className="absolute inset-0 rounded-xl border border-cyan-400/35 bg-[#142038] shadow-sm"
+                  className="absolute inset-0 rounded-lg border border-cyan-400/35 bg-[#142038] shadow-sm"
                   aria-hidden="true"
                 />
               )}
@@ -236,7 +236,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               onClick={() => setActiveTab("retainers")}
               type="button"
               className={cn(
-                "relative z-10 flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
+                "relative z-10 flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
                 activeTab === "retainers"
                   ? "text-white"
                   : "text-slate-300 hover:text-white"
@@ -246,7 +246,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                 <m.span
                   layoutId="pricing-tab-pill"
                   transition={PILL_SPRING}
-                  className="absolute inset-0 rounded-xl border border-cyan-400/35 bg-[#142038] shadow-sm"
+                  className="absolute inset-0 rounded-lg border border-cyan-400/35 bg-[#142038] shadow-sm"
                   aria-hidden="true"
                 />
               )}
@@ -268,7 +268,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                 onClick={() => setCurrency(curr)}
                 aria-pressed={currency === curr}
                 className={cn(
-                  "rounded-lg px-3.5 py-2 font-mono text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
+                  "rounded-md px-3.5 py-2 font-mono text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
                   currency === curr
                     ? "border border-cyan-400/35 bg-[#142038] text-cyan-300 shadow-2xs"
                     : "text-slate-400 hover:text-white"
@@ -320,7 +320,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                   >
                     {tier.highlight && (
                       <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
-                        <span className="inline-flex items-center gap-1 rounded-full bg-brand px-3.5 py-1 text-xs font-semibold text-white shadow-sm">
+                        <span className="inline-flex items-center gap-1 rounded-md bg-brand px-3.5 py-1 text-xs font-semibold text-white shadow-sm">
                           {tier.badge}
                         </span>
                       </div>

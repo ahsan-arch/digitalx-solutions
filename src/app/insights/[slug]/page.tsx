@@ -168,7 +168,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     )}
 
                     <div className="mb-12 flex items-start gap-4 rounded-lg border border-line-subtle bg-surface-sunken p-4">
-                        <div className="h-12 w-12 shrink-0 rounded-full bg-accent-soft flex items-center justify-center text-accent font-display font-semibold text-lg">
+                        <div className="h-12 w-12 shrink-0 rounded-lg bg-accent-soft flex items-center justify-center text-accent font-display font-semibold text-lg">
                             {author.name.charAt(0)}
                         </div>
                         <div>
@@ -217,14 +217,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                                 <Link
                                     href="/contact"
-                                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-deep"
+                                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-deep"
                                 >
                                     Book a free AI automation audit
                                     <ArrowRight className="h-4 w-4" />
                                 </Link>
                                 <Link
                                     href="/try-voice-agent"
-                                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-[#0d1421]/85 px-5 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-200"
+                                    className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 px-5 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-200"
                                 >
                                     Test live voice agent
                                 </Link>

@@ -162,14 +162,14 @@ export default function CaseStudiesIndexPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition"
+              className="inline-flex items-center rounded-lg bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition"
             >
               Book a Strategy Call
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition"
+              className="inline-flex items-center rounded-lg border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition"
             >
               Test Live Voice Demo
             </Link>

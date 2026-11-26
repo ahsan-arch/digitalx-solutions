@@ -140,7 +140,7 @@ export default function HomePage() {
           <div className="saas-grid-bg relative overflow-hidden rounded-2xl border border-white/15 bg-[#0b111e]/90 px-6 py-10 shadow-[0_24px_64px_-20px_rgba(2,6,23,0.9)] backdrop-blur-md md:px-10 md:py-14">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+                <p className="mb-3 inline-flex items-center gap-2 rounded-md border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
                   Custom software, voice telephony &amp; revenue automation
                 </p>
@@ -155,7 +155,7 @@ export default function HomePage() {
                   <MagneticButton>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.65)] transition-colors hover:bg-brand-deep"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.65)] transition-colors hover:bg-brand-deep"
                     >
                       Book a strategy call
                       <ArrowRight className="h-4 w-4" />
@@ -163,7 +163,7 @@ export default function HomePage() {
                   </MagneticButton>
                   <Link
                     href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-slate-100 transition-colors hover:border-cyan-400/35 hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-slate-100 transition-colors hover:border-cyan-400/35 hover:bg-white/10"
                   >
                     <PhoneCall className="h-4 w-4 text-cyan-400" />
                     Hear a live AI demo
@@ -578,14 +578,14 @@ export default function HomePage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
                 >
                   Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/try-voice-agent"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
                 >
                   <PhoneCall className="h-4 w-4 text-cyan-400" />
                   Hear a live AI demo
