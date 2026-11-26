@@ -19,7 +19,7 @@ export default function EnterpriseAIAutomationPage() {
         "@id": `${siteConfig.domain}/#organization`,
         "name": "DigitalX Solutions",
         "url": siteConfig.domain,
-        "logo": `${siteConfig.domain}/logo.png`,
+        "logo": `${siteConfig.domain}/icon.svg`,
         ...(factsData.leadership.founder.fullName.startsWith("[TODO") ? {} : {
           "founder": {
             "@type": "Person",
@@ -174,14 +174,14 @@ export default function EnterpriseAIAutomationPage() {
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold border border-border bg-card/60 hover:bg-card transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold border border-white/10 bg-card/60 hover:bg-card transition-all"
             >
               Test Live Voice Demo
             </Link>
           </div>
 
           {/* Trust Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-border">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/10">
             <div className="flex items-center gap-2.5">
               <PhoneCall className="w-4 h-4 text-primary shrink-0" />
               <span className="text-xs font-medium text-muted-foreground">Fast, Natural Turnaround</span>
@@ -201,7 +201,7 @@ export default function EnterpriseAIAutomationPage() {
           </div>
 
           {/* AI Voice & Call Recording Regulatory Disclosure */}
-          <div className="mt-6 flex items-center gap-2 rounded-lg border border-border/80 bg-muted/40 px-4 py-3 text-xs text-muted-foreground">
+          <div className="mt-6 flex items-center gap-2 rounded-lg border border-white/10 bg-muted/40 px-4 py-3 text-xs text-muted-foreground">
             <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
             <span>
               <strong>Compliance Disclosure:</strong> Inbound call recording and AI voice handling comply with Australian Privacy Principles (Privacy Act 1988) and US two-party/one-party consent telecommunications laws. Read our{" "}
@@ -225,7 +225,7 @@ export default function EnterpriseAIAutomationPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="rounded-xl border border-border bg-card p-6 flex flex-col justify-between">
+              <div className="rounded-xl border border-white/10 bg-card p-6 flex flex-col justify-between">
                 <div>
                   <div className="p-2.5 w-fit rounded-lg bg-primary/10 text-primary mb-5">
                     <PhoneCall className="w-5 h-5" />
@@ -246,7 +246,7 @@ export default function EnterpriseAIAutomationPage() {
               </div>
 
               {/* Card 2 */}
-              <div className="rounded-xl border border-border bg-card p-6 flex flex-col justify-between">
+              <div className="rounded-xl border border-white/10 bg-card p-6 flex flex-col justify-between">
                 <div>
                   <div className="p-2.5 w-fit rounded-lg bg-primary/10 text-primary mb-5">
                     <Database className="w-5 h-5" />
@@ -267,7 +267,7 @@ export default function EnterpriseAIAutomationPage() {
               </div>
 
               {/* Card 3 */}
-              <div className="rounded-xl border border-border bg-card p-6 flex flex-col justify-between">
+              <div className="rounded-xl border border-white/10 bg-card p-6 flex flex-col justify-between">
                 <div>
                   <div className="p-2.5 w-fit rounded-lg bg-primary/10 text-primary mb-5">
                     <Network className="w-5 h-5" />
@@ -290,7 +290,7 @@ export default function EnterpriseAIAutomationPage() {
           </div>
 
           {/* Deep Architectural Breakdown */}
-          <div className="pt-8 border-t border-border">
+          <div className="pt-8 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
               Eliminating the Recurring SaaS &quot;Integration Tax&quot;
             </h2>
@@ -298,7 +298,7 @@ export default function EnterpriseAIAutomationPage() {
               When high-volume B2B organizations scale beyond 50,000 monthly automation runs on platforms like Zapier or Make, subscription costs quickly climb into thousands of dollars per month. A single high-frequency polling trigger or nested webhook loop can blow through your monthly allocation overnight.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-white/10 bg-card p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Server className="w-5 h-5 text-primary" />
                   <h3 className="text-lg font-semibold">Self-Hosted Dedicated Infrastructure</h3>
@@ -322,7 +322,7 @@ export default function EnterpriseAIAutomationPage() {
                 </ul>
               </div>
 
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-white/10 bg-card p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <PhoneCall className="w-5 h-5 text-primary" />
                   <h3 className="text-lg font-semibold">High-Concurrency Voice Telephony</h3>
@@ -349,7 +349,7 @@ export default function EnterpriseAIAutomationPage() {
           </div>
 
           {/* Benchmark Table */}
-          <div className="pt-8 border-t border-border">
+          <div className="pt-8 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
               Benchmark Performance: Real-World Operational Metrics
             </h2>
@@ -357,9 +357,9 @@ export default function EnterpriseAIAutomationPage() {
               Every workflow and telephony pipeline engineered by DigitalX Solutions is validated against rigorous operational benchmarks.
             </p>
 
-            <div className="overflow-x-auto rounded-xl border border-border">
+            <div className="overflow-x-auto rounded-xl border border-white/10">
               <table className="w-full text-left text-sm">
-                <thead className="bg-muted/50 border-b border-border text-foreground font-semibold">
+                <thead className="bg-muted/50 border-b border-white/10 text-foreground font-semibold">
                   <tr>
                     <th className="py-4 px-6">Operational Metric</th>
                     <th className="py-4 px-6">Industry Legacy Average</th>
@@ -403,7 +403,7 @@ export default function EnterpriseAIAutomationPage() {
           </div>
 
           {/* Implementation Process */}
-          <div className="pt-8 border-t border-border">
+          <div className="pt-8 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
               Our 5-Stage Engineering Methodology
             </h2>
@@ -411,42 +411,42 @@ export default function EnterpriseAIAutomationPage() {
               We deploy battle-tested automation infrastructure using a structured sprint framework designed to deliver measurable business outcomes without operational downtime.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-white/10 bg-card p-6">
                 <span className="font-mono text-xs font-bold text-primary">STAGE 01</span>
                 <h3 className="text-base font-semibold mt-2 mb-2">Process Audit & Schema Blueprint</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   We audit your current manual touchpoints, API endpoints, and CRM fields to map a unified data schema that eliminates redundant steps.
                 </p>
               </div>
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-white/10 bg-card p-6">
                 <span className="font-mono text-xs font-bold text-primary">STAGE 02</span>
                 <h3 className="text-base font-semibold mt-2 mb-2">Infrastructure Containerization</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   We provision and harden your private n8n Docker instance with automated backups, rate-limiting rules, and Redis execution queues.
                 </p>
               </div>
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-white/10 bg-card p-6">
                 <span className="font-mono text-xs font-bold text-primary">STAGE 03</span>
                 <h3 className="text-base font-semibold mt-2 mb-2">Voice Agent Prompt & Logic Tuning</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   We configure your telephony SIP bridges and train conversational AI models on objection handling, FAQ matrices, and scheduling rules.
                 </p>
               </div>
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-white/10 bg-card p-6">
                 <span className="font-mono text-xs font-bold text-primary">STAGE 04</span>
                 <h3 className="text-base font-semibold mt-2 mb-2">Parallel Testing & Validation</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   We run automated simulated call volumes and payload edge cases alongside your existing workflows to verify zero lead leakage.
                 </p>
               </div>
-              <div className="rounded-xl border border-border bg-card p-6">
+              <div className="rounded-xl border border-white/10 bg-card p-6">
                 <span className="font-mono text-xs font-bold text-primary">STAGE 05</span>
                 <h3 className="text-base font-semibold mt-2 mb-2">Production Cutover & Observability</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   We switch live routing over to the new autonomous stack, establishing continuous uptime telemetry, Slack alerts, and error recovery.
                 </p>
               </div>
-              <div className="rounded-xl border border-border bg-card p-6 flex flex-col justify-between">
+              <div className="rounded-xl border border-white/10 bg-card p-6 flex flex-col justify-between">
                 <div>
                   <span className="font-mono text-xs font-bold text-primary">OUTCOME</span>
                   <h3 className="text-base font-semibold mt-2 mb-2">Turnkey Autonomous Growth</h3>
@@ -462,7 +462,7 @@ export default function EnterpriseAIAutomationPage() {
           </div>
 
           {/* FAQ / AEO Section */}
-          <div className="pt-8 border-t border-border">
+          <div className="pt-8 border-t border-white/10">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
               Frequently Asked Questions (Answer Engine Snippet Hub)
             </h2>
@@ -471,7 +471,7 @@ export default function EnterpriseAIAutomationPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="rounded-lg border border-border p-6 bg-card">
+              <div className="rounded-lg border border-white/10 p-6 bg-card">
                 <h3 className="text-lg font-semibold mb-3">
                   What is a self-hosted automation pipeline?
                 </h3>
@@ -480,7 +480,7 @@ export default function EnterpriseAIAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border p-6 bg-card">
+              <div className="rounded-lg border border-white/10 p-6 bg-card">
                 <h3 className="text-lg font-semibold mb-3">
                   How do custom AI voice agents qualify high-ticket B2B leads?
                 </h3>
@@ -489,7 +489,7 @@ export default function EnterpriseAIAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border p-6 bg-card">
+              <div className="rounded-lg border border-white/10 p-6 bg-card">
                 <h3 className="text-lg font-semibold mb-3">
                   How does self-hosting eliminate recurring integration costs?
                 </h3>
@@ -498,7 +498,7 @@ export default function EnterpriseAIAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border p-6 bg-card">
+              <div className="rounded-lg border border-white/10 p-6 bg-card">
                 <h3 className="text-lg font-semibold mb-3">
                   How does an AI voice agent integrate with GoHighLevel and HubSpot?
                 </h3>
@@ -507,7 +507,7 @@ export default function EnterpriseAIAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border p-6 bg-card">
+              <div className="rounded-lg border border-white/10 p-6 bg-card">
                 <h3 className="text-lg font-semibold mb-3">
                   What latency is required for natural B2B voice conversations?
                 </h3>
@@ -516,7 +516,7 @@ export default function EnterpriseAIAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-border p-6 bg-card">
+              <div className="rounded-lg border border-white/10 p-6 bg-card">
                 <h3 className="text-lg font-semibold mb-3">
                   What security controls govern self-hosted n8n environments?
                 </h3>
@@ -543,7 +543,7 @@ export default function EnterpriseAIAutomationPage() {
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold border border-border bg-card hover:bg-card/80 transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold border border-white/10 bg-card hover:bg-card/80 transition-all shadow-sm"
               >
                 Explore Transparent Pricing
               </Link>

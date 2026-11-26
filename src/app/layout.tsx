@@ -9,6 +9,7 @@ import {
   GoogleTagManagerNoscript,
 } from "@/components/analytics/gtm";
 import { ApolloTracker } from "@/components/analytics/apollo-tracker";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
@@ -25,7 +26,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#f7f2e8",
+  themeColor: "#070a11",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -103,7 +104,7 @@ export const metadata: Metadata = {
         },
   appleWebApp: {
     capable: true,
-    statusBarStyle: "default",
+    statusBarStyle: "black-translucent",
     title: "DigitalX",
   },
   formatDetection: {
@@ -122,7 +123,7 @@ export default function RootLayout({
   const webSiteSchema = generateWebSiteSchema();
 
   return (
-    <html lang="en-AU">
+    <html lang="en-AU" className="dark">
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -143,6 +144,7 @@ export default function RootLayout({
         className={`${inter.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
       >
         <GoogleTagManagerNoscript />
+        <ScrollProgress />
         <SiteHeader />
         <div className="relative min-h-screen pt-20">
           {children}

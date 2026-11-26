@@ -59,7 +59,7 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-3xl border border-border bg-surface-50 p-6 md:p-8"
+      className="space-y-5 rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-8"
       noValidate
     >
       <div>
@@ -76,7 +76,7 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
           onChange={(e) => setBusinessName(e.target.value)}
           aria-invalid={!!errors.businessName}
           aria-describedby={errors.businessName ? "va-business-name-error" : undefined}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
+          className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
           placeholder="e.g. Acme Plumbing"
         />
         {errors.businessName && (
@@ -95,7 +95,7 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
           name="industry"
           value={industry}
           onChange={(e) => setIndustry(e.target.value)}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
+          className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
         >
           {industryOptions.map((opt) => (
             <option key={opt} value={opt}>
@@ -120,7 +120,7 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
           onChange={(e) => setWhatYouDo(e.target.value)}
           aria-invalid={!!errors.whatYouDo}
           aria-describedby={errors.whatYouDo ? "va-what-you-do-error" : undefined}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
+          className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
           placeholder="e.g. We do residential AC repair and maintenance across Phoenix. Same day service, 24/7 emergencies."
         />
         {errors.whatYouDo && (
@@ -141,7 +141,7 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
           {voiceAgentRoles.map((role) => (
             <label
               key={role}
-              className="flex cursor-pointer items-start gap-3 rounded-xl border border-border bg-white p-3 text-sm transition hover:border-brand/40"
+              className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-[#0d1421]/85 p-3 text-sm transition hover:border-brand/40"
             >
               <input
                 type="radio"
@@ -166,7 +166,7 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
           name="tone"
           value={tone}
           onChange={(e) => setTone(e.target.value as (typeof voiceAgentTones)[number])}
-          className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
+          className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand"
         >
           {voiceAgentTones.map((t) => (
             <option key={t} value={t}>

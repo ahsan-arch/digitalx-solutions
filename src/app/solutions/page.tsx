@@ -39,7 +39,7 @@ export default function SolutionsHubPage() {
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
               Capabilities Overview
             </span>
             <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
@@ -84,7 +84,7 @@ export default function SolutionsHubPage() {
 
         <div className="grid gap-5 md:grid-cols-3">
           {solutions.map((solution) => (
-            <article key={solution.slug} className="rounded-2xl border border-border bg-surface-50 p-6">
+            <article key={solution.slug} className="rounded-2xl border border-white/10 bg-surface-50 p-6">
               <span className="font-mono text-xs font-medium text-foreground/75">{solution.tagline}</span>
               <h2 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h2>
               <p className="mt-3 text-sm leading-relaxed text-foreground/70">{solution.summary}</p>
@@ -106,11 +106,11 @@ export default function SolutionsHubPage() {
       </section>
 
       <section className="container-shell mt-14">
-        <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
+        <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
           <h2 className="font-display text-3xl text-foreground">Engagement model</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-4">
             {processSteps.map((step, index) => (
-              <div key={step.title} className="rounded-2xl border border-border bg-surface-50 p-5">
+              <div key={step.title} className="rounded-2xl border border-white/10 bg-surface-50 p-5">
                 <span className="font-mono text-xs font-medium text-brand">0{index + 1}</span>
                 <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
                 <p className="mt-2 text-sm text-foreground/68">{step.description}</p>

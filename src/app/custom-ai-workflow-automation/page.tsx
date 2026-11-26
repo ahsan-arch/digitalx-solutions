@@ -78,7 +78,7 @@ export default function CustomAiWorkflowAutomationPage() {
       <main id="main" className="pb-24 pt-12">
         {/* SECTION 1: HERO */}
         <section className="container-shell">
-          <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-12 md:py-16">
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d1421]/85 px-6 py-12 shadow-xs md:px-12 md:py-16">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Open-source infrastructure, n8n and Make engineering
@@ -100,7 +100,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </Link>
                 <Link
                   href="/solutions/n8n-workflow-automation"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3.5 text-sm font-medium text-foreground transition hover:bg-surface-sunken"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-6 py-3.5 text-sm font-medium text-foreground transition hover:bg-surface-sunken"
                 >
                   Explore n8n Specifications
                   <ArrowRight className="h-4 w-4" />
@@ -114,22 +114,22 @@ export default function CustomAiWorkflowAutomationPage() {
 
             {/* Quick Metrics Bar */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">Infrastructure</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Self-Hosted n8n</p>
                 <p className="mt-1 text-xs text-foreground/75">Unlimited executions with 100% data privacy.</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">Cost Efficiency</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Zero Per-Task Fees</p>
                 <p className="mt-1 text-xs text-foreground/75">Eliminates exponential SaaS task bill spikes.</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">Reliability</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Automated Retries</p>
                 <p className="mt-1 text-xs text-foreground/75">Exponential backoff &amp; instant Slack error alerts.</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">Code Ownership</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">100% Client Owned</p>
                 <p className="mt-1 text-xs text-foreground/75">Zero vendor lock-in with full JSON exports.</p>
@@ -140,7 +140,7 @@ export default function CustomAiWorkflowAutomationPage() {
 
         {/* SECTION 2: THE OPERATIONAL BOTTLENECK */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Operational friction
@@ -154,8 +154,8 @@ export default function CustomAiWorkflowAutomationPage() {
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
                   <Server className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -166,8 +166,8 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
                   <AlertTriangle className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -178,8 +178,8 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
                   <Clock className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -195,7 +195,7 @@ export default function CustomAiWorkflowAutomationPage() {
 
         {/* SECTION 3: WHAT WE ARCHITECT & DEPLOY */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Technical capabilities
@@ -209,7 +209,7 @@ export default function CustomAiWorkflowAutomationPage() {
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   Self-Hosted Infrastructure
                 </span>
@@ -221,7 +221,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   Custom API Integrations
                 </span>
@@ -233,7 +233,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   AI Data Pipelines
                 </span>
@@ -245,7 +245,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   Lead-to-Cash Automation
                 </span>
@@ -257,7 +257,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6 lg:col-span-2">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6 lg:col-span-2">
                 <span className="text-xs font-semibold text-brand">
                   Error Handling and Alerts
                 </span>
@@ -274,7 +274,7 @@ export default function CustomAiWorkflowAutomationPage() {
 
         {/* SECTION 4: HOW IT WORKS */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Delivery methodology
@@ -288,7 +288,7 @@ export default function CustomAiWorkflowAutomationPage() {
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Phase 1: Architecture
                 </p>
@@ -300,7 +300,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Phase 2: Engineering
                 </p>
@@ -312,7 +312,7 @@ export default function CustomAiWorkflowAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Phase 3: Production Handover
                 </p>
@@ -344,7 +344,7 @@ export default function CustomAiWorkflowAutomationPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
+            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs">
               <span className="text-xs font-semibold text-brand">Lead Automation</span>
               <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                 Automated B2B Lead Enrichment &amp; Routing
@@ -354,7 +354,7 @@ export default function CustomAiWorkflowAutomationPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
+            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs">
               <span className="text-xs font-semibold text-brand">Finance Operations</span>
               <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                 Zero-Touch Accounting &amp; Invoicing Sync
@@ -364,7 +364,7 @@ export default function CustomAiWorkflowAutomationPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
+            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs">
               <span className="text-xs font-semibold text-brand">Document Processing</span>
               <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
                 AI Document &amp; Inbox Triage
@@ -378,7 +378,7 @@ export default function CustomAiWorkflowAutomationPage() {
 
         {/* SECTION 6: BUYER FAQ ACCORDION */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">
                 Buyer FAQ
@@ -399,7 +399,7 @@ export default function CustomAiWorkflowAutomationPage() {
 
         {/* SECTION 7: BOTTOM CONVERSION BANNER */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="rounded-2xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-white md:px-12 md:py-16">
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
                 Ready to Automate Your Backend Operations?
@@ -410,7 +410,7 @@ export default function CustomAiWorkflowAutomationPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-sunken"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition-colors"
                 >
                   Schedule Your Workflow Audit
                   <ArrowRight className="h-4 w-4" />

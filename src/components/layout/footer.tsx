@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/70 bg-surface-50 py-16">
+    <footer className="border-t border-white/10 bg-surface-50 py-16">
       <div className="container-shell">
         <div className="grid gap-10 lg:grid-cols-[1.6fr_2fr]">
           <div>
@@ -26,7 +26,7 @@ export function Footer() {
               <a
                 href={`tel:${companyProfile.phoneE164}`}
                 aria-label={`Call DigitalX Solutions at ${companyProfile.phone}`}
-                className="inline-flex min-h-[44px] min-w-[44px] items-center rounded-lg border border-border/80 bg-white px-3.5 py-2 font-medium text-brand transition-colors hover:bg-surface-100 hover:text-brand-deep"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center rounded-lg border border-white/10 bg-[#0d1421]/85 px-3.5 py-2 font-medium text-brand transition-colors hover:bg-surface-100 hover:text-brand-deep"
               >
                 {companyProfile.phone}
               </a>
@@ -35,7 +35,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message us on WhatsApp"
-                className="inline-flex min-h-[44px] min-w-[44px] items-center gap-2 rounded-lg border border-border/80 bg-white px-3.5 py-2 font-medium text-brand transition-colors hover:bg-surface-100 hover:text-brand-deep"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center gap-2 rounded-lg border border-white/10 bg-[#0d1421]/85 px-3.5 py-2 font-medium text-brand transition-colors hover:bg-surface-100 hover:text-brand-deep"
               >
                 <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp
@@ -70,7 +70,7 @@ export function Footer() {
           <PlatformIntegrationsStrip />
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-sm text-foreground/75 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm text-foreground/75 md:flex-row md:items-center md:justify-between">
           <p>
             (c) {currentYear} {companyProfile.name}. All rights reserved.
           </p>

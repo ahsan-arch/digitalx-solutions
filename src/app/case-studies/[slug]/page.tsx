@@ -223,7 +223,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       </Link>
 
       {/* Hero Header */}
-      <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-14">
+      <div className="rounded-3xl border border-white/10 bg-surface-50 p-8 md:p-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs font-medium text-brand">
@@ -238,7 +238,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           </span>
         </div>
 
-        <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-border pb-8">
+        <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-8">
           <div>
             <h1 className="font-display text-3xl text-foreground md:text-5xl font-semibold">
               {caseStudyTitles[project.slug] || `${project.industry} Case Study`}
@@ -263,7 +263,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               />
             </div>
           ) : (
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white border border-border text-brand font-bold">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#0d1421]/85 border border-white/10 text-brand font-bold">
               <Building2 className="h-7 w-7" />
             </div>
           )}
@@ -305,7 +305,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         {/* Core Narrative Grid */}
         <div className="mt-12 grid gap-10 md:grid-cols-2">
           {/* Problem Deep Dive */}
-          <div className="rounded-2xl border border-border bg-white p-6 md:p-8">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
             <div className="flex items-center gap-2 text-foreground font-semibold">
               <AlertTriangle className="h-5 w-5 text-amber-600" />
               <h2 className="font-display text-xl">The Operational Bottleneck</h2>
@@ -347,7 +347,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           </div>
 
           {/* Solution & Engineering Architecture */}
-          <div className="rounded-2xl border border-border bg-white p-6 md:p-8">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
             <div className="flex items-center gap-2 text-foreground font-semibold">
               <Cpu className="h-5 w-5 text-brand" />
               <h2 className="font-display text-xl">What Was Built &amp; Deployed</h2>
@@ -368,7 +368,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                 {project.toolsUsed.map((tool) => (
                   <span
                     key={tool}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface-50 px-3 py-1.5 text-xs font-semibold text-foreground"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-surface-50 px-3 py-1.5 text-xs font-semibold text-foreground"
                   >
                     <CheckCircle2 className="h-3.5 w-3.5 text-brand" />
                     {tool}
@@ -380,14 +380,14 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         </div>
 
         {/* Measurable Impact & Revenue Metrics */}
-        <div className="mt-12 rounded-2xl border border-emerald-600/30 bg-emerald-500/5 p-6 md:p-10">
+        <div className="mt-12 rounded-2xl border border-emerald-400/25 bg-emerald-500/5 p-6 md:p-10">
           <div className="flex items-center gap-2.5">
-            <TrendingUp className="h-5 w-5 text-emerald-600" />
+            <TrendingUp className="h-5 w-5 text-emerald-400" />
             <h2 className="font-display text-xl font-bold text-foreground">
               Modeled &amp; Operational Outcomes
             </h2>
           </div>
-          <p className="mt-3 text-base font-semibold text-emerald-700">
+          <p className="mt-3 text-base font-semibold text-emerald-300">
             {project.measurableResult}
           </p>
           <p className="mt-2 max-w-2xl text-xs leading-relaxed text-foreground/75">
@@ -403,7 +403,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-5 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-5 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition"
             >
               Hear a live AI demo
             </Link>
@@ -411,7 +411,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         </div>
 
         {/* Delivery Timeline & Safeguards */}
-        <div className="mt-12 rounded-2xl border border-border bg-white p-6 md:p-10">
+        <div className="mt-12 rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
           <div className="flex items-center gap-2.5">
             <Clock className="h-5 w-5 text-brand" />
             <h2 className="font-display text-xl font-bold text-foreground">
@@ -423,7 +423,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-3 text-xs text-foreground/75">
-            <div className="rounded-xl border border-border bg-surface-50 p-4">
+            <div className="rounded-xl border border-white/10 bg-surface-50 p-4">
               <span className="text-xs font-semibold text-brand">Weeks 1 to 2</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">
                 {isSoftwareBuild ? "Schema & System Blueprint" : "Discovery & Blueprint"}
@@ -434,7 +434,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   : "Audited historical call logs, documented frequent customer objections, and mapped out custom appointment booking availability rules."}
               </p>
             </div>
-            <div className="rounded-xl border border-border bg-surface-50 p-4">
+            <div className="rounded-xl border border-white/10 bg-surface-50 p-4">
               <span className="text-xs font-semibold text-brand">Week 3</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">
                 {isSoftwareBuild ? "Core Engine & Integrations" : "Prompt Tuning & SIP Wiring"}
@@ -445,7 +445,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   : "Tuned conversational prompts on Deepgram and ElevenLabs, verified 10DLC SMS registration, and wired two-way webhooks to the CRM."}
               </p>
             </div>
-            <div className="rounded-xl border border-border bg-surface-50 p-4">
+            <div className="rounded-xl border border-white/10 bg-surface-50 p-4">
               <span className="text-xs font-semibold text-brand">Week 4</span>
               <h3 className="mt-1 font-semibold text-foreground text-sm">
                 {isSoftwareBuild ? "Verification & Production Cutover" : "50 Synthetic Calls & Launch"}
@@ -460,7 +460,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         </div>
 
         {/* Case Study FAQs */}
-        <div className="mt-12 rounded-2xl border border-border bg-surface-50 p-6 md:p-10">
+        <div className="mt-12 rounded-2xl border border-white/10 bg-surface-50 p-6 md:p-10">
           <div className="flex items-center gap-2.5">
             <HelpCircle className="h-5 w-5 text-brand" />
             <h2 className="font-display text-xl font-bold text-foreground">
@@ -469,7 +469,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           </div>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {caseStudyFaqs.map((faq) => (
-              <div key={faq.question} className="rounded-xl border border-border bg-white p-5">
+              <div key={faq.question} className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-5">
                 <h3 className="font-semibold text-foreground text-sm">{faq.question}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/75">{faq.answer}</p>
               </div>
@@ -478,7 +478,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         </div>
 
         {/* Contextual Internal Links */}
-        <div className="mt-14 border-t border-border pt-8 flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-14 border-t border-white/10 pt-8 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-3">
             <Link
               href="/solutions/ai-voice-agents"

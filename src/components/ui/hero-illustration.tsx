@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function HeroIllustration() {
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border/70 bg-white/60 p-2 shadow-sm">
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0d1421]/85 p-2 shadow-sm">
       <div className="relative flex h-full w-full items-center justify-center">
         <Image
           src="/hero-illustration.svg"

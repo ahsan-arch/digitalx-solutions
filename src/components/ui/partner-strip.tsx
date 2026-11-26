@@ -99,7 +99,7 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
             return (
               <div
                 key={item.platform}
-                className="flex flex-col items-center justify-between rounded-xl border border-border/80 bg-white p-6 shadow-xs"
+                className="flex flex-col items-center justify-between rounded-xl border border-white/10 bg-surface-50/85 p-6 shadow-xs backdrop-blur-md"
               >
                 <div className="mb-4">{item.logo}</div>
 
@@ -117,9 +117,9 @@ export function CertifiedPartnerStrip({ className }: CertifiedPartnerStripProps)
                     href={item.proofUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:underline"
+                    className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-300 hover:underline"
                   >
-                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
                     <span>View Credential</span>
                     <ExternalLink className="h-3 w-3" />
                   </a>
@@ -152,14 +152,14 @@ export function PlatformIntegrationsStrip() {
             className="group flex flex-col items-center gap-1"
             title={`${platform.name}: ${platform.relationship}`}
           >
-            <div className="flex h-7 w-28 items-center justify-center">
+            <div className="flex h-9 w-32 items-center justify-center rounded-lg border border-white/10 bg-slate-100/95 px-2.5 py-1">
               <Image
                 src={platform.logo}
                 alt={`${platform.name} integration logo`}
                 width={100}
                 height={28}
-                className="max-h-7 w-auto object-contain grayscale transition-all group-hover:grayscale-0"
-                style={{ maxHeight: "28px", width: "auto" }}
+                className="max-h-6 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                style={{ maxHeight: "24px", width: "auto" }}
                 loading="lazy"
               />
             </div>

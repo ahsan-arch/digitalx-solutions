@@ -85,7 +85,7 @@ export function AudioCallPreview({
     <MotionProvider>
     <div
       className={cn(
-        "rounded-2xl border border-border/80 bg-white p-4 sm:p-5 shadow-xs transition-colors hover:border-brand/40",
+        "rounded-2xl border border-white/10 bg-[#0d1421]/90 p-4 sm:p-5 shadow-xs backdrop-blur-md transition-colors hover:border-cyan-400/35",
         className
       )}
     >

@@ -93,7 +93,7 @@ export default function CaseStudiesIndexPage() {
 
       {/* Methodology & Verification Standards */}
       <section className="container-shell mt-20">
-        <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-14">
+        <div className="rounded-3xl border border-white/10 bg-surface-50 p-8 md:p-14">
           <div className="max-w-3xl">
             <span className="font-mono text-xs font-medium text-brand">
               Our Measurement Framework
@@ -113,7 +113,7 @@ export default function CaseStudiesIndexPage() {
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-border bg-white p-6">
+            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6">
               <span className="font-mono text-xs font-medium text-brand">Metric 01</span>
               <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                 Inbound Call Capture Rate
@@ -124,7 +124,7 @@ export default function CaseStudiesIndexPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-white p-6">
+            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6">
               <span className="font-mono text-xs font-medium text-brand">Metric 02</span>
               <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                 Speed-to-Lead &amp; Recovery
@@ -135,7 +135,7 @@ export default function CaseStudiesIndexPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-white p-6">
+            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6">
               <span className="font-mono text-xs font-medium text-brand">Metric 03</span>
               <h3 className="mt-2 font-display text-lg font-semibold text-foreground">
                 Closed-Won Pipeline Value
@@ -151,7 +151,7 @@ export default function CaseStudiesIndexPage() {
 
       {/* CTA Section */}
       <section className="container-shell mt-20">
-        <div className="rounded-3xl border border-border bg-foreground px-6 py-14 text-center text-white md:px-12">
+        <div className="rounded-3xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-14 text-center text-white md:px-12">
           <h2 className="font-display text-3xl md:text-4xl">
             Want to see how these systems apply to your business?
           </h2>

@@ -52,12 +52,12 @@ export default function AboutPage() {
                 },
             },
             {
-                "@type": ["Organization", "ProfessionalService"],
+                "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 legalName: "DigitalX Solutions",
                 url: siteConfig.domain,
-                logo: `${siteConfig.domain}/assets/logo.png`,
+                logo: `${siteConfig.domain}/icon.svg`,
                 telephone: "+61 451 413 786",
                 email: "info@digitalx-solutions.com",
                 foundingDate: "2020",
@@ -152,7 +152,7 @@ export default function AboutPage() {
                                 </Link>
                                 <Link
                                     href="/case-studies"
-                                    className="inline-flex items-center rounded-xl border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
+                                    className="inline-flex items-center rounded-xl border border-white/10 bg-[#0d1421]/85 px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
                                 >
                                     View outcomes
                                 </Link>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                 <section className="container-shell mt-10">
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {heroMetrics.map((stat) => (
-                            <div key={stat.label} className="rounded-2xl border border-border bg-surface-50 p-5 text-center">
+                            <div key={stat.label} className="rounded-2xl border border-white/10 bg-surface-50 p-5 text-center">
                                 <div className="text-3xl font-semibold text-foreground">{stat.value}</div>
                                 <div className="mt-1 text-sm text-foreground/75">{stat.label}</div>
                             </div>
@@ -184,11 +184,11 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
+                    <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
                         <h2 className="font-display text-3xl text-foreground">Our principles</h2>
                         <div className="mt-6 grid gap-4 md:grid-cols-3">
                             {aboutPrinciples.map((principle) => (
-                                <article key={principle.title} className="rounded-2xl border border-border bg-surface-50 p-5">
+                                <article key={principle.title} className="rounded-2xl border border-white/10 bg-surface-50 p-5">
                                     <h3 className="text-lg font-semibold text-foreground">{principle.title}</h3>
                                     <p className="mt-2 text-sm leading-relaxed text-foreground/70">{principle.body}</p>
                                 </article>
@@ -198,7 +198,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
+                    <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
                         <div>
                             <p className="text-xs font-semibold text-brand">Leadership &amp; Company Verification</p>
                             <h2 className="mt-1 font-display text-3xl text-foreground">Built by Systems Engineers, Not Account Managers</h2>
@@ -210,7 +210,7 @@ export default function AboutPage() {
                         {/* Leadership Cards */}
                         <div className="mt-8 grid gap-6 md:grid-cols-2">
                             {/* Card 1: Jazib Shahid */}
-                            <div className="h-full rounded-2xl border border-border bg-surface-50 p-6 transition-colors hover:border-brand/40">
+                            <div className="h-full rounded-2xl border border-white/10 bg-surface-50 p-6 transition-colors hover:border-brand/40">
                             <div className="flex h-full flex-col justify-between">
                                 <div>
                                     <div className="flex items-center gap-4">
@@ -237,14 +237,14 @@ export default function AboutPage() {
                                         <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
                                         <div className="mt-1.5 flex flex-wrap gap-1.5">
                                             {["Custom Next.js Portals", "PostgreSQL & Supabase", "GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP"].map((tech) => (
-                                                <span key={tech} className="rounded-md border border-border bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
+                                                <span key={tech} className="rounded-md border border-white/10 bg-[#0d1421]/85 px-2 py-0.5 text-[11px] font-medium text-foreground/80">
                                                     {tech}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
+                                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
                                     <span className="text-xs text-foreground/75">Leadership</span>
                                     <div className="flex items-center gap-3">
                                         {factsData.leadership?.founder?.linkedinUrl && factsData.leadership.founder.linkedinUrl.startsWith("http") && (
@@ -271,7 +271,7 @@ export default function AboutPage() {
                             </div>
 
                             {/* Card 2: Ahsan Masood */}
-                            <div className="h-full rounded-2xl border border-border bg-surface-50 p-6 transition-colors hover:border-brand/40">
+                            <div className="h-full rounded-2xl border border-white/10 bg-surface-50 p-6 transition-colors hover:border-brand/40">
                             <div className="flex h-full flex-col justify-between">
                                 <div>
                                     <div className="flex items-center gap-4">
@@ -294,14 +294,14 @@ export default function AboutPage() {
                                         <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
                                         <div className="mt-1.5 flex flex-wrap gap-1.5">
                                             {["GoHighLevel Snapshots", "SIP Trunking", "10DLC & ACMA Compliance", "CRM Webhooks"].map((tech) => (
-                                                <span key={tech} className="rounded-md border border-border bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
+                                                <span key={tech} className="rounded-md border border-white/10 bg-[#0d1421]/85 px-2 py-0.5 text-[11px] font-medium text-foreground/80">
                                                     {tech}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
+                                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
                                     <span className="text-xs text-foreground/75">Delivery Engineering</span>
                                     {factsData.leadership?.technicalLead?.linkedinUrl && factsData.leadership.technicalLead.linkedinUrl.startsWith("http") ? (
                                         <a
@@ -322,7 +322,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* Service Coverage & Contact Block */}
-                        <div className="mt-8 rounded-2xl border border-border bg-surface-50 p-6">
+                        <div className="mt-8 rounded-2xl border border-white/10 bg-surface-50 p-6">
                             <div className="flex items-center gap-2 text-foreground font-semibold">
                                 <ShieldCheck className="h-4 w-4 text-brand" />
                                 <span>Serving Australian and US Businesses</span>
@@ -354,7 +354,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* Partner Ecosystem & Technical Capabilities */}
-                        <div className="mt-8 border-t border-border pt-6">
+                        <div className="mt-8 border-t border-white/10 pt-6">
                             <h3 className="text-base font-semibold text-foreground">
                                 Platform &amp; Engineering Capabilities
                             </h3>
@@ -367,7 +367,7 @@ export default function AboutPage() {
                                     return (
                                     <div
                                         key={cert.platform}
-                                        className="h-full rounded-2xl border border-border bg-surface-50 p-5 transition-all hover:border-brand/40 [@media(hover:hover)]:hover:-translate-y-0.5"
+                                        className="h-full rounded-2xl border border-white/10 bg-surface-50 p-5 transition-all hover:border-brand/40 [@media(hover:hover)]:hover:-translate-y-0.5"
                                     >
                                     <div className="flex h-full flex-col justify-between">
                                         <div>
@@ -391,7 +391,7 @@ export default function AboutPage() {
                                             </div>
                                         </div>
 
-                                        <div className="mt-4 pt-3 border-t border-border/70 text-xs flex items-center justify-between">
+                                        <div className="mt-4 pt-3 border-t border-white/10 text-xs flex items-center justify-between">
                                             <span className="text-[11px] font-medium text-foreground/70">
                                                 {hasProof ? "Certified" : cert.status}
                                             </span>
@@ -417,9 +417,9 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-border bg-white p-6 md:p-8">
+                    <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
                         <h2 className="font-display text-3xl text-foreground">Journey so far</h2>
-                        <div className="mt-6 rounded-2xl border border-border bg-surface-50 p-6">
+                        <div className="mt-6 rounded-2xl border border-white/10 bg-surface-50 p-6">
                             <span className="font-mono text-xs font-semibold text-brand">Founded 2020</span>
                             <h3 className="mt-2 text-lg font-semibold text-foreground">Engineering Dependable Systems Since 2020</h3>
                             <p className="mt-3 text-sm leading-relaxed text-foreground/75 max-w-3xl">
@@ -430,7 +430,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
+                    <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
                         <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
                             Our Operating Principles &amp; Delivery Standards
                         </h2>
@@ -438,19 +438,19 @@ export default function AboutPage() {
                             We built DigitalX Solutions to provide honest, high-leverage technical execution without agency fluff or vanity metrics. Every system is engineered for resilient uptime, bi-directional database synchronization, and complete operational transparency across production telephony and CRM systems.
                         </p>
                         <div className="mt-6 grid gap-6 sm:grid-cols-3 text-sm text-foreground/75">
-                            <div className="rounded-2xl border border-border bg-white p-5">
+                            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5">
                                 <h3 className="font-semibold text-foreground">1. You Own 100% of the Assets</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
                                     All CRM setups, Twilio SIP numbers, n8n workflows, and custom Next.js code are built directly in your cloud accounts. If you ever stop working with us, your operational infrastructure stays fully intact with complete administrative access, environment configurations, and private source repositories.
                                 </p>
                             </div>
-                            <div className="rounded-2xl border border-border bg-white p-5">
+                            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5">
                                 <h3 className="font-semibold text-foreground">2. Natural Conversational Latency Pacing</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
                                     We engineer fast, natural conversational responses under 800ms. An AI voice receptionist that pauses awkwardly frustrates callers; our systems prioritize low-latency streaming to maintain natural timing, rapid turn-taking, and instant interruption handling.
                                 </p>
                             </div>
-                            <div className="rounded-2xl border border-border bg-white p-5">
+                            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5">
                                 <h3 className="font-semibold text-foreground">3. Operational Guardrails</h3>
                                 <p className="mt-2 text-xs leading-relaxed">
                                     Our AI agents never invent pricing or commit to appointments without verifying live database availability. When an inquiry falls outside predefined parameters, it gracefully routes to your on-call team with complete caller context, booking notes, and audio transcripts.
@@ -461,7 +461,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-border bg-foreground px-6 py-12 text-center text-white md:px-10">
+                    <div className="rounded-3xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-center text-white md:px-10">
                         <h2 className="font-display text-3xl md:text-4xl">Want a practical partner for your next growth phase?</h2>
                         <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
                             Share your goals and current bottlenecks. We will map a staged delivery plan with clear
@@ -469,7 +469,7 @@ export default function AboutPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="mt-8 inline-flex items-center rounded-xl bg-white px-7 py-3 text-sm font-semibold text-foreground transition"
+                            className="mt-8 inline-flex items-center rounded-xl bg-brand px-7 py-3 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition-colors"
                         >
                             Start a conversation
                         </Link>

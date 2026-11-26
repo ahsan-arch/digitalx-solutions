@@ -122,12 +122,12 @@ export default function ContactPage() {
           />
         </div>
 
-        <aside className="rounded-3xl border border-border bg-white p-6 md:p-8 h-fit space-y-6">
+        <aside className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 h-fit space-y-6">
           <div>
             <h2 className="text-xl font-semibold text-foreground">What to expect</h2>
             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/72">
               <li className="flex items-start gap-2">
-                <ShieldCheck className="h-4 w-4 mt-1 text-emerald-600 shrink-0" />
+                <ShieldCheck className="h-4 w-4 mt-1 text-emerald-400 shrink-0" />
                 <span>Direct consultation with an experienced solutions engineer, never a script-reading salesperson.</span>
               </li>
               <li className="flex items-start gap-2">
@@ -141,21 +141,21 @@ export default function ContactPage() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface-50 p-4">
+          <div className="rounded-2xl border border-white/10 bg-surface-50 p-4">
             <p className="text-xs font-medium text-foreground/60">Service Area &amp; Coverage</p>
             <p className="mt-2 text-sm text-foreground/72 leading-relaxed">
               Serving Australian and US businesses across Sydney, Melbourne, Brisbane, Perth, New York, Los Angeles, and nationwide remotely.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface-50 p-4">
+          <div className="rounded-2xl border border-white/10 bg-surface-50 p-4">
             <p className="text-xs font-medium text-foreground/60">Direct Email</p>
             <div className="mt-2">
               <ObfuscatedEmail className="inline-flex" />
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface-50 p-4">
+          <div className="rounded-2xl border border-white/10 bg-surface-50 p-4">
             <p className="text-xs font-medium text-foreground/60">Direct Phone &amp; WhatsApp</p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
               <a
@@ -181,7 +181,7 @@ export default function ContactPage() {
 
       {/* Strategy Methodology Section */}
       <section className="container-shell mt-16">
-        <div className="rounded-3xl border border-border bg-surface-50 p-6 md:p-10">
+        <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
           <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
             Our 3-Step Intake &amp; Architecture Scoping Methodology
           </h2>
@@ -190,21 +190,21 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-3 text-sm text-foreground/75">
-            <div className="rounded-2xl border border-border bg-white p-5">
+            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5">
               <span className="font-mono text-xs font-medium text-brand">Phase 01</span>
               <h3 className="mt-2 font-display text-base font-semibold text-foreground">Intake Friction Audit</h3>
               <p className="mt-2 text-xs leading-relaxed">
                 We calculate your current missed call percentage, secret-shop your after-hours answering experience, and identify where customer inquiries drop off between your ads and CRM.
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-white p-5">
+            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5">
               <span className="font-mono text-xs font-medium text-brand">Phase 02</span>
               <h3 className="mt-2 font-display text-base font-semibold text-foreground">Stack Feasibility Check</h3>
               <p className="mt-2 text-xs leading-relaxed">
                 We evaluate your existing software (ServiceTitan, Jobber, Cliniko, HubSpot, or GoHighLevel) to confirm webhook capabilities, two-way calendar sync, and telephony routing feasibility.
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-white p-5">
+            <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5">
               <span className="font-mono text-xs font-medium text-brand">Phase 03</span>
               <h3 className="mt-2 font-display text-base font-semibold text-foreground">Fixed-Scope Blueprint</h3>
               <p className="mt-2 text-xs leading-relaxed">
@@ -213,7 +213,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-8 border-t border-border pt-6">
+          <div className="mt-8 border-t border-white/10 pt-6">
             <h3 className="text-sm font-semibold text-foreground/80">
               Pre-Call Preparation Checklist for Business Owners
             </h3>
@@ -244,7 +244,7 @@ export default function ContactPage() {
 
       {/* Frequently Asked Questions */}
       <section className="container-shell mt-16">
-        <div className="rounded-3xl border border-border bg-white p-6 md:p-10">
+        <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
               <HelpCircle className="h-5 w-5" />
@@ -261,7 +261,7 @@ export default function ContactPage() {
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {consultationFaqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl border border-border/80 bg-surface-50 p-6">
+              <div key={faq.question} className="rounded-2xl border border-white/10 bg-surface-50 p-6">
                 <h3 className="font-display text-base font-semibold text-foreground">{faq.question}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/75">{faq.answer}</p>
               </div>

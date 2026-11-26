@@ -200,7 +200,7 @@ export function generateOrganizationSchema() {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": ["Organization", "ProfessionalService"],
+                "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
                 "@id": `${siteConfig.domain}/#organization`,
                 name: "DigitalX Solutions",
                 alternateName: ["DigitalX", "Digital X Solutions"],
@@ -210,7 +210,7 @@ export function generateOrganizationSchema() {
                     "DigitalX Solutions is an automation and web development consultancy serving Australian and US businesses. Not affiliated with DigitalX Limited (ASX: DCC) cryptocurrency funds or medical imaging and radiology providers.",
                 url: siteConfig.domain,
                 email: "info@digitalx-solutions.com",
-                logo: `${siteConfig.domain}/logo.png`,
+                logo: `${siteConfig.domain}/icon.svg`,
                 image: `${siteConfig.domain}/api/og`,
                 priceRange: "$$$",
                 telephone: "+61 451 413 786",
@@ -758,7 +758,7 @@ export function generateLocalBusinessSchema(opts: {
         url: `${siteConfig.domain}${opts.pathname}`,
         description: opts.description,
         image: `${siteConfig.domain}/api/og`,
-        logo: `${siteConfig.domain}/logo.png`,
+        logo: `${siteConfig.domain}/icon.svg`,
         email: "info@digitalx-solutions.com",
         telephone: "+61 451 413 786",
         priceRange: "$$$",

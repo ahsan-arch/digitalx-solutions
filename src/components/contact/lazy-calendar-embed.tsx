@@ -46,9 +46,9 @@ export function LazyCalendarEmbed({
   return (
     <div
       ref={containerRef}
-      className="rounded-3xl border border-border bg-white overflow-hidden shadow-sm"
+      className="rounded-3xl border border-white/10 bg-[#0d1421]/85 overflow-hidden shadow-sm"
     >
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-surface-50 px-5 py-3 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 bg-surface-50 px-5 py-3 text-xs">
         <span className="inline-flex items-center gap-2 font-semibold text-foreground">
           <Calendar className="h-4 w-4 text-brand" />
           Live Strategy &amp; Architecture Calendar

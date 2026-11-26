@@ -3,6 +3,7 @@ import { ArrowRight, PhoneCall, MessageSquare, Database, Clock, ChevronRight } f
 import { generateBreadcrumbSchema, geoHreflangLanguages, siteConfig } from "@/lib/seo";
 import { HeroPreviewTabs, TiltCard, CertifiedPartnerStrip, ProjectCard, AudioCallPreview, FAQAccordion } from "@/components/ui";
 import { FeaturedBuildsShowcase } from "@/components/projects/featured-builds-showcase";
+import { MagneticButton, AnimatedCounter, StaggerGrid, StaggerGridItem, SpotlightCard } from "@/components/motion";
 import { heroMetrics, processSteps, solutions } from "@/data/redesign";
 import { industryCategories } from "@/data/industries";
 import factsData from "@/data/facts";
@@ -66,12 +67,12 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "ProfessionalService"],
+        "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
         "@id": `${siteConfig.domain}/#organization`,
         name: "DigitalX Solutions",
         url: siteConfig.domain,
-        logo: `${siteConfig.domain}/assets/logo.png`,
-        image: `${siteConfig.domain}/assets/og-home-image.jpg`,
+        logo: `${siteConfig.domain}/icon.svg`,
+        image: `${siteConfig.domain}/api/og`,
         telephone: "+61 451 413 786",
         email: "info@digitalx-solutions.com",
         openingHoursSpecification: {
@@ -135,33 +136,36 @@ export default function HomePage() {
 
       <main id="main" className="pb-24">
         {/* SECTION 1: HERO */}
-        <section className="container-shell pt-12 md:pt-16">
-          <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-10 md:py-16">
+        <section className="container-shell pt-10 md:pt-14">
+          <div className="saas-grid-bg relative overflow-hidden rounded-2xl border border-white/15 bg-[#0b111e]/90 px-6 py-10 shadow-[0_24px_64px_-20px_rgba(2,6,23,0.9)] backdrop-blur-md md:px-10 md:py-14">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <p className="mb-3 text-xs font-medium text-brand-deep">
-                  Custom software, voice telephony, and workflow automation
+                <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                  Custom software, voice telephony &amp; revenue automation
                 </p>
-                <h1 className="font-display text-4xl leading-tight tracking-tight text-foreground md:text-5xl font-semibold">
+                <h1 className="font-display text-4xl leading-[1.08] tracking-tight text-white md:text-5xl font-semibold">
                   Custom CRM Development &amp; AI Revenue Operations
                 </h1>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
                   DigitalX Solutions architects bespoke Next.js and PostgreSQL custom CRM systems with 100% IP ownership and zero per-seat fees. We engineer 24/7 AI voice receptionists, under-60-second missed-call recovery, and self-hosted n8n workflow pipelines directly into your core operational database across Australia and the United States.
                 </p>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-deep"
-                  >
-                    Book a strategy call
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <MagneticButton>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.65)] transition-colors hover:bg-brand-deep"
+                    >
+                      Book a strategy call
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </MagneticButton>
                   <Link
                     href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-sunken"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-slate-100 transition-colors hover:border-cyan-400/35 hover:bg-white/10"
                   >
-                    <PhoneCall className="h-4 w-4" />
+                    <PhoneCall className="h-4 w-4 text-cyan-400" />
                     Hear a live AI demo
                   </Link>
                 </div>
@@ -174,59 +178,65 @@ export default function HomePage() {
 
             {/* Quick Metrics Bar */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">100% Owned IP</p>
-                <p className="mt-1 text-sm text-foreground/75">Zero per-seat software fees</p>
+              <div className="rounded-xl border border-white/10 bg-[#070a11]/80 p-4 backdrop-blur-sm">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-white">
+                  $<AnimatedCounter value={0} /> Per-Seat
+                </p>
+                <p className="mt-1 text-sm text-slate-400">100% Owned source code &amp; IP</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">&lt; 60s</p>
-                <p className="mt-1 text-sm text-foreground/75">Missed-call SMS lead recovery</p>
+              <div className="rounded-xl border border-white/10 bg-[#070a11]/80 p-4 backdrop-blur-sm">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-cyan-300">
+                  &lt; <AnimatedCounter value={60} suffix="s" />
+                </p>
+                <p className="mt-1 text-sm text-slate-400">Missed-call SMS lead recovery</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">3–6 Weeks</p>
-                <p className="mt-1 text-sm text-foreground/75">Custom CRM builds delivery</p>
+              <div className="rounded-xl border border-white/10 bg-[#070a11]/80 p-4 backdrop-blur-sm">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-white">
+                  <AnimatedCounter value={60} suffix="%+" /> Est.
+                </p>
+                <p className="mt-1 text-sm text-slate-400">Illustrative 3-yr TCO reduction</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
-                <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">5–14 Days</p>
-                <p className="mt-1 text-sm text-foreground/75">GHL &amp; AI voice launch</p>
+              <div className="rounded-xl border border-white/10 bg-[#070a11]/80 p-4 backdrop-blur-sm">
+                <p className="font-mono text-2xl font-semibold tabular-nums text-white">5–14 Days</p>
+                <p className="mt-1 text-sm text-slate-400">GHL &amp; AI voice launch</p>
               </div>
             </div>
 
             {/* GEO / AEO System Definition & Architecture Anchor */}
-            <div className="mt-8 rounded-xl border border-border/70 bg-surface-50/70 p-6 md:p-8">
+            <div className="mt-8 rounded-xl border border-white/10 bg-[#070a11]/75 p-6 md:p-8">
               <div className="max-w-3xl">
-                <p className="text-xs font-medium text-brand">
+                <p className="text-xs font-medium text-cyan-300">
                   System architecture and definition
                 </p>
-                <h2 className="mt-2 font-display text-2xl font-semibold text-foreground md:text-3xl">
+                <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-white md:text-3xl">
                   What is an Enterprise AI Voice Receptionist?
                 </h2>
-                <p className="mt-3 text-base leading-relaxed text-foreground/80">
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-300">
                   An AI voice receptionist is a real-time conversational telephony agent engineered to answer inbound phone calls 24/7, converse naturally with zero robotic delay, qualify customer requirements, and execute operational workflows, including direct CRM calendar booking, emergency triage dispatch, and automated under-60-second missed-call SMS recovery.
                 </p>
               </div>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-lg border border-border/60 bg-white p-4">
-                  <p className="text-xs font-semibold text-brand">Telephony Layer</p>
-                  <p className="mt-1 font-display text-base font-semibold text-foreground">Natural Spoken Intake</p>
-                  <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
+                <div className="rounded-lg border border-white/10 bg-[#0d1421]/85 p-4">
+                  <p className="text-xs font-semibold text-cyan-300">Telephony Layer</p>
+                  <p className="mt-1 font-display text-base font-semibold text-white">Natural Spoken Intake</p>
+                  <p className="mt-1.5 text-xs text-slate-400 leading-relaxed">
                     Powered by low-latency SIP trunks and Deepgram Nova-2 speech recognition for crystal-clear transcription across Australian and US accents.
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-border/60 bg-white p-4">
-                  <p className="text-xs font-semibold text-brand">Action Engine</p>
-                  <p className="mt-1 font-display text-base font-semibold text-foreground">Live Calendar &amp; CRM Sync</p>
-                  <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
+                <div className="rounded-lg border border-white/10 bg-[#0d1421]/85 p-4">
+                  <p className="text-xs font-semibold text-cyan-300">Action Engine</p>
+                  <p className="mt-1 font-display text-base font-semibold text-white">Live Calendar &amp; CRM Sync</p>
+                  <p className="mt-1.5 text-xs text-slate-400 leading-relaxed">
                     Checks real-time staff availability, books confirmed slots, writes customer notes, and executes warm live transfers for urgent callers.
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-border/60 bg-white p-4">
-                  <p className="text-xs font-semibold text-brand">Lead Recovery Safeguard</p>
-                  <p className="mt-1 font-display text-base font-semibold text-foreground">Under-60s Text-Back</p>
-                  <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
+                <div className="rounded-lg border border-white/10 bg-[#0d1421]/85 p-4">
+                  <p className="text-xs font-semibold text-cyan-300">Lead Recovery Safeguard</p>
+                  <p className="mt-1 font-display text-base font-semibold text-white">Under-60s Text-Back</p>
+                  <p className="mt-1.5 text-xs text-slate-400 leading-relaxed">
                     When lines are occupied, automated two-way SMS engages callers in under 60 seconds to lock in quotes before they reach competitors.
                   </p>
                 </div>
@@ -242,136 +252,144 @@ export default function HomePage() {
 
         {/* SECTION 3: WHY AUTOMATION MATTERS */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs backdrop-blur-md">
             <div className="max-w-3xl">
-              <p className="text-xs font-medium text-brand">
+              <p className="text-xs font-medium text-cyan-300">
                 The cost of missed inbound calls
               </p>
-              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
+              <h2 className="mt-2 font-display text-3xl tracking-tight text-white md:text-4xl">
                 Why Manual Phone Handling &amp; Slow Follow-Ups Cost Real Revenue
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-foreground/75">
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
                 When a homeowner with a burst pipe or a patient with a toothache calls your business, they need help immediately. Deploying a{" "}
-                <Link href="/solutions/ai-voice-agents" className="font-semibold text-brand hover:underline">
+                <Link href="/solutions/ai-voice-agents" className="font-semibold text-cyan-300 hover:underline">
                   24/7 AI voice receptionist
                 </Link>{" "}
                 or an{" "}
-                <Link href="/solutions/missed-call-text-back" className="font-semibold text-brand hover:underline">
+                <Link href="/solutions/missed-call-text-back" className="font-semibold text-cyan-300 hover:underline">
                   automated missed-call text-back system
                 </Link>{" "}
                 captures those high-intent inquiries in under 60 seconds. Paired with scalable{" "}
-                <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-brand hover:underline">
+                <Link href="/solutions/gohighlevel-implementation" className="font-semibold text-cyan-300 hover:underline">
                   GoHighLevel CRM setups
                 </Link>{" "}
                 and{" "}
-                <Link href="/solutions/n8n-workflow-automation" className="font-semibold text-brand hover:underline">
+                <Link href="/solutions/n8n-workflow-automation" className="font-semibold text-cyan-300 hover:underline">
                   custom n8n automations
                 </Link>
                 , your leads are triaged, scheduled, and dispatched before they reach a competitor.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
-                  <PhoneCall className="h-4 w-4" />
-                </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Zero Call Abandonment</h3>
-                <span className="text-xs font-semibold text-brand">24/7 Voice Answering</span>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Answers every inbound call immediately, preventing prospective clients from dropping to competitors while you are on jobs.
-                </p>
-              </div>
+            <StaggerGrid className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <StaggerGridItem>
+                <SpotlightCard className="h-full rounded-xl border border-white/10 bg-[#070a11]/85 p-6">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-500/10 text-cyan-300">
+                    <PhoneCall className="h-4 w-4" />
+                  </div>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-white">Zero Call Abandonment</h3>
+                  <span className="text-xs font-semibold text-cyan-300">24/7 Voice Answering</span>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                    Answers every inbound call immediately, preventing prospective clients from dropping to competitors while you are on jobs.
+                  </p>
+                </SpotlightCard>
+              </StaggerGridItem>
 
-              <div className="rounded-2xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
-                  <Clock className="h-4 w-4" />
-                </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Instant SMS Dispatch</h3>
-                <span className="text-xs font-semibold text-brand">Under 60-Second Text-Back</span>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Dispatches a personalized conversational SMS within 60 seconds of an unanswered call to engage the prospect instantly.
-                </p>
-              </div>
+              <StaggerGridItem>
+                <SpotlightCard className="h-full rounded-xl border border-white/10 bg-[#070a11]/85 p-6">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-500/10 text-cyan-300">
+                    <Clock className="h-4 w-4" />
+                  </div>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-white">Instant SMS Dispatch</h3>
+                  <span className="text-xs font-semibold text-cyan-300">Under 60-Second Text-Back</span>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                    Dispatches a personalized conversational SMS within 60 seconds of an unanswered call to engage the prospect instantly.
+                  </p>
+                </SpotlightCard>
+              </StaggerGridItem>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/75">
-                  <MessageSquare className="h-4 w-4" />
-                </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Immediate Conversational Engagement</h3>
-                <span className="text-xs font-medium text-brand-deep">Fast SMS &amp; Voice Follow-Up</span>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Immediate two-way conversational outreach dramatically outperforms delayed follow-ups, securing high-intent prospects before competitors respond.
-                </p>
-              </div>
+              <StaggerGridItem>
+                <SpotlightCard className="h-full rounded-xl border border-white/10 bg-[#070a11]/85 p-6">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-500/10 text-cyan-300">
+                    <MessageSquare className="h-4 w-4" />
+                  </div>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-white">Immediate Engagement</h3>
+                  <span className="text-xs font-medium text-cyan-300">Fast SMS &amp; Voice Follow-Up</span>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                    Immediate two-way conversational outreach dramatically outperforms delayed follow-ups, securing high-intent prospects before competitors respond.
+                  </p>
+                </SpotlightCard>
+              </StaggerGridItem>
 
-              <div className="rounded-2xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
-                  <Database className="h-4 w-4" />
-                </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Direct Calendar Booking</h3>
-                <span className="text-xs font-semibold text-brand">Two-Way CRM Integration</span>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                  Qualifies job requirements and writes confirmed appointments straight into your calendar and CRM without phone tag.
-                </p>
-              </div>
-            </div>
+              <StaggerGridItem>
+                <SpotlightCard className="h-full rounded-xl border border-white/10 bg-[#070a11]/85 p-6">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-500/10 text-cyan-300">
+                    <Database className="h-4 w-4" />
+                  </div>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-white">Direct Calendar Booking</h3>
+                  <span className="text-xs font-semibold text-cyan-300">Two-Way CRM Integration</span>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                    Qualifies job requirements and writes confirmed appointments straight into your calendar and CRM without phone tag.
+                  </p>
+                </SpotlightCard>
+              </StaggerGridItem>
+            </StaggerGrid>
           </div>
         </section>
 
-        {/* SECTION 4: SERVICES OVERVIEW */}
+        {/* SECTION 4: BENTO SERVICES OVERVIEW */}
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="max-w-2xl">
-              <p className="text-xs font-medium text-brand">Production capability stacks</p>
-              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
+              <p className="text-xs font-medium text-cyan-300">Production capability stacks</p>
+              <h2 className="mt-2 font-display text-3xl tracking-tight text-white md:text-4xl">
                 Engineered Systems That Work in Production
               </h2>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">
                 Our core stack combines Next.js and PostgreSQL custom CRM portals with GoHighLevel pipelines, self-hosted n8n webhooks, and 24/7 AI voice intake. Every system deploys directly inside client-owned infrastructure to eliminate recurring seat bloat and connect inbound calls, SMS follow-ups, and calendar bookings.
               </p>
             </div>
-            <Link href="/solutions" className="text-sm font-semibold text-brand hover:text-brand-deep shrink-0">
+            <Link href="/solutions" className="text-sm font-semibold text-cyan-300 hover:text-cyan-200 shrink-0">
               View all solutions
             </Link>
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
-            {/* Flagship Card: Custom CRM Development */}
-            <div className="h-full">
+            {/* Flagship Bento Card spanning 2 cols on desktop */}
+            <div className="md:col-span-2 h-full">
               <TiltCard
                 href="/development/custom-crm-development"
-                className="rounded-2xl border border-brand/40 bg-white p-6 shadow-xs hover:border-brand"
+                className="rounded-2xl border border-cyan-400/30 bg-[#0d1526]/90 p-6 md:p-8 shadow-xs backdrop-blur-md"
               >
                 <div className="flex items-center justify-between">
-                  <span className="rounded-md bg-brand px-2 py-0.5 font-mono text-[11px] font-semibold text-white">
+                  <span className="rounded-md bg-brand px-2.5 py-0.5 font-mono text-[11px] font-semibold text-white">
                     Flagship Capability
                   </span>
-                  <span className="font-mono text-xs font-semibold text-brand">3–6 Wks</span>
+                  <span className="font-mono text-xs font-semibold text-cyan-300">3–6 Wks &bull; $0 Seat Fees</span>
                 </div>
-                <h3 className="mt-3 font-display text-2xl font-semibold text-foreground">
+                <h3 className="mt-4 font-display text-2xl md:text-3xl font-semibold tracking-tight text-white">
                   Custom CRM Development &amp; Architecture
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/80">
-                  Bespoke Next.js &amp; PostgreSQL portals built on top of enterprise APIs with 100% IP ownership and zero per-seat fees.
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300">
+                  Bespoke Next.js &amp; PostgreSQL portals built on top of enterprise APIs with Role-Based Access Control (RBAC), E.164 phone deduplication, and 100% IP ownership. Compare 3-year Total Cost of Ownership against per-seat SaaS on our pricing model.
                 </p>
-                <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                <span className="mt-6 inline-flex items-center text-sm font-semibold text-cyan-300 transition group-hover:text-cyan-200">
                   Explore Custom CRM Blueprint
-                  <ArrowRight className="ml-1 h-4 w-4" />
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
                 </span>
               </TiltCard>
             </div>
 
-            {solutions.slice(0, 5).map((solution) => (
+            {solutions.slice(0, 4).map((solution) => (
               <div key={solution.slug} className="h-full">
                 <TiltCard
                   href={`/solutions/${solution.slug}`}
-                  className="rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
+                  className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs backdrop-blur-md"
                 >
-                  <p className="text-xs font-medium text-foreground/75">{solution.tagline}</p>
-                  <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/80">{solution.summary}</p>
-                  <span className="mt-6 inline-flex items-center text-sm font-semibold text-brand transition group-hover:text-brand-deep">
+                  <p className="text-xs font-medium text-cyan-300">{solution.tagline}</p>
+                  <h3 className="mt-2 font-display text-2xl text-white">{solution.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-300">{solution.summary}</p>
+                  <span className="mt-6 inline-flex items-center text-sm font-semibold text-cyan-300 transition group-hover:text-cyan-200">
                     Explore {solution.name}
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </span>
@@ -422,9 +440,9 @@ export default function HomePage() {
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:border-cyan-400/35 hover:bg-white/10 transition"
             >
-              <PhoneCall className="h-4 w-4 text-brand" />
+              <PhoneCall className="h-4 w-4 text-cyan-400" />
               Hear a live AI demo
             </Link>
           </div>
@@ -432,21 +450,21 @@ export default function HomePage() {
 
         {/* SECTION 6: PROCESS */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10 shadow-xs backdrop-blur-md">
             <div className="max-w-2xl">
-              <p className="text-xs font-medium text-brand">14-day production roadmap</p>
-              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">How We Take You Live in 14 Days</h2>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/75 md:text-base">
+              <p className="text-xs font-medium text-cyan-300">14-day production roadmap</p>
+              <h2 className="mt-2 font-display text-3xl tracking-tight text-white md:text-4xl">How We Take You Live in 14 Days</h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
                 We do not sell pre-recorded tutorials or empty templates. We engineer, test, and maintain your telephony and CRM infrastructure so it works without ongoing friction.
               </p>
             </div>
 
             <div className="mt-8 grid gap-5 md:grid-cols-4">
               {processSteps.map((step, index) => (
-                <div key={step.title} className="h-full rounded-xl border border-border/70 bg-surface-page p-5 transition-colors hover:border-brand/35">
-                  <p className="font-mono text-xs font-medium text-foreground/75">Phase {index + 1}</p>
-                  <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground/80">{step.description}</p>
+                <div key={step.title} className="h-full rounded-xl border border-white/10 bg-[#070a11]/80 p-5 transition-colors hover:border-cyan-400/30">
+                  <p className="font-mono text-xs font-medium text-cyan-300">Phase {index + 1}</p>
+                  <h3 className="mt-2 text-lg font-semibold text-white">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{step.description}</p>
                 </div>
               ))}
             </div>
@@ -457,123 +475,86 @@ export default function HomePage() {
         <section className="container-shell mt-16 md:mt-20">
           <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="max-w-2xl">
-              <p className="text-xs font-medium text-brand">Industry architectures</p>
-              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
+              <p className="text-xs font-medium text-cyan-300">Industry architectures</p>
+              <h2 className="mt-2 font-display text-3xl tracking-tight text-white md:text-4xl">
                 Tuned for Your Industry &amp; Operating Model
               </h2>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">
                 Serving Australian and US businesses, each industry playbook adapts call triage scripts, CRM pipeline stages, and direct dispatch webhooks to your vertical software. From ServiceTitan and Jobber in trades to Cliniko in allied health, intake rules match how your team books work.
               </p>
             </div>
-            <Link href="/industries" className="text-sm font-semibold text-brand hover:text-brand-deep shrink-0">
+            <Link href="/industries" className="text-sm font-semibold text-cyan-300 hover:text-cyan-200 shrink-0">
               View all industry playbooks
             </Link>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <Link
-              href="/industries/plumbers-hvac-trades"
-              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
-            >
-              <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                Plumbers, HVAC &amp; Trades
-              </h3>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                Emergency dispatch triage, jobsite missed-call text-back, and ServiceTitan/Jobber synchronization.
-              </p>
-              <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand">
-                View Trade Playbook <ChevronRight className="h-3.5 w-3.5 ml-0.5" />
-              </span>
-            </Link>
-
-            <Link
-              href="/industries/medical-dental-clinics"
-              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
-            >
-              <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                Medical &amp; Dental Clinics
-              </h3>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                24/7 patient booking, emergency intake, appointment confirmations, and Cliniko PMS calendar sync.
-              </p>
-              <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand">
-                View Dental Playbook <ChevronRight className="h-3.5 w-3.5 ml-0.5" />
-              </span>
-            </Link>
-
-            <Link
-              href="/industries/automotive-workshops"
-              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
-            >
-              <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                Automotive Workshops &amp; Mechanics
-              </h3>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                Vehicle intake capture, diagnostic quote follow-ups, and automated service reminder SMS sequences.
-              </p>
-              <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand">
-                View Automotive Playbook <ChevronRight className="h-3.5 w-3.5 ml-0.5" />
-              </span>
-            </Link>
-
-            <Link
-              href="/industries/beauty-wellness"
-              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
-            >
-              <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                Beauty, Salons &amp; Med Spas
-              </h3>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                Capture callers while stylists have hands full, automate deposits, and reduce no-shows to near-zero.
-              </p>
-              <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand">
-                View Salon Playbook <ChevronRight className="h-3.5 w-3.5 ml-0.5" />
-              </span>
-            </Link>
-
-            <Link
-              href="/industries/professional-services"
-              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
-            >
-              <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                Legal &amp; Professional Services
-              </h3>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                Conflict-of-interest checks, automated client intake questionnaires, and qualified discovery bookings.
-              </p>
-              <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand">
-                View Professional Playbook <ChevronRight className="h-3.5 w-3.5 ml-0.5" />
-              </span>
-            </Link>
-
-            <Link
-              href="/industries/events-hospitality"
-              className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs hover:border-brand/40"
-            >
-              <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                Events, Venues &amp; Hospitality
-              </h3>
-              <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-                Private dining and venue hire intake, dietary constraint capture, and instant quote generation.
-              </p>
-              <span className="mt-4 inline-flex items-center text-xs font-semibold text-brand">
-                View Hospitality Playbook <ChevronRight className="h-3.5 w-3.5 ml-0.5" />
-              </span>
-            </Link>
+            {[
+              {
+                href: "/industries/plumbers-hvac-trades",
+                title: "Plumbers, HVAC & Trades",
+                desc: "Emergency dispatch triage, jobsite missed-call text-back, and ServiceTitan/Jobber synchronization.",
+                cta: "View Trade Playbook",
+              },
+              {
+                href: "/industries/medical-dental-clinics",
+                title: "Medical & Dental Clinics",
+                desc: "24/7 patient booking, emergency intake, appointment confirmations, and Cliniko PMS calendar sync.",
+                cta: "View Dental Playbook",
+              },
+              {
+                href: "/industries/automotive-workshops",
+                title: "Automotive Workshops & Mechanics",
+                desc: "Vehicle intake capture, diagnostic quote follow-ups, and automated service reminder SMS sequences.",
+                cta: "View Automotive Playbook",
+              },
+              {
+                href: "/industries/beauty-wellness",
+                title: "Beauty, Salons & Med Spas",
+                desc: "Capture callers while stylists have hands full, automate deposits, and reduce no-shows to near-zero.",
+                cta: "View Salon Playbook",
+              },
+              {
+                href: "/industries/professional-services",
+                title: "Legal & Professional Services",
+                desc: "Conflict-of-interest checks, automated client intake questionnaires, and qualified discovery bookings.",
+                cta: "View Professional Playbook",
+              },
+              {
+                href: "/industries/events-hospitality",
+                title: "Events, Venues & Hospitality",
+                desc: "Private dining and venue hire intake, dietary constraint capture, and instant quote generation.",
+                cta: "View Hospitality Playbook",
+              },
+            ].map((ind) => (
+              <Link
+                key={ind.href}
+                href={ind.href}
+                className="group rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs backdrop-blur-md transition-colors hover:border-cyan-400/35"
+              >
+                <h3 className="font-display text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                  {ind.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">{ind.desc}</p>
+                <span className="mt-4 inline-flex items-center text-xs font-semibold text-cyan-300">
+                  {ind.cta} <ChevronRight className="h-3.5 w-3.5 ml-0.5" />
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
 
         {/* SECTION 8: FAQ ACCORDION */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs backdrop-blur-md">
             <div className="max-w-2xl">
-              <p className="text-xs font-medium text-brand">
+              <p className="text-xs font-medium text-cyan-300">
                 Frequently asked questions
               </p>
-              <h2 className="mt-2 font-display text-3xl text-foreground md:text-4xl">
+              <h2 className="mt-2 font-display text-3xl tracking-tight text-white md:text-4xl">
                 Frequently Asked Implementation Questions
               </h2>
-              <p className="mt-3 text-sm text-foreground/75">
+              <p className="mt-3 text-sm text-slate-300">
                 Straightforward answers to the four questions service business owners ask us most frequently.
               </p>
             </div>
@@ -586,27 +567,27 @@ export default function HomePage() {
 
         {/* SECTION 9: FINAL CTA */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="saas-grid-bg rounded-2xl border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-white shadow-[0_0_60px_-18px_rgba(56,189,248,0.22)] md:px-12 md:py-16">
             <div className="max-w-2xl">
-              <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight">
+              <h2 className="font-display text-3xl tracking-tight md:text-5xl font-semibold leading-tight text-white">
                 Stop Losing Jobs to Missed Calls and Slow Follow-Ups
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-white/80 md:text-lg">
+              <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-lg">
                 Let us audit your current call volume and map a bespoke automation pipeline. No pushy sales pitch, just a practical architectural plan with fixed pricing.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-medium text-foreground hover:bg-surface-sunken transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
                 >
                   Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/try-voice-agent"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
                 >
-                  <PhoneCall className="h-4 w-4" />
+                  <PhoneCall className="h-4 w-4 text-cyan-400" />
                   Hear a live AI demo
                 </Link>
               </div>

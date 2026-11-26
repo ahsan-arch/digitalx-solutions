@@ -82,7 +82,7 @@ export default function TryVoiceAgentPage() {
         <div className="mx-auto max-w-3xl">
           <VoiceAgentExperience />
           {/* Compliance & AI Disclosure Banner */}
-          <div className="mt-4 rounded-lg border border-border/70 bg-surface-50 p-3.5 text-center text-xs text-foreground/75">
+          <div className="mt-4 rounded-lg border border-white/10 bg-surface-50 p-3.5 text-center text-xs text-foreground/75">
             <p>
               <strong>Notice &amp; AI Disclosure:</strong> This interactive demo uses synthetic conversational speech powered by artificial intelligence models. Audio sessions may be logged for quality, safety, and latency benchmarking. Review our guide on{" "}
               <Link href="/insights/ai-call-recording-laws-australia-us" className="text-brand underline hover:text-brand-deep">
@@ -160,7 +160,7 @@ export default function TryVoiceAgentPage() {
                 <tr>
                   <td className="p-3 font-medium text-ink-primary">Voice Latency</td>
                   <td className="p-3">Noticeable delay (awkward pauses)</td>
-                  <td className="p-3 font-semibold text-emerald-600">Fast, natural conversational responses with streaming interruption</td>
+                  <td className="p-3 font-semibold text-emerald-400">Fast, natural conversational responses with streaming interruption</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium text-ink-primary">Calendar Integration</td>
@@ -175,7 +175,7 @@ export default function TryVoiceAgentPage() {
                 <tr>
                   <td className="p-3 font-medium text-ink-primary">Escalation &amp; Warm Transfer</td>
                   <td className="p-3">Not available</td>
-                  <td className="p-3 font-semibold text-emerald-600">SIP transfer to owner mobile with 5-second private whisper briefing</td>
+                  <td className="p-3 font-semibold text-emerald-400">SIP transfer to owner mobile with 5-second private whisper briefing</td>
                 </tr>
               </tbody>
             </table>

@@ -4,55 +4,58 @@
 
 @layer base {
   :root {
-    /* Surfaces */
-    --surface-page: 251 248 242;
-    --surface-raised: 255 255 255;
-    --surface-sunken: 243 239 230;
-    --surface-inverse: 27 26 23;
+    color-scheme: dark;
 
-    /* Ink */
-    --ink-primary: 27 26 23;
-    --ink-secondary: 65 62 57;
-    --ink-tertiary: 92 88 82;
-    --ink-on-inverse: 251 248 242;
+    /* Dark-Mode Tech-SaaS Surfaces (Obsidian Navy) */
+    --surface-page: 7 10 17;
+    --surface-raised: 13 20 33;
+    --surface-sunken: 17 24 39;
+    --surface-inverse: 248 250 252;
 
-    /* Accents - calibrated to 4.8+:1 contrast on white and light surfaces */
-    --accent-primary: 188 72 18;
-    --accent-primary-hover: 165 60 14;
-    --accent-primary-soft: 251 228 213;
-    --accent-secondary: 38 98 84;
-    --accent-secondary-soft: 216 231 223;
+    /* Cool Slate Ink — >= 6.8:1 contrast on #070a11 */
+    --ink-primary: 248 250 252;
+    --ink-secondary: 203 213 225;
+    --ink-tertiary: 148 163 184;
+    --ink-on-inverse: 7 10 17;
+
+    /* Accents: Electric Blue for white-text CTAs (5.17:1+) & Cyan for highlights (9.24:1) */
+    --accent-primary: 37 99 235;
+    --accent-primary-hover: 29 78 216;
+    --accent-primary-soft: 14 165 233;
+    --accent-cyan: 56 189 248;
+    --accent-secondary: 45 212 191;
+    --accent-secondary-soft: 19 78 74;
 
     /* Semantic */
-    --success: 46 110 94;
-    --success-soft: 216 231 223;
-    --warning: 184 137 21;
-    --warning-soft: 245 230 189;
-    --error: 180 70 60;
-    --error-soft: 244 216 212;
-    --info: 61 110 156;
-    --info-soft: 210 226 240;
+    --success: 52 211 153;
+    --success-soft: 6 78 59;
+    --warning: 251 191 36;
+    --warning-soft: 120 53 15;
+    --error: 248 113 113;
+    --error-soft: 127 29 29;
+    --info: 56 189 248;
+    --info-soft: 12 74 110;
 
-    /* Lines */
-    --border-subtle: 235 228 214;
-    --border-strong: 214 205 184;
-    --divider: 238 232 218;
+    /* Crisp 1px translucent slate hairlines */
+    --border-subtle: 30 41 59;
+    --border-strong: 51 65 85;
+    --divider: 30 41 59;
 
-    /* Shadows — warm, never pure black */
-    --shadow-xs: 0 1px 2px rgba(60, 40, 20, 0.04);
-    --shadow-sm: 0 2px 6px rgba(60, 40, 20, 0.06);
-    --shadow-md: 0 8px 20px rgba(60, 40, 20, 0.08);
-    --shadow-lg: 0 20px 40px rgba(60, 40, 20, 0.10);
-    --shadow-focus: 0 0 0 3px rgba(217, 99, 42, 0.28);
+    /* Subtle dark elevation & cyan focus */
+    --shadow-xs: 0 1px 2px rgba(2, 6, 23, 0.45);
+    --shadow-sm: 0 4px 12px rgba(2, 6, 23, 0.55);
+    --shadow-md: 0 12px 28px rgba(2, 6, 23, 0.65);
+    --shadow-lg: 0 24px 48px rgba(2, 6, 23, 0.75);
+    --shadow-focus: 0 0 0 3px rgba(56, 189, 248, 0.35);
 
     /* Motion durations (ms) */
     --motion-120: 120ms;
     --motion-200: 200ms;
     --motion-320: 320ms;
     --motion-480: 480ms;
-    --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
 
-    /* Legacy aliases — retained while deprecated components/pages still reference them. */
+    /* Legacy aliases mapped seamlessly to Dark Navy surfaces */
     --background: var(--surface-page);
     --foreground: var(--ink-primary);
     --muted: var(--ink-tertiary);
@@ -61,8 +64,8 @@
     --brand-deep: var(--accent-primary-hover);
     --brand-soft: var(--accent-primary-soft);
     --surface-50: var(--surface-raised);
-    --surface-100: var(--surface-page);
-    --surface-200: var(--surface-sunken);
+    --surface-100: var(--surface-sunken);
+    --surface-200: 24 34 53;
   }
 
   *,
@@ -80,6 +83,10 @@
 
   body {
     @apply bg-surface-page text-ink-primary font-sans;
+    background-image:
+      radial-gradient(ellipse 80% 45% at 50% -10%, rgba(56, 189, 248, 0.11), transparent 70%),
+      radial-gradient(ellipse 50% 35% at 85% 12%, rgba(37, 99, 235, 0.1), transparent 70%);
+    background-repeat: no-repeat;
     overflow-x: hidden;
     min-height: 100vh;
   }
@@ -90,8 +97,8 @@
   }
 
   ::selection {
-    background-color: rgb(var(--accent-primary) / 0.22);
-    color: rgb(var(--ink-primary));
+    background-color: rgba(56, 189, 248, 0.25);
+    color: rgb(248, 250, 252);
   }
 
   ::-webkit-scrollbar {
@@ -99,7 +106,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: rgb(var(--surface-sunken));
+    background: rgb(var(--surface-page));
   }
 
   ::-webkit-scrollbar-thumb {
@@ -109,7 +116,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(var(--accent-primary) / 0.55);
+    background: rgba(56, 189, 248, 0.55);
   }
 
   :focus-visible {
@@ -118,9 +125,7 @@
     border-radius: 4px;
   }
 
-
   @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -163,6 +168,72 @@
   .ease-standard {
     transition-timing-function: var(--ease-standard);
   }
+
+  /* Electric cyan text highlight (9.24:1 contrast on #070a11) while keeping bg-brand deep blue for white-text CTAs */
+  .text-brand {
+    color: rgb(56 189 248 / var(--tw-text-opacity, 1));
+  }
+
+  .text-brand-deep {
+    color: rgb(34 211 238 / var(--tw-text-opacity, 1));
+  }
+
+  .hover\:text-brand:hover,
+  .group:hover .group-hover\:text-brand {
+    color: rgb(103 232 249 / var(--tw-text-opacity, 1));
+  }
+
+  .hover\:text-brand-deep:hover,
+  .group:hover .group-hover\:text-brand-deep {
+    color: rgb(103 232 249 / var(--tw-text-opacity, 1));
+  }
+
+  /* Architectural subtle 1px mesh grid for Tech-SaaS hero & architecture backdrops */
+  .saas-grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .animate-saas-beam {
+    animation: saasBeam 2.4s linear infinite;
+  }
+}
+
+@keyframes saasBeam {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0.25;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(340px);
+    opacity: 0.25;
+  }
+}
+
+/* Dark-mode typography defaults for long-form blog/insights articles */
+.prose {
+  --tw-prose-body: rgb(203, 213, 225);
+  --tw-prose-headings: rgb(248, 250, 252);
+  --tw-prose-lead: rgb(203, 213, 225);
+  --tw-prose-links: rgb(56, 189, 248);
+  --tw-prose-bold: rgb(248, 250, 252);
+  --tw-prose-counters: rgb(148, 163, 184);
+  --tw-prose-bullets: rgb(56, 189, 248);
+  --tw-prose-hr: rgba(148, 163, 184, 0.16);
+  --tw-prose-quotes: rgb(226, 232, 240);
+  --tw-prose-quote-borders: rgb(56, 189, 248);
+  --tw-prose-captions: rgb(148, 163, 184);
+  --tw-prose-code: rgb(103, 232, 249);
+  --tw-prose-pre-code: rgb(226, 232, 240);
+  --tw-prose-pre-bg: rgb(13, 20, 33);
+  --tw-prose-th-borders: rgba(148, 163, 184, 0.2);
+  --tw-prose-td-borders: rgba(148, 163, 184, 0.12);
 }
 
 @keyframes soundbar {
@@ -172,5 +243,19 @@
 
   100% {
     height: 16px;
+  }
+}
+
+@keyframes beamFlow {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(320px);
+    opacity: 0.25;
   }
 }

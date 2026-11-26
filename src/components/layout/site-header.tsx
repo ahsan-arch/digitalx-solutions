@@ -134,7 +134,7 @@ export function SiteHeader() {
     >
       <div className={cn("mx-auto flex w-full max-w-[1200px] items-center justify-between px-4 md:px-8 transition-all duration-200", scrolled ? "h-16" : "h-18")}>
         <Link href="/" className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 rounded-lg">
-          <span aria-hidden="true" className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-white text-sm font-bold text-brand shadow-2xs transition-transform duration-200 group-hover:scale-105">
+          <span aria-hidden="true" className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-400/25 bg-surface-50 text-sm font-bold text-brand shadow-2xs transition-transform duration-200 group-hover:scale-105">
             DX
           </span>
           <span className="text-base font-semibold text-foreground">
@@ -182,7 +182,7 @@ export function SiteHeader() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -6, scale: 0.98 }}
                         transition={{ duration: 0.15, ease: EASE_PRECISION }}
-                        className="absolute left-1/2 -translate-x-1/2 top-full w-[640px] rounded-2xl border border-border bg-white p-6 shadow-xl origin-top"
+                        className="absolute left-1/2 -translate-x-1/2 top-full w-[640px] rounded-2xl border border-white/10 bg-[#0d1421]/95 backdrop-blur-xl p-6 shadow-xl origin-top"
                       >
                         <div className="grid grid-cols-2 gap-6">
                           {serviceDropdownItems.map((group) => (
@@ -321,7 +321,7 @@ export function SiteHeader() {
               </Link>
 
               <div className="py-2">
-                <p className="px-3 text-[11px] font-mono font-semibold uppercase text-foreground/50">Services</p>
+                <p className="px-3 text-[11px] font-mono font-semibold text-foreground/75">Services</p>
                 <div className="mt-1 space-y-0.5">
                   <Link href="/solutions/ai-voice-agents" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-1.5 text-xs text-foreground/80 hover:bg-surface-sunken">
                     AI Voice Agents &amp; Receptionists

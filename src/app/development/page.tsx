@@ -74,12 +74,12 @@ export default function DevelopmentHubPage() {
             {developmentServices.map((service) => (
               <article
                 key={service.slug}
-                className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
+                className="flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="flex items-center gap-1 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-600/20">
-                      <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                    <span className="flex items-center gap-1 text-[11px] font-medium text-emerald-300 bg-emerald-500/10 px-2.5 py-0.5 rounded-md border border-emerald-400/25">
+                      <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
                       Production Architecture
                     </span>
                     <span className="text-[11px] font-mono text-foreground/75">
@@ -97,7 +97,7 @@ export default function DevelopmentHubPage() {
                     {service.summary.slice(0, 240)}...
                   </p>
 
-                  <div className="mt-5 border-t border-border/60 pt-4">
+                  <div className="mt-5 border-t border-white/10 pt-4">
                     <span className="text-[11px] font-mono text-foreground/75">
                       Core Stack Components
                     </span>
@@ -105,7 +105,7 @@ export default function DevelopmentHubPage() {
                       {service.architecturalComponents.map((comp) => (
                         <span
                           key={comp}
-                          className="rounded-md bg-surface-50 px-2.5 py-0.5 text-[11px] font-medium text-foreground/70 border border-border/60"
+                          className="rounded-md bg-surface-50 px-2.5 py-0.5 text-[11px] font-medium text-foreground/70 border border-white/10"
                         >
                           {comp}
                         </span>
@@ -114,7 +114,7 @@ export default function DevelopmentHubPage() {
                   </div>
                 </div>
 
-                <div className="mt-6 border-t border-border/60 pt-4">
+                <div className="mt-6 border-t border-white/10 pt-4">
                   <Link
                     href={`/development/${service.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-deep transition-colors"
@@ -129,7 +129,7 @@ export default function DevelopmentHubPage() {
 
         {/* Technical Standards Callout */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-12">
+          <div className="rounded-3xl border border-white/10 bg-surface-50 p-8 md:p-12">
             <div>
               <span className="font-mono text-xs font-medium text-brand">Reliability First</span>
               <h2 className="mt-2 font-display text-2xl md:text-3xl font-semibold text-foreground">
@@ -141,7 +141,7 @@ export default function DevelopmentHubPage() {
             </div>
 
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              <div className="rounded-2xl border border-border/80 bg-white p-6">
+              <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand font-bold mb-4">
                   <Cpu className="h-5 w-5" />
                 </div>
@@ -151,8 +151,8 @@ export default function DevelopmentHubPage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border/80 bg-white p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 font-bold mb-4">
+              <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-300 font-bold mb-4">
                   <Database className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground">Idempotent Pipelines</h3>
@@ -161,8 +161,8 @@ export default function DevelopmentHubPage() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-border/80 bg-white p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700 font-bold mb-4">
+              <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-300 font-bold mb-4">
                   <Layers className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground">Strict Schema Safety</h3>
@@ -176,7 +176,7 @@ export default function DevelopmentHubPage() {
 
         {/* Development FAQs */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-border bg-white p-8 md:p-12">
+          <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-8 md:p-12">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
                 <HelpCircle className="h-5 w-5" />
@@ -193,7 +193,7 @@ export default function DevelopmentHubPage() {
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {developmentFaqs.map((faq) => (
-                <div key={faq.question} className="rounded-2xl border border-border/80 bg-surface-50 p-6">
+                <div key={faq.question} className="rounded-2xl border border-white/10 bg-surface-50 p-6">
                   <h3 className="font-display text-base font-semibold text-foreground">{faq.question}</h3>
                   <p className="mt-2 text-xs leading-relaxed text-foreground/75">{faq.answer}</p>
                 </div>
@@ -204,7 +204,7 @@ export default function DevelopmentHubPage() {
 
         {/* CTA Banner */}
         <section className="container-shell mt-16">
-          <div className="rounded-3xl bg-foreground p-8 text-center text-white md:p-12">
+          <div className="rounded-3xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 p-8 text-center text-white md:p-12">
             <h2 className="font-display text-3xl md:text-4xl">Have a complex technical requirement?</h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/80">
               Talk directly with a senior solutions engineer. We will review your existing system architecture and deliver a phased delivery proposal with fixed pricing.

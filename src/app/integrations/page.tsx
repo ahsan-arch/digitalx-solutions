@@ -54,15 +54,15 @@ export default function IntegrationsHubPage() {
             {integrationsData.map((integration) => (
               <article
                 key={integration.slug}
-                className="flex flex-col justify-between rounded-3xl border border-border bg-white p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
+                className="flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
                     <span className="rounded-md bg-surface-100 px-2.5 py-0.5 text-[11px] font-medium text-foreground/70">
                       {integration.category}
                     </span>
-                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
-                      <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                    <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-300">
+                      <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
                       Production Tested
                     </span>
                   </div>
@@ -77,7 +77,7 @@ export default function IntegrationsHubPage() {
                     {integration.summary.slice(0, 160)}...
                   </p>
 
-                  <div className="mt-5 border-t border-border/60 pt-4">
+                  <div className="mt-5 border-t border-white/10 pt-4">
                     <span className="font-mono text-[11px] font-medium text-foreground/75">
                       Supported Tools
                     </span>
@@ -85,7 +85,7 @@ export default function IntegrationsHubPage() {
                       {integration.toolsUsed.map((tool) => (
                         <span
                           key={tool}
-                          className="rounded-md bg-surface-50 px-2 py-0.5 text-[11px] font-medium text-foreground/70 border border-border/60"
+                          className="rounded-md bg-surface-50 px-2 py-0.5 text-[11px] font-medium text-foreground/70 border border-white/10"
                         >
                           {tool}
                         </span>
@@ -94,7 +94,7 @@ export default function IntegrationsHubPage() {
                   </div>
                 </div>
 
-                <div className="mt-6 border-t border-border/60 pt-4">
+                <div className="mt-6 border-t border-white/10 pt-4">
                   <Link
                     href={`/integrations/${integration.slug}`}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-deep transition-colors"
@@ -109,7 +109,7 @@ export default function IntegrationsHubPage() {
 
         {/* Custom Integration Callout */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-border bg-surface-50 p-8 md:p-12">
+          <div className="rounded-3xl border border-white/10 bg-surface-50 p-8 md:p-12">
             <div className="grid gap-8 md:grid-cols-[1.3fr_0.7fr] md:items-center">
               <div>
                 <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
@@ -127,32 +127,32 @@ export default function IntegrationsHubPage() {
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center rounded-xl border border-border bg-white px-6 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition-colors"
+                    className="inline-flex items-center rounded-xl border border-white/10 bg-[#0d1421]/85 px-6 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-100 transition-colors"
                   >
                     Speak with a Solutions Engineer
                   </Link>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-border/80 bg-white p-6">
+              <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6">
                 <h3 className="font-mono text-xs font-medium text-foreground/70 mb-3">
                   Integration Guarantees
                 </h3>
                 <ul className="space-y-2.5 text-xs text-foreground/80">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                     Fast, natural voice turnaround latency
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                     Australian Privacy Principles &amp; US 10DLC compliant
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                     Zero double-booking calendar slot locks
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
                     Automatic fallback to SMS if line drops
                   </li>
                 </ul>

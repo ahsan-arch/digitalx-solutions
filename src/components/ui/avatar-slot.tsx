@@ -24,7 +24,7 @@ export function AvatarSlot({
     <div
       className={cn(
         "relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-brand font-bold text-white border",
-        showRing ? "border-brand/40 ring-2 ring-brand/15" : "border-border",
+        showRing ? "border-brand/40 ring-2 ring-brand/15" : "border-white/10",
         className
       )}
     >

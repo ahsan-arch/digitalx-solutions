@@ -71,7 +71,7 @@ export function ContactIntakeForm() {
 
   return (
     <div className="space-y-4">
-      <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-border bg-surface-50 p-6 md:p-8">
+      <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-8">
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="contact-name" className="mb-1.5 block text-sm font-medium text-foreground/80">
@@ -83,7 +83,7 @@ export function ContactIntakeForm() {
               required
               value={name}
               onChange={(event) => setName(event.target.value)}
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+              className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
               placeholder="Your name"
             />
           </div>
@@ -98,7 +98,7 @@ export function ContactIntakeForm() {
               required
               value={contact}
               onChange={(event) => setContact(event.target.value)}
-              className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+              className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
               placeholder="name@company.com or +61 / +1..."
             />
           </div>
@@ -113,7 +113,7 @@ export function ContactIntakeForm() {
             name="need"
             value={need}
             onChange={(event) => setNeed(event.target.value as (typeof needOptions)[number])}
-            className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+            className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
           >
             {needOptions.map((option) => (
               <option key={option} value={option}>
@@ -135,7 +135,7 @@ export function ContactIntakeForm() {
             value={details}
             onChange={(event) => setDetails(event.target.value)}
             rows={3}
-            className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+            className="w-full rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
             placeholder="Share your current stack, user count, or bottleneck."
           />
         </div>
@@ -145,7 +145,7 @@ export function ContactIntakeForm() {
             type="checkbox"
             checked={callbackRequested}
             onChange={(e) => setCallbackRequested(e.target.checked)}
-            className="h-4 w-4 rounded border-border text-brand focus:ring-brand"
+            className="h-4 w-4 rounded border-white/10 text-brand focus:ring-brand"
           />
           <span>Request a quick phone or WhatsApp callback</span>
         </label>
@@ -165,7 +165,7 @@ export function ContactIntakeForm() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWhatsAppClick("contact_form")}
-            className="inline-flex items-center gap-2 rounded-xl border border-emerald-600/30 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800 hover:bg-emerald-100 transition"
+            className="inline-flex items-center gap-2 rounded-xl border border-emerald-400/25 bg-emerald-500/10 px-4 py-3 text-sm font-semibold text-emerald-300 hover:bg-emerald-500/10 transition"
           >
             <WhatsAppIcon className="h-4 w-4" />
             <span>WhatsApp Chat</span>
@@ -174,7 +174,7 @@ export function ContactIntakeForm() {
           <a
             href={`tel:${companyProfile.phoneE164}`}
             onClick={() => trackPhoneTap(companyProfile.phone)}
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
           >
             <Phone className="h-4 w-4 text-brand" />
             <span>Direct Callback</span>
@@ -184,7 +184,7 @@ export function ContactIntakeForm() {
         {message && (
           <p
             role="status"
-            className={`text-sm font-medium ${submitState === "error" ? "text-red-600" : "text-emerald-700"}`}
+            className={`text-sm font-medium ${submitState === "error" ? "text-red-600" : "text-emerald-300"}`}
           >
             {message}
           </p>

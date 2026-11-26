@@ -73,7 +73,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
       <main id="main" className="pb-24 pt-12">
         {/* SECTION 1: HERO */}
         <section className="container-shell">
-          <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white/70 px-6 py-12 shadow-xs md:px-12 md:py-16">
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d1421]/85 px-6 py-12 shadow-xs md:px-12 md:py-16">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Production CRM engineering across Australia and the US
@@ -95,7 +95,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </Link>
                 <Link
                   href="/solutions/gohighlevel-implementation"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3.5 text-sm font-medium text-foreground transition hover:bg-surface-sunken"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-6 py-3.5 text-sm font-medium text-foreground transition hover:bg-surface-sunken"
                 >
                   Explore System Specifications
                   <ArrowRight className="h-4 w-4" />
@@ -109,22 +109,22 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
             {/* Platform Integration Highlights */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">A2P 10DLC Telephony</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Carrier-Approved SMS</p>
                 <p className="mt-1 text-xs text-foreground/75">Full brand registration preventing carrier spam filtering.</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">Speed to Lead Automation</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">&lt; 60s Text-Back</p>
                 <p className="mt-1 text-xs text-foreground/75">Instant conversational recovery on missed phone calls.</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">Synced Calendars</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">Automated Bookings</p>
                 <p className="mt-1 text-xs text-foreground/75">Round-robin calendar sync with zero double-bookings.</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-white p-4 shadow-xs">
+              <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-4 shadow-xs">
                 <span className="text-xs font-semibold text-brand">Fast Turnaround</span>
                 <p className="mt-1 font-display text-base font-semibold text-foreground">7 Business Days</p>
                 <p className="mt-1 text-xs text-foreground/75">Turnkey configuration, testing, and team handover.</p>
@@ -135,7 +135,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
         {/* SECTION 2: THE BOTTLENECK (PROBLEM AGITATION) */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Systemic bottlenecks
@@ -149,8 +149,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
                   <ShieldCheck className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -161,8 +161,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
                   <Clock className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -173,8 +173,8 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
                   <Database className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -190,7 +190,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
         {/* SECTION 3: WHAT WE BUILD */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Comprehensive implementation
@@ -204,7 +204,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   Sales Pipelines
                 </span>
@@ -216,7 +216,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   Speed to Lead
                 </span>
@@ -228,7 +228,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   A2P 10DLC and Phone Setup
                 </span>
@@ -240,7 +240,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <span className="text-xs font-semibold text-brand">
                   Conversation AI and Booking
                 </span>
@@ -252,7 +252,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6 lg:col-span-2">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6 lg:col-span-2">
                 <span className="text-xs font-semibold text-brand">
                   Snapshots and External APIs
                 </span>
@@ -269,7 +269,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
         {/* SECTION 4: HOW IT WORKS */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Implementation roadmap
@@ -283,7 +283,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Days 1 to 2
                 </p>
@@ -295,7 +295,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Days 3 to 5
                 </p>
@@ -307,7 +307,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-surface-page p-6">
+              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Days 6 to 7
                 </p>
@@ -324,7 +324,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
         {/* SECTION 5: BUYER FAQ ACCORDION */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">
                 Buyer FAQ
@@ -345,7 +345,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
 
         {/* SECTION 6: BOTTOM CONVERSION BANNER */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="rounded-2xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-white md:px-12 md:py-16">
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
                 Ready to Turn GoHighLevel Into Your Growth Engine?
@@ -356,7 +356,7 @@ export default function GoHighLevelCrmSetupAutomationPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-sunken"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition-colors"
                 >
                   Book Your Free CRM Audit
                   <ArrowRight className="h-4 w-4" />

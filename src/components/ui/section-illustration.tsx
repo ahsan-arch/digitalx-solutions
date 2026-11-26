@@ -137,29 +137,29 @@ export function SectionIllustration({
   return (
     <div
       aria-label={alt || spec.heading}
-      className="w-full rounded-2xl border border-border bg-white p-5 md:p-6 shadow-xs"
+      className="w-full rounded-2xl border border-white/15 bg-[#0b111e]/90 p-5 md:p-6 shadow-[0_20px_50px_-16px_rgba(2,6,23,0.8)] backdrop-blur-xl"
     >
-      <div className="border-b border-border/70 pb-3.5">
-        <p className="font-display text-base font-semibold text-foreground">
+      <div className="border-b border-white/10 pb-3.5">
+        <p className="font-display text-base font-semibold text-white">
           {spec.heading}
         </p>
-        <p className="mt-0.5 text-xs text-foreground/65">{spec.subtitle}</p>
+        <p className="mt-0.5 text-xs text-slate-400">{spec.subtitle}</p>
       </div>
 
-      <dl className="mt-3 divide-y divide-border/50">
+      <dl className="mt-3 divide-y divide-white/10">
         {spec.rows.map((row) => (
           <div
             key={row.label}
             className="flex items-center justify-between gap-4 py-2.5 text-xs"
           >
-            <dt className="text-foreground/75">{row.label}</dt>
+            <dt className="text-slate-300">{row.label}</dt>
             <dd
               className={
                 row.tone === "accent"
-                  ? "font-mono font-semibold tabular-nums text-brand-deep text-right"
+                  ? "font-mono font-semibold tabular-nums text-cyan-300 text-right"
                   : row.tone === "success"
-                  ? "font-mono font-semibold tabular-nums text-emerald-700 text-right"
-                  : "font-mono font-medium tabular-nums text-foreground text-right"
+                  ? "font-mono font-semibold tabular-nums text-emerald-300 text-right"
+                  : "font-mono font-medium tabular-nums text-white text-right"
               }
             >
               {row.value}
@@ -168,7 +168,7 @@ export function SectionIllustration({
         ))}
       </dl>
 
-      <div className="mt-3 border-t border-border/70 pt-3 text-[11px] font-mono text-foreground/65">
+      <div className="mt-3 border-t border-white/10 pt-3 text-[11px] font-mono text-slate-400">
         {spec.footer}
       </div>
     </div>
