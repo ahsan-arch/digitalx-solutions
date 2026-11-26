@@ -33,16 +33,18 @@ type UseVoiceAgentOptions = {
   onError?: (message: string) => void;
 };
 
-/** Sentence boundary detector — also flushes long clauses so TTS feels snappy. */
+/** Sentence boundary detector — batches short opening phrases into one natural TTS request. */
 function takeFlushable(buffer: string): { sentence: string | null; rest: string } {
   const match = buffer.match(/[.!?][)"'\s]*\s|[\n]/);
   if (match && match.index !== undefined) {
     const end = match.index + match[0].length;
-    return { sentence: buffer.slice(0, end).trim(), rest: buffer.slice(end) };
+    if (end >= 65) {
+      return { sentence: buffer.slice(0, end).trim(), rest: buffer.slice(end) };
+    }
   }
-  if (buffer.length > 120) {
-    const commaIdx = buffer.lastIndexOf(", ", 110);
-    if (commaIdx > 40) {
+  if (buffer.length > 160) {
+    const commaIdx = buffer.lastIndexOf(", ", 150);
+    if (commaIdx > 60) {
       return {
         sentence: buffer.slice(0, commaIdx + 1).trim(),
         rest: buffer.slice(commaIdx + 1),
@@ -63,7 +65,7 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
   const recorderRef = useRef<Recorder | null>(null);
   const recognizerRef = useRef<SpeechRecognitionLike | null>(null);
   const statusRef = useRef<AgentStatus>("idle");
-  const serverTtsFailedRef = useRef(false);
+  const edgeFailuresRef = useRef(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const abortRef = useRef<AbortController | null>(null);
   const speakAbortRef = useRef<AbortController | null>(null);
@@ -165,12 +167,12 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
       speakAbortRef.current = ctrl;
 
       try {
-        // Primary: Microsoft Edge Neural TTS (fast 1200ms attempt)
-        if (!serverTtsFailedRef.current && voice.edgeTtsVoice) {
+        // Primary: Microsoft Edge Neural TTS
+        if (edgeFailuresRef.current < 3 && voice.edgeTtsVoice) {
           const edgeTimeout = new AbortController();
           const linkAbort = () => edgeTimeout.abort();
           ctrl.signal.addEventListener("abort", linkAbort);
-          const timer = setTimeout(() => edgeTimeout.abort(), 1200);
+          const timer = setTimeout(() => edgeTimeout.abort(), 6500);
           try {
             const res = await fetch("/api/voice-agent/edge-tts", {
               method: "POST",
@@ -183,17 +185,17 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
             if (res.ok) {
               const blob = await res.blob();
               if (blob.size > 0) {
+                edgeFailuresRef.current = 0;
                 await playAudioBlob(blob, ctrl.signal);
                 return;
               }
-            } else {
-              serverTtsFailedRef.current = true;
             }
+            edgeFailuresRef.current += 1;
           } catch {
             clearTimeout(timer);
             ctrl.signal.removeEventListener("abort", linkAbort);
             if (ctrl.signal.aborted) return;
-            serverTtsFailedRef.current = true;
+            edgeFailuresRef.current += 1;
           }
         }
 
@@ -325,23 +327,15 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
   const start = useCallback(async () => {
     if (activeRef.current) return;
 
-    // Mobile audio unlock (synchronously inside user click)
+    // Audio element unlock synchronously inside user click gesture
     try {
       const audio = audioRef.current ?? new Audio();
       audio.src = SILENT_WAV;
       audio.play().catch(() => {});
       audioRef.current = audio;
     } catch {}
-    try {
-      if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        const unlock = new SpeechSynthesisUtterance(" ");
-        unlock.volume = 0;
-        unlock.rate = 1;
-        window.speechSynthesis.speak(unlock);
-        window.speechSynthesis.cancel();
-      }
-    } catch {}
 
+    edgeFailuresRef.current = 0;
     activeRef.current = true;
     messagesRef.current = [
       {
@@ -353,13 +347,32 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     setTranscript([]);
     setInterim("");
     setPremiumFallbackNotice(false);
-    setStatus("listening");
+    setStatus("thinking");
 
     let micStarted = false;
     let micFailureMessage: string | null = null;
+    let micPermissionOk = true;
+
+    // Verify mic permission upfront inside user gesture when MediaDevices is available
+    if (typeof navigator !== "undefined" && navigator.mediaDevices?.getUserMedia) {
+      try {
+        const probeStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        probeStream.getTracks().forEach((t) => t.stop());
+      } catch (err) {
+        micPermissionOk = false;
+        const errName = (err as Error)?.name ?? "";
+        if (errName === "NotAllowedError" || errName === "SecurityError") {
+          micFailureMessage = "Microphone access denied. Allow mic permission to speak.";
+        } else if (errName === "NotFoundError" || errName === "OverconstrainedError") {
+          micFailureMessage = "No microphone detected on this device.";
+        } else {
+          micFailureMessage = "Microphone unavailable.";
+        }
+      }
+    }
 
     // Check for native browser SpeechRecognition first (Chrome, Edge, Safari)
-    const RecognizerCtor = getSpeechRecognitionCtor();
+    const RecognizerCtor = micPermissionOk ? getSpeechRecognitionCtor() : null;
     if (RecognizerCtor) {
       try {
         const rec = new RecognizerCtor();
@@ -394,10 +407,31 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
           }
         };
         rec.onerror = (err) => {
-          console.warn("[voice-agent] SpeechRecognition warning", err);
+          if (err.error === "no-speech" || err.error === "aborted") {
+            return;
+          }
+          console.warn("[voice-agent] SpeechRecognition error:", err.error);
+          if (
+            err.error === "not-allowed" ||
+            err.error === "service-not-allowed" ||
+            err.error === "audio-capture" ||
+            err.error === "network"
+          ) {
+            recognizerRef.current = null;
+            setMicAvailable(false);
+            onError?.(
+              "Live speech recognition is unavailable in this browser session (" +
+                err.error +
+                "). You can type or use the quick replies below."
+            );
+          }
         };
         rec.onend = () => {
-          if (activeRef.current && statusRef.current === "listening") {
+          if (
+            activeRef.current &&
+            statusRef.current === "listening" &&
+            recognizerRef.current === rec
+          ) {
             try {
               rec.start();
             } catch {}
@@ -412,7 +446,7 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
     }
 
     // Fallback: WebAudio VAD recorder for browsers without native SpeechRecognition
-    if (!micStarted) {
+    if (!micStarted && micPermissionOk) {
       const recorder = await startContinuousRecorder({
         onSpeechStart: () => {
           if (!activeRef.current) return;
@@ -434,8 +468,17 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
               body: fd,
             });
             if (!res.ok) {
-              console.warn("[voice-agent] transcribe failed:", res.status);
               setInterim("");
+              if (res.status === 503) {
+                recorderRef.current?.stop();
+                recorderRef.current = null;
+                setMicAvailable(false);
+                setStatus("listening");
+                onError?.(
+                  "Server mic transcription is not configured for non-Chromium browsers. Use Chrome/Edge or type your message below."
+                );
+                return;
+              }
               recorderRef.current?.resume();
               setStatus("listening");
               return;
@@ -480,17 +523,39 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
       setMicAvailable(false);
       onError?.(
         (micFailureMessage ?? "Microphone unavailable.") +
-          " You can type your message in the chat box below."
+          " You can type your message or tap a quick reply below."
       );
     }
 
     void generateAndSpeakRef.current();
   }, [onError]);
 
-  /* ───────── Public: send a typed message ───────── */
+  /* ───────── Public: send a typed message (supports barge-in while speaking) ───────── */
   const sendText = useCallback((text: string) => {
     const cleaned = text.trim();
     if (!cleaned) return;
+    try {
+      const audio = audioRef.current ?? new Audio();
+      if (!audio.src) audio.src = SILENT_WAV;
+      else audio.pause();
+      audioRef.current = audio;
+    } catch {}
+    try {
+      abortRef.current?.abort();
+    } catch {}
+    try {
+      speakAbortRef.current?.abort();
+    } catch {}
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch {}
+    }
+    try {
+      recognizerRef.current?.abort();
+    } catch {}
+    recorderRef.current?.pause();
+
     if (!activeRef.current) {
       activeRef.current = true;
       if (messagesRef.current.length === 0) {
@@ -498,6 +563,7 @@ export function useVoiceAgent({ systemPrompt, voice, onError }: UseVoiceAgentOpt
       }
       setPremiumFallbackNotice(false);
     }
+    setInterim("");
     messagesRef.current = [
       ...messagesRef.current,
       { role: "user", content: cleaned },

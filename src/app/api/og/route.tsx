@@ -18,9 +18,9 @@ export async function GET(request: Request) {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "#f7f2e8",
-                    backgroundImage: "radial-gradient(circle at 20% 10%, rgba(143, 86, 50, 0.18), transparent 35%), radial-gradient(circle at 80% 18%, rgba(191, 133, 90, 0.2), transparent 35%)",
-                    color: "#202126",
+                    backgroundColor: "#070a11",
+                    backgroundImage: "radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.16), transparent 40%), radial-gradient(circle at 80% 18%, rgba(37, 99, 235, 0.18), transparent 40%)",
+                    color: "#f8fafc",
                     padding: "40px 60px",
                 }}
             >
@@ -33,33 +33,34 @@ export async function GET(request: Request) {
                         marginBottom: "20px",
                     }}
                 >
-                    <div style={{ width: "60px", height: "4px", backgroundColor: "#8f5632", marginRight: "20px" }} />
+                    <div style={{ width: "60px", height: "3px", backgroundColor: "#38bdf8", marginRight: "20px" }} />
                     <div
                         style={{
-                            fontSize: 36,
-                            fontWeight: 900,
+                            fontSize: 32,
+                            fontWeight: 800,
                             letterSpacing: "-0.02em",
                             textTransform: "uppercase",
                             fontFamily: 'sans-serif',
+                            color: "#f8fafc",
                         }}
                     >
                         DigitalX Solutions
                     </div>
-                    <div style={{ width: "60px", height: "4px", backgroundColor: "#8f5632", marginLeft: "20px" }} />
+                    <div style={{ width: "60px", height: "3px", backgroundColor: "#38bdf8", marginLeft: "20px" }} />
                 </div>
 
                 {/* Dynamic title */}
                 <div
                     style={{
                         fontSize: 48,
-                        fontWeight: 900,
+                        fontWeight: 800,
                         letterSpacing: "-0.03em",
-                        textTransform: "uppercase",
                         fontFamily: 'sans-serif',
                         textAlign: "center",
                         maxWidth: "900px",
-                        lineHeight: 1.1,
+                        lineHeight: 1.12,
                         marginTop: "10px",
+                        color: "#ffffff",
                     }}
                 >
                     {title}
@@ -71,11 +72,11 @@ export async function GET(request: Request) {
                         fontSize: 20,
                         fontWeight: 400,
                         fontFamily: 'monospace',
-                        color: "rgba(32, 33, 38, 0.65)",
-                        letterSpacing: "0.05em",
+                        color: "#cbd5e1",
+                        letterSpacing: "0.02em",
                         textAlign: "center",
                         marginTop: "20px",
-                        maxWidth: "700px",
+                        maxWidth: "740px",
                     }}
                 >
                     {subtitle}
@@ -86,26 +87,28 @@ export async function GET(request: Request) {
                     <div style={{
                         fontSize: 14,
                         fontFamily: 'monospace',
-                        color: "#8f5632",
-                        border: "1px solid rgba(143, 86, 50, 0.35)",
+                        color: "#38bdf8",
+                        backgroundColor: "rgba(56, 189, 248, 0.1)",
+                        border: "1px solid rgba(56, 189, 248, 0.3)",
                         padding: "6px 16px",
-                        borderRadius: "999px",
+                        borderRadius: "6px",
                     }}>
                         United States
                     </div>
                     <div style={{
                         fontSize: 14,
                         fontFamily: 'monospace',
-                        color: "#8f5632",
-                        border: "1px solid rgba(143, 86, 50, 0.35)",
+                        color: "#38bdf8",
+                        backgroundColor: "rgba(56, 189, 248, 0.1)",
+                        border: "1px solid rgba(56, 189, 248, 0.3)",
                         padding: "6px 16px",
-                        borderRadius: "999px",
+                        borderRadius: "6px",
                     }}>
                         Australia
                     </div>
                 </div>
 
-                <div style={{ position: 'absolute', bottom: 40, fontSize: 16, color: '#8f5632', fontFamily: 'monospace' }}>
+                <div style={{ position: 'absolute', bottom: 40, fontSize: 16, color: '#94a3b8', fontFamily: 'monospace' }}>
                     {siteConfig.domain.replace('https://', '')}
                 </div>
             </div>

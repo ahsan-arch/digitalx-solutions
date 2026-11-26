@@ -184,7 +184,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
+                    <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
                         <h2 className="font-display text-3xl text-foreground">Our principles</h2>
                         <div className="mt-6 grid gap-4 md:grid-cols-3">
                             {aboutPrinciples.map((principle) => (
@@ -198,7 +198,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
+                    <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
                         <div>
                             <p className="text-xs font-semibold text-brand">Leadership &amp; Company Verification</p>
                             <h2 className="mt-1 font-display text-3xl text-foreground">Built by Systems Engineers, Not Account Managers</h2>
@@ -417,7 +417,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
+                    <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8">
                         <h2 className="font-display text-3xl text-foreground">Journey so far</h2>
                         <div className="mt-6 rounded-2xl border border-white/10 bg-surface-50 p-6">
                             <span className="font-mono text-xs font-semibold text-brand">Founded 2020</span>
@@ -430,7 +430,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
+                    <div className="rounded-2xl border border-white/10 bg-surface-50 p-6 md:p-10">
                         <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
                             Our Operating Principles &amp; Delivery Standards
                         </h2>
@@ -461,7 +461,7 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-3xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-center text-white md:px-10">
+                    <div className="rounded-2xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-center text-white md:px-10">
                         <h2 className="font-display text-3xl md:text-4xl">Want a practical partner for your next growth phase?</h2>
                         <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
                             Share your goals and current bottlenecks. We will map a staged delivery plan with clear

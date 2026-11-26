@@ -54,7 +54,7 @@ export default function IntegrationsHubPage() {
             {integrationsData.map((integration) => (
               <article
                 key={integration.slug}
-                className="flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
+                className="flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
@@ -109,7 +109,7 @@ export default function IntegrationsHubPage() {
 
         {/* Custom Integration Callout */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-white/10 bg-surface-50 p-8 md:p-12">
+          <div className="rounded-2xl border border-white/10 bg-surface-50 p-8 md:p-12">
             <div className="grid gap-8 md:grid-cols-[1.3fr_0.7fr] md:items-center">
               <div>
                 <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">

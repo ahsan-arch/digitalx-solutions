@@ -122,7 +122,7 @@ export default function ContactPage() {
           />
         </div>
 
-        <aside className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 h-fit space-y-6">
+        <aside className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 h-fit space-y-6">
           <div>
             <h2 className="text-xl font-semibold text-foreground">What to expect</h2>
             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/72">
@@ -181,7 +181,7 @@ export default function ContactPage() {
 
       {/* Strategy Methodology Section */}
       <section className="container-shell mt-16">
-        <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
+        <div className="rounded-2xl border border-white/10 bg-surface-50 p-6 md:p-10">
           <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
             Our 3-Step Intake &amp; Architecture Scoping Methodology
           </h2>
@@ -244,7 +244,7 @@ export default function ContactPage() {
 
       {/* Frequently Asked Questions */}
       <section className="container-shell mt-16">
-        <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+        <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
               <HelpCircle className="h-5 w-5" />

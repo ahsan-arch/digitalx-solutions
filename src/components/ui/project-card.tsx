@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const hasLogoPermission = !!project.logoFile;
 
   return (
-    <article className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs backdrop-blur-md hover:border-cyan-400/35 transition-all">
+    <article className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs backdrop-blur-md hover:border-cyan-400/35 transition-all">
       <div>
         {/* Header: Client Identity & Industry */}
         <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">

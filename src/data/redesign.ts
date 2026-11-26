@@ -342,8 +342,8 @@ export const solutions: Solution[] = [
     pricingTiers: [
       {
         name: "Operator Launch",
-        price: "$1,200",
-        cadence: "per month (AUD/USD)",
+        price: "$750",
+        cadence: "per month (USD / AUD)",
         description: "For solo trades and single-van service businesses",
         features: [
           "Up to 300 minutes voice intake included",
@@ -355,8 +355,8 @@ export const solutions: Solution[] = [
       },
       {
         name: "Multi-Van Scale",
-        price: "$2,800",
-        cadence: "per month (AUD/USD)",
+        price: "$1,500",
+        cadence: "per month (USD / AUD)",
         description: "For busy clinics, multi-truck contractors, and high-volume operations",
         highlight: true,
         features: [
@@ -496,7 +496,7 @@ export const solutions: Solution[] = [
     pricingTiers: [
       {
         name: "Essential Recovery",
-        price: "$450",
+        price: "$295",
         cadence: "per month",
         description: "Essential missed-call protection for solo contractors and local shops",
         features: [
@@ -509,7 +509,7 @@ export const solutions: Solution[] = [
       },
       {
         name: "Conversational Growth",
-        price: "$950",
+        price: "$550",
         cadence: "per month",
         description: "Two-way AI text triage and automated calendar scheduling",
         highlight: true,

@@ -104,7 +104,9 @@ export function VoiceAgentLive({
           <div
             className={cn(
               "flex h-9 w-9 items-center justify-center rounded-lg",
-              isActive ? "bg-green-100 text-green-600" : "bg-brand/10 text-brand"
+              isActive
+                ? "border border-emerald-400/25 bg-emerald-500/15 text-emerald-300"
+                : "bg-brand/10 text-brand"
             )}
           >
             <Phone className="h-4 w-4" />
@@ -210,7 +212,7 @@ export function VoiceAgentLive({
 
       {/* Notices */}
       {errorMsg && (
-        <div className="border-t border-white/10 bg-red-50 px-5 py-2.5 text-xs text-red-700">
+        <div className="border-t border-red-500/25 bg-red-500/10 px-5 py-2.5 text-xs text-red-200">
           {errorMsg}
         </div>
       )}
@@ -220,43 +222,60 @@ export function VoiceAgentLive({
         </div>
       )}
 
-      {/* Text input — always available during the call for typing or accessibility */}
+      {/* Quick Prompts + Text input — always available during the call */}
       {started && status !== "ended" && (
-        <form
-          onSubmit={(e: FormEvent<HTMLFormElement>) => {
-            e.preventDefault();
-            const text = textDraft.trim();
-            if (!text || status === "speaking" || status === "thinking") return;
-            sendText(text);
-            setTextDraft("");
-          }}
-          className="flex items-center gap-2 border-t border-white/10 bg-[#0d1421]/85 px-4 py-3"
-        >
-          <input
-            type="text"
-            value={textDraft}
-            onChange={(e) => setTextDraft(e.target.value)}
-            placeholder={
-              status === "speaking"
-                ? `${agentName} is speaking...`
-                : status === "thinking"
+        <div className="border-t border-white/10 bg-[#0d1421]/85">
+          <div className="flex flex-wrap items-center gap-1.5 px-4 pt-2.5">
+            {[
+              "I have an urgent leak",
+              "How much does a call-out cost?",
+              "Book me tomorrow morning",
+            ].map((promptText) => (
+              <button
+                key={promptText}
+                type="button"
+                disabled={status === "thinking"}
+                onClick={() => sendText(promptText)}
+                className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-300 transition hover:border-cyan-400/35 hover:text-white disabled:cursor-not-allowed disabled:opacity-45"
+              >
+                {promptText}
+              </button>
+            ))}
+          </div>
+          <form
+            onSubmit={(e: FormEvent<HTMLFormElement>) => {
+              e.preventDefault();
+              const text = textDraft.trim();
+              if (!text || status === "thinking") return;
+              sendText(text);
+              setTextDraft("");
+            }}
+            className="flex items-center gap-2 px-4 py-3"
+          >
+            <input
+              type="text"
+              value={textDraft}
+              onChange={(e) => setTextDraft(e.target.value)}
+              placeholder={
+                status === "thinking"
                   ? `${agentName} is thinking...`
                   : micAvailable
                     ? "Speak into your mic or type a message here..."
                     : "Type your message to the agent..."
-            }
-            disabled={status === "speaking" || status === "thinking"}
-            className="flex-1 rounded-xl border border-white/10 bg-surface-50 px-4 py-2 text-sm text-foreground outline-none focus:border-brand disabled:opacity-60"
-          />
-          <button
-            type="submit"
-            disabled={!textDraft.trim() || status === "speaking" || status === "thinking"}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand text-white transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-50"
-            aria-label="Send message"
-          >
-            <Send className="h-4 w-4" />
-          </button>
-        </form>
+              }
+              disabled={status === "thinking"}
+              className="flex-1 rounded-lg border border-white/10 bg-surface-50 px-4 py-2 text-sm text-foreground outline-none focus:border-brand disabled:opacity-60"
+            />
+            <button
+              type="submit"
+              disabled={!textDraft.trim() || status === "thinking"}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-50"
+              aria-label="Send message"
+            >
+              <Send className="h-4 w-4" />
+            </button>
+          </form>
+        </div>
       )}
 
       {/* Controls */}

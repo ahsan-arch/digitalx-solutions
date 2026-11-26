@@ -139,11 +139,11 @@
     "audExchangeRateNote": "AUD pricing approximated at 1 USD ≈ 1.54 AUD (illustrative rate; invoiced in USD or AUD at current bank rate)",
     "audRateMultiplier": 1.54,
     "hourlyRate": "$75 - $125 / hr",
-    "minimumProjectEngagement": "$1,200",
+    "minimumProjectEngagement": "$295",
     "missedCallTextBackTier": {
       "name": "Missed-Call Recovery",
-      "monthlyRetainer": "$450 / month",
-      "setupFeeRange": "$497 - $997 one-time",
+      "monthlyRetainer": "$295 / month",
+      "setupFeeRange": "$495 - $995 one-time",
       "features": [
         "Instant missed-call text-back (under 60 seconds)",
         "10DLC A2P brand registration",
@@ -154,9 +154,9 @@
     },
     "aiVoiceReceptionistLaunchTier": {
       "name": "Operator Launch",
-      "monthlyRetainer": "$1,200 / month",
+      "monthlyRetainer": "$750 / month",
       "includedMinutes": "300 minutes included",
-      "setupFeeRange": "$1,500 - $3,500 one-time",
+      "setupFeeRange": "$995 - $1,995 one-time",
       "features": [
         "Up to 300 minutes voice intake included",
         "Tuned industry conversation prompt",
@@ -167,9 +167,9 @@
     },
     "aiVoiceReceptionistOperateTier": {
       "name": "Multi-Van Scale",
-      "monthlyRetainer": "$2,800 / month",
+      "monthlyRetainer": "$1,500 / month",
       "includedMinutes": "1,000 minutes included",
-      "setupFeeRange": "$2,500 - $4,500 one-time",
+      "setupFeeRange": "$1,500 - $3,000 one-time",
       "features": [
         "Up to 1,000 minutes voice intake included",
         "Multi-technician emergency routing & escalation",

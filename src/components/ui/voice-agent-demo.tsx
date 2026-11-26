@@ -32,18 +32,20 @@ function TypingDots() {
   );
 }
 
+const BAR_BASE_HEIGHTS = [8, 12, 10, 14, 7];
+
 /* ── Sound-wave visualizer bar ── */
 function SoundWave({ active }: { active: boolean }) {
   if (!active) return null;
   return (
     <span className="ml-2 inline-flex items-end gap-[2px]">
-      {[1, 2, 3, 4, 5].map((i) => (
+      {BAR_BASE_HEIGHTS.map((heightPx, idx) => (
         <span
-          key={i}
+          key={idx}
           className="w-[3px] rounded-full bg-current"
           style={{
-            animation: `soundbar 0.6s ease-in-out ${i * 0.08}s infinite alternate`,
-            height: `${6 + Math.random() * 8}px`,
+            animation: `soundbar 0.6s ease-in-out ${(idx + 1) * 0.08}s infinite alternate`,
+            height: `${heightPx}px`,
           }}
         />
       ))}
@@ -241,7 +243,9 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
           <div className="flex items-center gap-3">
             <div
               className={`flex h-9 w-9 items-center justify-center rounded-lg ${
-                isActive ? "bg-green-100 text-green-600" : "bg-brand/10 text-brand"
+                isActive
+                  ? "border border-emerald-400/25 bg-emerald-500/15 text-emerald-300"
+                  : "bg-brand/10 text-brand"
               }`}
             >
               <Phone className="h-4 w-4" />

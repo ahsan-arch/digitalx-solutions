@@ -56,12 +56,33 @@ export function VoiceAgentSurvey({ onSubmit }: Props) {
     onSubmit(parsed.data);
   }
 
+  function fillSampleBusiness() {
+    setBusinessName("Apex Plumbing & Gas");
+    setIndustry(industryOptions[0]);
+    setWhatYouDo("24/7 emergency plumbing, burst pipe repair, hot water installation, and drain clearing across Sydney.");
+    setAgentRole(voiceAgentRoles[0]);
+    setTone("Friendly");
+    setErrors({});
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-8"
+      className="space-y-5 rounded-2xl border border-white/10 bg-surface-50 p-6 md:p-8"
       noValidate
     >
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3">
+        <p className="text-xs text-foreground/70">
+          Customize your agent persona or load a sample trade business to test in one click.
+        </p>
+        <button
+          type="button"
+          onClick={fillSampleBusiness}
+          className="rounded-md border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 text-xs font-medium text-cyan-300 transition hover:bg-cyan-500/20"
+        >
+          Fill sample plumbing business
+        </button>
+      </div>
       <div>
         <label
           htmlFor="va-business-name"

@@ -95,10 +95,12 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
       });
 
     try {
-      // Primary: Microsoft Edge Neural TTS (if not previously failed)
-      if (!serverTtsFailedRef.current && voice.edgeTtsVoice) {
+      // Primary: Microsoft Edge Neural TTS
+      if (voice.edgeTtsVoice) {
         const timeoutCtrl = new AbortController();
-        const timeoutId = setTimeout(() => timeoutCtrl.abort(), 1200);
+        const linkAbort = () => timeoutCtrl.abort();
+        ctrl.signal.addEventListener("abort", linkAbort);
+        const timeoutId = setTimeout(() => timeoutCtrl.abort(), 6500);
         try {
           const res = await fetch("/api/voice-agent/edge-tts", {
             method: "POST",
@@ -107,18 +109,18 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
             signal: timeoutCtrl.signal,
           });
           clearTimeout(timeoutId);
+          ctrl.signal.removeEventListener("abort", linkAbort);
           if (res.ok) {
             const blob = await res.blob();
             if (blob.size > 0) {
               await playBlob(blob);
               return;
             }
-          } else {
-            serverTtsFailedRef.current = true;
           }
         } catch {
           clearTimeout(timeoutId);
-          serverTtsFailedRef.current = true;
+          ctrl.signal.removeEventListener("abort", linkAbort);
+          if (ctrl.signal.aborted) return;
         }
       }
 
@@ -208,7 +210,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-5 py-3 text-sm font-medium text-foreground/75 transition hover:text-foreground"
+          className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#0d1421]/85 px-5 py-3 text-sm font-medium text-foreground/75 transition hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           Edit survey
@@ -217,7 +219,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
           type="button"
           onClick={onStart}
           disabled={!selectedId}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep disabled:cursor-not-allowed disabled:opacity-60"
         >
           Start live call
           <ArrowRight className="h-4 w-4" />

@@ -22,7 +22,7 @@ const SPEC_MAP: Record<string, HeroSpecCard> = {
       { label: "CRM Setup & Integration", value: "$2,200 one-time", tone: "neutral" },
       { label: "Hybrid Custom CRM Build", value: "$8,500 one-time", tone: "accent" },
       { label: "Proprietary / White-Label CRM", value: "$15,000+ scoped", tone: "neutral" },
-      { label: "AI Voice & Automation Retainers", value: "$450 – $2,800/mo", tone: "neutral" },
+      { label: "AI Voice & Automation Retainers", value: "$295 – $1,500/mo", tone: "neutral" },
       { label: "Per-Seat Software Fees", value: "$0 / unlimited seats", tone: "success" },
       { label: "Carrier Twilio Markup", value: "0% pass-through", tone: "success" },
     ],

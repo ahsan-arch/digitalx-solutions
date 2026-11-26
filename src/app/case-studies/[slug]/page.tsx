@@ -132,39 +132,39 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
   const caseStudyFaqs = isSoftwareBuild
     ? [
-        {
-          question: "Who owns the source code and underlying database?",
-          answer:
-            "Every custom software, CRM, or data pipeline build is deployed directly into your own repository and cloud PostgreSQL or Django infrastructure with 100% client IP ownership and zero recurring per-seat licensing fees.",
-        },
-        {
-          question: "How does this integrate with legacy databases or external APIs?",
-          answer:
-            "We preserve existing historical data through structured migration scripts, E.164 or composite key deduplication, and resilient webhook/REST endpoints so live operations continue uninterrupted during cutover.",
-        },
-        {
-          question: "How are access control and production reliability enforced?",
-          answer:
-            "Builds enforce Role-Based Access Control (RBAC), Row-Level Security policies where PostgreSQL/Supabase is used, automated regression tests, and fallback data routing so field and office teams stay productive.",
-        },
-      ]
+      {
+        question: "Who owns the source code and underlying database?",
+        answer:
+          "Every custom software, CRM, or data pipeline build is deployed directly into your own repository and cloud PostgreSQL or Django infrastructure with 100% client IP ownership and zero recurring per-seat licensing fees.",
+      },
+      {
+        question: "How does this integrate with legacy databases or external APIs?",
+        answer:
+          "We preserve existing historical data through structured migration scripts, E.164 or composite key deduplication, and resilient webhook/REST endpoints so live operations continue uninterrupted during cutover.",
+      },
+      {
+        question: "How are access control and production reliability enforced?",
+        answer:
+          "Builds enforce Role-Based Access Control (RBAC), Row-Level Security policies where PostgreSQL/Supabase is used, automated regression tests, and fallback data routing so field and office teams stay productive.",
+      },
+    ]
     : [
-        {
-          question: "How long did it take to build and deploy this automation system?",
-          answer:
-            "The complete engagement from initial intake discovery to full production cutover was delivered in 4 weeks. This included conversational prompt engineering, telephony SIP configuration, calendar booking logic, and comprehensive synthetic stress testing.",
-        },
-        {
-          question: "What happened when a customer had an emergency or complex question?",
-          answer:
-            "The system was configured with a strict human escalation protocol. If a caller reported an emergency, expressed distress, or asked about out-of-scope policies, the call immediately bridged via warm SIP transfer to the on-call staff mobile phone with a 5-second private audio summary.",
-        },
-        {
-          question: "How was the operational outcome measured?",
-          answer:
-            "We connected GoHighLevel opportunity pipelines directly to accounting and payment records. Every recovered call and booked appointment was tagged with a unique campaign ID, allowing exact tracking of settled invoices and booked revenue.",
-        },
-      ];
+      {
+        question: "How long did it take to build and deploy this automation system?",
+        answer:
+          "The complete engagement from initial intake discovery to full production cutover was delivered in 4 weeks. This included conversational prompt engineering, telephony SIP configuration, calendar booking logic, and comprehensive synthetic stress testing.",
+      },
+      {
+        question: "What happened when a customer had an emergency or complex question?",
+        answer:
+          "The system was configured with a strict human escalation protocol. If a caller reported an emergency, expressed distress, or asked about out-of-scope policies, the call immediately bridged via warm SIP transfer to the on-call staff mobile phone with a 5-second private audio summary.",
+      },
+      {
+        question: "How was the operational outcome measured?",
+        answer:
+          "We connected GoHighLevel opportunity pipelines directly to accounting and payment records. Every recovered call and booked appointment was tagged with a unique campaign ID, allowing exact tracking of settled invoices and booked revenue.",
+      },
+    ];
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.domain },

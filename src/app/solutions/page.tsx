@@ -106,7 +106,7 @@ export default function SolutionsHubPage() {
       </section>
 
       <section className="container-shell mt-14">
-        <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+        <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
           <h2 className="font-display text-3xl text-foreground">Engagement model</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-4">
             {processSteps.map((step, index) => (

@@ -59,54 +59,61 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unknown voice" }, { status: 400 });
   }
 
-  const HARD_TIMEOUT_MS = 1200;
+  const { text, voice } = parsed.data;
+  const HARD_TIMEOUT_MS = 7000;
 
-  try {
+  async function synthesizeOnce(): Promise<{ ok: true; buffer: Buffer } | { ok: false; reason: string }> {
     const tts = new MsEdgeTTS();
-    const closeTts = () => {
+    try {
+      await tts.setMetadata(
+        voice,
+        OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3
+      );
+      const { audioStream } = await tts.toStream(text);
+      const chunks: Buffer[] = [];
+      await new Promise<void>((resolve, reject) => {
+        audioStream.on("data", (chunk: Buffer) => chunks.push(chunk));
+        audioStream.on("end", () => resolve());
+        audioStream.on("close", () => resolve());
+        audioStream.on("error", (err: unknown) => reject(err));
+      });
+      if (chunks.length === 0) {
+        return { ok: false, reason: "empty audio stream" };
+      }
+      return { ok: true, buffer: Buffer.concat(chunks) };
+    } catch (err) {
+      return {
+        ok: false,
+        reason: (err as Error)?.message ?? String(err),
+      };
+    } finally {
       try {
         tts.close();
       } catch {}
-    };
+    }
+  }
 
+  try {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
     const result = await Promise.race<
       | { ok: true; buffer: Buffer }
       | { ok: false; reason: string }
     >([
       (async () => {
-        try {
-          await tts.setMetadata(
-            parsed.data.voice,
-            OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3
-          );
-          const { audioStream } = await tts.toStream(parsed.data.text);
-          const chunks: Buffer[] = [];
-          await new Promise<void>((resolve, reject) => {
-            audioStream.on("data", (chunk: Buffer) => chunks.push(chunk));
-            audioStream.on("end", () => resolve());
-            audioStream.on("close", () => resolve());
-            audioStream.on("error", (err: unknown) => reject(err));
-          });
-          if (chunks.length === 0) {
-            return { ok: false as const, reason: "empty audio stream" };
-          }
-          return { ok: true as const, buffer: Buffer.concat(chunks) };
-        } catch (err) {
-          return {
-            ok: false as const,
-            reason: (err as Error)?.message ?? String(err),
-          };
-        }
+        const first = await synthesizeOnce();
+        if (first.ok) return first;
+        // One quick automatic retry handles transient Edge WS early closes
+        return synthesizeOnce();
       })(),
-      new Promise<{ ok: false; reason: string }>((resolve) =>
-        setTimeout(
+      new Promise<{ ok: false; reason: string }>((resolve) => {
+        timeoutId = setTimeout(
           () => resolve({ ok: false as const, reason: "timeout" }),
           HARD_TIMEOUT_MS
-        )
-      ),
+        );
+      }),
     ]);
 
-    closeTts();
+    if (timeoutId) clearTimeout(timeoutId);
 
     if (!result.ok) {
       console.error("Edge TTS failed:", result.reason, "voice=", parsed.data.voice);

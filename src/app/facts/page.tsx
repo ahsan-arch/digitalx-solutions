@@ -114,7 +114,7 @@ export default function FactsPage() {
             Published Pricing Ranges (USD &amp; Indicative AUD)
           </h2>
           <p className="mt-2 text-sm text-foreground/75 leading-relaxed">
-            Custom CRM builds carry fixed milestone pricing starting at $2,200 USD ({toAud(2200)} AUD), $8,500 USD ({toAud(8500)} AUD) for hybrid Next.js portals, and $15,000+ USD ({toAud(15000)}+ AUD) for multi-tenant SaaS builds. Ongoing AI voice retainers run from $450/mo to $2,800/mo USD with 0% carrier markup.
+            Custom CRM builds carry fixed milestone pricing starting at $2,200 USD ({toAud(2200)} AUD), $8,500 USD ({toAud(8500)} AUD) for hybrid Next.js portals, and $15,000+ USD ({toAud(15000)}+ AUD) for multi-tenant SaaS builds. Ongoing AI voice retainers run from $295/mo to $1,500/mo USD with 0% carrier markup.
           </p>
 
           <div className="mt-6 overflow-x-auto">
@@ -145,17 +145,17 @@ export default function FactsPage() {
                 <tr>
                   <td className="p-3 font-sans font-semibold text-foreground">{servicePricingRanges.missedCallTextBackTier.name}</td>
                   <td className="p-3">{servicePricingRanges.missedCallTextBackTier.monthlyRetainer}</td>
-                  <td className="p-3">{toAud(450)} / mo</td>
+                  <td className="p-3">{toAud(295)} / mo</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-sans font-semibold text-foreground">{servicePricingRanges.aiVoiceReceptionistLaunchTier.name}</td>
                   <td className="p-3">{servicePricingRanges.aiVoiceReceptionistLaunchTier.monthlyRetainer}</td>
-                  <td className="p-3">{toAud(1200)} / mo</td>
+                  <td className="p-3">{toAud(750)} / mo</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-sans font-semibold text-foreground">{servicePricingRanges.aiVoiceReceptionistOperateTier.name}</td>
                   <td className="p-3">{servicePricingRanges.aiVoiceReceptionistOperateTier.monthlyRetainer}</td>
-                  <td className="p-3">{toAud(2800)} / mo</td>
+                  <td className="p-3">{toAud(1500)} / mo</td>
                 </tr>
               </tbody>
             </table>

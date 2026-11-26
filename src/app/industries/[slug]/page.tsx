@@ -122,13 +122,13 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
   const howToSchema =
     industry.intakeArchitecture && industry.intakeArchitecture.intakeSteps.length > 0
       ? generateHowToSchema({
-          name: `${industry.name} Automated Intake & Dispatch Workflow`,
-          description: `Operational intake, emergency qualification, and dispatch architecture for ${industry.name}.`,
-          steps: industry.intakeArchitecture.intakeSteps.map((step) => ({
-            name: step.name,
-            text: step.text,
-          })),
-        })
+        name: `${industry.name} Automated Intake & Dispatch Workflow`,
+        description: `Operational intake, emergency qualification, and dispatch architecture for ${industry.name}.`,
+        steps: industry.intakeArchitecture.intakeSteps.map((step) => ({
+          name: step.name,
+          text: step.text,
+        })),
+      })
       : null;
 
   return (

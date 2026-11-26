@@ -175,6 +175,9 @@ export function assignBrowserVoices(
   return result;
 }
 
+// Keep active utterances strongly referenced so Chromium does not GC them before onend fires.
+const ACTIVE_UTTERANCES = new Set<SpeechSynthesisUtterance>();
+
 export function speakWithBrowser(
   text: string,
   voice: SpeechSynthesisVoice | null,
@@ -195,11 +198,15 @@ export function speakWithBrowser(
     utter.rate = 1.0;
     utter.pitch = 1.0;
     utter.volume = 1.0;
+    ACTIVE_UTTERANCES.add(utter);
 
     let done = false;
+    let safetyTimer: ReturnType<typeof setTimeout> | null = null;
     const finish = () => {
       if (done) return;
       done = true;
+      if (safetyTimer) clearTimeout(safetyTimer);
+      ACTIVE_UTTERANCES.delete(utter);
       signal?.removeEventListener("abort", onAbort);
       resolve();
     };
@@ -213,7 +220,11 @@ export function speakWithBrowser(
     utter.onerror = finish;
     signal?.addEventListener("abort", onAbort, { once: true });
 
+    const maxWaitMs = Math.max(5000, text.length * 130);
+    safetyTimer = setTimeout(finish, maxWaitMs);
+
     try {
+      if (synth.paused) synth.resume();
       synth.speak(utter);
     } catch {
       finish();

@@ -74,7 +74,7 @@ export default function DevelopmentHubPage() {
             {developmentServices.map((service) => (
               <article
                 key={service.slug}
-                className="flex flex-col justify-between rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
+                className="flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-xs hover:border-brand/40 transition-all hover:shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
@@ -129,7 +129,7 @@ export default function DevelopmentHubPage() {
 
         {/* Technical Standards Callout */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-white/10 bg-surface-50 p-8 md:p-12">
+          <div className="rounded-2xl border border-white/10 bg-surface-50 p-8 md:p-12">
             <div>
               <span className="font-mono text-xs font-medium text-brand">Reliability First</span>
               <h2 className="mt-2 font-display text-2xl md:text-3xl font-semibold text-foreground">
@@ -176,7 +176,7 @@ export default function DevelopmentHubPage() {
 
         {/* Development FAQs */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-8 md:p-12">
+          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-8 md:p-12">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
                 <HelpCircle className="h-5 w-5" />
@@ -204,7 +204,7 @@ export default function DevelopmentHubPage() {
 
         {/* CTA Banner */}
         <section className="container-shell mt-16">
-          <div className="rounded-3xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 p-8 text-center text-white md:p-12">
+          <div className="rounded-2xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 p-8 text-center text-white md:p-12">
             <h2 className="font-display text-3xl md:text-4xl">Have a complex technical requirement?</h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/80">
               Talk directly with a senior solutions engineer. We will review your existing system architecture and deliver a phased delivery proposal with fixed pricing.

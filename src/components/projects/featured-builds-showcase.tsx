@@ -541,9 +541,9 @@ export function FeaturedBuildsShowcase({
   const active = FEATURED_BUILDS.find((b) => b.slug === activeSlug) || FEATURED_BUILDS[0];
 
   return (
-      <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10 shadow-xs backdrop-blur-md">
+      <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10 shadow-xs backdrop-blur-md">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between border-b border-white/10 pb-6">
-          <div className="max-w-2xl">
+          <div className="max-w-xl">
             <p className="text-xs font-medium text-cyan-300">Flagship engineering portfolio</p>
             <h2 className="mt-2 font-display text-3xl tracking-tight text-white md:text-4xl">{heading}</h2>
             <p className="mt-2 text-sm leading-relaxed text-slate-300">{subheading}</p>
@@ -552,7 +552,7 @@ export function FeaturedBuildsShowcase({
           <div
             role="tablist"
             aria-label="Flagship Software Systems"
-            className="flex flex-wrap gap-2"
+            className="inline-flex flex-wrap sm:flex-nowrap items-center gap-1 rounded-lg border border-white/10 bg-[#070a11]/90 p-1 shrink-0"
           >
             {FEATURED_BUILDS.map((build) => {
               const selected = build.slug === activeSlug;
@@ -566,13 +566,13 @@ export function FeaturedBuildsShowcase({
                   aria-controls={`build-panel-${build.slug}`}
                   onClick={() => setActiveSlug(build.slug)}
                   className={cn(
-                    "inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-xs font-semibold transition-colors",
+                    "inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 text-xs font-semibold transition-colors",
                     selected
-                      ? "border-cyan-400/40 bg-brand text-white"
-                      : "border-white/10 bg-[#070a11]/80 text-slate-300 hover:border-white/25 hover:text-white"
+                      ? "bg-brand text-white shadow-2xs"
+                      : "text-slate-300 hover:bg-white/5 hover:text-white"
                   )}
                 >
-                  <span className={cn("font-mono text-[11px]", selected ? "text-white" : "text-cyan-300")}>
+                  <span className={cn("font-mono text-[11px]", selected ? "text-cyan-100" : "text-cyan-300")}>
                     {build.index}
                   </span>
                   <span>{build.name}</span>

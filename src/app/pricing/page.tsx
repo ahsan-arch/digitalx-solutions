@@ -26,7 +26,7 @@ export const metadata: Metadata = generatePageMetadata("/pricing", {
 const tiers = [
   {
     name: "Missed-Call Recovery",
-    price: "$450/mo",
+    price: "$295/mo",
     summary: "For local operators looking to recover missed calls via instant SMS text-back.",
     includes: [
       "Instant missed-call text-back (under 60 seconds)",
@@ -40,7 +40,7 @@ const tiers = [
   },
   {
     name: "Launch",
-    price: "$1,200/mo",
+    price: "$750/mo",
     summary: "For solo operators ready to deploy an AI voice receptionist.",
     includes: [
       "AI voice agent (single number)",
@@ -54,7 +54,7 @@ const tiers = [
   },
   {
     name: "Operate",
-    price: "$2,800/mo",
+    price: "$1,500/mo",
     summary: "For multi location teams scaling lead capture and follow up.",
     includes: [
       "Everything in Launch",
@@ -103,7 +103,7 @@ const pricingFaqs = [
   {
     question: "How does DigitalX Solutions pricing work?",
     answer:
-      "We offer two models: fixed-scope milestone pricing for Custom CRM builds (starting at $2,200), and transparent monthly retainers for AI Voice & Telephony operations (from $450 to $2,800/mo, all prices in USD). There are zero per-seat software fees and zero markup on raw carrier telephony minutes.",
+      "We offer two models: fixed-scope milestone pricing for Custom CRM builds (starting at $2,200), and transparent monthly retainers for AI Voice & Telephony operations (from $295 to $1,500/mo, all prices in USD). There are zero per-seat software fees and zero markup on raw carrier telephony minutes.",
   },
   {
     question: "Do you offer custom pricing for high-volume teams?",
@@ -172,7 +172,7 @@ export default function PricingPage() {
         "@type": "Offer",
         name: `${tier.name} Retainer`,
         description: tier.summary,
-        price: tier.price.replace(/[^0-9]/g, "") || "1200",
+        price: tier.price.replace(/[^0-9]/g, "") || "750",
         priceCurrency: "USD",
         billingDuration: "P1M",
         url: `${siteConfig.domain}/pricing#${tier.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`,
@@ -331,7 +331,7 @@ export default function PricingPage() {
           </div>
 
           <p className="mt-6 text-xs text-foreground/70">
-            GHL &amp; AI Voice Launch: 5–14 Days | Custom CRM Builds: 3–6 Weeks. One-time setup fees typically range between $1,500 and $4,500 depending on CRM complexity, multi-location requirements, and custom legacy database connections.
+            GHL &amp; AI Voice Launch: 5–14 Days | Custom CRM Builds: 3–6 Weeks. One-time setup fees typically range between $495 and $3,000 depending on CRM complexity, multi-location requirements, and custom legacy database connections.
           </p>
         </div>
       </section>
@@ -346,7 +346,7 @@ export default function PricingPage() {
             <div>
               <h2 className="font-display text-2xl font-bold text-foreground">Frequently Asked Questions</h2>
               <p className="mt-1 text-xs md:text-sm text-foreground/75 max-w-2xl leading-relaxed">
-                Clear answers covering fixed-scope Custom CRM builds ($2,200 to $15,000+), monthly AI voice retainers ($450 to $2,800/mo), USD/AUD currency billing, transparent carrier pass-through rates with 0% markup, and source-code IP ownership terms.
+                Clear answers covering fixed-scope Custom CRM builds ($2,200 to $15,000+), monthly AI voice retainers ($295 to $1,500/mo), USD/AUD currency billing, transparent carrier pass-through rates with 0% markup, and source-code IP ownership terms.
               </p>
             </div>
           </div>

@@ -27,10 +27,10 @@ DigitalX Solutions is a custom CRM engineering, AI voice telephony, and workflow
 - **Proprietary / White-Label CRM** ($15,000+ custom scope, 6–10 weeks): Multi-tenant SaaS architecture, Stripe usage and subscription billing, dedicated cloud infrastructure, executive analytics, and CI/CD pipelines.
 
 ### 2. AI Voice & Workflow Automation Retainers
-- **Starter Pod** ($1,200/mo): Solo operators & boutique practices. Inbound voice agent, missed-call text-back, CRM pipeline sync, up to 500 included call minutes.
-- **Professional Pod** ($2,800/mo): Multi-location & high-volume service businesses. Inbound + outbound agents, custom tool calling, calendar booking, up to 1,500 call minutes.
-- **Custom Growth Pod** ($4,500/mo+): Scaling companies with dedicated pipelines, custom webhook orchestration, multi-location snapshots, up to 3,500 minutes.
-- **Dedicated Pod** ($7,500/mo): Enterprise operations with custom Next.js/PostgreSQL portal maintenance, priority SLA (<1hr response), up to 7,500 minutes.
+- **Missed-Call Recovery** ($295/mo): Local operators & solo trades. Instant missed-call text-back (<60s), 10DLC A2P brand registration, two-way SMS triage, and staff lead routing.
+- **Launch** ($750/mo): Solo operators & boutique practices. Inbound AI voice agent, missed-call text-back, GoHighLevel CRM setup, calendar sync, up to 300 included call minutes.
+- **Operate** ($1,500/mo): Multi-location & high-volume service businesses. Inbound + outbound AI voice, Web + WhatsApp + SMS chatbot, multi-step nurture, ROI dashboard, up to 1,000 call minutes.
+- **Scale** (Custom): Growth teams running Meta + Google Ads ops, server-side CAPI tracking, custom n8n workflows, and a dedicated growth engineer.
 
 ### 3. Workflow Automation & Integration
 - **Self-Hosted & Cloud n8n**: Complex, multi-step business process orchestration with zero per-task execution fees.

@@ -211,7 +211,7 @@ export default function TryVoiceAgentPage() {
 
       {/* CTA Box */}
       <section className="container-shell mt-16">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-line-subtle bg-surface-sunken p-8 text-center md:p-12">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-2xl border border-line-subtle bg-surface-sunken p-8 text-center md:p-12">
           <span className="font-mono text-xs font-medium text-accent">
             Ready for a production system?
           </span>
