@@ -97,15 +97,15 @@ export function VoiceAgentLive({
     `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d1421]/85 shadow-sm">
+    <div className="overflow-hidden rounded-2xl border border-border/80 bg-white shadow-sm">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-white/10 bg-surface-50 px-5 py-3">
+      <div className="flex items-center justify-between border-b border-border/80 bg-surface-50 px-5 py-3">
         <div className="flex items-center gap-3">
           <div
             className={cn(
               "flex h-9 w-9 items-center justify-center rounded-lg",
               isActive
-                ? "border border-emerald-400/25 bg-emerald-500/15 text-emerald-300"
+                ? "border border-emerald-200 bg-emerald-50 text-emerald-700"
                 : "bg-brand/10 text-brand"
             )}
           >
@@ -176,7 +176,7 @@ export function VoiceAgentLive({
                     "max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
                     entry.role === "user"
                       ? "rounded-br-md bg-brand text-white"
-                      : "rounded-bl-md border border-white/10 bg-surface-50 text-foreground/85"
+                      : "rounded-bl-md border border-border/80 bg-surface-50 text-foreground/85"
                   )}
                 >
                   <p className="mb-0.5 font-mono text-[10px] font-medium opacity-60">
@@ -212,19 +212,19 @@ export function VoiceAgentLive({
 
       {/* Notices */}
       {errorMsg && (
-        <div className="border-t border-red-500/25 bg-red-500/10 px-5 py-2.5 text-xs text-red-200">
+        <div className="border-t border-red-200 bg-red-50 px-5 py-2.5 text-xs text-red-700">
           {errorMsg}
         </div>
       )}
       {premiumFallbackNotice && !errorMsg && (
-        <div className="border-t border-white/10 bg-amber-500/10 px-5 py-2.5 text-xs text-amber-300">
+        <div className="border-t border-border/80 bg-amber-50 px-5 py-2.5 text-xs text-amber-800">
           Premium voice unavailable right now - using the closest browser voice.
         </div>
       )}
 
       {/* Quick Prompts + Text input — always available during the call */}
       {started && status !== "ended" && (
-        <div className="border-t border-white/10 bg-[#0d1421]/85">
+        <div className="border-t border-border/80 bg-white">
           <div className="flex flex-wrap items-center gap-1.5 px-4 pt-2.5">
             {[
               "I have an urgent leak",
@@ -236,7 +236,7 @@ export function VoiceAgentLive({
                 type="button"
                 disabled={status === "thinking"}
                 onClick={() => sendText(promptText)}
-                className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-300 transition hover:border-cyan-400/35 hover:text-white disabled:cursor-not-allowed disabled:opacity-45"
+                className="rounded-md border border-border/80 bg-surface-sunken px-2.5 py-1 text-[11px] font-medium text-foreground/80 transition hover:border-brand/30 hover:text-foreground disabled:cursor-not-allowed disabled:opacity-45"
               >
                 {promptText}
               </button>
@@ -264,7 +264,7 @@ export function VoiceAgentLive({
                     : "Type your message to the agent..."
               }
               disabled={status === "thinking"}
-              className="flex-1 rounded-lg border border-white/10 bg-surface-50 px-4 py-2 text-sm text-foreground outline-none focus:border-brand disabled:opacity-60"
+              className="flex-1 rounded-lg border border-border/80 bg-surface-50 px-4 py-2 text-sm text-foreground outline-none focus:border-brand disabled:opacity-60"
             />
             <button
               type="submit"
@@ -279,7 +279,7 @@ export function VoiceAgentLive({
       )}
 
       {/* Controls */}
-      <div className="flex items-center justify-center gap-3 border-t border-white/10 bg-surface-50 px-5 py-3">
+      <div className="flex items-center justify-center gap-3 border-t border-border/80 bg-surface-50 px-5 py-3">
         {!started ? (
           <button
             type="button"
@@ -291,7 +291,7 @@ export function VoiceAgentLive({
           </button>
         ) : (
           <>
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-sunken">
               <Mic
                 className={cn(
                   "h-4 w-4",
@@ -311,7 +311,7 @@ export function VoiceAgentLive({
               <PhoneOff className="h-4 w-4" />
               End call
             </button>
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-sunken">
               <Volume2
                 className={cn(
                   "h-4 w-4",
@@ -324,7 +324,7 @@ export function VoiceAgentLive({
       </div>
 
       {(status === "ended" || status === "error") && started === false && transcript.length > 0 && (
-        <div className="border-t border-white/10 bg-[#0d1421]/85 px-5 py-3 text-center">
+        <div className="border-t border-border/80 bg-white px-5 py-3 text-center">
           <button
             type="button"
             onClick={onExit}

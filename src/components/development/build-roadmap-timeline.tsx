@@ -85,12 +85,12 @@ export function BuildRoadmapTimeline() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.38, delay: index * 0.06, ease: EASE_PRECISION }}
-              className="relative rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5 md:p-6 shadow-xs transition-colors hover:border-brand/40"
+              className="relative rounded-2xl border border-border/80 bg-white p-5 md:p-6 shadow-xs transition-colors hover:border-brand/40"
             >
               {/* Timeline marker dot */}
               <span
                 aria-hidden="true"
-                className="absolute -left-[29px] md:-left-[35px] top-6 flex h-5 w-5 items-center justify-center rounded-full border-2 border-brand bg-[#0d1421]/85 shadow-2xs"
+                className="absolute -left-[29px] md:-left-[35px] top-6 flex h-5 w-5 items-center justify-center rounded-full border-2 border-brand bg-white shadow-2xs"
               >
                 <span className="h-2 w-2 rounded-full bg-brand" />
               </span>
@@ -109,7 +109,7 @@ export function BuildRoadmapTimeline() {
                     </h3>
                   </div>
                 </div>
-                <span className="rounded-md border border-white/10 bg-surface-50 px-2.5 py-1 font-mono text-[11px] font-medium text-foreground/75">
+                <span className="rounded-md border border-border/80 bg-surface-50 px-2.5 py-1 font-mono text-[11px] font-medium text-foreground/75">
                   {step.deliverable}
                 </span>
               </div>

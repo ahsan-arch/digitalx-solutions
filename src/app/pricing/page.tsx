@@ -6,7 +6,7 @@ import { SectionIllustration, FAQAccordion } from "@/components/ui";
 
 const MissedCallCalculator = dynamic(
   () => import("@/components/ui/missed-call-calculator").then((m) => m.MissedCallCalculator),
-  { loading: () => <div className="h-[420px] rounded-2xl border border-white/10 bg-surface-50" /> }
+  { loading: () => <div className="h-[420px] rounded-2xl border border-border/80 bg-surface-50" /> }
 );
 import { PricingTracker } from "@/components/analytics/pricing-tracker";
 import { PricingTabs } from "@/components/pricing/pricing-tabs";
@@ -183,7 +183,7 @@ export default function PricingPage() {
   const faqSchema = generateFAQSchema(pricingFaqs);
 
   const carrierTableNode = (
-    <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10 shadow-xs">
+    <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
           <PhoneCall className="h-5 w-5" />
@@ -201,7 +201,7 @@ export default function PricingPage() {
       <div className="mt-6 overflow-x-auto">
         <table className="w-full text-left text-sm border-collapse">
           <thead>
-            <tr className="border-b border-white/10 bg-surface-50 text-xs font-semibold text-foreground">
+            <tr className="border-b border-border/80 bg-surface-50 text-xs font-semibold text-foreground">
               <th scope="col" className="p-3.5">Component</th>
               <th scope="col" className="p-3.5">Provider / Protocol</th>
               <th scope="col" className="p-3.5">Direct Carrier Cost</th>
@@ -214,28 +214,28 @@ export default function PricingPage() {
               <td className="p-3.5 font-medium text-foreground">Inbound Phone Number</td>
               <td className="p-3.5 font-mono text-xs">Twilio Local DID</td>
               <td className="p-3.5 font-mono text-xs">$1.15 &ndash; $2.50 / month</td>
-              <td className="p-3.5 font-semibold text-emerald-400">0% (Pass-through)</td>
+              <td className="p-3.5 font-semibold text-emerald-700">0% (Pass-through)</td>
               <td className="p-3.5 font-mono text-xs">$2 / line</td>
             </tr>
             <tr className="hover:bg-surface-50/50">
               <td className="p-3.5 font-medium text-foreground">AI Voice Inbound Minutes</td>
               <td className="p-3.5 font-mono text-xs">Twilio SIP / AI Voice Infrastructure</td>
               <td className="p-3.5 font-mono text-xs">~$0.07 &ndash; $0.11 / min</td>
-              <td className="p-3.5 font-semibold text-emerald-400">Included in Tier</td>
+              <td className="p-3.5 font-semibold text-emerald-700">Included in Tier</td>
               <td className="p-3.5 font-mono text-xs">Covered under fair-use</td>
             </tr>
             <tr className="hover:bg-surface-50/50">
               <td className="p-3.5 font-medium text-foreground">Two-Way SMS Segments</td>
               <td className="p-3.5 font-mono text-xs">Twilio / GoHighLevel LC Phone</td>
               <td className="p-3.5 font-mono text-xs">$0.0079 &ndash; $0.012 / segment</td>
-              <td className="p-3.5 font-semibold text-emerald-400">0% (Pass-through)</td>
+              <td className="p-3.5 font-semibold text-emerald-700">0% (Pass-through)</td>
               <td className="p-3.5 font-mono text-xs">$15 &ndash; $45 / mo (500-2,000 texts)</td>
             </tr>
             <tr className="hover:bg-surface-50/50">
               <td className="p-3.5 font-medium text-foreground">10DLC Brand &amp; Campaign</td>
               <td className="p-3.5 font-mono text-xs">The Campaign Registry (US)</td>
               <td className="p-3.5 font-mono text-xs">$4 one-time + $1.50&ndash;$10/mo</td>
-              <td className="p-3.5 font-semibold text-emerald-400">0% (We file for you)</td>
+              <td className="p-3.5 font-semibold text-emerald-700">0% (We file for you)</td>
               <td className="p-3.5 font-mono text-xs">Direct registry fee</td>
             </tr>
           </tbody>
@@ -296,9 +296,9 @@ export default function PricingPage() {
 
       {/* Setup & Onboarding Scope */}
       <section className="container-shell mt-16">
-        <div className="rounded-2xl border border-white/10 bg-surface-50 p-6 md:p-10 shadow-xs">
+        <div className="rounded-2xl border border-border/80 bg-surface-50 p-6 md:p-10 shadow-xs">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
               <ShieldCheck className="h-5 w-5" />
             </div>
             <div>
@@ -310,19 +310,19 @@ export default function PricingPage() {
           </div>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm text-foreground/80">
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-5 shadow-xs">
+            <div className="rounded-xl border border-border/80 bg-white p-5 shadow-xs">
               <h3 className="font-display text-base font-semibold text-foreground">1. Operational Discovery</h3>
               <p className="mt-2 text-xs leading-relaxed text-foreground/75">
                 We audit call recordings, map booking friction, analyze customer objection patterns, and document staff dispatch workflows to blueprint data models and prompts.
               </p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-5 shadow-xs">
+            <div className="rounded-xl border border-border/80 bg-white p-5 shadow-xs">
               <h3 className="font-display text-base font-semibold text-foreground">2. Architecture &amp; CRM Build</h3>
               <p className="mt-2 text-xs leading-relaxed text-foreground/75">
                 Clean GoHighLevel or HubSpot pipeline configuration, Next.js portal scaffolding, calendar availability rules, custom fields, and two-way webhook integrations.
               </p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-5 shadow-xs">
+            <div className="rounded-xl border border-border/80 bg-white p-5 shadow-xs">
               <h3 className="font-display text-base font-semibold text-foreground">3. Synthetic Stress Testing</h3>
               <p className="mt-2 text-xs leading-relaxed text-foreground/75">
                 We run 50+ scripted test calls and simulated webhook payloads covering edge cases, regional accents, interruption handling, and warm transfers before going live.
@@ -338,7 +338,7 @@ export default function PricingPage() {
 
       {/* Frequently Asked Questions */}
       <section className="container-shell mt-16">
-        <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10 shadow-xs">
+        <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
               <HelpCircle className="h-5 w-5" />
@@ -359,7 +359,7 @@ export default function PricingPage() {
 
       {/* Final CTA */}
       <section className="container-shell mt-16">
-        <div className="rounded-2xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 p-8 text-center md:p-12 text-white">
+        <div className="rounded-2xl saas-grid-bg border border-brand/30 bg-foreground p-8 text-center md:p-12 text-white">
           <h2 className="font-display text-3xl md:text-4xl font-bold">
             Want a fixed quote for your custom CRM or call volume?
           </h2>

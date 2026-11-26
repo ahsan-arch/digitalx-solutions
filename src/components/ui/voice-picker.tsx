@@ -151,10 +151,10 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
                 void preview(voice);
               }}
               className={cn(
-                "group relative flex flex-col items-start gap-3 rounded-2xl border bg-[#0d1421]/85 p-5 text-left transition",
+                "group relative flex flex-col items-start gap-3 rounded-2xl border bg-white p-5 text-left transition",
                 selected
                   ? "border-brand ring-2 ring-brand/30"
-                  : "border-white/10 hover:border-brand/40"
+                  : "border-border/80 hover:border-brand/40"
               )}
             >
               <div className="flex w-full items-center justify-between">
@@ -164,7 +164,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
                       "flex h-9 w-9 items-center justify-center rounded-xl",
                       voice.kind === "premium"
                         ? "bg-brand/10 text-brand"
-                        : "bg-white/5 text-foreground/75"
+                        : "bg-surface-sunken text-foreground/75"
                     )}
                   >
                     <Mic className="h-4 w-4" />
@@ -200,7 +200,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
       </div>
 
       {premiumUnavailable && (
-        <p className="rounded-xl border border-amber-400/25 bg-amber-500/10 px-4 py-3 text-xs text-amber-300">
+        <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800">
           Premium voices are not configured on this server. Picking a Premium voice will use the
           closest browser voice instead.
         </p>
@@ -210,7 +210,7 @@ export function VoicePicker({ selectedId, onSelect, onBack, onStart }: Props) {
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#0d1421]/85 px-5 py-3 text-sm font-medium text-foreground/75 transition hover:text-foreground"
+          className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-white px-5 py-3 text-sm font-medium text-foreground/75 transition hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           Edit survey

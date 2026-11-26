@@ -82,7 +82,7 @@ export function VoiceAgentExperience() {
                   "flex h-7 w-7 items-center justify-center rounded-lg text-[11px] font-semibold",
                   isActive && "bg-brand text-white",
                   isDone && "bg-brand/15 text-brand",
-                  !isActive && !isDone && "bg-white/5 text-foreground/55"
+                  !isActive && !isDone && "bg-surface-sunken text-foreground/55"
                 )}
               >
                 {isDone ? <Check className="h-3.5 w-3.5" /> : i + 1}
@@ -102,7 +102,7 @@ export function VoiceAgentExperience() {
       </ol>
 
       {browserSupported === false && stage !== "survey" && (
-        <div className="flex items-start gap-3 rounded-2xl border border-amber-400/25 bg-amber-500/10 px-5 py-4 text-sm text-amber-300">
+        <div className="flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800">
           <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
           <div>
             <p className="font-semibold">Live voice isn&apos;t supported in this browser.</p>
@@ -119,7 +119,7 @@ export function VoiceAgentExperience() {
 
       {stage === "picker" && survey && (
         <div className="space-y-6">
-          <div className="rounded-2xl border border-white/10 bg-surface-50 px-5 py-4 text-sm">
+          <div className="rounded-2xl border border-border/80 bg-surface-50 px-5 py-4 text-sm">
             <p className="font-mono text-xs font-medium text-foreground/75">
               Your agent will know
             </p>

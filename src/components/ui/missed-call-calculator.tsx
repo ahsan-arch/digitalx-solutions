@@ -80,12 +80,12 @@ export function MissedCallCalculator({
   return (
     <div
       className={cn(
-        "w-full rounded-2xl border border-white/10 bg-[#0d1421]/85 shadow-xs overflow-hidden",
+        "w-full rounded-2xl border border-border/80 bg-white shadow-xs overflow-hidden",
         className
       )}
     >
       {/* Header */}
-      <div className="border-b border-white/10 bg-surface-50/80 p-6 sm:p-8">
+      <div className="border-b border-border/80 bg-surface-50/80 p-6 sm:p-8">
         <p className="flex items-center gap-2 text-xs font-semibold text-brand">
           <Calculator className="h-3.5 w-3.5" />
           Revenue Leak Benchmark
@@ -97,7 +97,7 @@ export function MissedCallCalculator({
           {subtitle}
         </p>
         <div className="mt-3">
-          <span className="inline-flex items-center rounded-md border border-white/10 bg-surface-100 px-2.5 py-1 text-xs font-medium text-foreground/75">
+          <span className="inline-flex items-center rounded-md border border-border/80 bg-surface-100 px-2.5 py-1 text-xs font-medium text-foreground/75">
             Default values shown below are an illustrative example. Adjust inputs to reflect your business.
           </span>
         </div>
@@ -106,7 +106,7 @@ export function MissedCallCalculator({
       {/* Grid */}
       <div className="grid lg:grid-cols-[1.1fr_1fr]">
         {/* Left Inputs Column */}
-        <div className="flex flex-col gap-6 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-white/10">
+        <div className="flex flex-col gap-6 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-border/80">
           {/* Weekly Calls */}
           <div className="flex flex-col gap-2">
             <div className="flex items-baseline justify-between">
@@ -137,7 +137,7 @@ export function MissedCallCalculator({
                 value={weeklyCalls}
                 onChange={(e) => setWeeklyCalls(Math.max(5, Math.min(500, Number(e.target.value))))}
                 aria-label="Weekly Inbound Calls numeric input"
-                className="w-20 rounded-lg border border-white/10 bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none"
+                className="w-20 rounded-lg border border-border/80 bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none"
               />
             </div>
           </div>
@@ -148,7 +148,7 @@ export function MissedCallCalculator({
               <label htmlFor={missedRateId} className="text-xs font-semibold text-foreground">
                 Missed Call Rate
               </label>
-              <span className="rounded-md bg-amber-500/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-amber-300">
+              <span className="rounded-md bg-amber-50 px-2 py-0.5 font-mono text-[11px] font-semibold text-amber-800">
                 Industry Avg: 28%
               </span>
             </div>
@@ -173,7 +173,7 @@ export function MissedCallCalculator({
                   value={missedRate}
                   onChange={(e) => setMissedRate(Math.max(5, Math.min(85, Number(e.target.value))))}
                   aria-label="Missed Call Rate percentage input"
-                  className="w-20 rounded-lg border border-white/10 bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none pr-6"
+                  className="w-20 rounded-lg border border-border/80 bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none pr-6"
                 />
                 <span className="absolute right-2 top-2 text-xs font-bold text-foreground/40">%</span>
               </div>
@@ -208,7 +208,7 @@ export function MissedCallCalculator({
                   value={jobValue}
                   onChange={(e) => setJobValue(Math.max(50, Number(e.target.value)))}
                   aria-label="Average Job Value dollar input"
-                  className="w-24 rounded-lg border border-white/10 bg-surface-50 pl-5 pr-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none"
+                  className="w-24 rounded-lg border border-border/80 bg-surface-50 pl-5 pr-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none"
                 />
                 <span className="absolute left-2 top-2 text-xs font-bold text-foreground/40">$</span>
               </div>
@@ -224,7 +224,7 @@ export function MissedCallCalculator({
                     "rounded-lg border px-3 py-1 text-xs font-medium transition-all",
                     jobValue === pill.val
                       ? "border-brand bg-brand text-white shadow-xs"
-                      : "border-white/10 bg-surface-50 text-foreground/75 hover:bg-[#0d1421]/85 hover:text-foreground"
+                      : "border-border/80 bg-surface-50 text-foreground/75 hover:bg-white hover:text-foreground"
                   )}
                 >
                   {pill.label}
@@ -264,7 +264,7 @@ export function MissedCallCalculator({
                   value={closeRate}
                   onChange={(e) => setCloseRate(Math.max(10, Math.min(80, Number(e.target.value))))}
                   aria-label="Estimated Close Rate percentage input"
-                  className="w-20 rounded-lg border border-white/10 bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none pr-6"
+                  className="w-20 rounded-lg border border-border/80 bg-surface-50 px-2.5 py-1.5 text-right font-mono text-sm font-semibold text-foreground focus:border-brand focus:outline-none pr-6"
                 />
                 <span className="absolute right-2 top-2 text-xs font-bold text-foreground/40">%</span>
               </div>
@@ -289,7 +289,7 @@ export function MissedCallCalculator({
 
           {/* 3 Mini Metrics */}
           <div className="grid grid-cols-3 gap-3">
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-3.5">
+            <div className="rounded-xl border border-border/80 bg-white p-3.5">
               <span className="block text-[11px] font-medium text-foreground/75 leading-tight">
                 Missed Calls
               </span>
@@ -297,7 +297,7 @@ export function MissedCallCalculator({
                 {monthlyMissedCalls} / mo
               </span>
             </div>
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-3.5">
+            <div className="rounded-xl border border-border/80 bg-white p-3.5">
               <span className="block text-[11px] font-medium text-foreground/75 leading-tight">
                 Lost Bookings
               </span>
@@ -316,7 +316,7 @@ export function MissedCallCalculator({
           </div>
 
           {/* Segmented Pipeline Breakdown */}
-          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-4">
+          <div className="rounded-2xl border border-border/80 bg-white p-4">
             <div className="flex items-center justify-between text-xs mb-2.5">
               <span className="font-medium text-foreground/80">
                 Opportunity Distribution
@@ -346,7 +346,7 @@ export function MissedCallCalculator({
             </div>
 
             {/* Legend */}
-            <div className="mt-3.5 grid grid-cols-3 gap-2 border-t border-white/10 pt-3 text-xs">
+            <div className="mt-3.5 grid grid-cols-3 gap-2 border-t border-border/80 pt-3 text-xs">
               <div>
                 <div className="flex items-center gap-1.5 text-foreground/70">
                   <span className="h-2 w-2 rounded-full bg-emerald-600" />
@@ -389,7 +389,7 @@ export function MissedCallCalculator({
             <button
               type="button"
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-4 py-3 text-sm font-semibold text-foreground transition-all hover:bg-surface-100"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-4 py-3 text-sm font-semibold text-foreground transition-all hover:bg-surface-100"
             >
               <Copy className="h-4 w-4 text-foreground/75" />
               Copy Embed Code
@@ -401,8 +401,8 @@ export function MissedCallCalculator({
       {/* Embed Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs">
-          <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xl">
-            <div className="flex items-center justify-between border-b border-white/10 pb-3">
+          <div className="w-full max-w-lg rounded-2xl border border-border/80 bg-white p-6 shadow-xl">
+            <div className="flex items-center justify-between border-b border-border/80 pb-3">
               <h3 className="font-display text-base font-bold text-foreground">
                 Embed Calculator on Your Website
               </h3>
@@ -425,7 +425,7 @@ export function MissedCallCalculator({
                   value={customBookingUrl}
                   onChange={(e) => setCustomBookingUrl(e.target.value)}
                   placeholder="https://your-domain.com/booking-page"
-                  className="mt-1 w-full rounded-lg border border-white/10 bg-surface-50 px-3 py-2 font-mono text-xs text-foreground focus:border-brand focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-border/80 bg-surface-50 px-3 py-2 font-mono text-xs text-foreground focus:border-brand focus:outline-none"
                 />
               </div>
 
@@ -437,7 +437,7 @@ export function MissedCallCalculator({
                   readOnly
                   rows={4}
                   value={embedSnippet}
-                  className="mt-1 w-full rounded-lg border border-white/10 bg-surface-sunken p-2.5 font-mono text-xs text-foreground/90 focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-border/80 bg-surface-sunken p-2.5 font-mono text-xs text-foreground/90 focus:outline-none"
                 />
               </div>
 

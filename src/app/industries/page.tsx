@@ -53,7 +53,7 @@ export default function IndustriesHubPage() {
                 <a
                   key={category}
                   href={`#${category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                  className="rounded-md border border-white/10 bg-[#0d1421]/85 px-3 py-1.5 text-xs font-medium text-foreground/70 transition hover:border-brand/40 hover:text-brand"
+                  className="rounded-md border border-border/80 bg-white px-3 py-1.5 text-xs font-medium text-foreground/70 transition hover:border-brand/40 hover:text-brand"
                 >
                   {category}
                 </a>
@@ -79,7 +79,7 @@ export default function IndustriesHubPage() {
             <h2 className="mb-6 font-display text-2xl text-foreground md:text-3xl">{category}</h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {categoryIndustries.map((industry) => (
-                <article key={industry.slug} className="group rounded-2xl border border-white/10 bg-surface-50 p-6 transition-colors hover:border-brand/40">
+                <article key={industry.slug} className="group rounded-2xl border border-border/80 bg-surface-50 p-6 transition-colors hover:border-brand/40">
                   <h3 className="font-display text-xl text-foreground">{industry.name}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/72">{industry.summary}</p>
 

@@ -379,7 +379,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                           "group/btn inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all",
                           tier.highlight
                             ? "bg-brand text-white shadow-xs hover:bg-brand-deep"
-                            : "border border-white/15 bg-white/5 text-white hover:border-cyan-400/40 hover:bg-white/10"
+                            : "border border-border/80 bg-surface-sunken text-foreground hover:border-brand/30 hover:bg-surface-200"
                         )}
                       >
                         <span>{tier.cta}</span>
@@ -447,14 +447,14 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                     {currency === "USD" ? "$77,000 – $123,000+" : "A$118,580 – A$189,420+"}
                   </span>
                 </div>
-                <div className="h-3 w-full overflow-hidden rounded-full bg-slate-800">
+                <div className="h-2.5 w-full overflow-hidden rounded-sm bg-surface-200">
                   <m.div
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.85, ease: EASE_PRECISION }}
                     style={{ originX: 0 }}
-                    className="h-full w-full rounded-full bg-slate-500"
+                    className="h-full w-full rounded-sm bg-foreground/40"
                   />
                 </div>
               </div>
@@ -465,14 +465,14 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                     {currency === "USD" ? "$12,100 – $24,000" : "A$18,630 – A$36,960"}
                   </span>
                 </div>
-                <div className="h-3 w-full overflow-hidden rounded-full bg-slate-800">
+                <div className="h-2.5 w-full overflow-hidden rounded-sm bg-surface-200">
                   <m.div
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 0.22 }}
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.85, delay: 0.15, ease: EASE_PRECISION }}
                     style={{ originX: 0 }}
-                    className="h-full w-full rounded-full bg-emerald-400"
+                    className="h-full w-full rounded-sm bg-emerald-600"
                   />
                 </div>
               </div>
@@ -589,7 +589,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               </Link>
               <Link
                 href="/try-voice-agent"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-surface-sunken px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-surface-200 transition-all"
               >
                 Hear a live AI demo
               </Link>
@@ -597,32 +597,25 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
           </section>
         </div>
 
-            {/* Staggered Retainer Grid */}
-            <StaggerGroup immediate className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {retainerTiers.map((tier) => (
-                <StaggerItem key={tier.name} className="h-full">
-                  <SpotlightCard
-                    className={cn(
-                      "h-full rounded-2xl border bg-[#0d1421]/85 p-6 md:p-8 backdrop-blur-md transition-all duration-200 [@media(hover:hover)]:hover:-translate-y-1",
-                      tier.highlight
-                        ? "border-cyan-400/50 shadow-[0_0_36px_-14px_rgba(56,189,248,0.28)] ring-1 ring-cyan-400/25 relative"
-                        : "border-white/10 shadow-xs"
-                    )}
-                  >
-                    <article className="flex h-full flex-col justify-between">
-                      <div>
-                        <div className="flex items-baseline justify-between gap-2">
-                          <h3 className="font-display text-lg font-semibold text-white">{tier.name}</h3>
-                          {tier.highlight && (
-                            <span className="rounded-md border border-cyan-400/25 bg-cyan-500/15 px-2.5 py-1 text-xs font-semibold text-cyan-300 shrink-0">
-                              Most Picked
-                            </span>
-                          )}
-                        </div>
-                        <p className="mt-2 font-display text-3xl font-semibold tabular-nums text-white">
-                          {formatRetainerPrice(tier.price)}
-                        </p>
-                        <p className="mt-3 text-xs md:text-sm text-slate-300 leading-relaxed">{tier.summary}</p>
+        {/* AI VOICE & AUTOMATION RETAINERS TAB */}
+        <div
+          id="tabpanel-retainers"
+          role="tabpanel"
+          aria-labelledby="tab-retainers"
+          aria-hidden={activeTab !== "retainers"}
+          className={cn("mt-12", activeTab !== "retainers" && "hidden")}
+        >
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="font-mono text-xs font-medium text-brand-deep">
+              Monthly operational infrastructure
+            </p>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
+              Predictable AI Voice &amp; Automation Retainers
+            </h2>
+            <p className="mt-3 text-sm md:text-base leading-relaxed text-foreground/75">
+              AI voice and automation retainers range from {currency === "USD" ? "$295/mo" : "A$450/mo"} for missed-call SMS recovery to {currency === "USD" ? "$1,500/mo" : "A$2,310/mo"} for multi-location AI receptionists and pipelines. All carrier Twilio telephony usage passes through transparently at 0% markup directly in USD or AUD.
+            </p>
+          </div>
 
           {/* Staggered Retainer Grid */}
           <StaggerGroup immediate className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -630,45 +623,45 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               <StaggerItem key={tier.name} className="h-full">
                 <SpotlightCard
                   className={cn(
-                    "h-full rounded-2xl border bg-[#0d1421]/85 p-6 md:p-8 backdrop-blur-md transition-all duration-200 [@media(hover:hover)]:hover:-translate-y-1",
+                    "h-full rounded-2xl border bg-white p-6 md:p-8 backdrop-blur-md transition-all duration-200 [@media(hover:hover)]:hover:-translate-y-1",
                     tier.highlight
-                      ? "border-cyan-400/50 shadow-[0_0_36px_-14px_rgba(56,189,248,0.28)] ring-1 ring-cyan-400/25 relative"
-                      : "border-white/10 shadow-xs"
+                      ? "border-brand/30 shadow-md ring-1 ring-brand/25 relative"
+                      : "border-border/80 shadow-xs"
                   )}
                 >
                   <article className="flex h-full flex-col justify-between">
                     <div>
                       <div className="flex items-baseline justify-between gap-2">
-                        <h3 className="font-display text-xl font-semibold text-white">{tier.name}</h3>
+                        <h3 className="font-display text-lg font-semibold text-foreground">{tier.name}</h3>
                         {tier.highlight && (
-                          <span className="rounded-md border border-cyan-400/25 bg-cyan-500/15 px-2.5 py-1 text-xs font-semibold text-cyan-300 shrink-0">
+                          <span className="rounded-md border border-brand/30 bg-brand/10 px-2.5 py-1 text-xs font-semibold text-brand shrink-0">
                             Most Picked
                           </span>
                         )}
                       </div>
-                      <p className="mt-2 font-display text-3xl font-semibold tabular-nums text-white">
+                      <p className="mt-2 font-display text-3xl font-semibold tabular-nums text-foreground">
                         {formatRetainerPrice(tier.price)}
                       </p>
-                      <p className="mt-3 text-xs md:text-sm text-slate-300 leading-relaxed">{tier.summary}</p>
+                      <p className="mt-3 text-xs md:text-sm text-foreground/80 leading-relaxed">{tier.summary}</p>
 
-                      <ul className="mt-6 space-y-2.5 text-xs text-slate-300 border-t border-white/10 pt-5">
-                        {tier.includes.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                                <ul className="mt-6 space-y-2.5 text-xs text-slate-300 border-t border-white/10 pt-5">
+                                  {tier.includes.map((item) => (
+                                    <li key={item} className="flex items-start gap-2">
+                                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                                      <span>{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
 
-                    <div className="mt-8 pt-5 border-t border-white/10">
+                    <div className="mt-8 pt-5 border-t border-border/80">
                       <Link
                         href="/contact"
                         className={cn(
                           "inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-all",
                           tier.highlight
                             ? "bg-brand text-white hover:bg-brand-deep shadow-xs"
-                            : "border border-white/15 bg-white/5 text-white hover:bg-white/10 hover:border-cyan-400/40"
+                            : "border border-border/80 bg-surface-sunken text-foreground hover:bg-surface-200 hover:border-brand/30"
                         )}
                       >
                         {tier.cta}
@@ -680,17 +673,17 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
             ))}
           </StaggerGroup>
 
-          <p className="mt-5 text-center text-xs text-slate-400">
-            Serving Australian and US businesses. Pricing toggled in {currency}. Australian clients can be invoiced in AUD with GST-compliant tax documentation upon request.
-          </p>
+                    <p className="mt-5 text-center text-xs text-slate-400">
+                      Serving Australian and US businesses. Pricing toggled in {currency}. Australian clients can be invoiced in AUD with GST-compliant tax documentation upon request.
+                    </p>
 
-          {/* Carrier Pass-Through Table */}
-          <div className="mt-12">{carrierTable}</div>
+                    {/* Carrier Pass-Through Table */}
+                    <div className="mt-12">{carrierTable}</div>
 
-          {/* Revenue Calculator */}
-          <div className="mt-12">{calculatorNode}</div>
-        </div>
-      </div>
-    </MotionProvider>
-  );
+                    {/* Revenue Calculator */}
+                    <div className="mt-12">{calculatorNode}</div>
+                  </div>
+                </div>
+              </MotionProvider>
+              );
 }

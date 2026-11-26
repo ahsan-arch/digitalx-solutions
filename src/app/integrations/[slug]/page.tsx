@@ -109,7 +109,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
         {/* HERO SECTION */}
         <section className="container-shell">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/10 bg-[#0d1421]/85 px-3 py-1.5 text-xs font-medium text-brand">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border/80 bg-white px-3 py-1.5 text-xs font-medium text-brand">
               <Cpu className="h-3.5 w-3.5" />
               {integration.category} Integration
             </div>
@@ -130,7 +130,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
               </Link>
               <Link
                 href="/try-voice-agent"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#0d1421]/85 px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-white px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
               >
                 <PhoneCall className="h-4 w-4 text-brand" />
                 Experience Live Voice Demo
@@ -141,7 +141,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
 
         {/* ARCHITECTURE & PAIN POINT */}
         <section className="container-shell mt-14 md:mt-18">
-          <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-surface-50 p-6 md:p-10">
             <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
               The Operational Problem This Integration Eliminates
             </h2>
@@ -156,7 +156,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
               {integration.toolsUsed.map((tool) => (
                 <span
                   key={tool}
-                  className="rounded-lg bg-[#0d1421]/85 px-3 py-1 text-xs font-medium text-foreground/80 border border-white/10 shadow-2xs"
+                  className="rounded-lg bg-white px-3 py-1 text-xs font-medium text-foreground/80 border border-border/80 shadow-2xs"
                 >
                   {tool}
                 </span>
@@ -183,7 +183,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
             {integration.workflowSteps.map((s) => (
               <div
                 key={s.step}
-                className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs flex flex-col justify-between"
+                className="rounded-2xl border border-border/80 bg-white p-6 shadow-xs flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-2">
@@ -199,7 +199,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
                   </p>
                 </div>
 
-                <div className="mt-4 rounded-xl bg-surface-50 p-3.5 border border-white/10">
+                <div className="mt-4 rounded-xl bg-surface-50 p-3.5 border border-border/80">
                   <span className="font-mono text-[10px] font-medium text-brand">
                     Technical Mechanism:
                   </span>
@@ -214,13 +214,13 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
 
         {/* TECHNICAL SPECIFICATIONS TABLE */}
         <section className="container-shell mt-14 md:mt-18">
-          <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10">
             <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
               Integration Specifications &amp; Latency Benchmarks
             </h2>
-            <div className="mt-6 overflow-hidden rounded-xl border border-white/10">
+            <div className="mt-6 overflow-hidden rounded-xl border border-border/80">
               <table className="w-full text-left text-sm">
-                <thead className="bg-surface-50 border-b border-white/10 text-xs font-semibold uppercase text-foreground/70">
+                <thead className="bg-surface-50 border-b border-border/80 text-xs font-semibold uppercase text-foreground/70">
                   <tr>
                     <th className="p-4">Parameter</th>
                     <th className="p-4">Engineering Standard</th>
@@ -241,15 +241,15 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
 
         {/* MISTAKES TO AVOID */}
         <section className="container-shell mt-14 md:mt-18">
-          <div className="rounded-3xl border border-amber-400/25 bg-amber-500/10 p-6 md:p-10">
-            <div className="flex items-center gap-2 text-amber-300 font-semibold text-sm">
+          <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6 md:p-10">
+            <div className="flex items-center gap-2 text-amber-800 font-semibold text-sm">
               <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0" />
               Common Setup Mistakes Most Agencies Make
             </div>
             <div className="mt-4 space-y-3">
               {integration.commonMistakesToAvoid.map((mistake, i) => (
                 <div key={i} className="flex items-start gap-3 text-sm text-foreground/80 leading-relaxed">
-                  <span className="font-bold text-amber-300 shrink-0">{i + 1}.</span>
+                  <span className="font-bold text-amber-800 shrink-0">{i + 1}.</span>
                   <p>{mistake}</p>
                 </div>
               ))}
@@ -272,7 +272,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
             {integration.faqs.map((faq) => (
               <div
                 key={faq.question}
-                className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs"
+                className="rounded-2xl border border-border/80 bg-white p-6 shadow-xs"
               >
                 <h3 className="font-display text-lg font-semibold text-foreground">
                   {faq.question}
@@ -288,7 +288,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
         {/* INTERNAL LINKS SILO BLOCK */}
         <section className="container-shell mt-14 md:mt-18">
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-surface-50 p-6">
+            <div className="rounded-2xl border border-border/80 bg-surface-50 p-6">
               <div className="flex items-center gap-2 text-foreground font-semibold text-sm mb-4">
                 <Layers className="h-4 w-4 text-brand" />
                 Related Solution Stacks
@@ -308,7 +308,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-surface-50 p-6">
+            <div className="rounded-2xl border border-border/80 bg-surface-50 p-6">
               <div className="flex items-center gap-2 text-foreground font-semibold text-sm mb-4">
                 <BookOpen className="h-4 w-4 text-brand" />
                 Supporting Technical Insights
@@ -332,7 +332,7 @@ export default async function IntegrationDetailPage({ params }: PageProps) {
 
         {/* FINAL CTA */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-3xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="rounded-3xl saas-grid-bg border border-brand/30 bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight">
                 Ready to Integrate {integration.name} Into Your Business?

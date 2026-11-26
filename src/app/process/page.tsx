@@ -212,42 +212,42 @@ export default function ProcessPage() {
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-sm text-ink-secondary">
             <div className="flex items-start gap-3 rounded-lg border border-line-subtle bg-surface-raised p-4">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
               <div>
                 <p className="font-semibold text-ink-primary">Full CRM Snapshot</p>
                 <p className="mt-1 text-xs text-ink-tertiary">All pipelines, custom fields, SMS templates, and automated workflows.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border border-line-subtle bg-surface-raised p-4">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
               <div>
                 <p className="font-semibold text-ink-primary">Tuned System Prompts</p>
                 <p className="mt-1 text-xs text-ink-tertiary">Documented markdown system prompts and service guardrails.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border border-line-subtle bg-surface-raised p-4">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
               <div>
                 <p className="font-semibold text-ink-primary">Carrier &amp; SIP Porting</p>
                 <p className="mt-1 text-xs text-ink-tertiary">Direct ownership of all phone numbers, Twilio subaccounts, or Telnyx trunks.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border border-line-subtle bg-surface-raised p-4">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
               <div>
                 <p className="font-semibold text-ink-primary">Team Video SOPs</p>
                 <p className="mt-1 text-xs text-ink-tertiary">Short Loom video tutorials for your front-desk and dispatchers.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border border-line-subtle bg-surface-raised p-4">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
               <div>
                 <p className="font-semibold text-ink-primary">Live ROI Dashboard</p>
                 <p className="mt-1 text-xs text-ink-tertiary">Real-time tracking of answered calls, booked leads, and recovered revenue.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-lg border border-line-subtle bg-surface-raised p-4">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
               <div>
                 <p className="font-semibold text-ink-primary">30-Day Hypercare</p>
                 <p className="mt-1 text-xs text-ink-tertiary">Priority engineering support with same-day prompt iterations post-launch.</p>

@@ -237,14 +237,14 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
 
   return (
     <>
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d1421]/85 shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-border/80 bg-white shadow-sm">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-white/10 bg-surface-50 px-5 py-3">
+        <div className="flex items-center justify-between border-b border-border/80 bg-surface-50 px-5 py-3">
           <div className="flex items-center gap-3">
             <div
               className={`flex h-9 w-9 items-center justify-center rounded-lg ${
                 isActive
-                  ? "border border-emerald-400/25 bg-emerald-500/15 text-emerald-300"
+                  ? "border border-emerald-200 bg-emerald-50 text-emerald-700"
                   : "bg-brand/10 text-brand"
               }`}
             >
@@ -274,7 +274,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
             )}
             <button
               onClick={() => setMuted((m) => !m)}
-              className="ml-1 rounded-lg p-1.5 text-foreground/40 transition hover:bg-white/5 hover:text-foreground/70"
+              className="ml-1 rounded-lg p-1.5 text-foreground/40 transition hover:bg-surface-sunken hover:text-foreground/70"
               title={muted ? "Unmute voice" : "Mute voice"}
             >
               {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
@@ -309,7 +309,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
                     className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                       turn.speaker === "caller"
                         ? "rounded-br-md bg-brand text-white"
-                        : "rounded-bl-md border border-white/10 bg-surface-50 text-foreground/85"
+                        : "rounded-bl-md border border-border/80 bg-surface-50 text-foreground/85"
                     }`}
                   >
                     <p className="mb-0.5 font-mono text-[10px] font-medium opacity-60">
@@ -326,7 +326,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
                     className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm ${
                       currentSpeaker === "caller"
                         ? "rounded-br-md bg-brand text-white"
-                        : "rounded-bl-md border border-white/10 bg-surface-50 text-foreground/75"
+                        : "rounded-bl-md border border-border/80 bg-surface-50 text-foreground/75"
                     }`}
                   >
                     <TypingDots />
@@ -338,7 +338,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
         </div>
 
         {/* Controls */}
-        <div className="flex items-center justify-center gap-3 border-t border-white/10 bg-surface-50 px-5 py-3">
+        <div className="flex items-center justify-center gap-3 border-t border-border/80 bg-surface-50 px-5 py-3">
           {!isActive ? (
             <button
               onClick={startDemo}
@@ -349,7 +349,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
             </button>
           ) : (
             <>
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-sunken">
                 <Mic className="h-4 w-4 text-foreground/40" />
               </div>
               <button
@@ -359,7 +359,7 @@ export function VoiceAgentDemo({ script }: { script: DemoScript }) {
                 <PhoneOff className="h-4 w-4" />
                 End call
               </button>
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-sunken">
                 <Volume2 className="h-4 w-4 text-foreground/40" />
               </div>
             </>

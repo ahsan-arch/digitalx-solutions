@@ -60,14 +60,14 @@ export function Modal({ isOpen, onClose, children, title }: ModalProps) {
                                 mass: 0.8,
                             }}
                             onClick={(e) => e.stopPropagation()}
-                            className="bg-surface-100 border border-white/10 w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl relative"
+                            className="bg-white border border-border/80 w-full max-w-lg rounded-2xl overflow-hidden shadow-lg relative"
                         >
-                            <div className="flex items-center justify-between p-6 border-b border-white/10 bg-surface-200">
-                                <h3 className="text-xl font-display text-white">{title}</h3>
+                            <div className="flex items-center justify-between p-6 border-b border-border/80 bg-surface-sunken">
+                                <h3 className="text-xl font-display text-foreground">{title}</h3>
                                 <button
                                     onClick={onClose}
                                     aria-label="Close modal"
-                                    className="text-white/40 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
+                                    className="text-foreground/50 hover:text-foreground transition-colors p-1 rounded-lg hover:bg-surface-100"
                                 >
                                     <X size={20} />
                                 </button>

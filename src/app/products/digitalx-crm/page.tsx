@@ -102,7 +102,7 @@ export default function DigitalXCrmPage() {
           </div>
 
           {/* Development Status Banner */}
-          <div className="mt-8 rounded-2xl border border-white/10 bg-surface-50 p-6 text-foreground">
+          <div className="mt-8 rounded-2xl border border-border/80 bg-surface-50 p-6 text-foreground">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2 font-semibold text-foreground">
                 <span className="inline-block h-2 w-2 rounded-full bg-emerald-600" />
@@ -129,9 +129,9 @@ export default function DigitalXCrmPage() {
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs"
+                  className="rounded-xl border border-border/80 bg-white p-6 shadow-xs"
                 >
-                  <div className="mb-3 inline-flex rounded-lg bg-surface-50 p-2.5 border border-white/10">
+                  <div className="mb-3 inline-flex rounded-lg bg-surface-50 p-2.5 border border-border/80">
                     {feature.icon}
                   </div>
                   <h3 className="font-display text-base font-semibold text-foreground">
@@ -146,25 +146,25 @@ export default function DigitalXCrmPage() {
           </section>
 
           {/* Target Audience */}
-          <section className="mt-12 rounded-2xl border border-white/10 bg-surface-50 p-8">
+          <section className="mt-12 rounded-2xl border border-border/80 bg-surface-50 p-8">
             <h2 className="font-display text-xl font-bold text-foreground">
               Who DigitalX CRM Is Built For
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-foreground/80">
               <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-4 w-4 text-emerald-700 shrink-0 mt-0.5" />
                 <span>
                   <strong>Multi-van trade contractors (Plumbing, HVAC, Electrical):</strong> Who need dispatchers and technicians to view incoming call recordings and customer notes without paying for 10 separate enterprise seats.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-4 w-4 text-emerald-700 shrink-0 mt-0.5" />
                 <span>
                   <strong>Metropolitan healthcare &amp; dental clinics:</strong> Seeking centralized triage of after-hours patient inquiries with direct sync to practice calendars.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-4 w-4 text-emerald-700 shrink-0 mt-0.5" />
                 <span>
                   <strong>High-volume service operators:</strong> Transitioning off Zapier to self-hosted n8n and looking for a database layer optimized for real-time webhooks.
                 </span>
@@ -190,7 +190,7 @@ export default function DigitalXCrmPage() {
               </Link>
               <Link
                 href="/solutions/gohighlevel-implementation"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-5 py-3 text-sm font-medium text-foreground hover:bg-surface-50 transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-white px-5 py-3 text-sm font-medium text-foreground hover:bg-surface-50 transition-colors"
               >
                 Explore GoHighLevel Solutions
               </Link>

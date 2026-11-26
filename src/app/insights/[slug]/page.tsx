@@ -156,8 +156,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     </header>
 
                     {article.isUpdating && (
-                        <div className="mb-10 rounded-2xl border border-amber-400/25 bg-amber-500/10 p-6 text-foreground">
-                            <div className="flex items-center gap-2 font-semibold text-amber-300">
+                        <div className="mb-10 rounded-2xl border border-amber-200 bg-amber-50 p-6 text-foreground">
+                            <div className="flex items-center gap-2 font-semibold text-amber-800">
                                 <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500" />
                                 Telephony Benchmark Audit in Progress
                             </div>
@@ -224,7 +224,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                                 </Link>
                                 <Link
                                     href="/try-voice-agent"
-                                    className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 px-5 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-200"
+                                    className="inline-flex items-center justify-center rounded-lg border border-border/80 bg-white px-5 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-200"
                                 >
                                     Test live voice agent
                                 </Link>

@@ -153,7 +153,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
 
       {/* Overview & Fit with NAP Card */}
       <section className="container-shell mt-10 grid gap-5 lg:grid-cols-[1.4fr_1fr]">
-        <article className="rounded-2xl border border-white/10 bg-surface-50 p-6 md:p-8">
+        <article className="rounded-2xl border border-border/80 bg-surface-50 p-6 md:p-8">
           <h2 className="font-display text-2xl text-foreground">Targeted Outcomes</h2>
           <ul className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/72">
             {solution.outcomes.map((outcome) => (
@@ -167,7 +167,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
           <h3 className="mt-8 text-lg font-semibold text-foreground">Capabilities Included</h3>
           <ul className="mt-3 grid gap-2 text-sm text-foreground/70 sm:grid-cols-2">
             {solution.capabilities.map((capability) => (
-              <li key={capability} className="flex items-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-3 py-2.5">
+              <li key={capability} className="flex items-center gap-2 rounded-xl border border-border/80 bg-white px-3 py-2.5">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                 <span>{capability}</span>
               </li>
@@ -176,7 +176,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
         </article>
 
         {/* Verified NAP & Strategy Consultation Card */}
-        <aside className="flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-8 shadow-sm">
+        <aside className="flex flex-col justify-between rounded-2xl border border-border/80 bg-white p-6 md:p-8 shadow-sm">
           <div>
             <div className="flex items-center gap-2">
               <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -187,7 +187,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
               Speak directly with an AI automation engineer. We assess your CRM, intake flows, and call volume to model exact ROI.
             </p>
 
-            <div className="mt-6 space-y-3 border-t border-white/10 pt-4 text-xs text-foreground/80">
+            <div className="mt-6 space-y-3 border-t border-border/80 pt-4 text-xs text-foreground/80">
               <div className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand" />
                 <div>
@@ -226,9 +226,9 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
               href="https://wa.me/61451413786"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-surface-50 px-5 py-2.5 text-xs font-semibold text-foreground transition hover:bg-surface-100"
+              className="inline-flex items-center justify-center rounded-lg border border-border/80 bg-surface-50 px-5 py-2.5 text-xs font-semibold text-foreground transition hover:bg-surface-100"
             >
-              <MessageSquare className="mr-1.5 h-3.5 w-3.5 text-emerald-400" />
+              <MessageSquare className="mr-1.5 h-3.5 w-3.5 text-emerald-700" />
               Chat on WhatsApp
             </a>
           </div>
@@ -238,7 +238,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Visual 4-Step Intake Workflow Stepper */}
       {solution.workflowSteps && solution.workflowSteps.length > 0 && (
         <section className="container-shell mt-14">
-          <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10">
             <div className="max-w-2xl">
               <span className="font-mono text-xs font-medium text-foreground/75">How It Works</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
@@ -253,7 +253,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
               {solution.workflowSteps.map((step, idx) => (
                 <div
                   key={step.name}
-                  className="relative flex flex-col justify-between rounded-2xl border border-white/10 bg-surface-50 p-5 transition hover:border-brand/40"
+                  className="relative flex flex-col justify-between rounded-2xl border border-border/80 bg-surface-50 p-5 transition hover:border-brand/40"
                 >
                   <div>
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand/10 text-xs font-bold text-brand">
@@ -262,7 +262,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                     <h3 className="mt-3 font-display text-base font-semibold text-foreground">{step.name}</h3>
                     <p className="mt-2 text-xs leading-relaxed text-foreground/70">{step.text}</p>
                   </div>
-                  <p className="mt-4 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-foreground/75 italic">
+                  <p className="mt-4 border-t border-border/80 pt-3 text-[11px] leading-relaxed text-foreground/75 italic">
                     {step.detail}
                   </p>
                 </div>
@@ -275,7 +275,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Technical Specifications Grid */}
       {solution.technicalSpecs && solution.technicalSpecs.length > 0 && (
         <section className="container-shell mt-14">
-          <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-surface-50 p-6 md:p-10">
             <div className="flex items-center gap-2">
               <Code className="h-4 w-4 text-brand" />
               <span className="font-mono text-xs font-medium text-foreground/75">Engineering Architecture</span>
@@ -284,7 +284,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {solution.technicalSpecs.map((spec) => (
-                <div key={spec.label} className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-5">
+                <div key={spec.label} className="rounded-2xl border border-border/80 bg-white p-5">
                   <p className="text-xs font-medium text-foreground/55">{spec.label}</p>
                   <p className="mt-1 font-display text-lg font-bold text-foreground">{spec.value}</p>
                   <p className="mt-2 text-xs leading-relaxed text-foreground/65">{spec.description}</p>
@@ -298,7 +298,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Comparison Matrix */}
       {solution.comparison && solution.comparison.length > 0 && (
         <section className="container-shell mt-14">
-          <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10">
             <span className="font-mono text-xs font-medium text-foreground/75">Comparative Analysis</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">
               DigitalX Architecture vs Traditional Solutions
@@ -310,7 +310,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
             <div className="mt-6 overflow-x-auto">
               <table className="w-full text-left text-xs md:text-sm">
                 <thead>
-                  <tr className="border-b border-white/10 bg-surface-50 text-foreground">
+                  <tr className="border-b border-border/80 bg-surface-50 text-foreground">
                     <th className="py-3 px-4 font-semibold">Capability / Metric</th>
                     <th className="py-3 px-4 font-bold text-brand bg-brand/5">DigitalX Solutions</th>
                     <th className="py-3 px-4 font-semibold text-foreground/70">Traditional Call Center / Agencies</th>
@@ -336,7 +336,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Transparent Investment & ROI Tiers */}
       {solution.pricingTiers && solution.pricingTiers.length > 0 && (
         <section className="container-shell mt-14">
-          <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-surface-50 p-6 md:p-10">
             <div className="max-w-2xl">
               <span className="font-mono text-xs font-medium text-foreground/75">Transparent Investment</span>
               <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Implementation & Management Tiers</h2>
@@ -349,7 +349,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
               {solution.pricingTiers.map((tier) => (
                 <div
                   key={tier.name}
-                  className={`flex flex-col justify-between rounded-2xl border p-6 md:p-8 bg-[#0d1421]/85 ${tier.highlight ? "border-brand shadow-md ring-1 ring-brand/30" : "border-white/10"
+                  className={`flex flex-col justify-between rounded-2xl border p-6 md:p-8 bg-white ${tier.highlight ? "border-brand shadow-md ring-1 ring-brand/30" : "border-border/80"
                     }`}
                 >
                   <div>
@@ -367,7 +367,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                     </div>
                     <p className="mt-3 text-xs leading-relaxed text-foreground/70">{tier.description}</p>
 
-                    <ul className="mt-6 space-y-2.5 border-t border-white/10 pt-5 text-xs text-foreground/80">
+                    <ul className="mt-6 space-y-2.5 border-t border-border/80 pt-5 text-xs text-foreground/80">
                       {tier.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-2">
                           <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-brand" />
@@ -381,7 +381,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                     href="/contact"
                     className={`mt-8 inline-flex items-center justify-center rounded-lg py-2.5 px-5 text-xs font-semibold transition ${tier.highlight
                       ? "bg-brand text-white hover:bg-brand-deep"
-                      : "border border-white/10 bg-surface-50 text-foreground hover:bg-surface-100"
+                      : "border border-border/80 bg-surface-50 text-foreground hover:bg-surface-100"
                       }`}
                   >
                     Select {tier.name}
@@ -397,7 +397,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Telephony Compliance Note */}
       {solution.slug === "ai-voice-agents" && (
         <section className="container-shell mt-10">
-          <div className="rounded-2xl border border-white/10 bg-surface-50 p-6 text-xs text-foreground/80 flex items-start gap-3">
+          <div className="rounded-2xl border border-border/80 bg-surface-50 p-6 text-xs text-foreground/80 flex items-start gap-3">
             <ShieldCheck className="h-5 w-5 text-brand shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold text-foreground">Telephony &amp; AI Compliance Architecture</p>
@@ -419,12 +419,12 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* FAQs */}
       {solution.faqs && solution.faqs.length > 0 && (
         <section className="container-shell mt-14">
-          <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10">
             <span className="font-mono text-xs font-medium text-foreground/75">Expert Guidance</span>
             <h2 className="mt-2 font-display text-2xl text-foreground md:text-3xl">Frequently Asked Questions</h2>
             <dl className="mt-6 space-y-6">
               {solution.faqs.map((faq) => (
-                <div key={faq.question} className="border-b border-white/10 pb-6 last:border-b-0 last:pb-0">
+                <div key={faq.question} className="border-b border-border/80 pb-6 last:border-b-0 last:pb-0">
                   <dt className="font-display text-base font-semibold text-foreground md:text-lg">{faq.question}</dt>
                   <dd className="mt-2 text-xs leading-relaxed text-foreground/72 md:text-sm">{faq.answer}</dd>
                 </div>
@@ -463,14 +463,14 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       {/* Related Case Studies */}
       {relatedCaseStudies.length > 0 && (
         <section className="container-shell mt-14">
-          <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+          <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10">
             <h2 className="font-display text-2xl text-foreground">Case Studies Using {solution.name}</h2>
             <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {relatedCaseStudies.map((cs) => (
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}`}
-                  className="group rounded-xl border border-white/10 bg-surface-50 p-5 transition-colors hover:border-brand/40"
+                  className="group rounded-xl border border-border/80 bg-surface-50 p-5 transition-colors hover:border-brand/40"
                 >
                   <span className="font-mono text-xs font-medium text-foreground/75">{cs.industry}</span>
                   <h3 className="mt-2 font-display text-base font-bold text-foreground">{cs.client}</h3>
@@ -488,14 +488,14 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
 
       {/* Connected Industry Playbooks */}
       <section className="container-shell mt-14">
-        <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+        <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10">
           <h2 className="font-display text-2xl text-foreground">Industry Playbooks That Pair With This Solution</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {relatedIndustries.map((industry) => (
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="rounded-xl border border-white/10 bg-surface-50 p-4 transition hover:border-brand/40"
+                className="rounded-xl border border-border/80 bg-surface-50 p-4 transition hover:border-brand/40"
               >
                 <h3 className="text-base font-semibold text-foreground">{industry.name}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-foreground/68">{industry.headline}</p>

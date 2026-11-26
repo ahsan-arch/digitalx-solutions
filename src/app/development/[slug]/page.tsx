@@ -189,7 +189,7 @@ export default async function DevelopmentSlugPage(props: Props) {
             </Link>
 
             <div className="max-w-3xl">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-white/10 bg-[#0d1421]/85 px-3 py-1.5 font-mono text-xs font-medium text-brand">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border/80 bg-white px-3 py-1.5 font-mono text-xs font-medium text-brand">
                 <Code className="h-3.5 w-3.5" />
                 Custom Architecture Blueprint
               </div>
@@ -210,7 +210,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 </Link>
                 <Link
                   href="/solutions"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-[#0d1421]/85 px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-white px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-100"
                 >
                   Browse Complementary Solutions
                 </Link>
@@ -220,7 +220,7 @@ export default async function DevelopmentSlugPage(props: Props) {
 
           {/* PROBLEM SOLVED */}
           <section className="container-shell mt-14 md:mt-18">
-            <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
+            <div className="rounded-3xl border border-border/80 bg-surface-50 p-6 md:p-10">
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
                 The Operational Bottleneck We Eliminate
               </h2>
@@ -234,7 +234,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 {service.architecturalComponents.map((comp) => (
                   <span
                     key={comp}
-                    className="rounded-lg bg-[#0d1421]/85 px-3 py-1 text-xs font-medium text-foreground/80 border border-white/10 shadow-2xs"
+                    className="rounded-lg bg-white px-3 py-1 text-xs font-medium text-foreground/80 border border-border/80 shadow-2xs"
                   >
                     {comp}
                   </span>
@@ -258,7 +258,7 @@ export default async function DevelopmentSlugPage(props: Props) {
               {service.deliverables.map((deliv, idx) => (
                 <div
                   key={deliv.title}
-                  className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs flex flex-col justify-between"
+                  className="rounded-2xl border border-border/80 bg-white p-6 shadow-xs flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2">
@@ -274,7 +274,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                     </p>
                   </div>
 
-                  <div className="mt-4 rounded-xl bg-surface-50 p-3.5 border border-white/10">
+                  <div className="mt-4 rounded-xl bg-surface-50 p-3.5 border border-border/80">
                     <span className="font-mono text-[10px] font-medium text-brand">
                       Technical Specification:
                     </span>
@@ -360,7 +360,7 @@ export default async function DevelopmentSlugPage(props: Props) {
 
               {/* Interactive Build Timeline */}
               <section className="container-shell mt-14 md:mt-18">
-                <div className="rounded-3xl border border-white/10 bg-surface-50 p-6 md:p-10">
+                <div className="rounded-3xl border border-border/80 bg-surface-50 p-6 md:p-10">
                   <div className="max-w-2xl mb-8">
                     <p className="font-mono text-xs font-medium text-brand-deep">
                       6-week delivery cadence
@@ -388,7 +388,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 </div>
 
                 <div className="mt-8 grid gap-6 md:grid-cols-3">
-                  <div className="h-full rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs transition-all hover:border-brand/40 [@media(hover:hover)]:hover:-translate-y-1">
+                  <div className="h-full rounded-2xl border border-border/80 bg-white p-6 shadow-xs transition-all hover:border-brand/40 [@media(hover:hover)]:hover:-translate-y-1">
                     <div className="flex h-full flex-col justify-between">
                       <div>
                         <span className="font-mono text-xs font-semibold text-brand">Tier 1 &bull; $2,200</span>
@@ -408,7 +408,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                     </div>
                   </div>
 
-                  <div className="h-full rounded-2xl border border-brand/40 bg-[#0d1421]/85 p-6 shadow-xs transition-all hover:border-brand [@media(hover:hover)]:hover:-translate-y-1">
+                  <div className="h-full rounded-2xl border border-brand/40 bg-white p-6 shadow-xs transition-all hover:border-brand [@media(hover:hover)]:hover:-translate-y-1">
                     <div className="flex h-full flex-col justify-between">
                       <div>
                         <span className="font-mono text-xs font-semibold text-brand">Tier 2 &bull; $8,500 (Flagship)</span>
@@ -428,7 +428,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                     </div>
                   </div>
 
-                  <div className="h-full rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs transition-all hover:border-brand/40 [@media(hover:hover)]:hover:-translate-y-1">
+                  <div className="h-full rounded-2xl border border-border/80 bg-white p-6 shadow-xs transition-all hover:border-brand/40 [@media(hover:hover)]:hover:-translate-y-1">
                     <div className="flex h-full flex-col justify-between">
                       <div>
                         <span className="font-mono text-xs font-semibold text-brand">Tier 3 &bull; $15,000+</span>
@@ -454,13 +454,13 @@ export default async function DevelopmentSlugPage(props: Props) {
 
           {/* TECHNICAL SPECIFICATIONS */}
           <section className="container-shell mt-14 md:mt-18">
-            <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10">
+            <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10">
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
                 Technical Architecture &amp; Integration Standards
               </h2>
-              <div className="mt-6 overflow-hidden rounded-xl border border-white/10">
+              <div className="mt-6 overflow-hidden rounded-xl border border-border/80">
                 <table className="w-full text-left text-sm">
-                  <thead className="bg-surface-50 border-b border-white/10 text-xs font-semibold uppercase text-foreground/70">
+                  <thead className="bg-surface-50 border-b border-border/80 text-xs font-semibold uppercase text-foreground/70">
                     <tr>
                       <th className="p-4">Architecture Layer</th>
                       <th className="p-4">Implementation Standard</th>
@@ -482,7 +482,7 @@ export default async function DevelopmentSlugPage(props: Props) {
           {/* TCO COMPARISON TABLE (FOR CUSTOM CRM DEVELOPMENT) */}
           {service.slug === "custom-crm-development" && (
             <section className="container-shell mt-14 md:mt-18">
-              <div className="rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10 shadow-xs">
+              <div className="rounded-3xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
                 <div className="max-w-2xl">
                   <p className="font-mono text-xs font-semibold uppercase tracking-wider text-brand">
                     Financial Analysis &amp; Total Cost of Ownership
@@ -498,7 +498,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 <div className="mt-8 overflow-x-auto">
                   <table className="w-full text-left text-sm border-collapse">
                     <thead>
-                      <tr className="border-b border-white/10 bg-surface-50 text-xs font-semibold text-foreground">
+                      <tr className="border-b border-border/80 bg-surface-50 text-xs font-semibold text-foreground">
                         <th scope="col" className="p-4">Cost Category</th>
                         <th scope="col" className="p-4">Legacy Enterprise CRM (Salesforce / HubSpot Pro)</th>
                         <th scope="col" className="p-4 bg-brand/5 text-brand">DigitalX Hybrid Custom CRM</th>
@@ -508,7 +508,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                       <tr className="hover:bg-surface-50/50">
                         <td className="p-4 font-semibold text-foreground">Per-Seat Software Fees (20 Users)</td>
                         <td className="p-4 text-foreground/75 font-mono text-xs">$2,000 – $3,000 / month ($72,000 – $108,000 over 3 yrs)</td>
-                        <td className="p-4 font-mono text-xs font-semibold bg-brand/5 text-emerald-300">$0 / month (Unlimited internal &amp; client seats)</td>
+                        <td className="p-4 font-mono text-xs font-semibold bg-brand/5 text-emerald-700">$0 / month (Unlimited internal &amp; client seats)</td>
                       </tr>
                       <tr className="hover:bg-surface-50/50">
                         <td className="p-4 font-semibold text-foreground">Initial Implementation &amp; Migration</td>
@@ -523,12 +523,12 @@ export default async function DevelopmentSlugPage(props: Props) {
                       <tr className="hover:bg-surface-50/50">
                         <td className="p-4 font-semibold text-foreground">3-Year Total Cost of Ownership</td>
                         <td className="p-4 text-foreground/75 font-mono text-xs">$77,000 – $123,000+</td>
-                        <td className="p-4 font-mono text-xs font-semibold bg-brand/5 text-emerald-300">$12,100 – $24,000 (60%+ illustrative estimate)</td>
+                        <td className="p-4 font-mono text-xs font-semibold bg-brand/5 text-emerald-700">$12,100 – $24,000 (60%+ illustrative estimate)</td>
                       </tr>
                       <tr className="hover:bg-surface-50/50">
                         <td className="p-4 font-semibold text-foreground">Asset Ownership</td>
                         <td className="p-4 text-foreground/75 font-mono text-xs">Rented (lose access if you cancel)</td>
-                        <td className="p-4 font-mono text-xs font-semibold bg-brand/5 text-emerald-300">100% Owned (Your repo, your database)</td>
+                        <td className="p-4 font-mono text-xs font-semibold bg-brand/5 text-emerald-700">100% Owned (Your repo, your database)</td>
                       </tr>
                     </tbody>
                   </table>
@@ -538,7 +538,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 </p>
 
                 {/* Dual CTAs after TCO Proof Section */}
-                <div className="mt-6 flex flex-wrap gap-3 pt-5 border-t border-white/10">
+                <div className="mt-6 flex flex-wrap gap-3 pt-5 border-t border-border/80">
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-deep transition"
@@ -548,7 +548,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                   </Link>
                   <Link
                     href="/try-voice-agent"
-                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
+                    className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-white px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-surface-100 transition"
                   >
                     Hear a live AI demo
                   </Link>
@@ -559,15 +559,15 @@ export default async function DevelopmentSlugPage(props: Props) {
 
           {/* MISTAKES TO AVOID */}
           <section className="container-shell mt-14 md:mt-18">
-            <div className="rounded-3xl border border-amber-400/25 bg-amber-500/10 p-6 md:p-10">
-              <div className="flex items-center gap-2 text-amber-300 font-semibold text-sm">
+            <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6 md:p-10">
+              <div className="flex items-center gap-2 text-amber-800 font-semibold text-sm">
                 <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0" />
                 Critical Mistakes to Avoid in Production Builds
               </div>
               <div className="mt-4 space-y-3">
                 {service.mistakesToAvoid.map((mistake, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm text-foreground/80 leading-relaxed">
-                    <span className="font-bold text-amber-300 shrink-0">{i + 1}.</span>
+                    <span className="font-bold text-amber-800 shrink-0">{i + 1}.</span>
                     <p>{mistake}</p>
                   </div>
                 ))}
@@ -590,7 +590,7 @@ export default async function DevelopmentSlugPage(props: Props) {
               {service.faqs.map((faq) => (
                 <div
                   key={faq.question}
-                  className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs"
+                  className="rounded-2xl border border-border/80 bg-white p-6 shadow-xs"
                 >
                   <h3 className="font-display text-lg font-semibold text-foreground">
                     {faq.question}
@@ -606,7 +606,7 @@ export default async function DevelopmentSlugPage(props: Props) {
           {/* INTERNAL LINKS */}
           <section className="container-shell mt-14 md:mt-18">
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-surface-50 p-6">
+              <div className="rounded-2xl border border-border/80 bg-surface-50 p-6">
                 <div className="flex items-center gap-2 text-foreground font-semibold text-sm mb-4">
                   <Layers className="h-4 w-4 text-brand" />
                   Related Capability Stacks
@@ -626,7 +626,7 @@ export default async function DevelopmentSlugPage(props: Props) {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-surface-50 p-6">
+              <div className="rounded-2xl border border-border/80 bg-surface-50 p-6">
                 <div className="flex items-center gap-2 text-foreground font-semibold text-sm mb-4">
                   <BookOpen className="h-4 w-4 text-brand" />
                   Supporting Operator Insights
@@ -650,7 +650,7 @@ export default async function DevelopmentSlugPage(props: Props) {
 
           {/* FINAL CTA */}
           <section className="container-shell mt-16 md:mt-20">
-            <div className="rounded-3xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-white md:px-12 md:py-16">
+            <div className="rounded-3xl saas-grid-bg border border-brand/30 bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
               <div className="max-w-2xl">
                 <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight">
                   Scope Your Custom Development Project

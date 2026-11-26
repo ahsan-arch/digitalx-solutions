@@ -46,8 +46,8 @@ export function FAQAccordion({
             className={cn(
               "rounded-xl border transition-colors duration-150 overflow-hidden",
               isOpen
-                ? "border-cyan-400/35 bg-[#0d1421]/95 shadow-xs"
-                : "border-white/10 bg-[#070a11]/75 hover:border-white/25 hover:bg-[#0d1421]/80"
+                ? "border-brand/30 bg-white shadow-xs"
+                : "border-border/80 bg-surface-sunken hover:border-brand/35 hover:bg-white"
             )}
           >
             <button
@@ -63,8 +63,8 @@ export function FAQAccordion({
               </h3>
               <div
                 className={cn(
-                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-[#0d1421] text-slate-300 transition-transform duration-200",
-                  isOpen && "rotate-180 text-cyan-300 border-cyan-400/30 bg-cyan-500/10"
+                  "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80 transition-transform duration-200",
+                  isOpen && "rotate-180 text-brand border-brand/30 bg-brand/10"
                 )}
                 aria-hidden="true"
               >
@@ -85,7 +85,7 @@ export function FAQAccordion({
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
               className="overflow-hidden"
             >
-              <div className="px-5 pb-6 pt-1 sm:px-6 text-sm leading-relaxed text-slate-300 border-t border-white/10">
+              <div className="px-5 pb-6 pt-1 sm:px-6 text-sm leading-relaxed text-foreground/80 border-t border-border/80">
                 {item.answer}
               </div>
             </m.div>

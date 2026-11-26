@@ -26,7 +26,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#070a11",
+  themeColor: "#f7f2e8",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -104,7 +104,7 @@ export const metadata: Metadata = {
         },
   appleWebApp: {
     capable: true,
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
     title: "DigitalX",
   },
   formatDetection: {
@@ -123,7 +123,7 @@ export default function RootLayout({
   const webSiteSchema = generateWebSiteSchema();
 
   return (
-    <html lang="en-AU" className="dark">
+    <html lang="en-AU">
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

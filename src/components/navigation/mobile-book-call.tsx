@@ -22,7 +22,7 @@ export function MobileBookCall() {
       aria-label="Mobile sticky action bar"
       className="fixed inset-x-0 bottom-3 z-40 px-3 md:hidden"
     >
-      <div className="mx-auto flex max-w-md items-center gap-2 rounded-2xl border border-white/15 bg-[#0d1421]/95 p-1.5 shadow-lg backdrop-blur-xl">
+      <div className="mx-auto flex max-w-md items-center gap-2 rounded-2xl border border-border/80 bg-white p-1.5 shadow-lg backdrop-blur-xl">
         <Link
           href="/contact"
           onClick={() => trackStrategyCallClick("mobile_sticky_book")}
@@ -47,7 +47,7 @@ export function MobileBookCall() {
           rel="noopener noreferrer"
           onClick={() => trackWhatsAppClick("mobile_sticky")}
           aria-label="Chat with DigitalX Solutions on WhatsApp"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-400/25 bg-emerald-500/15 text-emerald-300 active:scale-[0.98] transition-transform"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-700 active:scale-[0.98] transition-transform"
         >
           <MessageSquare className="h-4 w-4" />
         </a>

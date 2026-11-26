@@ -78,7 +78,7 @@ export default function AiVoiceReceptionistServicePage() {
       <main id="main" className="pb-24 pt-12">
         {/* SECTION 1: HERO */}
         <section className="container-shell">
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d1421]/85 px-6 py-12 shadow-xs md:px-12 md:py-16">
+          <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white px-6 py-12 shadow-xs md:px-12 md:py-16">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Autonomous inbound voice telephony across Australia and the US
@@ -100,7 +100,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </Link>
                 <Link
                   href="/try-voice-agent"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#0d1421]/85 px-6 py-3.5 text-sm font-medium text-foreground transition hover:bg-surface-sunken"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-white px-6 py-3.5 text-sm font-medium text-foreground transition hover:bg-surface-sunken"
                 >
                   Test AI Voice in Browser
                   <ArrowRight className="h-4 w-4" />
@@ -126,7 +126,7 @@ export default function AiVoiceReceptionistServicePage() {
 
         {/* SECTION 2: THE REVENUE LEAK */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Operational diagnosis
@@ -140,8 +140,8 @@ export default function AiVoiceReceptionistServicePage() {
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-3">
-              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
+              <div className="rounded-xl border border-border/80 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <PhoneCall className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -152,8 +152,8 @@ export default function AiVoiceReceptionistServicePage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
+              <div className="rounded-xl border border-border/80 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <Clock className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -164,8 +164,8 @@ export default function AiVoiceReceptionistServicePage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0d1421]/85 text-foreground/80">
+              <div className="rounded-xl border border-border/80 bg-surface-page p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/80 bg-white text-foreground/80">
                   <MessageSquare className="h-5 w-5 text-brand" />
                 </div>
                 <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
@@ -186,7 +186,7 @@ export default function AiVoiceReceptionistServicePage() {
 
         {/* SECTION 3: INTERACTIVE PROOF / LIVE DEMO */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Audio benchmarks
@@ -200,7 +200,7 @@ export default function AiVoiceReceptionistServicePage() {
             </div>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
-              <div className="flex flex-col justify-between rounded-xl border border-white/10 bg-surface-page p-5">
+              <div className="flex flex-col justify-between rounded-xl border border-border/80 bg-surface-page p-5">
                 <div>
                   <span className="text-xs font-semibold text-brand">
                     Home Services
@@ -222,7 +222,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between rounded-xl border border-white/10 bg-surface-page p-5">
+              <div className="flex flex-col justify-between rounded-xl border border-border/80 bg-surface-page p-5">
                 <div>
                   <span className="text-xs font-semibold text-brand">
                     Healthcare
@@ -244,7 +244,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between rounded-xl border border-white/10 bg-surface-page p-5">
+              <div className="flex flex-col justify-between rounded-xl border border-border/80 bg-surface-page p-5">
                 <div>
                   <span className="text-xs font-semibold text-brand">
                     Professional Services
@@ -271,7 +271,7 @@ export default function AiVoiceReceptionistServicePage() {
 
         {/* SECTION 4: HOW IT WORKS */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Turnkey deployment framework
@@ -285,7 +285,7 @@ export default function AiVoiceReceptionistServicePage() {
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+              <div className="rounded-xl border border-border/80 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Days 1 to 2
                 </p>
@@ -297,7 +297,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+              <div className="rounded-xl border border-border/80 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Days 3 to 5
                 </p>
@@ -309,7 +309,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-surface-page p-6">
+              <div className="rounded-xl border border-border/80 bg-surface-page p-6">
                 <p className="text-xs font-semibold text-brand">
                   Days 6 to 7
                 </p>
@@ -341,7 +341,7 @@ export default function AiVoiceReceptionistServicePage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs">
+            <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Home Services &amp; Trades
               </h3>
@@ -353,7 +353,7 @@ export default function AiVoiceReceptionistServicePage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs">
+            <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Medical &amp; Dental Clinics
               </h3>
@@ -365,7 +365,7 @@ export default function AiVoiceReceptionistServicePage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs">
+            <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Real Estate &amp; Advisory
               </h3>
@@ -377,7 +377,7 @@ export default function AiVoiceReceptionistServicePage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-[#0d1421]/85 p-6 shadow-xs">
+            <div className="rounded-xl border border-border/80 bg-white p-6 shadow-xs">
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Marketing &amp; Agencies
               </h3>
@@ -393,7 +393,7 @@ export default function AiVoiceReceptionistServicePage() {
 
         {/* SECTION 6: TECHNICAL SPECIFICATIONS & ARCHITECTURE */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 Architectural Standards
@@ -407,7 +407,7 @@ export default function AiVoiceReceptionistServicePage() {
             </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-lg border border-white/10 bg-surface-page p-5">
+              <div className="rounded-lg border border-border/80 bg-surface-page p-5">
                 <span className="text-xs font-semibold text-brand">Speech Engine</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Deepgram Nova-2</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
@@ -415,7 +415,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-white/10 bg-surface-page p-5">
+              <div className="rounded-lg border border-border/80 bg-surface-page p-5">
                 <span className="text-xs font-semibold text-brand">Voice Latency</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Natural Human Turn-Taking</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
@@ -423,7 +423,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-white/10 bg-surface-page p-5">
+              <div className="rounded-lg border border-border/80 bg-surface-page p-5">
                 <span className="text-xs font-semibold text-brand">Integration Layer</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Bi-Directional Webhooks</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
@@ -431,7 +431,7 @@ export default function AiVoiceReceptionistServicePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-white/10 bg-surface-page p-5">
+              <div className="rounded-lg border border-border/80 bg-surface-page p-5">
                 <span className="text-xs font-semibold text-brand">Telephony Security</span>
                 <p className="mt-1 text-base font-semibold text-foreground">Carrier SIP Forwarding</p>
                 <p className="mt-1.5 text-xs text-foreground/75 leading-relaxed">
@@ -441,7 +441,7 @@ export default function AiVoiceReceptionistServicePage() {
             </div>
 
             {/* Compliance Note */}
-            <div className="mt-6 rounded-xl border border-white/10 bg-surface-50 p-4 text-xs text-foreground/75">
+            <div className="mt-6 rounded-xl border border-border/80 bg-surface-50 p-4 text-xs text-foreground/75">
               <p>
                 <strong>Telephony Compliance &amp; Recording Notice:</strong> All voice deployments can be configured with automated call recording disclosures compliant with telecommunications regulations across Australia and the United States. For detailed state and federal compliance guidance, review our guide on{" "}
                 <Link href="/insights/ai-call-recording-laws-australia-us" className="text-brand underline hover:text-brand-deep">
@@ -454,7 +454,7 @@ export default function AiVoiceReceptionistServicePage() {
 
         {/* SECTION 7: BUYER FAQ ACCORDION */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-12 shadow-xs">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">
                 Buyer FAQ
@@ -475,7 +475,7 @@ export default function AiVoiceReceptionistServicePage() {
 
         {/* SECTION 8: BOTTOM CONVERSION BANNER */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl saas-grid-bg border border-cyan-400/25 bg-[#0d1526]/95 px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="rounded-2xl saas-grid-bg border border-brand/30 bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
             <div className="max-w-2xl">
               <h2 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
                 Ready to Automate Your Inbound Phone Lines?

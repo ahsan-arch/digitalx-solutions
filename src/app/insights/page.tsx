@@ -70,7 +70,7 @@ export default function InsightsPage() {
             <section className="container-shell">
                 <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
                     <div>
-                        <span className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+                        <span className="inline-flex items-center gap-1.5 rounded-md border border-border/80 bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
                             Technical Field Notes
                         </span>
                         <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
@@ -95,7 +95,7 @@ export default function InsightsPage() {
                     <Link
                         key={article.slug}
                         href={`/insights/${article.slug}`}
-                        className="group block rounded-2xl border border-white/10 bg-surface-50 p-6 transition hover:border-brand/45"
+                        className="group block rounded-2xl border border-border/80 bg-surface-50 p-6 transition hover:border-brand/45"
                     >
                         <div className="mb-3 flex items-center gap-3 font-mono text-xs text-foreground/75">
                             <time dateTime={article.date}>

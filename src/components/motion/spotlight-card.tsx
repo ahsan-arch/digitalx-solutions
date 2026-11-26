@@ -9,7 +9,7 @@ interface SpotlightCardProps {
 }
 
 /**
- * Dark-mode glassmorphic container with subtle cyan cursor-tracking radial spotlight.
+ * Light-mode architectural container with subtle terracotta cursor-tracking spotlight.
  * Updates CSS custom properties directly on ref.current.style (zero React re-renders)
  * and remains inert on coarse touch pointers.
  */
@@ -34,7 +34,7 @@ export function SpotlightCard({
       ref={cardRef}
       onMouseMove={handleMouseMove}
       className={cn(
-        "group/spot relative overflow-hidden transition-colors duration-200 hover:border-cyan-400/35",
+        "group/spot relative overflow-hidden transition-colors duration-200 hover:border-brand/35",
         className
       )}
     >
@@ -43,7 +43,7 @@ export function SpotlightCard({
         className="pointer-events-none absolute -inset-px rounded-[inherit] opacity-0 transition-opacity duration-300 [@media(hover:hover)]:group-hover/spot:opacity-100"
         style={{
           background:
-            "radial-gradient(380px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(56, 189, 248, 0.14), transparent 70%)",
+            "radial-gradient(380px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(188, 72, 18, 0.08), transparent 70%)",
         }}
       />
       <div className="relative z-10 h-full">{children}</div>
