@@ -23,7 +23,7 @@ export default function FactsPage() {
   const toAud = (usd: number) => `A$${Math.round((usd * audMultiplier) / 10) * 10}`;
 
   return (
-    <main id="main" className="pb-24 pt-12">
+    <main id="main" className="pb-24 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
 

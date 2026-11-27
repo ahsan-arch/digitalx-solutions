@@ -96,11 +96,9 @@ export function MissedCallCalculator({
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground/75">
           {subtitle}
         </p>
-        <div className="mt-3">
-          <span className="inline-flex items-center rounded-md border border-border/80 bg-surface-100 px-2.5 py-1 text-xs font-medium text-foreground/75">
-            Default values shown below are an illustrative example. Adjust inputs to reflect your business.
-          </span>
-        </div>
+        <p className="mt-2.5 text-xs italic text-ink-secondary">
+          Default values shown below are an illustrative example. Adjust inputs to reflect your business.
+        </p>
       </div>
 
       {/* Grid */}

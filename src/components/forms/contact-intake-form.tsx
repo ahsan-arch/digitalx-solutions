@@ -14,12 +14,22 @@ const needOptions = [
   "Full Audit & TCO Estimate",
 ] as const;
 
+const timeZoneOptions = [
+  "US Eastern (ET · New York)",
+  "US Central (CT · Chicago)",
+  "US Mountain (MT · Denver)",
+  "US Pacific (PT · Los Angeles)",
+  "Australia Eastern (AET · Sydney)",
+  "Australia Western (AWST · Perth)",
+] as const;
+
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export function ContactIntakeForm() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [need, setNeed] = useState<(typeof needOptions)[number]>(needOptions[0]);
+  const [timeZone, setTimeZone] = useState<(typeof timeZoneOptions)[number]>(timeZoneOptions[0]);
   const [details, setDetails] = useState("");
   const [callbackRequested, setCallbackRequested] = useState(false);
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -46,7 +56,7 @@ export function ContactIntakeForm() {
           need,
           callbackRequested,
           timeline: "ASAP",
-          details: details.trim() || `Interested in: ${need}`,
+          details: `Time Zone: ${timeZone}\n${details.trim() || `Interested in: ${need}`}`,
         }),
       });
 
@@ -104,23 +114,44 @@ export function ContactIntakeForm() {
           </div>
         </div>
 
-        <div>
-          <label htmlFor="contact-need" className="mb-1.5 block text-sm font-medium text-foreground/80">
-            What do you need?
-          </label>
-          <select
-            id="contact-need"
-            name="need"
-            value={need}
-            onChange={(event) => setNeed(event.target.value as (typeof needOptions)[number])}
-            className="w-full rounded-xl border border-border/80 bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
-          >
-            {needOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label htmlFor="contact-need" className="mb-1.5 block text-sm font-medium text-foreground/80">
+              What do you need?
+            </label>
+            <select
+              id="contact-need"
+              name="need"
+              value={need}
+              onChange={(event) => setNeed(event.target.value as (typeof needOptions)[number])}
+              className="w-full rounded-xl border border-border/80 bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+            >
+              {needOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="contact-timezone" className="mb-1.5 block text-sm font-medium text-foreground/80">
+              Preferred Time Zone
+            </label>
+            <select
+              id="contact-timezone"
+              name="timeZone"
+              value={timeZone}
+              onChange={(event) => setTimeZone(event.target.value as (typeof timeZoneOptions)[number])}
+              className="w-full rounded-xl border border-border/80 bg-white px-4 py-3 text-sm text-foreground outline-none transition focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
+            >
+              {timeZoneOptions.map((tz) => (
+                <option key={tz} value={tz}>
+                  {tz}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div>

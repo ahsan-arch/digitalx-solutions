@@ -1,12 +1,29 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowRight, PhoneCall, MessageSquare, Database, Clock, ChevronRight } from "lucide-react";
 import { generateBreadcrumbSchema, geoHreflangLanguages, siteConfig } from "@/lib/seo";
-import { HeroPreviewTabs, TiltCard, CertifiedPartnerStrip, ProjectCard, AudioCallPreview, FAQAccordion } from "@/components/ui";
-import { FeaturedBuildsShowcase } from "@/components/projects/featured-builds-showcase";
-import { MagneticButton, AnimatedCounter, StaggerGrid, StaggerGridItem, SpotlightCard } from "@/components/motion";
-import { heroMetrics, processSteps, solutions } from "@/data/redesign";
-import { industryCategories } from "@/data/industries";
+import { HeroPreviewTabs, CertifiedPartnerStrip, ProjectCard } from "@/components/ui";
+import { processSteps, solutions } from "@/data/redesign";
 import factsData from "@/data/facts";
+
+const FeaturedBuildsShowcase = dynamic(
+  () => import("@/components/projects/featured-builds-showcase").then((m) => m.FeaturedBuildsShowcase)
+);
+const FAQAccordion = dynamic(
+  () => import("@/components/ui/faq-accordion").then((m) => m.FAQAccordion)
+);
+const TiltCard = dynamic(
+  () => import("@/components/ui/tilt-card").then((m) => m.TiltCard)
+);
+const StaggerGrid = dynamic(
+  () => import("@/components/motion/stagger-group").then((m) => m.StaggerGroup)
+);
+const StaggerGridItem = dynamic(
+  () => import("@/components/motion/stagger-group").then((m) => m.StaggerItem)
+);
+const SpotlightCard = dynamic(
+  () => import("@/components/motion/spotlight-card").then((m) => m.SpotlightCard)
+);
 
 export const metadata = {
   title: "Custom CRM Development & AI Automation | DigitalX Solutions",
@@ -136,13 +153,12 @@ export default function HomePage() {
 
       <main id="main" className="pb-24">
         {/* SECTION 1: HERO */}
-        <section className="container-shell pt-10 md:pt-14">
-          <div className="saas-grid-bg relative overflow-hidden rounded-2xl border border-border/80 bg-white/95 px-6 py-10 shadow-xs backdrop-blur-md md:px-10 md:py-14">
+        <section className="container-shell pt-4 md:pt-6">
+          <div className="saas-grid-bg relative overflow-hidden rounded-lg border border-border/80 bg-white/95 px-6 py-8 shadow-xs md:px-10 md:py-12">
             <div className="grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
               <div>
-                <p className="mb-3 inline-flex items-center gap-2 rounded-md border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                  Custom software, voice telephony &amp; revenue automation
+                <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-brand">
+                  Custom Software, Voice Telephony &amp; Revenue Automation
                 </p>
                 <h1 className="font-display text-4xl leading-[1.08] tracking-tight text-foreground md:text-5xl font-semibold">
                   Custom CRM Development &amp; AI Revenue Operations
@@ -152,18 +168,16 @@ export default function HomePage() {
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <MagneticButton>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-deep"
-                    >
-                      Book a strategy call
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </MagneticButton>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-deep active:scale-[0.98]"
+                  >
+                    Book a strategy call
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                   <Link
                     href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-sunken px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-brand/30 hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-sunken"
                   >
                     <PhoneCall className="h-4 w-4 text-brand" />
                     Hear a live AI demo
@@ -178,25 +192,25 @@ export default function HomePage() {
 
             {/* Quick Metrics Bar */}
             <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4 backdrop-blur-sm">
+              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4">
                 <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">
-                  $<AnimatedCounter value={0} /> Per-Seat
+                  $0 Per-Seat
                 </p>
                 <p className="mt-1 text-sm text-foreground/70">100% Owned source code &amp; IP</p>
               </div>
-              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4 backdrop-blur-sm">
+              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4">
                 <p className="font-mono text-2xl font-semibold tabular-nums text-brand">
-                  &lt; <AnimatedCounter value={60} suffix="s" />
+                  &lt; 60s
                 </p>
                 <p className="mt-1 text-sm text-foreground/70">Missed-call SMS lead recovery</p>
               </div>
-              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4 backdrop-blur-sm">
+              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4">
                 <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">
-                  <AnimatedCounter value={60} suffix="%+" /> Est.
+                  60%+ Est.
                 </p>
                 <p className="mt-1 text-sm text-foreground/70">Illustrative 3-yr TCO reduction</p>
               </div>
-              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4 backdrop-blur-sm">
+              <div className="rounded-xl border border-border/80 bg-surface-sunken p-4">
                 <p className="font-mono text-2xl font-semibold tabular-nums text-foreground">5–14 Days</p>
                 <p className="mt-1 text-sm text-foreground/70">GHL &amp; AI voice launch</p>
               </div>
@@ -251,8 +265,8 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 3: WHY AUTOMATION MATTERS */}
-        <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs backdrop-blur-md">
+        <section className="cv-auto container-shell mt-16 md:mt-20">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-3xl">
               <p className="text-xs font-medium text-brand">
                 The cost of missed inbound calls
@@ -338,7 +352,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 4: BENTO SERVICES OVERVIEW */}
-        <section className="container-shell mt-16 md:mt-20">
+        <section className="cv-auto container-shell mt-16 md:mt-20">
           <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">Production capability stacks</p>
@@ -359,10 +373,10 @@ export default function HomePage() {
             <div className="md:col-span-2 h-full">
               <TiltCard
                 href="/development/custom-crm-development"
-                className="rounded-2xl border border-brand/30 bg-white p-6 md:p-8 shadow-xs backdrop-blur-md"
+                className="rounded-2xl border border-brand/30 bg-white p-6 md:p-8 shadow-xs"
               >
-                <div className="flex items-center justify-between">
-                  <span className="rounded-md bg-brand px-2.5 py-0.5 font-mono text-[11px] font-semibold text-white">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brand-deep">
                     Flagship Capability
                   </span>
                   <span className="font-mono text-xs font-semibold text-brand">3–6 Wks &bull; $0 Seat Fees</span>
@@ -384,7 +398,7 @@ export default function HomePage() {
               <div key={solution.slug} className="h-full">
                 <TiltCard
                   href={`/solutions/${solution.slug}`}
-                  className="rounded-xl border border-border/80 bg-white p-6 shadow-xs backdrop-blur-md"
+                  className="rounded-xl border border-border/80 bg-white p-6 shadow-xs"
                 >
                   <p className="text-xs font-medium text-brand">{solution.tagline}</p>
                   <h3 className="mt-2 font-display text-2xl text-foreground">{solution.name}</h3>
@@ -400,7 +414,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 5: PROJECTS & SHIPPED SOFTWARE */}
-        <section className="container-shell mt-16 md:mt-20">
+        <section className="cv-auto container-shell mt-16 md:mt-20">
           <FeaturedBuildsShowcase />
 
           <div className="mt-14 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -440,7 +454,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-surface-sunken px-6 py-3 text-sm font-semibold text-foreground hover:border-brand/30 hover:bg-white/10 transition"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-sunken px-6 py-3 text-sm font-semibold text-foreground hover:border-brand/30 hover:bg-surface-200 transition"
             >
               <PhoneCall className="h-4 w-4 text-brand" />
               Hear a live AI demo
@@ -449,8 +463,8 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 6: PROCESS */}
-        <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs backdrop-blur-md">
+        <section className="cv-auto container-shell mt-16 md:mt-20">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">14-day production roadmap</p>
               <h2 className="mt-2 font-display text-3xl tracking-tight text-foreground md:text-4xl">How We Take You Live in 14 Days</h2>
@@ -472,7 +486,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 7: INDUSTRIES & CITY COVERAGE */}
-        <section className="container-shell mt-16 md:mt-20">
+        <section className="cv-auto container-shell mt-16 md:mt-20">
           <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">Industry architectures</p>
@@ -530,7 +544,7 @@ export default function HomePage() {
               <Link
                 key={ind.href}
                 href={ind.href}
-                className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs backdrop-blur-md transition-colors hover:border-brand/30"
+                className="group rounded-xl border border-border/80 bg-white p-6 shadow-xs transition-colors hover:border-brand/30"
               >
                 <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                   {ind.title}
@@ -545,8 +559,8 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 8: FAQ ACCORDION */}
-        <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs backdrop-blur-md">
+        <section className="cv-auto container-shell mt-16 md:mt-20">
+          <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-12 shadow-xs">
             <div className="max-w-2xl">
               <p className="text-xs font-medium text-brand">
                 Frequently asked questions
@@ -567,25 +581,30 @@ export default function HomePage() {
 
         {/* SECTION 9: FINAL CTA */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="saas-grid-bg rounded-2xl border border-brand/30 bg-foreground px-6 py-12 text-white shadow-[0_0_60px_-18px_rgba(56,189,248,0.22)] md:px-12 md:py-16">
-            <div className="max-w-2xl">
-              <h2 className="font-display text-3xl tracking-tight md:text-5xl font-semibold leading-tight text-white">
-                Stop Losing Jobs to Missed Calls and Slow Follow-Ups
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-foreground/80 md:text-lg">
-                Let us audit your current call volume and map a bespoke automation pipeline. No pushy sales pitch, just a practical architectural plan with fixed pricing.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="saas-grid-bg rounded-2xl border border-border/80 border-t-[3px] border-t-brand bg-white px-6 py-10 shadow-sm md:px-12 md:py-14">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-brand-deep">
+                  Start Your Build
+                </p>
+                <h2 className="mt-2 font-display text-3xl tracking-tight md:text-4xl font-semibold leading-tight text-foreground">
+                  Stop Losing Jobs to Missed Calls and Slow Follow-Ups
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-ink-secondary md:text-lg">
+                  Let us audit your current call volume and map a bespoke automation pipeline. No pushy sales pitch, just a practical architectural plan with fixed pricing.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition-colors"
                 >
                   Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/try-voice-agent"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-sunken px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-surface-200 hover:border-brand/40"
                 >
                   <PhoneCall className="h-4 w-4 text-brand" />
                   Hear a live AI demo

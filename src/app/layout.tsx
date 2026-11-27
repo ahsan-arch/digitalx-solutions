@@ -20,8 +20,8 @@ import {
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "optional",
-  preload: false,
+  display: "swap",
+  preload: true,
   variable: "--font-inter",
 });
 
@@ -125,7 +125,6 @@ export default function RootLayout({
   return (
     <html lang="en-AU">
       <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://assets.apollo.io" />
         <GoogleTagManager />
@@ -146,7 +145,7 @@ export default function RootLayout({
         <GoogleTagManagerNoscript />
         <ScrollProgress />
         <SiteHeader />
-        <div className="relative min-h-screen pt-20">
+        <div className="relative min-h-screen">
           {children}
         </div>
         <Footer />

@@ -50,7 +50,7 @@ export default function TryVoiceAgentPage() {
   const faqSchema = generateFAQSchema(demoFaqs);
 
   return (
-    <main id="main" className="pb-20 pt-12">
+    <main id="main" className="pb-20 pt-5 md:pt-7">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

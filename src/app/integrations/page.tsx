@@ -35,7 +35,7 @@ export default function IntegrationsHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <main id="main" className="pb-24 pt-12">
+      <main id="main" className="pb-24 pt-5 md:pt-7">
         <section className="container-shell">
           <div className="max-w-3xl">
             <p className="mb-3 text-xs font-medium text-brand">Ecosystem &amp; Architecture</p>

@@ -70,7 +70,7 @@ export default function UsaPage() {
   const faqSchema = generateFAQSchema(usaFaqs);
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(usaLocalBusiness) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

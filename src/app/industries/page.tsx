@@ -32,7 +32,7 @@ export default function IndustriesHubPage() {
   );
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
 
@@ -48,12 +48,12 @@ export default function IndustriesHubPage() {
               operations, and reporting to your customer journey.
             </p>
 
-            <nav className="mt-8 flex flex-wrap gap-2" aria-label="Industry categories">
+            <nav className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5" aria-label="Industry categories">
               {industryCategories.map((category) => (
                 <a
                   key={category}
                   href={`#${category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                  className="rounded-md border border-border/80 bg-white px-3 py-1.5 text-xs font-medium text-foreground/70 transition hover:border-brand/40 hover:text-brand"
+                  className="border-b border-border/80 pb-1 text-xs font-medium text-foreground/75 transition hover:border-brand hover:text-brand"
                 >
                   {category}
                 </a>

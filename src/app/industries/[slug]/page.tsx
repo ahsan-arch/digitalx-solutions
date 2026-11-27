@@ -132,7 +132,7 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
       : null;
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {faqSchema && (
@@ -181,17 +181,10 @@ export default async function IndustryDetailPage({ params }: { params: Promise<P
         )}
 
         {industry.niches && industry.niches.length > 0 && (
-          <div className="mt-6 flex flex-wrap items-center gap-2">
-            <span className="font-mono text-xs font-medium text-foreground/75">Core Niches:</span>
-            {industry.niches.map((niche) => (
-              <span
-                key={niche}
-                className="rounded-md border border-border/80 bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/75"
-              >
-                {niche}
-              </span>
-            ))}
-          </div>
+          <p className="mt-5 font-mono text-xs leading-relaxed text-foreground/75">
+            <span className="font-semibold text-foreground">Core Niches: </span>
+            {industry.niches.join(" · ")}
+          </p>
         )}
       </section>
 

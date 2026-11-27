@@ -123,15 +123,15 @@ function SmartPropertyBuyingCanvas() {
   ];
 
   return (
-    <div className="rounded-xl border border-border/80 bg-surface-sunken overflow-hidden shadow-sm">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/80 bg-surface-50 px-4 py-2.5">
+    <div className="rounded-xl border border-border/80 bg-surface-sunken overflow-hidden shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/80 bg-white px-4 py-2.5">
         <div className="flex items-center gap-2 min-w-0">
           <Building2 className="h-4 w-4 text-brand shrink-0" />
           <span className="truncate text-xs font-semibold text-foreground">
             SPB Research &amp; Benchmarking Workbench
           </span>
         </div>
-        <div className="flex items-center gap-1 rounded-lg border border-border/80 bg-surface-sunken p-0.5 text-[11px]">
+        <div className="flex items-center gap-1 rounded-md border border-border/80 bg-surface-sunken p-0.5 text-[11px]">
           {(
             [
               ["scoring", "Scoring Matrix"],
@@ -144,9 +144,9 @@ function SmartPropertyBuyingCanvas() {
               type="button"
               onClick={() => setSubTab(key)}
               className={cn(
-                "rounded-md px-2.5 py-1 font-medium transition-colors",
+                "rounded px-2.5 py-1 font-medium transition-colors",
                 subTab === key
-                  ? "bg-white shadow-xs text-brand border border-brand/30"
+                  ? "bg-white text-brand-deep border border-border/70 shadow-2xs"
                   : "text-foreground/70 hover:text-foreground"
               )}
             >
@@ -174,7 +174,7 @@ function SmartPropertyBuyingCanvas() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-border/80 bg-white divide-y divide-border">
+            <div className="rounded-lg border border-border/80 bg-white divide-y divide-border/70">
               {sampleLots.map((row) => (
                 <div
                   key={row.lot}
@@ -186,14 +186,12 @@ function SmartPropertyBuyingCanvas() {
                       {row.builder} · Confidence: {row.confidence}
                     </p>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-3 shrink-0">
                     <span className="font-mono text-[11px] text-foreground/80">{row.price}</span>
                     <span
                       className={cn(
-                        "rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium",
-                        row.status === "Filtered"
-                          ? "border-border/80 bg-surface-sunken text-foreground/70"
-                          : "border-emerald-200 bg-emerald-50 text-emerald-700"
+                        "font-mono text-[11px] font-semibold",
+                        row.status === "Filtered" ? "text-foreground/60" : "text-emerald-700"
                       )}
                     >
                       {row.score}
@@ -207,9 +205,9 @@ function SmartPropertyBuyingCanvas() {
 
         {subTab === "ocr" && (
           <div className="rounded-lg border border-border/80 bg-white p-4 space-y-3 text-xs">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <span className="font-semibold text-foreground">Image-Only PDF Recovery Pipeline</span>
-              <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[11px] text-emerald-700">
+              <span className="font-mono text-[11px] font-semibold text-emerald-700">
                 RapidOCR + PyMuPDF
               </span>
             </div>
@@ -231,9 +229,9 @@ function SmartPropertyBuyingCanvas() {
 
         {subTab === "pipeline" && (
           <div className="rounded-lg border border-border/80 bg-white p-4 space-y-2.5 text-xs">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <span className="font-semibold text-foreground">Kommo CRM &amp; OS-Vault Auth Flow</span>
-              <span className="rounded-md border border-border/80 bg-surface-sunken px-2 py-0.5 font-mono text-[11px] text-foreground/80">
+              <span className="font-mono text-[11px] font-medium text-foreground/70">
                 keyring &rarr; .env
               </span>
             </div>
@@ -254,7 +252,7 @@ function SmartPropertyBuyingCanvas() {
           </div>
         )}
 
-        <div className="flex items-center justify-between px-1 text-[11px] text-foreground/70">
+        <div className="flex items-center justify-between px-1 text-[11px] text-foreground/65">
           <span>Architectural sample view · illustrative lot records</span>
           <span className="font-mono text-foreground/80">spb-ai-property-research-agent</span>
         </div>
@@ -270,25 +268,25 @@ function DigitalXCrmCanvas() {
   const isAdmin = roleView === "ADMIN";
 
   return (
-    <div className="rounded-xl border border-border/80 bg-surface-sunken overflow-hidden shadow-sm">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/80 bg-surface-50 px-4 py-2.5">
+    <div className="rounded-xl border border-border/80 bg-surface-sunken overflow-hidden shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/80 bg-white px-4 py-2.5">
         <div className="flex items-center gap-2">
           <Database className="h-4 w-4 text-brand shrink-0" />
           <span className="text-xs font-semibold text-foreground">DigitalX CRM · Command Centre</span>
         </div>
 
-        <div className="flex items-center gap-2">
-          <div className="inline-flex items-center gap-1 rounded-lg border border-border/80 bg-surface-sunken px-2 py-1 text-[11px] text-foreground/70">
+        <div className="flex items-center gap-3">
+          <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-foreground/70">
             <Search className="h-3 w-3 text-brand" />
-            <span className="font-mono">Cmd+K</span>
-          </div>
-          <div className="flex items-center rounded-lg border border-border/80 bg-surface-sunken p-0.5 text-[11px]">
+            Cmd+K
+          </span>
+          <div className="flex items-center rounded-md border border-border/80 bg-surface-sunken p-0.5 text-[11px]">
             <button
               type="button"
               onClick={() => setRoleView("ADMIN")}
               className={cn(
-                "rounded-md px-2 py-1 font-medium transition-colors",
-                isAdmin ? "bg-white shadow-xs text-brand border border-brand/30" : "text-foreground/70 hover:text-foreground"
+                "rounded px-2 py-1 font-medium transition-colors",
+                isAdmin ? "bg-white text-brand-deep border border-border/70 shadow-2xs" : "text-foreground/70 hover:text-foreground"
               )}
             >
               Admin RBAC
@@ -297,8 +295,8 @@ function DigitalXCrmCanvas() {
               type="button"
               onClick={() => setRoleView("MEMBER")}
               className={cn(
-                "rounded-md px-2 py-1 font-medium transition-colors",
-                !isAdmin ? "bg-white shadow-xs text-brand border border-brand/30" : "text-foreground/70 hover:text-foreground"
+                "rounded px-2 py-1 font-medium transition-colors",
+                !isAdmin ? "bg-white text-brand-deep border border-border/70 shadow-2xs" : "text-foreground/70 hover:text-foreground"
               )}
             >
               Ops Member
@@ -308,14 +306,14 @@ function DigitalXCrmCanvas() {
       </div>
 
       <div className="grid sm:grid-cols-[148px_1fr]">
-        <div className="border-b sm:border-b-0 sm:border-r border-border/80 bg-surface-50/80 p-3 space-y-1 text-xs">
+        <div className="border-b sm:border-b-0 sm:border-r border-border/80 bg-white p-3 space-y-1 text-xs">
           <button
             type="button"
             onClick={() => setActiveMod("command")}
             className={cn(
-              "w-full text-left rounded-lg px-2.5 py-1.5 font-medium transition-colors",
+              "w-full text-left rounded-md px-2.5 py-1.5 font-medium transition-colors",
               activeMod === "command"
-                ? "bg-white shadow-xs text-foreground border border-brand/30"
+                ? "bg-surface-sunken text-brand-deep border border-border/70"
                 : "text-foreground/70 hover:text-foreground"
             )}
           >
@@ -325,15 +323,15 @@ function DigitalXCrmCanvas() {
             type="button"
             onClick={() => setActiveMod("webhooks")}
             className={cn(
-              "w-full text-left rounded-lg px-2.5 py-1.5 font-medium transition-colors",
+              "w-full text-left rounded-md px-2.5 py-1.5 font-medium transition-colors",
               activeMod === "webhooks"
-                ? "bg-white shadow-xs text-foreground border border-brand/30"
+                ? "bg-surface-sunken text-brand-deep border border-border/70"
                 : "text-foreground/70 hover:text-foreground"
             )}
           >
             Webhook Hub (4)
           </button>
-          <div className="pt-2 border-t border-border/80 mt-2 space-y-1 text-[11px] text-foreground/70 px-2.5">
+          <div className="pt-2 border-t border-border/70 mt-2 space-y-1 text-[11px] text-foreground/65 px-2.5">
             <p>Proposals &amp; eSign</p>
             <p>Call Records</p>
             <p>Audit Log</p>
@@ -363,13 +361,13 @@ function DigitalXCrmCanvas() {
                 </div>
               </div>
 
-              <div className="rounded-lg border border-border/80 bg-white divide-y divide-border text-xs">
+              <div className="rounded-lg border border-border/80 bg-white divide-y divide-border/70 text-xs">
                 <div className="flex items-center justify-between px-3 py-2">
                   <div>
                     <p className="font-semibold text-foreground">AU Trade Operator · Sydney</p>
                     <p className="text-[11px] text-foreground/70">AI Voice + GHL Snapshot · Health 92/100</p>
                   </div>
-                  <span className="rounded border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[11px] text-emerald-700">
+                  <span className="font-mono text-[11px] font-semibold text-emerald-700">
                     WON &rarr; Active
                   </span>
                 </div>
@@ -378,14 +376,14 @@ function DigitalXCrmCanvas() {
                     <p className="font-semibold text-foreground">US Dental Practice · Austin</p>
                     <p className="text-[11px] text-foreground/70">Proposal v2 Sent · 1-Click Client Convert</p>
                   </div>
-                  <span className="rounded border border-border/80 bg-surface-sunken px-2 py-0.5 font-mono text-[11px] text-foreground/80">
+                  <span className="font-mono text-[11px] font-medium text-foreground/75">
                     {isAdmin ? "$3,200 Setup" : "Stage: Proposal"}
                   </span>
                 </div>
               </div>
             </>
           ) : (
-            <div className="rounded-lg border border-border/80 bg-white divide-y divide-border text-xs">
+            <div className="rounded-lg border border-border/80 bg-white divide-y divide-border/70 text-xs">
               {[
                 { ep: "POST /api/webhooks/ghl", desc: "GoHighLevel pipeline & SMS events" },
                 { ep: "POST /api/webhooks/apollo", desc: "Apollo outbound sequence replies" },
@@ -394,10 +392,10 @@ function DigitalXCrmCanvas() {
               ].map((hook) => (
                 <div key={hook.ep} className="flex items-center justify-between gap-2 px-3 py-2">
                   <div className="min-w-0">
-                    <p className="font-mono text-[11px] font-semibold text-brand truncate">{hook.ep}</p>
+                    <p className="font-mono text-[11px] font-semibold text-brand-deep truncate">{hook.ep}</p>
                     <p className="text-[11px] text-foreground/70">{hook.desc}</p>
                   </div>
-                  <span className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[10px] text-emerald-700 shrink-0">
+                  <span className="inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-emerald-700 shrink-0">
                     <Terminal className="h-3 w-3" />
                     200 OK
                   </span>
@@ -406,7 +404,7 @@ function DigitalXCrmCanvas() {
             </div>
           )}
 
-          <div className="flex items-center justify-between px-1 text-[11px] text-foreground/70">
+          <div className="flex items-center justify-between px-1 text-[11px] text-foreground/65">
             <span>RBAC state switch updates margin &amp; MRR visibility live</span>
             <span className="font-mono text-foreground/80">Prisma + Next.js</span>
           </div>
@@ -427,20 +425,20 @@ function Links2000Canvas() {
   ];
 
   return (
-    <div className="rounded-xl border border-border/80 bg-surface-sunken overflow-hidden shadow-sm">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/80 bg-surface-50 px-4 py-2.5">
+    <div className="rounded-xl border border-border/80 bg-surface-sunken overflow-hidden shadow-xs">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/80 bg-white px-4 py-2.5">
         <div className="flex items-center gap-2">
           <FileCheck2 className="h-4 w-4 text-brand shrink-0" />
           <span className="text-xs font-semibold text-foreground">Links 2000 · ISO/IEC 17025 LIMS</span>
         </div>
 
-        <div className="flex items-center gap-1 rounded-lg border border-border/80 bg-surface-sunken p-0.5 text-[11px]">
+        <div className="flex items-center gap-1 rounded-md border border-border/80 bg-surface-sunken p-0.5 text-[11px]">
           <button
             type="button"
             onClick={() => setTierView("certs")}
             className={cn(
-              "rounded-md px-2.5 py-1 font-medium transition-colors",
-              tierView === "certs" ? "bg-white shadow-xs text-brand border border-brand/30" : "text-foreground/70 hover:text-foreground"
+              "rounded px-2.5 py-1 font-medium transition-colors",
+              tierView === "certs" ? "bg-white text-brand-deep border border-border/70 shadow-2xs" : "text-foreground/70 hover:text-foreground"
             )}
           >
             Calibration Certs
@@ -449,8 +447,8 @@ function Links2000Canvas() {
             type="button"
             onClick={() => setTierView("routing")}
             className={cn(
-              "rounded-md px-2.5 py-1 font-medium transition-colors",
-              tierView === "routing" ? "bg-white shadow-xs text-brand border border-brand/30" : "text-foreground/70 hover:text-foreground"
+              "rounded px-2.5 py-1 font-medium transition-colors",
+              tierView === "routing" ? "bg-white text-brand-deep border border-border/70 shadow-2xs" : "text-foreground/70 hover:text-foreground"
             )}
           >
             3-Tier Routing
@@ -476,14 +474,14 @@ function Links2000Canvas() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-border/80 bg-white divide-y divide-border text-xs">
+            <div className="rounded-lg border border-border/80 bg-white divide-y divide-border/70 text-xs">
               {certRows.map((row) => (
                 <div key={row.name} className="flex items-center justify-between gap-2 px-3.5 py-2">
                   <div className="min-w-0">
                     <p className="font-semibold text-foreground truncate">{row.name}</p>
                     <p className="text-[11px] text-foreground/70">{row.std}</p>
                   </div>
-                  <span className="rounded border border-emerald-200 bg-emerald-50 px-2 py-0.5 font-mono text-[11px] text-emerald-700 shrink-0">
+                  <span className="font-mono text-[11px] font-semibold text-emerald-700 shrink-0">
                     {row.status}
                   </span>
                 </div>
@@ -499,23 +497,23 @@ function Links2000Canvas() {
             <div className="space-y-2">
               <div className="flex items-center justify-between rounded-lg bg-surface-sunken border border-border/80 p-2.5">
                 <span className="font-medium text-foreground">1. Primary Cloud DB · Supabase PostgreSQL</span>
-                <span className="inline-flex items-center gap-1 font-mono text-[11px] text-emerald-700">
+                <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-emerald-700">
                   <Lock className="h-3 w-3" /> RLS Enforced
                 </span>
               </div>
               <div className="flex items-center justify-between rounded-lg bg-surface-sunken border border-border/80 p-2.5">
                 <span className="font-medium text-foreground">2. Secondary API · Django REST (Python 3.12)</span>
-                <span className="font-mono text-[11px] text-foreground/80">SQLite / DRF</span>
+                <span className="font-mono text-[11px] text-foreground/75">SQLite / DRF</span>
               </div>
               <div className="flex items-center justify-between rounded-lg bg-surface-sunken border border-border/80 p-2.5">
                 <span className="font-medium text-foreground">3. Offline Cache · TanStack Query Client Store</span>
-                <span className="font-mono text-[11px] text-foreground/80">Zero Downtime</span>
+                <span className="font-mono text-[11px] text-foreground/75">Zero Downtime</span>
               </div>
             </div>
           </div>
         )}
 
-        <div className="flex items-center justify-between px-1 text-[11px] text-foreground/70">
+        <div className="flex items-center justify-between px-1 text-[11px] text-foreground/65">
           <span>Migrated from legacy VB6 + SQL Server schema</span>
           <span className="font-mono text-foreground/80">React 19 · Django · Supabase</span>
         </div>
@@ -541,120 +539,122 @@ export function FeaturedBuildsShowcase({
   const active = FEATURED_BUILDS.find((b) => b.slug === activeSlug) || FEATURED_BUILDS[0];
 
   return (
-      <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs backdrop-blur-md">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between border-b border-border/80 pb-6">
-          <div className="max-w-xl">
-            <p className="text-xs font-medium text-brand">Flagship engineering portfolio</p>
-            <h2 className="mt-2 font-display text-3xl tracking-tight text-foreground md:text-4xl">{heading}</h2>
-            <p className="mt-2 text-sm leading-relaxed text-foreground/80">{subheading}</p>
-          </div>
-
-          <div
-            role="tablist"
-            aria-label="Flagship Software Systems"
-            className="inline-flex flex-wrap sm:flex-nowrap items-center gap-1 rounded-lg border border-border/80 bg-surface-sunken p-1 shrink-0"
-          >
-            {FEATURED_BUILDS.map((build) => {
-              const selected = build.slug === activeSlug;
-              return (
-                <button
-                  key={build.slug}
-                  type="button"
-                  role="tab"
-                  id={`build-tab-${build.slug}`}
-                  aria-selected={selected}
-                  aria-controls={`build-panel-${build.slug}`}
-                  onClick={() => setActiveSlug(build.slug)}
-                  className={cn(
-                    "inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 text-xs font-semibold transition-colors",
-                    selected
-                      ? "bg-brand text-white shadow-2xs"
-                      : "text-foreground/80 hover:bg-surface-sunken hover:text-foreground"
-                  )}
-                >
-                  <span className={cn("font-mono text-[11px]", selected ? "text-white/90" : "text-brand")}>
-                    {build.index}
-                  </span>
-                  <span>{build.name}</span>
-                </button>
-              );
-            })}
-          </div>
+    <div className="rounded-2xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between border-b border-border/80 pb-6">
+        <div className="max-w-2xl">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-brand-deep">
+            Flagship Engineering Portfolio
+          </p>
+          <h2 className="mt-2 font-display text-3xl tracking-tight text-foreground md:text-4xl">{heading}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-foreground/75">{subheading}</p>
         </div>
 
-        {/* Active Build Content */}
         <div
-          id={`build-panel-${active.slug}`}
-          role="tabpanel"
-          aria-labelledby={`build-tab-${active.slug}`}
-          className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center"
+          role="tablist"
+          aria-label="Flagship Software Systems"
+          className="flex flex-wrap gap-2"
         >
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-md border border-border/80 bg-surface-sunken px-2.5 py-1 text-xs font-medium text-foreground">
-                <Layers className="h-3.5 w-3.5 text-brand" />
-                <span>{active.domain}</span>
-              </div>
-              <h3 className="mt-3 font-display text-2xl font-semibold text-foreground leading-snug">
-                {active.headline}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/80">{active.summary}</p>
-              <p className="mt-3 text-xs font-mono text-foreground/70">{active.architectureNote}</p>
-            </div>
-
-            <div className="grid grid-cols-3 gap-2.5">
-              {active.metrics.map((metric) => (
-                <div key={metric.label} className="rounded-xl border border-border/80 bg-surface-sunken p-3">
-                  <span className="block font-display text-lg font-semibold text-foreground tabular-nums">
-                    {metric.value}
-                  </span>
-                  <span className="mt-0.5 block text-[11px] leading-snug text-foreground/70">{metric.label}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-1.5">
-              {active.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center gap-1 rounded-md border border-border/80 bg-surface-sunken px-2.5 py-1 text-xs font-medium text-foreground"
-                >
-                  <ShieldCheck className="h-3 w-3 text-brand" />
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 pt-1">
-              <Link
-                href={`/case-studies/${active.slug}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-xs font-semibold text-white hover:bg-brand-deep transition-colors"
+          {FEATURED_BUILDS.map((build) => {
+            const isActive = build.slug === active.slug;
+            return (
+              <button
+                key={build.slug}
+                id={`build-tab-${build.slug}`}
+                role="tab"
+                type="button"
+                aria-selected={isActive}
+                aria-controls={`build-panel-${build.slug}`}
+                onClick={() => setActiveSlug(build.slug)}
+                className={cn(
+                  "inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
+                  isActive
+                    ? "border-brand/40 bg-brand text-white shadow-xs"
+                    : "border-border/80 bg-surface-sunken text-foreground/80 hover:border-brand/30 hover:text-foreground"
+                )}
               >
-                Read architecture case study
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-              {active.secondaryHref && active.secondaryLabel ? (
-                <Link
-                  href={active.secondaryHref}
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-border/80 bg-surface-sunken px-4 py-2.5 text-xs font-semibold text-foreground hover:bg-white/10 transition-colors"
-                >
-                  {active.secondaryLabel}
-                </Link>
-              ) : (
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-border/80 bg-surface-sunken px-4 py-2.5 text-xs font-semibold text-foreground hover:bg-white/10 transition-colors"
-                >
-                  Scope a similar build
-                </Link>
-              )}
-            </div>
-          </div>
-
-          <div className="lg:col-span-7">
-            <ArchitecturalProductPreview slug={active.slug} />
-          </div>
+                <span className={cn("font-mono text-[11px]", isActive ? "text-white/85" : "text-ink-tertiary")}>
+                  {build.index}
+                </span>
+                <span>{build.name}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
+
+      {/* Active Build Content */}
+      <div
+        id={`build-panel-${active.slug}`}
+        role="tabpanel"
+        aria-labelledby={`build-tab-${active.slug}`}
+        className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-center"
+      >
+        <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
+          <div>
+            <p className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brand-deep">
+              <Layers className="h-3.5 w-3.5 text-brand" />
+              <span>{active.domain}</span>
+            </p>
+            <h3 className="mt-2 font-display text-2xl font-semibold text-foreground leading-snug">
+              {active.headline}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-foreground/80">{active.summary}</p>
+            <p className="mt-3 text-xs font-mono text-foreground/70">{active.architectureNote}</p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2.5">
+            {active.metrics.map((metric) => (
+              <div key={metric.label} className="rounded-lg border border-border/80 bg-surface-sunken p-3">
+                <span className="block font-display text-lg font-semibold text-foreground tabular-nums">
+                  {metric.value}
+                </span>
+                <span className="mt-0.5 block text-[11px] leading-snug text-foreground/70">{metric.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border/60 pt-3">
+            {active.stack.map((tech) => (
+              <span
+                key={tech}
+                className="inline-flex items-center gap-1.5 font-mono text-xs font-medium text-foreground/80"
+              >
+                <ShieldCheck className="h-3.5 w-3.5 text-brand" />
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 pt-1">
+            <Link
+              href={`/case-studies/${active.slug}`}
+              className="inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-xs font-semibold text-white hover:bg-brand-deep transition-colors"
+            >
+              Read architecture case study
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+            {active.secondaryHref && active.secondaryLabel ? (
+              <Link
+                href={active.secondaryHref}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-border/80 bg-surface-sunken px-4 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-200 transition-colors"
+              >
+                {active.secondaryLabel}
+              </Link>
+            ) : (
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-border/80 bg-surface-sunken px-4 py-2.5 text-xs font-semibold text-foreground hover:bg-surface-200 transition-colors"
+              >
+                Scope a similar build
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div className="lg:col-span-7">
+          <ArchitecturalProductPreview slug={active.slug} />
+        </div>
+      </div>
+    </div>
   );
 }

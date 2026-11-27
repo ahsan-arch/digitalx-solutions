@@ -55,7 +55,7 @@ export default function DevelopmentHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <main id="main" className="pb-24 pt-12">
+      <main id="main" className="pb-24 pt-5 md:pt-7">
         <section className="container-shell">
           <div className="max-w-3xl">
             <p className="mb-3 text-xs font-medium text-brand">Software Engineering &amp; Custom Architecture</p>
@@ -204,15 +204,15 @@ export default function DevelopmentHubPage() {
 
         {/* CTA Banner */}
         <section className="container-shell mt-16">
-          <div className="rounded-2xl saas-grid-bg border border-brand/30 bg-foreground p-8 text-center text-white md:p-12">
-            <h2 className="font-display text-3xl md:text-4xl">Have a complex technical requirement?</h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/80">
+          <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white p-8 text-center shadow-sm md:p-12">
+            <h2 className="font-display text-3xl text-foreground md:text-4xl">Have a complex technical requirement?</h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink-secondary">
               Talk directly with a senior solutions engineer. We will review your existing system architecture and deliver a phased delivery proposal with fixed pricing.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-xl bg-brand px-7 py-3 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
+                className="inline-flex items-center rounded-lg bg-brand px-7 py-3 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition-colors"
               >
                 Schedule an Engineering Consultation
               </Link>

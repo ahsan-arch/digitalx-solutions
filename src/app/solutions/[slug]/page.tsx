@@ -110,7 +110,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
       : null;
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       {faqSchema && (
@@ -353,10 +353,10 @@ export default async function SolutionDetailPage({ params }: { params: Promise<P
                     }`}
                 >
                   <div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between gap-2">
                       <h3 className="font-display text-xl font-bold text-foreground">{tier.name}</h3>
                       {tier.highlight && (
-                        <span className="rounded-md border border-brand/30 bg-brand/5 px-2.5 py-0.5 text-xs font-semibold text-brand">
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-brand-deep">
                           Recommended
                         </span>
                       )}

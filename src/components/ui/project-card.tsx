@@ -26,13 +26,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const hasLogoPermission = !!project.logoFile;
 
   return (
-    <article className="flex h-full flex-col justify-between rounded-2xl border border-border/80 bg-white p-6 md:p-8 shadow-xs backdrop-blur-md hover:border-brand/30 transition-all">
+    <article className="flex h-full flex-col justify-between rounded-2xl border border-border/80 bg-white p-6 md:p-8 shadow-xs hover:border-brand/30 transition-all">
       <div>
         {/* Header: Client Identity & Industry */}
         <div className="flex items-center justify-between gap-4 border-b border-border/80 pb-5">
           <div className="flex items-center gap-3">
             {hasLogoPermission ? (
-              <div className="flex h-10 w-24 shrink-0 items-center rounded-lg bg-slate-100/95 px-2">
+              <div className="flex h-10 w-24 shrink-0 items-center rounded-lg bg-surface-sunken px-2">
                 <Image
                   src={project.logoFile!}
                   alt={`${clientDisplayName} client logo`}
@@ -103,13 +103,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <span className="font-mono text-[11px] font-medium text-foreground/70">
             Tools &amp; Infrastructure
           </span>
-          <div className="mt-2 flex flex-wrap gap-2">
+          <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-2">
             {project.toolsUsed.map((tool) => {
               const logo = toolLogos[tool];
               return (
                 <span
                   key={tool}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-border/80 bg-surface-sunken px-2.5 py-1 text-xs text-foreground/80"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground/80"
                 >
                   {logo && (
                     <span className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded bg-white/95 p-0.5">

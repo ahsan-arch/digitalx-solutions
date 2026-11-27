@@ -177,7 +177,7 @@ export default async function DevelopmentSlugPage(props: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
 
-        <main id="main" className="pb-24 pt-12">
+        <main id="main" className="pb-24 pt-5 md:pt-7">
           {/* HERO */}
           <section className="container-shell">
             <Link
@@ -189,10 +189,10 @@ export default async function DevelopmentSlugPage(props: Props) {
             </Link>
 
             <div className="max-w-3xl">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-md border border-border/80 bg-white px-3 py-1.5 font-mono text-xs font-medium text-brand">
-                <Code className="h-3.5 w-3.5" />
+              <p className="mb-3 inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.12em] text-brand-deep">
+                <Code className="h-3.5 w-3.5 text-brand" />
                 Custom Architecture Blueprint
-              </div>
+              </p>
               <h1 className="font-display text-4xl text-foreground md:text-5xl lg:text-6xl font-semibold leading-tight">
                 {service.name}
               </h1>
@@ -650,25 +650,27 @@ export default async function DevelopmentSlugPage(props: Props) {
 
           {/* FINAL CTA */}
           <section className="container-shell mt-16 md:mt-20">
-            <div className="rounded-3xl saas-grid-bg border border-brand/30 bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
-              <div className="max-w-2xl">
-                <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight">
-                  Scope Your Custom Development Project
-                </h2>
-                <p className="mt-4 text-base leading-relaxed text-white/80">
-                  Speak directly with our senior solutions architect. We will review your technical specifications, evaluate API constraints, and map a fixed-scope milestone delivery plan.
-                </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white px-6 py-12 shadow-sm md:px-12 md:py-14">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl">
+                  <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight text-foreground">
+                    Scope Your Custom Development Project
+                  </h2>
+                  <p className="mt-3 text-base leading-relaxed text-ink-secondary">
+                    Speak directly with our senior solutions architect. We will review your technical specifications, evaluate API constraints, and map a fixed-scope milestone delivery plan.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3 sm:flex-row lg:flex-col shrink-0">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition-colors"
                   >
                     Book a strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href="/try-voice-agent"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-7 py-3.5 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-sunken px-7 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-200 hover:border-brand/40"
                   >
                     Hear a live AI demo
                   </Link>

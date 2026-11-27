@@ -102,7 +102,7 @@ export default function ProcessPage() {
   const faqSchema = generateFAQSchema(processFaqs);
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
@@ -273,25 +273,27 @@ export default function ProcessPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="container-shell mt-16 rounded-xl bg-surface-inverse p-8 text-center md:p-12">
-        <h2 className="font-display text-display-sm text-ink-on-inverse">Ready to map your intake funnel?</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-body text-ink-on-inverse/80">
-          A 20-minute fit call covers your current intake, the leaks we usually find in your industry, and whether voice automation is worth
-          your time at your current volume.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover"
-          >
-            Book a discovery call
-          </Link>
-          <Link
-            href="/pricing"
-            className="inline-flex items-center rounded-xl border border-line-subtle bg-white/10 px-6 py-3 text-sm font-semibold text-ink-on-inverse transition hover:bg-white/20"
-          >
-            Review pricing models
-          </Link>
+      <section className="container-shell mt-16">
+        <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white p-8 text-center shadow-sm md:p-12">
+          <h2 className="font-display text-display-sm text-foreground">Ready to map your intake funnel?</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-body text-ink-secondary">
+            A 20-minute fit call covers your current intake, the leaks we usually find in your industry, and whether voice automation is worth
+            your time at your current volume.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white shadow-xs transition hover:bg-brand-deep"
+            >
+              Book a discovery call
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center rounded-lg border border-border/80 bg-surface-sunken px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-200 hover:border-brand/40"
+            >
+              Review pricing models
+            </Link>
+          </div>
         </div>
       </section>
     </main>

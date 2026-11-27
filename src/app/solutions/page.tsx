@@ -32,16 +32,16 @@ export default function SolutionsHubPage() {
   );
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
 
       <section className="container-shell">
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-border/80 bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/70">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-brand-deep">
               Capabilities Overview
-            </span>
+            </p>
             <h1 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Three integrated capabilities. One growth system.
             </h1>

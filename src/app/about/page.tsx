@@ -125,7 +125,7 @@ export default function AboutPage() {
                 }}
             />
 
-            <main id="main" className="pb-20 pt-12">
+            <main id="main" className="pb-20 pt-5 md:pt-7">
                 <section className="container-shell">
                     <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
                         <div>
@@ -234,14 +234,10 @@ export default function AboutPage() {
                                         Full-stack automation and CRM architect specializing in custom Next.js and PostgreSQL portals, self-hosted n8n orchestration, GoHighLevel CRM systems, and low-latency AI voice telephony. Jazib leads system architecture and production delivery for service businesses, healthcare clinics, and B2B operators across Australia and the United States.
                                     </p>
                                     <div className="mt-4">
-                                        <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
-                                        <div className="mt-1.5 flex flex-wrap gap-1.5">
-                                            {["Custom Next.js Portals", "PostgreSQL & Supabase", "GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP"].map((tech) => (
-                                                <span key={tech} className="rounded-md border border-border/80 bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
+                                        <span className="font-mono text-[11px] uppercase tracking-wider text-foreground/70">Core Stack</span>
+                                        <p className="mt-1 font-mono text-[11px] leading-relaxed text-foreground/85">
+                                            {["Custom Next.js Portals", "PostgreSQL & Supabase", "GoHighLevel", "n8n (Self-Hosted)", "Twilio SIP"].join(" · ")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="mt-5 pt-4 border-t border-border/80 flex items-center justify-between">
@@ -291,14 +287,10 @@ export default function AboutPage() {
                                         Specializes in GoHighLevel multi-location snapshot engineering, bi-directional webhook synchronization, carrier compliance (A2P 10DLC and Australian ACMA SMS standards), and automated lead-routing logic. Ensures clean data hygiene, CRM custom field mapping, and zero lead leakage across multi-step agency and contractor accounts.
                                     </p>
                                     <div className="mt-4">
-                                        <span className="text-[11px] font-medium text-foreground/75">Core Stack</span>
-                                        <div className="mt-1.5 flex flex-wrap gap-1.5">
-                                            {["GoHighLevel Snapshots", "SIP Trunking", "10DLC & ACMA Compliance", "CRM Webhooks"].map((tech) => (
-                                                <span key={tech} className="rounded-md border border-border/80 bg-white px-2 py-0.5 text-[11px] font-medium text-foreground/80">
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
+                                        <span className="font-mono text-[11px] uppercase tracking-wider text-foreground/70">Core Stack</span>
+                                        <p className="mt-1 font-mono text-[11px] leading-relaxed text-foreground/85">
+                                            {["GoHighLevel Snapshots", "SIP Trunking", "10DLC & ACMA Compliance", "CRM Webhooks"].join(" · ")}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="mt-5 pt-4 border-t border-border/80 flex items-center justify-between">
@@ -461,15 +453,15 @@ export default function AboutPage() {
                 </section>
 
                 <section className="container-shell mt-12">
-                    <div className="rounded-2xl saas-grid-bg border border-brand/30 bg-foreground px-6 py-12 text-center text-white md:px-10">
-                        <h2 className="font-display text-3xl md:text-4xl">Want a practical partner for your next growth phase?</h2>
-                        <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
+                    <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white px-6 py-12 text-center shadow-sm md:px-10">
+                        <h2 className="font-display text-3xl text-foreground md:text-4xl">Want a practical partner for your next growth phase?</h2>
+                        <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink-secondary md:text-base">
                             Share your goals and current bottlenecks. We will map a staged delivery plan with clear
                             ownership and measurable outcomes.
                         </p>
                         <Link
                             href="/contact"
-                            className="mt-8 inline-flex items-center rounded-xl bg-brand px-7 py-3 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition-colors"
+                            className="mt-8 inline-flex items-center rounded-lg bg-brand px-7 py-3 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition-colors"
                         >
                             Start a conversation
                         </Link>

@@ -162,6 +162,12 @@
     transition-timing-function: var(--ease-standard);
   }
 
+  /* Skip off-screen layout/paint until near viewport for faster mobile LCP & lower TBT */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 560px;
+  }
+
   /* Architectural subtle 1px warm stone grid for hero & architecture backdrops */
   .saas-grid-bg {
     background-image:

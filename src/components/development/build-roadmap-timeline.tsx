@@ -109,7 +109,7 @@ export function BuildRoadmapTimeline() {
                     </h3>
                   </div>
                 </div>
-                <span className="rounded-md border border-border/80 bg-surface-50 px-2.5 py-1 font-mono text-[11px] font-medium text-foreground/75">
+                <span className="font-mono text-xs font-medium text-foreground/75">
                   {step.deliverable}
                 </span>
               </div>

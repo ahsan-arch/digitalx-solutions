@@ -112,7 +112,7 @@ export default function MetaAdsPage() {
   ]);
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServicePageSchema({ name: "Meta Ads & Server-Side CAPI Tracking", description: "Full-funnel Meta Ads management with Facebook Conversions API and server-side tagging serving Australian and US businesses.", url: `${siteConfig.domain}/services/meta-ads` })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }} />

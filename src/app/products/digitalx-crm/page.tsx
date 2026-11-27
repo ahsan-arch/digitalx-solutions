@@ -77,14 +77,14 @@ export default function DigitalXCrmPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <main id="main" className="pb-24 pt-12">
+      <main id="main" className="pb-24 pt-5 md:pt-7">
         <div className="container-shell max-w-5xl">
           {/* Header */}
           <div className="text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-brand/20 bg-brand/5 px-2.5 py-1 font-mono text-xs font-medium text-brand">
-              <Cpu className="h-3.5 w-3.5" />
+            <p className="inline-flex items-center justify-center gap-1.5 font-mono text-xs font-medium uppercase tracking-[0.12em] text-brand-deep">
+              <Cpu className="h-3.5 w-3.5 text-brand" />
               Proprietary Next.js &amp; Prisma CRM
-            </span>
+            </p>
             <h1 className="mt-4 font-display text-4xl font-semibold text-foreground md:text-5xl">
               DigitalX CRM
             </h1>

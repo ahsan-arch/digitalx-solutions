@@ -141,18 +141,18 @@ export function PlatformIntegrationsStrip() {
   const { integratedPlatforms } = factsData;
 
   return (
-    <div className="border-t border-border/60 pt-8">
-      <p className="mb-6 text-center text-xs font-medium text-foreground/75">
+    <div className="border-t border-border/70 pt-8">
+      <p className="mb-5 text-center font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-ink-tertiary">
         Enterprise systems and platforms we integrate with
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+      <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:items-center sm:justify-center md:gap-10">
         {integratedPlatforms.map((platform) => (
           <div
             key={platform.name}
-            className="group flex flex-col items-center gap-1"
+            className="group flex flex-col items-center gap-1 text-center"
             title={`${platform.name}: ${platform.relationship}`}
           >
-            <div className="flex h-9 w-32 items-center justify-center rounded-lg px-2.5 py-1">
+            <div className="flex h-9 w-28 sm:w-32 items-center justify-center rounded-lg px-2 py-1">
               <Image
                 src={platform.logo}
                 alt={`${platform.name} integration logo`}
@@ -163,7 +163,7 @@ export function PlatformIntegrationsStrip() {
                 loading="lazy"
               />
             </div>
-            <span className="text-[11px] text-foreground/75 transition-colors">
+            <span className="text-[11px] text-ink-tertiary transition-colors">
               {platform.relationship.split("/")[0].trim()}
             </span>
           </div>

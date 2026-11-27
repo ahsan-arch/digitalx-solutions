@@ -61,7 +61,7 @@ export default function JazibShahidPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <main id="main" className="pb-24 pt-12">
+      <main id="main" className="pb-24 pt-5 md:pt-7">
         <div className="container-shell max-w-4xl">
           <Link
             href="/about"
@@ -77,10 +77,10 @@ export default function JazibShahidPage() {
                 JS
               </div>
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-1.5 rounded-md border border-border/80 bg-surface-50 px-2.5 py-1 text-xs font-medium text-foreground/75">
+                <p className="inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wider text-brand-deep">
                   <Shield className="h-3.5 w-3.5 text-brand" />
                   Executive Leadership &bull; Founded 2020
-                </div>
+                </p>
                 <h1 className="font-display text-3xl font-bold text-foreground md:text-4xl">
                   {founder.fullName}
                 </h1>
@@ -103,16 +103,9 @@ export default function JazibShahidPage() {
                 <h2 className="text-xs font-semibold text-foreground uppercase tracking-wider">
                   Core Engineering Stack
                 </h2>
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {coreFocus.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md border border-border/80 bg-white px-2.5 py-1 font-mono text-xs text-foreground/85"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <p className="mt-2 font-mono text-xs leading-relaxed text-foreground/85">
+                  {coreFocus.join(" · ")}
+                </p>
               </div>
 
               <div className="rounded-xl border border-border/80 bg-surface-50 p-4">

@@ -68,7 +68,7 @@ export default function ContactPage() {
   const faqSchema = generateFAQSchema(consultationFaqs);
 
   return (
-    <main id="main" className="pb-20 pt-12">
+    <main id="main" className="pb-20 pt-5 md:pt-7">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -117,7 +117,7 @@ export default function ContactPage() {
           </div>
 
           <LazyCalendarEmbed
-            src="https://calendar.app.google/3uYnBF2GrdyswwV59"
+            src="https://calendar.google.com/appointments/schedules/AcZssZ2ccauO0zBLqwTdm04A9S1TvIf3WGkfxbhbZyjk288-Pfo65ik0W2lhyl2Y-rsTHNnCTauHGdzx"
             title="Book a Strategy Call"
           />
         </div>

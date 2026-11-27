@@ -256,7 +256,7 @@ export default function PricingPage() {
   );
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <PricingTracker />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
@@ -359,23 +359,23 @@ export default function PricingPage() {
 
       {/* Final CTA */}
       <section className="container-shell mt-16">
-        <div className="rounded-2xl saas-grid-bg border border-brand/30 bg-foreground p-8 text-center md:p-12 text-white">
-          <h2 className="font-display text-3xl md:text-4xl font-bold">
+        <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white p-8 text-center md:p-12 shadow-sm">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
             Want a fixed quote for your custom CRM or call volume?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm md:text-base text-white/80 leading-relaxed">
+          <p className="mx-auto mt-3 max-w-xl text-sm md:text-base text-ink-secondary leading-relaxed">
             Book a 20-minute discovery call with our engineering leadership. Serving Australian and US businesses with clear, line-item milestone proposals.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-xs"
+              className="inline-flex items-center rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-deep shadow-xs"
             >
               Book a strategy call
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+              className="inline-flex items-center rounded-lg border border-border/80 bg-surface-sunken px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-surface-200 hover:border-brand/40"
             >
               Hear a live AI demo
             </Link>

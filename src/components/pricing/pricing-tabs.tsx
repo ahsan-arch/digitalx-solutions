@@ -61,7 +61,7 @@ const crmTiers = [
     timeline: "3–6 Weeks Delivery",
     summary: "Our flagship hybrid model: bespoke Next.js and PostgreSQL portals built on top of enterprise GHL/HubSpot APIs.",
     highlight: true,
-    badge: "Most Popular",
+    badge: "Recommended",
     ownershipBadge: "100% Source Code & IP Ownership",
     features: [
       "Everything in Setup & Integration",
@@ -193,11 +193,11 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
     <MotionProvider>
       <div className="w-full">
         {/* Controls Row: Category Tabs + USD/AUD Currency Switch */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
           <div
             role="tablist"
             aria-label="Pricing Categories"
-            className="relative inline-flex flex-wrap justify-center gap-1 rounded-xl border border-white/10 bg-[#0d1421] p-1.5 shadow-xs"
+            className="relative inline-flex flex-wrap justify-center gap-1 rounded-lg border border-border/80 bg-surface-sunken p-1 shadow-2xs"
           >
             <button
               role="tab"
@@ -207,25 +207,22 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               onClick={() => setActiveTab("crm")}
               type="button"
               className={cn(
-                "relative z-10 flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
+                "relative z-10 flex items-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
                 activeTab === "crm"
-                  ? "text-white"
-                  : "text-slate-300 hover:text-white"
+                  ? "text-foreground"
+                  : "text-ink-secondary hover:text-foreground"
               )}
             >
               {activeTab === "crm" && (
                 <m.span
                   layoutId="pricing-tab-pill"
                   transition={PILL_SPRING}
-                  className="absolute inset-0 rounded-lg border border-cyan-400/35 bg-[#142038] shadow-sm"
+                  className="absolute inset-0 rounded-md border border-border/70 bg-white shadow-2xs"
                   aria-hidden="true"
                 />
               )}
-              <Database className="relative z-10 h-4 w-4 text-cyan-400" />
+              <Database className={cn("relative z-10 h-4 w-4", activeTab === "crm" ? "text-brand" : "text-ink-secondary")} />
               <span className="relative z-10">Custom CRM &amp; Engineering Builds</span>
-              <span className="relative z-10 rounded-md bg-cyan-500/15 border border-cyan-400/25 px-2 py-0.5 font-mono text-[11px] font-semibold text-cyan-300">
-                Flagship
-              </span>
             </button>
 
             <button
@@ -236,21 +233,21 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               onClick={() => setActiveTab("retainers")}
               type="button"
               className={cn(
-                "relative z-10 flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
+                "relative z-10 flex items-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
                 activeTab === "retainers"
-                  ? "text-white"
-                  : "text-slate-300 hover:text-white"
+                  ? "text-foreground"
+                  : "text-ink-secondary hover:text-foreground"
               )}
             >
               {activeTab === "retainers" && (
                 <m.span
                   layoutId="pricing-tab-pill"
                   transition={PILL_SPRING}
-                  className="absolute inset-0 rounded-lg border border-cyan-400/35 bg-[#142038] shadow-sm"
+                  className="absolute inset-0 rounded-md border border-border/70 bg-white shadow-2xs"
                   aria-hidden="true"
                 />
               )}
-              <Layers className="relative z-10 h-4 w-4 text-cyan-400" />
+              <Layers className={cn("relative z-10 h-4 w-4", activeTab === "retainers" ? "text-brand" : "text-ink-secondary")} />
               <span className="relative z-10">AI Voice &amp; Automation Retainers</span>
             </button>
           </div>
@@ -259,7 +256,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
           <div
             role="group"
             aria-label="Select pricing display currency"
-            className="inline-flex items-center rounded-xl border border-white/10 bg-[#0d1421] p-1 shadow-2xs"
+            className="inline-flex items-center rounded-lg border border-border/80 bg-surface-sunken p-1 shadow-2xs"
           >
             {(["USD", "AUD"] as const).map((curr) => (
               <button
@@ -270,8 +267,8 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                 className={cn(
                   "rounded-md px-3.5 py-2 font-mono text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40",
                   currency === curr
-                    ? "border border-cyan-400/35 bg-[#142038] text-cyan-300 shadow-2xs"
-                    : "text-slate-400 hover:text-white"
+                    ? "border border-border/70 bg-white text-brand-deep shadow-2xs"
+                    : "text-ink-secondary hover:text-foreground"
                 )}
               >
                 {curr}
@@ -281,7 +278,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
         </div>
 
         {currency === "AUD" && (
-          <p className="mt-3 text-center text-[11px] text-slate-400">
+          <p className="mt-3 text-center text-xs text-ink-secondary">
             {factsData.servicePricingRanges.audExchangeRateNote}.
           </p>
         )}
@@ -292,16 +289,16 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
           role="tabpanel"
           aria-labelledby="tab-crm"
           aria-hidden={activeTab !== "crm"}
-          className={cn("mt-12", activeTab !== "crm" && "hidden")}
+          className={cn("mt-10", activeTab !== "crm" && "hidden")}
         >
           <div className="text-center max-w-3xl mx-auto">
-            <p className="font-mono text-xs font-medium text-brand-deep">
-              Fixed-scope milestone deliveries
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-brand-deep">
+              Fixed-Scope Milestone Deliveries
             </p>
             <h2 className="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
               Fixed-Scope Custom CRM &amp; Engineering Builds
             </h2>
-            <p className="mt-3 text-sm md:text-base leading-relaxed text-foreground/75">
+            <p className="mt-3 text-sm md:text-base leading-relaxed text-ink-secondary">
               Custom CRM builds start at {formatCurrencyPrice(2200, currency)} for turnkey API integration, {formatCurrencyPrice(8500, currency)} for Hybrid Next.js/PostgreSQL portals, and {formatCurrencyPrice(15000, currency, "+")} for multi-tenant platforms. Every build ships on fixed milestones into your cloud infrastructure with zero per-seat fees and full source code ownership.
             </p>
           </div>
@@ -312,59 +309,50 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               <div key={tier.name} className="h-full">
                 <SpotlightCard
                   className={cn(
-                    "h-full rounded-2xl border bg-[#0d1421]/85 p-6 md:p-8 backdrop-blur-md transition-all duration-200 [@media(hover:hover)]:hover:-translate-y-1",
+                    "h-full rounded-xl border bg-white p-6 md:p-8 transition-all duration-200 [@media(hover:hover)]:hover:-translate-y-0.5",
                     tier.highlight
-                      ? "border-cyan-400/50 shadow-[0_0_40px_-14px_rgba(56,189,248,0.28)] ring-1 ring-cyan-400/25 relative overflow-visible"
-                      : "border-white/10 shadow-xs"
+                      ? "border-brand/50 border-t-[3px] border-t-brand shadow-md"
+                      : "border-border/80 shadow-xs"
                   )}
                 >
-                  {tier.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
-                      <span className="inline-flex items-center gap-1 rounded-md bg-brand px-3.5 py-1 text-xs font-semibold text-white shadow-sm">
-                        {tier.badge}
-                      </span>
-                    </div>
-                  )}
-
                   <article className="flex h-full flex-col justify-between">
                     <div>
-                      <div className="flex items-start justify-between gap-2">
-                        <div>
-                          <h3 className="font-display text-xl font-semibold text-white">
-                            {tier.name}
-                          </h3>
-                          <p className="mt-1 font-mono text-xs font-medium text-cyan-300">
-                            {tier.timeline}
-                          </p>
-                        </div>
-                        {!tier.highlight && tier.badge && (
-                          <span className="rounded-md border border-white/10 bg-[#070a11]/80 px-2 py-0.5 text-[11px] font-medium text-slate-300 shrink-0">
-                            {tier.badge}
-                          </span>
+                      <p
+                        className={cn(
+                          "font-mono text-[11px] font-semibold uppercase tracking-[0.12em]",
+                          tier.highlight ? "text-brand-deep" : "text-ink-tertiary"
                         )}
-                      </div>
+                      >
+                        {tier.badge}
+                      </p>
+                      <h3 className="mt-2 font-display text-xl font-semibold text-foreground">
+                        {tier.name}
+                      </h3>
+                      <p className="mt-1 font-mono text-xs font-medium text-ink-secondary">
+                        {tier.timeline}
+                      </p>
 
-                      <div className="mt-4 flex items-baseline gap-2">
-                        <span className="font-display text-4xl font-semibold tracking-tight text-white">
+                      <div className="mt-5 flex items-baseline gap-2 border-t border-border/60 pt-5">
+                        <span className="font-display text-4xl font-semibold tracking-tight tabular-nums text-foreground">
                           {formatCurrencyPrice(tier.usdPrice, currency, tier.priceSuffix)}
                         </span>
-                        <span className="text-xs font-medium text-slate-400">
+                        <span className="text-xs font-medium text-ink-secondary">
                           {currency} &bull; {tier.cadence}
                         </span>
                       </div>
 
-                      <p className="mt-3 text-xs md:text-sm text-slate-300 leading-relaxed">
+                      <p className="mt-3 text-sm text-ink-secondary leading-relaxed">
                         {tier.summary}
                       </p>
 
-                      <div className="mt-6 border-t border-white/10 pt-6">
-                        <p className="text-xs font-medium text-slate-200">
+                      <div className="mt-6 border-t border-border/70 pt-5">
+                        <p className="font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-tertiary">
                           Included architecture deliverables
                         </p>
-                        <ul className="mt-3 space-y-2.5 text-xs text-slate-300">
+                        <ul className="mt-3 space-y-2.5 text-sm text-foreground/85">
                           {tier.features.map((feature) => (
-                            <li key={feature} className="flex items-start gap-2">
-                              <Check className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
+                            <li key={feature} className="flex items-start gap-2.5">
+                              <Check className="h-4 w-4 shrink-0 text-emerald-700 mt-0.5" />
                               <span>{feature}</span>
                             </li>
                           ))}
@@ -372,22 +360,22 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                       </div>
                     </div>
 
-                    <div className="mt-8 pt-6 border-t border-white/10">
+                    <div className="mt-8 pt-5 border-t border-border/70">
                       <Link
                         href={tier.href}
                         className={cn(
-                          "group/btn inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all",
+                          "group/btn inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all",
                           tier.highlight
                             ? "bg-brand text-white shadow-xs hover:bg-brand-deep"
-                            : "border border-border/80 bg-surface-sunken text-foreground hover:border-brand/30 hover:bg-surface-200"
+                            : "border border-border/80 bg-surface-sunken text-foreground hover:border-brand/40 hover:bg-surface-200"
                         )}
                       >
                         <span>{tier.cta}</span>
                         <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5" />
                       </Link>
                       {tier.ownershipBadge && (
-                        <p className="mt-2.5 text-center text-[11px] font-medium text-emerald-300 flex items-center justify-center gap-1">
-                          <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+                        <p className="mt-3 text-center text-xs font-medium text-emerald-800 flex items-center justify-center gap-1.5">
+                          <ShieldCheck className="h-3.5 w-3.5 text-emerald-700" />
                           {tier.ownershipBadge}
                         </p>
                       )}
@@ -399,36 +387,36 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
           </div>
 
           {/* TCO Comparison Table with Source & Calculation Inputs */}
-          <section className="mt-16 rounded-3xl border border-white/10 bg-[#0d1421]/85 p-6 md:p-10 shadow-xs backdrop-blur-md">
+          <section className="mt-14 rounded-xl border border-border/80 bg-white p-6 md:p-10 shadow-xs">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
               <div className="max-w-2xl">
-                <p className="font-mono text-xs font-medium text-cyan-300">
-                  Financial model (Illustrative estimate)
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-brand-deep">
+                  Financial Model (Illustrative Estimate)
                 </p>
-                <h3 className="mt-2 font-display text-2xl md:text-3xl font-semibold text-white">
+                <h3 className="mt-2 font-display text-2xl md:text-3xl font-semibold text-foreground">
                   Why a Hybrid Custom CRM Cuts Total Cost of Ownership by 60%+
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
                   Over 36 months, a 20-user team paying typical enterprise CRM seat fees spends {currency === "USD" ? "$77,000 to $123,000+" : "A$118,580 to A$189,420+"}. Replacing seat subscriptions with a Hybrid Custom CRM models an illustrative 3-year total of {currency === "USD" ? "$12,100 to $24,000" : "A$18,630 to A$36,960"}, cutting modeled 3-year cost by 60%+.
                 </p>
               </div>
 
               {/* Highlight Animated Counter Callout */}
-              <div className="flex items-center gap-5 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-5 py-4 shrink-0">
+              <div className="flex items-center gap-5 rounded-lg border border-emerald-700/20 bg-emerald-50/70 px-5 py-4 shrink-0">
                 <div>
-                  <span className="block font-mono text-[11px] text-emerald-300">
+                  <span className="block font-mono text-[11px] uppercase tracking-wider text-emerald-800">
                     Illustrative 3-yr reduction
                   </span>
-                  <span className="font-display text-3xl font-semibold text-emerald-300">
+                  <span className="font-display text-3xl font-semibold tabular-nums text-emerald-800">
                     <AnimatedCounter value={60} suffix="%+" /> Est.
                   </span>
                 </div>
-                <div className="h-10 w-px bg-emerald-400/20" aria-hidden="true" />
+                <div className="h-10 w-px bg-emerald-700/20" aria-hidden="true" />
                 <div>
-                  <span className="block font-mono text-[11px] text-slate-300">
+                  <span className="block font-mono text-[11px] uppercase tracking-wider text-ink-secondary">
                     Modeled Hybrid TCO
                   </span>
-                  <span className="font-mono text-xl font-semibold text-white">
+                  <span className="font-mono text-xl font-semibold tabular-nums text-foreground">
                     <AnimatedCounter
                       value={currency === "USD" ? 12100 : 18630}
                       prefix={currency === "USD" ? "$" : "A$"}
@@ -439,11 +427,11 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
             </div>
 
             {/* Animated Visual 3-Year Cost Comparison Bars */}
-            <div className="mt-8 grid gap-4 rounded-2xl border border-white/10 bg-[#070a11]/80 p-5 md:grid-cols-2">
+            <div className="mt-8 grid gap-5 rounded-lg border border-border/80 bg-surface-sunken p-5 md:grid-cols-2">
               <div>
-                <div className="flex items-center justify-between text-xs mb-2">
-                  <span className="font-semibold text-slate-200">Salesforce / HubSpot Enterprise (20 Seats / 3 Yrs)</span>
-                  <span className="font-mono font-semibold text-slate-300">
+                <div className="flex items-center justify-between gap-2 text-xs mb-2">
+                  <span className="font-semibold text-foreground">Salesforce / HubSpot Enterprise (20 Seats / 3 Yrs)</span>
+                  <span className="font-mono font-semibold text-ink-secondary shrink-0">
                     {currency === "USD" ? "$77,000 – $123,000+" : "A$118,580 – A$189,420+"}
                   </span>
                 </div>
@@ -454,14 +442,14 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.85, ease: EASE_PRECISION }}
                     style={{ originX: 0 }}
-                    className="h-full w-full rounded-sm bg-foreground/40"
+                    className="h-full w-full rounded-sm bg-foreground/35"
                   />
                 </div>
               </div>
               <div>
-                <div className="flex items-center justify-between text-xs mb-2">
-                  <span className="font-semibold text-cyan-300">DigitalX Hybrid Custom CRM (Unlimited Seats / 3 Yrs)</span>
-                  <span className="font-mono font-semibold text-emerald-300">
+                <div className="flex items-center justify-between gap-2 text-xs mb-2">
+                  <span className="font-semibold text-brand-deep">DigitalX Hybrid Custom CRM (Unlimited Seats / 3 Yrs)</span>
+                  <span className="font-mono font-semibold text-emerald-800 shrink-0">
                     {currency === "USD" ? "$12,100 – $24,000" : "A$18,630 – A$36,960"}
                   </span>
                 </div>
@@ -472,22 +460,22 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.85, delay: 0.15, ease: EASE_PRECISION }}
                     style={{ originX: 0 }}
-                    className="h-full w-full rounded-sm bg-emerald-600"
+                    className="h-full w-full rounded-sm bg-emerald-700"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 overflow-x-auto">
+            <div className="mt-8 overflow-x-auto rounded-lg border border-border/80">
               <table className="w-full text-left text-sm border-collapse">
                 <thead>
-                  <tr className="border-b border-white/10 bg-[#070a11]/80 text-xs font-semibold text-white">
+                  <tr className="border-b border-border/80 bg-surface-sunken text-xs font-semibold text-foreground">
                     <th scope="col" className="p-4">Cost Category</th>
                     <th scope="col" className="p-4">Legacy Enterprise CRM (Salesforce / HubSpot Pro)</th>
-                    <th scope="col" className="p-4 bg-cyan-500/10 text-cyan-300">DigitalX Hybrid Custom CRM</th>
+                    <th scope="col" className="p-4 bg-brand/[0.06] text-brand-deep">DigitalX Hybrid Custom CRM</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/10 text-slate-300">
+                <tbody className="divide-y divide-border/70 text-foreground/85 bg-white">
                   {tcoRows.map((row, idx) => (
                     <m.tr
                       key={row.category}
@@ -495,11 +483,11 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.3, delay: idx * 0.05, ease: EASE_PRECISION }}
-                      className="hover:bg-white/[0.03] transition-colors"
+                      className="hover:bg-surface-sunken/50 transition-colors"
                     >
-                      <td className="p-4 font-semibold text-white">{row.category}</td>
-                      <td className="p-4 text-slate-300 font-mono text-xs">{row.legacy}</td>
-                      <td className={cn("p-4 font-mono text-xs font-semibold bg-cyan-500/[0.06]", row.winner ? "text-emerald-300" : "text-white")}>
+                      <td className="p-4 font-semibold text-foreground">{row.category}</td>
+                      <td className="p-4 text-ink-secondary font-mono text-xs">{row.legacy}</td>
+                      <td className={cn("p-4 font-mono text-xs font-semibold bg-brand/[0.03]", row.winner ? "text-emerald-800" : "text-foreground")}>
                         {row.digitalx}
                       </td>
                     </m.tr>
@@ -508,21 +496,21 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               </table>
             </div>
 
-            <p className="mt-4 text-xs text-slate-400 leading-relaxed">
-              <strong className="text-slate-200">Source: {factsData.tcoModel.source}.</strong>{" "}
-              <strong className="text-slate-200">Calculation inputs:</strong> {factsData.tcoModel.calculationInputs}
+            <p className="mt-4 text-xs text-ink-secondary leading-relaxed">
+              <strong className="text-foreground">Source: {factsData.tcoModel.source}.</strong>{" "}
+              <strong className="text-foreground">Calculation inputs:</strong> {factsData.tcoModel.calculationInputs}
             </p>
           </section>
 
           {/* AEO Direct-Answer Accordions — ALWAYS mounted in SSR HTML DOM */}
-          <section className="mt-12 grid gap-4 md:grid-cols-3">
+          <section className="mt-10 grid gap-4 md:grid-cols-3">
             {aeoBlocks.map((block, index) => {
               const isOpen = openAeoIndices.includes(index);
               const contentId = `aeo-panel-${index}`;
               return (
                 <div
                   key={block.question}
-                  className="rounded-2xl border border-white/10 bg-[#0d1421]/85 overflow-hidden transition-colors hover:border-cyan-400/35"
+                  className="rounded-xl border border-border/80 bg-white overflow-hidden transition-colors hover:border-brand/40 shadow-2xs"
                 >
                   <button
                     type="button"
@@ -531,14 +519,14 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                     aria-controls={contentId}
                     className="flex w-full items-start justify-between gap-3 p-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40"
                   >
-                    <h4 className="font-display text-base font-semibold text-white">
+                    <h4 className="font-display text-base font-semibold text-foreground">
                       {block.question}
                     </h4>
                     <m.span
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
                       aria-hidden="true"
-                      className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-white/15 bg-[#070a11] text-slate-300"
+                      className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-border/80 bg-surface-sunken text-ink-secondary"
                     >
                       <ChevronDown className="h-3.5 w-3.5" />
                     </m.span>
@@ -554,7 +542,7 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
                     transition={{ duration: 0.22, ease: EASE_PRECISION }}
                     className="overflow-hidden"
                   >
-                    <p className="px-5 pb-5 text-xs leading-relaxed text-slate-300 border-t border-white/10 pt-3">
+                    <p className="px-5 pb-5 text-xs leading-relaxed text-ink-secondary border-t border-border/70 pt-3">
                       {block.answer}
                     </p>
                   </m.div>
@@ -564,32 +552,26 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
           </section>
 
           {/* Dual CTA Section */}
-          <section className="mt-12 rounded-2xl border border-white/10 bg-[#0d1421]/85 p-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between gap-6">
-            <div>
-              <h4 className="font-display text-xl font-semibold text-white">
+          <section className="mt-10 rounded-xl border border-border/80 bg-white p-7 md:p-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between gap-6 shadow-xs">
+            <div className="max-w-xl">
+              <h4 className="font-display text-xl font-semibold text-foreground">
                 Need a fixed quote for your custom CRM architecture?
               </h4>
-              <p className="mt-1 text-sm text-slate-300">
+              <p className="mt-1.5 text-sm text-ink-secondary leading-relaxed">
                 Speak directly with our solutions engineering team. We review your data model and provide a milestone proposal.
               </p>
-              <h2 className="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
-                Predictable AI Voice &amp; Automation Retainers
-              </h2>
-              <p className="mt-3 text-sm md:text-base leading-relaxed text-foreground/75">
-                AI voice and automation retainers range from {currency === "USD" ? "$295/mo" : "A$450/mo"} for missed-call SMS recovery to {currency === "USD" ? "$1,500/mo" : "A$2,310/mo"} for multi-location AI receptionists and pipelines. All carrier Twilio telephony usage passes through transparently at 0% markup directly in USD or AUD.
-              </p>
             </div>
-            <div className="mt-4 sm:mt-0 flex flex-wrap gap-3 shrink-0">
+            <div className="mt-5 sm:mt-0 flex flex-wrap justify-center sm:justify-end gap-3 shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition-all"
               >
                 Book a strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/try-voice-agent"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/80 bg-surface-sunken px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-surface-200 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-sunken px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-surface-200 hover:border-brand/40 transition-all"
               >
                 Hear a live AI demo
               </Link>
@@ -603,16 +585,16 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
           role="tabpanel"
           aria-labelledby="tab-retainers"
           aria-hidden={activeTab !== "retainers"}
-          className={cn("mt-12", activeTab !== "retainers" && "hidden")}
+          className={cn("mt-10", activeTab !== "retainers" && "hidden")}
         >
           <div className="text-center max-w-3xl mx-auto">
-            <p className="font-mono text-xs font-medium text-brand-deep">
-              Monthly operational infrastructure
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-brand-deep">
+              Monthly Operational Infrastructure
             </p>
             <h2 className="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
               Predictable AI Voice &amp; Automation Retainers
             </h2>
-            <p className="mt-3 text-sm md:text-base leading-relaxed text-foreground/75">
+            <p className="mt-3 text-sm md:text-base leading-relaxed text-ink-secondary">
               AI voice and automation retainers range from {currency === "USD" ? "$295/mo" : "A$450/mo"} for missed-call SMS recovery to {currency === "USD" ? "$1,500/mo" : "A$2,310/mo"} for multi-location AI receptionists and pipelines. All carrier Twilio telephony usage passes through transparently at 0% markup directly in USD or AUD.
             </p>
           </div>
@@ -623,45 +605,46 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
               <StaggerItem key={tier.name} className="h-full">
                 <SpotlightCard
                   className={cn(
-                    "h-full rounded-2xl border bg-white p-6 md:p-8 backdrop-blur-md transition-all duration-200 [@media(hover:hover)]:hover:-translate-y-1",
+                    "h-full rounded-xl border bg-white p-6 md:p-7 transition-all duration-200 [@media(hover:hover)]:hover:-translate-y-0.5",
                     tier.highlight
-                      ? "border-brand/30 shadow-md ring-1 ring-brand/25 relative"
+                      ? "border-brand/50 border-t-[3px] border-t-brand shadow-md"
                       : "border-border/80 shadow-xs"
                   )}
                 >
                   <article className="flex h-full flex-col justify-between">
                     <div>
-                      <div className="flex items-baseline justify-between gap-2">
-                        <h3 className="font-display text-lg font-semibold text-foreground">{tier.name}</h3>
-                        {tier.highlight && (
-                          <span className="rounded-md border border-brand/30 bg-brand/10 px-2.5 py-1 text-xs font-semibold text-brand shrink-0">
-                            Most Picked
-                          </span>
+                      <p
+                        className={cn(
+                          "font-mono text-[11px] font-semibold uppercase tracking-[0.12em]",
+                          tier.highlight ? "text-brand-deep" : "text-ink-tertiary"
                         )}
-                      </div>
-                      <p className="mt-2 font-display text-3xl font-semibold tabular-nums text-foreground">
+                      >
+                        {tier.highlight ? "Recommended" : "Monthly Retainer"}
+                      </p>
+                      <h3 className="mt-1.5 font-display text-lg font-semibold text-foreground">{tier.name}</h3>
+                      <p className="mt-2.5 font-display text-3xl font-semibold tabular-nums text-foreground">
                         {formatRetainerPrice(tier.price)}
                       </p>
-                      <p className="mt-3 text-xs md:text-sm text-foreground/80 leading-relaxed">{tier.summary}</p>
+                      <p className="mt-2.5 text-sm text-ink-secondary leading-relaxed">{tier.summary}</p>
 
-                                <ul className="mt-6 space-y-2.5 text-xs text-slate-300 border-t border-white/10 pt-5">
-                                  {tier.includes.map((item) => (
-                                    <li key={item} className="flex items-start gap-2">
-                                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-                                      <span>{item}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
+                      <ul className="mt-6 space-y-2.5 text-xs md:text-sm text-foreground/85 border-t border-border/70 pt-5">
+                        {tier.includes.map((item) => (
+                          <li key={item} className="flex items-start gap-2">
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                    <div className="mt-8 pt-5 border-t border-border/80">
+                    <div className="mt-8 pt-5 border-t border-border/70">
                       <Link
                         href="/contact"
                         className={cn(
-                          "inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-all",
+                          "inline-flex w-full items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition-all",
                           tier.highlight
                             ? "bg-brand text-white hover:bg-brand-deep shadow-xs"
-                            : "border border-border/80 bg-surface-sunken text-foreground hover:bg-surface-200 hover:border-brand/30"
+                            : "border border-border/80 bg-surface-sunken text-foreground hover:bg-surface-200 hover:border-brand/40"
                         )}
                       >
                         {tier.cta}
@@ -673,17 +656,17 @@ export function PricingTabs({ retainerTiers, carrierTable, calculatorNode }: Pri
             ))}
           </StaggerGroup>
 
-                    <p className="mt-5 text-center text-xs text-slate-400">
-                      Serving Australian and US businesses. Pricing toggled in {currency}. Australian clients can be invoiced in AUD with GST-compliant tax documentation upon request.
-                    </p>
+          <p className="mt-6 text-center text-xs text-ink-secondary">
+            Serving United States and Australian businesses. Pricing toggled in {currency}. Australian clients can be invoiced in AUD with GST-compliant tax documentation upon request.
+          </p>
 
-                    {/* Carrier Pass-Through Table */}
-                    <div className="mt-12">{carrierTable}</div>
+          {/* Carrier Pass-Through Table */}
+          <div className="mt-12">{carrierTable}</div>
 
-                    {/* Revenue Calculator */}
-                    <div className="mt-12">{calculatorNode}</div>
-                  </div>
-                </div>
-              </MotionProvider>
-              );
+          {/* Revenue Calculator */}
+          <div className="mt-12">{calculatorNode}</div>
+        </div>
+      </div>
+    </MotionProvider>
+  );
 }

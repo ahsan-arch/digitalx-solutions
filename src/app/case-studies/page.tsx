@@ -34,7 +34,7 @@ export default function CaseStudiesIndexPage() {
   );
 
   return (
-    <main className="pb-24 pt-12">
+    <main className="pb-24 pt-5 md:pt-7">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -151,25 +151,25 @@ export default function CaseStudiesIndexPage() {
 
       {/* CTA Section */}
       <section className="container-shell mt-20">
-        <div className="rounded-3xl saas-grid-bg border border-brand/30 bg-foreground px-6 py-14 text-center text-white md:px-12">
-          <h2 className="font-display text-3xl md:text-4xl">
+        <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white px-6 py-12 text-center shadow-sm md:px-12">
+          <h2 className="font-display text-3xl text-foreground md:text-4xl">
             Want to see how these systems apply to your business?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ink-secondary md:text-base">
             Book an engineering consultation. We will audit your current missed call volume, map your
             customer intake workflows, and project your 90-day recovered revenue model.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-lg bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition"
+              className="inline-flex items-center rounded-lg bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition"
             >
               Book a Strategy Call
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
               href="/try-voice-agent"
-              className="inline-flex items-center rounded-lg border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition"
+              className="inline-flex items-center rounded-lg border border-border/80 bg-surface-sunken px-7 py-3.5 text-sm font-semibold text-foreground hover:bg-surface-200 hover:border-brand/40 transition"
             >
               Test Live Voice Demo
             </Link>

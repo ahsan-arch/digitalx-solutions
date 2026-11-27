@@ -11,7 +11,7 @@ const lastUpdated = "April 2026";
 
 export default function PrivacyPage() {
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <article className="mx-auto w-full max-w-prose px-4 md:px-8">
         <p className="font-mono text-overline text-ink-tertiary">Legal</p>
         <h1 className="mt-3 font-display text-display-md text-ink-primary">Privacy Policy</h1>

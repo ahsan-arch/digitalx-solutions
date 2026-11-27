@@ -117,7 +117,7 @@ export default function WebDesignDevelopmentPage() {
   });
 
   return (
-    <main className="pb-20 pt-12">
+    <main className="pb-20 pt-5 md:pt-7">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }} />
@@ -223,17 +223,19 @@ export default function WebDesignDevelopmentPage() {
         </div>
       </section>
 
-      <section className="container-shell mt-16 rounded-lg bg-surface-inverse p-8 md:p-12">
-        <h2 className="font-display text-display-sm text-ink-on-inverse">Need a site that earns its hosting bill?</h2>
-        <p className="mt-3 max-w-2xl text-body text-ink-on-inverse/80">
-          We scope based on the leads you need to capture, not the templates we want to sell.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-flex items-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover transition"
-        >
-          Request a build quote
-        </Link>
+      <section className="container-shell mt-16">
+        <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white p-8 shadow-sm md:p-12">
+          <h2 className="font-display text-display-sm text-foreground">Need a site that earns its hosting bill?</h2>
+          <p className="mt-3 max-w-2xl text-body text-ink-secondary">
+            We scope based on the leads you need to capture, not the templates we want to sell.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition"
+          >
+            Request a build quote
+          </Link>
+        </div>
       </section>
     </main>
   );

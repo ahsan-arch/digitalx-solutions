@@ -126,7 +126,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             )}
 
-            <main id="main" className="pb-24 pt-12">
+            <main id="main" className="pb-24 pt-5 md:pt-7">
                 <article className="mx-auto w-full max-w-reading px-4 md:px-8">
                     <Link href="/insights" className="mb-10 inline-flex items-center font-mono text-caption text-accent hover:text-accent-hover transition-colors">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Back to Insights
@@ -205,9 +205,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     {/* Free AI Automation Audit CTA Box */}
                     <div className="my-14 overflow-hidden rounded-2xl border border-brand/40 bg-surface-50 p-8 shadow-sm md:p-10">
                         <div className="max-w-2xl">
-                            <span className="inline-flex items-center gap-1.5 rounded-md border border-brand/20 bg-brand/5 px-2.5 py-1 font-mono text-xs font-medium text-brand">
+                            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-brand-deep">
                                 Free Telephony &amp; Lead Recovery Audit
-                            </span>
+                            </p>
                             <h3 className="mt-3 font-display text-2xl font-semibold text-foreground md:text-3xl">
                                 Discover how many leads you&apos;re currently losing from missed calls
                             </h3>

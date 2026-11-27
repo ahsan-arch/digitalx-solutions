@@ -75,7 +75,7 @@ export default function AiVoiceReceptionistServicePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <main id="main" className="pb-24 pt-12">
+      <main id="main" className="pb-24 pt-5 md:pt-7">
         {/* SECTION 1: HERO */}
         <section className="container-shell">
           <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-white px-6 py-12 shadow-xs md:px-12 md:py-16">
@@ -475,27 +475,29 @@ export default function AiVoiceReceptionistServicePage() {
 
         {/* SECTION 8: BOTTOM CONVERSION BANNER */}
         <section className="container-shell mt-16 md:mt-20">
-          <div className="rounded-2xl saas-grid-bg border border-brand/30 bg-foreground px-6 py-12 text-white md:px-12 md:py-16">
-            <div className="max-w-2xl">
-              <h2 className="font-display text-3xl font-semibold leading-tight md:text-5xl">
-                Ready to Automate Your Inbound Phone Lines?
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-white/80 md:text-lg">
-                Book a quick 15-minute strategy call to test a custom voice agent tailored to your business workflow.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="rounded-2xl saas-grid-bg border border-border/80 border-t-[3px] border-t-brand bg-white px-6 py-12 shadow-sm md:px-12 md:py-14">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <h2 className="font-display text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                  Ready to Automate Your Inbound Phone Lines?
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-ink-secondary md:text-lg">
+                  Book a quick 15-minute strategy call to test a custom voice agent tailored to your business workflow.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-deep transition-colors"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-xs hover:bg-brand-deep transition-colors"
                 >
                   Schedule Your Free Demo
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/try-voice-agent"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-sm font-medium text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface-sunken px-6 py-3.5 text-sm font-semibold text-foreground transition hover:bg-surface-200 hover:border-brand/40"
                 >
-                  <PhoneCall className="h-4 w-4" />
+                  <PhoneCall className="h-4 w-4 text-brand" />
                   Test Live AI Voice Agent
                 </Link>
               </div>
